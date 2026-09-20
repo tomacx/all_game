@@ -16,6 +16,7 @@
     tags: [],         // 已选标签
     sort: "tier",
     minTier: 0,
+    onlyNew: true,
     openAll: false
   };
 
@@ -127,6 +128,7 @@
     $("#hud-date").textContent = (d.date || "—").slice(5);
     $("#hud-brief").textContent = (d.highlights || []).length;
     $("#hud-radar").textContent = (d.radar || []).length;
+    $("#hud-new").textContent = (d.source && d.source.new_count) || 0;
     $("#hud-scan").textContent = (d.source && d.source.total_raw) || 0;
   }
 
@@ -139,7 +141,8 @@
       "六路检索式共命中 <strong>" + (src.total_raw || 0) + "</strong> 篇，去重后 <strong>" +
       (src.unique || 0) + "</strong> 篇；其中人工精读 <strong>" +
       (d.highlights || []).length + "</strong> 篇，雷达收录 <strong>" +
-      (d.radar || []).length + "</strong> 篇。";
+      (d.radar || []).length + "</strong> 篇，<strong style=\"color:var(--accent)\">今日新增 " +
+      (src.new_count || 0) + " 篇</strong>（已与往期 " + (src.seen_before || 0) + " 篇比对去重）。";
     var note = $("#hero-note");
     if (d.note) { note.hidden = false; note.textContent = d.note; } else { note.hidden = true; }
   }
@@ -196,6 +199,8 @@
   function filter(items) {
     return items.filter(function (it) {
       if (state.minTier && (it.tier || 0) < state.minTier) return false;
+      // 「仅看新增」只在雷达视图生效，且不影响当日精读条目
+      if (state.onlyNew && state.view === "radar" && !it.curated && !it.is_new) return false;
       if (state.tags.length) {
         var own = it.tags || [];
         var hit = state.tags.some(function (t) { return own.indexOf(t) !== -1; });
@@ -343,7 +348,10 @@
             "<span>" + esc(r.primary_category || "") + "</span>" +
             "<span>" + esc(r.published || "") + "</span>" +
             "<span>" + esc(authorLine(r.authors, 3)) + "</span>" +
-            (r.curated ? '<span class="tag" style="border-color:var(--accent);color:var(--accent)">精读</span>' : "") +
+            (r.curated
+              ? '<span class="tag" style="border-color:var(--accent);color:var(--accent)">精读</span>'
+              : "") +
+            (r.is_new ? '<span class="tag tag--new">NEW</span>' : "") +
             (r.tags || []).map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("") +
           "</div>" +
         "</div>" +
@@ -414,6 +422,13 @@
     $("#sort").addEventListener("change", function (e) { state.sort = e.target.value; render(); });
     $("#tier-filter").addEventListener("change", function (e) {
       state.minTier = parseInt(e.target.value, 10) || 0; render();
+    });
+
+    $("#only-new").addEventListener("click", function () {
+      state.onlyNew = !state.onlyNew;
+      this.setAttribute("aria-pressed", String(state.onlyNew));
+      this.textContent = state.onlyNew ? "仅看新增 ✓" : "含往期收录";
+      render();
     });
 
     $("#expand-all").addEventListener("click", function () {

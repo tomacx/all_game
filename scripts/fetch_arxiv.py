@@ -378,6 +378,26 @@ def load_existing(path: str) -> dict:
         return {}
 
 
+def load_seen_ids(exclude_date: str) -> set[str]:
+    """汇总往期已收录过的 arXiv ID，用于标记「今日新增」。"""
+    seen: set[str] = set()
+    if not os.path.isdir(DATA_DIR):
+        return seen
+    for fn in sorted(os.listdir(DATA_DIR)):
+        if not fn.endswith(".json"):
+            continue
+        if fn[:-5] == exclude_date:
+            continue
+        data = load_existing(os.path.join(DATA_DIR, fn))
+        for h in data.get("highlights", []):
+            if h.get("id"):
+                seen.add(h["id"])
+        for r in data.get("radar", []):
+            if r.get("id"):
+                seen.add(r["id"])
+    return seen
+
+
 def write_json(path: str, payload: dict) -> None:
     os.makedirs(os.path.dirname(path), exist_ok=True)
     with open(path, "w", encoding="utf-8") as f:
@@ -392,6 +412,7 @@ def update_index(date: str, payload: dict) -> None:
         "date": date,
         "radar_count": len(payload.get("radar", [])),
         "highlight_count": len(payload.get("highlights", [])),
+        "new_count": payload.get("source", {}).get("new_count", 0),
         "total_hits": payload.get("source", {}).get("total_raw", 0),
     }
     days = [d for d in days if d.get("date") != date]
@@ -408,12 +429,14 @@ def render_digest(date: str, payload: dict) -> str:
         "",
         f"- 检索窗口：{payload['source']['window']}",
         f"- 命中总数：{payload['source']['total_raw']}，去重后：{payload['source']['unique']}，入库：{len(payload['radar'])}",
+        f"- **今日新增：{payload['source'].get('new_count', 0)} 篇**（往期已收录 {payload['source'].get('seen_before', 0)} 篇用于去重比对）",
         f"- 精读条目：{len(payload['highlights'])}",
         "",
-        "## 待精读清单",
+        "## 待精读清单（仅列今日新增）",
         "",
     ]
-    for i, it in enumerate(payload["radar"], 1):
+    fresh = [it for it in payload["radar"] if it["is_new"]] or payload["radar"]
+    for i, it in enumerate(fresh, 1):
         lines.append(f"### {i}. {it['title']}")
         lines.append("")
         lines.append(f"- **arXiv**：{it['id']} · {it['primary_category']}")
@@ -469,9 +492,11 @@ def main() -> int:
     items.sort(key=lambda x: (-x["score"], x["published_dt"]), reverse=False)
     items = items[: args.top]
 
+    seen_ids = load_seen_ids(date)
     radar = [
         {
             "id": it["id"],
+            "is_new": it["id"] not in seen_ids,
             "title": it["title"],
             "authors": it["authors"],
             "published": it["published"],
@@ -499,8 +524,10 @@ def main() -> int:
             "window": f"{(datetime.now(timezone.utc) - timedelta(days=args.days)).strftime('%Y-%m-%d')} ~ {date}",
             "queries": [q for q, _ in QUERIES],
             "total_raw": total_raw,
-            "unique": len(items) if args.top >= len(items) else len(items),
+            "unique": len(items),
             "days": args.days,
+            "new_count": sum(1 for r in radar if r["is_new"]),
+            "seen_before": len(seen_ids),
         },
         # 人工精读内容：合并时保留
         "highlights": existing.get("highlights", []),

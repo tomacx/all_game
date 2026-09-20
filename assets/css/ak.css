@@ -647,6 +647,28 @@ a:hover {
   color: #fff;
   font-weight: 600;
 }
+.tag--new {
+  border-color: var(--accent);
+  background: var(--accent);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  clip-path: none;
+  padding: 2px 7px;
+}
+[data-theme="night"] .tag--new {
+  color: #1a1206;
+}
+
+.btn[aria-pressed="true"] {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 600;
+}
+
 .btn--solid:hover {
   background: var(--accent-2);
   border-color: var(--accent-2);

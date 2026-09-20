@@ -37,7 +37,7 @@ jobs:
       - name: 抓取 arXiv 新论文
         run: |
           python3 scripts/fetch_arxiv.py \
-            --days "${{ github.event.inputs.days || '3' }}" \
+            --days "${{ github.event.inputs.days || '7' }}" \
             --per-query 150 \
             --top "${{ github.event.inputs.top || '40' }}"
 

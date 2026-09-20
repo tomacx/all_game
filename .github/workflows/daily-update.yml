@@ -1,0 +1,56 @@
+name: 每日抓取 · 博弈智能新动向
+
+on:
+  schedule:
+    # 每日 UTC 01:00 == 北京 09:00
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+    inputs:
+      days:
+        description: "回溯天数"
+        required: false
+        default: "3"
+      top:
+        description: "最多入库条数"
+        required: false
+        default: "40"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-fetch
+  cancel-in-progress: false
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出仓库
+        uses: actions/checkout@v4
+
+      - name: 配置 Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: 抓取 arXiv 新论文
+        run: |
+          python3 scripts/fetch_arxiv.py \
+            --days "${{ github.event.inputs.days || '3' }}" \
+            --per-query 150 \
+            --top "${{ github.event.inputs.top || '40' }}"
+
+      - name: 提交当日数据
+        run: |
+          set -e
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain)" ]; then
+            git add data/ digests/
+            git commit -m "chore(daily): $(date -u +%Y-%m-%d) 博弈智能动向自动更新"
+            git push
+            echo "已提交当日更新"
+          else
+            echo "本次抓取无新增内容，跳过提交"
+          fi

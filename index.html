@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="day">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>博弈智能 · 每日动向 | GAME INTELLIGENCE RADAR</title>
+    <meta
+      name="description"
+      content="博弈智能（多智能体强化学习 / 博弈理论 / 均衡求解 / LLM 多智能体 / 机制设计）领域每日新动向与新方法雷达站。"
+    />
+    <link rel="stylesheet" href="assets/css/ak.css" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 29 9.5v13L16 30 3 22.5v-13Z' fill='none' stroke='%23e0742a' stroke-width='2.5'/%3E%3Cpath d='M16 9.5 22.5 13v6L16 22.5 9.5 19v-6Z' fill='%23e0742a'/%3E%3C/svg%3E"
+    />
+  </head>
+  <body>
+    <!-- ============ 顶栏 HUD ============ -->
+    <header class="topbar">
+      <div class="topbar__inner">
+        <div class="brand">
+          <!-- 源石六边形徽记 -->
+          <svg class="brand__mark" viewBox="0 0 48 48" aria-hidden="true">
+            <path
+              d="M24 3 43 14v20L24 45 5 34V14Z"
+              fill="none"
+              stroke="#e0742a"
+              stroke-width="2.4"
+            />
+            <path d="M24 12 34.5 18v12L24 36 13.5 30V18Z" fill="#e0742a" opacity="0.16" />
+            <path d="M24 15.5 31 19.5v9L24 32.5 17 28.5v-9Z" fill="#e0742a" />
+            <path d="M24 3v9M43 14l-8.5 4M43 34l-8.5-4M24 45v-9M5 34l8.5-4M5 14l8.5 4" stroke="#e0742a" stroke-width="1.6" />
+          </svg>
+          <div class="brand__text">
+            <h1 class="brand__title">博弈智能 · 每日动向</h1>
+            <p class="brand__sub">Game Intelligence Radar</p>
+          </div>
+        </div>
+
+        <div class="topbar__spacer"></div>
+
+        <div class="hud" id="hud">
+          <div class="hud__cell">
+            <span class="hud__k">Date</span>
+            <span class="hud__v" id="hud-date">—</span>
+          </div>
+          <div class="hud__cell">
+            <span class="hud__k">Briefing</span>
+            <span class="hud__v" id="hud-brief">—</span>
+          </div>
+          <div class="hud__cell">
+            <span class="hud__k">Radar</span>
+            <span class="hud__v" id="hud-radar">—</span>
+          </div>
+          <div class="hud__cell">
+            <span class="hud__k">Scanned</span>
+            <span class="hud__v" id="hud-scan">—</span>
+          </div>
+        </div>
+
+        <button class="icon-btn" id="theme-btn" type="button" title="切换日间 / 夜间模式" aria-label="切换主题">
+          <svg id="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="4.2" />
+            <path d="M12 2v2.6M12 19.4V22M2 12h2.6M19.4 12H22M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M19.1 4.9l-1.9 1.9M6.8 17.2l-1.9 1.9" />
+          </svg>
+        </button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <!-- ============ Hero ============ -->
+      <section class="hero brackets">
+        <div class="hero__eyebrow">
+          <span class="tick"></span>
+          <span class="micro">Daily Briefing — 每日简报</span>
+        </div>
+        <h1 id="hero-title">正在载入今日档案…</h1>
+        <p id="hero-desc">
+          追踪博弈智能领域的每日新动向与新方法：多智能体强化学习、博弈理论与均衡求解、LLM
+          多智能体博弈、机制设计与对抗安全。
+        </p>
+        <div class="hero__note" id="hero-note" hidden></div>
+      </section>
+
+      <!-- ============ 归档日期 ============ -->
+      <div class="archive" id="archive">
+        <span class="micro" style="margin-right: 4px">Archive</span>
+      </div>
+
+      <!-- ============ 控制条 ============ -->
+      <div class="controls">
+        <div class="search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="7" />
+            <path d="M20 20l-3.6-3.6" />
+          </svg>
+          <input id="q" type="search" placeholder="搜索标题 / 作者 / 标签 / 摘要…" autocomplete="off" />
+        </div>
+
+        <div class="seg" id="view-seg" role="group" aria-label="视图切换">
+          <button type="button" data-view="brief" aria-pressed="true">今日精读</button>
+          <button type="button" data-view="radar" aria-pressed="false">全站雷达</button>
+          <button type="button" data-view="trends" aria-pressed="false">趋势小结</button>
+        </div>
+
+        <select class="select" id="sort" aria-label="排序方式">
+          <option value="tier">按稀有度排序</option>
+          <option value="score">按相关度排序</option>
+          <option value="date">按发布时间排序</option>
+        </select>
+
+        <select class="select" id="tier-filter" aria-label="稀有度筛选">
+          <option value="0">全部稀有度</option>
+          <option value="6">仅 6★</option>
+          <option value="5">5★ 及以上</option>
+          <option value="4">4★ 及以上</option>
+        </select>
+
+        <button class="btn" id="expand-all" type="button">展开全部</button>
+      </div>
+
+      <div class="tagbar" id="tagbar"></div>
+
+      <!-- ============ 内容区 ============ -->
+      <div id="view"><div class="loading">LOADING ARCHIVE…</div></div>
+
+      <!-- ============ 页脚 ============ -->
+      <footer class="foot">
+        <div>
+          数据来源：<a href="https://arxiv.org/" target="_blank" rel="noopener">arXiv API</a>
+          · 每日由 GitHub Actions 定时抓取
+          <code>cs.MA</code> / <code>cs.GT</code> / <code>MARL</code> / <code>Nash</code> /
+          <code>LLM-Multi-Agent</code> / <code>机制设计</code> 六路检索式，去重后按关键词打分排序。
+        </div>
+        <div>
+          页面说明：标有「精读」的条目为人工选读并撰写解读，其余为脚本自动收录的雷达条目；相关度分数与
+          ★ 分级仅用于快速筛选，不构成学术评价。
+        </div>
+        <div style="margin-top: 8px">
+          <span class="micro">Rhodes Island · Game Intelligence Radar</span>
+        </div>
+      </footer>
+    </main>
+
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>

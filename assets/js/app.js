@@ -14,11 +14,44 @@
     view: "brief",    // brief | radar | trends
     q: "",
     tags: [],         // 已选标签
-    sort: "tier",
-    minTier: 0,
+    sort: "default",  // default | date | title
     onlyNew: true,
     openAll: false
   };
+
+  /* 干员职业：只用于标识研究方向，不做任何等级评价 */
+  var KLASS = {
+    guard:     { cn: "近卫",  en: "GUARD",      path: "M8 2 14 8v10H2V8Z" },
+    caster:    { cn: "术师",  en: "CASTER",     path: "M8 1.5 13.5 6 11 15H5L2.5 6Z" },
+    supporter: { cn: "辅助",  en: "SUPPORTER",  path: "M8 2 14 5.5v7L8 16 2 12.5v-7Z" },
+    specialist:{ cn: "特种",  en: "SPECIALIST", path: "M8 1.5 14.5 8 8 14.5 1.5 8Z" },
+    defender:  { cn: "重装",  en: "DEFENDER",   path: "M8 2 14 5v6.5L8 15 2 11.5V5Z" },
+    sniper:    { cn: "狙击",  en: "SNIPER",     path: "M8 2 13 9l-5 6-5-6Z" }
+  };
+
+  function klassOf(item) {
+    var k = item && item.klass;
+    if (!k && item && item.section) {
+      var map = {
+        "核心算法创新 · MARL": "guard",
+        "博弈求解与理论": "caster",
+        "机制设计与市场": "supporter",
+        "LLM 多智能体与社会模拟": "specialist",
+        "对抗、安全与鲁棒": "defender"
+      };
+      k = map[item.section] || "sniper";
+    }
+    return KLASS[k] ? k : "sniper";
+  }
+
+  function klassChip(item, withEn) {
+    var k = klassOf(item);
+    var d = KLASS[k];
+    return '<span class="klass__chip" data-klass="' + k + '">' +
+      '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="' + d.path +
+      '" fill="currentColor"/></svg><span>' + d.cn + "</span></span>" +
+      (withEn ? '<span class="klass__en micro">' + d.en + "</span>" : "");
+  }
 
   /* ------------------------------ 工具 ------------------------------ */
 
@@ -31,12 +64,6 @@
   function hexSvg() {
     return '<svg class="sect__hex" viewBox="0 0 16 18" aria-hidden="true">' +
       '<path d="M8 0 16 4.5v9L8 18 0 13.5v-9Z" fill="var(--accent)"/></svg>';
-  }
-
-  function stars(n) {
-    var s = "";
-    for (var i = 0; i < n; i++) s += "★";
-    return s;
   }
 
   function authorLine(authors, max) {
@@ -112,6 +139,7 @@
         renderHero();
         renderTagbar();
         render();
+        document.dispatchEvent(new CustomEvent("ag:ready", { detail: { date: state.date } }));
       })
       .catch(function (err) {
         $("#view").innerHTML =
@@ -174,11 +202,10 @@
   }
 
   function allItems() {
-    // 精读条目补足雷达视图需要的字段，避免分数为 0 / 摘要为空
+    // 精读条目补足雷达视图需要的字段，避免摘要为空
     var hs = (state.day.highlights || []).map(function (h) {
       return Object.assign({}, h, {
         curated: true,
-        score: h.score || (h.tier || 5) * 12,
         summary_short: h.summary_short || h.glance || ""
       });
     });
@@ -198,7 +225,6 @@
 
   function filter(items) {
     return items.filter(function (it) {
-      if (state.minTier && (it.tier || 0) < state.minTier) return false;
       // 「仅看新增」只在雷达视图生效，且不影响当日精读条目
       if (state.onlyNew && state.view === "radar" && !it.curated && !it.is_new) return false;
       if (state.tags.length) {
@@ -212,14 +238,12 @@
 
   function sorted(items) {
     var arr = items.slice();
-    if (state.sort === "score") {
-      arr.sort(function (a, b) { return (b.score || 0) - (a.score || 0); });
-    } else if (state.sort === "date") {
+    if (state.sort === "date") {
       arr.sort(function (a, b) { return String(b.published || "").localeCompare(String(a.published || "")); });
-    } else {
-      arr.sort(function (a, b) { return (b.tier || 0) - (a.tier || 0); });
+    } else if (state.sort === "title") {
+      arr.sort(function (a, b) { return String(a.title || "").localeCompare(String(b.title || ""), "zh"); });
     }
-    return arr;
+    return arr; // default：保持分区归类后的原始顺序
   }
 
   /* ------------------------------ 渲染：标签栏 ------------------------------ */
@@ -261,22 +285,6 @@
   /* ------------------------------ 渲染：精读卡片 ------------------------------ */
 
   function cardHTML(h, i) {
-    var tier = h.tier || 5;
-    var mods = "";
-    if (h.problem) {
-      mods += '<div class="mod mod--problem"><h4>核心问题</h4><p>' + esc(h.problem) + "</p></div>";
-    }
-    if (h.method && h.method.length) {
-      mods += '<div class="mod mod--method"><h4>方法与建模</h4><ol>' +
-        h.method.map(function (m) { return "<li>" + esc(m) + "</li>"; }).join("") + "</ol></div>";
-    }
-    if (h.result) {
-      mods += '<div class="mod mod--result"><h4>实验与战绩</h4><p>' + esc(h.result) + "</p></div>";
-    }
-    if (h.insight) {
-      mods += '<div class="mod mod--insight"><h4>启示 · 可迁移点</h4><p>' + esc(h.insight) + "</p></div>";
-    }
-
     var meta = [];
     if (h.authors && h.authors.length) meta.push(esc(authorLine(h.authors, 3)));
     if (h.primary_category) meta.push(esc(h.primary_category));
@@ -284,7 +292,8 @@
     if (h.published) meta.push(esc(h.published));
 
     return '' +
-      '<article class="card' + (state.openAll ? " is-open" : "") + '" data-tier="' + tier + '">' +
+      '<article class="card' + (state.openAll ? " is-open" : "") + '"' +
+        ' data-klass="' + klassOf(h) + '" id="op-' + esc(h.id || i) + '">' +
         '<div class="card__bar"></div>' +
         '<div class="card__head">' +
           '<div class="hex">' + String(i + 1).padStart(2, "0") + "</div>" +
@@ -293,8 +302,7 @@
             (h.title_en ? '<p class="card__en">' + esc(h.title_en) + "</p>" : "") +
             '<div class="card__meta">' + meta.join(" · ") + "</div>" +
           "</div>" +
-          '<div class="tier"><span class="tier__stars">' + stars(tier) + "</span>" +
-            '<span class="tier__label micro">' + tier + "★</span></div>" +
+          '<div class="klass">' + klassChip(h, true) + "</div>" +
         "</div>" +
         (h.glance ? '<div class="glance">' + esc(h.glance) + "</div>" : "") +
         ((h.tags && h.tags.length)
@@ -305,12 +313,54 @@
             (state.openAll ? "收起解读" : "展开解读") + "</button>" +
           (h.abs_url ? '<a class="btn" href="' + esc(h.abs_url) + '" target="_blank" rel="noopener">原文 →</a>' : "") +
         "</div>" +
-        '<div class="mods">' + mods + "</div>" +
+        '<div class="mods">' + essayHTML(h) + "</div>" +
       "</article>";
   }
 
+  /* 博客式解读：引入 → 分节叙述（穿插论文主图）→ 总结 */
+  function essayHTML(h) {
+    var blocks = h.essay;
+    if (!blocks || !blocks.length) {
+      // 兼容旧数据结构（problem/method/result/insight）
+      var old = "";
+      if (h.problem) old += '<div class="mod"><h4>核心问题</h4><p>' + esc(h.problem) + "</p></div>";
+      if (h.method && h.method.length) {
+        old += '<div class="mod"><h4>方法与建模</h4><ol>' +
+          h.method.map(function (m) { return "<li>" + esc(m) + "</li>"; }).join("") + "</ol></div>";
+      }
+      if (h.result) old += '<div class="mod"><h4>实验与战绩</h4><p>' + esc(h.result) + "</p></div>";
+      if (h.insight) old += '<div class="mod mod--insight"><h4>启示 · 可迁移点</h4><p>' + esc(h.insight) + "</p></div>";
+      return old;
+    }
+
+    return '<div class="essay">' + blocks.map(function (b) {
+      if (!b) return "";
+      switch (b.t) {
+        case "lead":
+          return '<p class="essay__lead">' + esc(b.v) + "</p>";
+        case "h":
+          return "<h4>" + esc(b.v) + "</h4>";
+        case "p":
+          return "<p>" + esc(b.v) + "</p>";
+        case "quote":
+          return '<blockquote class="essay__quote">' + esc(b.v) + "</blockquote>";
+        case "fig":
+          return '<figure class="fig">' +
+            '<div class="fig__frame"><img src="' + esc(b.src) + '" alt="' + esc(b.cap || "论文主图") +
+            '" loading="lazy" /></div>' +
+            '<figcaption class="fig__cap"><b>图：</b>' + esc(b.cap || "") + "</figcaption>" +
+            (b.cap_en ? '<p class="fig__src">原图注：' + esc(b.cap_en) + "</p>" : "") +
+            "</figure>";
+        case "close":
+          return '<p class="essay__close"><strong>小结 · </strong>' + esc(b.v) + "</p>";
+        default:
+          return b.v ? "<p>" + esc(b.v) + "</p>" : "";
+      }
+    }).join("") + "</div>";
+  }
+
   function renderBrief(items) {
-    var hs = items.filter(function (it) { return it.problem || it.insight; });
+    var hs = items.filter(function (it) { return (it.essay && it.essay.length) || it.problem || it.insight; });
     if (!hs.length) {
       return '<div class="empty">当日暂无精读条目——运行 <code>scripts/fetch_arxiv.py</code> 后由本地精读回填。</div>';
     }
@@ -337,9 +387,8 @@
     var list = sorted(items);
     if (!list.length) return '<div class="empty">没有符合条件的条目。</div>';
     var rows = list.map(function (r) {
-      var pct = Math.min(100, Math.round(((r.score || 0) / 80) * 100));
-      return '<div class="radar__row" data-tier="' + (r.tier || 3) + '">' +
-        '<div class="radar__tier">' + (r.tier || 3) + "★</div>" +
+      return '<div class="radar__row" data-klass="' + klassOf(r) + '">' +
+        '<div class="radar__dot"></div>' +
         '<div class="radar__body">' +
           '<a class="radar__title" href="' + esc(r.abs_url) + '" target="_blank" rel="noopener">' +
             esc(r.title) + "</a>" +
@@ -355,8 +404,7 @@
             (r.tags || []).map(function (t) { return '<span class="tag">' + esc(t) + "</span>"; }).join("") +
           "</div>" +
         "</div>" +
-        '<div class="radar__score"><span class="num">' + (r.score || 0) + "</span>" +
-          '<div class="bar"><span style="width:' + pct + '%"></span></div></div>' +
+        '<div class="radar__when">' + esc(r.published || "") + "</div>" +
         "</div>";
     }).join("");
     return '<div class="radar">' + rows + "</div>";
@@ -420,9 +468,6 @@
     });
 
     $("#sort").addEventListener("change", function (e) { state.sort = e.target.value; render(); });
-    $("#tier-filter").addEventListener("change", function (e) {
-      state.minTier = parseInt(e.target.value, 10) || 0; render();
-    });
 
     $("#only-new").addEventListener("click", function () {
       state.onlyNew = !state.onlyNew;
@@ -437,6 +482,62 @@
       render();
     });
   }
+
+  /* ------------------------------ 对寻访模块暴露接口 ------------------------------ */
+
+  window.AG = {
+    /** 当前可用于寻访的条目（精读 + 雷达，按 id 去重） */
+    items: function () {
+      if (!state.day) return [];
+      var seen = {};
+      return allItems().filter(function (it) {
+        var k = it.id || it.title;
+        if (!k || seen[k]) return false;
+        seen[k] = 1;
+        return true;
+      });
+    },
+    klassChip: klassChip,
+    klassOf: klassOf,
+    /** 在雷达视图中定位某条目标题 */
+    find: function (title) {
+      if (!title) return;
+      state.view = "radar";
+      state.q = title;
+      state.onlyNew = false;
+      state.tags = [];
+      var q = $("#q"); if (q) q.value = title;
+      var onb = $("#only-new");
+      if (onb) { onb.setAttribute("aria-pressed", "false"); onb.textContent = "含往期收录"; }
+      Array.prototype.forEach.call(document.querySelectorAll("#view-seg button"), function (x) {
+        x.setAttribute("aria-pressed", String(x.getAttribute("data-view") === "radar"));
+      });
+      renderTagbar();
+      render();
+      if (typeof window.scrollTo === "function") window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+    date: function () { return state.date; },
+    /** 跳到某条目的解读并展开 */
+    focus: function (id) {
+      if (!id) return;
+      state.view = "brief";
+      state.q = "";
+      state.tags = [];
+      var q = $("#q"); if (q) q.value = "";
+      Array.prototype.forEach.call(document.querySelectorAll("#view-seg button"), function (x) {
+        x.setAttribute("aria-pressed", String(x.getAttribute("data-view") === "brief"));
+      });
+      render();
+      var el = document.getElementById("op-" + id);
+      if (!el) return;
+      el.classList.add("is-open");
+      var btn = el.querySelector("[data-toggle]");
+      if (btn) btn.textContent = "收起解读";
+      if (typeof el.scrollIntoView === "function") {
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+    }
+  };
 
   /* ------------------------------ 启动 ------------------------------ */
 

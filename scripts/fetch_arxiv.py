@@ -338,17 +338,6 @@ def section_of(tags: list[str]) -> str:
     return "其他交叉方向"
 
 
-def tier_of(score: int) -> int:
-    """明日方舟式稀有度：3★ / 4★ / 5★ / 6★，仅用于视觉分级。"""
-    if score >= 60:
-        return 6
-    if score >= 40:
-        return 5
-    if score >= 24:
-        return 4
-    return 3
-
-
 def summarize(text: str, limit: int = 320) -> str:
     text = clean_ws(text)
     if len(text) <= limit:
@@ -441,8 +430,7 @@ def render_digest(date: str, payload: dict) -> str:
         lines.append("")
         lines.append(f"- **arXiv**：{it['id']} · {it['primary_category']}")
         lines.append(f"- **链接**：{it['abs_url']}")
-        lines.append(f"- **标签**：{' / '.join(it['tags']) or '—'}")
-        lines.append(f"- **相关度**：{it['score']}（{it['tier']}★）")
+        lines.append(f"- **标签**：{' / '.join(it['tags']) or '—'} · 分区：{it['section']}")
         lines.append(f"- **作者**：{', '.join(it['authors'][:6])}{' 等' if len(it['authors']) > 6 else ''}")
         lines.append("")
         lines.append(f"> {it['summary_short']}")
@@ -486,7 +474,6 @@ def main() -> int:
         it["score"] = st["score"]
         it["tags"] = st["tags"]
         it["section"] = section_of(st["tags"])
-        it["tier"] = tier_of(st["score"])
         it["summary_short"] = summarize(it["summary"])
 
     items.sort(key=lambda x: (-x["score"], x["published_dt"]), reverse=False)
@@ -510,7 +497,6 @@ def main() -> int:
             "tags": it["tags"],
             "section": it["section"],
             "score": it["score"],
-            "tier": it["tier"],
             "sources": it["sources"],
         }
         for it in items
@@ -539,7 +525,7 @@ def main() -> int:
     if args.dry_run:
         print(json.dumps(payload["source"], ensure_ascii=False, indent=2))
         for it in radar[:10]:
-            print(f"  [{it['tier']}★ {it['score']:>3}] {it['tags']} {it['title'][:80]}")
+            print(f"  [score {it['score']:>3}] {it['tags']} {it['title'][:80]}")
         return 0
 
     write_json(os.path.join(DATA_DIR, f"{date}.json"), payload)

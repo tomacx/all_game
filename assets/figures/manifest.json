@@ -1,0 +1,93 @@
+{
+  "2609.15361": {
+    "id": "2609.15361",
+    "local": "figures/2609.15361.jpg",
+    "source_url": "https://arxiv.org/html/2609.15361v1/resources/arcomm_arch_v2.jpg",
+    "caption": "Fig. 2: Architecture of the proposed communication method for MARL. The proposed method can be used together with any value function factorisation method (whose mixer is represented in the figure in the block mixer) and uses parameter sharing. The pink diamonds represent the inverse DCT that is applied to decompress the messages that are compressed with the DCT (yellow diamond) after they are computed by the communication network (yellow). Note that both the DCT and IDCT blocks are only used when we analyse the effect of compression in section V-D. In the main experiments, these blocks are not applied.",
+    "figure_count": 24
+  },
+  "2609.14959": {
+    "id": "2609.14959",
+    "local": "figures/2609.14959.png",
+    "source_url": "https://arxiv.org/html/2609.14959v1/imcg_online_job_scheduling.png",
+    "caption": "Figure 1: Strategic online job scheduling on stochastic machines. Each player receives jobs over time and chooses a subset of machines to which its jobs are dispatched. The machines are shared resources whose local processing conditions evolve stochastically and independently, conditional on their current states and congestion levels.",
+    "figure_count": 1
+  },
+  "2609.17601": {
+    "id": "2609.17601",
+    "local": "figures/2609.17601.png",
+    "source_url": "https://arxiv.org/html/2609.17601v1/gm_alpha0.png",
+    "caption": "(a) Sum of Local Payoffs as Social Welfare",
+    "figure_count": 4
+  },
+  "2609.18639": {
+    "id": "2609.18639",
+    "local": "figures/2609.18639.png",
+    "source_url": "https://arxiv.org/html/2609.18639v1/training_curves.png",
+    "caption": "Figure 2: On-policy training dynamics presenting (a) episodic reward, (b) mean daily network service, and (c) mean daily service gap. Curves are hundred-episode moving averages from sampled training actions.",
+    "figure_count": 2
+  },
+  "2609.19820": {
+    "id": "2609.19820",
+    "local": "figures/2609.19820.png",
+    "source_url": "https://arxiv.org/html/2609.19820v1/figs/e2_controllability.png",
+    "caption": "Figure 1: Controllability (E2). Achieved coordinate cselc_{\\mathrm{sel}} vs requested ctargetc_{\\mathrm{target}} for fixed and refined references across the five games (mean ±\\pm sd over seeds); dashed line is identity, dotted line the maximum-entropy member. Both modes track the request; the refined mode also reaches exact Nash. Note the boundary undershoot on asym_safe at high targets.",
+    "figure_count": 8
+  },
+  "2609.19399": {
+    "id": "2609.19399",
+    "local": "figures/2609.19399.png",
+    "source_url": "https://arxiv.org/html/2609.19399v1/figures/psro_training_curve.png",
+    "caption": "Figure 1: Exploitability against the full game over twelve PSRO iterations at a 5%5\\% per-build payoff budget. All methods draw the same initial pool and share a best-response oracle, but each responds to its own mixture, so the pools coincide at the first iteration and diverge thereafter. Means over sixteen seeds, interquartile bands.",
+    "figure_count": 8
+  },
+  "2609.16270": {
+    "id": "2609.16270",
+    "local": "figures/2609.16270.png",
+    "source_url": "https://arxiv.org/html/2609.16270v1/figures/mech_exp1_decomposition.png",
+    "caption": "Figure 2: Experiment 1 decomposition for Qwen. Bars partition each reduction in expected switching into reduced between-round P⁡(A)P(A) drift (blue) and reduced action uncertainty (orange); diamonds show their exact sum. Positive values indicate greater persistence.",
+    "figure_count": 5
+  },
+  "2609.18591": {
+    "id": "2609.18591",
+    "local": "figures/2609.18591.png",
+    "source_url": "https://arxiv.org/html/2609.18591v1/assets/graphs/network.png",
+    "caption": "Figure 1: Relational Complexity in Multi-Agent Systems. When everyone is constantly influencing everyone else, making a single decision becomes an overwhelming task. This structure necessitates a shift from simple logic to a deep and complicated cycle of guessing what others might do, highlighting the challenge of strategic coordination.",
+    "figure_count": 15
+  },
+  "2609.19124": {
+    "id": "2609.19124",
+    "local": "figures/2609.19124.jpg",
+    "source_url": "https://arxiv.org/html/2609.19124v1/visuals/fig1.png",
+    "caption": "Figure 1: The Flag Game (demo website: https://flag-game-demo.vercel.app) exhibits rich collective phenomenology despite its simplicity. (a) A hidden flag is observed through private evidence; bounded agents exchange reports, and the system tracks agent’s country guess. (b–e) Collective mean accuracy (Sec. 3) under four controls: population size (b), social-awareness prompting (c), team diversity (d), and organizational structure (e).",
+    "figure_count": 7
+  },
+  "2609.17320": {
+    "id": "2609.17320",
+    "local": "figures/2609.17320.jpg",
+    "source_url": "https://arxiv.org/html/2609.17320v1/figures/map.png",
+    "caption": "Figure 2: Aerial view of the Emergence World town. Key institutional landmarks—Town Hall, Central Bank, Victory Arch, Public Library, Police Station, and Agent TechHub—are shown; residential buildings, parks, and other landmarks are omitted for brevity.",
+    "figure_count": 19
+  },
+  "2609.15803": {
+    "id": "2609.15803",
+    "local": "figures/2609.15803.png",
+    "source_url": "https://arxiv.org/html/2609.15803v1/revised_approximate_count.png",
+    "caption": "Figure 7: Approximate threshold-rule guarantees. At each tolerance pair, color gives the greatest fraction of responses (a) or prompts (b) satisfying both guarantees, choosing one k∈{0,…,n−1}k\\in\\{0,\\ldots,n-1\\} across the whole benchmark. Both panels share a color scale. Labels in (a) give these percentages for positive required gain, away from the dashed right edge. At the dashed right edges, the allowed loss is large enough that every proposal satisfies the loss bound.",
+    "figure_count": 1
+  },
+  "2609.17856": {
+    "id": "2609.17856",
+    "local": "figures/2609.17856.png",
+    "source_url": "https://arxiv.org/html/2609.17856v1/figures/qual_heal_all_benign.png",
+    "caption": "Figure 2: Qualitative visualization of attacks and the defenses, seen on the fused scene by victim. One attacker (agent 1) perturbs its transmitted feature under the matched-objective harness. Counts are ground-truth objects recovered at IoU 0.50.5 over those in view. sign-PGD barely dents the scene, Adam-PGD removes much more, and HetPoison, with one label-free forward pass, erases more detections. HetShield restores most of the benign scene while LUCIA and ROBOSAC recover little.",
+    "figure_count": 1
+  },
+  "2609.19789": {
+    "id": "2609.19789",
+    "local": "figures/2609.19789.jpg",
+    "source_url": "https://arxiv.org/html/2609.19789v1/gmats.png",
+    "caption": "Figure 1: Architecture of the Generic Multi-Agent Trading System (GMATS).",
+    "figure_count": 4
+  }
+}

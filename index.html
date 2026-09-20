@@ -83,6 +83,15 @@
           追踪博弈智能领域的每日新动向与新方法：多智能体强化学习、博弈理论与均衡求解、LLM
           多智能体博弈、机制设计与对抗安全。
         </p>
+        <div class="hero__cta">
+          <button class="btn btn--solid" id="recruit-open-a" type="button" data-recruit>
+            干员寻访 · 单次
+          </button>
+          <button class="btn" id="recruit-open-b" type="button" data-recruit="10">
+            干员寻访 · 十连
+          </button>
+          <span class="micro">从今日档案中随机抽取条目，直接进入它的完整解读</span>
+        </div>
         <div class="hero__note" id="hero-note" hidden></div>
       </section>
 
@@ -108,16 +117,9 @@
         </div>
 
         <select class="select" id="sort" aria-label="排序方式">
-          <option value="tier">按稀有度排序</option>
-          <option value="score">按相关度排序</option>
-          <option value="date">按发布时间排序</option>
-        </select>
-
-        <select class="select" id="tier-filter" aria-label="稀有度筛选">
-          <option value="0">全部稀有度</option>
-          <option value="6">仅 6★</option>
-          <option value="5">5★ 及以上</option>
-          <option value="4">4★ 及以上</option>
+          <option value="default">默认顺序（按分区）</option>
+          <option value="date">按发布时间</option>
+          <option value="title">按标题</option>
         </select>
 
         <button class="btn" id="only-new" type="button" aria-pressed="true">仅看新增 ✓</button>
@@ -139,8 +141,8 @@
           <code>LLM-Multi-Agent</code> / <code>机制设计</code> 六路检索式，去重后按关键词打分排序。
         </div>
         <div>
-          页面说明：标有「精读」的条目为人工选读并撰写解读，其余为脚本自动收录的雷达条目；相关度分数与
-          ★ 分级仅用于快速筛选，不构成学术评价。
+          页面说明：标有「精读」的条目为人工选读并撰写图文解读，其余为脚本自动收录的雷达条目；
+          「干员职业」只标识研究方向（近卫 / 术师 / 重装 / 辅助 / 特种 / 狙击），不代表任何等级或质量评价。
         </div>
         <div style="margin-top: 8px">
           <span class="micro">Rhodes Island · Game Intelligence Radar</span>
@@ -148,6 +150,45 @@
       </footer>
     </main>
 
+    <!-- ============ 干员寻访 ============ -->
+    <div class="recruit" id="recruit" role="dialog" aria-modal="true" aria-label="干员寻访">
+      <div class="recruit__scrim" data-recruit-close></div>
+      <div class="recruit__panel">
+        <div class="recruit__top">
+          <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+            <path d="M24 3 43 14v20L24 45 5 34V14Z" fill="none" stroke="#ffb13b" stroke-width="2.4" />
+            <path d="M24 15.5 31 19.5v9L24 32.5 17 28.5v-9Z" fill="#ffb13b" />
+          </svg>
+          <div>
+            <h2>干员寻访</h2>
+            <span class="micro">Operator Recruitment · 从今日档案中检索</span>
+          </div>
+          <button class="recruit__x" type="button" data-recruit-close aria-label="关闭">✕</button>
+        </div>
+
+        <div class="recruit__actions">
+          <button class="recruit__btn" type="button" data-recruit>寻访一次</button>
+          <button class="recruit__btn recruit__btn--ghost" type="button" data-recruit="10">寻访十次</button>
+          <button class="recruit__btn recruit__btn--ghost" type="button" id="recruit-reset">重置寻访记录</button>
+        </div>
+
+        <p class="recruit__hint" id="recruit-hint">
+          每次寻访会从当日档案中随机抽出一则动向；已抽到过的不会重复出现。
+        </p>
+
+        <div class="stage" id="recruit-stage">
+          <div class="crack">
+            <div class="crack__hex"></div>
+            <div class="crack__ring"></div>
+            <span class="crack__txt">RECRUITING</span>
+          </div>
+        </div>
+
+        <div class="result" id="recruit-result"></div>
+      </div>
+    </div>
+
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/recruit.js"></script>
   </body>
 </html>

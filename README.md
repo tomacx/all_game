@@ -30,7 +30,9 @@
 | `scripts/fetch_daily.py` | **主抓取脚本**：arXiv + OpenAlex + Crossref 三路来源（纯标准库） |
 | `scripts/fetch_arxiv.py` | 仅 arXiv 的抓取实现，被 `fetch_daily.py` 复用 |
 | `scripts/resolve_ids.py` | 按标题反查 arXiv 编号，用于精读条目补链接 |
-| `tools/seed_briefing.py` | 精读回填（把人工解读写入当日 JSON） |
+| `tools/seed_briefing.py` | 早期一次性精读写入脚本（日期写死，仅作参考） |
+| `tools/backfill_briefing.py` | **精读回填**：读 `tools/briefs/<日期>.json`，合并 radar 元数据后追加进 `highlights`（幂等、不覆盖） |
+| `tools/briefs/<日期>.json` | 人工精读长文内容（只写内容，元数据自动补齐） |
 | `tools/build_curriculum.py` | 生成理论学习课程 JSON |
 | `.github/workflows/daily-update.yml` | 每日 3 个时段冗余触发 + 幂等 + 重试 + 日志 + 失败告警 |
 
@@ -148,7 +150,33 @@ python3 scripts/fetch_arxiv.py --days 3 --top 40    # 只用 arXiv 的旧脚本
 `--per-query`（arXiv 每路检索式条数）、`--per-term`（OpenAlex / Crossref 每主题词条数）、
 `--top`（最多入库条数）、`--force`、`--dry-run`。
 
-## 回填一篇精读
+## 回填一篇精读（推荐）
+
+1. 把人工长文写进 `tools/briefs/<日期>.json`（`items` 里每篇只需给 `id` + 中文标题 + `section`/`klass`/`tags`/`glance`/`essay`，
+   作者、期刊、链接、摘要等元数据由脚本自动从当日 `radar` 里按 `id`/`doi` 补齐）：
+
+```jsonc
+{
+  "items": [
+    { "id": "2609.18128", "title": "中文标题", "section": "机制设计与市场",
+      "klass": "supporter", "tags": ["LLM-Agent 安全"], "glance": "一句话亮点",
+      "essay": [{ "t": "lead", "v": "…" }, { "t": "h", "v": "…" }, { "t": "close", "v": "…" }] }
+  ],
+  "trends": ["本期趋势 1", "本期趋势 2"],
+  "note": "本期说明（显示在页面顶部）"
+}
+```
+
+2. 执行回填：
+
+```bash
+python3 tools/backfill_briefing.py 2026-09-21
+```
+
+脚本会：按 `id` 从当日 radar 取元数据合并 → **追加**进 `highlights`（已有精读不会被覆盖、不会重复）
+→ 更新 `trends` / `note` / `curated` → 同步 `digests/<日期>.md` 的趋势小结。
+
+## 手动直接改 JSON（旧方式）
 
 编辑 `data/daily/<日期>.json`，往 `highlights` 数组里加一条：
 

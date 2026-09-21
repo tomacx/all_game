@@ -1034,39 +1034,6 @@ a:hover {
   color: var(--accent);
 }
 
-/* 论文主图：图文穿插 */
-.fig {
-  margin: 20px 0;
-}
-.fig__frame {
-  background: #fff;
-  border: 1px solid var(--line);
-  padding: 10px;
-  box-shadow: var(--shadow);
-  clip-path: polygon(9px 0, 100% 0, 100% calc(100% - 9px), calc(100% - 9px) 100%, 0 100%, 0 9px);
-}
-.fig__frame img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.fig__cap {
-  margin: 9px 0 0;
-  font-size: 13px;
-  line-height: 1.7;
-  color: var(--ink-2);
-}
-.fig__cap b {
-  color: var(--accent);
-  font-weight: 600;
-}
-.fig__src {
-  margin: 3px 0 0;
-  font-size: 11.5px;
-  line-height: 1.6;
-  color: var(--ink-3);
-  font-style: italic;
-}
 
 /* ---------- 10.6 干员寻访 ---------- */
 .recruit {

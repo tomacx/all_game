@@ -344,13 +344,6 @@
           return "<p>" + esc(b.v) + "</p>";
         case "quote":
           return '<blockquote class="essay__quote">' + esc(b.v) + "</blockquote>";
-        case "fig":
-          return '<figure class="fig">' +
-            '<div class="fig__frame"><img src="' + esc(b.src) + '" alt="' + esc(b.cap || "论文主图") +
-            '" loading="lazy" /></div>' +
-            '<figcaption class="fig__cap"><b>图：</b>' + esc(b.cap || "") + "</figcaption>" +
-            (b.cap_en ? '<p class="fig__src">原图注：' + esc(b.cap_en) + "</p>" : "") +
-            "</figure>";
         case "close":
           return '<p class="essay__close"><strong>小结 · </strong>' + esc(b.v) + "</p>";
         default:

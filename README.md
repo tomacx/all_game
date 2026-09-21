@@ -21,7 +21,6 @@
 | `assets/css/ak.css` | 明日方舟风格样式（浅色 / 暗色双主题，CSS 变量驱动） |
 | `assets/js/app.js` | 读取 JSON 并渲染：搜索、标签筛选、分区归类、干员职业、视图切换 |
 | `assets/js/recruit.js` | 「干员寻访」：随机抽取当日条目，作为进入解读 / 雷达的入口 |
-| `assets/figures/` | 论文主图与 `manifest.json`（由 `scripts/fetch_figures.py` 抓取） |
 | `data/index.json` | 归档日索引（脚本自动维护） |
 | `data/daily/<日期>.json` | 当日数据：`highlights`（人工精读）+ `radar`（自动收录）+ `trends`（趋势小结） |
 | `digests/<日期>.md` | 当日清单 Markdown，供本地精读使用 |
@@ -53,17 +52,6 @@
 - 抽到精读条目 →「查看完整解读」直接跳到该条并展开图文长文。
 - 抽到雷达条目 →「在雷达中定位」切到雷达视图并搜索该标题。
 - 「重置寻访记录」可以清空已抽记录再来一轮。
-
-### 论文主图
-
-```bash
-python3 scripts/fetch_figures.py                 # 抓取所有精读条目的主图
-python3 scripts/fetch_figures.py 2609.15361      # 只抓指定编号
-```
-
-从 arXiv 的 HTML 渲染版提取主图（优先 `Fig. 1`，跳过 `(a)`、`(b)` 子图切片），
-下载到 `assets/figures/` 并记录原文图注到 `manifest.json`。纯理论论文没有位图时会跳过，
-对应的解读就只有文字。
 
 ### 每日自动更新
 
@@ -112,7 +100,6 @@ python3 scripts/fetch_arxiv.py --dry-run --days 7        # 只看统计，不写
     { "t": "lead",  "v": "引入段落：这篇在解决什么问题、为什么现在值得看" },
     { "t": "h",     "v": "分节标题" },
     { "t": "p",     "v": "叙述段落…" },
-    { "t": "fig",   "src": "figures/2609.12345.png", "cap": "中文图注", "cap_en": "原文图注" },
     { "t": "quote", "v": "值得摘出来的一句话" },
     { "t": "close", "v": "小结：可迁移的做法、要注意的坑" }
   ]
@@ -120,8 +107,7 @@ python3 scripts/fetch_arxiv.py --dry-run --days 7        # 只看统计，不写
 ```
 
 `essay` 按顺序渲染为博客正文：`lead` 作引入段，`h` 是分节标题，`p` 是正文段落，
-`fig` 插入论文主图并附中英双行图注，`quote` 是摘录，`close` 是小结。
-块类型可以自由增删，图放在哪一段后面，就出现在哪一段后面。
+`quote` 是摘录，`close` 是小结。块类型可以自由增删，顺序即呈现顺序。
 
 写进 `trends` 数组的是本期趋势小结（字符串数组）。`note` 字段会显示在页面顶部说明栏。
 脚本重跑时这三个字段会被保留，不会被 radar 覆盖。

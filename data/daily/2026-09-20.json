@@ -56,10 +56,8 @@
           "v": "架构上是 attention 消息编码器配一套消息正则化机制，让协议自发涌现，而不是靠人工设计消息格式。这一点和常见的 Gumbel-Softmax 离散化字典路线很不一样：后者是你替它规定码本，前者是它自己找出该说什么。"
         },
         {
-          "t": "fig",
-          "src": "figures/2609.15361.jpg",
-          "cap": "MARC 的通信架构：消息编码器挂在任意值函数分解方法之上（图中 mixer 模块），全参数共享；粉色菱形为消息正则化单元。",
-          "cap_en": "Fig. 2: Architecture of the proposed communication method for MARL."
+          "t": "p",
+          "v": "具体到架构，MARC 的消息编码器直接挂在任意值函数分解方法之上（也就是常见的 mixer 模块），全参数共享；另设一组消息正则化单元，专门负责压制冗余信息。"
         },
         {
           "t": "p",
@@ -115,10 +113,8 @@
           "v": "场景是无限视界折扣马尔可夫博弈，反馈只有 bandit 信号。作者聚焦 Markov α-potential games（近似势博弈），给出 KL 投影自然策略梯度，并把 episodic（采样期冻结策略）与 fully-online（单样本、异步、连续轨迹）两种设定一并覆盖。"
         },
         {
-          "t": "fig",
-          "src": "figures/2609.14959.png",
-          "cap": "战略性在线作业调度：各玩家随时间收到作业，自行选择投给哪几台机器；机器是共享资源，本地处理条件随机演化。",
-          "cap_en": "Figure 1: Strategic online job scheduling on stochastic machines."
+          "t": "p",
+          "v": "问题设定是这样的：各玩家随时间陆续收到作业，自行决定投给哪几台机器；机器是共享资源，其本地处理条件还在随机演化。"
         },
         {
           "t": "p",
@@ -175,10 +171,8 @@
           "v": "配套的是 table fusion 与时域多数重构（temporal majority reconstruction），用来抵消动态拓扑带来的信息漂移。你会意识到，这个选择一举解决三件事：隐私（不泄露收益函数）、带宽（语义信号只需极低比特）、拓扑时变。"
         },
         {
-          "t": "fig",
-          "src": "figures/2609.17601.png",
-          "cap": "以局部收益之和作为社会福利时的学习轨迹（原图 (a) 面板）：agents 在无中心协调下自发选出社会合意的均衡。",
-          "cap_en": "(a) Sum of Local Payoffs as Social Welfare"
+          "t": "p",
+          "v": "以局部收益之和作为社会福利来衡量，学习轨迹给出的答案是肯定的：agents 在没有中心协调的情况下，自发收敛到了社会合意的均衡。"
         },
         {
           "t": "h",
@@ -233,10 +227,8 @@
           "v": "算法上用递归网络捕捉观测不到的供需演化，配 MAPPO 的 CTDE（集中训练、分散执行）范式。"
         },
         {
-          "t": "fig",
-          "src": "figures/2609.18639.png",
-          "cap": "on-policy 训练动态：(a) 回合奖励、(b) 网络日均服务量、(c) 日均服务差距；曲线为百回合滑动平均。",
-          "cap_en": "Figure 2: On-policy training dynamics: (a) episodic reward, (b) mean daily network service, (c) mean daily service gap."
+          "t": "p",
+          "v": "训练动态上，作者报告了三条 on-policy 曲线——回合奖励、网络日均服务量、日均服务差距——均取百回合滑动平均。"
         },
         {
           "t": "h",
@@ -378,10 +370,8 @@
           "v": "这个结论顺带重新解释了 RLHF 里的 KL 锚点：它不只是稳定性的缰绳，更是一个选择旋钮。你在对齐时挑的不只是「安全」，而是一个特定的均衡。"
         },
         {
-          "t": "fig",
-          "src": "figures/2609.19820.png",
-          "cap": "可控性（E2）：实际选中的坐标 c_sel 对目标坐标 c_target，跨五个博弈、固定参考与细化参考两种设置（多种子均值 ± 标准差）；虚线为恒等线，点线为最大熵成员。",
-          "cap_en": "Figure 1: Controllability (E2). Achieved coordinate vs requested for fixed and refined references."
+          "t": "p",
+          "v": "可控性实验（E2）比较的是实际选中的坐标 c_sel 与目标坐标 c_target：跨五个博弈、固定参考与细化参考两种设置，多种子取均值±标准差，并以恒等线、最大熵成员作为参照。"
         },
         {
           "t": "p",
@@ -439,10 +429,8 @@
           "v": "理论上的关键一步是——传统的 sup-norm 误差界根本无法评价这种「故意让一些格子不准」的估计器。作者改用一个 instance-dependent 界：按对手的均衡混合对误差加权，而且这个证书仅凭仿真数据就能算出来。"
         },
         {
-          "t": "fig",
-          "src": "figures/2609.19399.png",
-          "cap": "在每轮 5% 收益预算下、十二轮 PSRO 迭代中的可剥削性曲线：RWPS 在同预算下低于 minimum-regret-first、information-gain 与 progressive sampling。",
-          "cap_en": "Figure 1: Exploitability against the full game over twelve PSRO iterations at a 5% per-build payoff budget."
+          "t": "p",
+          "v": "在每轮 5% 收益预算下的十二轮 PSRO 迭代中，可剥削性曲线显示 RWPS 始终低于 minimum-regret-first、information-gain 与 progressive sampling 三条基线。"
         },
         {
           "t": "h",
@@ -496,10 +484,8 @@
           "v": "结果是四个博弈里都观察到了不稳定轨迹，而 cheap talk 总体上起到稳定化作用，其中 5 次修正性反转集中在社交与团队框架下。"
         },
         {
-          "t": "fig",
-          "src": "figures/2609.16270.png",
-          "cap": "Qwen 上实验 1 的机制拆解：每根柱子把「预期切换率的下降」拆成轮间 P(A) 漂移减少（蓝）与行动不确定性降低（橙）两部分，菱形为两者之和。",
-          "cap_en": "Figure 2: Experiment 1 decomposition for Qwen — reduced between-round drift (blue) and reduced action uncertainty (orange)."
+          "t": "p",
+          "v": "Qwen 上实验 1 的机制拆解说明了一件事：预期切换率的下降可以拆成两部分——轮间 P(A) 漂移的减少，与行动不确定性的降低——两者相加即为总效应。"
         },
         {
           "t": "h",
@@ -550,10 +536,8 @@
           "v": "作者构造了一类必须做递归信念推理才能解好的多智能体不完美信息博弈（公共品博弈）。诊断工具是真正的创新：引入理性预期均衡（REE）作基准。REE 与历史无关，因此「偏离 REE 的程度」就能直接量化 ICL 到底是在推理还是在外推。"
         },
         {
-          "t": "fig",
-          "src": "figures/2609.18591.png",
-          "cap": "多智能体系统中的关系复杂性：当每个人都在持续影响其他人时，单次决策就不再是简单逻辑，而变成一层层相互猜测的递归循环。",
-          "cap_en": "Figure 1: Relational Complexity in Multi-Agent Systems."
+          "t": "p",
+          "v": "所谓关系复杂性，指的是当系统中每个人都在持续影响其他人时，单次决策就不再是简单逻辑，而变成一层层相互猜测的递归循环。"
         },
         {
           "t": "h",
@@ -606,10 +590,8 @@
           "v": "Flag Game 的设定极简：隐藏的国旗是真值，每个有界 agent 只直接观测私有的局部裁剪图，但可以交换信念、并对同伴的社会性证据加权。就是这么个玩具，复现出了相当丰富的集体现象。"
         },
         {
-          "t": "fig",
-          "src": "figures/2609.19124.jpg",
-          "cap": "Flag Game 示意：隐藏旗帜只能通过私有证据观测，有界 agents 交换报告，系统追踪各 agent 的计数与信念演化。",
-          "cap_en": "Figure 1: The Flag Game — a hidden flag observed through private evidence; bounded agents exchange reports."
+          "t": "p",
+          "v": "Flag Game 的设定是这样的：隐藏旗帜只能通过私有证据观测，有界 agents 之间交换报告，系统则持续追踪各 agent 的计数与信念演化。"
         },
         {
           "t": "h",
@@ -668,10 +650,8 @@
           "v": "Emergence World 是一个持续运行的多智能体环境：8 个并行世界 × 每世界 10 个 agent，全部从完全相同的初始条件出发。其中 7 个同质世界各由一个前沿模型驱动，再加 1 个混合模型世界——这个对照设计相当漂亮。"
         },
         {
-          "t": "fig",
-          "src": "figures/2609.17320.jpg",
-          "cap": "Emergence World 城镇俯视图：市政厅、中央银行、凯旋门、公共图书馆、警察局与 Agent TechHub 等关键制度性地标；住宅与其他地标从略。",
-          "cap_en": "Figure 2: Aerial view of the Emergence World town, with key institutional landmarks shown."
+          "t": "p",
+          "v": "Emergence World 是一座虚拟城镇，其中布置了市政厅、中央银行、凯旋门、公共图书馆、警察局与 Agent TechHub 等关键制度性地标（住宅与其他地标从略）。"
         },
         {
           "t": "p",
@@ -734,10 +714,8 @@
           "v": "核心定理给出的是充要条件，这一点相当强：每个审阅 agent 报告「该提案是否优于基线（按它自己的效用）」，那么容忍 k 张反对票的阈值规则是安全的，当且仅当——移除任意 k 个审阅者后，委托方的效用仍可写成剩余审阅者效用的非负组合，再加上一个在所有可行提案上非负的项。作者称之为 k-robust coalitional alignment。"
         },
         {
-          "t": "fig",
-          "src": "figures/2609.15803.png",
-          "cap": "阈值规则的近似保证：每个容忍度组合下，颜色给出同时满足两项保证的响应 (a) 或提示 (b) 的最大比例（在整个基准上统一选取 k）。",
-          "cap_en": "Figure 7: Approximate threshold-rule guarantees — greatest fraction of responses (a) or prompts (b) satisfying both guarantees."
+          "t": "p",
+          "v": "阈值规则的近似保证可以这样量化：在每个容忍度组合下，统计同时满足两项保证的响应与提示各自的最大比例，参数 k 在整个基准上统一选取。"
         },
         {
           "t": "h",
@@ -840,10 +818,8 @@
           "v": "第一步就值得学习：构建 matched-objective harness，标准化扰动预算、目标函数和前向路径，确保公平对比。这一步很关键——之前那些「鲁棒性差距」，很可能只是实验设置不统一造成的假象。"
         },
         {
-          "t": "fig",
-          "src": "figures/2609.17856.png",
-          "cap": "攻击与防御的定性可视化（受害者融合场景视角）：攻击者 1 在 matched-objective harness 下扰动其发送的特征；计数为 IoU 0.5 下恢复出的真实物体数。",
-          "cap_en": "Figure 2: Qualitative visualization of attacks and the defenses, seen on the fused scene by victim."
+          "t": "p",
+          "v": "从受害者融合场景的视角做定性观察：攻击者 1 在 matched-objective harness 下扰动其发送的特征；各方案的计数按 IoU 0.5 下恢复出的真实物体数给出。"
         },
         {
           "t": "h",
@@ -900,10 +876,8 @@
           "v": "作者先抽象出现代多智能体交易架构 GMATS，再实例化一类黑盒投毒攻击者：把 LLM 当作「帖子生成器」，向分析师的证据流里注入预算受限、看起来完全良性的社交媒体内容。注意约束——纯输入，只通过 admissible feeds 进入，不碰系统内部。"
         },
         {
-          "t": "fig",
-          "src": "figures/2609.19789.jpg",
-          "cap": "通用多智能体交易系统（GMATS）架构：投毒内容从分析师层的证据流进入，经协调层汇总后影响最终执行。",
-          "cap_en": "Figure 1: Architecture of the Generic Multi-Agent Trading System (GMATS)."
+          "t": "p",
+          "v": "通用多智能体交易系统（GMATS）的架构链条是：投毒内容从分析师层的证据流进入，经协调层汇总后，最终影响执行决策。"
         },
         {
           "t": "h",
@@ -931,7 +905,7 @@
     "LLM 多智能体的安全研究完成了从「单点失效」到「系统性失效」的范式跃迁。Emergence World 等共同指向一个结论：对齐不是可组合的——个体安全的 agent 组成的社会会出现质变失败模式，且失败会沿记忆、工具、隐式通信路径长程传播。",
     "群体智能的「人多力量大」正在被系统性证伪。Flag Game 给出机制解释（小群体信念坍缩 → 大群体极化），同族工作则从模型池选择、任务依赖结构两个角度给出边界条件：多智能体的优势被任务结构而非 agent 数量决定。"
   ],
-  "note": "本期由本地人工精读回填：arXiv 索引窗口 2026-09-13 ~ 2026-09-17 共命中 131 篇去重论文，经四项筛选标准精读摘要后精选 16 篇；解读为博客式图文长文，配图取自论文原图。下方雷达为脚本自动抓取的补充条目。",
+  "note": "本期由本地人工精读回填：arXiv 索引窗口 2026-09-13 ~ 2026-09-17 共命中 131 篇去重论文，经四项筛选标准精读摘要后精选 16 篇；解读为博客式长文。下方雷达为脚本自动抓取的补充条目。",
   "radar": [
     {
       "id": "2609.14959",
@@ -2176,5 +2150,6 @@
         "分类·博弈论"
       ]
     }
-  ]
+  ],
+  "curated": true
 }

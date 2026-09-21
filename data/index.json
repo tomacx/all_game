@@ -4,8 +4,8 @@
       "date": "2026-09-21",
       "radar_count": 60,
       "highlight_count": 0,
-      "new_count": 48,
-      "total_hits": 2347
+      "new_count": 16,
+      "total_hits": 1447
     },
     {
       "date": "2026-09-20",
@@ -15,5 +15,5 @@
       "total_hits": 2347
     }
   ],
-  "updated_at": "2026-09-21T06:26:16Z"
+  "updated_at": "2026-09-21T06:52:48Z"
 }

@@ -139,6 +139,15 @@ SECTION_RULES: list[tuple[str, list[str]]] = [
 
 UA = "all-game-radar/1.0 (Game Intelligence Daily Radar; mailto:maintainer@example.com)"
 
+# arXiv 对部分来源（含 GitHub Actions 出口 IP / 非浏览器 UA）会返回 406，
+# 因此准备一组 UA 轮换重试；Accept 头显式声明要 Atom。
+UA_FALLBACKS = [
+    UA,
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
+    "curl/8.4.0",
+]
+ACCEPT = "application/atom+xml, application/xml, text/xml, */*"
+
 
 # --------------------------------------------------------------------------- #
 # 工具
@@ -150,17 +159,24 @@ def log(msg: str) -> None:
 
 
 def http_get(url: str, retries: int = 3, timeout: int = 60) -> bytes:
-    """带指数退避的 GET。arXiv 偶发 5xx / 限流，重试即可。"""
+    """带指数退避与 UA 轮换的 GET。
+
+    arXiv 偶发 5xx / 限流 / 406（对非浏览器 UA），重试即可；
+    406 时换一个 UA 再试，避免整个来源在 CI 上被判死。
+    """
     last_err: Exception | None = None
     for attempt in range(retries):
+        ua = UA_FALLBACKS[attempt % len(UA_FALLBACKS)]
         try:
-            req = urllib.request.Request(url, headers={"User-Agent": UA})
+            req = urllib.request.Request(
+                url, headers={"User-Agent": ua, "Accept": ACCEPT}
+            )
             with urllib.request.urlopen(req, timeout=timeout) as resp:
                 return resp.read()
         except Exception as exc:  # noqa: BLE001 - 网络层异常种类太多
             last_err = exc
             wait = 3 * (attempt + 1)
-            log(f"请求失败（第 {attempt + 1} 次）：{exc}，{wait}s 后重试")
+            log(f"请求失败（第 {attempt + 1} 次，UA={ua[:28]}…）：{exc}，{wait}s 后重试")
             time.sleep(wait)
     raise RuntimeError(f"网络请求持续失败：{last_err}")
 
@@ -210,7 +226,7 @@ def fetch_query(query: str, max_results: int = 120) -> list[ET.Element]:
         }
     )
     url = f"{ARXIV_API}?{params}"
-    raw = http_get(url)
+    raw = http_get(url, retries=4)
     root = ET.fromstring(raw)
     return root.findall("a:entry", ATOM_NS)
 

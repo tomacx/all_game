@@ -40,7 +40,7 @@
 
 | 来源 | 覆盖 | 检索规则 |
 |---|---|---|
-| **arXiv** | 预印本，时效最快 | 六路检索式：`cs.MA`、`cs.GT`、`MARL`、`Nash equilibrium`、`机制设计`、`LLM × multi-agent`；按提交时间窗过滤（默认 7 天，用于对冲 arXiv 索引 1–3 天的滞后） |
+| **arXiv** | 预印本，时效最快 | 六路检索式：`cs.MA`、`cs.GT`、`MARL`、`Nash equilibrium`、`机制设计`、`LLM × multi-agent`；按提交时间窗过滤（默认 7 天，用于对冲 arXiv 索引 1–3 天的滞后）。**兜底**：arXiv API 在部分网络环境（GitHub Actions 出口 IP）会返回 406，此时自动改用 OpenAlex 的 arXiv 源（`S4306400194`）取同样的预印本，并在日志里记为 `OpenAlex·arXiv` |
 | **OpenAlex** | CCF-A 顶会顶刊 | ① 按 6 个主题词做 `title_and_abstract.search`；② 对领域顶刊按 **ISSN 精确检索**：`Games and Economic Behavior`、`Journal of Economic Theory`、`Econometrica`、`Operations Research`、`Mathematics of Operations Research`、`Management Science`、`Theoretical Economics`、`JMLR`、`TPAMI`、`Artificial Intelligence`（默认回溯 90 天，顶刊出版慢） |
 | **Crossref** | Nature / Science 及其子刊 | 按 **ISSN 逐个精确检索**：Nature、Science、Nature Machine Intelligence、Nature Communications、Nature Human Behaviour、Nature Computational Science、Science Advances、PNAS、Nature Reviews Physics；另有 6 路期刊主题检索兜底 |
 

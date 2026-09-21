@@ -11,13 +11,49 @@
     index: { days: [] },
     day: null,        // 当日数据
     date: null,       // 当前归档日期
-    view: "brief",    // brief | radar | trends
+    view: "brief",    // brief | radar | learn | trends
     q: "",
     tags: [],         // 已选标签
-    sort: "default",  // default | date | title
+    sort: "default",  // default | impact | date | title
+    src: "all",       // all | top | ccf_a | journal | preprint
     onlyNew: true,
-    openAll: false
+    openAll: false,
+    curriculum: null, // 主线课程（data/learning/curriculum.json）
+    learned: {},      // 已完成章节（localStorage）
+    openCh: null      // 当前展开的章节 id
   };
+
+  /* 来源与影响力：只标注「来自哪里、什么类型」，不做质量评级 */
+  var IMPACT = {
+    top:      { cn: "顶刊",   cls: "imp--top" },
+    ccf_a:    { cn: "CCF-A",  cls: "imp--ccfa" },
+    journal:  { cn: "期刊",   cls: "imp--journal" },
+    preprint: { cn: "预印本", cls: "imp--pre" },
+    other:    { cn: "其他",   cls: "imp--other" }
+  };
+
+  function impactOf(item) {
+    var key = item && item.impact ? item.impact : "";
+    if (!key && item) {
+      // 兼容旧数据：只有 arXiv 时按预印本处理
+      key = (item.abs_url || item.primary_category) ? "preprint" : "other";
+    }
+    return IMPACT[key] ? key : "other";
+  }
+
+  function impactBadge(item) {
+    var k = impactOf(item);
+    var m = IMPACT[k];
+    return '<span class="imp ' + m.cls + '">' + m.cn + "</span>";
+  }
+
+  function venueOf(item) {
+    return item.venue || item.venue_raw || (impactOf(item) === "preprint" ? "arXiv" : "—");
+  }
+
+  function linkOf(item) {
+    return item.url || item.abs_url || "#";
+  }
 
   /* 干员职业：只用于标识研究方向，不做任何等级评价 */
   var KLASS = {
@@ -140,6 +176,11 @@
         renderTagbar();
         render();
         document.dispatchEvent(new CustomEvent("ag:ready", { detail: { date: state.date } }));
+        return getJSON("data/learning/curriculum.json").catch(function () { return null; });
+      })
+      .then(function (cur) {
+        state.curriculum = cur;
+        if (cur && state.view === "learn") { render(); }
       })
       .catch(function (err) {
         $("#view").innerHTML =
@@ -158,6 +199,10 @@
     $("#hud-radar").textContent = (d.radar || []).length;
     $("#hud-new").textContent = (d.source && d.source.new_count) || 0;
     $("#hud-scan").textContent = (d.source && d.source.total_raw) || 0;
+    var topN = (d.radar || []).filter(function (r) {
+      return r.impact === "top" || r.impact === "ccf_a";
+    }).length;
+    $("#hud-top").textContent = topN;
   }
 
   function renderHero() {
@@ -170,7 +215,13 @@
       (src.unique || 0) + "</strong> 篇；其中人工精读 <strong>" +
       (d.highlights || []).length + "</strong> 篇，雷达收录 <strong>" +
       (d.radar || []).length + "</strong> 篇，<strong style=\"color:var(--accent)\">今日新增 " +
-      (src.new_count || 0) + " 篇</strong>（已与往期 " + (src.seen_before || 0) + " 篇比对去重）。";
+      (src.new_count || 0) + " 篇</strong>（已与往期 " + (src.seen_before || 0) + " 篇比对去重）。" +
+      (src.by_impact
+        ? '<br><span class="micro">影响力构成：' +
+          Object.keys(src.by_impact).map(function (k) {
+            return esc(k) + " " + src.by_impact[k];
+          }).join(" · ") + "</span>"
+        : "");
     var note = $("#hero-note");
     if (d.note) { note.hidden = false; note.textContent = d.note; } else { note.hidden = true; }
   }
@@ -227,6 +278,10 @@
     return items.filter(function (it) {
       // 「仅看新增」只在雷达视图生效，且不影响当日精读条目
       if (state.onlyNew && state.view === "radar" && !it.curated && !it.is_new) return false;
+      // 来源 / 影响力筛选（只在雷达视图生效）
+      if (state.src !== "all" && state.view === "radar") {
+        if (impactOf(it) !== state.src) return false;
+      }
       if (state.tags.length) {
         var own = it.tags || [];
         var hit = state.tags.some(function (t) { return own.indexOf(t) !== -1; });
@@ -242,8 +297,22 @@
       arr.sort(function (a, b) { return String(b.published || "").localeCompare(String(a.published || "")); });
     } else if (state.sort === "title") {
       arr.sort(function (a, b) { return String(a.title || "").localeCompare(String(b.title || ""), "zh"); });
+    } else if (state.sort === "impact") {
+      // 影响力降序 → 相关度降序 → 时间降序
+      var ord = { top: 0, ccf_a: 1, journal: 2, preprint: 3, other: 4 };
+      var rankOf = function (x) {
+        var v = ord[impactOf(x)];
+        return typeof v === "number" ? v : 9;   // 注意 top=0，不能用 || 兜底
+      };
+      arr.sort(function (a, b) {
+        var d = rankOf(a) - rankOf(b);
+        if (d) return d;
+        var s = (b.score || 0) - (a.score || 0);
+        if (s) return s;
+        return String(b.published || "").localeCompare(String(a.published || ""));
+      });
     }
-    return arr; // default：保持分区归类后的原始顺序
+    return arr; // default：保持抓取脚本给出的综合排序（影响力 + 相关度 + 时效）
   }
 
   /* ------------------------------ 渲染：标签栏 ------------------------------ */
@@ -333,7 +402,12 @@
       return old;
     }
 
-    return '<div class="essay">' + blocks.map(function (b) {
+    return '<div class="essay">' + blocksHTML(h.essay) + "</div>";
+  }
+
+  /** 内容块渲染（解读与课程章节共用） */
+  function blocksHTML(blocks) {
+    return (blocks || []).map(function (b) {
       if (!b) return "";
       switch (b.t) {
         case "lead":
@@ -349,7 +423,7 @@
         default:
           return b.v ? "<p>" + esc(b.v) + "</p>" : "";
       }
-    }).join("") + "</div>";
+    }).join("");
   }
 
   function renderBrief(items) {
@@ -383,13 +457,16 @@
       return '<div class="radar__row" data-klass="' + klassOf(r) + '">' +
         '<div class="radar__dot"></div>' +
         '<div class="radar__body">' +
-          '<a class="radar__title" href="' + esc(r.abs_url) + '" target="_blank" rel="noopener">' +
+          '<a class="radar__title" href="' + esc(linkOf(r)) + '" target="_blank" rel="noopener">' +
             esc(r.title) + "</a>" +
           '<p class="radar__abs">' + esc(r.summary_short || "") + "</p>" +
           '<div class="radar__meta">' +
+            impactBadge(r) +
+            '<span class="radar__venue" title="' + esc(r.venue_raw || "") + '">' + esc(venueOf(r)) + "</span>" +
+            (r.provider ? '<span class="radar__prov">' + esc(r.provider) + "</span>" : "") +
             "<span>" + esc(r.primary_category || "") + "</span>" +
             "<span>" + esc(r.published || "") + "</span>" +
-            "<span>" + esc(authorLine(r.authors, 3)) + "</span>" +
+            "<span>" + esc(authorLine(r.authors, 2)) + "</span>" +
             (r.curated
               ? '<span class="tag" style="border-color:var(--accent);color:var(--accent)">精读</span>'
               : "") +
@@ -413,6 +490,206 @@
     }).join("") + "</ul>";
   }
 
+  /* ------------------------------ 渲染：理论学习（主线剧情） ------------------------------ */
+
+  var LEARN_KEY = "all_game_learned";
+
+  function loadLearned() {
+    var raw = null;
+    try { raw = localStorage.getItem(LEARN_KEY); } catch (e) {}
+    try { state.learned = raw ? JSON.parse(raw) : {}; } catch (e) { state.learned = {}; }
+    if (!state.learned || typeof state.learned !== "object") state.learned = {};
+  }
+
+  function saveLearned() {
+    try { localStorage.setItem(LEARN_KEY, JSON.stringify(state.learned)); } catch (e) {}
+  }
+
+  /** 已解锁关卡数 = 序章默认解锁 + 每过一天解锁一章 + 每完成一章提前解锁一章 */
+  function unlockedCount() {
+    var cur = state.curriculum;
+    if (!cur) return 0;
+    var dayIndex = 0;
+    if (state.index.days && state.index.days.length && cur.start_date) {
+      var latest = state.index.days[0].date;
+      var a = new Date(cur.start_date + "T00:00:00Z");
+      var b = new Date(latest + "T00:00:00Z");
+      dayIndex = Math.max(0, Math.round((b - a) / 86400000));
+    }
+    var doneN = Object.keys(state.learned).length;
+    return Math.min(cur.total, (cur.prelude_unlock || 0) + dayIndex * (cur.per_day || 1) + doneN);
+  }
+
+  function allChapters() {
+    if (!state.curriculum) return [];
+    var out = [];
+    state.curriculum.acts.forEach(function (a) {
+      a.chapters.forEach(function (c) { out.push({ act: a, ch: c }); });
+    });
+    return out;
+  }
+
+  function chapterStatus(ch) {
+    if (state.learned[ch.id]) return "done";
+    if (ch.n <= unlockedCount()) return "open";
+    return "lock";
+  }
+
+  function chapterNodeHTML(entry) {
+    var ch = entry.ch;
+    var st = chapterStatus(ch);
+    var k = klassOf(ch);
+    return '<button type="button" class="chnode chnode--' + st + '" data-ch="' + esc(ch.id) + '"' +
+      ' data-klass="' + k + '"' + (st === "lock" ? " disabled" : "") + ">" +
+      '<span class="chnode__n">' + (st === "lock" ? "🔒" : String(ch.n).padStart(2, "0")) + "</span>" +
+      '<span class="chnode__ttl">' + esc(ch.title) + "</span>" +
+      '<span class="chnode__sub">' + esc(st === "lock" ? "待解锁" : ch.subtitle) + "</span>" +
+      '<span class="chnode__st">' +
+        (st === "done" ? "已完成 ✓" : st === "open" ? "待学习" : "未解锁") +
+      "</span>" +
+      "</button>";
+  }
+
+  function renderLearn() {
+    var cur = state.curriculum;
+    if (!cur) {
+      return '<div class="empty">课程数据尚未载入。运行 <code>tools/build_curriculum.py</code> 生成 ' +
+        "<code>data/learning/curriculum.json</code>。</div>";
+    }
+    var total = cur.total;
+    var doneN = Object.keys(state.learned).length;
+    var openN = unlockedCount();
+    var pct = total ? Math.round((doneN / total) * 100) : 0;
+    var openPct = total ? Math.round((openN / total) * 100) : 0;
+
+    // 今日关卡：第一个「已解锁但未完成」的章节
+    var todayCh = null;
+    allChapters().forEach(function (e) {
+      if (!todayCh && chapterStatus(e.ch) === "open") todayCh = e.ch;
+    });
+
+    var html = "" +
+      '<section class="story brackets">' +
+        '<div class="story__top">' +
+          '<div>' +
+            '<div class="story__eyebrow"><span class="tick"></span><span class="micro">Main Story · 主线剧情</span></div>' +
+            "<h2>" + esc(cur.title) + "</h2>" +
+            '<p class="story__intro">' + esc(cur.intro) + "</p>" +
+          "</div>" +
+          '<div class="story__stat">' +
+            '<div><span class="story__num">' + doneN + " / " + total + "</span>" +
+              '<span class="micro">已完成关卡</span></div>' +
+            '<div><span class="story__num">' + openN + " / " + total + "</span>" +
+              '<span class="micro">已解锁关卡</span></div>' +
+          "</div>" +
+        "</div>" +
+        '<div class="story__bar"><span class="story__bar-open" style="width:' + openPct + '%"></span>' +
+          '<span class="story__bar-done" style="width:' + pct + '%"></span></div>' +
+        '<div class="story__legend">' +
+          '<span class="micro">解锁进度 ' + openPct + "% · 完成进度 " + pct + "%</span>" +
+          '<span class="micro">每日更新自动解锁 ' + (cur.per_day || 1) +
+            " 章 · 完成一章额外提前解锁 1 章</span>" +
+        "</div>" +
+        (todayCh
+          ? '<div class="story__today"><span class="micro">今日关卡</span>' +
+            '<strong>' + String(todayCh.n).padStart(2, "0") + " · " + esc(todayCh.title) + "</strong>" +
+            '<span class="micro">' + esc(todayCh.subtitle) + "</span>" +
+            '<button class="btn btn--solid" type="button" data-ch="' + esc(todayCh.id) + '">进入关卡</button></div>'
+          : '<div class="story__today"><span class="micro">主线已全部完成 · 等待明日更新解锁新章</span></div>') +
+      "</section>";
+
+    cur.acts.forEach(function (a) {
+      var actDone = a.chapters.filter(function (c) { return state.learned[c.id]; }).length;
+      var actOpen = a.chapters.filter(function (c) { return chapterStatus(c) !== "lock"; }).length;
+      html += '<div class="sect">' + hexSvg() + "<h2>" + esc(a.name) + "</h2>" +
+        '<span class="sect__line"></span><span class="sect__count">' +
+        actDone + " / " + a.chapters.length + " 章完成 · " + actOpen + " 章已解锁</span></div>";
+      html += '<p class="act__sub">' + esc(a.subtitle) + "</p>";
+      html += '<div class="chapters">' + a.chapters.map(function (c) {
+        return chapterNodeHTML({ act: a, ch: c });
+      }).join("") + "</div>";
+    });
+    return html;
+  }
+
+  /** 展开某章节正文（插入到该章节节点之后） */
+  function toggleChapter(id) {
+    var cur = state.curriculum;
+    if (!cur) return;
+    var entry = null;
+    allChapters().forEach(function (e) { if (e.ch.id === id) entry = e; });
+    if (!entry) return;
+    var ch = entry.ch;
+
+    var old = document.querySelector(".chdetail");
+    if (old) old.remove();
+    if (state.openCh === id) { state.openCh = null; return; }
+    state.openCh = id;
+
+    var node = document.querySelector('[data-ch="' + id + '"].chnode');
+    if (!node) return;
+    var st = chapterStatus(ch);
+    var div = document.createElement("div");
+    div.className = "chdetail";
+    div.innerHTML =
+      '<div class="chdetail__head">' +
+        '<span class="chdetail__n">' + String(ch.n).padStart(2, "0") + "</span>" +
+        "<h3>" + esc(ch.title) + "</h3>" +
+        klassChip(ch, true) +
+        '<button class="chdetail__x" type="button" data-chclose aria-label="收起">✕</button>' +
+      "</div>" +
+      '<p class="chdetail__sub">' + esc(ch.subtitle) + "</p>" +
+      '<div class="essay">' + blocksHTML(ch.blocks || []) + "</div>" +
+      '<div class="chdetail__check">' +
+        '<span class="micro">思考题</span><p>' + esc(ch.checkpoint || "") + "</p></div>" +
+      '<div class="chdetail__act">' +
+        '<button class="btn btn--solid" type="button" data-done="' + esc(ch.id) + '">' +
+          (st === "done" ? "取消完成标记" : "标记本章已完成 ✓") + "</button>" +
+        '<span class="micro">完成一章会额外提前解锁下一章</span>' +
+      "</div>";
+    node.parentNode.insertBefore(div, node.nextSibling);
+
+    // 详情是动态插入的，必须在这里单独绑事件（bindLearn 跑不到它）
+    var xb = div.querySelector("[data-chclose]");
+    if (xb) xb.addEventListener("click", function () { toggleChapter(id); });
+    var db = div.querySelector("[data-done]");
+    if (db) db.addEventListener("click", function () {
+      if (state.learned[id]) delete state.learned[id]; else state.learned[id] = 1;
+      saveLearned();
+      state.openCh = null;
+      render();
+    });
+  }
+
+  function bindLearn() {
+    Array.prototype.forEach.call(document.querySelectorAll(".chnode"), function (b) {
+      b.addEventListener("click", function () { toggleChapter(b.getAttribute("data-ch")); });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-chclose]"), function (b) {
+      b.addEventListener("click", function () { toggleChapter(state.openCh); });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[data-done]"), function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-done");
+        if (state.learned[id]) delete state.learned[id]; else state.learned[id] = 1;
+        saveLearned();
+        state.openCh = null;
+        render();
+      });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll(".story__today [data-ch]"), function (b) {
+      b.addEventListener("click", function () {
+        var id = b.getAttribute("data-ch");
+        state.openCh = null;
+        toggleChapter(id);
+        var el = document.querySelector(".chdetail");
+        if (el && typeof el.scrollIntoView === "function") {
+          el.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      });
+    });
+  }
+
   /* ------------------------------ 主渲染 ------------------------------ */
 
   function render() {
@@ -420,6 +697,11 @@
     var box = $("#view");
     if (state.view === "trends") {
       box.innerHTML = renderTrends();
+      return;
+    }
+    if (state.view === "learn") {
+      box.innerHTML = renderLearn();
+      bindLearn();
       return;
     }
     var pool = state.view === "radar" ? allItems() : (state.day.highlights || []);
@@ -461,6 +743,11 @@
     });
 
     $("#sort").addEventListener("change", function (e) { state.sort = e.target.value; render(); });
+
+    var sf = $("#src-filter");
+    if (sf) {
+      sf.addEventListener("change", function (e) { state.src = e.target.value; render(); });
+    }
 
     $("#only-new").addEventListener("click", function () {
       state.onlyNew = !state.onlyNew;
@@ -535,6 +822,7 @@
   /* ------------------------------ 启动 ------------------------------ */
 
   initTheme();
+  loadLearned();
   bind();
   load();
 })();

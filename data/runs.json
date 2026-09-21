@@ -1,0 +1,108 @@
+{
+  "runs": [
+    {
+      "date": "2026-09-21",
+      "at": "2026-09-21T06:09:48Z",
+      "ok": true,
+      "total_raw": 2020,
+      "unique": 1103,
+      "kept": 60,
+      "new_count": 55,
+      "by_source": {
+        "arXiv": 124,
+        "OpenAlex": 517,
+        "Crossref": 603
+      },
+      "by_impact": {
+        "期刊": 17,
+        "CCF-A": 2,
+        "其他": 33,
+        "预印本": 8
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "at": "2026-09-21T06:18:31Z",
+      "ok": true,
+      "total_raw": 2145,
+      "unique": 1242,
+      "kept": 60,
+      "new_count": 48,
+      "by_source": {
+        "arXiv": 124,
+        "OpenAlex": 534,
+        "Crossref": 711
+      },
+      "by_impact": {
+        "顶刊": 18,
+        "期刊": 9,
+        "CCF-A": 2,
+        "其他": 15,
+        "预印本": 16
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "at": "2026-09-21T06:21:19Z",
+      "ok": true,
+      "total_raw": 2347,
+      "unique": 1430,
+      "kept": 60,
+      "new_count": 55,
+      "by_source": {
+        "arXiv": 124,
+        "OpenAlex": 736,
+        "Crossref": 711
+      },
+      "by_impact": {
+        "顶刊": 17,
+        "期刊": 8,
+        "CCF-A": 14,
+        "其他": 12,
+        "预印本": 9
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "at": "2026-09-21T06:24:18Z",
+      "ok": true,
+      "total_raw": 2347,
+      "unique": 1430,
+      "kept": 60,
+      "new_count": 48,
+      "by_source": {
+        "arXiv": 124,
+        "OpenAlex": 736,
+        "Crossref": 711
+      },
+      "by_impact": {
+        "顶刊": 11,
+        "期刊": 5,
+        "CCF-A": 16,
+        "其他": 12,
+        "预印本": 16
+      }
+    },
+    {
+      "date": "2026-09-20",
+      "at": "2026-09-21T06:26:16Z",
+      "ok": true,
+      "total_raw": 2347,
+      "unique": 1487,
+      "kept": 60,
+      "new_count": 1,
+      "by_source": {
+        "arXiv": 181,
+        "OpenAlex": 736,
+        "Crossref": 711
+      },
+      "by_impact": {
+        "顶刊": 11,
+        "期刊": 5,
+        "CCF-A": 15,
+        "其他": 12,
+        "预印本": 17
+      }
+    }
+  ]
+}

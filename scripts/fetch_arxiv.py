@@ -162,7 +162,7 @@ def http_get(url: str, retries: int = 3, timeout: int = 60) -> bytes:
             wait = 3 * (attempt + 1)
             log(f"请求失败（第 {attempt + 1} 次）：{exc}，{wait}s 后重试")
             time.sleep(wait)
-    raise RuntimeError(f"arXiv 请求持续失败：{last_err}")
+    raise RuntimeError(f"网络请求持续失败：{last_err}")
 
 
 def clean_ws(text: str | None) -> str:

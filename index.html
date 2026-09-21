@@ -57,6 +57,10 @@
             <span class="hud__v" id="hud-new" style="color: var(--accent)">—</span>
           </div>
           <div class="hud__cell">
+            <span class="hud__k">Top/CCF-A</span>
+            <span class="hud__v" id="hud-top">—</span>
+          </div>
+          <div class="hud__cell">
             <span class="hud__k">Scanned</span>
             <span class="hud__v" id="hud-scan">—</span>
           </div>
@@ -113,13 +117,23 @@
         <div class="seg" id="view-seg" role="group" aria-label="视图切换">
           <button type="button" data-view="brief" aria-pressed="true">今日精读</button>
           <button type="button" data-view="radar" aria-pressed="false">全站雷达</button>
+          <button type="button" data-view="learn" aria-pressed="false">理论学习</button>
           <button type="button" data-view="trends" aria-pressed="false">趋势小结</button>
         </div>
 
         <select class="select" id="sort" aria-label="排序方式">
-          <option value="default">默认顺序（按分区）</option>
+          <option value="default">默认顺序（综合排序）</option>
+          <option value="impact">按影响力排序</option>
           <option value="date">按发布时间</option>
           <option value="title">按标题</option>
+        </select>
+
+        <select class="select" id="src-filter" aria-label="来源筛选">
+          <option value="all">全部来源</option>
+          <option value="top">顶刊（Nature/Science 系）</option>
+          <option value="ccf_a">CCF-A 顶会顶刊</option>
+          <option value="journal">期刊</option>
+          <option value="preprint">预印本</option>
         </select>
 
         <button class="btn" id="only-new" type="button" aria-pressed="true">仅看新增 ✓</button>
@@ -135,10 +149,17 @@
       <!-- ============ 页脚 ============ -->
       <footer class="foot">
         <div>
-          数据来源：<a href="https://arxiv.org/" target="_blank" rel="noopener">arXiv API</a>
-          · 每日由 GitHub Actions 定时抓取
-          <code>cs.MA</code> / <code>cs.GT</code> / <code>MARL</code> / <code>Nash</code> /
-          <code>LLM-Multi-Agent</code> / <code>机制设计</code> 六路检索式，去重后按关键词打分排序。
+          数据来源：
+          <a href="https://arxiv.org/" target="_blank" rel="noopener">arXiv API</a> ·
+          <a href="https://openalex.org/" target="_blank" rel="noopener">OpenAlex</a> ·
+          <a href="https://www.crossref.org/" target="_blank" rel="noopener">Crossref</a>
+          三路来源，每日由 GitHub Actions 定时抓取。arXiv 走六路检索式（<code>cs.MA</code> /
+          <code>cs.GT</code> / <code>MARL</code> / <code>Nash</code> / <code>机制设计</code> /
+          <code>LLM×多智能体</code>）；顶会顶刊走 OpenAlex（按主题检索，另按 ISSN 精确检索
+          <code>GEB</code> / <code>JET</code> / <code>Econometrica</code> / <code>OR</code> /
+          <code>MOR</code> / <code>Management Science</code> 等领域顶刊）；Nature / Science
+          及其子刊走 Crossref 按 ISSN 精确检索。三级去重（DOI → ID → 规范化标题）后按
+          <strong>影响力权重 + 相关度 + 时效</strong>排序。
         </div>
         <div>
           页面说明：标有「精读」的条目为人工选读并撰写图文解读，其余为脚本自动收录的雷达条目；

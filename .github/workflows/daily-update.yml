@@ -1,23 +1,38 @@
 name: 每日抓取 · 博弈智能新动向
 
+# ── 触发方式 ──────────────────────────────────────────────
+# 1) 定时：一天三个时段冗余触发（GitHub 的 cron 偶尔会延迟或漏跑，多留两个补跑窗口）
+#    UTC 01:00 / 05:00 / 09:00 == 北京 09:00 / 13:00 / 17:00
+# 2) 手动：Actions 页面 Run workflow，可指定 force / 回溯天数
 on:
   schedule:
-    # 每日 UTC 01:00 == 北京 09:00
     - cron: "0 1 * * *"
+    - cron: "0 5 * * *"
+    - cron: "0 9 * * *"
   workflow_dispatch:
     inputs:
-      days:
-        description: "回溯天数"
+      force:
+        description: "强制重跑（当日已有数据也覆盖）"
         required: false
-        default: "3"
+        default: "false"
+      arxiv_days:
+        description: "arXiv 回溯天数"
+        required: false
+        default: "7"
+      venue_days:
+        description: "期刊/会议回溯天数"
+        required: false
+        default: "90"
       top:
         description: "最多入库条数"
         required: false
-        default: "40"
+        default: "60"
 
 permissions:
   contents: write
+  issues: write
 
+# 同一时间只允许一个抓取任务排队，不中断进行中的任务
 concurrency:
   group: daily-fetch
   cancel-in-progress: false
@@ -25,6 +40,7 @@ concurrency:
 jobs:
   fetch:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - name: 检出仓库
         uses: actions/checkout@v4
@@ -34,23 +50,109 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: 抓取 arXiv 新论文
+      - name: 环境自检
+        id: pre
         run: |
-          python3 scripts/fetch_arxiv.py \
-            --days "${{ github.event.inputs.days || '7' }}" \
-            --per-query 150 \
-            --top "${{ github.event.inputs.top || '40' }}"
+          echo "date_utc=$(date -u +%F)" >> "$GITHUB_OUTPUT"
+          echo "### 每日抓取 · $(date -u '+%F %T UTC')" >> "$GITHUB_STEP_SUMMARY"
+          echo "- 事件：${{ github.event_name }}" >> "$GITHUB_STEP_SUMMARY"
+
+      # 幂等：当日文件已存在且非空 → 直接跳过（除非手动勾选 force）
+      - name: 判断是否需要抓取
+        id: need
+        run: |
+          TODAY="${{ steps.pre.outputs.date_utc }}"
+          F="${{ github.event.inputs.force || 'false' }}"
+          FILE="data/daily/${TODAY}.json"
+          if [ "$F" = "true" ]; then
+            echo "run=1" >> "$GITHUB_OUTPUT"; echo "原因：手动指定 force=true"; exit 0
+          fi
+          if [ ! -f "$FILE" ]; then
+            echo "run=1" >> "$GITHUB_OUTPUT"; echo "原因：当日文件不存在"; exit 0
+          fi
+          N=$(python3 -c "import json;print(len(json.load(open('$FILE')).get('radar',[])))" 2>/dev/null || echo 0)
+          if [ "$N" -eq 0 ]; then
+            echo "run=1" >> "$GITHUB_OUTPUT"; echo "原因：当日已存在但 0 条，需要补跑"; exit 0
+          fi
+          echo "run=0" >> "$GITHUB_OUTPUT"
+          echo "原因：当日已有 $N 条，跳过（幂等）"
+
+      # 带重试：最多 3 次，指数退避；单次失败不影响整轮
+      - name: 抓取（arXiv + OpenAlex + Crossref）
+        id: fetch
+        if: steps.need.outputs.run == '1'
+        run: |
+          set -o pipefail
+          ATTEMPT=1
+          until [ $ATTEMPT -gt 3 ]; do
+            echo "===== 第 $ATTEMPT 次尝试 ====="
+            if python3 scripts/fetch_daily.py \
+                --arxiv-days "${{ github.event.inputs.arxiv_days || '7' }}" \
+                --venue-days "${{ github.event.inputs.venue_days || '90' }}" \
+                --per-query 150 --per-term 100 \
+                --top "${{ github.event.inputs.top || '60' }}" 2>&1 | tee "/tmp/fetch_$ATTEMPT.log"; then
+              echo "抓取成功（第 $ATTEMPT 次）"
+              break
+            fi
+            echo "第 $ATTEMPT 次失败，$((ATTEMPT * 20))s 后重试"
+            ATTEMPT=$((ATTEMPT + 1))
+            sleep $((ATTEMPT * 20))
+          done
+          if [ $ATTEMPT -gt 3 ]; then
+            echo "::error::抓取连续 3 次失败"
+            exit 1
+          fi
+          tail -20 "/tmp/fetch_$((ATTEMPT)).log" >> "$GITHUB_STEP_SUMMARY" || true
+
+      - name: 运行日志归档
+        if: always()
+        run: |
+          mkdir -p logs
+          for f in /tmp/fetch_*.log; do [ -f "$f" ] && cat "$f" >> "logs/${{ steps.pre.outputs.date_utc }}.log"; done
+          echo "已归档运行日志 logs/${{ steps.pre.outputs.date_utc }}.log"
+
+      - name: 上传运行日志
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-log-${{ steps.pre.outputs.date_utc }}
+          path: |
+            logs/
+            data/runs.json
+          if-no-files-found: warn
+          retention-days: 30
 
       - name: 提交当日数据
+        if: steps.need.outputs.run == '1'
         run: |
           set -e
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ digests/ logs/
           if [ -n "$(git status --porcelain)" ]; then
-            git add data/ digests/
             git commit -m "chore(daily): $(date -u +%Y-%m-%d) 博弈智能动向自动更新"
-            git push
+            for i in 1 2 3; do git push && break || sleep 10; done
             echo "已提交当日更新"
+            echo "- 结果：已提交" >> "$GITHUB_STEP_SUMMARY"
           else
             echo "本次抓取无新增内容，跳过提交"
+            echo "- 结果：无变化" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      # 失败告警：开一个 issue，避免静默失败
+      - name: 失败告警
+        if: failure()
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TITLE="[daily] ${{ steps.pre.outputs.date_utc }} 每日抓取失败"
+          if gh issue list --state open --search "\"$TITLE\" in:title" --json title --jq '.[0].title' | grep -q .; then
+            echo "已存在同名告警 issue，跳过创建"
+          else
+            gh issue create --title "$TITLE" --label "daily-failure" \
+              --body "工作流运行：${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+触发方式：${{ github.event_name }}
+时间：$(date -u '+%F %T UTC')
+
+请查看该次运行的日志（artifact: daily-log-${{ steps.pre.outputs.date_utc }}）。"
           fi

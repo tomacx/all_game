@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-21",
+  "generated_at": "2026-09-21T04:06:15Z",
+  "source": {
+    "window": "2026-09-18 ~ 2026-09-21",
+    "queries": [
+      "cat:cs.MA",
+      "cat:cs.GT",
+      "abs:\"multi-agent reinforcement learning\"",
+      "abs:\"Nash equilibrium\"",
+      "abs:\"mechanism design\"",
+      "abs:\"large language model\" AND abs:\"multi-agent\""
+    ],
+    "total_raw": 0,
+    "unique": 0,
+    "days": 3,
+    "new_count": 0,
+    "seen_before": 42
+  },
+  "highlights": [],
+  "trends": [],
+  "note": "",
+  "radar": []
+}

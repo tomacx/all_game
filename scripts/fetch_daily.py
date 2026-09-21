@@ -444,6 +444,47 @@ def oa_work_to_item(w: dict, label: str) -> dict | None:
     }
 
 
+ARXIV_OPENALEX_ID = "S4306400194"   # OpenAlex 中 arXiv（预印本）的 source ID
+
+
+def fetch_openalex_preprints(days: int, per_term: int = 100) -> tuple[list[dict], int]:
+    """预印本兜底路径：arXiv API 在部分网络环境（如 GitHub Actions 出口 IP）会返回 406，
+    此时用 OpenAlex 的 arXiv 源取同样的预印本，保证「最新动向」不缺。
+    """
+    since = (datetime.now(timezone.utc) - timedelta(days=days)).strftime("%Y-%m-%d")
+    out: list[dict] = []
+    total = 0
+    for term, label in TOPIC_TERMS:
+        params = urllib.parse.urlencode({
+            "filter": f"title_and_abstract.search:{term},from_publication_date:{since},"
+                      f"primary_location.source.id:{ARXIV_OPENALEX_ID}",
+            "sort": "publication_date:desc",
+            "per-page": str(min(per_term, 200)),
+            "mailto": "all_game@example.com",
+        })
+        try:
+            raw = http_get(f"https://api.openalex.org/works?{params}", retries=3, timeout=60)
+            results = json.loads(raw.decode("utf-8")).get("results", [])
+        except Exception as exc:  # noqa: BLE001
+            rlog(f"OpenAlex [预印本 {label}] 失败：{exc}（跳过）")
+            continue
+        kept = 0
+        for w in results:
+            item = oa_work_to_item(w, f"预印本·{label}")
+            if item:
+                # 从 DOI 里还原 arXiv 编号（10.48550/arXiv.2609.15361）
+                m = re.search(r"arxiv[./](\d{4}\.\d{4,5})", item.get("doi", ""), re.I)
+                if m:
+                    item["raw_id"] = m.group(1)
+                item["provider"] = "OpenAlex·arXiv"
+                out.append(item)
+                kept += 1
+        total += len(results)
+        rlog(f"OpenAlex [预印本 {label}] 返回 {len(results)}，纳入 {kept}")
+        time.sleep(0.4)
+    return out, total
+
+
 def fetch_openalex_journals(days: int, per_page: int = 50) -> tuple[list[dict], int]:
     """按 ISSN-L 精确检索领域顶刊（GEB / JET / Econometrica / OR / MOR / MS / TE / JMLR / TPAMI / AI）。
 
@@ -779,6 +820,13 @@ def main() -> int:
     all_items += ax_items
     counts["arXiv"] = len(ax_items)
     total_raw += ax_raw
+    if not ax_items:
+        # arXiv API 在 GitHub Actions 出口 IP 上常被以 406 拒绝，此时走 OpenAlex 的 arXiv 源
+        rlog("arXiv API 本次未取到条目（常见于 CI 出口 IP 被拒），改用 OpenAlex 的 arXiv 源兜底预印本")
+        px_items, px_raw = fetch_openalex_preprints(args.arxiv_days, args.per_term)
+        all_items += px_items
+        counts["OpenAlex·arXiv"] = len(px_items)
+        total_raw += px_raw
 
     oa_items, oa_raw = fetch_openalex(args.venue_days, args.per_term)
     ja_items, ja_raw = fetch_openalex_journals(args.venue_days)

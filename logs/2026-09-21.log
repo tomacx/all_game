@@ -387,3 +387,106 @@
 [daily] 去重后 1306 篇，按相关性过滤后 151 篇
 [daily] 写入 data/daily/2026-09-21.json（radar 60 条，精读 0 条）
 [daily] 写入 digests/2026-09-21.md、logs/2026-09-21.log、data/runs.json
+===== run @ 2026-09-21T07:18:29Z =====
+[07:14:32] 目标日期 2026-09-21 · arXiv 7 天 / 期刊会议 90 天
+[07:15:02] arXiv 检索式 [分类·多智能体] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[07:15:33] arXiv 检索式 [分类·博弈论] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[07:16:03] arXiv 检索式 [主题·MARL] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[07:16:34] arXiv 检索式 [主题·纳什均衡] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[07:17:04] arXiv 检索式 [主题·机制设计] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[07:17:35] arXiv 检索式 [主题·LLM多智能体] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[07:17:35] arXiv API 本次未取到条目（常见于 CI 出口 IP 被拒），改用 OpenAlex 的 arXiv 源兜底预印本
+[07:17:36] OpenAlex [预印本 主题·MARL] 返回 24，纳入 24
+[07:17:36] OpenAlex [预印本 主题·纳什均衡] 返回 11，纳入 11
+[07:17:38] OpenAlex [预印本 主题·机制设计] 返回 89，纳入 89
+[07:17:38] OpenAlex [预印本 主题·博弈理论] 返回 9，纳入 9
+[07:17:39] OpenAlex [预印本 主题·拍卖] 返回 1，纳入 1
+[07:17:40] OpenAlex [预印本 主题·LLM多智能体] 返回 16，纳入 16
+[07:17:41] OpenAlex [主题·MARL] 返回 100，纳入 100
+[07:17:43] OpenAlex [主题·纳什均衡] 返回 100，纳入 100
+[07:17:44] OpenAlex [主题·机制设计] 返回 100，纳入 100
+[07:17:45] OpenAlex [主题·博弈理论] 返回 100，纳入 100
+[07:17:46] OpenAlex [主题·拍卖] 返回 34，纳入 34
+[07:17:48] OpenAlex [主题·LLM多智能体] 返回 100，纳入 100
+[07:17:49] OpenAlex [顶刊 Artificial Intelligence] 返回 21，纳入 21
+[07:17:49] OpenAlex [顶刊 Econometrica] 返回 0，纳入 0
+[07:17:50] OpenAlex [顶刊 Journal of Economic Theory] 返回 19，纳入 19
+[07:17:51] OpenAlex [顶刊 Management Science] 返回 50，纳入 50
+[07:17:52] OpenAlex [顶刊 Operations Research] 返回 50，纳入 50
+[07:17:53] OpenAlex [顶刊 IEEE TPAMI] 返回 5，纳入 5
+[07:17:54] OpenAlex [顶刊 Mathematics of Operations Research] 返回 31，纳入 31
+[07:17:55] OpenAlex [顶刊 Games and Economic Behavior] 返回 26，纳入 26
+[07:17:55] OpenAlex [顶刊 JMLR] 返回 0，纳入 0
+[07:17:56] OpenAlex [顶刊 Theoretical Economics] 返回 0，纳入 0
+[07:18:16] Crossref [主题·MARL] 返回 100，纳入 100
+[07:18:19] Crossref [主题·纳什均衡] 返回 100，纳入 100
+[07:18:21] Crossref [主题·机制设计] 返回 100，纳入 100
+[07:18:23] Crossref [主题·博弈理论] 返回 100，纳入 100
+[07:18:26] Crossref [主题·拍卖] 返回 100，纳入 100
+[07:18:29] Crossref [主题·LLM多智能体] 返回 100，纳入 100
+[07:18:29] 各来源纳入：{"arXiv": 0, "OpenAlex·arXiv": 150, "OpenAlex": 736, "Crossref": 711}
+[07:18:29] 去重后 1423 篇，按相关性过滤后 268 篇
+[daily] 目标日期 2026-09-21 · arXiv 7 天 / 期刊会议 90 天
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 406: Not Acceptable，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 406: Not Acceptable，9s 后重试
+[fetch] 请求失败（第 4 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，12s 后重试
+[daily] arXiv 检索式 [分类·多智能体] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 406: Not Acceptable，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 406: Not Acceptable，9s 后重试
+[fetch] 请求失败（第 4 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，12s 后重试
+[daily] arXiv 检索式 [分类·博弈论] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 406: Not Acceptable，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 406: Not Acceptable，9s 后重试
+[fetch] 请求失败（第 4 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，12s 后重试
+[daily] arXiv 检索式 [主题·MARL] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 406: Not Acceptable，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 406: Not Acceptable，9s 后重试
+[fetch] 请求失败（第 4 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，12s 后重试
+[daily] arXiv 检索式 [主题·纳什均衡] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 406: Not Acceptable，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 406: Not Acceptable，9s 后重试
+[fetch] 请求失败（第 4 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，12s 后重试
+[daily] arXiv 检索式 [主题·机制设计] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 406: Not Acceptable，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 406: Not Acceptable，9s 后重试
+[fetch] 请求失败（第 4 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，12s 后重试
+[daily] arXiv 检索式 [主题·LLM多智能体] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[daily] arXiv API 本次未取到条目（常见于 CI 出口 IP 被拒），改用 OpenAlex 的 arXiv 源兜底预印本
+[daily] OpenAlex [预印本 主题·MARL] 返回 24，纳入 24
+[daily] OpenAlex [预印本 主题·纳什均衡] 返回 11，纳入 11
+[daily] OpenAlex [预印本 主题·机制设计] 返回 89，纳入 89
+[daily] OpenAlex [预印本 主题·博弈理论] 返回 9，纳入 9
+[daily] OpenAlex [预印本 主题·拍卖] 返回 1，纳入 1
+[daily] OpenAlex [预印本 主题·LLM多智能体] 返回 16，纳入 16
+[daily] OpenAlex [主题·MARL] 返回 100，纳入 100
+[daily] OpenAlex [主题·纳什均衡] 返回 100，纳入 100
+[daily] OpenAlex [主题·机制设计] 返回 100，纳入 100
+[daily] OpenAlex [主题·博弈理论] 返回 100，纳入 100
+[daily] OpenAlex [主题·拍卖] 返回 34，纳入 34
+[daily] OpenAlex [主题·LLM多智能体] 返回 100，纳入 100
+[daily] OpenAlex [顶刊 Artificial Intelligence] 返回 21，纳入 21
+[daily] OpenAlex [顶刊 Econometrica] 返回 0，纳入 0
+[daily] OpenAlex [顶刊 Journal of Economic Theory] 返回 19，纳入 19
+[daily] OpenAlex [顶刊 Management Science] 返回 50，纳入 50
+[daily] OpenAlex [顶刊 Operations Research] 返回 50，纳入 50
+[daily] OpenAlex [顶刊 IEEE TPAMI] 返回 5，纳入 5
+[daily] OpenAlex [顶刊 Mathematics of Operations Research] 返回 31，纳入 31
+[daily] OpenAlex [顶刊 Games and Economic Behavior] 返回 26，纳入 26
+[daily] OpenAlex [顶刊 JMLR] 返回 0，纳入 0
+[daily] OpenAlex [顶刊 Theoretical Economics] 返回 0，纳入 0
+[daily] Crossref [主题·MARL] 返回 100，纳入 100
+[daily] Crossref [主题·纳什均衡] 返回 100，纳入 100
+[daily] Crossref [主题·机制设计] 返回 100，纳入 100
+[daily] Crossref [主题·博弈理论] 返回 100，纳入 100
+[daily] Crossref [主题·拍卖] 返回 100，纳入 100
+[daily] Crossref [主题·LLM多智能体] 返回 100，纳入 100
+[daily] 各来源纳入：{"arXiv": 0, "OpenAlex·arXiv": 150, "OpenAlex": 736, "Crossref": 711}
+[daily] 去重后 1423 篇，按相关性过滤后 268 篇
+[daily] 写入 data/daily/2026-09-21.json（radar 60 条，精读 0 条）
+[daily] 写入 digests/2026-09-21.md、logs/2026-09-21.log、data/runs.json

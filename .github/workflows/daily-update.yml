@@ -87,6 +87,7 @@ jobs:
           until [ $ATTEMPT -gt 3 ]; do
             echo "===== 第 $ATTEMPT 次尝试 ====="
             if python3 scripts/fetch_daily.py \
+                ${{ github.event.inputs.force == 'true' && '--force' || '' }} \
                 --arxiv-days "${{ github.event.inputs.arxiv_days || '7' }}" \
                 --venue-days "${{ github.event.inputs.venue_days || '90' }}" \
                 --per-query 150 --per-term 100 \

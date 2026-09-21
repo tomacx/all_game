@@ -146,13 +146,11 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TITLE="[daily] ${{ steps.pre.outputs.date_utc }} 每日抓取失败"
-          if gh issue list --state open --search "\"$TITLE\" in:title" --json title --jq '.[0].title' | grep -q .; then
+          BODY="运行 ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }} ｜ 触发方式 ${{ github.event_name }} ｜ 时间 $(date -u '+%F %T UTC') ｜ 日志 artifact：daily-log-${{ steps.pre.outputs.date_utc }}"
+          EXIST=$(gh issue list --state open --search "\"$TITLE\" in:title" --json title --jq '.[0].title')
+          if [ -n "$EXIST" ]; then
             echo "已存在同名告警 issue，跳过创建"
           else
-            gh issue create --title "$TITLE" --label "daily-failure" \
-              --body "工作流运行：${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
-触发方式：${{ github.event_name }}
-时间：$(date -u '+%F %T UTC')
-
-请查看该次运行的日志（artifact: daily-log-${{ steps.pre.outputs.date_utc }}）。"
+            gh issue create --title "$TITLE" --label "daily-failure" --body "$BODY"
+            echo "已创建告警 issue"
           fi

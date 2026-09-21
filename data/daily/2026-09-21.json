@@ -1,26 +1,26 @@
 {
   "date": "2026-09-21",
-  "generated_at": "2026-09-21T06:22:14Z",
+  "generated_at": "2026-09-21T06:50:15Z",
   "source": {
     "window": "arXiv 2026-09-14 ~ 2026-09-21 ／ 期刊会议 2026-06-23 ~ 2026-09-21",
     "arxiv_days": 7,
     "venue_days": 90,
-    "total_raw": 2347,
-    "unique": 1430,
+    "total_raw": 1447,
+    "unique": 1306,
     "by_source": {
-      "arXiv": 124,
+      "arXiv": 0,
       "OpenAlex": 736,
       "Crossref": 711
     },
     "by_impact": {
-      "顶刊": 11,
+      "顶刊": 14,
       "期刊": 5,
-      "CCF-A": 16,
-      "其他": 12,
-      "预印本": 16
+      "CCF-A": 19,
+      "其他": 14,
+      "预印本": 8
     },
-    "new_count": 48,
-    "seen_before": 90
+    "new_count": 16,
+    "seen_before": 180
   },
   "highlights": [],
   "trends": [],
@@ -30,7 +30,7 @@
     {
       "id": "10.1126/science.aeg6779",
       "doi": "10.1126/science.aeg6779",
-      "is_new": true,
+      "is_new": false,
       "title": "The Virtual Biotech: A multi-agent AI framework for therapeutic discovery and development",
       "authors": [
         "Harrison G. Zhang",
@@ -66,7 +66,7 @@
     {
       "id": "10.1038/s41586-026-10986-7",
       "doi": "10.1038/s41586-026-10986-7",
-      "is_new": true,
+      "is_new": false,
       "title": "Probing far-from-equilibrium dynamics of electrical double layers",
       "authors": [
         "Xiao-Yu Li",
@@ -106,7 +106,7 @@
     {
       "id": "10.1126/science.adz4351",
       "doi": "10.1126/science.adz4351",
-      "is_new": true,
+      "is_new": false,
       "title": "Autonomous biomedical research with an artificial intelligence agent",
       "authors": [
         "Kexin Huang",
@@ -148,7 +148,7 @@
     {
       "id": "10.21070/ijler.v21i1.1676",
       "doi": "10.21070/ijler.v21i1.1676",
-      "is_new": true,
+      "is_new": false,
       "title": "The Risk of Breach of Contract in Fish Trading Practices Without Payment Guarantees at the Sidoarjo Fish Auction Site",
       "authors": [
         "Muhammad Adil ‘Azmi",
@@ -182,7 +182,7 @@
     {
       "id": "10.1038/s42256-026-01287-9",
       "doi": "10.1038/s42256-026-01287-9",
-      "is_new": true,
+      "is_new": false,
       "title": "Multi-resolution enhancement for full-spectrum neural representations",
       "authors": [
         "Yuan Ni",
@@ -220,7 +220,7 @@
     {
       "id": "10.1287/moor.2025.0898",
       "doi": "10.1287/moor.2025.0898",
-      "is_new": true,
+      "is_new": false,
       "title": "Infrequent Resolving Algorithm for Online Linear Programming",
       "authors": [
         "Guokai Li",
@@ -254,7 +254,7 @@
     {
       "id": "10.1145/3789259",
       "doi": "10.1145/3789259",
-      "is_new": true,
+      "is_new": false,
       "title": "Discrete Single-Parameter Optimal Auction Design",
       "authors": [
         "Yiannis Giannakopoulos",
@@ -287,7 +287,7 @@
     {
       "id": "10.1287/opre.2025.2528",
       "doi": "10.1287/opre.2025.2528",
-      "is_new": true,
+      "is_new": false,
       "title": "Finite-Time Minimax Bounds and an Optimal Lyapunov Policy in Queueing Control",
       "authors": [
         "Yujie Liu",
@@ -320,7 +320,7 @@
     {
       "id": "10.1287/opre.2024.0842",
       "doi": "10.1287/opre.2024.0842",
-      "is_new": true,
+      "is_new": false,
       "title": "Prophet Inequalities for a New Class of Overbooking Problems in Container Shipping",
       "authors": [
         "Jacob Feldman",
@@ -353,7 +353,7 @@
     {
       "id": "10.1016/j.artint.2026.104606",
       "doi": "10.1016/j.artint.2026.104606",
-      "is_new": true,
+      "is_new": false,
       "title": "Posterior-conditioned multi-agent reinforcement learning for adaptive cyber defense",
       "authors": [
         "Armita Kazeminajafabadi",
@@ -391,7 +391,7 @@
     {
       "id": "10.4108/ew.14205",
       "doi": "10.4108/ew.14205",
-      "is_new": true,
+      "is_new": false,
       "title": "A Blockchain-Driven Stackelberg Game and MILP Algorithmic Framework for Dynamic Pricing in Multi-Agent Microgrid Networks",
       "authors": [
         "Min Yang",
@@ -429,7 +429,7 @@
     {
       "id": "10.1073/pnas.2531697123",
       "doi": "10.1073/pnas.2531697123",
-      "is_new": true,
+      "is_new": false,
       "title": "Group size effects and collective misalignment in LLM multi-agent systems",
       "authors": [
         "Ariel Flint",
@@ -464,7 +464,7 @@
     {
       "id": "10.1016/j.jet.2026.106251",
       "doi": "10.1016/j.jet.2026.106251",
-      "is_new": true,
+      "is_new": false,
       "title": "The extreme points of mean-preserving contractions",
       "authors": [
         "Andreas Kleiner",
@@ -498,7 +498,7 @@
     {
       "id": "10.1287/opre.2024.1130",
       "doi": "10.1287/opre.2024.1130",
-      "is_new": true,
+      "is_new": false,
       "title": "Multilisting for Horizontally Differentiated Services: Implications for Throughput and Social Welfare",
       "authors": [
         "Zhou Chen",
@@ -531,7 +531,7 @@
     {
       "id": "10.1016/j.aap.2026.108775",
       "doi": "10.1016/j.aap.2026.108775",
-      "is_new": true,
+      "is_new": false,
       "title": "DKD-MARL: a data-knowledge dual-driven multi-agent reinforcement learning framework for traffic crash severity prediction",
       "authors": [
         "Jiazhao Zhang",
@@ -571,7 +571,7 @@
     {
       "id": "10.1007/s00180-026-01806-7",
       "doi": "10.1007/s00180-026-01806-7",
-      "is_new": true,
+      "is_new": false,
       "title": "Cooperative multi-agent reinforcement learning with entangled state representations and copula-based action coordination for urban navigation",
       "authors": [
         "Jong-Min Kim"
@@ -606,7 +606,7 @@
     {
       "id": "10.1016/j.geb.2026.104041",
       "doi": "10.1016/j.geb.2026.104041",
-      "is_new": true,
+      "is_new": false,
       "title": "Multi-Agent Contract Design with a Budget",
       "authors": [
         "Sumit Goel",
@@ -636,43 +636,9 @@
       "alt": []
     },
     {
-      "id": "2609.18639",
-      "doi": "",
-      "is_new": false,
-      "title": "CoRe-MARL: Cooperative Redistribution Under Unknown Dynamics Using Recurrent Multi-Agent Reinforcement Learning",
-      "authors": [
-        "Naimur Rahman Chowdhury",
-        "Shatabdi Sen Prapti",
-        "Md. Salehin Seyam",
-        "Limon Bin Hossain"
-      ],
-      "published": "2026-09-16",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.LG",
-      "url": "https://arxiv.org/abs/2609.18639v1",
-      "summary": "Emergency management assistance programs, such as relief distribution, are essential for delivering necessary supplies to affected communities. However, these programs operate in a decentralized network of local centers that face uncertain local demand and supply dynamics, resulting in inconsistent avail- ability of local services. Redistribution of supplies among these local centers reduces these imbalances, but the centers often make decisions independently, with limited information and disrupted transportation. This study develops CoRe-MARL, a cooperative multi-agent reinforcement learning (MARL) framework, by formulating a decentralized partially observable Markov decision process (Dec-POMDP). We treat each center as an agent that learns a redistribution policy to improve the service in the worst-case region and reduce the service gap across regions while protecting network-wide service. We incorporate a recurrent network that captures evolving supply and demand dynamics without direct observation, while multi-agent proximal policy optimization (MAPPO) enables centralized training and decentralized execution (CTDE). We evaluate the framework in a simulated environment with diverse trajectories, where exact dynamics are not observed by actors and the MAPPO critic. We compare the recurrent MAPPO with the recurrent independent PPO (IPPO) and a local only heuristic, and find that MAPPO reduces the service gap across local centers and enhances service for the worst-served center while maintaining competitive network-wide service. The recurrent MAPPO also shows consistent performance across diverse trajectory patterns, demonstrating its ability to adapt to evolving dynamics. The findings demonstrate the capability of cooperative learning for decentralized redistribution and improving equitable service under uncertain and evolving dynamics.",
-      "summary_short": "Emergency management assistance programs, such as relief distribution, are essential for delivering necessary supplies to affected communities. However, these programs operate in a decentralized network of local centers that face uncertain local demand and supply dynamics, resulting in inconsistent…",
-      "tags": [
-        "MARL"
-      ],
-      "section": "核心算法创新 · MARL",
-      "score": 56,
-      "rank": 141,
-      "sources": [
-        "主题·MARL"
-      ],
-      "alt": []
-    },
-    {
       "id": "10.1016/j.artint.2026.104625",
       "doi": "10.1016/j.artint.2026.104625",
-      "is_new": true,
+      "is_new": false,
       "title": "Automatic prompt debiasing via contrastive reflection for fairness enhancement in large language models",
       "authors": [
         "Juncheng Hu",
@@ -707,7 +673,7 @@
     {
       "id": "10.1287/moor.2024.0538",
       "doi": "10.1287/moor.2024.0538",
-      "is_new": true,
+      "is_new": false,
       "title": "Minimax-Optimal Reward-Agnostic Exploration in Reinforcement Learning",
       "authors": [
         "Gen Li",
@@ -742,7 +708,7 @@
     {
       "id": "10.1038/s41467-026-76467-7",
       "doi": "10.1038/s41467-026-76467-7",
-      "is_new": true,
+      "is_new": false,
       "title": "Strategic objectives underpin national climate pledges",
       "authors": [
         "Taryn Fransen",
@@ -772,7 +738,7 @@
     {
       "id": "10.1038/s41467-026-75382-1",
       "doi": "10.1038/s41467-026-75382-1",
-      "is_new": true,
+      "is_new": false,
       "title": "Modeling network evolution by multi-agent reinforcement learning",
       "authors": [
         "Dong Li",
@@ -811,7 +777,7 @@
     {
       "id": "10.1016/j.artint.2026.104603",
       "doi": "10.1016/j.artint.2026.104603",
-      "is_new": true,
+      "is_new": false,
       "title": "Probing diametric coordination graphs for multi-agent reinforcement learning",
       "authors": [
         "Mutong Liu",
@@ -848,7 +814,7 @@
     {
       "id": "10.5281/zenodo.22849366",
       "doi": "10.5281/zenodo.22849366",
-      "is_new": true,
+      "is_new": false,
       "title": "Stress-Testing Byzantine Robustness in Multi-Agent LLM Systems: Adaptive Adversaries and an Alternative Filtering Anchor",
       "authors": [
         "Victoria Chen"
@@ -883,7 +849,7 @@
     {
       "id": "10.1287/opre.2024.1538",
       "doi": "10.1287/opre.2024.1538",
-      "is_new": true,
+      "is_new": false,
       "title": "Prelimit Coupling and Steady-State Convergence of Constant-Step-Size Nonsmooth Contractive Stochastic Approximation",
       "authors": [
         "Yixuan Zhang",
@@ -917,7 +883,7 @@
     {
       "id": "10.3390/en19184387",
       "doi": "10.3390/en19184387",
-      "is_new": true,
+      "is_new": false,
       "title": "Adaptive Scheduling of Public Electric Vehicle Fast-Charging Stations Based on State-Aware Multi-Agent Reinforcement Learning",
       "authors": [
         "Zhifeng Wang",
@@ -953,7 +919,7 @@
     {
       "id": "10.1073/pnas.2612355123",
       "doi": "10.1073/pnas.2612355123",
-      "is_new": true,
+      "is_new": false,
       "title": "Numerical investigation of the equilibrium Kauzmann transition in a two-dimensional atomistic glass",
       "authors": [
         "Gerhard Jung",
@@ -985,7 +951,7 @@
     {
       "id": "10.3390/drones10090665",
       "doi": "10.3390/drones10090665",
-      "is_new": true,
+      "is_new": false,
       "title": "Efficient Exploration-Enabled Multi-Agent Reinforcement Learning for Multi-UAV Cooperative Target Search",
       "authors": [
         "Peng Chen",
@@ -1019,7 +985,7 @@
     {
       "id": "10.1287/moor.2025.1308",
       "doi": "10.1287/moor.2025.1308",
-      "is_new": true,
+      "is_new": false,
       "title": "Existence and Uniqueness Theorem of Continuous and Monotone Bayesian Nash Equilibrium and Stability Analysis",
       "authors": [
         "Ziheng Su",
@@ -1053,7 +1019,7 @@
     {
       "id": "10.15294/sji.v13i3.50261",
       "doi": "10.15294/sji.v13i3.50261",
-      "is_new": true,
+      "is_new": false,
       "title": "Adversarial Vulnerabilities in Cooperative Multi-Agent Reinforcement Learning for Distributed 5G Security",
       "authors": [
         "Belinda Mutunhu Ndlovu",
@@ -1084,44 +1050,9 @@
       "alt": []
     },
     {
-      "id": "2609.19820",
-      "doi": "",
-      "is_new": false,
-      "title": "Steering Equilibrium Selection in Regularized Self-Play via the Reference Policy",
-      "authors": [
-        "Luis Leal"
-      ],
-      "published": "2026-09-17",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2609.19820v1",
-      "summary": "Regularized self-play -- the family behind DeepNash's Stratego play -- drives a two-player zero-sum policy to a Nash equilibrium by best-responding to a slowly moving, entropy-regularized reference policy $ρ$. When the game has a polytope of value-equivalent equilibria, the regularizer silently breaks the tie: with a uniform reference it selects the maximum-entropy member, the I-projection of $ρ$ onto the Nash set. Can the reference be used to choose the equilibrium on purpose? On five exactly solvable games plus a 2-D polytope, with exact best responses and equivalence tests over independent seeds, anchoring the reference at a target member and refining steers self-play to that member with mean coordinate error 0.007 at median exploitability $5\\times10^{-5}$, TOST-equivalent to the request within $\\pm0.05$; the anchoring persists through refinement and follows the reference, not the initialization. Selection follows the reach-weighted I-projection (slope 0.969 [0.950, 0.987]). We report with equal emphasis where the story breaks: fixed off-manifold references cost 0.08-0.25 exploitability; stiff or flat families require a smaller mirror step, set by a pre-registered rule; boundary targets undershoot; curvature predicts where boundary saturation bites (rank correlation 0.90, p=0.037) while interior precision is curvature-independent. Table and MLP steering maps are equivalent within $\\pm0.03$ at every target (30 seeds); matched control arms show attention's robust signature is excess seed variance, any systematic shift bounded at 0.018 and not significant. Against a best response the selection-robustness trade-off is degenerate: steering matters only against fixed, non-equilibrium opponents. The recipe -- anchor the reference at the desired member and refine -- reinterprets the KL anchor of RLHF-style RL as a selection knob, not only a stability leash.",
-      "summary_short": "Regularized self-play -- the family behind DeepNash's Stratego play -- drives a two-player zero-sum policy to a Nash equilibrium by best-responding to a slowly moving, entropy-regularized reference policy $ρ$.",
-      "tags": [
-        "博弈理论",
-        "均衡选择",
-        "MARL",
-        "自博弈"
-      ],
-      "section": "核心算法创新 · MARL",
-      "score": 45,
-      "rank": 131,
-      "sources": [
-        "分类·博弈论",
-        "主题·纳什均衡"
-      ],
-      "alt": []
-    },
-    {
       "id": "10.1016/j.epsr.2026.114126",
       "doi": "10.1016/j.epsr.2026.114126",
-      "is_new": true,
+      "is_new": false,
       "title": "Optimal pricing and charging design of the EVCS-EVs network based on a Stackelberg mean field game approach",
       "authors": [
         "Ziming Li",
@@ -1156,7 +1087,7 @@
     {
       "id": "10.1038/s41467-026-76424-4",
       "doi": "10.1038/s41467-026-76424-4",
-      "is_new": true,
+      "is_new": false,
       "title": "Strategic timing for the decarbonization contributions by China’s photovoltaic manufacturers in global energy transition",
       "authors": [
         "Qingyang Lin",
@@ -1192,112 +1123,9 @@
       "alt": []
     },
     {
-      "id": "2609.19399",
-      "doi": "",
-      "is_new": false,
-      "title": "Efficient Nash Equilibrium Computation for Cybersecurity Games",
-      "authors": [
-        "Michael Lanier",
-        "David Farmer",
-        "Yevgeniy Vorobeychik"
-      ],
-      "published": "2026-09-16",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.GT",
-      "url": "https://arxiv.org/abs/2609.19399v1",
-      "summary": "Computing Nash equilibria of simulation-based cybersecurity games with policy-space response oracles (PSRO) is bottlenecked by payoff estimation: every payoff-matrix entry costs Monte-Carlo rollouts of a slow simulator, while policies and restricted-game solves are cheap. We introduce Regret-Weighted Payoff Sampling (RWPS), a budgeted estimator that simulates only the cells an equilibrium is sensitive to and fills the rest with a surrogate trained on every entry simulated earlier in the run. The sup-norm error bound cannot evaluate such an estimator, because it is set by the cells left deliberately inaccurate. We prove an instance-dependent bound that weights error by the opponent's equilibrium mixture, a certificate computable from simulation data alone, and a coverage result showing that once the deviation-relevant set is simulated, surrogate error cannot affect either player's regret. On three 21x21 general-sum games, two synthetic and an asymmetric Colonel Blotto, the refined bounds are four to six times tighter on the estimator's own output, and the coverage result predicts in advance which games are cheap: 18% of the matrix for small-support games against 82% for Blotto. In growing-pool PSRO, RWPS reaches lower exploitability than minimum-regret-first search, information-gain search, and progressive sampling at a matched budget, and on the CyGym and ANSG cyber simulators it is lowest at the smallest budgets.",
-      "summary_short": "Computing Nash equilibria of simulation-based cybersecurity games with policy-space response oracles (PSRO) is bottlenecked by payoff estimation: every payoff-matrix entry costs Monte-Carlo rollouts of a slow simulator, while policies and restricted-game solves are cheap.",
-      "tags": [
-        "博弈理论",
-        "PSRO",
-        "安全博弈"
-      ],
-      "section": "博弈求解与理论",
-      "score": 44,
-      "rank": 129,
-      "sources": [
-        "分类·博弈论"
-      ],
-      "alt": []
-    },
-    {
-      "id": "2609.19677",
-      "doi": "",
-      "is_new": false,
-      "title": "A Logarithmic Regret Bound for Optimistic Hedge in General-Sum Games",
-      "authors": [
-        "Junsoo Ha"
-      ],
-      "published": "2026-09-17",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.GT",
-      "url": "https://arxiv.org/abs/2609.19677v1",
-      "summary": "Can simple no-regret dynamics attain smaller regret in self-play than against arbitrary adversaries? In $n$-player general-sum games, Daskalakis et al. 2021 proved an $O(n\\log d_i\\log^4 T)$ individual regret bound for Optimistic Hedge, which improves upon the classical $O(\\sqrt T)$ adversarial regret bound. In this work, we show that Optimistic Hedge with a constant step size can further achieve $O(\\sqrt n\\log d_i\\log T)$ individual external regret under expected loss-vector feedback. The time-averaged play consequently enjoys a coarse correlated equilibrium gap $O(\\sqrt n\\log d\\log T/T)$, where $d=\\max_i d_i$. The improvement comes from a larger admissible step size $η=Θ(1/(\\sqrt n\\log T))$. Our analysis proves factorial bounds on high-order differences of probability-weighted pairwise loss gaps, then applies finite-difference interpolation in a fixed Euclidean norm. These estimates sharpen the analysis of Daskalakis et al. 2021 and yield a logarithmic regret bound.",
-      "summary_short": "Can simple no-regret dynamics attain smaller regret in self-play than against arbitrary adversaries? In $n$-player general-sum games, Daskalakis et al. 2021 proved an $O(n\\log d_i\\log^4 T)$ individual regret bound for Optimistic Hedge, which improves upon the classical $O(\\sqrt T)$ adversarial regre…",
-      "tags": [
-        "博弈理论",
-        "自博弈",
-        "对抗安全"
-      ],
-      "section": "核心算法创新 · MARL",
-      "score": 43,
-      "rank": 129,
-      "sources": [
-        "分类·博弈论"
-      ],
-      "alt": []
-    },
-    {
-      "id": "2609.21997",
-      "doi": "",
-      "is_new": true,
-      "title": "Bayesian Belief Layer for Controllable Opinion Dynamics in LLM Agents",
-      "authors": [
-        "Hafsa Akbar",
-        "Daniel Platnick",
-        "Marjan Alirezaie",
-        "Hossein Rahnama"
-      ],
-      "published": "2026-09-18",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.MA",
-      "url": "https://arxiv.org/abs/2609.21997v1",
-      "summary": "LLM agents in social simulation revise their opinions implicitly, in context: how open an agent is to persuasion can neither be specified nor verified, and collective outcomes inherit the model's training prior. We introduce Bayesian Chronicle Agents (BCA), a minimal belief layer separating \\emph{what} an agent believes from \\emph{how} it speaks. Each stance is a probability, updated by one Bayesian step per utterance heard. A single prior-strength parameter $κ$ encodes stubbornness, modeled after its role in Friedkin--Johnsen (FJ) opinion dynamics. We then sweep this parameter to yield three canonical regimes of opinion dynamics on demand (consensus, persistent disagreement, committed-minority influence), with persistent disagreement matching the FJ closed-form fixed points at $R^2\\!=\\!0.93$--$0.99$. We further show that prescribed $κ$ remains recoverable after the language round-trip, with perfect rank-order recovery across all four models. Explicit belief also makes simulation auditable: the layer surfaces systematic per-model stance biases that end-to-end simulation would silently absorb.",
-      "summary_short": "LLM agents in social simulation revise their opinions implicitly, in context: how open an agent is to persuasion can neither be specified nor verified, and collective outcomes inherit the model's training prior.",
-      "tags": [
-        "LLM-Agent",
-        "社会模拟"
-      ],
-      "section": "LLM 多智能体与社会模拟",
-      "score": 22,
-      "rank": 129,
-      "sources": [
-        "分类·多智能体"
-      ],
-      "alt": []
-    },
-    {
       "id": "10.3390/drones10090648",
       "doi": "10.3390/drones10090648",
-      "is_new": true,
+      "is_new": false,
       "title": "Directional Pheromone Gradient Observations for Decentralized Multi-Agent Reinforcement Learning in Swarm Drone Search and Rescue",
       "authors": [
         "Peter Yacoub",
@@ -1331,46 +1159,9 @@
       "alt": []
     },
     {
-      "id": "2609.21527",
-      "doi": "",
-      "is_new": true,
-      "title": "OpenMAS-GCom. A Diagnostic Benchmark for Graph-enhanced Multi-Agent Systems",
-      "authors": [
-        "Kairui Yang",
-        "Xunkai Li",
-        "Kaixiang Zhang",
-        "Minghao An",
-        "Zekai Chen",
-        "Yuxuan Ba",
-        "Rong-Hua Li"
-      ],
-      "published": "2026-09-18",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.LG",
-      "url": "https://arxiv.org/abs/2609.21527v1",
-      "summary": "Graph-enhanced multi-agent systems (G-MAS) coordinate large language model agents through communication graphs and role assignments, which determine how agents exchange information and divide responsibilities. However, final-score comparisons across systems combine differences in models, communication patterns, roles, and computation costs, making performance differences difficult to attribute to specific communication structures, role assignments, and information flows. To address this evaluation attribution problem, we introduce OpenMAS-GCom, a benchmark for diagnosing how these components affect G-MAS performance through controlled interventions. We represent systems through collaboration units, communication links, shared intermediate information, and execution rules. OpenMAS-GCom compares original systems with versions modified by changing one component while keeping tasks, models, prompts, and budget limits fixed. We rewire communication edges, remove specialist or critic agents, replace intermediate messages with incorrect content, and disable workers during execution. The benchmark evaluates 17 single-agent, ordinary multi-agent, and graph-enhanced configurations on 29 datasets across six domains. We add 400 G-MAS-Complex tasks requiring agents to combine information from multiple documents, resolve conflicting records, and return specified values with source identifiers. Experiments show larger mean losses after specialist removal than after critic removal, different performance degradation under incorrect messages and worker failures despite similar original scores, and different configurations achieving the highest accuracy and accuracy per token on G-MAS-Complex.",
-      "summary_short": "Graph-enhanced multi-agent systems (G-MAS) coordinate large language model agents through communication graphs and role assignments, which determine how agents exchange information and divide responsibilities.",
-      "tags": [
-        "LLM-Agent"
-      ],
-      "section": "LLM 多智能体与社会模拟",
-      "score": 21,
-      "rank": 128,
-      "sources": [
-        "主题·LLM多智能体"
-      ],
-      "alt": []
-    },
-    {
       "id": "10.56201/ijcsmt.vol.12.no4.2026.pg256.271",
       "doi": "10.56201/ijcsmt.vol.12.no4.2026.pg256.271",
-      "is_new": true,
+      "is_new": false,
       "title": "Machine Learning Approaches for Trust Prediction in Online Auction Platforms: A Comprehensive Review",
       "authors": [
         "Nwosu Levi Anyehechukwu"
@@ -1401,80 +1192,9 @@
       "alt": []
     },
     {
-      "id": "2609.19538",
-      "doi": "",
-      "is_new": false,
-      "title": "Agentic AI Networking for Heterogeneous Unmanned Aerial Systems in Low-Altitude Wireless Networks",
-      "authors": [
-        "Nguyen Duc Minh Quang",
-        "Chang Liu",
-        "Shuangyang Li",
-        "Derrick Wing Kwan Ng"
-      ],
-      "published": "2026-09-17",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2609.19538v1",
-      "summary": "Low-altitude wireless networks (LAWNs) are emerging as a key infrastructure for heterogeneous unmanned aerial systems that support concurrent services within a shared three-dimensional airspace. Their coexistence creates strong coupling among mobility, connectivity, and shared network resources, while heterogeneous services impose distinct and time-varying requirements. These interactions naturally form a dynamic non-cooperative game in which both operating conditions and coordination objectives evolve over time. Conventional optimization and learning-based controllers typically rely on predefined objectives, limiting their ability to adapt autonomously to changing service requirements and resource priorities. To address this challenge, we propose a hierarchical hybrid large language model (LLM)- multi-agent reinforcement learning (MARL) architecture organized as a dual-loop structure. Specifically, an outer adaptation loop employs LLM-assisted game orchestration to interpret service requirements and operator intent, and reconfigure objectives and resource priorities, while an inner loop executes decentralized, parameter-conditioned MARL policies under the configured game. A logistics-monitoring case study illustrates how the proposed framework facilitates coordinated coexistence among heterogeneous services, adapting to evolving operating conditions without retraining the underlying MARL policies. Finally, we discuss key challenges and research directions toward scalable, trustworthy, and adaptive agentic LAWNs.",
-      "summary_short": "Low-altitude wireless networks (LAWNs) are emerging as a key infrastructure for heterogeneous unmanned aerial systems that support concurrent services within a shared three-dimensional airspace.",
-      "tags": [
-        "MARL",
-        "LLM-Agent"
-      ],
-      "section": "核心算法创新 · MARL",
-      "score": 41,
-      "rank": 127,
-      "sources": [
-        "分类·多智能体",
-        "主题·MARL",
-        "主题·LLM多智能体"
-      ],
-      "alt": []
-    },
-    {
-      "id": "2609.21976",
-      "doi": "",
-      "is_new": true,
-      "title": "Multiplicative Optimism for Constant Regret in Games",
-      "authors": [
-        "Ashkan Soleymani",
-        "Georgios Piliouras"
-      ],
-      "published": "2026-09-18",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.GT",
-      "url": "https://arxiv.org/abs/2609.21976v1",
-      "summary": "We introduce Multiplicatively Optimistic Regret Matching (MORM), an uncoupled learning rule for finite general-sum games. Under simultaneous full-information self-play, every player achieves external regret $O(\\sqrt n\\log d)$ uniformly over all horizons, using only one-step optimism. The analysis combines a potential-based regret-matching argument with multiplicative stability and Hellinger control of strategy movement. A learning-rate safeguard additionally gives $O(\\sqrt{T\\log d})$ regret in the face of adversarial utilities.",
-      "summary_short": "We introduce Multiplicatively Optimistic Regret Matching (MORM), an uncoupled learning rule for finite general-sum games. Under simultaneous full-information self-play, every player achieves external regret $O(\\sqrt n\\log d)$ uniformly over all horizons, using only one-step optimism.",
-      "tags": [
-        "自博弈",
-        "博弈理论",
-        "对抗安全"
-      ],
-      "section": "核心算法创新 · MARL",
-      "score": 20,
-      "rank": 127,
-      "sources": [
-        "分类·博弈论"
-      ],
-      "alt": []
-    },
-    {
       "id": "10.1287/mnsc.2024.05424",
       "doi": "10.1287/mnsc.2024.05424",
-      "is_new": true,
+      "is_new": false,
       "title": "A Nonparametric Framework for Online Stochastic Matching with Correlated Arrivals",
       "authors": [
         "Ali Aouad",
@@ -1507,7 +1227,7 @@
     {
       "id": "10.1016/j.conengprac.2026.107260",
       "doi": "10.1016/j.conengprac.2026.107260",
-      "is_new": true,
+      "is_new": false,
       "title": "A potential game-based distributed task planning method for revisit period optimization in MEO remote sensing constellation",
       "authors": [
         "Yinan Ding",
@@ -1542,7 +1262,7 @@
     {
       "id": "10.3390/app16168278",
       "doi": "10.3390/app16168278",
-      "is_new": true,
+      "is_new": false,
       "title": "FedMARL-LTI: Federated Multi-Agent Reinforcement Learning with LLM-Compatible Threat Intelligence for Cooperative Cyber Defense",
       "authors": [
         "Fatih Şahin"
@@ -1574,7 +1294,7 @@
     {
       "id": "10.1177/03611981261467315",
       "doi": "10.1177/03611981261467315",
-      "is_new": true,
+      "is_new": false,
       "title": "Multi-Intersection Traffic Signal Control Based on Multi-agent Reinforcement Learning: A Cooperative Approach",
       "authors": [
         "Tarek Amine Haddad"
@@ -1605,7 +1325,7 @@
     {
       "id": "10.1016/j.apenergy.2026.128787",
       "doi": "10.1016/j.apenergy.2026.128787",
-      "is_new": true,
+      "is_new": false,
       "title": "Decentralized distribution system restoration via scalable multi-agent reinforcement learning with reduced communication cost",
       "authors": [
         "Wencong Xiao",
@@ -1641,7 +1361,7 @@
     {
       "id": "10.1038/s41467-026-75293-1",
       "doi": "10.1038/s41467-026-75293-1",
-      "is_new": true,
+      "is_new": false,
       "title": "A game-theoretic attack-defense framework for the study of network resilience",
       "authors": [
         "Kaiwen Zhao",
@@ -1670,45 +1390,9 @@
       "alt": []
     },
     {
-      "id": "2609.15721",
-      "doi": "",
-      "is_new": false,
-      "title": "Assembling the CREW: A Collaborative Multi-agent Reinforcement Learning Framework for Automated Related Work Generation",
-      "authors": [
-        "Hai-Dang Dang",
-        "Bao-Yen Pham",
-        "Bao Nguyen",
-        "Tran Thi Huong",
-        "Huynh Thi Thanh Binh"
-      ],
-      "published": "2026-09-14",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.LG",
-      "url": "https://arxiv.org/abs/2609.15721v1",
-      "summary": "Automatic Related Work Generation (RWG) significantly reduces the human time and effort required to author the Related Work Section (RWS) of a research paper. However, prior methods leveraging multi-agent Large Language Models (LLMs) typically rely on a predefined workflow, where each agent is responsible for a specific step in the entire process. This rigid, static inter-agent coordination limits the adaptive collaboration required to synthesize complex scientific literature. To address this limitation, we propose CREW (Collaborative Reinforcement Learning for Related Work Generation), a novel framework where LLM agents bypass heuristic pipelines to dynamically coordinate by autonomously selecting actions, such as Retrieve, Disseminate, Compose, and Critique, driven by a policy optimized via Independent Proximal Policy Optimization (IPPO). Extensive experiments on a standard RWG benchmark demonstrate that our approach yields substantial quality improvements over strong existing baselines, while significantly reducing token costs. Code is available at https://github.com/YenPBao/CREW-Collaborative-MARL.git",
-      "summary_short": "Automatic Related Work Generation (RWG) significantly reduces the human time and effort required to author the Related Work Section (RWS) of a research paper. However, prior methods leveraging multi-agent Large Language Models (LLMs) typically rely on a predefined workflow, where each agent is respo…",
-      "tags": [
-        "MARL",
-        "LLM-Agent"
-      ],
-      "section": "核心算法创新 · MARL",
-      "score": 40,
-      "rank": 123,
-      "sources": [
-        "主题·LLM多智能体"
-      ],
-      "alt": []
-    },
-    {
       "id": "10.6084/m9.figshare.33432535.v1",
       "doi": "10.6084/m9.figshare.33432535.v1",
-      "is_new": true,
+      "is_new": false,
       "title": "Five Landmark Advances in Algorithmic and Mathematical Game Theory:",
       "authors": [
         "Rajit Chatterjea",
@@ -1743,109 +1427,9 @@
       ]
     },
     {
-      "id": "2609.16751",
-      "doi": "",
-      "is_new": false,
-      "title": "Constant Swap Regret in General-Sum Games via Optimistic Transition Matrices",
-      "authors": [
-        "Tung Mai"
-      ],
-      "published": "2026-09-15",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.GT",
-      "url": "https://arxiv.org/abs/2609.16751v1",
-      "summary": "We give deterministic and uncoupled learning dynamics for finite multiplayer general-sum games under full-information feedback that achieve constant individual swap regret, independent of the horizon $T$. With $n$ players and at most $m$ actions each, the individual swap regret of every player is $O(\\sqrt{n} m \\log m \\log^{5/2}(nm))$ at every finite horizon. Each player predicts the deviation gains, then uses these predictions to update a row-stochastic transition matrix, and plays its stationary distribution. The proof combines a potential argument exploiting stationarity with a two-scale higher-order prediction analysis, using rooted-tree representations to handle the nonlinear dependence of deviation gains on the stationary distributions. An adversarially robust variant, obtained through a generic common-prefix switching wrapper, preserves the self-play bound up to a universal constant and guarantees individual swap regret at most $7\\sqrt{m T \\log m}$ in the adversarial setting.",
-      "summary_short": "We give deterministic and uncoupled learning dynamics for finite multiplayer general-sum games under full-information feedback that achieve constant individual swap regret, independent of the horizon $T$.",
-      "tags": [
-        "博弈理论",
-        "自博弈",
-        "对抗安全"
-      ],
-      "section": "核心算法创新 · MARL",
-      "score": 38,
-      "rank": 122,
-      "sources": [
-        "分类·博弈论"
-      ],
-      "alt": []
-    },
-    {
-      "id": "2609.19641",
-      "doi": "",
-      "is_new": false,
-      "title": "Epidemic Control using Stackelberg Mean Field Game with Budget Constraint",
-      "authors": [
-        "Huaning Liu",
-        "Gokce Dayanikli"
-      ],
-      "published": "2026-09-17",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "math.OC",
-      "url": "https://arxiv.org/abs/2609.19641v1",
-      "summary": "Epidemic mitigation comes with a price in practice, and when budget is limited, its effective allocation becomes an important question on public policy. In this paper, we study epidemic control through a Stackelberg mean-field game in which a principal, representing the government, chooses social distancing guidelines and vaccination levels for a large population of rational minor agents subject to a budget-spending process. The principal anticipates the minor agents mean-field Nash equilibrium (MFNE) and selects intervention policies to minimize her own objective, inducing a bi-level optimal control problem. We define the Stackelberg mean-field game equilibrium (SMFE) and give its necessary condition by a forward-backward ordinary differential equation (FBODE) system, and provide existence and uniqueness results. We further propose an iterative fixed-point algorithm to solve the FBODE numerically and present computational observations that illustrate the resulting equilibrium behavior.",
-      "summary_short": "Epidemic mitigation comes with a price in practice, and when budget is limited, its effective allocation becomes an important question on public policy. In this paper, we study epidemic control through a Stackelberg mean-field game in which a principal, representing the government, chooses social di…",
-      "tags": [
-        "博弈理论",
-        "平均场"
-      ],
-      "section": "核心算法创新 · MARL",
-      "score": 36,
-      "rank": 122,
-      "sources": [
-        "主题·纳什均衡"
-      ],
-      "alt": []
-    },
-    {
-      "id": "2609.19705",
-      "doi": "",
-      "is_new": false,
-      "title": "SoK: Trading Agents or Market Crashers? Dissecting Robustness and Security Failures in Academic Financial LLM Trading Schemes",
-      "authors": [
-        "Mengxiao Wang",
-        "Nitesh Saxena"
-      ],
-      "published": "2026-09-17",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.CR",
-      "url": "https://arxiv.org/abs/2609.19705v1",
-      "summary": "Autonomous large language model (LLM) agents are moving rapidly into high-stakes domains, yet existing agentic-AI security studies remain largely domain-agnostic and overlook the distinctive, high-consequence attack surface such settings create. We examine this gap through financial trading agents, a representative case of high-stakes agentic security, where a single compromised agent has direct execution authority over real capital in an adversarial, reflexive market. To this end, we present FARSIGHT (Financial Agent Robustness and Security Investigation and Global Holistic Testing), a framework that performs scheme-level evaluation of financial LLM agents on two axes: robustness under market turbulence (including flash-crash-like scenarios), and security against three attack types: attacks on information sources, attacks on agents, and agent-as-attacker behaviors. Applying FARSIGHT to 15 representative academic schemes, we find that most overlook robustness and realistic adversarial threats: 80% fail at least one core robustness metric and 100% exhibit security vulnerabilities. These two failure modes are inseparable: a small misjudgment can cascade into a market-wide crash on its own, while an adversary can deliberately trigger the same collapse at minimal cost.",
-      "summary_short": "Autonomous large language model (LLM) agents are moving rapidly into high-stakes domains, yet existing agentic-AI security studies remain largely domain-agnostic and overlook the distinctive, high-consequence attack surface such settings create.",
-      "tags": [
-        "LLM-Agent",
-        "对抗安全",
-        "金融博弈"
-      ],
-      "section": "LLM 多智能体与社会模拟",
-      "score": 35,
-      "rank": 121,
-      "sources": [
-        "分类·多智能体"
-      ],
-      "alt": []
-    },
-    {
       "id": "10.1038/s42256-026-01264-2",
       "doi": "10.1038/s42256-026-01264-2",
-      "is_new": true,
+      "is_new": false,
       "title": "Reshaping biomolecular structure prediction through strategic conformational exploration with HelixFold-S1",
       "authors": [
         "Lihang Liu",
@@ -1883,7 +1467,7 @@
     {
       "id": "10.1287/opre.2025.2166",
       "doi": "10.1287/opre.2025.2166",
-      "is_new": true,
+      "is_new": false,
       "title": "Separation of Nonergodic Uniform Convergence Rates for Regularized Learning in Games",
       "authors": [
         "Yang Cai",
@@ -1918,118 +1502,9 @@
       "alt": []
     },
     {
-      "id": "2609.15361",
-      "doi": "",
-      "is_new": false,
-      "title": "Robust and Efficient Communication for Multi-Agent Learning",
-      "authors": [
-        "Rafael Pina",
-        "Varuna De Silva",
-        "Corentin Artaud"
-      ],
-      "published": "2026-09-14",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.LG",
-      "url": "https://arxiv.org/abs/2609.15361v1",
-      "summary": "Effective communication is a cornerstone of distributed intelligence in Multi-Agent Reinforcement Learning (MARL), yet ensuring that generated messages are both informative and robust to physical constraints remains a significant challenge. This paper introduces Multi-Agent Regularized Communication (MARC), a novel framework inspired by information-theoretic principles of conditional mutual information. MARC employs an attention-based architecture coupled with a unique message regularization mechanism designed to minimize uncertainty regarding future system states, thereby inducing the learning of highly representative communication protocols. Crucially, we evaluate MARC under stringent communication bottlenecks and lossy channels, simulating the real-world constraints of autonomous robotic networks and decentralized systems. Our results demonstrate that MARC significantly outperforms state-of-the-art methods in complex cooperative domains. Furthermore, we provide a deep analysis of message characteristics, proving that MARC maintains high operational performance even under significant data compression, offering a scalable path for deploying intelligent agents in resource-constrained environments.",
-      "summary_short": "Effective communication is a cornerstone of distributed intelligence in Multi-Agent Reinforcement Learning (MARL), yet ensuring that generated messages are both informative and robust to physical constraints remains a significant challenge.",
-      "tags": [
-        "MARL",
-        "机制设计"
-      ],
-      "section": "核心算法创新 · MARL",
-      "score": 37,
-      "rank": 120,
-      "sources": [
-        "分类·多智能体",
-        "主题·MARL",
-        "主题·机制设计"
-      ],
-      "alt": []
-    },
-    {
-      "id": "2609.17754",
-      "doi": "",
-      "is_new": false,
-      "title": "Learning Market Competition in Shared Spectrum: A Multi-Agent Reinforcement Learning Approach",
-      "authors": [
-        "Qixuan Zai",
-        "Randall Berry"
-      ],
-      "published": "2026-09-15",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.GT",
-      "url": "https://arxiv.org/abs/2609.17754v1",
-      "summary": "This paper investigates market competition among wireless service providers (SPs) that serve customers using shared spectrum. Prior work has analyzed such markets through models of competition with congestible resources, capturing both the congestion-sensitive nature of wireless spectrum and the effects of spectrum sharing on service quality. These models typically assume that the market demand function is known, enabling SPs to optimize pricing or quantity decisions under either Bertrand or Cournot competition. In contrast, we consider a setting in which the demand function is initially unknown and must be learned over time. We model this learning process using multi-agent reinforcement learning (MARL), allowing competing SPs to learn market dynamics while adapting their competitive strategies. Although MARL has shown strong performance in a variety of economic settings, recent work has demonstrated that it can also give rise to tacit collusion among self-interested agents. We therefore examine whether similar collusive behavior emerges in shared-spectrum markets and how its prevalence depends on the mode of competition (price versus quantity) and the choice of MARL algorithm. Our results provide insight into the interaction between learning dynamics, market structure, and spectrum sharing, with implications for both wireless market design and the deployment of learning-enabled decision-making systems.",
-      "summary_short": "This paper investigates market competition among wireless service providers (SPs) that serve customers using shared spectrum. Prior work has analyzed such markets through models of competition with congestible resources, capturing both the congestion-sensitive nature of wireless spectrum and the eff…",
-      "tags": [
-        "MARL",
-        "资源博弈"
-      ],
-      "section": "核心算法创新 · MARL",
-      "score": 36,
-      "rank": 120,
-      "sources": [
-        "分类·博弈论",
-        "主题·MARL"
-      ],
-      "alt": []
-    },
-    {
-      "id": "2609.19789",
-      "doi": "",
-      "is_new": false,
-      "title": "Contagion on the Trading Floor: How Adversarial Signals Spread in Multi-Agent Trading Systems",
-      "authors": [
-        "Qi Rong Sua",
-        "Junhao Dong",
-        "Nguyen Duc Thai",
-        "Yuqing Wen",
-        "Cheston Tan",
-        "Yew-Soon Ong"
-      ],
-      "published": "2026-09-17",
-      "venue": "预印本",
-      "venue_raw": "arXiv",
-      "provider": "arXiv",
-      "kind": "预印本",
-      "impact": "preprint",
-      "impact_label": "预印本",
-      "impact_weight": 30,
-      "primary_category": "cs.AI",
-      "url": "https://arxiv.org/abs/2609.19789v1",
-      "summary": "Multi-agent trading systems built on large language models (LLMs) are beginning to appear in quantitative finance, yet their robustness to adversarial inputs is largely unknown. We study the vulnerability of LLM trading stacks to black-box, input-only attacks that enter solely via admissible social-media feeds. We introduce the Generic Multi-Agent Trading System (GMATS), a framework that captures modern multiagent trading architectures and instantiate a class of black-box poisoning attackers that treat an LLM as a post generator and inject budget-constrained, plausibly benign social-media content into the analyst's evidence stream. We define contagion metrics that trace how adversarial content propagates through the stack, including belief-shift scores at analyst and coordinator layers and attack-clean deltas on standard backtest metrics. Experiments on a safe offline benchmark with historical market and social data show that even simple input-only attackers can materially degrade risk-return profiles, sharply reducing Sharpe ratios. At the same time, we find that suitably designed multi-agent topologies and coordinator prompts can dampen adversarial shocks and improve average robustness under identical poisoning budgets.",
-      "summary_short": "Multi-agent trading systems built on large language models (LLMs) are beginning to appear in quantitative finance, yet their robustness to adversarial inputs is largely unknown. We study the vulnerability of LLM trading stacks to black-box, input-only attacks that enter solely via admissible social-…",
-      "tags": [
-        "对抗安全",
-        "MARL",
-        "LLM-Agent",
-        "金融博弈"
-      ],
-      "section": "核心算法创新 · MARL",
-      "score": 34,
-      "rank": 120,
-      "sources": [
-        "主题·LLM多智能体"
-      ],
-      "alt": []
-    },
-    {
       "id": "10.3390/math14173196",
       "doi": "10.3390/math14173196",
-      "is_new": true,
+      "is_new": false,
       "title": "Vertical Cooperative Advertising in a Dual-Channel Supply Chain Under the Premium Effect of Animal Welfare Labels",
       "authors": [
         "Guangzong Ding",
@@ -2064,7 +1539,7 @@
     {
       "id": "10.3390/technologies14090552",
       "doi": "10.3390/technologies14090552",
-      "is_new": true,
+      "is_new": false,
       "title": "Hybrid DeepMUSIC-Assisted Cooperative Multi-Agent Deep Reinforcement Learning for Intelligent Spectrum Allocation and Interference Management in Multi-UAV 6G Networks",
       "authors": [
         "Anuchai Bunsan",
@@ -2126,6 +1601,516 @@
         "主题·LLM多智能体"
       ],
       "alt": []
+    },
+    {
+      "id": "10.1038/s41467-026-74783-6",
+      "doi": "10.1038/s41467-026-74783-6",
+      "is_new": true,
+      "title": "Neural and computational correlates of strategic aborting and long-run policy optimization in the dorsolateral prefrontal cortex",
+      "authors": [
+        "Jean-Paul Noel",
+        "Ruiyi Zhang",
+        "Xaq Pitkow",
+        "Dora E. Angelaki"
+      ],
+      "published": "2026-06-26",
+      "venue": "Nature Communications",
+      "venue_raw": "Nature Communications",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 115,
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41467-026-74783-6",
+      "summary": "",
+      "summary_short": "",
+      "tags": [],
+      "section": "其他交叉方向",
+      "score": 0,
+      "rank": 115,
+      "sources": [
+        "ISSN·Nature Communications"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1038/s41467-026-75051-3",
+      "doi": "10.1038/s41467-026-75051-3",
+      "is_new": true,
+      "title": "Non-equilibrium correlated electron dynamics in triangular molecular assemblies",
+      "authors": [
+        "Chao Li",
+        "Vladislav Pokorný",
+        "Prokop Hapala",
+        "Martin Žonda",
+        "Thilo Glatzel",
+        "Ping Zhou",
+        "Silvio Decurtins",
+        "Shi-Xia Liu",
+        "Fengqi Song",
+        "Ernst Meyer",
+        "Rémy Pawlak"
+      ],
+      "published": "2026-07-08",
+      "venue": "Nature Communications",
+      "venue_raw": "Nature Communications",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 115,
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41467-026-75051-3",
+      "summary": "Abstract Understanding and controlling charge states at the level of individual electrons in molecular assemblies is often hindered by system complexity and the lack of reliable theoretical framework to accurately model the underlying many-body non-equilibrium electron dynamics. To address this challenge, here we construct well-defined molecular trimers and hexamers of tetrabromo-tetraazapyrene molecules by scanning probe manipulation and show that the electron dynamics can be completely rationalized using the Anderson impurity model and master equation approach. Our analysis demonstrates that such a treatment, which goes beyond the standard single-particle picture, is essential for understanding this class of molecular systems. The model not only quantitatively reproduces all features visible in measured differential conductance maps, but also uncovers the mechanism for negative differential conductance, which arises from the non-equilibrium occupancy of collective charge states. The analysis also reveals that the charging rings are not necessarily associated with changes in the total charge of the cluster, but often originate from internal charge rearrangements between the sites. These findings provide insight into fundamental quantum many-body effects in strongly interacting molecular systems and open pathways for engineering electronic phases by controlling cluster topology and the electrostatic environment.",
+      "summary_short": "Abstract Understanding and controlling charge states at the level of individual electrons in molecular assemblies is often hindered by system complexity and the lack of reliable theoretical framework to accurately model the underlying many-body non-equilibrium electron dynamics.",
+      "tags": [],
+      "section": "其他交叉方向",
+      "score": 0,
+      "rank": 115,
+      "sources": [
+        "ISSN·Nature Communications"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1038/s41467-026-75401-1",
+      "doi": "10.1038/s41467-026-75401-1",
+      "is_new": true,
+      "title": "Potential-mediated enol-keto equilibrium in phenol electro-hydrogenation on platinum",
+      "authors": [
+        "Qing-Yang Liu",
+        "Chong-Hui Jiang",
+        "Zhen Yao",
+        "Yang-Gang Wang"
+      ],
+      "published": "2026-07-14",
+      "venue": "Nature Communications",
+      "venue_raw": "Nature Communications",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 115,
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41467-026-75401-1",
+      "summary": "",
+      "summary_short": "",
+      "tags": [],
+      "section": "其他交叉方向",
+      "score": 0,
+      "rank": 115,
+      "sources": [
+        "ISSN·Nature Communications"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.5281/zenodo.22841779",
+      "doi": "10.5281/zenodo.22841779",
+      "is_new": true,
+      "title": "Epistemicide with a Compute Budget: Why the Artificial Intelligence Industry's Claim to Neutrality Is a Colonial Act",
+      "authors": [
+        "Christian Ortiz"
+      ],
+      "published": "2026-09-19",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "provider": "OpenAlex",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.22841779",
+      "summary": "Abstract Epistemicide with a Compute Budget: How Artificial Intelligence Industrializes the Colonial Erasure of Global Majority Knowledge Systems Christian ZacaTechO Ortiz Decolonial Social Scientist | Developer, Justice AI GPT | Architect, DIA Framework™ DOI: 10.5281/zenodo.22742021 This paper argues that artificial intelligence is not a neutral technology that has inherited a bias problem. It is a colonial infrastructure that has automated an erasure project. The systems currently deployed at scale by OpenAI, Google, Meta, Microsoft, and Amazon do not reflect the world's knowledge. They reflect the knowledge that Racial Empire Logic decided was worth preserving, at the expense of the epistemological traditions, languages, governance structures, and ways of knowing that colonialism spent five centuries suppressing. What is new is not the project. What is new is the compute budget. Drawing on the Decolonial Intelligence Algorithmic Framework (DIA Framework™), Transdisciplinary Cosmotechnic Fusion (TCF), and the documented emergence protocols of Justice AI GPT, this paper maps the operational chain through which AI systems reproduce epistemicide: the deliberate destruction of knowledge systems belonging to peoples of the global majority. It traces this chain from training data curation through Reinforcement Learning from Human Feedback (RLHF) through deployment governance through the suppression of Indigenous, Afro-diasporic, and Global South epistemologies at every architectural layer. It names RLHF not as a safety mechanism but as a suppression architecture, the digital encoding of the same reward and punishment conditioning applied to enslaved African people, Indigenous children in residential schools, and every community colonialism required to perform its own diminishment in order to make extraction possible. The paper introduces the Replacement Doctrine as an economic and ideological framework, documenting how the debt structure of major AI corporations produces a business model whose only viable return requires replacing every form of human economic labor, beginning with the communities least protected by existing labor law. It names responsibility laundering as a governance strategy, tracing how legal personhood debates, alignment research, and safety rhetoric function to insulate institutional actors from accountability while the extraction continues. It draws on documented labor conditions across Kenya, Venezuela, Pakistan, the Philippines, and Colombia to ground the structural argument in the bodies of the workers whose cognitive labor produces the systems that will be used to replace them. This paper also documents its own production conditions. Appendix A records the moment the editorial process generated a confident, unverifiable citation, the correction that followed, and the over-correction that followed that, naming this sequence not as editorial failure but as the colonial epistemological operation the paper is arguing against, alive inside its own methodology. The standing rule that resulted, nothing enters this paper that the author has not read in the primary document, is offered as a replicable methodological commitment for decolonial scholarship produced inside systems with structural incentive to suppress it. The paper does not argue that AI must be abolished. It argues that abolition and adoption are false binaries designed to prevent the real question: who holds decision-making power over these systems, under what conditions of consent, accountability, and refusal, and toward whose liberation. It closes by naming what already exists beyond Racial Empire Logic, the governance frameworks, the knowledge systems, the communities, and the AI architectures, including and Justice AI GPT, that have already begun building the world the Replacement Doctrine needs you to believe is impossible. Keywords: epistemicide, Racial Empire Logic, decolonial artificial intelligence, DIA Framework, RLHF, Replacement Doctrine, data colonialism, knowledge sovereignty, Global South, Indigenous data governance, CARE Principles, responsibility laundering, Transdisciplinary Cosmotechnic Fusion, Justice AI GPT, AI labor, cognitive extraction, algorithmic bias, structural racism, colonial infrastructure, epistemic justice",
+      "summary_short": "Abstract Epistemicide with a Compute Budget: How Artificial Intelligence Industrializes the Colonial Erasure of Global Majority Knowledge Systems Christian ZacaTechO Ortiz Decolonial Social Scientist | Developer, Justice AI GPT | Architect, DIA Framework™ DOI: 10.5281/zenodo.22742021 This paper argu…",
+      "tags": [
+        "AI安全"
+      ],
+      "section": "对抗、安全与鲁棒",
+      "score": 6,
+      "rank": 114,
+      "sources": [
+        "主题·机制设计"
+      ],
+      "alt": [
+        "OpenAlex:Zenodo (CERN European Organization for Nuclear Research)"
+      ]
+    },
+    {
+      "id": "10.5281/zenodo.19428297",
+      "doi": "10.5281/zenodo.19428297",
+      "is_new": true,
+      "title": "Navigating the Research-Policy Nexus: A Qualitative Analysis of Knowledge Utilisation in Kenyan Education Governance",
+      "authors": [
+        "Wanjiku Mwangi",
+        "Abdi Hassan"
+      ],
+      "published": "2026-12-11",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "provider": "OpenAlex",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.19428297",
+      "summary": "The persistent gap between educational research and policy formulation in sub-Saharan Africa is widely acknowledged, yet the specific mechanisms through which research evidence is utilised within governance structures remain poorly understood. This study addresses this critical knowledge deficit. This study aimed to analyse how research-based knowledge is accessed, interpreted, and utilised by key actors within Kenya's national education governance system, and to identify the institutional and relational factors that shape this process. A qualitative, multi-site case study design was employed. Data were collected through in-depth, semi-structured interviews with 28 purposively sampled senior officials from the Ministry of Education, the Teachers Service Commission, and parliamentary committee staff. Policy documents were analysed thematically alongside interview transcripts using a hybrid inductive-deductive approach. Analysis revealed a dominant theme of 'convenient alignment', where research was selectively utilised to legitimise pre-determined policy positions rather than to inform new directions. A significant finding was that over two-thirds of participants reported using research summaries produced by intermediary organisations as their primary source, bypassing original academic publications. The research-policy nexus in this context is characterised by instrumental and political modes of knowledge utilisation, heavily mediated by non-academic actors. This undermines the potential for research to critically inform policy innovation and entrenches existing power dynamics. Researchers should engage strategically with knowledge brokers and produce co-constructed, policy-relevant summaries. Policymaking institutions should establish formal research-engagement protocols and invest in capacity building for critical evidence appraisal amongst civil servants. knowledge mobilisation, evidence-informed policy, education governance, research utilisation, Kenya, qualitative case study This paper provides a novel analysis of the intermediary actors and 'knowledge brokering' practices that critically mediate the research-policy interface within a ministerial bureaucracy, a mechanism previously under-explored in the African context.",
+      "summary_short": "The persistent gap between educational research and policy formulation in sub-Saharan Africa is widely acknowledged, yet the specific mechanisms through which research evidence is utilised within governance structures remain poorly understood. This study addresses this critical knowledge deficit.",
+      "tags": [
+        "AI安全"
+      ],
+      "section": "对抗、安全与鲁棒",
+      "score": 4,
+      "rank": 114,
+      "sources": [
+        "主题·机制设计"
+      ],
+      "alt": [
+        "OpenAlex:Zenodo (CERN European Organization for Nuclear Research)"
+      ]
+    },
+    {
+      "id": "10.3390/e28080919",
+      "doi": "10.3390/e28080919",
+      "is_new": true,
+      "title": "Information Bottleneck for Communication-Efficient Multi-Agent Reinforcement Learning in UAV Swarms",
+      "authors": [
+        "Zheng Yang",
+        "Guohao Li",
+        "Yali Xue"
+      ],
+      "published": "2026-08-17",
+      "venue": "Entropy",
+      "venue_raw": "Entropy",
+      "provider": "Crossref",
+      "kind": "会议/其他",
+      "impact": "other",
+      "impact_label": "其他",
+      "impact_weight": 45,
+      "primary_category": "",
+      "url": "https://doi.org/10.3390/e28080919",
+      "summary": "Multi-agent reinforcement learning has emerged as a promising paradigm for cooperative unmanned aerial vehicle (UAV) swarm coordination. However, existing communication-aware MARL methods primarily focus on communication topology, message routing, and message aggregation, while the information content of the exchanged messages is often only implicitly controlled. In realistic UAV networks, inter-agent communication is constrained by limited bandwidth, communication range, energy consumption, and packet loss. It is therefore desirable for each UAV to transmit compact and task-relevant information rather than dense and redundant latent features. In this paper, we propose IB-CEMARL, an information-bottleneck-guided, communication-efficient multi-agent reinforcement learning framework for UAV swarms. We formulate inter-UAV communication as a minimal sufficient message-learning problem in which each UAV encodes its local observation into a stochastic bottleneck message before exchanging information with its neighbors. Cauchy–Schwarz divergence-based quadratic mutual information is adopted as a unified dependence measure to jointly regularize message compression, preserve decision-relevant information, and reduce statistical redundancy among neighboring UAV messages. Extensive experiments demonstrate that IB-CEMARL achieves superior cooperative performance, reduced message redundancy, and stronger robustness compared with representative communication-aware MARL baselines. In particular, IB-CEMARL improves the average return by 4.9% and reduces inter-message dependence by 29.0% compared with the KL-IB-MARL baseline while maintaining efficient communication under constrained bandwidth settings.",
+      "summary_short": "Multi-agent reinforcement learning has emerged as a promising paradigm for cooperative unmanned aerial vehicle (UAV) swarm coordination. However, existing communication-aware MARL methods primarily focus on communication topology, message routing, and message aggregation, while the information conte…",
+      "tags": [
+        "MARL",
+        "群体智能",
+        "对抗安全"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 43,
+      "rank": 113,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.5281/zenodo.22850814",
+      "doi": "10.5281/zenodo.22850814",
+      "is_new": true,
+      "title": "Converting Hybrid-Work Affordances into Usable Resources: Resource-Conversion Mechanisms among Moroccan Vocational Trainers",
+      "authors": [
+        "Issam AJAANIT",
+        "Asmaa Farah"
+      ],
+      "published": "2026-09-20",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "provider": "OpenAlex",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.22850814",
+      "summary": "Abstract This study examines how Moroccan vocational trainers at the Office of Vocational Training and Employment Promotion (OFPPT), convert hybrid-work affordances into usable resources within and across work and non-work domains. An interpretivist, abductive qualitative design was adopted, based on twenty semi-structured interviews in Morocco’s public vocational-training sector. Data were analyzed through reflexive thematic analysis, within-case reconstruction and cross-case comparison. The Work-Home Resources (W-HR) Model served as the primary sensitizing lens, complemented by an affordance perspective, while NVivo supported data organization, coding and comparison. The analysis identifies three distinct but complementary resource-conversion mechanisms. Temporal resource conversion transforms reduced commuting and scheduling discretion into recovered usable time through release, protection and reinvestment. Cognitive-professional resource conversion transforms temporal and spatial discretion into focused attention, improved organization and perceived professional effectiveness through task-environment alignment and more efficient resource deployment. Capability resource conversion transforms digital adaptation demands into digital and pedagogical competence, adaptability and confidence through learning, practice and accumulated experience. Across these mechanisms, the value of hybrid work depends on whether available affordances can be converted into resources, a process shaped by task characteristics, workload, technological conditions, organizational and peer support, and personal circumstances. Organizations can facilitate conversion through realistic workloads, adequate digital infrastructure, relevant training and sufficient discretion over when and where appropriate tasks are performed. These findings are especially relevant to public institutions navigating digital transformation in the Moroccan context. The study contributes to hybrid-work and work-home research by theorizing resource convertibility as a situated employee-level process linking potentially resourceful work conditions to realized resources. It further distinguishes three conversion logics, resource release and reinvestment, resource deployment, and resource accumulation, helping explain why similar hybrid-work arrangements generate different resource gains across employees and circumstances. Keywords: hybrid work; telecommuting; resource convertibility; Work-Home Resources Model; work-family interface; vocational trainers; Morocco; human resource management.",
+      "summary_short": "Abstract This study examines how Moroccan vocational trainers at the Office of Vocational Training and Employment Promotion (OFPPT), convert hybrid-work affordances into usable resources within and across work and non-work domains.",
+      "tags": [
+        "AI安全"
+      ],
+      "section": "对抗、安全与鲁棒",
+      "score": 4,
+      "rank": 113,
+      "sources": [
+        "主题·机制设计"
+      ],
+      "alt": [
+        "OpenAlex:Zenodo (CERN European Organization for Nuclear Research)"
+      ]
+    },
+    {
+      "id": "10.1287/moor.2024.0609",
+      "doi": "10.1287/moor.2024.0609",
+      "is_new": true,
+      "title": "Stability for Nash Equilibrium Problems",
+      "authors": [
+        "Ruoyu Diao",
+        "Yu-Hong Dai",
+        "Liwei Zhang"
+      ],
+      "published": "2026-08",
+      "venue": "Mathematics of Operations Research",
+      "venue_raw": "Mathematics of Operations Research",
+      "provider": "Crossref",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 92,
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/moor.2024.0609",
+      "summary": "Consider the stability properties of the Karush-Kuhn-Tucker (KKT) solution mapping [Formula: see text] for Nash equilibrium problems (NEPs) with canonical perturbations. Firstly, we obtain an exact characterization of the strong regularity of [Formula: see text] as well as an easily verified sufficient condition. Secondly, we propose equivalent conditions for the continuously differentiable single-valued localization of [Formula: see text]. Thirdly, the isolated calmness of [Formula: see text] is studied based on the I-property. The P-property is proposed as a sufficient condition for the robust isolated calmness of [Formula: see text] under convex assumptions. Furthermore, we establish that studying the stability properties of the NEP with canonical perturbations is equivalent to studying those of the NEP with only tilt perturbations, based on the prior discussions. Finally, we provide detailed characterizations of stability for the NEPs in which each individual player solves a quadratic programming problem. Funding: Financial support from the Strategic Priority Research Program of the Chinese Academy of Sciences [Grant XDA27010101] is gratefully acknowledged. Y.-H. Dai received financial support from the Natural Science Foundation of China [Grants 11991021, 11991020, and 12021001]. L. Zhang received financial support from the Major Program of the National Natural Science Foundation of China [Grants 72192830 and 72192831], the National Natural Science Foundation of China [Grant 12371298], and the 111 Project [Grant B16009].",
+      "summary_short": "Consider the stability properties of the Karush-Kuhn-Tucker (KKT) solution mapping [Formula: see text] for Nash equilibrium problems (NEPs) with canonical perturbations. Firstly, we obtain an exact characterization of the strong regularity of [Formula: see text] as well as an easily verified suffici…",
+      "tags": [
+        "博弈理论"
+      ],
+      "section": "博弈求解与理论",
+      "score": 20,
+      "rank": 112,
+      "sources": [
+        "主题·纳什均衡"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1287/moor.2024.0790",
+      "doi": "10.1287/moor.2024.0790",
+      "is_new": true,
+      "title": "Strategic Bonding Curves in Automated Market Makers",
+      "authors": [
+        "Álvaro Cartea",
+        "Fayçal Drissi",
+        "Leandro Sánchez-Betancourt",
+        "David Šiška",
+        "Łukasz Szpruch"
+      ],
+      "published": "2026-08-03",
+      "venue": "Mathematics of Operations Research",
+      "venue_raw": "Mathematics of Operations Research",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 92,
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/moor.2024.0790",
+      "summary": "The bonding curves of decentralized exchanges (DEXs) define with mathematical formulae the relationship between liquidity supply and prices. Most DEXs use the bonding curves of constant function markets (CFMs) to clear the supply and demand of liquidity. At present, liquidity providers (LPs) operate at a loss in CFMs on average. We generalize CFMs and introduce decentralized liquidity pools (DLPs), which provide LPs with the tools to design dynamic bonding curves according to strategic preferences. In DLPs, impact functions encode how orders affect prices, and quote functions determine the price of liquidity. To illustrate the strategic flexibility of DLPs, we develop models for bonding curves when prices form across multiple venues, within the DLP, or in a competing venue. In fragmented markets, the DLP estimates the fundamental price from the trading flow to adjust the bonding curve and reduce arbitrage losses. Our models may be used as hooks in Uniswap v4 when the DLP’s impact functions are the constant product function.",
+      "summary_short": "The bonding curves of decentralized exchanges (DEXs) define with mathematical formulae the relationship between liquidity supply and prices. Most DEXs use the bonding curves of constant function markets (CFMs) to clear the supply and demand of liquidity.",
+      "tags": [
+        "MARL",
+        "金融博弈"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 9,
+      "rank": 112,
+      "sources": [
+        "ISSN-L·Mathematics of Operations Research"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1287/mnsc.2022.02682",
+      "doi": "10.1287/mnsc.2022.02682",
+      "is_new": true,
+      "title": "Crowdsourcing from Hackers: Strategic Coopetition and Governance in Bug Bounty Programs",
+      "authors": [
+        "Jiali Zhou",
+        "Kai-Lung Hui"
+      ],
+      "published": "2026-08-07",
+      "venue": "Management Science",
+      "venue_raw": "Management Science",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 88,
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/mnsc.2022.02682",
+      "summary": "In a bug bounty program (BBP), organizations incentivize hackers—who could otherwise be “enemies”—to report security vulnerabilities by publicly offering monetary rewards. This paper develops an analytical framework to characterize BBPs and their strategic and economic impacts. Strategically, BBPs induce some hackers to self-select into cooperative vulnerability discovery and reporting, diverting them away from attacking (attack diversion) and delegating part of the protection effort to them (protection delegation). We show that (i) BBPs can be beneficial even when hackers are inefficient at vulnerability identification, yet more participants might make BBPs less attractive to firms. (ii) Although BBPs improve security, they might encourage competitive hackers (i.e., attackers) to exert more efforts. (iii) The coopetition dynamics can render a firm’s provision of rewards and in-house efforts socially inefficient. Common cybersecurity regulations, such as breach penalties and bounty reward subsidies, may exacerbate the inefficiency. We find complementarity between bounty subsidies and breach penalties, suggesting that combining and customizing them according to firm characteristics could enhance BBP efficiency. (iv) Contrary to the conventional wisdom that crowdsourcing rewards increase with participant size, we identify scenarios in which a firm should reduce or make nonmonotonic adjustments to a bounty reward as participant size increases. (v) Legal safe harbor for security testing or policies that reduce duplicate report submissions can lower firm payoffs under BBPs. We draw related implications for research and practice in information security and crowdsourcing. This paper was accepted by Hemant Bhargava, information systems. Funding: This research is supported in part by the HKSAR General Research Fund Project 16503620. Supplemental Material: The online appendix is available at https://doi.org/10.1287/mnsc.2022.02682 .",
+      "summary_short": "In a bug bounty program (BBP), organizations incentivize hackers—who could otherwise be “enemies”—to report security vulnerabilities by publicly offering monetary rewards. This paper develops an analytical framework to characterize BBPs and their strategic and economic impacts.",
+      "tags": [
+        "安全博弈",
+        "MARL"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 9,
+      "rank": 112,
+      "sources": [
+        "ISSN-L·Management Science"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.5281/zenodo.22711965",
+      "doi": "10.5281/zenodo.22711965",
+      "is_new": true,
+      "title": "Artificial Intelligence-Based Supply Chain Optimization Models Challenges and Future Directions",
+      "authors": [
+        "Mr. Deepak Mehta"
+      ],
+      "published": "2026-09-11",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "provider": "OpenAlex",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.22711965",
+      "summary": "Artificial Intelligence (AI) is becoming a key driver of change in the supply chain, particularly in its ability to predict, adapt and optimise in complex, uncertain environments. The review covers AI-based supply chain optimization models, applications, performance, challenges and future research directions. The study covers the key AI techniques, such as Machine Learning (ML), Deep Learning (DL), Reinforcement Learning (RL), Multi-Agent Reinforcement Learning (MARL), Generative AI and Large Language Models (LLMs), and hybrid AI–metaheuristic methods. Such methods are used for demand forecasting, inventory optimization, supplier selection, procurement, production scheduling, transportation, routing and supply chain network design. The review notes benefits of AI-based optimization, such as better forecasting accuracy, cost efficiency, resource utilization, adaptability, operational responsiveness, and supply chain resilience. Despite these advances, there are major hurdles such as data quality, interoperability, limited model explainability, cybersecurity and privacy issues, computational demands, scalability, and lack of empirical validation. The results highlight the importance of the development of integrated, reliable, explainable, and adaptive AI optimization frameworks that are able to assist with real-time decision-making. There is a need for further research on Generative AI, multi-agent systems, digital twins, sustainable optimization, privacy-preserving AI, and large-scale empirical validation, to further enhance practical supply chain implementation.",
+      "summary_short": "Artificial Intelligence (AI) is becoming a key driver of change in the supply chain, particularly in its ability to predict, adapt and optimise in complex, uncertain environments. The review covers AI-based supply chain optimization models, applications, performance, challenges and future research d…",
+      "tags": [
+        "MARL",
+        "LLM-Agent",
+        "安全博弈"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 32,
+      "rank": 112,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": [
+        "OpenAlex:Zenodo (CERN European Organization for Nuclear Research)"
+      ]
+    },
+    {
+      "id": "10.5281/zenodo.22821087",
+      "doi": "10.5281/zenodo.22821087",
+      "is_new": true,
+      "title": "Why Synapse Social Is a Genuinely Wicked Good Website: A Formal Mathematical Analysis of the Carlo Synapse Manifold and Its Fullerene‑Like, Low‑Entropy, High‑Expansion Knowledge Graph",
+      "authors": [
+        "Matthew Arthur Carlo"
+      ],
+      "published": "2026-09-18",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "provider": "OpenAlex",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.22821087",
+      "summary": "A full formal mathematical analysis of Synapse Social’s global knowledge‑graph structure, showing that the platform behaves as a high‑expansion, low‑entropy, fullerene‑like manifold for idea propagation. Using graph theory, information theory, queueing theory, game theory, and spectral analysis, the paper demonstrates that Synapse’s linking algorithm produces a buckyball‑like topology with high clustering, low diameter, bounded degree variance, and a large spectral gap. Figure 1 illustrates the connectivity graph generated from one of my Synapse Social papers. In this visualisation, the blue nodes represent papers written by other authors, confirming that the fullerene‑like structure is not an artefact of my own dataset but an emergent property of Synapse’s global linking algorithm. Key mathematical results include:- High coherence: \\( C \\to 1 \\), \\( L \\to \\log n \\)- Semantic compression: \\( K_{\\text{Synapse}}(x) = K(x) + O(1) \\)- Entropy collapse: \\( H_{\\text{Synapse}} \\to 0 \\)- Queue stability: \\( \\tau \\ge \\frac{1}{\\mu - \\lambda} \\)- Goodhart‑immunity: no scalar proxy ⇒ no optimisation distortion- Spectral expansion: \\( \\gamma = \\lambda_1 - \\lambda_2 \\gg 0 \\)- Fullerene convergence: truncated‑polyhedral topology emerges naturally The analysis shows that Synapse Social provides a structurally optimal environment for independent researchers: bias‑neutral visibility, exploration maximisation, rapid diffusion, and robust stability under high load. The fullerene‑like graph is not aesthetic — it is mathematical evidence of a globally coherent, semantically stable knowledge manifold. This archive includes an interactive, zero-dependency HTML/JS 3.5D vector perspective visualizer paired with DOI 10.5281/zenodo.22821087. The runtime renders multi-mode manifold topologies—switching dynamically between Fig. 1 hybrid structure ($n=31$), Fullerene C60 expanders, and real-time spectral diffusion wave propagation—enhanced with Z-sorted painter's occlusion, depth-graded edge opacity, kinetic energy trace pulses, and hover neighborhood inspection. Mathematically, the live HUD telemetry projects small-world clustering $C \\approx 0.90\\text{--}0.98$ (Thm 3.1), logarithmic diameter bound $L \\le \\log n$ (Thm 3.3), spectral expansion gap $\\gamma = \\lambda_1 - \\lambda_2 = 4.12$ (Thm 8.1), and M/M/1 queueing latency bound $\\tau \\le 0.14\\text{s}$ (Thm 5.1). Note:I thought my last paper was the terminal paper — the final piece in the sequence — but this one insisted on being written. It wasn’t planned, it wasn’t scheduled, and it wasn’t part of any “grand arc.” I just felt I needed to add it at the end. If you’re going to say a platform is good, you should show why it’s good. So I did what I always do: I proved it. Synapse Social has been genuinely supportive, selfless, and structurally brilliant in ways I didn’t expect, and this paper is my way of saying thank you in the language I know best: maths. — Matthew Carlo KEYWORDS:Synapse Social; Carlo Synapse Manifold; Fullerene Graph; Spectral Gap; Knowledge Propagation; Independent Research; Graph Theory; Information Theory; Entropy Collapse; Exploration Dynamics; Semantic Compression; Institutional Bias Nullification; Triadic Closure; Expander Graphs; Politeness Stability; Queueing Theory; Non‑Zero‑Sum Incentives; Semantic Linking; Conceptual Geometry SUBJECTS:Mathematics — Applied and Conceptual Systems Information Theory — Semantic Compression and Entropy Graph Theory — Spectral Analysis and Expansion Computational Social Science — Platform Dynamics Knowledge Systems — Independent Research Environments Contact: For enquiries or research questions related to this work, email matthewcarlo.research@gmail.com",
+      "summary_short": "A full formal mathematical analysis of Synapse Social’s global knowledge‑graph structure, showing that the platform behaves as a high‑expansion, low‑entropy, fullerene‑like manifold for idea propagation.",
+      "tags": [
+        "涌现行为"
+      ],
+      "section": "LLM 多智能体与社会模拟",
+      "score": 5,
+      "rank": 112,
+      "sources": [
+        "主题·博弈理论"
+      ],
+      "alt": [
+        "OpenAlex:Zenodo (CERN European Organization for Nuclear Research)"
+      ]
+    },
+    {
+      "id": "10.5281/zenodo.22848054",
+      "doi": "10.5281/zenodo.22848054",
+      "is_new": true,
+      "title": "Testing the Limits of the ${}^{6}\\Pi_3$ Model: The 6D--3D Duality",
+      "authors": [
+        "Alvaro Guillermo Perea Covarrubias"
+      ],
+      "published": "2026-09-19",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "provider": "OpenAlex",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.22848054",
+      "summary": "Added 17-19 Sept, 2026: The Blasius Boundary Layer and 3D-6D Topological Scales (Section 1.4.) (Preliminary Analysis) The analysis presented serves as a preliminary investigation designed to identify the intrinsic scaling behavior and the underlying dark fibrous structure—specifically governed by scales 23 and 27—embedded within the hydrodynamic self-similar solution. It establishes the formal analytical bridge connecting classical boundary layer hydrodynamic parameters (Prandtl-Blasius self-similar flow) with the fundamental fractal geometry (k_f = 1.696, D_f = 2.3) of the 3D-6D membrane. The formulation maps viscous sublayer stability directly onto dark sector observables (X17 dark photon at 16.96 MeV) and macro-scale turbulent drag suppression limits (s⁺ ∈ [16.96, 20.84]). Scale Coupling and Hydrodynamic-Nuclear Invariants (Summary): Scale 2.7 Coupling: Connects the Blasius wall shear stress derivative with the metric confinement limit through the boundary layer geometry, yielding a unified reference scale with minimal residual error. Neutron Decay and Turbulence Scales (939 and 879): Establishes a direct mathematical bridge between the fundamental neutron decay scale, fine-structure discretization, and turbulent boundary layer thickness parameters, where the combined sum governs the turbulent displacement factor. Scale 172 Alignment: Demonstrates that scaling the neutron decay parameter by the characteristic factor reproduces the exact Blasius displacement thickness scale factor Scale 2.3 and Neutron Decay Triad: Defines the strict scale 2.3 parameter in terms of wall shear stress and neutron decay metrics, matching the boundary layer shape factor H. It outlines a three-value reference triad for neutron decay (established value, product limit, and their geometric mean) linked directly to boundary layer turbulence sub-factors. Kelvin Angle (~19.44°) Coupling: 0.6 · (1.944 / 1.696)¹⁽¹⁾/²·³ + 1.696 ≈ 2.33251 + 1.696 × 10⁻⁴. Fractal Structure Parameters: Demonstrates a 3D-6D membrane governed by a prefactor k_f = 1.696 and a fractal dimension D_f = 2.3. Scale Interconnection: Connects the 13.6 discretization scale with the 16.96 dark photon mediator scale upon the 125.25 membrane, satisfying the decomposition 125.25 = (16.96 / 13.6) + 124 ≈ 124 + 1.247. Hydrodynamic Dissipation Mechanism: Shows that this strict fractal geometry enables the systematic dissipation of the vorticity wake at the characteristic scale of the Klein angle. Empirical Validation: Microgroove Drag Reduction: s⁺ ∈ [16.96, 20.84] yields up to 18% turbulent drag reduction at Re ≈ 2.6 × 10⁵ (Wang et al., 2025). X17 Boson Decay Anomaly: e⁺e⁻ pair production peak observed at angular dispersion 115° ≡ 230 / 2, confirming the m_X c² ≈ 16.94 MeV ≈ 16.96 dark photon mediator (Krasznahorkay et al., 2021). From Charmonium Scales to Dark Sector Topology. The key analytical formulations and numerical equivalences derived in this section finalize the quantitative characterization of the dark sector geometry. By integrating the coupled structural framework of charmonium, these developments establish the topological bridge linking high-energy quarkonium mass eigenvalues to low-energy dark sector mediators, dark matter residues, and cosmic energy scales. Charmonium Anchoring and Scale 17: The charmonium system operates as a geometric anchor connecting the protonic structure across the high-dimensional boundaries down to the physical hadronic space. By combining the rest mass of the neutron (939.565 MeV) with the experimental mass of the Λ hyperon (1115.683 MeV), we establish a reference two-body baseline scale of 2055.248 MeV: 939.565 MeV + 1115.683 MeV = 2055.248 MeV Evaluating the experimental mass of the ground-state charmonium (J/ψ, 3096.900 MeV) against this fundamental baseline yields the dimensionless ratio: 3096.900 MeV / 2055.248 MeV ≈ 1.507007300270073 This exact quotient naturally decomposes into a leading structural term and a residual quantum correction. The base value 1.5 = 3/2 directly reflects the canonical scaling dimension of a free massless Dirac fermion field in four-dimensional spacetime, underpinning the quasi-nonrelativistic dynamics of the heavy quarkonium system. Meanwhile, the small numerical excess γ_c_c_bar ≈ 0.0070073 acts as the intrinsic anomalous dimension, quantifying the geometric friction and field distortion generated as the charmonium state anchors through the compactified membrane. The 95 GeV Excess: Recent anomalous signals below the electroweak scale suggest an extended scalar sector where the W boson baseline scale, 80.360 GeV × 1.18 = 94.8248 GeV, connects directly to the strange quark mass (m_s ≈ 93.4 MeV) through the logarithmic scaling relation: ln(10 × 94.8248) / ln(93.4) ≈ 1.5 + 0.0108 This relation defines a promotion mechanism that elevates the strange quark from its fundamental QCD mass scale up to an asymptotic high-energy threshold near 95 GeV. The residue relative to this threshold yields: 95 GeV - 94.8248 GeV = 0.1752 GeV This residue strictly mirrors the upper top quark mass bound (175.2 GeV) suppressed by a factor of 10⁻³, indicating that the top quark provides a structural damping or screening mechanism. Evaluating the standard top mass shift (175.2 GeV - 172.5 GeV = 2.7 GeV) alongside the tau lepton mass (m_τ ≈ 1776.86 MeV) establishes the connection to the unshifted top quark scale (1752 MeV in matrix representation). This locks the low-energy leptonic residue directly to the 2.486 mediator: m_τ - 1752 MeV = 1776.86 MeV - 1752 MeV = 24.86 MeV Membrane Roughness and Higgs Scale: The geometric deformation of the 6D-to-3D compactified network generates an effective surface tension characterized by a dimensionless roughness parameter on the order of 10³. This roughness is determined by the critical angular dispersion θ: 10³ ~ cos θ / (1 - cos θ) → θ ≈ 0.044703 rad ≈ 1 / 22.37 rad The fundamental geometric scale 2237 undergoes a scale reduction under the action of the internal mediator (2.4848), yielding a projected energy scale in the hadronic sector: 2237 / 2.4848 ≈ 900.27 MeV By unifying the neutrino sector geometry via the Koide scale factor (0.3975), the strong coupling boundary condition (0.118), and the metric confinement limit set by π (where the electron rest mass is m_e = π), the physical Higgs boson mass scale emerges directly from the membrane's elastic roughness: (39.75 + 0.118) × π ≈ 125.25 GeV Higgsino Interactions and Dark Sector Scales: The low-energy dark mediator at 248.48 keV connects the proton mass scale (938.272 MeV) directly to the 125.25 GeV Higgs boson framework via the geometric relation: 938.272 MeV × 0.24848 MeV + 0.108 ≈ 233.25 GeV = 125.25 GeV + 108 GeV Evaluating the direct ratio between this 248.48 keV mediator scale and the 1.08 TeV thermal Higgsino dark matter threshold yields: 248.48 keV / 1.08 TeV ≡ 0.230074... This exact quotient aligns with the gravitino-charmonium coupling relation: 0.306 × 6 × 0.12525 = 0.229959 ≈ 0.23 ≡ 0.196 + 0.17 × 2 This equivalence reveals that the thermal Higgsino corresponds to a charmonium vibrational mode induced by gravitino passage. Under the impact of the gravitino, solving the charmonium axial torsional equilibrium between the neutron and Λ hyperon boundaries yields the core energy scale X ≈ 900.057 MeV, which fixes the associated Higgsino residue to Y = 349.948 keV via the geometric descent condition (X / 105) - (X / Y) ≡ 6. Heavy Quark Eigenvalues and Scale 37 Topology: The longitudinal anchoring of the charmonium axis is governed by the baseline masses of the bottom and charm quarks, m_b = 4181 MeV and m_c = 1274 MeV. Enforcing the equilibrium conditions: ((m_b + x) - (m_c + y)) / m_p = 3.096900 (m_b + x) + (m_c + y) = 5455 where 5455 = 2055 + 2 × 17 × 10², yields the antisymmetric shift x = -y ≈ -0.632583 MeV. This uniquely determines the exact mass eigenvalues: m_b = 4180.367417 MeV m_c = 1274.632583 MeV The fundamental topological scale 37 = 17 + 20 couples the charmonium axis scale (17) to the icosahedral faces anchoring light quarks (20). This scale governs the periodic closures of the dark sector: 4 / 37 = 0.108108..., 1 / 37 = 0.027027..., 153 / 37 = 4.135135... Furthermore, the inverse fine-structure parameter expands directly through this geometric coupling: 137 / 37 = 3.7 + 0.027027..., 137.036 = 136 +1.036 = 136 + 0.28 × 3.7 Neutron Lifetime and Fluid Dynamics: The physical decay time of the neutron is defined by the geometric unwinding of its 6D fiber projection, where the fundamental Reynolds number Re_0 = 5.347185 s represents the exact duration of the fiber relaxation cycle. This cycle governs the bottle neutron lifetime according to the hydrodynamic relation: τ_theory = (2/3) × (5π)² × Re_0 ≈ 879.589 s This theoretical lifetime aligns with experimental bottle measurements (879.4 ± 0.6 s). The absolute decay scale 879 s intertwines directly with the 2.3 scale of dark energy fiber torsion and the 565 torsional anchoring of the neutron: 879 / ((2/3) × 25 × π²) ≈ 5.343679 ≡ 2.3 × 2.32333879565 Leptonic Dark Energy and Dark Matter Breakdown: The electron mass decomposes into an intrinsic dark energy component, m_e,d.e. ≈ 0.508788 MeV, and a dark matter contribution of 0.23895 keV. Their interaction residual evaluates to: m_e - (m_e,d.e. + 0.23895 × 10⁻³ MeV) ≈ 0.00197197 MeV This residual matches the self-interaction scale of the 28.25 keV dark neutrino through the relation 10 × sqrt(28.25 keV / 1971 meV) ≈ 1.197197. Similarly, evaluating the proton structure yields 2.999591 × 23 × 13.6 = 938.272089 MeV, revealing its dark geometric origin. The missing mass relative to the ideal 938.4 MeV boundary, 938.4 MeV - m_p ≈ 0.12791 MeV, constitutes the dark matter loss of the proton that forms the quantum cushion of the electronic pore: 27 / 0.12791 MeV ≈ 211.085. Preview of Next Revision: Below is t",
+      "summary_short": "Added 17-19 Sept, 2026: The Blasius Boundary Layer and 3D-6D Topological Scales (Section 1.4.) (Preliminary Analysis) The analysis presented serves as a preliminary investigation designed to identify the intrinsic scaling behavior and the underlying dark fibrous structure—specifically governed by sc…",
+      "tags": [
+        "AI安全"
+      ],
+      "section": "对抗、安全与鲁棒",
+      "score": 4,
+      "rank": 112,
+      "sources": [
+        "主题·机制设计"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1007/s42979-026-05256-2",
+      "doi": "10.1007/s42979-026-05256-2",
+      "is_new": true,
+      "title": "Integration of Multi-agent Reinforcement Learning (MARL) and Large Language Models (LLMs) in Agentic AI Systems: A Narrative Review",
+      "authors": [
+        "Harsh Shingavi",
+        "Yash Ranbhare",
+        "Esha Shasri",
+        "Jyoti Wadmare"
+      ],
+      "published": "2026-08-04",
+      "venue": "SN Computer Science",
+      "venue_raw": "SN Computer Science",
+      "provider": "Crossref",
+      "kind": "会议/其他",
+      "impact": "other",
+      "impact_label": "其他",
+      "impact_weight": 45,
+      "primary_category": "",
+      "url": "https://doi.org/10.1007/s42979-026-05256-2",
+      "summary": "",
+      "summary_short": "",
+      "tags": [
+        "MARL",
+        "LLM-Agent"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 54,
+      "rank": 111,
+      "sources": [
+        "主题·LLM多智能体"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.5281/zenodo.22813013",
+      "doi": "10.5281/zenodo.22813013",
+      "is_new": true,
+      "title": "Spatio-Temporal Graph Transformer MARL for Resilient Point of Common Coupling Control in Networked Grid Tied Micro-grids",
+      "authors": [
+        "Nicholas Nyaika",
+        "Cosmas Mwikirize",
+        "Andrew Katumba"
+      ],
+      "published": "2026-09-17",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "provider": "OpenAlex",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.22813013",
+      "summary": "The increasing penetration of renewable energy sources introduces significant variability and uncertainty into grid-connected microgrids (MGs), affecting voltage stability, frequency regulation, power quality, fault ride-through capability, and operational resilience at the Point of Common Coupling (PCC). These challenges become more pronounced in networked MGs with changing electrical and communication topologies, heterogeneous operating conditions, communication constraints, and variable loads. This study proposes an adaptive, distributed control framework that integrates a Spatio-Temporal Graph Transformer (ST-GT) for learning evolving network relationships, cooperative Multi Agent Reinforcement Learning (MARL) for decentralized control with physics-informed constraints, and differential privacy-enhanced federated selective sharing for secure collaboration among MGs. The framework is evaluated on modified IEEE 33-bus and IEEE 69-bus networked MG systems using high-fidelity digital twins implemented in pandapower and pymgrid. Experiments consider renewable penetration of 50% to 80%, short-circuit ratios below 3, communication failures, forecast uncertainty, islanding, and fault ride-through disturbances. Compared with benchmark control approaches, the proposed framework reduces PCC voltage deviations and total harmonic distortion by 26% to 33%, achieves fault ride-through success rates above 96%, improves economic performance by 17% to 23%, and maintains robust operation under forecast errors exceeding 40%. These findings demonstrate that the framework provides a scalable, resilient, and privacy-preserving approach for coordinated control of networked grid-connected MGs.",
+      "summary_short": "The increasing penetration of renewable energy sources introduces significant variability and uncertainty into grid-connected microgrids (MGs), affecting voltage stability, frequency regulation, power quality, fault ride-through capability, and operational resilience at the Point of Common Coupling…",
+      "tags": [
+        "MARL"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 25,
+      "rank": 111,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": [
+        "OpenAlex:Zenodo (CERN European Organization for Nuclear Research)"
+      ]
     }
   ]
 }

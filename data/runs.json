@@ -124,6 +124,48 @@
         "其他": 14,
         "预印本": 8
       }
+    },
+    {
+      "date": "2026-09-21",
+      "at": "2026-09-21T07:00:43Z",
+      "ok": true,
+      "total_raw": 1447,
+      "unique": 1306,
+      "kept": 60,
+      "new_count": 16,
+      "by_source": {
+        "arXiv": 0,
+        "OpenAlex": 736,
+        "Crossref": 711
+      },
+      "by_impact": {
+        "顶刊": 14,
+        "期刊": 5,
+        "CCF-A": 19,
+        "其他": 14,
+        "预印本": 8
+      }
+    },
+    {
+      "date": "2026-09-21",
+      "at": "2026-09-21T07:10:00Z",
+      "ok": true,
+      "total_raw": 1447,
+      "unique": 1306,
+      "kept": 60,
+      "new_count": 16,
+      "by_source": {
+        "arXiv": 0,
+        "OpenAlex": 736,
+        "Crossref": 711
+      },
+      "by_impact": {
+        "顶刊": 14,
+        "期刊": 5,
+        "CCF-A": 19,
+        "其他": 14,
+        "预印本": 8
+      }
     }
   ]
 }

@@ -23,9 +23,291 @@
     "new_count": 7,
     "seen_before": 213
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.1287/moor.2024.0609",
+      "doi": "10.1287/moor.2024.0609",
+      "title": "纳什均衡问题的稳定性：从强正则到孤立平稳性",
+      "title_en": "Stability for Nash Equilibrium Problems",
+      "authors": [
+        "Ruoyu Diao",
+        "Yu-Hong Dai",
+        "Liwei Zhang"
+      ],
+      "published": "2026-08",
+      "venue": "Mathematics of Operations Research",
+      "venue_raw": "Mathematics of Operations Research",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/moor.2024.0609",
+      "summary": "Consider the stability properties of the Karush-Kuhn-Tucker (KKT) solution mapping [Formula: see text] for Nash equilibrium problems (NEPs) with canonical perturbations. Firstly, we obtain an exact characterization of the strong regularity of [Formula: see text] as well as an easily verified sufficient condition. Secondly, we propose equivalent conditions for the continuously differentiable single-valued localization of [Formula: see text]. Thirdly, the isolated calmness of [Formula: see text] is studied based on the I-property. The P-property is proposed as a sufficient condition for the robust isolated calmness of [Formula: see text] under convex assumptions. Furthermore, we establish that studying the stability properties of the NEP with canonical perturbations is equivalent to studying those of the NEP with only tilt perturbations, based on the prior discussions. Finally, we provide detailed characterizations of stability for the NEPs in which each individual player solves a quadratic programming problem. Funding: Financial support from the Strategic Priority Research Program of the Chinese Academy of Sciences [Grant XDA27010101] is gratefully acknowledged. Y.-H. Dai received financial support from the Natural Science Foundation of China [Grants 11991021, 11991020, and 12021001]. L. Zhang received financial support from the Major Program of the National Natural Science Foundation of China [Grants 72192830 and 72192831], the National Natural Science Foundation of China [Grant 12371298], and the 111 Project [Grant B16009].",
+      "summary_short": "Consider the stability properties of the Karush-Kuhn-Tucker (KKT) solution mapping [Formula: see text] for Nash equilibrium problems (NEPs) with canonical perturbations. Firstly, we obtain an exact characterization of the strong regularity of [Formula: see text] as well as an easily verified suffici…",
+      "is_new": true,
+      "sources": [
+        "主题·纳什均衡"
+      ],
+      "abs_url": "https://doi.org/10.1287/moor.2024.0609",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "纳什均衡",
+        "变分分析",
+        "稳定性"
+      ],
+      "glance": "给 KKT 解映射的强正则一个精确刻画，并证明「典型扰动」与「仅倾斜扰动」的稳定性研究等价",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "算出一个纳什均衡只是开始。真正让人不安的是后面那串问题：收益或约束被轻微扰动时，解会不会跳到别处？会不会变得不连续？数值迭代还收不收敛？这些不解决，均衡就只是纸面上的存在。"
+        },
+        {
+          "t": "h",
+          "v": "把均衡当作一个解映射来问稳定性"
+        },
+        {
+          "t": "p",
+          "v": "把每个玩家的最优性条件写成一个广义方程（KKT 系统），「均衡集合」就变成了参数扰动下的一个集值映射。要问的不再是解存不存在，而是这个映射在扰动下表现如何——是单值且连续可微（强正则），还是至少不会一下子跳开（孤立平稳性）。"
+        },
+        {
+          "t": "p",
+          "v": "作者先给出 KKT 映射强正则的精确刻画，并配一个容易验证的充分条件；接着给出该映射存在连续可微单值局部化的等价条件。这两条合起来，等于把「什么时候能用牛顿型方法稳定地追踪均衡」说清楚了。"
+        },
+        {
+          "t": "h",
+          "v": "两个把问题降维的结论"
+        },
+        {
+          "t": "p",
+          "v": "孤立平稳性借助 I-性质来研究，并在凸性假设下提出 P-性质，作为「鲁棒孤立平稳性」的充分条件。鲁棒二字是关键——它要求性质在小扰动下依然成立，而不只是在当前这个点上碰巧成立。"
+        },
+        {
+          "t": "p",
+          "v": "更有意思的是一个等价性结论：带典型扰动（canonical perturbations）的纳什均衡问题，其稳定性研究与只带倾斜扰动（tilt perturbations）的问题等价。后者结构更干净，等于把一大类问题压缩到一个更易处理的模型上。最后作者把结果落到每个玩家各解一个二次规划的具体情形，给出细致刻画。"
+        },
+        {
+          "t": "close",
+          "v": "这一步把「算法收敛」从经验观察升级成了可验证条件：先确认解映射强正则或孤立平稳，再谈用什么迭代去追。多智能体训练里常见的「损失不动但策略一直在抖」，往往不是学习率没调好，而是解映射本身就不平稳——先查结构，再调超参。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "10.1108/ecam-01-2026-0099",
+      "doi": "10.1108/ecam-01-2026-0099",
+      "title": "建筑机器人交互的双向安全管理：改进型 MADDPG 框架",
+      "title_en": "An improved MADDPG-based framework for bidirectional safety management of construction robot interaction",
+      "authors": [
+        "Meihao Zhu",
+        "Zhansheng Liu",
+        "Song Wang",
+        "Weiyi Li",
+        "Dingmo Hao",
+        "Huijie Wang"
+      ],
+      "published": "2026-09-21",
+      "venue": "Engineering Construction & Architectural Management",
+      "venue_raw": "Engineering Construction & Architectural Management",
+      "impact": "other",
+      "impact_label": "其他",
+      "primary_category": "",
+      "url": "https://doi.org/10.1108/ecam-01-2026-0099",
+      "summary": "Purpose Safety risks are particularly pronounced when multiple construction robots collaborate in complex construction environments. To enhance collaborative efficiency while ensuring operational safety, this study develops and evaluates, in a scaled simulation, a bidirectional safety management approach that balances autonomous operation, supervisory intervention, and obstacle-aware risk control. Design/methodology/approach A bidirectional multi-agent reinforcement learning framework is constructed for one operational robot (OPR) and one managerial robot (MAR). The proposed improved multi-agent deep deterministic policy gradient (improved-MADDPG) integrates reward shaping, curriculum learning and action constraints with controlled Gaussian exploration. A scaled cable-truss scenario is mapped into two-dimensional obstacle-free, sparse-obstacle and dense-obstacle environments for comparative and progressive ablation validation. Findings Within the evaluated simulation settings, improved-MADDPG improves convergence stability, target-reaching reliability, target-approach accuracy, and collision-risk suppression compared with standard MADDPG. Progressive ablation results further indicate that reward shaping, curriculum learning, and action constraints with controlled Gaussian exploration make complementary contributions under different obstacle complexities. Research limitations/implications The study advances safety-aware MARL for construction robotics by clarifying the cooperative-constrained OPR-MAR game and verifying the complementary effects of reward shaping, curriculum learning, and constrained MAR actions. However, validation remains limited to a 2D scaled simulation with one OPR and one MAR. Future research should test physical robots, incorporate multimodal perception and BIM/digital twin data, and evaluate multi-robot scalability, communication delay and critic complexity for larger robot teams. Practical implications The proposed method provides a procedural route for deploying supervisory construction robots that can monitor operational robots, maintain a safe separation distance and suppress collision-prone behaviour. The parameter table, scale mapping and ablation evidence improve reproducibility and help practitioners adapt the method to different construction stages. Integration with BIM/digital twin platforms could support real-time site-state updates, safety-zone visualisation, and robot trajectory supervision in congested workspaces. Social implications By improving robot safety management in complex construction environments, the proposed approach can help reduce worker exposure to collision hazards, unstable robot motion and high-risk manual inspection tasks. More reliable robot supervision may support safer human-robot coexistence, improve public confidence in construction automation and contribute to safer and more sustainable construction practices. Broader deployment should still consider workforce training, accountability, and regulatory compliance. Originality/value The study clarifies a supervisory game formulation for multi-construction robot safety management and demonstrates how safety-aware reward decomposition, progressive adversarial training and constrained MAR actions can be synergistically combined to support real-time bidirectional safety control in complex construction environments.",
+      "summary_short": "Purpose Safety risks are particularly pronounced when multiple construction robots collaborate in complex construction environments. To enhance collaborative efficiency while ensuring operational safety, this study develops and evaluates, in a scaled simulation, a bidirectional safety management app…",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://doi.org/10.1108/ecam-01-2026-0099",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "MADDPG",
+        "机器人协作",
+        "安全约束"
+      ],
+      "glance": "一台干活、一台管安全：奖励塑形 + 课程学习 + 动作约束，把碰撞风险压在探索阶段之前",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "建筑工地上多台机器人一起作业时，安全风险不是小概率噪声，而是常态。难点在于「自主作业」和「监督介入」天然互相拉扯：放权越多，安全越难兜底；管得越死，协作效率就没了。"
+        },
+        {
+          "t": "h",
+          "v": "把安全做成另一个智能体，而不是一条规则"
+        },
+        {
+          "t": "p",
+          "v": "框架里有两个角色：作业机器人（OPR）负责把活干完，管理机器人（MAR）负责安全。两者放进同一个多智能体强化学习框架里训练——安全不再是外挂的硬编码规则，而是另一个体策略的一部分，双方在同一个奖励结构里讨价还价。"
+        },
+        {
+          "t": "p",
+          "v": "算法底座是改进版 MADDPG，叠了三件事：奖励塑形、课程学习，以及带受控高斯探索的动作约束。第三件尤其关键——探索被限制在动作空间的「安全邻域」内，机器人照样可以试错，但试不出危险动作。"
+        },
+        {
+          "t": "h",
+          "v": "消融实验真正说明了什么"
+        },
+        {
+          "t": "p",
+          "v": "作者把缩尺的索桁架场景映射成二维的无障碍、稀疏障碍、密集障碍三种环境，做对比与渐进式消融。结论是改进版在收敛稳定性、到达可靠性、接近精度和碰撞风险抑制上都优于标准 MADDPG。"
+        },
+        {
+          "t": "p",
+          "v": "更有价值的是消融结果：奖励塑形、课程学习、动作约束三者在不同的障碍复杂度下贡献互补，没有哪一项能单独兜住所有场景。这提示它们解决的是不同层面的问题——课程学习管「从易到难」，动作约束管「不许越界」，奖励塑形管「往哪儿走」。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的是那个双向结构：把「约束」升级成一个有自己目标的智能体，而不是一条 if-else。凡是安全规范难以穷举的场景——施工、仓储、巡检——都比固定阈值更能扛长尾。代价也很实在：多一个策略要训练和调，收敛更难，两个目标的权重需要反复试。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "10.5281/zenodo.22859084",
+      "doi": "10.5281/zenodo.22859084",
+      "title": "智能体互联网缺失的那一层：执行终局性架构",
+      "title_en": "The Missing Execution-Finality Architecture for the Agentic Internet",
+      "authors": [
+        "Sangam Das"
+      ],
+      "published": "2026-09-20",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.22859084",
+      "summary": "Definition — Execution-Finality Architecture An execution-finality architecture is a system architecture in which a proposed, computed, authorized, or prepared operation is kept non-effective until a mandatory enforcement component controlling the actual consequence independently determines that the exact operation about to become effective is permitted under the current protected authorization and system state, and then couples that determination to the resulting state transition in a manner that prevents stale, replayed, substituted, duplicated, revoked, bypassed, or otherwise unauthorized effectuation. In functional terms, the architecture requires the consequence-controlling boundary to establish, as applicable: the exact act that is actually pending; the authority applicable to that act; equality between the authorized act and the actual pending effect; current policy, revocation, generation, freshness, quota, and replay state; binding of the authority to the relevant resource, parameters, context, and effectuation boundary; single-use or bounded-use semantics where required; TOCTOU-resistant verification and commit; atomic or crash-consistent consumption of authority and protected state where necessary; complete mediation of alternative paths capable of producing the same protected consequence; and fail-closed behavior when required evidence or protected state is missing, stale, inconsistent, or unverifiable. The defining property is therefore not merely that authorization occurs near execution. It is that: the operation cannot cross from proposed or authorized state into consequential state unless the component with mandatory control over that consequence independently verifies the exact pending effect against current valid authority and protected state at the point of effectuation. The architecture may be implemented using existing mechanisms such as OAuth, sender-constrained tokens, capability systems, reference monitors, policy-enforcement points, transaction coordinators, trusted execution environments, secure elements, attestation, hardware security mechanisms, or application-specific enforcement. Those mechanisms are implementation substrates. Execution finality describes the required enforcement invariant. A compact expression is: Execution Finality = Mandatory Effectuation Boundary + Actual Pending-Effect Reconstruction + Exact Authority-to-Effect Binding + Current Protected-State Verification + Replay / Revocation / Generation Control + TOCTOU-Resistant Check-and-Commit + Atomic or Crash-Consistent Effectuation + Complete Mediation + Fail-Closed Enforcement Short definition Execution-finality architecture is an architecture in which computation, authorization, or intent does not itself cause consequence; the exact pending consequence remains non-effective until a mandatory effectuation boundary verifies that it is still authorized under current protected state and securely commits that authorized transition. One-sentence principle Computation may propose an action; only verified authority at the consequence boundary may make that action effective. FAQ: Why Not Simply Put OAuth at the Last Executable Boundary? Summary : Why Not Simply Put OAuth at the Final Executable Boundary? Q. If OAuth can be enforced at the final executable boundary, what is different about execution-finality architecture? Placing OAuth at the final executable boundary can be a strong design, but location alone does not establish execution finality. OAuth primarily answers whether a client or principal is authorized to request an operation. Sender-constrained mechanisms such as DPoP or mTLS can additionally establish that the party presenting the authorization is the expected holder. Execution finality asks a further question: Is the exact operation that is actually about to become effective still the exact operation currently authorized, under the current protected system state? The distinction is easiest to see with a non-payment example. Example: Network Route Installation Suppose an AI network-management agent receives authority to install the following route: Authorized operation: ADD_ROUTE( prefix = 10.20.0.0/16, next_hop = Router-A, vrf = Internal ) The agent possesses valid OAuth authorization and is permitted to invoke the network-management API. However, after authorization but before installation, an intermediary, software defect, compromised component, stale state, or parameter substitution changes the pending operation to: Actual pending operation: ADD_ROUTE( prefix = 0.0.0.0/0, next_hop = External-Router, vrf = Internal ) The OAuth credential may still be perfectly valid. The presenter may still be the legitimate authorized agent. The request may even arrive at an OAuth Resource Server located immediately beside the routing-table commit operation. Those facts do not by themselves prove that the route actually about to become active is the route that was authorized. Execution-finality architecture therefore requires the component controlling the routing-table consequence to determine the actual pending operation and compare it with the authorized operation before installation: AUTHORIZED: prefix = 10.20.0.0/16 next_hop = Router-A != ACTUAL PENDING EFFECT: prefix = 0.0.0.0/0 next_hop = External-Router Result: DENY The routing-table change never becomes effective. What did execution finality add? It did not merely add another authorization check. It required the component controlling the real consequence to establish: What was authorized? | v What exact operation is now pending? | v Do all security-relevant parameters match? | v Is the authority still current? | v Has it been revoked, replayed, consumed, or invalidated by a generation change? | v Is this the correct enforcement boundary? | v Can any alternate path produce the same effect? | v Atomically COMMIT or DENY That is the distinction between authorization at a boundary and execution finality at a boundary. Another Example: File Deletion Suppose an AI maintenance agent is authorized to delete: DELETE( object = \"/tmp/cache-123\" ) The agent legitimately possesses authority to use the storage service. But the actual filesystem request reaching the irreversible deletion boundary becomes: DELETE( object = \"/customer-data/\", recursive = true ) A conventional authorization check might correctly conclude: Agent X has DELETE permission. Execution finality requires the stronger determination: Is \"/customer-data/\" recursively the exact deletion that was authorized? NO. Therefore: DO NOT DELETE. The important distinction is between: authority to perform a class of operation and: authority for this exact consequence Another Example: AI Output Release Suppose an AI system is authorized to publish: document = sanitized_report.txt audience = PUBLIC Before external release, however, the object at the egress boundary is: document = raw_internal_report.txt audience = PUBLIC The API caller may be authenticated. The OAuth token may be valid. The token may even contain an appropriate publishing scope. Execution finality nevertheless requires the release boundary to determine which object is actually about to leave the protected system. Authorized object: sanitized_report.txt Actual object: raw_internal_report.txt MATCH? NO => BLOCK EGRESS This shows why execution finality is broader than access control. The security question is not merely: “Is this agent allowed to publish something?” It is: “Is this exact object, to this exact destination, under the current policy state, still authorized to become externally effective now?” When Would OAuth Become Functionally Equivalent? OAuth can absolutely be part of an execution-finality implementation. If the OAuth Resource Server located at the effectuation boundary: keeps the operation non-effective; reconstructs the actual pending consequence; verifies the authorization; verifies sender or presenter binding where required; compares every security-relevant parameter with the authorized act; verifies current protected policy state; verifies revocation and generation state; prevents replay or unauthorized reuse; enforces single-use or bounded-use authority where required; verifies applicable quota or cumulative limits; binds the authority to the correct consequence boundary; performs TOCTOU-resistant verification and commit; atomically or crash-consistently consumes authority where required; prevents bypass through alternative execution paths; and fails closed when required evidence is missing, stale, inconsistent, or unverifiable, then that OAuth Resource Server may be functionally implementing execution finality. The point is therefore not: “OAuth cannot be used.” The point is: OAuth at the final boundary does not automatically imply the complete execution-finality invariant. If OAuth is extended or implemented so that it performs the complete invariant, then OAuth is one implementation mechanism for the architecture. The Core Difference OAuth can answer: “Is this principal authorized to request this operation?” Execution finality asks: “Is this exact consequence, as it actually exists immediately before effectuation, still authorized under current protected state, and can the system prevent it from becoming effective otherwise?” Therefore: OAuth at final boundary + sender constraint ≠ automatically Execution Finality unless the deployment also establishes: Exact pending-effect reconstruction + Exact authority-to-effect binding + Current protected-state verification",
+      "summary_short": "Definition — Execution-Finality Architecture An execution-finality architecture is a system architecture in which a proposed, computed, authorized, or prepared operation is kept non-effective until a mandatory enforcement component controlling the actual consequence independently determines that the…",
+      "is_new": true,
+      "sources": [
+        "主题·机制设计"
+      ],
+      "abs_url": "https://doi.org/10.5281/zenodo.22859084",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "智能体安全",
+        "授权执行",
+        "抗重放"
+      ],
+      "glance": "操作在独立执行组件确认前保持「不生效」，把重放、替换、绕过一律挡在状态转移之前",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一个智能体「决定转账」和「钱真的转出去」之间，今天几乎没有任何结构性间隔。决策一旦生成，往往直接接上了副作用。当智能体开始替人下单、发信、改数据库，这个缺口就是事故现场。"
+        },
+        {
+          "t": "h",
+          "v": "终局性不是一个开关，而是一道边界"
+        },
+        {
+          "t": "p",
+          "v": "作者给的定义很硬：一个被提议、计算、授权或准备好的操作，在真正产生后果之前必须保持不生效，直到某个掌握实际后果的执行组件独立判定——此刻这个确切操作在当前授权与系统状态下是被允许的，并且把该判定与状态转移绑死。"
+        },
+        {
+          "t": "p",
+          "v": "关键在于「独立」与「绑死」两个词。判定者不能是提议者自己；而且判定必须与即将发生的状态转移原子地耦合，否则就会出现「判定完了、状态却变了」的老问题——这正是经典竞态的翻版。"
+        },
+        {
+          "t": "h",
+          "v": "清单里每一条都对应一类真实事故"
+        },
+        {
+          "t": "p",
+          "v": "架构要求这道边界逐项确认：究竟哪个动作在等待生效、适用于它的授权是哪一条、被授权的动作与实际待生效的动作是否严格相等、当前的撤销与新鲜度/配额/重放状态、授权与资源参数上下文的绑定、需要时的单次或限次语义。"
+        },
+        {
+          "t": "p",
+          "v": "其余几条几乎每条都能对上一类已发生过的事故：抗 TOCTOU 的验证与提交、权限与受保护状态的原子消费、对「能产生同样后果的旁路」的完整中介，以及证据缺失时 fail-closed。最后一条最值得记住——拿不到凭证时应当是拒绝，而不是放行。"
+        },
+        {
+          "t": "close",
+          "v": "和昨天那篇契约监督放在一起，是同一条脉络的两端：契约描述「允许什么」，终局性保证「只有被允许的才真的发生」。做智能体系统时值得先问一句——决策与副作用之间那道边界在哪儿，它是不是由同一个模型自己说了算。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "10.5281/zenodo.22860333",
+      "doi": "10.5281/zenodo.22860333",
+      "title": "SYNTRA：面向机器间与 LLM 通信的熵优化形式化中介语",
+      "title_en": "SYNTRA: An Entropy-Optimized, Mathematically Formalized Interlinguistic Protocol for M2M, LLM, and Human-Cognitive Architecture",
+      "authors": [
+        "Yildiray Yildirim"
+      ],
+      "published": "2026-09-20",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.22860333",
+      "summary": "SYNTRA: An Entropy-Optimized, Mathematically Formalized Interlinguistic Protocol for M2M, LLM, and Human-Cognitive Architecture Author: Yildiray Yildirim (Born: 15.02.1985, Independent Systems Architect) Date: September 20, 2026 Repository Identifier: Zenodo Technical Report / DOI-Pending Abstract Modern generative artificial intelligence and distributed multi-agent systems face a fundamental structural bottleneck: the inherent semantic ambiguity, entropy, and polynomial overhead (O(N^2) attention scaling) of natural languages. This paper introduces Syntra, a deterministically formalized, entropy-optimized protocol designed as a seamless bridge between human intent and synthetic execution. Operating strictly within the 7-bit ASCII space, Syntra utilizes a 1,000-root core lexicon derived from Natural Semantic Metalanguage (NSM) combined with 15 agglutinative morphological operators. By enforcing a strict Subject-Verb-Object (SVO) topology without inversion, Syntra reduces parsing complexity to linear time O(n) via a Deterministic Pushdown Automaton (DPDA), eliminates LLM hallucinations on transaction levels, cuts global LLM inference compute requirements by 64%, and reduces human language acquisition time to 30-50 hours. 1. Introduction & The Semantic-Entropy Dilemma The rapid scaling of Large Language Models (LLMs) has exposed a profound architectural mismatch: systems operating on binary deterministic silicon are orchestrated via stochastic, highly entropic natural languages. Natural languages require heuristic disambiguation, consuming massive computational overhead in Transformer attention layers. Syntra resolves this interface crisis by treating communication not as an evolutionary cultural artifact, but as a formal engineering protocol. Analogous to TCP/IP, Syntra acts as a lossless transport layer for functional, economic, and technical interactions while leaving cultural natural languages untouched (the Coexistence Axiom). 2. Formal Syntax & O(n) Parsing Architecture 2.1 Context-Free Grammar (CFG) Specification Syntra is formally specified as a Type-2 Context-Free Grammar within the Chomsky hierarchy, defined in Extended Backus-Naur Form (EBNF). Left-recursion is systematically eliminated, and syntactic ambiguity is removed by design. 2.2 Deterministic Parsing via DPDA Unlike natural language parsers that rely on probabilistic beam search or CYK algorithms (O(n^3)), Syntra's LL(1) grammar allows parsing through a Deterministic Pushdown Automaton (DPDA). For any input string S in Sigma*, the time complexity of Abstract Syntax Tree (AST) generation is strictly linear: T(n)=O(n) Semantic evaluation follows Fregean compositionality, modeled via typed lambda-calculus: Semantics(SVO)=(λy.λx.V(x,y))(O)(S) 3. Lexical Architecture: The 1,000-Root Core Space 3.1 The Semantic Base Syntra’s lexicon is bounded to exactly 1,000 invariant root lexemes and 15 deterministic agglutinative operators (affixes). The root space is structured into orthogonal clusters (Entities, Actions, Qualifiers, Relations, Cognition, Epistemology), eliminating polysemy and synonymy (1:1 mapping between signifier and signified). 3.2 Combinatorial Expansion Through suffixation and binary composition without stem modification, the combinatorial address space Omega scales exponentially: Ω=1000+(1000×15)+1000²=1,016,000 distinct lemmas 3.3 7-Bit ISO-ASCII Digital Nativity To maximize hardware-level performance, the character set is restricted to US-ASCII decimal [32, 126]. Variable-length encodings (such as UTF-8 overhead and branch mispredictions) are eliminated, enabling SIMD-vectorized string processing and compact 14-bit binary bytecode compilation for edge devices and IoT infrastructure. 4. Information Theory & Compute Impact Matrix 4.1 Shannon Entropy and Token Compression By stripping grammatical filler, articles, and inflectional noise, Syntra maximizes information density per token. Measured via Shannon entropy H(X)=−∑P(xᵢ)log₂P(xᵢ), this yields an average 40% to 45% token compression ratio compared to natural English prompts. 4.2 Quadratic Attention Collapse (O(N^2) Reduction) In Transformer architectures, attention compute complexity scales quadratically with sequence length N. Compressing input length to N_syn = 0.6 * N_eng reduces attention FLOPs non-linearly: Compute Load=(0.6×Nₑₙg)²=0.36×Nₑₙg² This results in a 64% reduction in GPU inference compute load, directly mitigating the global energy crisis in data centers. 5. Industrial Application, Multi-Agent Verification & Macroeconomic TCO 5.1 Extended Finite State Transducers (EFST) In multi-agent swarms, communication is formalized as an EFST: M=(Q,Σ,Γ,δ,q₀,Z₀,F). Because Syntra enforces deterministic state transitions, the Kullback-Leibler divergence over multi-agent pipelines collapses to zero: Dₖₗ(P∥Qₖ)=0⇒Zero Semantic Drift 5.2 Enterprise Benchmarks & Global Impact Summary Under stress-test conditions (1M transactions/sec), the 14-bit binary Syntra-payload achieves a SerDes latency of 4.2 microseconds with a bit-exact failure rate of 0.00%. Projecting these metrics onto global enterprise infrastructure yields the following macroeconomic impact: Datacenter Energy Savings: ~89.6 TWh/year reduction in LLM inference power demand. Hyperscaler GPU TCO: ~$30 Billion/year saved in hardware and inference compute costs. Network Bandwidth: 93.4% reduction in M2M/API payload traffic (replacing bloated JSON/REST). 6. Human Cognitive Integration & EdTech Efficiency Unlike rigid machine binary codes, Syntra is fully optimized for human neuro-cognitive processing. Utilizing Cognitive Load Theory (Sweller), Syntra eliminates Extraneous Load (CL_E -> 0) by removing irregular verbs, grammatical genders, and case declensions. Through its modular agglutinative structure, human operators achieve fluent B2 operational proficiency in a compressed learning window of 30 to 50 hours (compared to 600–2,200 hours for natural languages), bridging biological intent and synthetic execution with zero friction. 7. Conclusion Syntra establishes a mathematically verified, entropy-free communication standard for the era of artificial superintelligence and autonomous industrial infrastructure. By aligning human cognitive constraints with uncompromising machine determinism, Syntra represents the definitive protocol for distributed intelligence.",
+      "summary_short": "SYNTRA: An Entropy-Optimized, Mathematically Formalized Interlinguistic Protocol for M2M, LLM, and Human-Cognitive Architecture Author: Yildiray Yildirim (Born: 15.02.1985, Independent Systems Architect) Date: September 20, 2026 Repository Identifier: Zenodo Technical Report / DOI-Pending Abstract M…",
+      "is_new": true,
+      "sources": [
+        "主题·LLM多智能体"
+      ],
+      "abs_url": "https://doi.org/10.5281/zenodo.22860333",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "supporter",
+      "tags": [
+        "智能体通信协议",
+        "语义熵",
+        "形式化语言"
+      ],
+      "glance": "1000 个词根 + 固定主谓宾语序，把解析降到线性时间；64% 与 30–50 小时是作者自述，尚未经同行评议",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "让一群 LLM 智能体互相说话，今天用的还是给人写的自然语言：歧义大、熵高，注意力开销随长度平方增长。协议层缺失，是当下多智能体系统里最容易被忽略的一处浪费。"
+        },
+        {
+          "t": "h",
+          "v": "把交换语言重新设计一遍"
+        },
+        {
+          "t": "p",
+          "v": "SYNTRA 的出发点是干脆换一套符号：严格限制在 7 位 ASCII 内，使用源自自然语义元语言（NSM）的 1000 个词根，配 15 个黏着语素算子，并强制主谓宾语序、不允许倒装。"
+        },
+        {
+          "t": "p",
+          "v": "语序固定带来的直接回报是解析复杂度：不再需要消歧搜索，一个确定性下推自动机就能在线性时间内解析完。这等于把「通信效率」这笔账从模型侧挪到了协议侧——不在注意力上省，而在符号上省。"
+        },
+        {
+          "t": "h",
+          "v": "数字好看，但请先打折"
+        },
+        {
+          "t": "p",
+          "v": "作者自报的收益包括：消除事务层的幻觉、把全局 LLM 推理算力需求降低 64%、把人类习得这门语言的时间压到 30–50 小时。需要说明的是，这是一篇 Zenodo 上的独立技术报告，未经同行评议，上述数字均为作者自述，缺少公开的复现与基线细节。"
+        },
+        {
+          "t": "p",
+          "v": "即便如此，方向本身值得记一笔：它和最近一批「通信高效 MARL」的工作问的是同一个问题——智能体之间到底该说什么。区别只在于，那些方法在连续表示上做正则，SYNTRA 主张直接换一套离散符号。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的是「协议优先」这一层：在堆更大的模型、更长的上下文之前，先问交换格式本身是不是在浪费。真要落地，别急着信 64% 那个数——先挑一个封闭的小场景，把它和结构化 schema 之类的工程基线放在同一套任务上比一遍，看节省究竟来自协议，还是仅仅来自词表变小。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "通信与交换格式正在被当成一等公民来设计。昨天一批工作用互信息、信息瓶颈在连续表示上压冗余，今天 SYNTRA 干脆主张换一套可线性解析的离散符号——路径相反，问的是同一件事：智能体之间到底该说什么。",
+    "「决策」与「后果」之间正在被插入一道结构性边界。昨天的 LTLf 契约编译成自动机充当在线闸门，今天的执行终局性架构要求操作在被独立组件确认前保持不生效——安全正从事后审计前移为状态转移的前置条件。",
+    "约束正在从硬编码规则变成可学习的对象。建筑机器人那篇把安全管理做成另一个有自身目标的智能体，而不是一条 if-else；代价是多一个策略要训练与调参，收益是能扛住难以穷举的长尾场景。",
+    "均衡的存在性之后，稳定性成了下一道题。纳什均衡 KKT 解映射的强正则与孤立平稳性被精确刻画，并证明典型扰动与仅倾斜扰动的研究等价——这是在把「算法能否稳定追踪均衡」由经验观察变成可验证条件。",
+    "今日新增里预印本占比偏高（7 篇新增中 5 篇为 Zenodo 自印本），并出现明显误命中：一项关于摩洛哥职业培训与混合办公的质性研究被 AI 安全标签捞了进来。阅读这批条目时需要多一道人工筛选——先看来源与署名，再看摘要里的机制是否真的成立。"
+  ],
+  "note": "本期由本地人工精读回填：检索窗口 arXiv 7 天 / 期刊会议 90 天，命中 1526 篇、去重 1388 篇、入库 60 篇，其中今日新增 7 篇；按影响力优先级（CCF-A 期刊 > 期刊 > 预印本）挑选，剔除 3 篇（1 篇非 AI 主题的混合办公研究误命中，2 篇与博弈智能主线距离过远的治理／认识论框架）后精读 4 篇，解读为博客式长文。下方雷达为脚本自动抓取的补充条目。",
   "learning": {},
   "radar": [
     {
@@ -2111,5 +2393,6 @@
         "OpenAlex:Zenodo (CERN European Organization for Nuclear Research)"
       ]
     }
-  ]
+  ],
+  "curated": true
 }

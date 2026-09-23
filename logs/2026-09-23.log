@@ -1,0 +1,125 @@
+===== run @ 2026-09-23T01:18:06Z =====
+[01:12:14] 目标日期 2026-09-23 · arXiv 7 天 / 期刊会议 90 天
+[01:12:45] arXiv 检索式 [分类·多智能体] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[01:13:15] arXiv 检索式 [分类·博弈论] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[01:13:46] arXiv 检索式 [主题·MARL] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[01:14:16] arXiv 检索式 [主题·纳什均衡] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[01:14:47] arXiv 检索式 [主题·机制设计] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[01:15:17] arXiv 检索式 [主题·LLM多智能体] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[01:15:17] arXiv API 本次未取到条目（常见于 CI 出口 IP 被拒），改用 OpenAlex 的 arXiv 源兜底预印本
+[01:15:36] OpenAlex [预印本 主题·MARL] 失败：网络请求持续失败：HTTP Error 429: Too Many Requests（跳过）
+[01:15:36] OpenAlex [预印本 主题·纳什均衡] 返回 9，纳入 9
+[01:15:47] OpenAlex [预印本 主题·机制设计] 返回 51，纳入 51
+[01:15:51] OpenAlex [预印本 主题·博弈理论] 返回 4，纳入 4
+[01:15:52] OpenAlex [预印本 主题·拍卖] 返回 1，纳入 1
+[01:16:02] OpenAlex [预印本 主题·LLM多智能体] 返回 9，纳入 9
+[01:16:21] OpenAlex [主题·MARL] 失败：网络请求持续失败：HTTP Error 429: Too Many Requests（跳过）
+[01:16:25] OpenAlex [主题·纳什均衡] 返回 100，纳入 100
+[01:16:30] OpenAlex [主题·机制设计] 返回 100，纳入 100
+[01:16:49] OpenAlex [主题·博弈理论] 失败：网络请求持续失败：HTTP Error 429: Too Many Requests（跳过）
+[01:17:07] OpenAlex [主题·拍卖] 失败：网络请求持续失败：HTTP Error 429: Too Many Requests（跳过）
+[01:17:26] OpenAlex [主题·LLM多智能体] 失败：网络请求持续失败：HTTP Error 429: Too Many Requests（跳过）
+[01:17:26] OpenAlex [顶刊 Artificial Intelligence] 返回 21，纳入 21
+[01:17:27] OpenAlex [顶刊 Econometrica] 返回 0，纳入 0
+[01:17:28] OpenAlex [顶刊 Journal of Economic Theory] 返回 19，纳入 19
+[01:17:29] OpenAlex [顶刊 Management Science] 返回 50，纳入 50
+[01:17:30] OpenAlex [顶刊 Operations Research] 返回 50，纳入 50
+[01:17:31] OpenAlex [顶刊 IEEE TPAMI] 返回 5，纳入 5
+[01:17:32] OpenAlex [顶刊 Mathematics of Operations Research] 返回 30，纳入 30
+[01:17:33] OpenAlex [顶刊 Games and Economic Behavior] 返回 27，纳入 27
+[01:17:33] OpenAlex [顶刊 JMLR] 返回 0，纳入 0
+[01:17:34] OpenAlex [顶刊 Theoretical Economics] 返回 0，纳入 0
+[01:17:52] Crossref [主题·MARL] 返回 100，纳入 100
+[01:17:55] Crossref [主题·纳什均衡] 返回 100，纳入 100
+[01:17:58] Crossref [主题·机制设计] 返回 100，纳入 100
+[01:18:00] Crossref [主题·博弈理论] 返回 100，纳入 100
+[01:18:03] Crossref [主题·拍卖] 返回 100，纳入 100
+[01:18:06] Crossref [主题·LLM多智能体] 返回 100，纳入 100
+[01:18:06] 各来源纳入：{"arXiv": 0, "OpenAlex·arXiv": 74, "OpenAlex": 402, "Crossref": 711}
+[01:18:06] 去重后 1133 篇，按相关性过滤后 173 篇
+[daily] 目标日期 2026-09-23 · arXiv 7 天 / 期刊会议 90 天
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 406: Not Acceptable，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 406: Not Acceptable，9s 后重试
+[fetch] 请求失败（第 4 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，12s 后重试
+[daily] arXiv 检索式 [分类·多智能体] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 406: Not Acceptable，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 406: Not Acceptable，9s 后重试
+[fetch] 请求失败（第 4 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，12s 后重试
+[daily] arXiv 检索式 [分类·博弈论] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 406: Not Acceptable，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 406: Not Acceptable，9s 后重试
+[fetch] 请求失败（第 4 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，12s 后重试
+[daily] arXiv 检索式 [主题·MARL] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 406: Not Acceptable，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 406: Not Acceptable，9s 后重试
+[fetch] 请求失败（第 4 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，12s 后重试
+[daily] arXiv 检索式 [主题·纳什均衡] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 406: Not Acceptable，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 406: Not Acceptable，9s 后重试
+[fetch] 请求失败（第 4 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，12s 后重试
+[daily] arXiv 检索式 [主题·机制设计] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 406: Not Acceptable，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 406: Not Acceptable，9s 后重试
+[fetch] 请求失败（第 4 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 406: Not Acceptable，12s 后重试
+[daily] arXiv 检索式 [主题·LLM多智能体] 失败：网络请求持续失败：HTTP Error 406: Not Acceptable（跳过）
+[daily] arXiv API 本次未取到条目（常见于 CI 出口 IP 被拒），改用 OpenAlex 的 arXiv 源兜底预印本
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 429: Too Many Requests，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 429: Too Many Requests，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 429: Too Many Requests，9s 后重试
+[daily] OpenAlex [预印本 主题·MARL] 失败：网络请求持续失败：HTTP Error 429: Too Many Requests（跳过）
+[daily] OpenAlex [预印本 主题·纳什均衡] 返回 9，纳入 9
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 429: Too Many Requests，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 429: Too Many Requests，6s 后重试
+[daily] OpenAlex [预印本 主题·机制设计] 返回 51，纳入 51
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 429: Too Many Requests，3s 后重试
+[daily] OpenAlex [预印本 主题·博弈理论] 返回 4，纳入 4
+[daily] OpenAlex [预印本 主题·拍卖] 返回 1，纳入 1
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 429: Too Many Requests，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 429: Too Many Requests，6s 后重试
+[daily] OpenAlex [预印本 主题·LLM多智能体] 返回 9，纳入 9
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 429: Too Many Requests，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 429: Too Many Requests，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 429: Too Many Requests，9s 后重试
+[daily] OpenAlex [主题·MARL] 失败：网络请求持续失败：HTTP Error 429: Too Many Requests（跳过）
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 429: Too Many Requests，3s 后重试
+[daily] OpenAlex [主题·纳什均衡] 返回 100，纳入 100
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 429: Too Many Requests，3s 后重试
+[daily] OpenAlex [主题·机制设计] 返回 100，纳入 100
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 429: Too Many Requests，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 429: Too Many Requests，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 429: Too Many Requests，9s 后重试
+[daily] OpenAlex [主题·博弈理论] 失败：网络请求持续失败：HTTP Error 429: Too Many Requests（跳过）
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 429: Too Many Requests，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 429: Too Many Requests，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 429: Too Many Requests，9s 后重试
+[daily] OpenAlex [主题·拍卖] 失败：网络请求持续失败：HTTP Error 429: Too Many Requests（跳过）
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 429: Too Many Requests，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 429: Too Many Requests，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 429: Too Many Requests，9s 后重试
+[daily] OpenAlex [主题·LLM多智能体] 失败：网络请求持续失败：HTTP Error 429: Too Many Requests（跳过）
+[daily] OpenAlex [顶刊 Artificial Intelligence] 返回 21，纳入 21
+[daily] OpenAlex [顶刊 Econometrica] 返回 0，纳入 0
+[daily] OpenAlex [顶刊 Journal of Economic Theory] 返回 19，纳入 19
+[daily] OpenAlex [顶刊 Management Science] 返回 50，纳入 50
+[daily] OpenAlex [顶刊 Operations Research] 返回 50，纳入 50
+[daily] OpenAlex [顶刊 IEEE TPAMI] 返回 5，纳入 5
+[daily] OpenAlex [顶刊 Mathematics of Operations Research] 返回 30，纳入 30
+[daily] OpenAlex [顶刊 Games and Economic Behavior] 返回 27，纳入 27
+[daily] OpenAlex [顶刊 JMLR] 返回 0，纳入 0
+[daily] OpenAlex [顶刊 Theoretical Economics] 返回 0，纳入 0
+[daily] Crossref [主题·MARL] 返回 100，纳入 100
+[daily] Crossref [主题·纳什均衡] 返回 100，纳入 100
+[daily] Crossref [主题·机制设计] 返回 100，纳入 100
+[daily] Crossref [主题·博弈理论] 返回 100，纳入 100
+[daily] Crossref [主题·拍卖] 返回 100，纳入 100
+[daily] Crossref [主题·LLM多智能体] 返回 100，纳入 100
+[daily] 各来源纳入：{"arXiv": 0, "OpenAlex·arXiv": 74, "OpenAlex": 402, "Crossref": 711}
+[daily] 去重后 1133 篇，按相关性过滤后 173 篇
+[daily] 写入 data/daily/2026-09-23.json（radar 60 条，精读 0 条）
+[daily] 写入 digests/2026-09-23.md、logs/2026-09-23.log、data/runs.json

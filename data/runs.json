@@ -254,6 +254,28 @@
         "期刊": 7,
         "预印本": 13
       }
+    },
+    {
+      "date": "2026-09-25",
+      "at": "2026-09-25T02:33:08Z",
+      "ok": true,
+      "total_raw": 1539,
+      "unique": 1398,
+      "kept": 60,
+      "new_count": 12,
+      "by_source": {
+        "arXiv": 0,
+        "OpenAlex·arXiv": 95,
+        "OpenAlex": 734,
+        "Crossref": 710
+      },
+      "by_impact": {
+        "顶刊": 12,
+        "CCF-A": 17,
+        "期刊": 7,
+        "其他": 11,
+        "预印本": 13
+      }
     }
   ]
 }

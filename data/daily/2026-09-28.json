@@ -24,8 +24,14 @@
     "seen_before": 405
   },
   "highlights": [],
-  "trends": [],
-  "note": "",
+  "trends": [
+    "今天 9 篇新增全部落在 Zenodo 自印本上，顶刊/CCF-A/期刊命中为 0——这是本雷达连续运行以来来源结构最单薄的一天；60 条入库里那 11 条顶刊、16 条 CCF-A 全部是往期已收录条目。",
+    "其中 8 篇署名同为「Saluca Agentic AI Research Team」，并在页面上自我声明为「AI-drafted synthesis from an arXiv preprint corpus, not peer-reviewed」：它们是机器生成的二次文献综述，没有原始实验、没有新结果，本期不予精读。",
+    "这 8 篇的摘要几乎全是勘误说明——反复修正写错的 arXiv 编号（把天体物理的快速自旋黑洞论文当成混沌正则化，把 x402 支付安全分析当成 ClawTrojan 基准）；其中一篇还明确写着「has not had a full claim-by-claim audit」。",
+    "真正值得跟踪的是它们共同依赖的那条证据链断了：CONCAT（arXiv:2605.29612）被作者主动撤稿，理由是重复运行评测可能存在 prompt 跨运行串扰、影响了报告结果。以它作证据的几篇合成稿因此删掉章节、把结论降级为「未验证假设」——这条撤稿比任何一篇综述都更有信息量。",
+    "唯一一篇由真实研究者署名的「Vibe coding an online ELAN viewer」（Max Planck 心理语言学研究所）是 LLM 辅助编程的一手经验报告，与博弈和多智能体战略交互无关，属检索误命中；不过「一次只提一个需求」「用 skills 与 workspace rules 缓解长程上下文丢失」「简单模型做默认、复杂模型留给设计与调试」几条，对跑 agentic 流水线有直接参考价值。"
+  ],
+  "note": "本期精读 0 篇。2026-09-28 当日新增 9 篇全部为 Zenodo 自印本：其中 8 篇署名同为 Saluca Agentic AI Research Team，且自我声明为「AI-drafted synthesis、未经同行评议」的机器生成二次综述，无原始实验与结果，摘要几乎全为 arXiv 编号勘误，按既有取舍惯例剔除；另 1 篇为语言标注工具的 LLM 辅助编程经验报告，与博弈/多智能体战略交互无关，属检索误命中。今日无合格候选，不做精读，亦不以综述充数。检索窗口：arXiv 7 天 / 期刊会议 90 天，命中去重后 1407 条、入库 60 条。",
   "learning": {},
   "radar": [
     {
@@ -2112,5 +2118,6 @@
         "OpenAlex:Zenodo (CERN European Organization for Nuclear Research)"
       ]
     }
-  ]
+  ],
+  "curated": false
 }

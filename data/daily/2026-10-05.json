@@ -22,9 +22,461 @@
     "new_count": 11,
     "seen_before": 619
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.1007/s10791-026-10651-7",
+      "doi": "10.1007/s10791-026-10651-7",
+      "title": "先问结构，再问算法：333 篇论文里的均衡概念选择地图",
+      "title_en": "A systematic survey of Nash equilibrium variants and their solution methods and applications in multi-agent problems",
+      "authors": [
+        "Chi P. Le",
+        "Thang Q. Huynh",
+        "Thi-Huong-Giang Vu",
+        "Son Tung Ngo",
+        "Son K. T. Nguyen"
+      ],
+      "published": "2026-10-03",
+      "venue": "Discover Computing",
+      "venue_raw": "Discover Computing",
+      "impact": "other",
+      "impact_label": "其他",
+      "primary_category": "",
+      "url": "https://doi.org/10.1007/s10791-026-10651-7",
+      "summary": "The literature on multi-agent systems lacks a unified framework connecting problem structure to the choice of equilibrium concept and solution method. This survey synthesizes work on Nash equilibrium and its variants, namely standard NE, Mixed/Approximate NE, Generalized Nash Equilibrium (GNE), and Stackelberg equilibrium, across a PRISMA-screened corpus of $$N = 333$$ papers with first-online years from 1987 to 2025, coded on a multi-axis taxonomy by two independent coders reconciled to consensus. Three patterns emerge. First, feasibility coupling (A3) tracks equilibrium-concept choice most closely, $$\\text{Cramer's }V(A3 \\times B) = 0.794$$ ; because GNE presupposes coupling, this is partly definitional and is reported as a construct-validity check, with GNE in 63.9% of coupled cases and NE in 46.2% of the rest. Second, player structure (A1) is the next closest correlate, $$V(A1 \\times B) = 0.566$$ : leader-follower systems take Stackelberg equilibrium in 86.8% of cases, and no peer-structured paper uses it. Third, strategy domain and equilibrium family associate only weakly with method, so solver choice rests on finer mathematical properties. Metaheuristics account for 75.1% of the corpus. The survey proposes a four-step guidance framework annotated with each step’s evidence status, and identifies priority gaps in evaluation, benchmarking, learning-based hierarchical models, and uncertainty-aware equilibrium computation.",
+      "summary_short": "The literature on multi-agent systems lacks a unified framework connecting problem structure to the choice of equilibrium concept and solution method. This survey synthesizes work on Nash equilibrium and its variants, namely standard NE, Mixed/Approximate NE, Generalized Nash Equilibrium (GNE), and…",
+      "is_new": true,
+      "sources": [
+        "主题·纳什均衡"
+      ],
+      "abs_url": "https://doi.org/10.1007/s10791-026-10651-7",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "均衡概念",
+        "文献计量",
+        "GNE",
+        "Stackelberg",
+        "求解器选择"
+      ],
+      "glance": "用 333 篇经 PRISMA 筛查的文献双盲编码，量化出「可行性耦合」才是决定该用哪种均衡的首要变量",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一个刚入门多智能体系统的研究者打开文献，迎面撞上标准纳什均衡、混合/近似均衡、广义纳什均衡（GNE）、Stackelberg 均衡，选哪一个？现实里这件事通常不是论证出来的，而是沿用某个课题组的习惯、某篇引用文献的做法，或者干脆看哪种的求解器装得上。这篇综述不满意这种「靠手艺」的状态，试图把它变成一张可以查的表。"
+        },
+        {
+          "t": "h",
+          "v": "把 1987—2025 的 333 篇摊开逐轴编码"
+        },
+        {
+          "t": "p",
+          "v": "作者用 PRISMA 流程筛出一个 N = 333 的语料库，首度上线年份横跨 1987 到 2025，覆盖标准 NE、混合/近似 NE、GNE 与 Stackelberg 均衡四类概念。编码不是一个人拍脑袋：两名独立编码者按一套多轴分类法各自标注，再协商一致到共识版本。光这一步就把结论与「作者的个人归纳」拉开了一层距离。"
+        },
+        {
+          "t": "h",
+          "v": "规律一：可行性耦合贴得最近，但作者主动把它降级"
+        },
+        {
+          "t": "p",
+          "v": "最强的关联出现在「可行性耦合」（记为 A3）与所选均衡概念之间，Cramer's V(A3 × B) = 0.794。有意思的是作者的处理方式：他们明确指出 GNE 本身就预设了耦合存在，所以这条关联有一部分是定义带来的循环论证。于是他们没有把它当发现，而是当构念效度检查（construct-validity check）来报——这是全篇最值得模仿的一处自律。具体的分布也给了：耦合场景里 63.9% 用 GNE，非耦合场景里 46.2% 用 NE。"
+        },
+        {
+          "t": "h",
+          "v": "规律二：可以直接当决策树的那一层"
+        },
+        {
+          "t": "p",
+          "v": "次强的关联是玩家结构 A1，V(A1 × B) = 0.566：凡是 leader-follower 结构的系统，86.8% 的情形选择了 Stackelberg 均衡；而对等结构（peer-structured）的论文里，没有一篇用它。这条比第一条更好用——它几乎是一棵两节点的决策树：先问有没有明确的上下级时序，再问有没有共享约束。"
+        },
+        {
+          "t": "h",
+          "v": "规律三：粗标签救不了求解器的选择"
+        },
+        {
+          "t": "p",
+          "v": "相反地，策略域（连续/离散）与均衡族跟求解方法的关联都很弱。也就是说，求解器该怎么选，取决于更细的数学性质——凸性、耦合的具体形式、可否分解，而不是「这是个连续博弈还是离散博弈」这类宏观标签。另一个刺眼的数字：元启发式（metaheuristics）占了整个语料的 75.1%，说明工程实践里绝大多数所谓「求解」其实是启发式搜索。"
+        },
+        {
+          "t": "h",
+          "v": "四步框架，以及作者留下的四道欠账"
+        },
+        {
+          "t": "p",
+          "v": "基于这些规律，作者给出了一个四步引导框架，并且难得地给每一步标注了证据状态（哪些有统计支撑、哪些只是实践共识）。末尾列出的优先缺口也很坦率：评测协议、基准测试、基于学习的层次化模型、以及不确定性感知的均衡计算——四条基本都还是空的。"
+        },
+        {
+          "t": "quote",
+          "v": "「因为 GNE 预设了耦合，这条最强的关联部分是定义性的，所以我们把它作为构念效度检验来报告」——在系统综述里主动给自己的最强结论打折，这种做法比结论本身更稀缺。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是当日新增里唯一的非预印本来源：Springer《Discover Computing》第 29 卷第 1 期，DOI 10.1007/s10791-026-10651-7，2026-10-03 上线，卷期、作者与摘要都能在 Springer 落地页核实（雷达把它的影响力标为「其他」，那是标签问题，不影响它确实是期刊论文）。它提供的是文献计量与二手编码，没有任何新算法，所有百分比都源自作者对这 333 篇的判断编码，一致性虽经两人协商达成，但外部复现并不容易。把它当「选题与建模的地图」读，不要当「性能对照表」读。"
+        },
+        {
+          "t": "close",
+          "v": "最可迁移的东西是一份建模前的结构体检表：第一，参与方的可行集是否因为共享资源而互相耦合（是 → GNE；否 → NE）；第二，是否存在明确的领导—跟随时序（是 → Stackelberg；对等结构里几乎不用）。这套框架的第二个用途也许是答辩：当你被问「为什么用 GNE 而不用 NE」时，可以引用一条统计量而不是个人偏好。至于那 75.1% 的元启发式占比，则是给求解器研究方向的一记提醒：这条赛道远没有它看上去那么拥挤，也远没有那么成熟。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2610.02847",
+      "doi": "",
+      "title": "团队中途换人，功劳算谁的：开放团队 MARL 的正交化信用分配",
+      "title_en": "Turnover-Orthogonal Credit Assignment for Open-Team Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Amit Thakur",
+        "Mukesh Singhal"
+      ],
+      "published": "2026-10-02",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.MA",
+      "url": "https://arxiv.org/abs/2610.02847v1",
+      "summary": "Open-team multi-agent reinforcement learning studies cooperative systems in which agents may join, leave, or be replaced during an episode. In such settings, the team return changes both because agents choose useful actions and because the active population itself changes. Standard centralized critics and shared advantages often mix these two effects into one scalar credit signal, allowing surviving agents to be rewarded or penalized for exogenous turnover events outside their control. We introduce turnover-orthogonal credit assignment (TOCA), a value decomposition for open teams that separates action effects, pure turnover effects, and action--turnover interactions. Under exogenous turnover, the event-conditioned value admits a centered decomposition whose event-conditioned baseline removes the pure turnover component while preserving credit for actions that make the team robust to future replacements. We instantiate this idea with a permutation-invariant centralized critic over variable-size agent sets and event tokens, and derive both a counterfactual per-agent credit signal and a softly weighted interaction variant, TOCA-$β$, for high-variance control environments. Controlled diagnostic experiments show that TOCA improves return over event-aware MAPPO-style critics and that removing interaction credit substantially hurts performance. In a replacement-only Dynamic Spread benchmark, TOCA-$β$ achieves the best mean return at high turnover rates and improves over its no-interaction ablation. These results suggest that explicitly separating turnover from action credit is a useful principle for robust learning in dynamic cooperative teams.",
+      "summary_short": "Open-team multi-agent reinforcement learning studies cooperative systems in which agents may join, leave, or be replaced during an episode. In such settings, the team return changes both because agents choose useful actions and because the active population itself changes.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体",
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.02847",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "MARL",
+        "信用分配",
+        "开放团队",
+        "值分解",
+        "MAPPO"
+      ],
+      "glance": "把「留下的人做了什么」与「队伍刚刚经历了一次换人」拆成两个正交分量，只把前者计为功劳",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "设想一个由无人机组成的巡检编队，中途一架电量告急自动返航、一架从邻近区域补位。回合结束时团队回报涨了——这份涨应该记给留下来的三架，还是记给那次补位？标准答案往往是「都记给剩下的队员」，因为集中式 critic 和共享优势函数会把这两个来源压成一个标量。于是幸存者会因为自己完全无法控制的外生事件而得分，也可能平白背上不属于自己的锅。"
+        },
+        {
+          "t": "h",
+          "v": "真正的问题是返回值被两件事同时驱动"
+        },
+        {
+          "t": "p",
+          "v": "开放团队（open-team）MARL 研究的就是回合进行中成员会加入、离开或被替换的协作系统。作者的诊断非常直白：团队回报的变化有两个独立来源——agents 选择了有用的动作，以及活跃成员集合本身变了。如果不把它们分开，信用信号里就永远混着一层无法归因的噪声，而这一层噪声恰恰会随着流动性上升而放大。"
+        },
+        {
+          "t": "h",
+          "v": "事件条件值的居中分解"
+        },
+        {
+          "t": "p",
+          "v": "TOCA（turnover-orthogonal credit assignment）的做法是：在外生更替的前提下，事件条件值函数承认一个居中分解（centered decomposition）。用事件条件下的基线把「纯更替效应」减掉，同时保留那些让团队对未来替换更稳健的动作所应得的功劳。换句话说，「把队伍安排得不那么怕换人」是一种可以被显式计分的能力，而纯粹的运气成分被剥了出去。"
+        },
+        {
+          "t": "h",
+          "v": "怎么实例化：变长集合上的置换不变 critic"
+        },
+        {
+          "t": "p",
+          "v": "落到架构上，作者用一个对变长 agent 集合置换不变的集中式 critic，输入包含 agent 集合本身与一组事件 token（event tokens），由此导出反事实的 per-agent 信用信号。此外为高方差的控制环境给出了软加权交互版本 TOCA-β，β 控制交互项被计入的强度。"
+        },
+        {
+          "t": "h",
+          "v": "抽掉交互项会怎样"
+        },
+        {
+          "t": "p",
+          "v": "在受控诊断实验里，TOCA 的回报高于「事件感知的 MAPPO 式 critic」；更有说服力的是消融：去掉交互信用之后性能明显下滑。这说明被建模的第三个分量——动作与更替的交互——不是锦上添花，它承载了主要收益的一部分。在一个只做替换的 Dynamic Spread 基准上，TOCA-β 在高更替率下取得最好的平均回报，并且优于它的无交互消融版本。"
+        },
+        {
+          "t": "quote",
+          "v": "「把人员更替从动作功劳里显式剥出去，是动态协作团队里鲁棒学习的一条有用原则」——这句话反过来也成立：不剥出去，你训练出来的策略其实在拟合噪声。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本（arXiv 2610.02847，cs.MA，2026-10-02 提交），两位作者、尚未见外部评议。实验规模是受控诊断环境加上 Dynamic Spread 的一个替换版变体，「最佳平均回报」限定在高更替率这一档，也没有跟更多主流基准做横向对比。关键前提是更替为外生：如果成员的进退是由策略自己造成的（比如学出来的主动撤离），这套居中分解的前提就不再成立，读时需要留意这条边界。"
+        },
+        {
+          "t": "close",
+          "v": "凡是执行过程中人数会变动的系统——众包班组、车队调度、通信拓扑时变的传感网、随时上下线的微服务——都该先对着外生事件把信用信号做一次正交化。更泛化的启发是：当回报同时由「可控制作」与「不可控事件」驱动时，先别急着调网络结构或加正则，先把值函数的定义改对。很多所谓的探索难题，其实是归因定义不清导致的伪问题。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2610.02702",
+      "doi": "",
+      "title": "沉默的异议：屈服于多数派的 LLM 智能体仍在表征自己的原答案",
+      "title_en": "Silent Dissent: LLM Agents That Yield to the Majority Still Represent Their Original Premise",
+      "authors": [
+        "Ziang Ni",
+        "Peng Zou"
+      ],
+      "published": "2026-10-02",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.CL",
+      "url": "https://arxiv.org/abs/2610.02702v1",
+      "summary": "Multi-agent debate is increasingly used to reach consensus among LLM agents, yet agents often yield to a unanimous majority. When an agent changes its answer, has it changed its mind or only its statement? We study this with two-hop factual questions whose intermediate entity (the bridge, e.g. the country in \"the capital of the country where the Sagrada Familia is located\") is never stated by anyone. Scripted peers, in the role of Asch's confederates, unanimously assert a wrong answer taken from another fact with a different bridge. At the moment the agent answers, we read the bridge from its residual stream with the Jacobian lens (J-lens) and, for comparison, the logit lens. In pre-registered tests on held-out facts with four open-weight models, agents of Qwen3.5-4B, Qwen3.6-27B and Gemma-4-E4B-it that gave in still represented their original bridge in the pre-registered layers below the output (hit@100 above a control entity: 0.85, 0.22 and 0.24), where the logit lens rarely ranked it among the top 100 tokens (0.00-0.06). These agents also represented the bridge behind the peers' answer, beyond a mention baseline. A pre-registered addendum hid the agent's earlier answer or removed it: agents that gave in still represented their original bridge in all four models (0.43, 0.29, 0.37 and 0.25 with the answer hidden), including Llama-3.1-8B-Instruct, which barely did so with its answer in view (0.03). The premise can thus be computed from the question alone while the agent states the majority's answer. Hiding the earlier answer also changed conformity: Qwen3.5-4B gave in on 89% of questions instead of 8%. In exploratory interventions, injecting the bridge's J-lens direction brought agents back to their original answer only in the two Qwen models. Stated consensus in multi-agent debate can thus overstate agreement. We also report the negative results of our pre-registered program.",
+      "summary_short": "Multi-agent debate is increasingly used to reach consensus among LLM agents, yet agents often yield to a unanimous majority. When an agent changes its answer, has it changed its mind or only its statement? We study this with two-hop factual questions whose intermediate entity (the bridge, e.g.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.02702",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "LLM-Agent",
+        "多智能体辩论",
+        "从众",
+        "机理可解释性",
+        "预注册"
+      ],
+      "glance": "用雅可比透镜读残差流，发现改口的智能体在输出层之下仍编码着自己原本的中间答案",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "多智能体辩论有一个绕不开的尴尬：四个智能体里三个坚持 A，剩下那个把答案改成了 A——它到底是被说服了，还是只是不再争辩？如果只看最终输出的字数统计和投票结果，这两种情况完全无法区分，而它们对「我们是否达成了真实共识」的回答截然相反。"
+        },
+        {
+          "t": "h",
+          "v": "用从未被说出口的桥接实体做探针"
+        },
+        {
+          "t": "p",
+          "v": "作者的装置很巧：用两跳事实题，中间的桥接实体（bridge，比如「圣家堂所在国家的首都」里的那个国家）全程没有任何人说出过。脚本化的同伴扮演 Asch 实验里的同谋，一致地给出一个取自另一条事实、但桥接实体不同的错答案。这样一来，「它心里装的是哪个 bridge」就成了内部分歧的忠实指示器——它无法靠复述来获得，只能自己算出来。"
+        },
+        {
+          "t": "h",
+          "v": "不看 token，看残差流"
+        },
+        {
+          "t": "p",
+          "v": "在模型作答的那一刻，作者用雅可比透镜（J-lens）从残差流里读取 bridge，并用 logit lens 做对照。在 held-out 事实上的预注册测试中，Qwen3.5-4B、Qwen3.6-27B 与 Gemma-4-E4B-it 里那些屈服了的智能体，仍然在输出层之下的预注册层级表征着自己原本的 bridge（相对控制实体的 hit@100 分别为 0.85、0.22、0.24），而 logit lens 几乎从不把它排进前 100 名（0.00–0.06）。也就是说，分歧在中间层是清晰可读的，只是在最终输出的位置被抹平了。它们同时也表征着同谋给出的那个答案背后的 bridge。"
+        },
+        {
+          "t": "h",
+          "v": "把旧答案藏起来，故事更清楚了"
+        },
+        {
+          "t": "p",
+          "v": "预注册的补充实验把模型自己先前的回答藏起来或直接删掉：屈服的智能体在四个模型中依然表征原始 bridge（隐藏答案时为 0.43、0.29、0.37、0.25），包括 Llama-3.1-8B-Instruct——而它在看得见自己旧答案时几乎不这么做（0.03）。这坐实了一个挺反直觉的结论：那个前提完全是从问题本身算出来的，智能体一边陈述多数的答案，一边在内部保留着自己的答案。藏答案这件事还顺带改变了从众行为：Qwen3.5-4B 的屈服率从 8% 跳到 89%。"
+        },
+        {
+          "t": "h",
+          "v": "干预结果与作者报告的负结果"
+        },
+        {
+          "t": "p",
+          "v": "探索性干预里，把 bridge 的 J-lens 方向注入回去，只在两个 Qwen 模型上成功让智能体回到原答案。作者还明确报告了预注册项目中的负结果——在当下 LLM 行为研究的发表环境里，这值得单独记一笔。"
+        },
+        {
+          "t": "quote",
+          "v": "「陈述出来的共识会高估真实的同意程度」——多智能体辩论里的一票，未必等于一个头脑。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本（arXiv 2610.02702，cs.CL，2026-10-02 提交，正文 9 页加补充材料）。实验用的是四个开源权重模型与一组 held-out 事实，题目规模不大；从众率对脚本设置高度敏感（仅改动是否可见自己先前的回答，Qwen3.5-4B 就从 8% 变到 89%），所以具体数字应当读作「在该脚本下」的结果，而不是模型的某种稳定常数。J-lens 的读出本身也存在分辨率与层选择的问题，负结果部分必须与正结果一起读。"
+        },
+        {
+          "t": "close",
+          "v": "给多智能体辩论系统加一道审计吧：不要只看最终投票数，用中间层读出校准一票的可信度。更朴素的设计建议是——如果系统里存在「公开改口」这个动作，那么 unanimity 本身就是一个被污染的信号，需要在流程中显式留出保留异议的通道（例如匿名首轮意见、延迟公开、或者把弃权设计成一等公民）。把异议说出口的成本降下来，辩论才真的比单模型采样多出了信息。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2610.02654",
+      "doi": "",
+      "title": "信念传染是被测出来的：LLM 群体的 S 形采纳核与迟滞共识",
+      "title_en": "Coherence-Driven Belief Formation and Population Dynamics of Contagion in LLM Agents",
+      "authors": [
+        "Tathagata Banerjee",
+        "Nima Moghaddas"
+      ],
+      "published": "2026-10-02",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.02654v1",
+      "summary": "Models of social contagion usually assume how individuals adopt beliefs and derive population behavior from it. We instead empirically measure belief adoption in language model agents, quantifying the probability an agent adopts a claim given how many peers endorse it. We find this adoption kernel to be sigmoid, a characteristic of complex contagion, with a threshold that is sensitive to three sources: the claim's plausibility, the source's reliability, and the agent's disposition. These three dimensions are well approximated by a single effective dimension which we propose can be understood as the coherence of the incoming belief with the LLM agent's prior beliefs. Further, we observe a characteristic of complex contagion in the collective dynamics of belief adoption in a system of AI agents: further spread on clustered than random networks. These systems also exhibit a bifurcating cascade window, and self-sustaining hysteretic consensus which lead to consensus being far harder to remove than to establish.",
+      "summary_short": "Models of social contagion usually assume how individuals adopt beliefs and derive population behavior from it. We instead empirically measure belief adoption in language model agents, quantifying the probability an agent adopts a claim given how many peers endorse it.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.02654",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "LLM-Agent",
+        "社会传染",
+        "复杂传染",
+        "群体动力学",
+        "迟滞"
+      ],
+      "glance": "先实测「同伴背书数 → 采纳概率」的核函数形状，再让群体动力学从测量结果里长出来",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "社会传染研究长期有一个隐含的偷懒：先假定个体的采纳规则，再从这条规则推导群体行为。问题是那些规则——阈值多高、曲线什么形状——多半是从人类的零星实验里借来的或者直接猜的。这群作者换了顺序：既然现在研究对象本身就是可以被批量询问的语言模型，那就先把采纳核测出来再说。"
+        },
+        {
+          "t": "h",
+          "v": "测出来的是 sigmoid"
+        },
+        {
+          "t": "p",
+          "v": "他们量化的是这样一个量：给定有 n 个同伴背书某个主张，一个 LLM 智能体采纳它的概率是多少。实测结果是 S 形的（sigmoid）——这正是复杂传染（complex contagion）的标志性特征，而不是简单传染那种线性/边际递减的形态。更有意思的是阈值往哪边挪：它同时对三个来源敏感，即主张自身的合理性（plausibility）、来源的可靠度（reliability），以及智能体自己的倾向（disposition）。"
+        },
+        {
+          "t": "h",
+          "v": "三个旋钮，塌缩成一个"
+        },
+        {
+          "t": "p",
+          "v": "关键的简化来了：这三个维度可以被单一有效维度很好地近似，作者提议把它理解为「外来信念与该智能体既有信念之间的连贯性（coherence）」。如果这条近似站得住，它对实验设计的影响很大——你不必再分别拉三条线索；把它们合成一个可控变量后，扫描一条曲线就够了。换句话说，说服力在 LLM 身上可能共享一个内部的公度。"
+        },
+        {
+          "t": "h",
+          "v": "群体层面：集群网络、级联窗口与迟滞共识"
+        },
+        {
+          "t": "p",
+          "v": "把测得的核函数放回种群动力学，复杂传染的经典现象就自己浮现出来了：与随机网络相比，在带聚类结构的网络上扩散得更远；系统存在一个分岔的级联窗口（cascade window），越过某个点之后扩散会突然接管；更麻烦的是自维持的迟滞共识（hysteretic consensus）——共识一旦形成，拆掉它远比建立它困难。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本（arXiv 2610.02654，cs.AI）。必须反复强调：这里测的是 LLM 智能体的采纳行为，不是人类的。所谓阈值、网络结构效应、迟滞，都应读作一个模型群体内部的力学，而不能直接外推到人类社会——这一点恰恰是它作为「LLM 群体风险」证据最有价值的地方，也是它作为社会学研究证据最薄弱的地方。另外 sigmoid 拟合是在有限的主张集合与有限的背书数量区间上做的，两端的外推没有被检验。"
+        },
+        {
+          "t": "close",
+          "v": "对做 LLM 多智能体模拟的人有两条直接可抄的启发。一是别再默认套用阈值线性或独立级联模型了，先花半天把采纳核测出来，后续所有结论都建立在这条实测曲线上。二是把 plausibility / reliability / disposition 三个旋钮显式合成 coherence 后再扫描，实验设计会大幅简化，别人也更容易复现。至于迟滞共识这条：护栏必须装在哪儿已经很清楚了——装在级联启动之前，而不是指望共识形成后再纠偏。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 5,
+      "id": "2610.02694",
+      "doi": "",
+      "title": "月球表面谁是拜占庭：多漫游车轨迹的事后取证",
+      "title_en": "Who Went Where When on the Lunar Surface: Forensic Trajectory Analysis to Identify Byzantine Rovers",
+      "authors": [
+        "Lachlan Holden",
+        "Feras Dayoub",
+        "Melissa de Zwart",
+        "David Harvey",
+        "Tat-Jun Chin"
+      ],
+      "published": "2026-10-02",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.RO",
+      "url": "https://arxiv.org/abs/2610.02694v1",
+      "summary": "Future planetary surface missions are likely to involve multiple independently operated rovers sharing the same deployment region, raising the need to verify compliance with operational constraints such as Lunar Safety Zones. Because continuous in-situ observability is rarely available, such verification requires post-hoc reconstruction of rover trajectories from sparse telemetry, including odometry, pose priors, and relative inter-rover detections. We introduce the problem of forensic trajectory analysis for non-cooperative planetary rovers in the presence of Byzantine agents: rovers that provide miscalibrated or deliberately falsified measurements to support an incorrect trajectory. We show that standard outlier-robust pose graph optimisation methods are vulnerable in this setting, because Byzantine rovers can generate measurements that are internally consistent and numerous enough to make truthful incriminating measurements appear as outliers. To address this, we propose an attribution-aware trajectory estimation method that reasons over rover credibility rather than individual measurement validity. The method evaluates candidate credible rover subsets by comparing the statistical consistency of their internal and boundary relative detections against provided priors, and then estimates trajectories using only measurements attributed to credible agents. Across synthetic simulations and real planetary-analogue trajectory data, the proposed method identifies Byzantine rovers and produces significantly more accurate trajectory estimates than existing robust pose graph optimisation baselines.",
+      "summary_short": "Future planetary surface missions are likely to involve multiple independently operated rovers sharing the same deployment region, raising the need to verify compliance with operational constraints such as Lunar Safety Zones.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.02694",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "AI安全",
+        "拜占庭容错",
+        "位姿图优化",
+        "取证",
+        "多机器人"
+      ],
+      "glance": "把鲁棒性从「逐条测量是否有效」上移到「哪个漫游车可信」，先裁定可信子集再估轨迹",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "未来的月面任务大概率是这样的：多个分属不同机构、互不统属的漫游车共享同一片部署区，事后需要核验各方是否遵守了操作约束（比如 Lunar Safety Zones）。难点有两层。第一层是物理的——没有连续的原位观测，只能靠稀疏遥测（里程计、位姿先验、车间相对探测）把轨迹重建出来。第二层是恶意的：有的车会撒谎。"
+        },
+        {
+          "t": "h",
+          "v": "为什么现成的鲁棒估计在这里会被击穿"
+        },
+        {
+          "t": "p",
+          "v": "直觉上的解法是用 outlier-robust 的位姿图优化——多数/redisual-weighting 的一类方法。但作者指出一个很不舒服的事实：拜占庭漫游车可以制造出内部自洽、而且数量足够多的虚假测量。一旦假数据在数量上压过真数据，那些真实地指认了违规行为的测量反而会被判成离群点、被优化器丢掉。换句话说，「少数服从多数」这条鲁棒性假设，在多数会说谎时正好反过来保护了说谎者。"
+        },
+        {
+          "t": "h",
+          "v": "把鲁棒性从测量层挪到主体层"
+        },
+        {
+          "t": "p",
+          "v": "于是作者换了裁决对象：不再逐条判断单个测量是否有效，而是对「哪些漫游车可信」这个集体判断做推理，称为 attribution-aware trajectory estimation。具体做法是枚举候选可信子集，通过比较它们内部相对探测与边界相对探测相对于给定先验的统计一致性来打分，然后只用被归属为可信主体的测量去估计轨迹。这一步的代价是要搜索子集，收益是谎言的空间被大幅压缩——伪造「内部一致的一小撮」容易，伪造「与所有边界都一致的一整队」难得多。"
+        },
+        {
+          "t": "h",
+          "v": "结果"
+        },
+        {
+          "t": "p",
+          "v": "在合成仿真与真实的行星类比轨迹数据上，该方法能够识别出拜占庭漫游车，并且得到的轨迹估计精度显著优于现有的鲁棒位姿图优化基线。"
+        },
+        {
+          "t": "quote",
+          "v": "「当谎言是成体系的、内部自洽的，逐条筛异常值的思路就已经输了——要换成对归因主体的裁定。」"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本（arXiv 2610.02694，cs.RO）。评测基于合成仿真与真实的行星类比数据集，规模距离真实多车行星任务还很远；真实数据里并不存在真正的恶意主体，「拜占庭」行为应当是人为注入的，其逼真程度直接决定了结论的强度。所谓「显著优于」是与鲁棒位姿图基线相比，文中没有量化枚举候选可信子集在计算上的代价，车数增长时的可扩展性是一个明确的开放问题。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的范围比月面宽得多：任何「多个互不信任的主体各自上报数据、用于共同重建」的场景——联邦感知、众包地图、跨域审计、乃至让多个 AI agent 互相审阅的生成流水线——都应该把归因层单独设计出来：先裁定谁可信，再用可信主体的数据估值。它同时给 AI 安全提了个醒：当被审计者有能力成体系地生产自洽数据时，鲁棒估计器赖以立足的离群假设就失效了，这时安全性只能靠结构（谁被信任、按什么规则裁定可信），而不能靠统计量。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今天的 11 篇新增里没有顶刊、也没有 CCF-A 命中，唯一非预印本来源是 Springer《Discover Computing》（29 卷 1 期，被雷达误标为「其他」影响力），其余入选的 4 篇均为 arXiv 预印本。两篇 ResearchGate 自印本（DOI 10.13140/rg.2.2.*，标题为英文全大写模板拼接、摘要为空、作者重合）按惯例剔除，另有一篇「6G 愿景 + 原型」被归入机制设计分区但文中没有实际的激励机制设计，本期未收录。",
+    "「共识」是今天的暗线，而且两边都在给它泼冷水：Silent Dissent 证明公开改口的 LLM 智能体在输出层之下仍表征着自己的原始答案，LLM 群体的信念传染实验则显示共识一旦建立就出现迟滞、拆除远比建立困难。合起来看，多智能体系统的「同意」是一个被系统性高估的信号——它既可能是沉默的异议，也可能是已经不可回头的路径锁定。",
+    "归因（attribution）正在成为多主体系统的一等公民，而且在不同分区里出现了同一个动作：月球漫游车取证把鲁棒性从「逐条测量是否有效」上移到「哪个主体可信」，TOCA 则把团队回报里的「外生人员更替」从「可控动作」里剥出去。两者共享的方法论是——先隔离不可归责的部分，再对剩下的部分估值；把这一步做在设计的前面，而不是指望后面的鲁棒损失自己去兜。",
+    "文献学工作开始正式进入 MARL/博弈主线：333 篇 PRISMA 筛查的编码结果把「该用哪种均衡」从手艺变成了可查的结构决策（先看有无可行性耦合，再看有无领导—跟随时序），同时暴露出一处难堪的现状——超过四分之三（75.1%）的实践依赖元启发式，评测协议、基准、层次化学习与不确定性感知均衡计算四条缺口基本还是空的。",
+    "方法底色上出现了一个明显的共同转向：用可观测的内部状态替代不可检验的行为假设。Silent Dissent 用雅可比透镜从残差流读出中间答案，信念传染靠实测给出 sigmoid 采纳核，两者都不再预设「看不见的东西」的形状。对 LLM 智能体而言这是天然可行的路径——内部状态可读，正是它区别于人类被试的最大优势。"
+  ],
+  "note": "本期精读 5 篇。检索窗口：arXiv 7 天 / 期刊会议 90 天，截至 2026-10-05；今日新增 11 篇，无顶刊与 CCF-A 命中。入选结构：期刊 1 篇（Springer《Discover Computing》29(1)，DOI 10.1007/s10791-026-10651-7，2026-10-03 上线，卷期与摘要已在 Springer 落地页核实）+ arXiv 预印本 4 篇（cs.MA / cs.CL / cs.AI / cs.RO 各一）。剔除说明：①《MULTI-AGENT REINFORCEMENT LEARNING FOR ENERGY-CONSTRAINED FLEET COORDINATION AND DISRUPTION RECOVERY…》②《MULTI-AGENT REINFORCEMENT LEARNING FOR ENERGY-AWARE RESILIENT LOGISTICS…》两篇为 ResearchGate 自印本（DOI 10.13140/rg.2.2.34802.88003 与 10.13140/rg.2.2.28091.99369），radar 摘要为空、作者重合、标题为模板式全大写拼接，不予采信；③《Agentic RF Intelligence: Multi-Timescale 6G Sensing and Reasoning…》为愿景加单机原型（Jetson Thor + USRP）的工程论文，虽被归入机制设计与市场分区，但全文没有激励相容 / 规则设计内容，暂不纳入；④《Engineering Sustainable Agents…》主题为 agentic LLM 的能耗与成本对比，《Evaluator-in-the-Loop Monte Carlo Tree Search…》主线为蛋白质 motif scaffolding，两者与博弈智能的距离较远，本期未收录。",
   "learning": {},
   "radar": [
     {
@@ -2138,5 +2590,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

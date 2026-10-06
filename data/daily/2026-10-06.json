@@ -22,9 +22,471 @@
     "new_count": 10,
     "seen_before": 646
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.4108/eetsis.14737",
+      "doi": "10.4108/eetsis.14737",
+      "title": "供应链韧性的 T-MARL：先预测断供，再让各节点自己协同",
+      "title_en": "Supply Chain Resilience Optimization Integrating Transformers and Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Zhaocheng Wang"
+      ],
+      "published": "2026-10-05",
+      "venue": "ICST Transactions on Scalable Information Systems",
+      "venue_raw": "ICST Transactions on Scalable Information Systems",
+      "impact": "journal",
+      "impact_label": "期刊",
+      "primary_category": "",
+      "url": "https://doi.org/10.4108/eetsis.14737",
+      "summary": "INTRODUCTION: Manufacturing supply chains face increasing vulnerabilities from delayed risk identification, conflicting node-level decisions, and escalating recovery costs, particularly under complex disruption scenarios. Existing approaches often lack proactive, coordinated responses across autonomous supply chain nodes, limiting their ability to anticipate disruptions and synchronize mitigation actions effectively. To address these gaps, this paper proposes an integrated resilience optimization framework that combines predictive analytics with multi-agent coordination. OBJECTIVES: The primary objective is to develop a supply chain resilience framework, termed T-MARL, that enables autonomous suppliers, manufacturers, warehousing nodes, and distributors to: (1) predict future disruption probabilities using temporal risk precursor data, and (2) execute coordinated, proactive replenishment, production, and distribution decisions under inventory and capacity constraints. The framework aims to improve resilience index, reduce total operating costs, and shorten recovery time compared to baseline strategies, while also examining the sensitivity of performance gains to prediction noise and communication latency. METHODS: The T-MARL framework models each supply chain node as an independent agent. A lightweight Transformer captures temporal features from 6-dimensional risk precursor sequences over 12 consecutive periods to forecast disruption probabilities. These predictions feed into a value-decomposition multi-agent reinforcement learning mechanism with centralized training–decentralized execution, where a value-decomposition network orchestrates cross-node actions. Risk-constrained action gating ensures that proactive responses adhere to inventory and capacity limits. A digital twin simulation environment was built with fixed random seeds, covering three scenarios—single-source supply disruption, demand surge, and compound disruption. Five strategies were tested, with 30 runs per unit using common random number pairing. RESULTS: On the trajectory-held-out test set, the Transformer achieved an AUC of 0.722 and an F1-score of 0.586, while Random Forest achieved a slightly higher AUC of 0.724. Under the compound disruption scenario, T-MARL attained a resilience index of 0.849—a 1.63 percentage-point gain over VDN-MARL -reduced total cost by 14.7%, and shortened average recovery time from 1.67 periods to zero. T-MARL also achieved lower operating costs while maintaining service levels comparable to rule-based strategies. However, the paper also found that prediction noise and communication latency diminish these performance gains. CONCLUSION: This research contributes a reproducible digital twin analysis framework for disruption prediction, cross-node collaborative response, and rapid recovery in manufacturing supply chains. While T-MARL demonstrates significant improvements in resilience and cost-efficiency under ideal conditions, practical deployment must account for real-world imperfections such as noisy forecasts and delayed communications. The framework provides a scalable foundation for future work on adaptive, data-driven supply chain resilience.",
+      "summary_short": "INTRODUCTION: Manufacturing supply chains face increasing vulnerabilities from delayed risk identification, conflicting node-level decisions, and escalating recovery costs, particularly under complex disruption scenarios.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://doi.org/10.4108/eetsis.14737",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "MARL",
+        "值分解",
+        "CTDE",
+        "供应链韧性",
+        "数字孪生"
+      ],
+      "glance": "把 Transformer 的断供预测接进值分解 MARL，让补货、排产、配送在同一套约束下同步决策",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "断供发生的那一刻，供应链上每个节点都在做自己看来完全理性的事：供应商捂货、工厂抢料、经销商加倍下单。单个决策都说得通，合起来却是教科书级的牛鞭效应。这里藏着一个真正的两难——集中式优化需要全局库存与产能数据，商业上拿不到；让各节点各自为战，又必然互相踩踏。这篇工作想解决的正是这个死结。"
+        },
+        {
+          "t": "h",
+          "v": "把「预测」和「协同」拆成两层"
+        },
+        {
+          "t": "p",
+          "v": "T-MARL 的结构很清楚：上层是一个轻量 Transformer，负责从 6 维风险前兆序列、连续 12 个周期的时间窗里预测未来断供概率；下层是值分解多智能体强化学习，供应商、制造商、仓储节点、分销商各是一个独立 agent，走集中训练—分散执行（CTDE），由值分解网络统筹跨节点动作。"
+        },
+        {
+          "t": "p",
+          "v": "关键设计在于两层之间的接法。预测出来的断供概率不是直接当指令下发，而是作为状态特征喂给值分解网络——决策层仍然自己学「看到这个风险信号该做什么」，而不是被预测层绑死。这样预测一旦失准，决策层还有退路。"
+        },
+        {
+          "t": "p",
+          "v": "另一处值得抄的是风险约束动作门控（risk-constrained action gating）：补货、排产、配送动作在输出前先过一遍库存与产能上限。MARL 落地最常见的翻车方式就是学出一个「违反硬约束但奖励更高」的策略，然后在真实系统里根本不可执行，这道门控就是针对它的。"
+        },
+        {
+          "t": "h",
+          "v": "数字要打折看，但作者对得很诚实"
+        },
+        {
+          "t": "p",
+          "v": "先说扎心的：在留出轨迹的测试集上，Transformer 的 AUC 是 0.722、F1 是 0.586，而随机森林的 AUC 是 0.724——预测模块本身略输给一个十年前的老基线。作者没有藏这个数字。它的意义反而更清楚：增益不来自预测，而来自预测之下的协同层。"
+        },
+        {
+          "t": "p",
+          "v": "协同侧的账是这么算的：复合中断场景下，韧性指数 0.849，比 VDN-MARL 高 1.63 个百分点；总成本下降 14.7%；平均恢复时间从 1.67 个周期降到 0。仿真是自建数字孪生，固定随机种子，覆盖单一来源断供、需求激增、复合中断三类场景，五种策略、每单元 30 次重复并采用公共随机数配对——实验协议本身写得相当规范。"
+        },
+        {
+          "t": "p",
+          "v": "但基线阵容是短板：只有 VDN-MARL 和规则策略，没有 QMIX、MAPPO 这类更强的分解方法。所以 1.63 个百分点只能说明「比最基础的值分解强」，不能说明接近上限。"
+        },
+        {
+          "t": "quote",
+          "v": "「预测噪声与通信延迟会侵蚀这些增益」——作者自己在结论里点出的这句，比正文里任何一个指标都更值得记住。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "载于 EAI Endorsed Transactions on Scalable Information Systems，Vol. 13 No. 5 (2026)，DOI 10.4108/eetsis.14737，卷期与摘要已在 publications.eai.eu 落地页核实，作者署扬州职业技术大学、带 ORCID。局限也明确：单作者、仿真为自建数字孪生、基线只到 VDN。适合的读法是把它当成一个可复用的架构样例，而不是性能标杆。"
+        },
+        {
+          "t": "close",
+          "v": "最可迁移的是那套分层解耦：预测层坏了不影响决策层，决策层又始终被硬约束兜住。凡是要把学习算法塞进有物理或合规约束的工业系统，这个三层结构（预测 / 协同 / 门控）几乎是现成模板。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2610.04614",
+      "doi": "",
+      "title": "用滚动优化逼近带约束微分博弈的反馈纳什均衡，并把偏差算成上界",
+      "title_en": "Approximate Feedback Nash Equilibria in Constrained Differential Games via Model Predictive Control with Upper Bound Guarantees",
+      "authors": [
+        "Balint Varga",
+        "Karl Handwerker",
+        "Imre Rudas",
+        "Peter Galambos"
+      ],
+      "published": "2026-10-03",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "eess.SY",
+      "url": "https://arxiv.org/abs/2610.04614v1",
+      "summary": "Physical human--machine interaction and other multi-agent control settings require decision-making policies that adapt online. Differential games provide a principled framework where each agent optimizes an individual objective while anticipating the other's response. The relevant solution concept in many applications is the feedback Nash equilibrium (FNE), which yields time-consistent state-feedback strategies. However, computing the FNE is demanding and becomes intractable when state and input constraints must be enforced, motivating the need for approximate methods. This paper presents a Model Predictive Control (MPC) approach that approximates infinite-horizon FNE trajectories through repeated solution of finite-horizon open-loop games. An auxiliary-game formulation is introduced that selects prediction horizons and terminal costs to approximate the feedback-game optimality conditions. The approach is extended to incorporate hard constraints via a constrained open-loop game formulation. For the unconstrained setting, an analytic upper bound on the state-trajectory deviation between the MPC-induced and FNE trajectories is derived, enabling quantitative performance certification. Numerical examples illustrate the effectiveness of the proposed method compared with baseline approaches from the literature.",
+      "summary_short": "Physical human--machine interaction and other multi-agent control settings require decision-making policies that adapt online. Differential games provide a principled framework where each agent optimizes an individual objective while anticipating the other's response.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论",
+        "主题·纳什均衡"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.04614",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "微分博弈",
+        "反馈纳什均衡",
+        "MPC",
+        "硬约束",
+        "性能认证"
+      ],
+      "glance": "把无限时域的反馈纳什均衡拆成一串有限时域开环博弈，并解析地给出轨迹偏差上界",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "康复机器人托着患者的手臂，人和机器各自有目标：患者想按自己的节奏走，机器想保证轨迹安全。这不是一个优化问题，是两个——而且每一方在下决策时都得预判对方会怎么回应。微分博弈给的正式答案是反馈纳什均衡（FNE），它给出时间一致的状态反馈策略。可一旦把状态和输入的硬约束加进去，FNE 基本就算不动了。"
+        },
+        {
+          "t": "h",
+          "v": "无限时域拆成一串有限时域"
+        },
+        {
+          "t": "p",
+          "v": "作者的路线是模型预测控制：不在全局解 Hamilton-Jacobi-Isaacs 方程，而是每个控制周期解一个有限时域的开环博弈，滚动前进。这条路好走，但有个绕不开的问题——有限时域的开环解与真正的反馈均衡不是一回事，截断会把「未来对方还会继续反应」这件事丢掉，于是滚动出来的策略系统性偏离 FNE。"
+        },
+        {
+          "t": "p",
+          "v": "真正的贡献在怎么补这个洞。所谓 auxiliary-game formulation，是有针对性地选择预测时域与终端代价，让有限时域问题的最优性条件去逼近反馈博弈的最优性条件。这一步的意义在于：截断误差不再是一个只能事后测量的黑箱，而是被转化成了一个可以设计的终端代价项。"
+        },
+        {
+          "t": "p",
+          "v": "带约束的版本则把硬状态与输入约束直接写进这个开环博弈，形成约束开环博弈。注意这里没有走惩罚项的老路——惩罚项只能给出「大概率满足」的软保证，康复、驾驶这类场景要的是硬满足。"
+        },
+        {
+          "t": "h",
+          "v": "上界的分量"
+        },
+        {
+          "t": "p",
+          "v": "最值钱的一条结果：在无约束设定下，作者解析地推导出了 MPC 诱导轨迹与 FNE 轨迹之间状态偏差的上界。这不是「我们的方法和均衡很接近」这类经验观察，而是「偏差不超过某个可计算的量」，可以直接做性能认证。"
+        },
+        {
+          "t": "p",
+          "v": "对任何要过安全评审的系统来说，这两者的差别是决定性的：经验观察过不了审，可计算的界可以。数值算例里与文献基线做了对比，但注意这是仿真层面的验证。"
+        },
+        {
+          "t": "quote",
+          "v": "「enabling quantitative performance certification」——把近似解从「看起来接近」升级为「偏差可认证」，是这篇与多数 MPC 结合博弈工作的分水岭。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 预印本，主分类 eess.SY、兼挂 cs.GT，2026-10-03 提交，未经同行评议。上界结果是针对无约束设定给出的，带约束版本在摘要里只说「扩展」，未声明同等的界是否成立——这是读的时候要盯住的空档。验证停留在数值算例，没有真实硬件实验，别指望直接搬上机器人。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发很具体：凡是打算用滚动优化去近似某个均衡或最优策略，先问一句「终端代价怎么选」。这篇给出的答案是——让它去匹配原问题的最优性条件，而不是随便给个二次型。这一步想清楚，误差就可控了。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2610.04261",
+      "doi": "",
+      "title": "社交演绎游戏里的强化微调：赢不赢学不会，读得懂人学得会",
+      "title_en": "Playing social deduction games with reinforcement fine-tuned large language models",
+      "authors": [
+        "Lingzhe Zhang",
+        "Yunpeng Zhai",
+        "Tong Jia",
+        "Kening Zheng",
+        "Chiming Duan",
+        "Minghua He",
+        "Zhaoyang Liu",
+        "Bolin Ding",
+        "Philip S. Yu",
+        "Ying Li"
+      ],
+      "published": "2026-10-03",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.CL",
+      "url": "https://arxiv.org/abs/2610.04261v1",
+      "summary": "Reinforcement fine-tuning (RFT) is increasingly used in applications where large language models (LLMs) interact with humans and other agents. Here we use social deduction games to study how RFT changes LLMs' social behaviour. We let fine-tuned and base LLM agents play hidden-role games that require hidden-state inference, social reading and vote steering. Our results show that LLM agents do not reliably acquire social-deduction ability by directly optimizing terminal win--loss outcomes, suggesting that final game results provide a sparse and noisy signal for socially interactive learning. However, RFT is particularly effective at improving social reading, including tasks that require agents to infer hidden roles from public discussion, update beliefs over time and predict other agents' future decisions. We further show that RFT can also improve social influence, including tasks that require agents to steer votes, team approvals and collective decisions, although these gains depend more strongly on behaviourally specific rewards and structured interaction settings. Finally, we show that LLMs' ability to play social deduction games can be further improved through multi-agent social-cognitive reinforcement fine-tuning, which combines social-reading and social-influence signals during same-side multi-agent training. These learned behaviours also receive more favourable human evaluations of strategic competence, persuasiveness and social usefulness. Together, these results enrich our understanding of how RFT changes LLMs' social behaviour and provide a step toward a behavioural learning theory for machine social intelligence.",
+      "summary_short": "Reinforcement fine-tuning (RFT) is increasingly used in applications where large language models (LLMs) interact with humans and other agents. Here we use social deduction games to study how RFT changes LLMs' social behaviour.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体",
+        "主题·LLM多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.04261",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "强化微调",
+        "社交演绎",
+        "社交阅读",
+        "奖励设计",
+        "心智理论"
+      ],
+      "glance": "直接拿终局胜负当奖励，LLM 学不会社交推理；换成可标注的中间认知信号才有效",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "狼人杀这类隐藏身份游戏，是检验语言模型社交能力的天然考场：你必须从公开发言里推断谁是卧底、随讨论推进不断修正判断、还要把票引导到你想让它去的地方。直觉上，只要把「赢」当成奖励去强化微调，模型自然会越来越会玩。这篇的结果把这个直觉打了个对折——不会，至少不 reliably。"
+        },
+        {
+          "t": "h",
+          "v": "终局胜负是个太稀疏也太吵的信号"
+        },
+        {
+          "t": "p",
+          "v": "作者让微调版与基座 LLM 智能体对打隐藏身份游戏，直接优化终局胜负，结果是社交演绎能力并不能稳定提升。原因不复杂：一局游戏里你的个人贡献被队友、被随机身份分配、被他人失误层层稀释，终局那一个比特的奖励对个人行为的信用分配几乎失效。"
+        },
+        {
+          "t": "p",
+          "v": "但拆开看，图景立刻清晰了。强化微调对「社交阅读」特别有效——从公开讨论中推断隐藏角色、随时间更新信念、预测其他智能体的下一步决策。这些任务的共同点是：都能给出稠密且可验证的中间标签，每一步都有对错可判。"
+        },
+        {
+          "t": "p",
+          "v": "对「社交影响」——引导投票、争取团队批准、推动集体决策——也有提升，但更依赖行为特定的奖励设计和结构化的交互设定。换句话说，影响力不是社交阅读的免费赠品，得单独设计奖励才拿得到。"
+        },
+        {
+          "t": "h",
+          "v": "把两种信号合进同阵营训练"
+        },
+        {
+          "t": "p",
+          "v": "于是有了 multi-agent social-cognitive RFT：在同阵营的多智能体训练中，同时喂入社交阅读与社交影响两类信号。学出来的行为在人类评价里，战略能力、说服力、社会有用性三项都更高。"
+        },
+        {
+          "t": "p",
+          "v": "这里有个容易被忽略的细节：「同阵营」这个设定很关键。它让多个智能体共享目标、可以互相配合，从而把「影响力」变成一个可观测、可归因的信号——如果在对抗阵营里，你的说服力与对手的抗拒混在一起，又变成稀疏信号了。"
+        },
+        {
+          "t": "quote",
+          "v": "「final game results provide a sparse and noisy signal for socially interactive learning」——这一句基本解释了为什么大批「拿胜负做 RL」的多智能体 LLM 工作会卡在同一个地方。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 预印本，主分类 cs.CL、兼挂 cs.AI 与 cs.MA，2026-10-03 提交，十人署名，未经同行评议。摘要未披露人类评价的样本规模与评分者一致度，游戏局数与模型规模也需回正文确认。作者自己在定位上写的是「a step toward a behavioural learning theory」，是阶段性结果而非定论。"
+        },
+        {
+          "t": "close",
+          "v": "最实用的启发在奖励工程：给 LLM 智能体设计学习目标时，先把「任务成功」拆成可标注的中间认知能力，比堆模型规模或堆数据划算得多。这条不只适用于游戏——凡是要让模型学会与人或其他智能体打交道的场景，都值得先问一句：我能不能给中间步骤打分？"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2610.04672",
+      "doi": "",
+      "title": "MASBench：把「信息不完整」设为多智能体协作评测的默认前提",
+      "title_en": "MASBench: Benchmarking LLM-based Multi-Agent Collaboration under Partial Observability",
+      "authors": [
+        "Qizhi Chu",
+        "Zekai Yu",
+        "Sijie Wen",
+        "Yang Liu",
+        "Chen Qian",
+        "Cheng Yang",
+        "Chuan Shi",
+        "Zhiyuan Liu"
+      ],
+      "published": "2026-10-03",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.04672v1",
+      "summary": "Large language models (LLMs) have progressively evolved into the core of autonomous agents. Building on this progress, LLM-based multi-agent systems (MAS) coordinate multiple agents into a synergistic team to accomplish complex tasks that exceed the capabilities of individual agents. The effectiveness of such systems depends not only on the agents themselves, but also on how collaboration mechanisms are designed and organized. Note that real-world collaboration is typically partially observable, where each agent can only access partial information about the environment due to physical or privacy-related constraints. However, many existing multi-agent benchmarks assume global observability, and leave limited support for systematically evaluating collaboration mechanisms. To bridge this gap, we introduce MASBench, a multi-agent collaboration benchmark designed under partially observable constraints. It is organized into three progressive task categories: Reasoning, Scheduling, and Game. Through this structure, we progressively evaluate three representative collaboration mechanisms: Protocol, Memory, and Routing. MASBench further provides deterministic evaluation metrics, including performance score, communication cost, and cost effectiveness, to characterize both collaboration outcomes and communication overhead. Experiments across diverse LLM backbones and mechanism configurations offer empirical guidance for effective MAS design. Code is available at: https://github.com/BUPT-GAMMA/MASBench",
+      "summary_short": "Large language models (LLMs) have progressively evolved into the core of autonomous agents. Building on this progress, LLM-based multi-agent systems (MAS) coordinate multiple agents into a synergistic team to accomplish complex tasks that exceed the capabilities of individual agents.",
+      "is_new": true,
+      "sources": [
+        "主题·LLM多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.04672",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "基准评测",
+        "部分可观测",
+        "协作机制",
+        "通信代价",
+        "MAS"
+      ],
+      "glance": "现有基准默认全局可见，而真实协作是被切开的信息孤岛——MASBench 把部分可观测设为默认，并把通信开销计入评分",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "现有的多智能体基准里，几乎每个 agent 都能看到完整的环境状态。可真实协作从来不是这样：机器人只有自己那几个传感器，跨部门协作不能共享全部数据，隐私合规更是直接划出禁区。于是一个尴尬的后果出现了——「协作机制设计得好不好」在基准里根本测不出来，因为信息全给足了，笨办法也能做对。"
+        },
+        {
+          "t": "h",
+          "v": "三类任务，三种机制"
+        },
+        {
+          "t": "p",
+          "v": "MASBench 的组织方式是三层递进的任务：Reasoning、Scheduling、Game。把 Game 放进第三层是有道理的——博弈类任务天然要求推断他人意图与可能的行动，是对协作机制最硬的考场，前面的推理与调度更像是单项能力测试。"
+        },
+        {
+          "t": "p",
+          "v": "对应地评估三类代表性协作机制：Protocol（通信协议）、Memory（记忆与共享状态）、Routing（路由，决定谁跟谁说话）。这三者恰好切中当下 MAS 框架的核心分歧——到底该改说话的格式、改共享的记忆，还是改通信拓扑。把它们放在同一把尺子下量，本身就是贡献。"
+        },
+        {
+          "t": "h",
+          "v": "把通信开销算进分数"
+        },
+        {
+          "t": "p",
+          "v": "指标给了三件套且是确定性的：performance score、communication cost、cost effectiveness。真正关键的是第三个。只看准确率的话，最优策略永远是「让所有 agent 把所有信息广播一遍」——这正是现实中不可接受的方案。有了性价比这一项，才能讨论一个机制「值不值」。"
+        },
+        {
+          "t": "p",
+          "v": "实验跨多种 LLM 骨干与多种机制配置展开，目标是给 MAS 设计提供经验指引；代码已在 BUPT-GAMMA/MASBench 开源，可复现性有保障。"
+        },
+        {
+          "t": "quote",
+          "v": "「many existing multi-agent benchmarks assume global observability」——把一个被默认接受的假设翻过来当成研究对象，是这篇最值得学的一招。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 预印本，主分类 cs.AI，2026-10-03 提交，未经同行评议。摘要未披露具体任务条目数、参与评测的模型清单与骨干规模，读到具体数字时应以开源仓库为准。作为基准类工作，它的价值取决于任务覆盖面是否足够广、指标是否真的确定性可复现，这两点需要下仓库验证后再下结论。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发是评测观：评估多智能体系统时，把「信息可见性」和「通信预算」当成与准确率同级的自变量，而不是固定不变的环境参数。否则你在基准上优化出来的，很可能只是一个靠信息过载取胜、一上真实环境就超预算的暴力方案。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 5,
+      "id": "2610.04417",
+      "doi": "",
+      "title": "p-均值社会福利的复杂性版图：紧编码下，哪几格还能算",
+      "title_en": "Maximizing p-Mean Social Welfare in the High-Multiplicity Setting: Few Agent Types and Few Item Types",
+      "authors": [
+        "Trung Thanh Nguyen",
+        "Khaled Elbassioni"
+      ],
+      "published": "2026-10-03",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2610.04417v1",
+      "summary": "The $p$-mean welfare objective unifies several classical social welfare criteria for the allocation of indivisible goods. We study its maximization under additive nonnegative utilities when item and agent multiplicities are encoded in binary. For every fixed finite rational $p<1$, $p\\neq0$, we show that the problem is $\\mathsf{NP}$-hard with only two item types. Nash welfare ($p=0$) and egalitarian welfare ($p=-\\infty$) are NP-hard with three item types. These results hold both for computing an optimal allocation and for rational-threshold decision, and the utilities and threshold can be required to be positive integers. We also show that maximizing $p$-mean social welfare is strongly NP-hard with one agent type and an unrestricted number of item types, for every fixed finite rational $p<1$ and for $p=-\\infty$. A quantitative gap in this reduction rules out an FPTAS in the latter setting unless $\\mathsf{P}=\\mathsf{NP}$. On the positive side, for a fixed number of item types and an arbitrary number of agent types, we give an FPTAS for every fixed $p\\in\\mathbb Q\\cup\\{-\\infty\\}$. Its running time is polynomial in the compact input length and in $1/\\varepsilon$, and it returns a compressed allocation. For a fixed number of agent types and an unrestricted number of item types, we give a PTAS for every fixed finite rational $p<1$, also in the fully compact model. We further give explicit compact-model proofs of the classical exact allocation algorithms for one item type, and for egalitarian welfare with two item types. These results essentially settle the complexity and approximability of $p$-mean welfare maximization with few item types and/or few agent types, leaving only the exact complexity of Nash welfare maximization with two item types unresolved in the small-item-type classification.",
+      "summary_short": "The $p$-mean welfare objective unifies several classical social welfare criteria for the allocation of indivisible goods. We study its maximization under additive nonnegative utilities when item and agent multiplicities are encoded in binary.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.04417",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "社会福利",
+        "不可分物品分配",
+        "NP-hard",
+        "FPTAS",
+        "紧输入编码"
+      ],
+      "glance": "两三类物品就 NP-hard，但固定物品类型数仍有 FPTAS——p-均值福利的复杂性版图基本被画满",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "把一堆不可分的物品分给一群人，什么叫「公平」从来没有唯一答案。功利主义看总和，纳什福利看乘积，平等主义看最惨的那个人。长期以来这三个标准各说各话。p-均值福利的用处是把它们压进同一条参数谱系：p 取不同值就退化成不同准则。于是问题被改写成一个更可操作的形式——p 挪到哪儿，这件事还能算得动？"
+        },
+        {
+          "t": "h",
+          "v": "编码方式才是本题的隐藏主角"
+        },
+        {
+          "t": "p",
+          "v": "设定是 high-multiplicity：agent 与 item 的重数都以二进制编码。这个设定不是学究气——现实里一千个完全相同的包裹，没道理在输入里写一千行。"
+        },
+        {
+          "t": "p",
+          "v": "但紧凑编码会把复杂性判定整个翻过来。多项式时间是相对于输入长度定义的，输入一旦被压缩到对数级，原来那些「多项式」算法可能就不再多项式了。这就是为什么经典结论不能在紧模型下直接沿用、必须重做一遍分类。读这篇如果跳过这一点，后面的结果会全部失去参照系。"
+        },
+        {
+          "t": "h",
+          "v": "负面结果：难得出人意料"
+        },
+        {
+          "t": "p",
+          "v": "对每一个固定的有限有理 p<1 且 p≠0，只要有两种物品类型，问题就是 NP-hard。纳什福利（p=0）与平等主义福利（p=-∞）则需要三种物品类型才 NP-hard。更值得注意的是这些 hardness 同时适用于「求最优分配」和「有理阈值判定」两种形式，而且效用与阈值都可以被要求是正整数——这不是靠构造病态实数偷来的难度。"
+        },
+        {
+          "t": "p",
+          "v": "更强的一条：单一 agent 类型、物品类型数不受限时，对任意固定有限有理 p<1 以及 p=-∞ 都是强 NP-hard。该归约中的定量间隙还直接排除了 FPTAS，除非 P=NP。"
+        },
+        {
+          "t": "h",
+          "v": "正面结果：仍有可以下手的格子"
+        },
+        {
+          "t": "p",
+          "v": "物品类型数固定、agent 类型数任意时，对所有固定的 p∈Q∪{-∞} 都给出 FPTAS。运行时间对紧输入长度与 1/ε 同时是多项式，而且返回的是压缩形式的分配——不把结果展开成一长串，这一点在紧模型里是必须的，否则输出本身就指数大了。"
+        },
+        {
+          "t": "p",
+          "v": "agent 类型数固定、物品类型数不受限时，对所有固定有限有理 p<1 给出 PTAS，同样在完全紧凑模型下成立。此外还补上了单项类型的精确分配算法、以及两类物品下平等主义福利的显式紧模型证明。整张版图只剩一格没定：两类物品下纳什福利的精确复杂性。"
+        },
+        {
+          "t": "quote",
+          "v": "「These results essentially settle the complexity and approximability…」——这类把版图几乎画满的分类论文，价值不在于提出新算法，而在于让后续的人不必再重复造轮子。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 预印本，主分类 cs.GT、兼挂 cs.AI，2026-10-03 提交，纯理论工作、无实验，未经同行评议。读它的正确姿势是当查表手册：遇到「大规模同质化物品的公平分配」问题，先按 p 的取值和类型数去表里定位，看落在 NP-hard 区还是 FPTAS 区，再决定要不要自己设计启发式。"
+        },
+        {
+          "t": "close",
+          "v": "给工程侧的直接提醒是：别一遇到问题就动手写新近似算法。先确认 agent 与 item 的类型数是不是真的那么大——现实中同质化严重的场景，类型数往往小得惊人，而小类型数这一格，FPTAS 已经存在了。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今日 10 篇新增里唯一的「顶刊」命中（Nature Communications，10.1038/s41467-026-77744-1）经落地页核实是智能手机集成的微流控诊断平台 SID-WAVES，与博弈或多智能体无关，属检索误命中已剔除；另一篇期刊档 IJCA（10.5120/ijcaee078c422a35）为综述性稿件、DOI 落地页直接返回 PDF 而无法核实卷期，同样未收录。因此本期 5 篇由 1 篇期刊加 4 篇 arXiv 预印本构成，无 CCF-A 命中。",
+    "今天最一致的技术动作是把硬约束写进学习与控制回路，而不是用惩罚项软处理：供应链一侧用风险约束动作门控压住库存与产能上限，微分博弈一侧把硬状态与输入约束直接写进开环博弈。两者针对的是同一个老毛病——学出来的策略在奖励上好看、在物理或合规上不可执行。",
+    "近似解开始要求「证书」。MPC 逼近反馈纳什均衡给出了解析的状态轨迹偏差上界，把「看起来接近」升级为「偏差可量化、可认证」；同期供应链那篇也主动报告了预测噪声与通信延迟下的性能衰减。报告失效边界正在从加分项变成默认动作。",
+    "LLM 多智能体的评测重心从「能不能完成任务」转向「在信息不完整下划不划算」：MASBench 把部分可观测设为默认前提并计入通信代价，社交演绎 RFT 则表明终局胜负是过稀疏的奖励、需拆成可标注的中间认知信号。两篇指向同一结论——指标与奖励的设计，比骨干模型本身更决定结果。",
+    "机制设计一侧回到基础复杂性：p-均值福利在紧输入编码下几乎被完整分类，只剩两类物品下纳什福利这一格待定。这类「画满版图」的工作与上面几篇工程论文形成对照——当天真正稀缺的往往不是又一个新算法，而是清楚地知道哪些问题已经可解、哪些已被证明难解。"
+  ],
+  "note": "本期精读 5 篇。检索窗口：arXiv 7 天 / 期刊会议 90 天，截至 2026-10-06；今日新增 10 篇，无 CCF-A 命中。入选结构：期刊 1 篇（EAI Endorsed Transactions on Scalable Information Systems, Vol. 13 No. 5 (2026)，DOI 10.4108/eetsis.14737，卷期与摘要已在 publications.eai.eu 落地页核实）+ arXiv 预印本 4 篇（cs.CL / cs.AI / cs.GT / eess.SY 各一）。分区分布：核心算法创新·MARL 1 篇、博弈求解与理论 1 篇、LLM 多智能体与社会模拟 2 篇、机制设计与市场 1 篇。剔除说明：① Nature Communications《Reframing decentralized diagnostics…》为微流控诊断平台，无博弈或多智能体内容，属误命中；② IJCA《Trust-Weighted Adaptive Consensus…》为综述性稿件且卷期不可核实，不予采信；③ Zenodo 自印本《ACAAI》（10.5281/zenodo.21856004）为单作者、无实验验证的治理框架；④ arXiv《Quantifying Collusion Among Autonomous LLM Agents》（2610.04528）单作者且摘要未报告任何量化结果，暂不纳入；⑤《Nonlinear D2OC…》（2610.04545）主线为密度驱动最优控制与序列凸规划，博弈成分薄，本期未收录。",
   "learning": {},
   "radar": [
     {
@@ -2146,5 +2608,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

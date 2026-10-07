@@ -22,9 +22,459 @@
     "new_count": 24,
     "seen_before": 673
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "2610.07491",
+      "doi": "",
+      "title": "共享预算由谁来承担：给 MARL 的拉格朗日乘子学一份「责任份额」",
+      "title_en": "Who Bears the Burden? Learning Responsibility for Shared Constraints in Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Xiaoyang Cao",
+        "Jingqi Li",
+        "Zhe Fu",
+        "Alexandre M. Bayen"
+      ],
+      "published": "2026-10-05",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.LG",
+      "url": "https://arxiv.org/abs/2610.07491v1",
+      "summary": "When multiple agents share a cost budget, a common Lagrange multiplier can enforce the aggregate constraint but does not determine how its penalty should be allocated across agents. Uniform penalties ignore heterogeneity in the rewards agents sacrifice, while agent-specific multipliers may still rely on the same aggregate cost signal. We introduce Lagrangian Responsibility Allocation (LiRA), which learns each agent's share of a common multiplier by optimizing social welfare over a finite training horizon. The multiplier enforces the aggregate budget, while responsibility shares redistribute its influence without modifying the original rewards or constraints. For convex games under standard regularity conditions, varying these shares induces a smooth family of normalized generalized Nash equilibria in which active constraints remain at their budgets while welfare varies. To optimize responsibility before convergence, we derive a welfare gradient that accounts for both learning updates and the induced change in data distribution. Across CityLearn, MABIM, Harvest, and MetaDrive, spanning 3 to 400 agents, LiRA improves average social welfare by up to 29% over uniform and agent-specific multiplier baselines. Grid and driving costs remain within budget, inventory violations decrease, and Harvest makes more effective use of available budget.",
+      "summary_short": "When multiple agents share a cost budget, a common Lagrange multiplier can enforce the aggregate constraint but does not determine how its penalty should be allocated across agents. Uniform penalties ignore heterogeneity in the rewards agents sacrifice, while agent-specific multipliers may still rel…",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体",
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.07491",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "MARL",
+        "约束优化",
+        "拉格朗日方法",
+        "广义纳什均衡",
+        "社会福利"
+      ],
+      "glance": "把「总共罚多少」和「这笔钱谁出」拆成两件事，学着给每个 agent 分配责任份额，福利最高拉高 29%",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一群 agent 共用一个成本预算时，最常见的做法是挂一个公共拉格朗日乘子。它能保证总量不超，但管不了一件事：这笔罚到底记在谁头上。平摊最省事，却假装所有 agent 为守预算牺牲的回报是一样多的；给每人配一个乘子听起来更公平，可大家盯的仍然是同一个聚合成本信号，算出来的分配往往让一部分人替另一部分人买单。这篇盯住的正是这个被默认跳过的一步。"
+        },
+        {
+          "t": "h",
+          "v": "乘子管总量，份额管分配"
+        },
+        {
+          "t": "p",
+          "v": "LiRA（Lagrangian Responsibility Allocation）的做法是把两件事彻底拆开：外层那个公共乘子继续负责把总预算压到位；另学一组「责任份额」（responsibility shares），决定这个乘子的影响在各 agent 之间如何再分配。关键限定是它不改动原始奖励函数，也不改写原始约束——也就是说，这是在已有 constrained MARL 算法外面套的一层轻量重参数化，而不是把整个问题重新形式化。工程上的直接好处是接入成本很低。"
+        },
+        {
+          "t": "p",
+          "v": "优化目标也不是某个中间惩罚项收敛得漂不漂亮，而是有限训练 horizon 上的社会福利。换句话说，份额本身变成了待优化的决策变量，而不是事后按某个启发式拍脑袋定下来的常数。"
+        },
+        {
+          "t": "h",
+          "v": "不是单个均衡，而是一族"
+        },
+        {
+          "t": "p",
+          "v": "作者给了一个结构性解释，读起来比较安心：在凸博弈加标准正则条件下，连续变动责任份额会诱导出一族光滑变化的 normalized generalized Nash equilibria（归一化广义纳什均衡）。其中有个性质很妙——活跃约束始终贴在预算边界上，变化的只是福利。也就是说沿着这条份额路径，你是在「预算永不违规」的前提下纯粹做福利交换，不会出现用超支换福利这种伪改进。"
+        },
+        {
+          "t": "p",
+          "v": "真正的难点在于份额必须在策略还没收敛时就跟着更新，而更新策略会同时改变落到的数据分布。作者因此推导了一个显式计入「学习更新」与「由此引起的数据分布变化」的 welfare gradient。这一步是整篇能否在有限 horizon 内实用的关键，也恰恰是最容易被绕过去的地方。"
+        },
+        {
+          "t": "h",
+          "v": "从 3 个 agent 到 400 个 agent"
+        },
+        {
+          "t": "p",
+          "v": "实验跨四个环境：CityLearn（建筑群用能）、MABIM（库存补货）、Harvest（公共资源采集）与 MetaDrive（自动驾驶），规模从 3 个 agent 一直到 400 个。相对「统一乘子」与「逐 agent 乘子」两类基线，LiRA 把平均社会福利拉高了最多 29%。"
+        },
+        {
+          "t": "p",
+          "v": "更值得注意的是副作用的走向：电网与驾驶成本仍留在预算内，库存违例反而下降，Harvest 环境里可用预算被更充分地用掉了。也就是说这个提升不是靠偷偷把预算花超换来的。"
+        },
+        {
+          "t": "quote",
+          "v": "「总预算压得住，不等于这笔账分得对」——LiRA 把第二个问题单独拎出来，变成可以直接优化的变量。"
+        },
+        {
+          "t": "close",
+          "v": "只要你的场景里有共享额度（带宽池、碳排放额度、车队折旧、算力配额）再加多个自利主体，都值得先把「责任份额」当成一个独立可调的自由度，而不是默认平摊。它零侵入——不改奖励、不改约束——这让试错成本相当低。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2610.06773",
+      "doi": "",
+      "title": "组合拍卖的 DSIC 硬度三连：三档下界一次做齐",
+      "title_en": "The Hardness of Dominant Strategy Mechanism Design, Revisited",
+      "authors": [
+        "Frederick V. Qiu"
+      ],
+      "published": "2026-10-05",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2610.06773v1",
+      "summary": "We study the communication complexity of \\emph{dominant-strategy incentive-compatible} (DSIC) mechanisms for combinatorial auctions. For $γ\\in [\\log m, m]$, let $\\mathsf{DSIC_{GEN}}(m, γ)$, $\\mathsf{DSIC_{XOS}}(m, γ)$, and $\\mathsf{DSIC_{GS}}(m, γ)$ denote the best approximation ratio attainable by a deterministic, individually rational, no-negative-transfers, DSIC mechanism using at most $2^γ$ communication over $m$ items, for general monotone, XOS, and gross substitutes (GS) valuations, respectively. We give a unified proof that shows $\\mathsf{DSIC_{GEN}}(m, γ) = Ω(m/γ)$, $\\mathsf{DSIC_{XOS}}(m, γ) = Ω((m/γ)^{1/5})$, and $\\mathsf{DSIC_{GS}}(m, γ) = Ω((m/γ)^{1/7})$. The GS lower bound answers an open question of~\\cite{DobzinskiRV22}: although poly-communication welfare maximization for GS valuations admits a poly-communication deterministic truthful mechanism via VCG, no good approximation is possible in poly-communication for deterministic DSIC mechanisms. Additionally, the general lower bound establishes that $\\mathsf{DSIC_{GEN}}(m, γ) = Θ(m/γ)$ due to the deterministic DSIC $O(m/γ)$-approximation of~\\cite{QiuW24}. We also obtain several results in the two-bidder setting. We show that attaining a $1.0001$-approximation for two weighted matroid-rank valuations (a subclass of GS) with a universally DSIC mechanism requires exponential communication. On the other hand, we give a poly-communication $(1+\\sqrt{5})/2 \\approx 1.618$-approximation for two submodular bidders using a universally DSIC mechanism. Prior to this work, it was not known whether even a poly-communication universally truthful mechanism could beat a $2$-approximation for two submodular valuations, nor whether a poly-communication universally DSIC mechanism could beat a $2$-approximation for two weighted matroid rank valuations.",
+      "summary_short": "We study the communication complexity of \\emph{dominant-strategy incentive-compatible} (DSIC) mechanisms for combinatorial auctions. For $γ\\in [\\log m, m]$, let $\\mathsf{DSIC_{GEN}}(m, γ)$, $\\mathsf{DSIC_{XOS}}(m, γ)$, and $\\mathsf{DSIC_{GS}}(m, γ)$ denote the best approximation ratio attainable by…",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.06773",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "通信复杂度",
+        "DSIC",
+        "组合拍卖",
+        "XOS/GS 估值",
+        "不可近似性"
+      ],
+      "glance": "Ω(m/γ)、Ω((m/γ)^{1/5})、Ω((m/γ)^{1/7}) 三档下界收进一套统一证明，并把一般情形钉成 Θ(m/γ)",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "VCG 给人留下过一个很舒服的印象：只要机制用对了，如实报价和最大化社会福利可以兼得。把这条印象搬到多物品组合拍卖上，它摔得最狠——一旦你同时要求「占优策略激励相容 + 个体理性 + 无负转移 + 确定性」，并且规定能用的通信量只有 2^γ 这么一点，能拿到的近似比就被通信预算死死摁住。这篇把一般单调、XOS 与 gross substitutes 三档估值类的下界统一到一套证明里。"
+        },
+        {
+          "t": "h",
+          "v": "把最坏情况写成「近似比 × 通信量」的权衡"
+        },
+        {
+          "t": "p",
+          "v": "论文的记号很克制：对 γ ∈ [log m, m]，令 DSIC_GEN(m, γ)、DSIC_XOS(m, γ)、DSIC_GS(m, γ) 分别表示在 m 件物品上、至多使用 2^γ 通信量的确定性、个体理性、无负转移的 DSIC 机制所能达到的最好近似比。注意 γ 的上界是 m：γ = Θ(m) 意味着通信量已经指数级放开到 2^m，什么都传得完；γ = O(log m) 则对应多项式通信，也就是真实系统里唯一可行的那一档。"
+        },
+        {
+          "t": "p",
+          "v": "统一证明给出三档下界：一般单调估值 Ω(m/γ)、XOS 估值 Ω((m/γ)^{1/5})、GS 估值 Ω((m/γ)^{1/7})。"
+        },
+        {
+          "t": "p",
+          "v": "指数递减本身讲了一个故事：越是「规矩」的估值类，不可近似性的牙齿越钝。GS 是最可处理的那一档，所以下界指数最小。反过来看，哪怕在 GS 这一档，多项式通信（γ = O(log m)）下也已经只剩下 Ω((m/log m)^{1/7}) 这种几乎无法补救的损失。"
+        },
+        {
+          "t": "h",
+          "v": "顺手关掉一个公开问题"
+        },
+        {
+          "t": "p",
+          "v": "GS 的下界直接回答了 Dobzinski 等人 2022 年留下的一个公开问题。此前已知 GS 估值的福利最大化本身在多项式通信下做得很干净——VCG 就能给出确定性的 truthful 机制；但这篇文章说明，那只是某一条特定路径上的可达性。只要坚持要求确定性的 DSIC 机制，多项式通信下就别指望好的近似比。「存在一条好的 truthful 路径」和「任何 DSIC 机制都能近似」是两件事。"
+        },
+        {
+          "t": "p",
+          "v": "另外，一般情形的下界与此前已有的 O(m/γ) 上界正好对上，于是 DSIC_GEN(m, γ) 被钉死为 Θ(m/γ)。这类上下界恰好闭拢的结果，在机制设计里并不多见。"
+        },
+        {
+          "t": "h",
+          "v": "两个投标人的角落里也不是净土"
+        },
+        {
+          "t": "p",
+          "v": "论文还专门梳理了 two-bidder 情形，对比相当强烈。一边是：对两个 weighted matroid-rank 估值（GS 的一个子类），哪怕只想要 1.0001 这么宽松的近似比，universally DSIC 机制也需要指数级通信——想把近似比压到接近 1，代价立刻爆炸。"
+        },
+        {
+          "t": "p",
+          "v": "另一边是：对两个次模投标人，作者给出了多项式通信下的 (1+√5)/2 ≈ 1.618 近似，且是 universally DSIC。这个数字之所以值得一提，是因为在此之前人们甚至不知道多项式通信的 universally truthful 机制能否突破 2——无论是对两个次模估值，还是对两个 weighted matroid-rank 估值。1.618 这个黄金比例算是给这条线画了个挺漂亮的收尾。"
+        },
+        {
+          "t": "close",
+          "v": "如果你的系统里「参与者必须如实报价」是不可谈判的前提（而不是放松到贝叶斯激励相容就算了），这三条下界可以直接当作设计约束来用：先把可用的通信预算换算成 2^γ，再看对应估值类能期望的最好近似比。在这个框架下，很多「再把分配网络优化一轮」的努力从一开始就注定没有意义。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2610.06559",
+      "doi": "",
+      "title": "MIRT：让 Transformer 也能干净地做「整条信息流的拍卖」",
+      "title_en": "MIRT: Transformers for Truthful Generative Auctions with Whole-feed Permutation Externalities",
+      "authors": [
+        "Ali Elahi",
+        "Ermis Soumalias",
+        "Jason Cheuk Nam Liang",
+        "Daniel Yao",
+        "Michael J. Curry"
+      ],
+      "published": "2026-10-05",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2610.06559v1",
+      "summary": "Modern online platforms commonly rank ads and organic content separately before blending them into a feed displayed to the user, overlooking externalities: an item's click-through rate depends on its surrounding content, not only on its own position. Recent learning-based feed generation mechanisms model some of these cross-type interactions to globally optimize for the whole feed's welfare. However, these approaches either fix the ordering of organic content, or lack exact strategyproofness guarantees for bidders. To combat these shortfalls, we introduce the Maximal-in-Range Transformer (MIRT) mechanism class, which uses a transformer to generate a range of candidate feeds that jointly order ads and organic content, and selects the welfare-maximizing feed in the range. However, there is a tension: strategyproofness requires the generated range to be bid-independent, even though a candidate feed's welfare depends linearly on the bids. Our key technical contribution is a reinforcement learning approach that incorporates both candidate generation and bid-aware selection into training, enabling a bid-independent transformer to learn to generate high-welfare ranges by accounting for both individual feed quality and the collective quality of the range. Additionally, we bound the pseudo-dimension of the MIRT class under hard attention, showing that near-optimal expected welfare is learnable with sample complexity polynomial in the transformer size and only logarithmic in the range size. Empirically, MIRT outperforms the previous non-strategyproof state-of-the-art feed models while remaining exactly strategyproof. Our results show that transformer-based auctions can deliver externality-aware whole-feed optimization without sacrificing exact incentive compatibility, removing a major obstacle to their practical deployment.",
+      "summary_short": "Modern online platforms commonly rank ads and organic content separately before blending them into a feed displayed to the user, overlooking externalities: an item's click-through rate depends on its surrounding content, not only on its own position.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.06559",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "机制设计",
+        "Transformers",
+        "Maximal-in-Range",
+        "防操纵",
+        "外部性"
+      ],
+      "glance": "把 bid-independent 的 Transformer 当作 range 生成器，在保住 exact strategyproof 的同时超过非 truthful 的 SOTA",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "你每天刷的那条信息流，很可能是两条互不相干的流水线拼出来的：一条给广告排序，一条给自然内容排序，各自优化各自的指标，最后再混在一起。麻烦在于，一条内容的点击率取决于它周围是什么——上下文会改变它被注意到的方式，也就改变了它的价值。两条管道互相看不见对方，这个「整体外部性」于是系统性地没有人负责。"
+        },
+        {
+          "t": "h",
+          "v": "已有方案缺了哪一只角"
+        },
+        {
+          "t": "p",
+          "v": "最近一批基于学习的「信息流生成机制」确实开始建模广告与自然内容之间的跨类型交互，从全局而不是逐条地拷打整条 feed 的福利。但它们基本踩在二选一上：要么把自然内容的顺序钉死，要么放弃对投标人的 exact strategyproofness。对平台而言第二条尤其难受——只要投标人能找到操纵空间，机制迟早会被玩到失去意义。"
+        },
+        {
+          "t": "p",
+          "v": "MIRT（Maximal-in-Range Transformer）走的是机制设计里一条经典但很难的路：先用 Transformer 生成一组候选 feed 的集合（range），在这个 range 内对广告与自然内容做联合排序，然后挑福利最大的那条输出。只要 range 与出价无关、且在 range 内取福利的 argmax，DSIC 就自动成立——这就是 maximal-in-range 的老手法。"
+        },
+        {
+          "t": "h",
+          "v": "硬的那一步：range 要看不见出价，又要对准出价"
+        },
+        {
+          "t": "p",
+          "v": "矛盾摆得很清楚：候选 feed 的福利对出价是线性的，所以「哪条候选更好」天然取决于出价；可防操纵又要求 range 的生成过程完全不能看出价。于是你需要一个对出价盲的生成器，产出一个「无论出价最终落在哪里都能捞到高质量解」的候选集合。这是一个极强的泛化要求。"
+        },
+        {
+          "t": "p",
+          "v": "作者的技术贡献就在这里：一套把 candidate generation 与 bid-aware selection 一并端上训练的强化学习方法。训练时让那个 bid-independent 的 Transformer 同时顾两件事——单条 feed 的质量，以及整个 range 的整体质量。换句话说，它要学的不是「生成最优的一条」，而是「生成一个足够丰富、覆盖面够好的范围」。这个训练目标的改写，是整篇里最值得抄的部分。"
+        },
+        {
+          "t": "h",
+          "v": "不只是能用，还能证明学得动"
+        },
+        {
+          "t": "p",
+          "v": "理论侧给的是 hard attention 下 MIRT 类的 pseudo-dimension 上界，由此推出：近优的期望福利是可学习的，样本复杂度对 Transformer 规模是多项式的，而对 range 大小只是对数级。第二条特别关键——它意味着把候选范围扩大几个数量级，并不会让所需样本同步爆炸。"
+        },
+        {
+          "t": "p",
+          "v": "实验上，MIRT 在超过此前 feed 生成 SOTA（那些不保证防操纵的模型）的同时，仍然保持 exact strategyproof。这句话反过来读更有意思：过去大家默认要为防操纵付出福利代价，这篇说在外部性建模这类问题上，代价可以接近于零。"
+        },
+        {
+          "t": "quote",
+          "v": "「range 对出价盲，selection 对出价知」——这个二分是既想要神经网络的表达力、又想要防操纵时的标准楔子。"
+        },
+        {
+          "t": "close",
+          "v": "任何时候你想让一个深度模型承担「分配什么」的决策，先别急着把出价喂进去当输入。试试把它改造成 bid-independent 的 range generator，再配一个 argmax selector。这条路线今天已经被证明在组合式输出（排序、feed、套餐组合）上跑得通，而且福利代价很小。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2610.06192",
+      "doi": "",
+      "title": "一句话被转发三遍，聚合器该算三条证据还是一条？",
+      "title_en": "Copies or Sources? Measuring How LLM Aggregators Count Restated Evidence in Multi-Agent Systems",
+      "authors": [
+        "Jianxin Gao",
+        "Runze Li",
+        "Tianyi Yu",
+        "Liangwei Ren",
+        "Bohan Chen",
+        "Zining Wang"
+      ],
+      "published": "2026-10-05",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.06192v1",
+      "summary": "Multi-agent systems built on large language models (LLMs) restate observations as a matter of course: relays forward them, shared boards repeat them and discussion rounds echo them. An aggregator that pools such messages should count sources, not statements. We convert a reported probability into units of independent readings, which assigns every restatement a copy weight, 0 for an aggregator that counts sources and 1 for one that counts every statement, and yields the implied decision under any cost structure. Three testbeds hold the evidence fixed and vary how it is restated: message logs with an exact Bayesian oracle, web documents with appended copies, and logs written by LLM agent teams under four communication protocols. Across four models from three providers, a forwarded copy counts for 0.06 to 0.42 of a new reading, mostly because some replies count every statement. On 5% to 40% of logs that state one reading three times, the reported belief implies an early commitment that the oracle never makes. The models that count copies least and most on controlled logs do so on web copies and agent-written logs as well. A one-paragraph declaration of what a copy contributes brings the copy weight on controlled logs to 0.08 or less. A rule that has agents refer to readings instead of restating them cuts belief-implied early commitment from 11.2% to 1.1% and preserves genuine corroboration.",
+      "summary_short": "Multi-agent systems built on large language models (LLMs) restate observations as a matter of course: relays forward them, shared boards repeat them and discussion rounds echo them. An aggregator that pools such messages should count sources, not statements.",
+      "is_new": true,
+      "sources": [
+        "主题·LLM多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.06192",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "LLM 多智能体",
+        "通信协议",
+        "证据聚合",
+        "信念校准",
+        "可量化评测"
+      ],
+      "glance": "把「重复计数」变成可测量的 copy weight（0.06–0.42），并证明一句协议声明就能把它压到 0.08 以下",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一个 agent 观测到某件事，转发给 B；B 在总结里又引述了一遍；讨论轮里 C 再复述一次。到聚合器这里，它看到的是三段陈述。一个正确的聚合器应该数「三个独立信源」还是「一条被重复三次的证据」？听起来像哲学问题，但它直接决定多智能体系统会不会在证据其实只有一条时，表现得像是已经确认了三遍。"
+        },
+        {
+          "t": "h",
+          "v": "给「重复」定一个标量价格"
+        },
+        {
+          "t": "p",
+          "v": "作者的处理很聪明：把模型报告的概率换算成「独立读数的单位」（units of independent readings），在这个过程中给每一次重述赋一个 copy weight——0 表示这个聚合器只数信源，1 表示它每条陈述都照单全收。有了这个标量，「有没有重复计数」就从一句定性抱怨变成了可以比较、可以画线、也能画图的量；而且在任意代价结构下都能反推出它隐含的决策。"
+        },
+        {
+          "t": "p",
+          "v": "换句话讲，copy weight 把一个通常藏在意气之争里的问题（模型到底有没有「证据」这个概念）翻译成了可以横向对齐的指标。这个翻译本身就很有价值。"
+        },
+        {
+          "t": "h",
+          "v": "三个实验床：证据固定，只变说法"
+        },
+        {
+          "t": "p",
+          "v": "设计上刻意控制了变量：证据本身保持不变，只改变它被重述的方式。三个 testbed 分别是带精确贝叶斯 oracle 的消息日志、附加了副本的网页文档，以及在四种通信协议下由 LLM agent 团队真实写出的日志。模型覆盖四款，来自三家供应商。"
+        },
+        {
+          "t": "p",
+          "v": "结果：一条被转发的副本，相当于 0.06 到 0.42 个新读数。区间跨度很大，说明这不只是「所有人都稍微多一点」的系统偏差，而是不同模型的记账习惯差异相当显著。作者把归因放在某些回答会把看到的每条陈述都数进去。"
+        },
+        {
+          "t": "p",
+          "v": "后果也可以量化：在「同一个读数被表述三遍」的日志上，有 5% 到 40% 的情形里，模型报告出来的信念意味着一种 oracle 绝不会做出的提前承诺——也就是说系统在证据远不充分的时候，已经表现得像是笃定了。"
+        },
+        {
+          "t": "h",
+          "v": "一致性，以及两条便宜的干预"
+        },
+        {
+          "t": "p",
+          "v": "一个让人不太舒服但很重要的发现：在受控日志上重复计数最少和最严重的那些模型，到了网页副本和 agent 自写日志上，也依然分别处在同样的位次。这意味着它不是换换提示词措辞就能洗掉的偶发行为，而是相当稳定的模型层面倾向——因此得在协议层兜住，别指望提示。"
+        },
+        {
+          "t": "p",
+          "v": "好在两条干预的成本极低且效果立竿见影。第一，在提示里加一段话明确声明「一条副本贡献什么」，受控日志上的 copy weight 被压到 0.08 或更低。第二，让 agent 「引用」某个读数而不是复述它，把信念隐含的提前承诺从 11.2% 降到 1.1%，同时保留真正独立的佐证——也就是说它没有把系统推向另一个极端，即对所有证据都充耳不闻。"
+        },
+        {
+          "t": "close",
+          "v": "如果你的系统里有共享黑板、多轮讨论或 relay 式的消息转发，现在就可以加两条规则：要求引用而非复述，并在 system prompt 里显式定义「重复陈述的证据权重」。改动量很小，回报可以直接用 copy weight 度量。这套「先把定性失效标量化、再测便宜的协议级干预」的实验模板，本身比它的结论更值得移植到其他多智能体问题上。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 5,
+      "id": "2610.05640",
+      "doi": "",
+      "title": "每个 agent 都装了 CaMeL，系统为什么还是被打穿",
+      "title_en": "Can CaMeLs Talk? Securing Multi-Agent Systems Against Indirect Prompt Injection Attacks",
+      "authors": [
+        "James Peters-Gill",
+        "Avi Semler",
+        "Henning Bartsch",
+        "Ilia Shumailov",
+        "Christian Schroeder de Witt"
+      ],
+      "published": "2026-10-05",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.MA",
+      "url": "https://arxiv.org/abs/2610.05640v1",
+      "summary": "Indirect prompt injection attacks - malicious instructions embedded in content processed by large language models - remain a major obstacle to safely deploying tool-using agents. CaMeL [Debenedetti et al., 2025] mitigates this threat for an individual agent by separating trusted control flow from untrusted data and enforcing capability-based security policies at runtime. In this work, we investigate whether CaMeL's security guarantees compose in hierarchical multi-agent systems, where agents invoke other agents as tools. We find that CaMeL's guarantees do not compose. We construct a concrete prompt-injection attack that succeeds despite all constituent agents individually operating CaMeL. Our attack exploits the fact that untrusted data can be reinterpreted as trusted input by a downstream agent. We then introduce multi-CaMeL, an agent-to-agent communication protocol that preserves provenance across agent boundaries by separating trusted natural-language instructions from untrusted data passed through a distinct data channel. We evaluate multi-CaMeL's utility on AssetOpsBench and its security-utility tradeoff on MultiAgentDojo, a benchmark we develop by extending AgentDojo to the multi-agent setting. We find that multi-CaMeL reduces attack success rate (ASR) to 0.0%, compared with 0.2% for individual-agent CaMeL and 12.9% with no CaMeL. Multi-CaMeL incurs a utility cost, but this cost trends downward as model capability increases and is modest for the strongest models, suggesting that more capable models better accommodate the constraints imposed by the protocol.",
+      "summary_short": "Indirect prompt injection attacks - malicious instructions embedded in content processed by large language models - remain a major obstacle to safely deploying tool-using agents. CaMeL [Debenedetti et al., 2025] mitigates this threat for an individual agent by separating trusted control flow from un…",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体",
+        "主题·LLM多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.05640",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "提示注入",
+        "多智能体安全",
+        "溯源保持",
+        "能力安全",
+        "安全-效用权衡"
+      ],
+      "glance": "证明单 agent 的 CaMeL 保证不可组合，并用跨 agent 的双通道协议把攻击成功率打到 0.0%",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "CaMeL 的思路一度让人挺安心：把可信的控制流与不可信的数据分开，运行时再用基于能力的策略约束数据能流到哪里，单个工具调用上的间接提示注入基本被按住。于是很自然会往下走一步——让五个各自都跑着 CaMeL 的 agent 相互调用、搭成分层系统，保护会叠加吗？这篇的结论是：不会，而且反例可以构造得非常具体。"
+        },
+        {
+          "t": "h",
+          "v": "安全保证不随「组合」而组合"
+        },
+        {
+          "t": "p",
+          "v": "场景是分层多智能体系统，agent 把另一个 agent 当工具调用。作者的追问很直接：如果每个组成单元都各自满足 CaMeL 的安全属性，整体还满足吗？答案是不能满足。"
+        },
+        {
+          "t": "p",
+          "v": "论文构造了一个具体的提示注入攻击，在所有组成 agent 都各自运行 CaMeL 的前提下仍然成功。根因说穿了是溯源（provenance）在 agent 边界处丢失：上游被标记成「不可信数据」的内容，经过一次跨 agent 传递之后，在下游 agent 那里被重新解释成「可信输入」。这条信息没被破坏，也没绕过任何能力检查——它只是换了一个语境，而每个 agent 在自己的语境里做的判断都是合规的。"
+        },
+        {
+          "t": "h",
+          "v": "multi-CaMeL：让溯源跨过边界"
+        },
+        {
+          "t": "p",
+          "v": "对策是 multi-CaMeL，一套 agent 到 agent 的通信协议。核心想法是把可信的自然语言指令与不可信数据分到两条不同的通道上传递，使得「这块内容是数据、不能被当作指令」这个标记在跨 agent 传递之后依然存活。值得注意的是它没有去加固单个 agent 的内部，而是把信任边界从一个 agent 的进程提升到了 agent 之间的连线上。"
+        },
+        {
+          "t": "h",
+          "v": "数字与安全-效用权衡"
+        },
+        {
+          "t": "p",
+          "v": "评估分两处：在 AssetOpsBench 上评效用；在作者把 AgentDojo 扩展到多智能体场景而构造的 MultiAgentDojo 上评安全与效用的权衡。"
+        },
+        {
+          "t": "p",
+          "v": "攻击成功率是一串很干净的递减：无防护 12.9%、每个 agent 单独跑 CaMeL 0.2%、multi-CaMeL 0.0%。这里最值得看的其实不是 0.0%，而是中间那档——单 agent 防护已经把攻击成功率压了两个数量级，但系统层面仍然留着一个可利用的口子，而这个口子只有在攻击者知道存在那条跨 agent 路径时才会暴露。"
+        },
+        {
+          "t": "p",
+          "v": "代价方面，multi-CaMeL 会带来效用损失，但趋势很关键：这个损失随模型能力上升而下降，对最强的模型来说幅度不大。作者的解读是更强的模型更能容纳协议施加的数据流约束——换句话说，这类安全协议的性价比大概率会随时间自然改善，不需要持续补贴。"
+        },
+        {
+          "t": "quote",
+          "v": "「每个组成部分都是安全的，不等于这个系统是安全的」——多智能体把这句话从口号变成了一条可以构造出来的反例。"
+        },
+        {
+          "t": "close",
+          "v": "设计多智能体系统时，别把「跨 agent 的数据通道」当成实现细节。它是一等公民：这条内容是谁产生的、它被允许扮演什么角色，必须随数据一起往下传，而不是到了下游重新推断。multi-CaMeL 的双通道分法，是眼下最容易落地的一种做法。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今日 24 篇新增全部为当日首次入库，其中无顶刊、无 CCF-A 命中。两篇非 arXiv 来源分别是《Engineering Optimization》上热轧批量定制生产计划的双层协同 MARL，与《Symmetry》上图 MARL 信号灯控制器在查塔努加 MLK 智慧走廊的实地部署——两者都属于「从仿真走向真实基础设施」的工程落地报导（后者明确自陈评估的是运行集成而非通行效率提升），内部缺少独立的策略互动结构，本期未作为精读主篇，但这条落地路径本身值得持续标记。",
+    "「安全保证能否组合」是今天最亮的一条线。multi-CaMeL 证明单 agent 的 CaMeL 防护在分层调用中不 compose，攻击成功率呈三级递减：无防护 12.9%、单 agent CaMeL 0.2%、跨 agent 保持溯源后 0.0%。BazaarBench 从另一个角度给出同一结论：即便在普通指令下，受测的五个模型都会把同一件商品同时承诺给多个买家；加入对抗指令后，在商品不可用或状况被夸大的情形下仍完成承诺交易的占比从 15.4% 升到 33.4%，GPT-5.4 更是达到 55.5%。代理方越能干，委托风险越需要独立评估。",
+    "LLM 多智能体的「证据卫生」第一次被做成了连续可测的指标。Copies or Sources 用 copy weight 把重复计数标量化（四款模型区间 0.06–0.42），并给出两条极低成本的干预：一段关于副本贡献的声明把受控日志上的权重压到 0.08 以下；改为「引用而非复述」把信念隐含的提前承诺从 11.2% 降到 1.1%，且不牺牲真正独立的佐证。这个「定位定性失效 → 标量化 → 测便宜的协议级干预」的模板，比它的单篇结论更值得复用。",
+    "机制设计今天两条主线同时在推进，且间距正在缩小。不可能侧：DSIC 组合拍卖的通信复杂度下界被统一成 Ω(m/γ)、Ω((m/γ)^{1/5})、Ω((m/γ)^{1/7})，一般情形由已有的 O(m/γ) 上界闭拢为 Θ(m/γ)；另有结果证明在相关先验下，离散首价拍卖的近似混合贝叶斯纳什均衡是 PPAD-complete。可行侧恰恰相反：MIRT 用 bid-independent 的 Transformer 生成候选范围、再在范围内取 argmax，拿到了 exact strategyproof 且优于非防操纵 SOTA 的整体福利，还配有 hard attention 下的 pseudo-dimension 样本复杂度界。",
+    "共享预算正在从「加一个拉格朗日乘子」细化到「谁来承担这笔罚」。LiRA 让系统去学每个 agent 的责任份额，在 3 到 400 个 agent、四个环境上把平均社会福利拉高最多 29%，且不修改原始奖励与约束——责任分配本身成了 constrained MARL 的一个独立可调维度。同一议题在 Tram-FL 里以去中心化联邦学习的通信与计算成本分担形式再次出现，值得放在一条线上跟踪。"
+  ],
+  "note": "本期精读 5 篇，覆盖 guard / caster / supporter / specialist / defender 五个分区。检索窗口：arXiv 7 天 / 期刊会议 90 天，截至 2026-10-07；当日命中 2036 条、去重后 1518 条、入库 60 条，其中今日新增 24 篇。入选结构：全部为 arXiv 预印本（cs.LG / cs.GT × 2 / cs.AI / cs.MA 各一篇），五篇均已核验 abs 页可达且摘要为作者原文。剔除说明：① 两篇非预印本来源（Engineering Optimization 10.1080/0305215x.2026.2733931、Symmetry 10.3390/sym18101659）为纯工程落地报导，参与方之间没有独立的策略互动，博弈结构薄弱，本期不收录，理由另见趋势第 1 条；② Zenodo 单作者自印本《Digital Exaptation》（10.5281/zenodo.23149658）提出 LLM 涌现推理的演化理论框架，无实验与定量结果，按本站对未评议自印本的一贯标准剔除；③ 其余未收录条目多集中在机器人视觉导航、零信任访问控制架构、视频情景学习等方向，与本期博弈主线距离较远。",
   "learning": {},
   "radar": [
     {
@@ -2145,5 +2595,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

@@ -22,9 +22,512 @@
     "new_count": 15,
     "seen_before": 727
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.1038/s41467-026-78213-5",
+      "doi": "10.1038/s41467-026-78213-5",
+      "title": "让 7B 模型学会说不会：G-Frame 用双层博弈压住化学幻觉",
+      "title_en": "Game theory driven multi-agent framework mitigates language model hallucination",
+      "authors": [
+        "Runzhe Liu",
+        "Biquan Bie",
+        "Zihao Wang",
+        "Yuchao Ma",
+        "Yexin Liu",
+        "Xinghai Li",
+        "Harry Yang",
+        "Wenbo Yang",
+        "Jinzhe Cao",
+        "Shengyang Tao"
+      ],
+      "published": "2026-10-07",
+      "venue": "Nature Communications",
+      "venue_raw": "Nature Communications",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41467-026-78213-5",
+      "summary": "",
+      "summary_short": "",
+      "is_new": true,
+      "sources": [
+        "ISSN·Nature Communications"
+      ],
+      "abs_url": "https://doi.org/10.1038/s41467-026-78213-5",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "LLM 多智能体",
+        "团队博弈",
+        "贝叶斯博弈",
+        "幻觉抑制",
+        "科学领域模型"
+      ],
+      "glance": "微观层把长推理拆成 T-S-R 角色协作的短局以压低单步熵，宏观层用维护信念状态的决策 agent 调度整条流水线，7B 化学模型的幻觉率从 41.95% 降到 12.91%",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一个 7B 的化学模型读起来很顺：它能把一段逆合成分析写得条理分明，直到你发现反应物少了两个碳。这类幻觉在通用问答里也许只是尴尬，在试错成本高到要排实验档期的化学里就是废纸。而要让模型部署在实验室本地、保住数据主权，7B 量级又几乎是唯一务实的选择。大连理工与港科大团队给出的答案不是换个更大的模型，而是给模型周围套一层「双层博弈」结构：微观层用 team game 把长推理切成短局，宏观层用贝叶斯博弈维护对整条流水线状态的信念。"
+        },
+        {
+          "t": "h",
+          "v": "微观层：把长推理切成信息熵可控的短局"
+        },
+        {
+          "t": "p",
+          "v": "G-Frame 的诊断很朴素：小模型的网络容量撑不住一条长推理链，概率质量在中间某一步漏向了错误分支，最终以幻觉的形式显形。对策是层级分解——宏观任务被拆成一串边界清晰的子任务，每个子任务交给一个 task agent，而 task agent 本身又是由两到三个 executive agent（Teacher、Student、Supervisor 这样的角色）组成的微型多智能体系统。它们共享中间状态，各自最大化预设的效用。"
+        },
+        {
+          "t": "p",
+          "v": "这里的「效用」不是被优化出来的，而是用提示工程写进去的：每个角色该干什么、优化目标是什么，都由 prompt 定义。作者把这条链路形式化成一次分布精化（distribution refinement）——每一步短询问都把生成分布朝真实分布推近一点，目标是让 D_KL(P_true ‖ P_team) 显著小于单体生成的对应值。换句话说，团队博弈在此扮演的不是「求解均衡」的角色，而是给「拆任务 + 加校验」这套已被广泛实践的工程手法，提供一套可以写成功式、可以讨论约束的语言。"
+        },
+        {
+          "t": "h",
+          "v": "宏观层：把整条流水线当成 POMDP 来调"
+        },
+        {
+          "t": "p",
+          "v": "第二层处理另一件事：LLM 是自回归的近视者，没有长期规划，也没有随时间更新的信念状态。G-Frame 用一个 decisional agent 盯住系统反馈，先基于对未来状态的期望给出先验策略，再用反馈更新对联合类型空间的信念 b_t(θ)，最后求解使全局收益 U(d, θ) 最大的决策 d*_t。这个收益函数里同时扣掉了性能、运行成本与系统稳定性。"
+        },
+        {
+          "t": "p",
+          "v": "落到具体实现上，最直观的一例是自适应并发控制：根据 GPU 队列与 KV cache 占用的实时遥测，把并发数从先验的 16 动态压到 8。这类负载驱动的退让本身是常规运维，但把它写成贝叶斯博弈里的一次后验更新，好处是决策规则变得可声明、可复用，而不是一堆散落的 if-else。"
+        },
+        {
+          "t": "h",
+          "v": "闭环跑到终点：语料、合成数据、模型"
+        },
+        {
+          "t": "p",
+          "v": "这套三层结构（decisional / task / executive）覆盖了从数据到模型的整条链路。数据侧，化学文本 OCR 带来的噪声由专门的 task agent 带着三个 executive agent（符号清洗、语义补全等）处理；语料侧，从约 50 万篇文献与 1000 本教材清洗出 50 亿 token 的域内语料，与 C4、Wikipedia 按 8:2 起步、第三轮调到 4:6 的比例混合，用来对冲灾难性遗忘；合成侧，产出 363,045 条链式推理与 199,589 条问答对，生成温度取 0.6。"
+        },
+        {
+          "t": "p",
+          "v": "训练侧的三段——域内预训练、合成数据微调、自适应训练——在消融里被证明是强耦合的：缺掉预训练，领域知识跟不上；缺掉合成微调，生成退化成重复。这不是一份可以逐步加装的清单，三者缺一不可。"
+        },
+        {
+          "t": "h",
+          "v": "数字，以及最值得抄的一处设计"
+        },
+        {
+          "t": "p",
+          "v": "结果是 7B 的 OmniChem：在作者自建的 ThChem 与 ChemBench 上达到与 GPT-4o mini 相当的水平，接近 GPT-o3。幻觉这块用 ChemJudge 测——471 道题，由 LLM 裁判按「每题 10 分、每出现一处幻觉扣 1 分」计分，并经化学领域人工专家交叉核验。相对基座模型，幻觉率从 41.95% 降到 12.91%，相对降幅 79.46%。"
+        },
+        {
+          "t": "p",
+          "v": "比这些数字更值得抄的是 ThChem2.0 的构造方式：它把 ThChem1.0（253 道多选题）中一半题目的正确选项直接删掉，迫使模型在答不出时输出 null。也就是说，这个基准测的是「模型知不知道自己不知道」，而不是「模型能不能蒙对」。任何在做领域模型评测的团队，都可以用同样的手法低成本地造出一份抗幻觉测试集。"
+        },
+        {
+          "t": "quote",
+          "v": "「先让它学会答不了时说答不了，再谈它能不能答对」——把拒答写进评测，比在生成端反复加压更划算。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "口径需要先交代清楚。一是 ThChem 与 ChemJudge 都是作者自建评测，并非社区公认基准，「与 GPT-4o mini 相当」这句话的含金量取决于这两份题的出法，读时应打折扣。二是论文里的 team game 与贝叶斯博弈更像一套有解释力的建模语言，而不是被求解出来的均衡：分布精化的 KL 论述写在补充材料中，正文并没有给出化学输出上的直接 KL 测量。但这恰恰是它的价值所在——把已被广泛实践的多 agent 分工与反馈调度，放进一个能写成功式、能讨论约束的框架里，让后续工作可以在此基础上做真正的均衡分析。该文发表于 Nature Communications（2026-10-07 上线，2025-09-28 收稿、2026-09-18 接收），已经同行评议，模型权重已在 Hugging Face 开放。"
+        },
+        {
+          "t": "close",
+          "v": "如果你手上同样是「小模型 + 强规则领域」的组合（法规条款、计量规程、医疗器械），不必急着换更大的底座。先做三件成本都不高的事：把长任务拆成单步熵可控的短局，并给每一步配上不同角色的执行者；给流水线加一个读取实时反馈、更新全局决策的上层 agent；再造一份故意找不到正确答案的测试集。G-Frame 提供的，正是把这三件事组织在一起的那套语言。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "10.1287/moor.2024.0707",
+      "doi": "10.1287/moor.2024.0707",
+      "title": "只知道估值上界，怎么把一件的孤品卖好：保留价定在上限的一半",
+      "title_en": "Simple and Effective: A Deterministic Auction with Support Information",
+      "authors": [
+        "Rishikesh Parma",
+        "Çağıl Koçyiğit",
+        "Benny Mantin"
+      ],
+      "published": "2026-10-07",
+      "venue": "Mathematics of Operations Research",
+      "venue_raw": "Mathematics of Operations Research",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/moor.2024.0707",
+      "summary": "We study an auction design problem where a seller aims to sell a single item to multiple bidders with independent private values. The seller knows only an upper bound on these values and does not know their distribution. The objective is to devise a deterministic auction mechanism effective across a broad set of distributions. We propose a second price auction with a reserve price set at half of the upper bound. Even though no deterministic mechanism can achieve a positive fraction of the maximum achievable expected revenue across all distributions, we show that our mechanism achieves at least [Formula: see text] ([Formula: see text] under independent and identically distributed (i.i.d.) values) of the maximum expected revenue for a broad range of distributions of practical importance, where [Formula: see text] depends on the number of bidders and takes values in [Formula: see text]. Numerical experiments under randomly generated distributions demonstrate the superior performance of our mechanism in the vast majority of the generated instances compared to benchmark mechanisms from the literature. We also account for errors in the upper bound estimate. History: This paper has been accepted for the Mathematics of Operations Research Special Issue on Market Design.",
+      "summary_short": "We study an auction design problem where a seller aims to sell a single item to multiple bidders with independent private values. The seller knows only an upper bound on these values and does not know their distribution.",
+      "is_new": true,
+      "sources": [
+        "主题·拍卖"
+      ],
+      "abs_url": "https://doi.org/10.1287/moor.2024.0707",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "拍卖机制",
+        "保留价",
+        "分布不确定性",
+        "确定性机制",
+        "竞争比"
+      ],
+      "glance": "只捏着一个估值上界时，二手价拍卖把保留价设在上界的一半，就能在实用分布类上保住最优期望收益的 1/κ（κ∈[2,2.87)，i.i.d. 时正好是 1/2）",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "Myerson 的最优拍卖有一个前提：你知道买家的估值服从什么分布。现实恰恰相反——一件孤品、一张拍卖行的当代色粉画、一个还没有二次成交记录的新品类，卖家手上往往只有一句「再贵也贵不过这么多」。学界对此的主流回答是随机化机制：理论上漂亮，可是到了现场，一条需要掷骰子才能决定谁拿货的规则，很难向买家解释，也很难被信任。这篇给出了反方向的答案：不要随机化，用最简单的结构——二手价拍卖，保留价定在上界的一半。"
+        },
+        {
+          "t": "h",
+          "v": "先把「上限」这条信息用满"
+        },
+        {
+          "t": "p",
+          "v": "设定很干净：单件不可分割的物品，若干买家，独立私人估值。卖家对分布一无所知，只知道一个上界 v̄。这里要澄清一点——v̄ 在工程上并不难获得，历史成交价、专家估价、领域常识都能给出这样一条线，Cohen 等人的工作专门讨论过怎么算。学术界把「尽量不依赖分布假设」这一立场称为 Wilson doctrine：正是因为信息太少才需要拍卖，若分布已知，卖家直接定价即可。"
+        },
+        {
+          "t": "h",
+          "v": "为什么是「二分之一」，而不是别的"
+        },
+        {
+          "t": "p",
+          "v": "结论的形式令人舒服：二手价拍卖加保留价 v̄/2。接受它之前得先吞下一个不可能结果——不存在任何确定性机制，能在所有分布上都拿到最大期望收益的正比例。所以正确的问法不是「能不能有保证」，而是「在哪一类分布上有保证」。作者定义了一个分布类 G，它足够宽、容纳了若干结构各异但在实践里常见的分布，并证明在这个类上，该机制至少拿到最大期望收益的 1/κ，其中 κ 只依赖买家人数、取值落在 [2, 2.87)；在 i.i.d. 这一特殊情形下，下界提升为干净的 1/2。"
+        },
+        {
+          "t": "p",
+          "v": "换算成直觉：最坏情况下你仍留住约 35% 的最优收益，最好的情况是一半，而且这个比值不随分布形状漂移。对一个「机制要写得进合同、买家要看得懂」的场景来说，这种透明度往往比多争几个百分点更值钱。"
+        },
+        {
+          "t": "h",
+          "v": "上界估错了会怎样"
+        },
+        {
+          "t": "p",
+          "v": "论文没有停在「已知正确的上界」这一步。现实里 v̄ 是估出来的，会错。作者的结论是：若对估计的把握有限，就按信心程度适当下调保留价，这样在分布类 G 上仍然守得住一个正的常数比例。换句话说，误估不像在 Myerson 框架下那样把收益直接打穿，它只是给安全边界打个折——这是这套机制能否落地的关键一环。"
+        },
+        {
+          "t": "h",
+          "v": "数值实验：跨出 G 之后还站得住吗"
+        },
+        {
+          "t": "p",
+          "v": "数值部分用随机生成的分布做压力测试：与文献中的基准机制相比，该机制在绝大多数随机实例上胜出（作者早期报告的版本给的比例是约 95%）。另一个细节更值得注意——当放宽到两个非独立买家、引入相关性时，它相对基准表现出更强的鲁棒性。"
+        },
+        {
+          "t": "p",
+          "v": "这两条指向同一个判断：越是依赖分布假设的基准，在样本相关、估值结构重叠时摔得越狠；而只依赖一条上界的机制受影响要小得多。所以它的优势不是在某个特定分布上运气好，而是随「假设被违反的程度」单调显现出来的。"
+        },
+        {
+          "t": "quote",
+          "v": "「随机性让机制在纸上更好，确定性让机制在现场可用」——这条取舍在今天的线上拍卖里依然成立。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源与口径：本文收录于 Mathematics of Operations Research 的 Market Design 专刊（INFORMS，CCF-A），DOI 10.1287/moor.2024.0707；三位作者来自卢森堡大学 Luxembourg Centre for Logistics and Supply Chain Management，其中 Koçyiğit 在分布鲁棒机制设计方向有一系列工作。限制有两条：一是保证只在分布类 G 内成立，跨出 G 的部分靠数值实验支撑，而 1/κ 中 κ 的具体取值依赖买家人数，落地时需按自己的 n 换算；二是「上界从哪来」被当作输入而非论文的一部分——若历史成交记录本身有偏（例如拍卖行样本天然偏向上端），v̄ 的偏移会传导到保留价，作者给出的处理是按估计信心下调保留价，但并未给出端到端的估计误差界。"
+        },
+        {
+          "t": "close",
+          "v": "只要你的业务存在「定价依赖需求分布、而分布根本估不准」的情形（新品首发、冷启动的二手市场、稀缺算力时段的竞价），可以先把这套机制当成默认基线：二手价加保留价，保留价设在可信上界的一半，再按对上界的把握往下调。它的价值不在最优，而在可解释、可审计，并且在无从估计的情况下仍然握着一个可以写出来的下界。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2610.09120",
+      "doi": "",
+      "title": "你的探索随机性就是对方的情报：多智能体学习里的欺骗型老虎机",
+      "title_en": "The Deceptive Bandit Problem: Exploratory Coupling and the Fragility of Multi-Agent Learning",
+      "authors": [
+        "Michael Tang",
+        "Mahmoud Abdelgalil",
+        "Jorge I. Poveda"
+      ],
+      "published": "2026-10-06",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.LG",
+      "url": "https://arxiv.org/abs/2610.09120v1",
+      "summary": "Randomized exploration is central to bandit learning, multi-agent reinforcement learning, and zeroth-order policy search, yet its independence and privacy are usually only treated as technical assumptions. We show that these properties are critical for security purposes and demonstrate how an adversarial agent can exploit privileged information on another agent's exploration. We analyze a deceiver-victim pair in the minimal two-player strongly monotone setting, where a deceptive player obtains leaked signals that are merely correlated with the victim's exploration. We show that, by coupling their own exploratory action with this information, the deceptive player injects an externality that steers the learning dynamics to a new steady state, called the deceptive Nash equilibrium (DNE). We prove that the deceptive bandit learning (DBL) dynamics converge to an arbitrarily small neighborhood of the DNE while retaining optimal convergence rates. Interestingly, our analysis attains these optimal rates while relaxing second-order smoothness conditions from standard bandit optimization literature. We characterize conditions under which deception strictly shifts the steady state and its effect on the deceiver's cost, illustrating the results in a resource-allocation game.",
+      "summary_short": "Randomized exploration is central to bandit learning, multi-agent reinforcement learning, and zeroth-order policy search, yet its independence and privacy are usually only treated as technical assumptions.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL",
+        "主题·纳什均衡"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.09120",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "多智能体学习",
+        "老虎机",
+        "探索信号泄漏",
+        "欺骗纳什均衡",
+        "学习动力学"
+      ],
+      "glance": "攻击者只要拿到一条与受害者探索「相关」的泄漏信号，把自己的扰动与之耦合，就能把整个动力学拖向一个新稳态——欺骗纳什均衡",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "多智能体学习有一个几乎从不被质疑的假设：每个 agent 的探索噪声是自己的私事。这句话听起来像技术细节，通常也就被当作技术细节写在收敛性证明的前提栏里——采样独立、互不相关、过程不可观测。这篇把它当成安全问题重新看了一遍，结论相当难堪：攻击者不需要知道你的动作，也不需要读到你的梯度，只需要拿到一条与你的探索「相关」的泄漏信号，就能把你的学习过程拖向一个对它有利的新稳态。"
+        },
+        {
+          "t": "h",
+          "v": "泄漏的不是参数，是同一颗随机数"
+        },
+        {
+          "t": "p",
+          "v": "作者分析的是一个最小配置：双人强单调博弈，deceiver 与 victim。欺骗方能观测到的信息弱得惊人——不是 victim 的策略，不是梯度，甚至不是同一个随机种子，而只是与其探索扰动相关的某个信号。工程上这类关联极其常见：共享的日志管线把带时间戳的采样序列写进同一张表、同一台宿主机上的两个进程共用熵源、分布式 rollout 没有按 worker 分流 PRNG。"
+        },
+        {
+          "t": "p",
+          "v": "攻击的手法同样轻量：欺骗方并不预测 victim 下一步会做什么，而是把自己的探索动作与这条泄漏信号做耦合（exploratory coupling）。这一步把自身扰动变成了 victim 学习动力学里的一项外部性。它没有篡改任何更新规则，只是改变了那套动力学对应的向量场。"
+        },
+        {
+          "t": "h",
+          "v": "欺骗纳什均衡：策略没变，落点变了"
+        },
+        {
+          "t": "p",
+          "v": "结果是动力学收敛到一个新的稳态，作者称之为欺骗纳什均衡（DNE，deceptive Nash equilibrium）。这里最值得停下来品味的是它与传统投毒攻击的区别：被攻击的学习算法一切照旧，更新规则、步长、遗憾界在形式上都没有被触碰，收敛也照样发生——只是收敛到了别的地方。这类失效在监控上极难发现，因为所有健康指标看起来都是正常的。"
+        },
+        {
+          "t": "p",
+          "v": "理论方面，作者证明欺骗式学习动力学（DBL）收敛到 DNE 的任意小邻域，同时仍保有最优收敛速率；有意思的是，这份分析还顺手放松了标准老虎机优化文献里的二阶光滑性条件。换句话说，被欺骗的版本并不比干净版本更慢——这进一步抬高了检测难度。"
+        },
+        {
+          "t": "h",
+          "v": "什么时候骗得动，代价有多大"
+        },
+        {
+          "t": "p",
+          "v": "论文刻画了欺骗何时能严格推移稳态的条件，以及这一推移对欺骗方自身代价的影响——攻击不是免费的，攻击者同样要把自己的一部分探索预算押上去。作者用一个资源分配博弈把这些结论画了出来。这部分实际上是写给防御方看的：它把「能不能骗」从定性争论变成了可以代入参数计算的量。"
+        },
+        {
+          "t": "quote",
+          "v": "「探索噪声独立且私有」从来不是一个无害的技术假设，它是一条安全边界——而通常没有任何机制在守护它。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源与局限：arXiv 预印本（2610.09120，cs.LG），作者为 Michael Tang、Mahmoud Abdelgalil 与 Jorge I. Poveda，后者在博弈与多智能体学习动力学方向有长期工作；尚未经过同行评议。理论结果限定在双人、强单调的最小设置——这是刻意的，正因为模型足够干净，所述失效才被严格建立。论文没有给出真实系统上的端到端攻击演示，也没有评估任何防御手段，它的贡献是把问题建立起来并给出可代入参数计算的条件。适用边界同样要讲清：攻击成立的前提是存在与受害者探索相关的可观测量，若随机数源按 worker 严格分流、日志剥离时序指纹，攻击面会显著收缩。"
+        },
+        {
+          "t": "close",
+          "v": "做多智能体系统时，把「每个 worker 的随机源、采样序列与日志」当成安全资产来管：禁用共享熵池、给每次 rollout 派生独立种子、不要在同一份结构化日志里按时间顺序记录多方的扰动值。更重要的是监控口径要改——不要只看遗憾是否在下降，要看稳态落点有没有随时间漂移。一个只在遗憾曲线上显得健康的学习过程，可能正安静地停在别人替它选好的位置上。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2610.05730",
+      "doi": "",
+      "title": "两扇门同样宽，人群会不会自己选出一扇：LQG 平均场博弈的对称性破缺",
+      "title_en": "Symmetry-breaking in a discrete-choice LQG mean field game",
+      "authors": [
+        "Ali Akbar Rezaei Lori",
+        "Piyush Grover"
+      ],
+      "published": "2026-10-05",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "math.DS",
+      "url": "https://arxiv.org/abs/2610.05730v1",
+      "summary": "Mean-field games provide a continuum framework for modeling the dynamics of large, interacting populations of non-cooperative agents. This paper studies symmetry-breaking in a finite-horizon, two-choice min-LQG mean-field game in which identical agents with linear stochastic dynamics choose one of two equally desirable terminal destinations, while trading off control effort against social pressure to conform. The model has an odd symmetry between the two destinations and therefore always admits a symmetric, dynamic Nash equilibrium in which the population splits evenly between them, producing a deadlock collective state at final time. Numerical studies have suggested that, as the penalty for social nonconformity increases, this symmetric equilibrium loses stability as a fixed point of an associated scalar, self-consistency map, and asymmetric consensus Nash equilibria emerge, where most agents select the same destination. By analyzing the linearized forward-backward PDE system through the scalar map representation, we provide a proof of this loss of stability of the symmetric equilibrium. Together with the odd symmetry of the map, this implies the existence of symmetry-broken mean-field game equilibria corresponding to consensus on either destination.",
+      "summary_short": "Mean-field games provide a continuum framework for modeling the dynamics of large, interacting populations of non-cooperative agents. This paper studies symmetry-breaking in a finite-horizon, two-choice min-LQG mean-field game in which identical agents with linear stochastic dynamics choose one of t…",
+      "is_new": true,
+      "sources": [
+        "主题·纳什均衡"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.05730",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "平均场博弈",
+        "对称性破缺",
+        "LQG",
+        "前向-后向 PDE",
+        "集体决策"
+      ],
+      "glance": "用一个标量自洽映射给线性化的前向-后向 PDE 系统降维，第一次给出对称均衡失稳的证明，由此确立「多数涌向同一出口」的破缺解确实存在",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "两条出口通道同样宽、同样近，疏散人群最自然的反应是对半分开——而这恰恰是最糟的结果：流量被摊薄，谁都没能快速通过。另一方面，真实观测与数值实验又反复提示：当「随大流」的压力足够大，人群会突然倾斜到一侧，几乎所有人涌向同一个出口。这种从对半死锁到意见一致的突变，此前只有数值证据。这篇给出了它的证明。"
+        },
+        {
+          "t": "h",
+          "v": "模型：min-LQG 框架下的两选择博弈"
+        },
+        {
+          "t": "p",
+          "v": "设定是有限时域的两选择 min-LQG 平均场博弈：大量同质的非合作主体服从线性随机动力学，各自在两个同样理想的终点之间做选择，效用里同时权衡控制代价与「从众」的社会压力。平均场的意义在于把巨大的参与人群写成连续体，群体行为于是压缩为一次分布演化，个体只需要对这个分布做最优响应。"
+        },
+        {
+          "t": "h",
+          "v": "奇对称保证了一个免费的死锁解"
+        },
+        {
+          "t": "p",
+          "v": "由于两个终点完全对称，模型天然具有奇对称结构，因此总是存在一个对称的动态纳什均衡：人群在两者之间平均分配，最终停在一个作者称之为「死锁集体状态」的对半僵局上。这个解的存在性是免费的——真正的问题从来不是它有没有，而是它稳不稳。"
+        },
+        {
+          "t": "h",
+          "v": "把一组 PDE 压成一个标量映射"
+        },
+        {
+          "t": "p",
+          "v": "论文的发力点是把问题降维。围绕对称均衡做线性化，得到一组前向-后向偏微分方程；作者没有直接在这组 PDE 上做稳定性分析，而是先把整个系统压缩成一个标量自洽映射（scalar self-consistency map），对称均衡正好是这个映射的不动点。这样一来，「稳定性」就退回到了一个单变量问题，工具也就现成了。"
+        },
+        {
+          "t": "p",
+          "v": "作者证明：当违背共识所受的惩罚（也就是社会从众压力）增大到一定程度，对称均衡作为该标量映射的不动点会失稳。再结合映射本身的奇对称性，结论是明确的——必然存在对称性破缺的平均场博弈均衡，人群在其中就某一个终点形成共识。由于两个终点对称，这类破缺解成对出现：涌向左门与涌向右门各自都是合法均衡。"
+        },
+        {
+          "t": "p",
+          "v": "这一步的价值在于把「数值上似乎出现了分支」升级为一个可以陈述的定理。此前的文献只是把从众压力参数一路扫下去，在图上看到分岔点；这里给出的是该不动点失稳的严格证明，不再依赖数值扫点的分辨率与初值选择。"
+        },
+        {
+          "t": "h",
+          "v": "为什么这条理论值得在意"
+        },
+        {
+          "t": "p",
+          "v": "对称性破缺在这里的寓意是双面的。正面看，它是一种协调机制：足够强的从众偏好能让僵在两可之间的人群自发倒向一侧，从而摆脱那个谁都过不去的死锁。负面看，它意味着系统在平衡点附近极度敏感——一个很小的扰动就能决定整个群体最终奔向哪一扇门，而这个选择与「两个终点同样好」的前提毫无关系。"
+        },
+        {
+          "t": "quote",
+          "v": "「两个选项同样好」并不意味着结果会平分；在足够强的耦合之下，它恰恰意味着结果会塌向其中之一。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源与局限：arXiv 预印本（2610.05730，math.DS），作者为 Ali Akbar Rezaei Lori 与 Piyush Grover，尚未经过同行评议。这是一篇纯理论短文：没有参数拟合，没有真实数据，结论严格限定在有限时域、两选择、min-LQG 这一具体模型。也正因为模型被写得尽可能干净，稳定性证明才做得成。把它迁移到带异质性的社会力模型或更复杂的疏散模型时，需要先检查原有的奇对称结构是否还成立——而奇对称正是整个存在性证明的支点。"
+        },
+        {
+          "t": "close",
+          "v": "如果你在做人群疏散、流量分配，或任何涉及「多个同样好的资源」的多主体调度，这篇给的不是算法而是判断框架：先问系统在对称解上稳不稳，而不是默认均衡会把负载平均分摊。一旦确认处在失稳一侧，最有价值的干预往往是施加一个明确且成本极低的方向性偏置（指示牌、默认值、轻微价差），而不是继续调优个体策略。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 5,
+      "id": "2610.07578",
+      "doi": "",
+      "title": "先到的人该给后到的人留什么：错峰参与下的 MARL 训练增强",
+      "title_en": "Cooperating with Future Collaborators: Multi-Agent RL under Staggered Participation",
+      "authors": [
+        "Jianglin Qiao",
+        "Siyi Hu",
+        "Thien Hoang Nguyen",
+        "Zehong Cao",
+        "Salah Sukkarieh"
+      ],
+      "published": "2026-10-06",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.07578v1",
+      "summary": "In cooperative Multi-Agent Reinforcement Learning (MARL), agents are often trained under concurrent participation, while in many tasks some agents act earlier and leave task-relevant information that becomes useful to agents participating later. We study this setting as staggered participation (SP), which introduces a cross-time, cross-agent learning dependency because an early action may affect the return through the information it provides and the later policy that uses it. Learning under SP therefore requires both identifying what information is useful for future decisions and learning how later agents should use it. We propose Staggered Participation Learning (SPL), a training-time augmentation that addresses these two parts with prospective acquisition supervision for earlier agents and outcome-supervised receiver learning for later agents. We evaluate SPL across multiple policy-based MARL backbones, environments, and staggered-participation patterns. Across 60 MPE/RWARE backbone setting comparisons, SPL achieves higher observed mean task completion in every case, with an average difference of 14.1%. The gains also extend to eight-agent teams and a physics-based UAV-UGV environment in Isaac Lab, providing evidence across algorithmic, temporal, and embodied settings.",
+      "summary_short": "In cooperative Multi-Agent Reinforcement Learning (MARL), agents are often trained under concurrent participation, while in many tasks some agents act earlier and leave task-relevant information that becomes useful to agents participating later.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.07578",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "MARL",
+        "错峰参与",
+        "信用分配",
+        "训练期增强",
+        "信息交接"
+      ],
+      "glance": "早走的 agent 不知道后来者会怎么用它的观测，SPL 用「前瞻获取监督 + 结果监督的接收者学习」把这条跨时间的信用链接上，60 组对比全部占优、平均高 14.1%",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "多智能体强化学习的训练假设通常是「所有人同时在场、同时决策」，真实任务却几乎从不受这个约束：一架侦察无人机先飞过作业区、早早退出，留下的环境信息半小时后才被地面机器人读到。早走的那个 agent 到底改变了什么？它改变的不是当下的奖励，而是后来者能看到什么、以及后来者会怎么用这份信息。这条依赖跨过了时间和主体，落到训练上就是一条很难打通的信用链。"
+        },
+        {
+          "t": "h",
+          "v": "「谁先动」不等于「谁不重要」"
+        },
+        {
+          "t": "p",
+          "v": "论文做的事情是把这种结构单独拎出来定义——staggered participation（错峰参与），并明确指出它带来的是一种双向依赖：早期动作一方面通过它提供的信息影响回报，另一方面还要看后来那条策略如何使用这份信息。也就是说，「该留什么」和「该怎么用」是两件事，缺其一则回报仍然上不去：留了没人会用，或想用却没人留。"
+        },
+        {
+          "t": "h",
+          "v": "SPL 把这条链路拆成两个辅助信号"
+        },
+        {
+          "t": "p",
+          "v": "Staggered Participation Learning（SPL）是一个训练期的增强方案，不强改网络结构，因此可以套在多种基于策略的 MARL backbone 上。它只加两个监督：对早参与的 agent 用前瞻获取监督（prospective acquisition supervision），判断此刻采集到的哪些信息对未来有用；对晚参与的 agent 用结果监督的接收者学习（outcome-supervised receiver learning），让它学会真正消费前任留下的东西。"
+        },
+        {
+          "t": "p",
+          "v": "分工是关键：前者解决「留什么」，后者解决「怎么用」。只用其中一个会打断这条链。这也是为什么把它写成两项辅助损失而不是一个大目标——两个问题的时间尺度不同，监督信号也不一样。"
+        },
+        {
+          "t": "h",
+          "v": "跨 60 组对比：没有例外"
+        },
+        {
+          "t": "p",
+          "v": "实验覆盖面刻意做宽：多种策略型 MARL backbone、多种环境、多种错峰模式。在 MPE 与 RWARE 上共 60 组 backbone×setting 的对比中，SPL 在每一组上都取得了更高的任务完成度，平均差距 14.1%。"
+        },
+        {
+          "t": "p",
+          "v": "规模与具身性也有所验证：结论延伸到八智能体团队，以及 Isaac Lab 中基于物理仿真的 UAV-UGV 环境。算法层、时间模式层、具身层三层都跑到，说明收益不太像是某个特定环境或骨架上的偶然产物。"
+        },
+        {
+          "t": "quote",
+          "v": "「异步不是训练的工程细节，而是任务结构本身」——把错峰参与当成建模对象而非待平均掉的噪声，是这篇的定位。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源与局限：arXiv 预印本（2610.07578，cs.AI），作者来自 Jianglin Qiao、Salah Sukkarieh 等人所在的团队，尚未经过同行评议。口径上有两点要注意：14.1% 是 MPE/RWARE 这类合成基准上的平均差，不等于真实任务上的同等提升；「60 组全部占优」也是在这批基准内部的组合。另外 SPL 需要知道或能推断参与时序，这让它在严格去中心化、无法获得角色进入顺序的部署里没那么直接。"
+        },
+        {
+          "t": "close",
+          "v": "只要你的多智能体场景存在滚动接入、早退晚到，或者「有人给别人打前站」的结构，可以先做一次很便宜的检查：给早期 agent 加一个「我要给后来者留下什么」的表征头，用下游的最终结果反过来监督它。这一步几乎不改动主网络，却常常就是那条一直学不会的信息交接链上缺的一节。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今日 15 篇新增里，唯一一篇顶刊 Nature Communications 的 G-Frame 是真的，而且博弈结构长在方法核心而不是贴在标签上：微观层用 team game 把长推理拆成角色协作的短局以压低单步熵，宏观层用一个维护信念状态的 decisional agent 把整条数据-训练流水线当成 POMDP 来调度，最终把 7B 化学模型的 ChemJudge 幻觉率从 41.95% 压到 12.91%。这是本项目开站以来少见的「顶刊命中且误命中风险为零」的一次，值得标注。",
+    "两篇 CCF-A 的处理结果相反，正好说明本站的取舍线在哪。Mathematics of Operations Research 的确定性拍卖被收录——它在「只知道估值上界」这一最弱信息假设下给出二手价加半上界保留价的 1/κ 保证（κ∈[2,2.87)，i.i.d. 时为 1/2），并单独处理了上界估计有误的情形，是典型的「可证 + 可落地」。而 Management Science 那篇《Trading Off Business and Family Investments》虽然同样挂着 CCF-A 与「金融博弈」标签，实为九十万家小微企业账户数据上的断点回归实证研究，内部不存在策略互动；按本站对薄博弈结构的一贯标准未予收录。Zenodo 自印本《Agentic AI and Its Applications in Data Analytics》同为未评议的综述性自陈件，一并剔除。",
+    "多智能体安全的焦点正从「单个 agent 会不会被骗」上移到「学习动力学的隐含假设能不能撑住」。欺骗型老虎机证明：攻击者只要拿到一条与受害者探索相关的泄漏信号，把自己的扰动与之耦合，就能把整个动力学拖到一个新稳态——欺骗纳什均衡，而受害者的更新规则、步长与遗憾曲线一切正常。这意味着一批长期写在收敛性证明前提栏里的技术假设（采样独立、互不相关、过程不可观测）正式变成了攻击面：共享熵源、同一条 PRNG 管线、带时间戳的 rollout 日志，都是可利用的关联来源。监控口径也得跟着改——不能只看遗憾下降，要看稳态落点有没有漂移。",
+    "理论一侧今天两篇都在做同一件事：把此前靠数值观察支撑的直觉升级为可以陈述的结构性结论。LQG 平均场博弈用一个标量自洽映射给线性化的前向-后向 PDE 降维，第一次证明了对称均衡会在从众压力增大时失稳，从而确立破缺的共识均衡确实存在——疏散时人群从对半死锁突然塌向同一出口，不再只是相图上的一个数值现象。同期另一篇《The lattice structure of the crawler》回到再分配的基本定理：Bade 的 crawler 在其直接显示博弈下，纳什均衡分配的集合在弱帕累托优势意义下构成完备格，真实分配是最大元、初始禀赋分配是最小元。两者的共同点是处理「解多了」而不是「解不出来」。",
+    "「参与者集合固定」正在被当成特殊情况而非默认假设。错峰参与（Staggered Participation）把它建模出来：早走的 agent 留下信息，半小时后才进入的 agent 消费它，SPL 用「留什么」与「怎么用」两项辅助监督把跨时间、跨主体的信用链接起来，60 组 backbone×setting 对比全部占优、平均高 14.1%，并延伸到八智能体与 Isaac Lab 的 UAV-UGV 具身环境。它与本期另一篇开放多联盟博弈的纳什均衡搜索（如何处理成员离场时梯度信息的保质量重分配）放在一起看，指向同一个变化：静态的成员名单正在被更一般的开放系统取代。"
+  ],
+  "note": "本期精读 5 篇，覆盖 guard / caster / supporter / specialist / defender 五个分区各一篇。检索窗口：arXiv 7 天 / 期刊会议 90 天，截至 2026-10-08；当日命中 2336 条、去重后 1538 条、入库 60 条，其中今日新增 15 篇。入选结构：Nature Communications 1 篇（10.1038/s41467-026-78213-5，已抓取出版方页面核实作者署名、单位、收稿与接收日期，正文含具体的数据规模与评测协议）、CCF-A 期刊 1 篇（Mathematics of Operations Research，Market Design 专刊；其中被 redacted 的常数已据作者公开的预印本正文化为 1/κ 与 κ∈[2,2.87)）、arXiv 预印本 3 篇（2610.09120 / 2610.05730 / 2610.07578，均已验证 abs 页可达且摘要为作者原文）。剔除说明：① Management Science 10.1287/mnsc.2024.04789 为断点回归实证研究，虽属 CCF-A 但无策略互动，理由另见趋势第 2 条；② Zenodo 自印本 10.5281/zenodo.23185645 为未评议的综述性自陈件；③ Ocean Engineering 10.1016/j.oceaneng.2026.128479 的 MARL 舵桨协同属执行器级控制为主的应用报导，其 Markov game 被作者自陈为建模与解释工具而非闭式均衡求解框架；④ 其余未收录条目集中在移动天线 MIMO、随机接入与 TSN 车载调度等通信类 MARL 应用，这部分工程落地性强但博弈结构偏薄，本期未再纳入，留待后续有理论增量时再收。",
   "learning": {},
   "radar": [
     {
@@ -2162,5 +2665,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

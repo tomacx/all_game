@@ -22,9 +22,481 @@
     "new_count": 8,
     "seen_before": 763
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.1016/j.artint.2026.104640",
+      "doi": "10.1016/j.artint.2026.104640",
+      "title": "给自动驾驶的语言推理装上不确定度开关：LLM-TP2 只在必要时才深度思考",
+      "title_en": "Adaptive Large Language Model Reasoning for Autonomous Driving Decision-Making",
+      "authors": [
+        "Haicheng Liao",
+        "Chengyue Wang",
+        "Hanlin Kong",
+        "Zhenning Li",
+        "Zhengbing He",
+        "Zhiyong Cui",
+        "Guohui Zhang",
+        "Chengzhong Xu"
+      ],
+      "published": "2026-10-01",
+      "venue": "Artificial Intelligence",
+      "venue_raw": "Artificial Intelligence",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.artint.2026.104640",
+      "summary": "",
+      "summary_short": "",
+      "is_new": true,
+      "sources": [
+        "ISSN-L·Artificial Intelligence"
+      ],
+      "abs_url": "https://doi.org/10.1016/j.artint.2026.104640",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "LLM-Agent",
+        "自动驾驶",
+        "预测与规划联合",
+        "自由能原理",
+        "隐空间蒸馏",
+        "按需推理"
+      ],
+      "glance": "用可量化的「语义意外」判断场景复杂度，常规场景只走轻量语言模型，仅在歧义与安全关键时刻调用大语言模型，省掉的是绝大多数时刻的推理开销",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "自动驾驶对时延的要求是按毫秒算的——规划环每 100 毫秒就要交一次决策，而一次大语言模型前向推理轻松吃掉几百毫秒。于是过去两年不少「大模型开车」的工作，实际上只能停在离线评测和演示视频里。这篇的出发点很朴素：人类司机也不是每时每刻都在深思熟虑。高速巡航靠的是熟练的感知—动作直觉，只有当旁边那辆车突然切进来、或者行人在路缘反复犹豫的那一刻，才切换到有意识的判断。作者把这件事做成了一个可计算、可标定的开关。"
+        },
+        {
+          "t": "h",
+          "v": "把「什么时候该动脑」写成一个可测量的量"
+        },
+        {
+          "t": "p",
+          "v": "灵感来自自由能原理：智能体会依据观测与先验之间的失配来调节推断强度。作者据此设计分层上下文编码器（HCE），用一个「语义意外」也就是认知不确定度，来监控当前驾驶场景。常规场景下的环境动态能被既有先验解释干净（低意外），就交给轻量语言模型快速给出语义理解；一旦歧义加剧或出现安全关键的交互、让不确定度抬升到阈值之上，才触发高容量的 LLM 去做深层因果推理。"
+        },
+        {
+          "t": "p",
+          "v": "这里有个容易被忽略的工程价值：触发判据是外部可观测的不确定度，而不是让大模型自己判断「我这次要不要认真想」。后者等于把调度权交给了被调度的对象，既不好审计也不好兜底；前者可以先离线标定阈值、上线后还能持续监控触发率，必要时降级。做实时系统的人对这个区别应该很敏感。"
+        },
+        {
+          "t": "h",
+          "v": "让小模型学会老师的推理结构，而不是学它的输出"
+        },
+        {
+          "t": "p",
+          "v": "轻量语言模型的能力瓶颈怎么补？作者没有走常见的思维链文本蒸馏，而是做隐空间上的思维链蒸馏：把学生模型的隐状态直接对齐教师 LLM 的中间表示，在隐空间里迁移结构化的推理先验与上下文先验。这样做的好处是推理时延被严格限制住——学生不必生成一长串思维链 token，却拿到了一部分链式推理带来的收益。"
+        },
+        {
+          "t": "p",
+          "v": "最后是跨模态解码器。这一步解决的是最根本的错配：语言模型的输出是离散的语义，而轨迹是连续的几何坐标。作者用跨模态注意力把潜层意图投影进几何坐标空间，形成所谓的「意图感知运动编码」，再交给下游的轨迹生成头。语义至此才真正落到可以执行的层面。"
+        },
+        {
+          "t": "h",
+          "v": "战绩与实验口径"
+        },
+        {
+          "t": "p",
+          "v": "整套方法的名字是 LLM-TP2，取的是轨迹预测（prediction）与轨迹规划（planning）两项联合。评测用 NGSIM、HighD、nuScenes 三个真实世界数据集；轻量语言模型先在作者自建的 Highway-Text 与 Urban-Text 语料上微调，用来衡量纯语义的场景理解能力。论文报告预测与闭环规划两项都达到了最优水平，同时保留了实际部署所需的计算效率。"
+        },
+        {
+          "t": "quote",
+          "v": "值得整段摘下来的是那次问题重构：不要把 LLM 当成低层的轨迹生成器，而要把它当成按需调用的高层推理模块。这句话可以平移到几乎所有「大模型加实时系统」的场景。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "发表在 Artificial Intelligence（CCF-A 期刊），目前状态是 In Press / Journal Pre-proof，2026 年 10 月 7 日上线，主要作者单位为澳门大学。需要注意两点：预校样阶段的细节仍可能微调；这篇的主线是预测与规划的联合建模，多智能体交互体现在闭环耦合上——他车的未来轨迹依赖自车的意图，自车又反过来依赖对他车的预测——但并没有显式求解博弈均衡，别指望看到纳什那一套工具。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发有两层。第一层是「推理深度按需计费」这个思路本身：任何试图把大模型塞进低时延系统的尝试，都值得先问一句，有没有一个可观测的不确定度能充当开关。第二层是分层蒸馏的做法：当你需要一个跑得快但又要懂语义的小模型时，对齐隐状态往往比蒸馏输出文本更划算，因为前者省掉的是解码开销。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "10.1016/j.trc.2026.106054",
+      "doi": "10.1016/j.trc.2026.106054",
+      "title": "把延迟写进博弈定义：混合自动驾驶车队的延迟感知多智能体强化学习",
+      "title_en": "Delay-aware multi-agent reinforcement learning for mixed-autonomy platoon control",
+      "authors": [
+        "Jingyuan Zhou",
+        "Zhicheng Wang",
+        "Kaidi Yang"
+      ],
+      "published": "2026-10-07",
+      "venue": "Transportation Research Part C Emerging Technologies",
+      "venue_raw": "Transportation Research Part C Emerging Technologies",
+      "impact": "other",
+      "impact_label": "其他",
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.trc.2026.106054",
+      "summary": "It is recognized that controlling mixed-autonomy platoons comprising connected and automated vehicles (CAVs) and human-driven vehicles (HDVs) can enhance traffic flow. While multi-agent reinforcement learning (MARL) is a promising real-time control paradigm, existing MARL-based platoon controllers rarely account for communication and execution delays, despite their inevitability in practice and their critical impact on safety and stability. Moreover, most delay-compensation approaches are model-based, which becomes unsuitable when HDV dynamics are unknown and model-free coordination among CAVs is required. To address this gap, we formulate mixed-autonomy platoon control with delays as a delayed Markov game and develop a delay-aware learning framework supported by a delay-dependent theoretical analysis. Specifically, we provide a theoretical analysis that establishes explicit performance bounds between delayed and undelayed tasks under smoothness conditions, highlighting that the delay-induced performance gap is governed by the policy smoothness and the belief uncertainty under delayed observations. Motivated by this insight, we propose a multi-agent transformer (MAT) that exploits the disturbance-propagation structure of platoons to learn coordinated and regularized policies, serving as effective undelayed experts for reliable transfer to delayed environments. Finally, we validate the proposed approach through extensive simulations and human-in-the-loop experiments, demonstrating the control performance and sample efficiency of the proposed method.",
+      "summary_short": "It is recognized that controlling mixed-autonomy platoons comprising connected and automated vehicles (CAVs) and human-driven vehicles (HDVs) can enhance traffic flow. While multi-agent reinforcement learning (MARL) is a promising real-time control paradigm, existing MARL-based platoon controllers r…",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://doi.org/10.1016/j.trc.2026.106054",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "延迟马尔可夫博弈",
+        "车队控制",
+        "混合自主交通流",
+        "multi-agent transformer",
+        "人在环实验"
+      ],
+      "glance": "先给延迟与无延迟任务之间的显式性能界，指出落差由策略平滑性与延迟观测下的信念不确定度控制，再据此设计出能迁移的多智能体变压器",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "车队在仿真里永远是完美的：车间通信零延时、执行器零滞后、每台网联自动驾驶车在同一时刻更新自己的策略。上了路才知道，通信延迟动辄上百毫秒，执行延迟还要再叠一层，而车队之间的间距是按米算的。更麻烦的是第三件事——如果车队还得和人类驾驶车辆混跑，那么人类车的动力学你根本拿不到模型，教科书里那套基于模型的延迟补偿直接失效。这篇把这三个痛点一次性摆到桌面上，而且是从博弈建模开始摆的。"
+        },
+        {
+          "t": "h",
+          "v": "第一步不是补延迟，而是重写博弈"
+        },
+        {
+          "t": "p",
+          "v": "最关键的一步在于：作者没有把延迟当成训练完再施加的扰动，而是直接把带延迟的混合车队控制形式化为一个延迟马尔可夫博弈。这一步决定了后面所有推导的口径——延迟是博弈定义的一部分，而不是环境里的瑕疵。顺序上的这个差别，会让后续的理论结果从「附加说明」变成「设计依据」。"
+        },
+        {
+          "t": "h",
+          "v": "延迟到底损失了多少性能，被拆成了两个可干预的量"
+        },
+        {
+          "t": "p",
+          "v": "理论部分在平滑性条件下给出了延迟任务与无延迟任务之间的显式性能界。这个界里有两个主控因素：策略的平滑性，以及延迟观测下的信念不确定度。换句话说，延迟带来的性能损失不再是笼统的「会变差」，而是被拆成了两项可以尝试去压低的量。这一点非常重要，因为这两项在后面各自对应了方法里的具体设计——论文不是给完界就收工，而是让界反过来指导网络结构。"
+        },
+        {
+          "t": "h",
+          "v": "用车队的物理结构长出「无延迟专家」"
+        },
+        {
+          "t": "p",
+          "v": "方法上用的是多智能体变压器，但不是硬套。车队有一个非常特殊的物理性质：扰动会沿着队列向后逐级传播，头车的一个小动作传到队尾可能已经放大成明显的速度振荡。作者让变压器利用这个扰动传播结构去学习协调且正则化的策略，作为可靠的「无延迟专家」，再迁移到存在延迟的真实环境中。"
+        },
+        {
+          "t": "p",
+          "v": "这条「先在理想环境训出专家、再向有延迟环境迁移」的路线，和前面的性能界是自洽的：既然界告诉了你延迟落差主要由策略平滑性主导，那就去训一个足够平滑的专家，让迁移的落差落在可预估的范围里。理论和实践在这里真的接上了，这是很多应用类论文做不到的地方。"
+        },
+        {
+          "t": "h",
+          "v": "人在环验证，才对得起「HDV 动力学未知」这个动机"
+        },
+        {
+          "t": "p",
+          "v": "实验除了大规模仿真，还做了人在环的实验——人类驾驶车辆由真人来开。这一点比单纯的数字更有说服力：既然论文的核心动机之一就是「人类车动力学未知、所以不能用基于模型的补偿」，那只有在环里放真人，才能验证模型无关的协调策略是不是真的成立。"
+        },
+        {
+          "t": "quote",
+          "v": "「既然主要的建模假设不成立，那就别把修正架在假设上」——这篇的处理方式是把不可建模的部分直接放进博弈定义，而不是在算法外面打补丁。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "发表在 Transportation Research Part C: Emerging Technologies，这是交通领域的顶刊，尽管雷达沿用影响因子标签把它归为「其他」。三位作者，研究方向集中在网联自动驾驶与交通流控制。需要注意：所谓延迟包含通信延迟与执行延迟两类，读的时候要留意作者在仿真里各自取的量级；人在环实验的规模通常有限，应作为定性证据而非性能标杆来读。"
+        },
+        {
+          "t": "close",
+          "v": "三条可以搬走的做法。第一，遇到延迟、丢包、时钟漂移这类问题，先想能不能把它写进博弈定义而不是当噪声处理——这一步决定了你的理论到最后能不能真正指导设计。第二，「用物理量决定网络结构」这条路（这里是用扰动传播结构约束多智能体变压器）比堆通用注意力值得一试，而且通常也能顺手解释清楚为什么。第三，在交通安全这种场景里，留一部分人在环验证，比再堆十组仿真数字更能挡住审稿人的下一个问题。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "10.1080/01431161.2026.2739606",
+      "doi": "10.1080/01431161.2026.2739606",
+      "title": "看得少反而更准：多智能体视角选择把无人机定位的算力砍掉 94%",
+      "title_en": "Active multi-view selection for UAV-satellite remote sensing image matching using Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Jude Gu",
+        "Yujin Zhang",
+        "Hongri Fan"
+      ],
+      "published": "2026-10-06",
+      "venue": "International Journal of Remote Sensing",
+      "venue_raw": "International Journal of Remote Sensing",
+      "impact": "journal",
+      "impact_label": "期刊",
+      "primary_category": "",
+      "url": "https://doi.org/10.1080/01431161.2026.2739606",
+      "summary": "Cross-view image matching between unmanned aerial vehicles (UAVs) and satellite platforms has emerged as a fundamental technique for vision-based geo-localization and GNSS-denied navigation. While utilizing multi-view fusion can improve retrieval accuracy by providing comprehensive scene information, it also incurs a cost that grows with the number of processed views and may introduce correlated or ambiguous observations. Importantly, the benefit of selection is altitude dependent: reducing the view set does not universally improve top-rank accuracy, and the principal advantage is an accuracy–efficiency trade-off rather than uniform superiority over full fusion. To address this issue, we propose MARL-AVSF, an efficient Multi-Agent Reinforcement Learning framework designed for active multi-view selection. Instead of passively fusing all captured images, MARL-AVSF deploys a cooperative multi-agent system to intelligently select a minimal subset of highly complementary viewpoints. Extensive experiments on the multi-height SUES-200 remote sensing benchmark demonstrate the effectiveness of the proposed framework. By actively selecting only three critical views, MARL-AVSF achieves a Recall@1 of 77.50% at 200 m, compared with 75.00% for the 50-view full-fusion baseline, while reducing the number of processed views by 94%. Across all four altitudes, the method improves mean Average Precision from 81.79% to 84.34%, but its mean Recall@1 is 3.13% points lower than full fusion; at 150 m, the Recall@1 deficit is 10.00 points. These results qualify the claim: selection improves ranking quality and efficiency on average, whereas its top-rank advantage is specific to 200 m.",
+      "summary_short": "Cross-view image matching between unmanned aerial vehicles (UAVs) and satellite platforms has emerged as a fundamental technique for vision-based geo-localization and GNSS-denied navigation.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://doi.org/10.1080/01431161.2026.2739606",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "MARL",
+        "跨视角地理定位",
+        "主动视角选择",
+        "无人机遥感",
+        "精度效率权衡"
+      ],
+      "glance": "协作多智能体只挑 3 个互补视角，在 200 米高度把 Recall@1 从全融合的 75.00% 提到 77.50%，处理视角数减少 94%——但论文自己写明了高度平均上反而落后 3.13 个点",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "无人机在无卫星导航的环境里靠比对卫星图来定位自己，直觉上当然是「看得越多越准」。这篇上来先把这句直觉拆了一半：融合 50 个视角的基线，Recall@1 是 75.00%；而只挑 3 个视角的结果反而到了 77.50%。省掉 94% 的视角处理量还更准，听起来像个完美故事——直到你在同一段摘要里读到下一句：全高度平均下来，这种方法比全融合低 3.13 个百分点。"
+        },
+        {
+          "t": "h",
+          "v": "主动选择，而不是被动融合"
+        },
+        {
+          "t": "p",
+          "v": "任务背景是无人机视角与卫星视角之间的跨视角图像匹配，也就是视觉地理定位与无导航信号条件下的自主导航。多视角融合确实能用更全的场景信息提高检索精度，但代价随视角数量线性增长，而且还会引入彼此相关、甚至互相误导的观测。作者提出的方法叫 MARL-AVSF，换了个思路：不被动地把所有拍到的图都喂进去，而是部署一组协作的多智能体，主动挑出一个互补性最强的最小视角子集。"
+        },
+        {
+          "t": "h",
+          "v": "好处与高度有关，论文把这句话写在了摘要里"
+        },
+        {
+          "t": "p",
+          "v": "真正让这篇值得精读的，是它没有写「我们全面超越 baseline」。在公开的多高度基准 SUES-200 上：200 米高度，只选 3 个视角拿到 Recall@1 77.50%，超过 50 视角全融合的 75.00%，处理视角数减少 94%；四个高度上的平均精度均值从 81.79% 提升到 84.34%。但紧接着写着——全高度平均的 Recall@1 比全融合低 3.13 个百分点，在 150 米高度上这个差距是 10.00 个百分点。"
+        },
+        {
+          "t": "p",
+          "v": "作者自己的解读是：选择的好处与高度相关，减少视角集并不能普遍提升首位命中率，它的主要价值是一项精度与效率之间的权衡，而不是对全融合的均匀超越。这类自我限定的写法在应用类多智能体论文里相当少见，也明显比通篇「全面最优」可信。"
+        },
+        {
+          "t": "h",
+          "v": "来源与流程已核实"
+        },
+        {
+          "t": "p",
+          "v": "期刊是 Taylor & Francis 旗下历史很长的遥感专业刊物 International Journal of Remote Sensing：投稿 2026 年 6 月 6 日、接收 9 月 20 日、10 月 6 日上线，时间线正常。三位作者来自上海工程技术大学机械与汽车工程学院与电子电气工程学院，均带 ORCID，并有上海市政府决策咨询重点课题资助。数据集用的是公开的 SUES-200 多高度基准。"
+        },
+        {
+          "t": "quote",
+          "v": "「选择的好处是精度—效率的权衡，而不是对全融合的均匀超越」——把这句直接放进摘要，比任何 ablation 都有说服力。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是一篇应用导向的多智能体工作，它的多智能体结构体现在「每个视角一个选择智能体、共享一个协作目标」，并没有显式建模对抗或均衡，所以别按博弈论论文的期待去读。作者下结论时也保持了克制，明确指出提升最集中的是 200 米高度。若要把这套思路搬到别的多传感器融合任务上，最该先验的是「方法是否在你的任务高度/尺度上仍然成立」。"
+        },
+        {
+          "t": "close",
+          "v": "这篇给的方法论启发比方法本身更值钱。第一，多智能体不一定用来「做更多事」，也可以用来「选更少的事」——把 MARL 当成组合选择的控制器，是近期很实用的一条路线，尤其适合处理带宽、算力受限的感知前端。第二，写论文时把「赢在哪、输在哪」分开讲清楚反而更容易被信任：这里明确承认了 150 米高度上 10 个百分点的劣势，却没有削弱核心结论，反而让 200 米那个数字更扎实。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2610.10302",
+      "doi": "",
+      "title": "任务之间差的是结构而非奖励：持续图多智能体强化学习",
+      "title_en": "Continual Graph Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Tommaso Marzi",
+        "Ahmed Hendawy",
+        "Jan Peters",
+        "Carlo D'Eramo",
+        "Andrea Cini",
+        "Cesare Alippi"
+      ],
+      "published": "2026-10-07",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.LG",
+      "url": "https://arxiv.org/abs/2610.10302v1",
+      "summary": "In Continual Multi-Agent Reinforcement Learning (CMARL), agents learn cooperative policies across sequences of tasks, aiming to adapt effectively to new tasks while preserving the ability to solve previously encountered ones. In many applications, tasks differ in their underlying structure, which can represent, for example, distinct operational conditions or target configurations (e.g., different network topologies in power grids or arrangements in formation control). Existing CMARL methods lack dedicated mechanisms to leverage this structural information when learning new tasks, failing to promote transfer and mitigate forgetting. To fill this gap, we propose Continual Graph Multi-Agent Reinforcement Learning (CGMARL), a novel framework for CMARL problems in which task sequences are mapped into a series of attributed graphs, each modeling a task-specific structure. In CGMARL, each graph determines the environment dynamics (next states and/or rewards) and the number of agents for the corresponding task. Then, we present Graph-based Formation (GRAFO), the first CGMARL benchmark, and show how forgetting arises in this setting. Finally, to address this limitation, we propose Frozen Graph Encoder (FROG), a method that relies on a frozen graph backbone to preserve past structural information in graph-based CMARL policies. Experiments on GRAFO show that pairing FROG with existing CL methods substantially improves performance on multiple CGMARL scenarios.",
+      "summary_short": "In Continual Multi-Agent Reinforcement Learning (CMARL), agents learn cooperative policies across sequences of tasks, aiming to adapt effectively to new tasks while preserving the ability to solve previously encountered ones.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.10302",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "持续学习",
+        "CMARL",
+        "图神经网络",
+        "灾难性遗忘",
+        "冻结图编码器",
+        "基准"
+      ],
+      "glance": "把任务序列表征成一串属性图，让图同时决定环境动态与智能体数量，再用冻结的图主干保住历史结构信息",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "持续强化学习默认的一个前提是：任务序列跑的大体是同一个环境，只是奖励函数或初始条件在变。现实不完全是这样——电网今年的拓扑和明年不一样，编队控制里今天是 6 架明天可能 10 架。这时候拿同一个策略网络硬吃所有任务，既不迁移也容易遗忘。这篇要处理的，正是任务之间的这种结构性差异。"
+        },
+        {
+          "t": "h",
+          "v": "把任务序列映射成一串属性图"
+        },
+        {
+          "t": "p",
+          "v": "作者提出的框架叫 CGMARL。做法是：把任务序列映射为一系列带属性的图，每张图刻画一个任务专属的结构。关键在于这张图管的远不止奖励——它同时决定环境的动态演化（下一状态和／或奖励）以及该任务的智能体数量。也就是说，智能体个数不再是写死的超参数，而是随任务结构浮动的一部分。这个设定本身就比常见的持续学习基准更接近真实部署。"
+        },
+        {
+          "t": "p",
+          "v": "两个例子很说明问题：电网场景下不同任务对应不同网络拓扑；编队控制场景下不同任务对应不同的排列构型。这些恰恰是以往持续多智能体方法缺少专门机制的那一类差异——它们在学习新任务时没有任何途径利用这种结构信息，因而既做不到正向迁移，也挡不住遗忘。"
+        },
+        {
+          "t": "h",
+          "v": "GRAFO：让「结构差异导致遗忘」变成可测量的现象"
+        },
+        {
+          "t": "p",
+          "v": "光有框架不够，还得有能复现的实验场。作者给出了 GRAFO，一个基于图编队的场景，据称是首个针对 CGMARL 设定的基准，并在上面展示了遗忘在这个设定里是如何出现的。这一步很有必要：它把「结构差异会加剧遗忘」从一句直觉变成了一个别人可以量化、可以对标的实验结果。"
+        },
+        {
+          "t": "h",
+          "v": "FROG：把过去的结构冻进主干网络"
+        },
+        {
+          "t": "p",
+          "v": "方法侧的答案叫 FROG，也就是冻结图编码器。直觉非常直接：既然要保住的是「结构」而不是某个具体任务的参数拟合，那就让负责编码结构的主干网络保持不动，把可塑性留给上层。实验显示，把 FROG 与已有的持续学习方法配对使用，能在多个 CGMARL 场景中大幅提升表现。"
+        },
+        {
+          "t": "quote",
+          "v": "「让负责结构的部分冻结，让负责适应的部分可塑」——这条分工原则几乎是持续学习里的通解，这篇的贡献是把它具体落实到了图编码器上，并配了一个能验证它的基准。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 2610.10302，作者阵容里有长期从事强化学习与持续学习理论、以及图学习方向的几位资深研究者，方法论规范度较高。仍需注意这是预印本，尚无同行评议记录；GRAFO 是作者自建基准，所谓「第一个」指的是 CGMARL 这一细分设定，不等于它取代了通用持续学习基准的地位。论文的核心是框架与遗忘现象，具体数值增益建议在拿到作者公开代码后再复核。"
+        },
+        {
+          "t": "close",
+          "v": "两条可以立刻复用的经验。第一，当你手上的任务序列有明显的物理或拓扑结构时，别把它当成隐变量交给网络自己摸索，显式地把它建成图并喂进去，往往能同时缓解迁移与遗忘两头。第二，「冻结主干、上层可塑」这条分工原则几乎可以在任何模态落地——先想清楚你要保住的是哪一类信息，再决定把冻结的边界划在哪里。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 5,
+      "id": "2610.11051",
+      "doi": "",
+      "title": "两点分布的边界上，最优拍卖永远是确定性的",
+      "title_en": "Optimal Multi-Item Auctions with I.I.D. Values",
+      "authors": [
+        "Boyu Liu",
+        "Zhengyang Liu",
+        "Zihe Wang"
+      ],
+      "published": "2026-10-08",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2610.11051v1",
+      "summary": "We study revenue-maximizing multi-item auctions under dominant-strategy incentive compatibility (DSIC) and ex-post individual rationality. Buyers have additive valuations, and all item values are independent draws from a common finite distribution. For every two-point distribution and arbitrary numbers of buyers and items, we give an explicit deterministic mechanism that is optimal among all randomized mechanisms satisfying these requirements, together with a polynomial-time algorithm for computing the optimal expected revenue. For general finite-support distributions, computing the exact optimal revenue is $\\#\\mathrm P$-hard, both for a single buyer with an arbitrary number of items and for two items with an arbitrary number of buyers. For a single buyer, we also establish hardness of computing an optimal mechanism. Building on prior work, we also obtain exact and approximate algorithms under different parameter restrictions. Exact polynomial-time optimization is possible whenever any two of the buyer count, item count, and support size are fixed. When only the item count is fixed, a polynomial-time approximation scheme constructs a mechanism with expected revenue at least a $1-\\varepsilon$ fraction of the optimum for every fixed $0<\\varepsilon<1$. All these algorithms satisfy DSIC and ex-post individual rationality.",
+      "summary_short": "We study revenue-maximizing multi-item auctions under dominant-strategy incentive compatibility (DSIC) and ex-post individual rationality. Buyers have additive valuations, and all item values are independent draws from a common finite distribution.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.11051",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "最优拍卖设计",
+        "多物品拍卖",
+        "复杂度理论",
+        "多项式时间近似方案",
+        "激励相容"
+      ],
+      "glance": "在独立同分布有限支撑设定下证明两点分布存在多项式可算的确定性最优机制，而跨到一般有限支撑即掉进 #P-hard，并给出保持激励相容的近似方案",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "单物品最优拍卖漂亮得像教科书范本：单调的分配规则配上一个虚拟价值函数，收入最大化的答案就完整写出来了。多物品却是一地碎玻璃——最优机制的刻画长期残缺不全，人们只知道它在很多情形下必须依赖随机化，比如抽奖式分配或随机搭售。这篇在一个刻意收紧的独立同分布设定里，把「什么时候算得动、什么时候算不动」的分界线划得相当锋利。"
+        },
+        {
+          "t": "h",
+          "v": "先把设定收紧到最干净的地方"
+        },
+        {
+          "t": "p",
+          "v": "目标是占优策略激励相容与事后个体理性双重约束下的收入最大化多物品拍卖。买家估值可加，所有物品的价值独立同分布抽自同一个有限分布。注意这里是「同分布」而非一般文献里不同物品的独立抽样——正因为抹掉了物品之间的分布差异，才能把全部注意力集中到组合结构本身的难度上。这个设定选择本身就是一次漂亮的实验设计。"
+        },
+        {
+          "t": "h",
+          "v": "两点分布：随机化完全派不上用场"
+        },
+        {
+          "t": "p",
+          "v": "第一个结果相当强：对任意两点分布、任意买家数与任意物品数，作者给出了一个显式的确定性机制，它在所有满足约束的随机化机制中是最优的，同时配套给出一个多项式时间算法来计算最优期望收入。换句话说，在这个窗口里，随机化带来的那份额外自由度毫无价值。这和多物品拍卖一贯的「最优机制往往需要随机化」的直觉正好相反，因而尤其值得记住。"
+        },
+        {
+          "t": "h",
+          "v": "跨出一步就是计数复杂度困难"
+        },
+        {
+          "t": "p",
+          "v": "边界的锋利在第二个结果里显现：对一般的有限支撑分布，精确计算最优收入是计数复杂度困难的，无论「单个买家加任意多物品」还是「两件物品加任意多买家」都成立。对单个买家，作者还进一步证明了「算出最优机制本身」的难度。也就是说，从两点支撑跨到更大的支撑，可解性直接坍塌——不是变慢，而是本质的复杂度跨越。"
+        },
+        {
+          "t": "h",
+          "v": "绕过去的近似，且不允许放松激励约束"
+        },
+        {
+          "t": "p",
+          "v": "作者没有停在困难性结论上。在不同参数限制下给出了精确与近似两类算法：当买家数、物品数、支撑大小这三个参数里有任意两个固定时，可以精确地在多项式时间内优化；当只有物品数固定时，给出一个多项式时间近似方案，能在任意给定的小正数 epsilon 下，构造出期望收入不低于最优值 1 减 epsilon 份额的机制。"
+        },
+        {
+          "t": "p",
+          "v": "最要紧的一句是：所有这些算法都满足占优策略激励相容与事后个体理性。这一点绝不是例行公事——很多近似做法是靠放松激励约束来换取可解性的，而这类结果一旦放回真实竞价环境，买家会立刻利用被打开的漏洞。"
+        },
+        {
+          "t": "quote",
+          "v": "「这些算法全部满足激励相容与事后个体理性」——这条该成为我们阅读机制设计近似结果时的第一道检查项：靠放松约束换来的可解性，通常一文不值。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 2610.11051，三位作者，纯理论工作，没有实验章节，读的时候应对标的看点是结果的完整性与证明结构。它的结论可以直接搬去 auction theory 的课堂或综述里当分水岭使用。因为是预印本，建议留意后续是否进入理论计算机科学或经济学计算的会议系列；另外要注意复杂度结论针对的是精确计算本身，并不排除特定实例上可以快速求解。"
+        },
+        {
+          "t": "close",
+          "v": "三个可迁移的判断习惯。第一，把复杂的市场问题先简化到「同分布加两点支撑」，看清干净窗口里能成立哪些结构定理，再往一般情形推进——这条路线在机制设计领域反复奏效。第二，证明困难之后立刻给出可用的近似算法，是理论论文的完整姿态；只有困难性结论而没有对策的工作，在工程上帮助有限。第三，无论结果多漂亮，先检查它是否仍然满足激励相容。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今日来源结构与剔除说明：当日新增 8 篇，剔除 2 篇。其一为 Science 顶刊条目《Shifting the equilibrium on lupin alkaloids》，是关键词 equilibrium 在羽扇豆生物碱合成方向上的误命中，整套机制属于植物次生代谢的生物合成研究，与博弈智能无关；其二为 EcoTrust-Net，见刊于陌生的 Blue Martin Press 旗下刊物，DOI 解析异常、四位作者同属同一院系，且多智能体强化学习在其中仅充当路由工具，缺少独立的策略互动结构。剩余 6 篇中按优先级收录 5 篇。",
+    "收录结构为「1 篇 CCF-A 加 2 篇期刊加 2 篇预印本」，三篇期刊条目均经 DOI 落地页逐一核实了卷期、投稿接收时间线与作者单位：Artificial Intelligence 为预校样上线，Transportation Research Part C 与 International Journal of Remote Sensing 均有完整流程记录与 ORCID 署名，来源可信度高于近几日平均水平。",
+    "「按需分配算力」从模型内部蔓延到了感知前端。LLM-TP2 用可观测的认知不确定度决定何时从轻量语言模型切换到大语言模型；MARL-AVSF 用一组协作智能体决定该处理哪几个视角，省掉 94% 的视角开销。共同点是把稀缺资源——时延预算或通信带宽——交给学到的控制器按场景分配，而不是由人写死阈值。",
+    "现实中的脏约束正在被写进模型定义，而不是当作事后扰动。延迟感知车队控制那篇直接把通信与执行延迟写成延迟马尔可夫博弈，先给出延迟与无延迟任务之间的显式性能界，指出落差由策略平滑性与延迟观测下的信念不确定度两项控制，再据此设计网络。这条「改定义、给界、按界设计结构」的顺序明显比先搭模型再补证明更扎实。",
+    "结构信息被显式建出来而非交给网络自己摸索：CGMARL 把任务序列映射成属性图，让图同时决定环境动态与智能体数量，并用冻结的图编码器保住历史结构；同一天的车队控制工作也用物理上的扰动传播结构来约束多智能体变压器。两条证据一致指向，先验结构进入网络的方式正在从「特征」升级为「约束」。"
+  ],
+  "note": "本期精读 5 篇，覆盖 guard 两篇、specialist / defender / supporter 各一篇（当日无合格的 caster 档条目）。检索窗口：arXiv 7 天、期刊会议 90 天，截至 2026-10-09；当日命中 2193 条、去重后 1491 条、入库 60 条，其中今日新增 8 篇。剔除 2 篇：Science 的《Shifting the equilibrium on lupin alkaloids》为关键词 equilibrium 在植物生物碱合成方向的误命中；EcoTrust-Net 发表于 Journal of High-Frequency Communication Technologies（Blue Martin Press），DOI 解析异常、四位作者同属同一院系且指标高度整齐，多智能体部分仅作路由优化之用。未收录的第 6 篇为 SynCo（arXiv 2610.11345），属大语言模型数据合成协同训练的流水线工作，同为预印本档但离策略互动主线较远，按相关度让位于另外两篇预印本。",
   "learning": {},
   "radar": [
     {
@@ -2161,5 +2633,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

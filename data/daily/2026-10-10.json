@@ -22,9 +22,389 @@
     "new_count": 6,
     "seen_before": 786
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "2610.11739",
+      "doi": "",
+      "title": "先保底再争吞吐：把 OFDM 领域知识写进多智能体强化学习的 6G 资源分配",
+      "title_en": "Distributed Constrained Resource Management in 6G Networks: A Scalable Hybrid Model-Learning Framework",
+      "authors": [
+        "Thang X. Vu",
+        "Cuong Le",
+        "Symeon Chatzinotas",
+        "Bjorn Ottersten"
+      ],
+      "published": "2026-10-08",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.IT",
+      "url": "https://arxiv.org/abs/2610.11739v1",
+      "summary": "Radio Resource Management (RRM) is a fundamental challenge in 6G wireless networks, particularly under dynamic user demands, inter-cell interference, and heterogeneous QoS constraints. Centralized optimization solutions are often infeasible in practice due to the lack of system-wide state information, dynamic conditions, and signaling delays, making distributed learning-based approaches attractive. However, conventional multi-agent reinforcement learning (MARL) struggles with scalability and constraint satisfaction in such highly dynamic environments. We introduce a scalable two-phase hybrid learning framework to address the RRM challenges where orthogonal-frequency division multiplexing (OFDM) domain knowledge is explicitly incorporated into the MARL pipeline. In our proposed two-phase learning framework, the first phase allocates a minimum resource to satisfy users' QoS requirements based on channel statistics, avoiding the inefficiencies of training policies under hard QoS constraints. Subsequently, a multiagent system is employed in the second phase to optimally allocate the remaining resources for system throughput maximization. By exploiting the structural interference information, we propose a scalable MARL algorithm which decomposes the original learning problem into smaller subproblems that can be handled independently, thereby avoiding exponential growth of the action space without compromising performance. Extensive simulations in realistic scenarios with 50MHz bandwidth and different numerologies show that our method significantly outperforms existing optimization and learning baselines, offering up to 40% throughput improvement, and 100% constraint satisfaction with minimal resource usage.",
+      "summary_short": "Radio Resource Management (RRM) is a fundamental challenge in 6G wireless networks, particularly under dynamic user demands, inter-cell interference, and heterogeneous QoS constraints.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.11739",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "6G",
+        "无线资源管理",
+        "MARL",
+        "硬约束",
+        "OFDM",
+        "动作空间分解",
+        "分布式控制"
+      ],
+      "glance": "把服务质量硬约束从奖励函数里摘出来、先用信道统计解析地保底分配，再让多智能体系统在剩余资源上争吞吐，实测最高约 40% 吞吐提升且约束满足率 100%",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "6G 基站最头疼的不是带宽不够，而是既要又要：每个用户的服务质量是硬指标，掉一个就是事故；可在几十个小区互相干扰的环境里，谁也拿不到全网状态，信令延迟也让集中式优化只能停在纸面上。于是大家转向分布式多智能体强化学习。但这条路在这里有两个老毛病——动作空间随用户数与子载波数指数膨胀，以及把硬约束写成奖励惩罚后，智能体在训练早期几乎学不到东西，因为绝大部分动作都在违约。这篇的做法很直接：不要让强化学习去解决它本来就不擅长的事。"
+        },
+        {
+          "t": "h",
+          "v": "把保底和争利拆成两个独立阶段"
+        },
+        {
+          "t": "p",
+          "v": "第一阶段完全不碰学习：依据信道统计信息，先给每个用户分配满足服务质量所需的最小资源量。这一步的意义在于，硬约束在最前端就被结构性满足了，后面的学习过程不再需要在违约被罚和多占资源之间反复试错。作者把它明确写成避免在硬约束下训练策略的低效——这句话值得每一个做过约束强化学习的人记住，因为奖励整形调参的痛苦大多源于此。"
+        },
+        {
+          "t": "p",
+          "v": "第二阶段才交给多智能体系统：在剩余资源上，以系统吞吐最大化为目标做最优分配。此时约束已经不在目标里，学习目标被纯化成了单目标效率问题。把一个带约束的多目标难题拆成先解析地满足约束、再学习地优化剩余，是本篇最可迁移的结构性做法，也是模型与学习这两套工具之间一次很干净的分工。"
+        },
+        {
+          "t": "h",
+          "v": "让动作空间不再指数膨胀"
+        },
+        {
+          "t": "p",
+          "v": "第二个贡献针对可扩展性。作者利用正交频分复用系统里的结构化干扰信息，设计了一个可分解的多智能体算法：把原始学习问题拆成若干个可以独立处理的小子问题。关键在于这个分解不是近似——论文的说法是在不损失性能的前提下避免了动作空间的指数增长。对做过大规模资源分配的人，这一步的价值常被低估：多数多智能体落地失败不是因为算法不够新，而是因为联合动作空间根本训不动。"
+        },
+        {
+          "t": "p",
+          "v": "领域知识在这里也不是加个特征工程就完事。干扰结构被显式写进学习流水线——哪些小区之间的耦合必须建模、哪些可以忽略，来自物理结构而不是让网络自己猜。这与端到端黑箱路线形成对照：在通信这种有精确模型的场景里，把模型能算清的部分交给模型，把模型算不清的动态负载与长期收益交给学习，是更稳健的分工方式。"
+        },
+        {
+          "t": "h",
+          "v": "战绩与实验口径"
+        },
+        {
+          "t": "p",
+          "v": "实验在 50 兆赫带宽、不同子载波间隔配置的现实场景设定下进行，对比的是已有的优化类基线与学习类基线。论文报告的是最高约百分之四十的吞吐改善，同时做到百分之百的约束满足，并且是在最小的资源占用下实现的。这里要提醒的是口径：四十个百分点前面那个最高的限定词，说明它并非平均值；而百分之百的约束满足来自第一阶段保底的结构性保证，属于设计使然而非学习奇迹，两者要分开看。"
+        },
+        {
+          "t": "quote",
+          "v": "不要让强化学习去学一件有解析解的事——把服务质量保底从奖励函数里拿出来，换来的是学习阶段的纯粹与稳定，这比任何奖励整形技巧都彻底。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是一篇 arXiv 预印本（编号 2610.11739，2026 年 10 月 8 日提交，主分类为信息论），四位作者来自通信与网络方向的长期研究团队，尚未经过同行评议。多智能体结构体现在多个基站分布式决策与相互干扰上，属于博弈意义上的耦合，但论文并没有显式求解均衡，用的是分解式学习——想看纳什那一套工具的读者会失望。此外所有结论都来自仿真，未见真实基站或硬件在环验证，跨层干扰与信令开销的建模细节也需要自行核对。"
+        },
+        {
+          "t": "close",
+          "v": "三件可以直接搬走的东西。第一，硬约束前置这个拆分思路：凡是遇到约束加效率的双目标学习问题，先问约束能不能解析地满足，能就不要塞进奖励。第二，用物理结构的稀疏性去分解联合动作空间，比堆注意力机制更省算力且更好解释。第三，读这类论文时要盯住最高提升与平均提升的差别——那个最高的限定词通常比数字本身更能说明问题。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2610.09691",
+      "doi": "",
+      "title": "做市商的遗憾界被压到根号 T：限价簿反馈下的在线学习能好到什么程度",
+      "title_en": "Optimal Regret for Online Market Making with Limit Order Book",
+      "authors": [
+        "Maria Elena Vischi",
+        "Francesco Emanuele Stradi",
+        "Alberto Marchesi"
+      ],
+      "published": "2026-10-07",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2610.09691v1",
+      "summary": "We study online learning in market making, where, at each round, a market maker posts bid and ask prices before observing the market price and the private valuation of an incoming trader. In this setting, Maran et al. 2026 introduce a feedback model motivated by limit order books, in which the trader's valuation is revealed only if no transaction occurs. Assuming that trader valuations are drawn i.i.d. from an unknown distribution while market prices are chosen adversarially, they establish an expected regret bound of $\\widetilde{\\mathcal{O}}(T^{2/3})$. In this work, we improve upon this guarantee by establishing a high-probability regret bound of $\\widetilde{\\mathcal{O}}(\\sqrt{T})$. As a warm-up, we first consider the full-feedback setting. We introduce a discretization of the bid-ask space based on two coupled grids and combine it with Hedge to achieve the desired regret rate. Building on these ideas, we then address the substantially weaker feedback induced by a limit order book and develop an algorithm that achieves the same guarantee. Finally, we investigate the limits of learnability in fully adversarial environments, where the valuations may vary arbitrarily as well. Perhaps surprisingly, we show that when both market prices and trader valuations are chosen adversarially, sublinear regret is impossible even under full feedback, thereby motivating our stochastic assumption on the valuations.",
+      "summary_short": "We study online learning in market making, where, at each round, a market maker posts bid and ask prices before observing the market price and the private valuation of an incoming trader. In this setting, Maran et al.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.09691",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "在线学习",
+        "做市",
+        "限价订单簿",
+        "遗憾界",
+        "Hedge",
+        "对抗性价格",
+        "不可学习性"
+      ],
+      "glance": "把限价簿反馈下做市商的遗憾从 T 的三分之二次方压到根号 T，并证明若价格与估值同时对抗则次线性遗憾根本不可能存在",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "做市商每天面对的是一个信息极不对称的博弈：你必须在不知道能否成交的情况下先报出买价和卖价，等市场价与那个交易者的私有估值揭晓后，才知道这一轮赚了还是亏了。更麻烦的是反馈的形状——如果成交了，你根本看不到对方的估值，只知道他愿意接受你的报价；只有没成交时，那个估值才会露出来。这就是限价订单簿带来的部分反馈。在这样的反馈下，一个在线学习的做市商到底能做到多好？这篇给出了目前最好的答案，也顺手划出了一条不可逾越的边界。"
+        },
+        {
+          "t": "h",
+          "v": "问题的设定：一半随机，一半对抗"
+        },
+        {
+          "t": "p",
+          "v": "每一轮，做市商先挂出买价与卖价；随后市场价与到达交易者的私有估值被揭晓，收益按是否成交与成交价差计算。这里的混合设定很讲究：交易者的估值从一个未知但固定的分布里独立采样，属于随机部分；而市场价格则是任意选取的，属于对抗部分。这个设定不是偷懒，而是被后面的不可能结果反向逼出来的——先记下这一点，读到最后一节就会豁然开朗。"
+        },
+        {
+          "t": "h",
+          "v": "从三分之二次方到根号 T"
+        },
+        {
+          "t": "p",
+          "v": "此前同一限价簿反馈模型下给出的最好结果是期望意义下的 T 的三分之二次方。这篇把它改进成了高概率意义下的根号 T。两处提升要分开看：一是速率本身降了一档，二是从期望界变成高概率界。后者在实践中更重要，因为期望界允许极少数极端坏样本把平均值拉住，而高概率界直接控制了坏事件发生的概率——对一个真要上线的做市策略来说，这个区别是要命的。"
+        },
+        {
+          "t": "p",
+          "v": "技术上走的是离散化加指数权重算法的路线。作者先把买卖报价的连续空间做离散化，用的是两个相互耦合的网格；再在这个离散动作集上跑经典的指数权重算法，拿到想要的遗憾率。耦合双网格是这里的关键设计：单网格无法同时刻画买价与卖价之间的相对位置和绝对水平，而做市的收益恰恰取决于这个价差结构，差之毫厘则整个离散化的误差控制都会失效。"
+        },
+        {
+          "t": "p",
+          "v": "论文的推进顺序也值得学：先在能看到全部信息的全反馈设定下把这个套路跑通当作热身，再处理限价簿带来的弱得多的反馈。这种先易后难、逐步剥离难度来源的写法，比一上来就抛最终算法更容易看清每个技术组件到底在解决什么，也让读者能判断哪一步是真正困难的。"
+        },
+        {
+          "t": "h",
+          "v": "一条不可学习的硬边界"
+        },
+        {
+          "t": "p",
+          "v": "最漂亮的部分是最后的不可能性结果。作者追问：如果连交易者的估值也是对抗选取的呢？答案是不行——在价格与估值同时对抗的情形下，即便给足全反馈，次线性遗憾也是不可能的。这个结论的价值不只在不可能本身，而在于它给前面的随机性假设提供了正当性：不是作者图省事假设了独立同分布的估值，而是不这么假设问题就没有解。这类用不可能结果去支撑建模假设的论证，是理论论文里最扎实的一种。"
+        },
+        {
+          "t": "quote",
+          "v": "不是我们假设了随机性，而是没有随机性就没有可学习性——把建模假设从权宜之计升级为必要条件，这条论证链比任何上界都更能说服审稿人。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 预印本（编号 2610.09691，2026 年 10 月 7 日提交，主分类为计算机博弈论，兼机器学习），三位作者，未经同行评议。遗憾界中的波浪记号隐藏了对数因子与对问题参数的依赖，阅读时应留意离散化网格的精细度如何进入最终常数。所有结果都是理论性的，没有数值实验——这在该类工作中属常规做法，但指望看到限价簿实证表现的读者会失望；此外模型是单个做市商面对一串到达交易者，并未刻画多个做市商之间的竞争。"
+        },
+        {
+          "t": "close",
+          "v": "两个可迁移的启发。第一，面对部分反馈的在线决策问题，先界定清楚哪些变量是随机的、哪些是对抗的，这个划分往往决定了整个问题的难度等级；本篇给出的两端同时对抗则不可学习就是一个可以照搬到别的场景的判断模板。第二，理论工作里最有力量的部分常常不是上界而是下界——一个干净的不可能性结果能把一堆模糊的建模选择变成唯一选择。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2610.10456",
+      "doi": "",
+      "title": "不只有效率，还要不折腾：动态社会选择里风险最小的诚实报告机制",
+      "title_en": "Risk-minimizing GUE-implementations of truthful reporting in a Dynamic Social Choice Problem",
+      "authors": [
+        "Endre Csóka",
+        "Máté Viczián"
+      ],
+      "published": "2026-10-07",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "econ.TH",
+      "url": "https://arxiv.org/abs/2610.10456v1",
+      "summary": "The Guaranteed Utility Mechanism (GUM) was introduced to implement efficiency in Guaranteed Utility Equilibrium (GUE) in dynamic social choice problems. We show that this mechanism also has a previously unknown connection to risk minimization. Fixing an efficient decision policy, we study variance-minimizing budget-balanced transfer rules in the class of GUE-implementations of truthful reporting. A symmetrized version of GUM (sym-GUM) minimizes the sum of the agents' utility variances under truthful reporting when there is no public state. When a public state is present, a slight modification of this rule yields the minimizer for the same objective. Sym-GUM, however, does not minimize transfer risk. The minimizer for that problem is instead the symmetrized version of a closely related GUM-like transfer rule. In both problems, the minimizing truthful total transfers are unique up to agent-specific constants summing to zero and events of probability zero.",
+      "summary_short": "The Guaranteed Utility Mechanism (GUM) was introduced to implement efficiency in Guaranteed Utility Equilibrium (GUE) in dynamic social choice problems. We show that this mechanism also has a previously unknown connection to risk minimization.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.10456",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "机制设计",
+        "动态社会选择",
+        "保证效用均衡",
+        "预算平衡",
+        "方差最小化",
+        "转移风险"
+      ],
+      "glance": "在保证效用均衡的一族实现机制里找出风险最小的那个——对称化的保证效用机制最小化参与者效用方差，但若要最小化转移额本身的波动，答案会换成另一条相近的规则",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "机制设计教科书最关心的一件事是说真话是不是最优，也就是激励相容。但真实世界里，一个机制能不能被接受，往往还取决于第二件事：照着规则走，我的收益会不会剧烈波动。两个机制都能实现有效率的结果、都能让参与者诚实，但一个让你的账单稳如磐石，另一个让你上天入地——绝大多数人会选择前者。这篇问的正是：在保证效用均衡这一族能实现诚实报告的机制里，哪一个把风险压到了最低？"
+        },
+        {
+          "t": "h",
+          "v": "背景：保证效用均衡与保证效用机制"
+        },
+        {
+          "t": "p",
+          "v": "保证效用机制此前被提出，用来在动态社会选择问题中实现有效率的保证效用均衡。动态社会选择的难点在于决策是跨期的——今天的公共决策会改变明天的状态与各方效用，因此一次性机制的那套工具必须重新构造。保证效用均衡提供的是一个比贝叶斯纳什更稳健的解概念，而保证效用机制则是把这个均衡实现出来的转移规则。作者的工作建立在这条线上，但换掉了目标函数。"
+        },
+        {
+          "t": "h",
+          "v": "把效率固定住，转而去最小化方差"
+        },
+        {
+          "t": "p",
+          "v": "论文的设定很干净：固定一个有效率的决策规则不动，然后在能实现诚实报告的这一族预算平衡转移规则里，找让参与者效用方差之和最小的那一个。这个设问方式很关键——效率已经被前面的工作解决了，这里比的是同一效率水平下的风险表现。这也是机制设计近年的一个转向：从能不能做到，走向做得到的一族里挑哪一个。"
+        },
+        {
+          "t": "p",
+          "v": "结果是分情形的。当不存在公开状态时，对称化版本的保证效用机制在诚实报告下最小化各方效用方差之和；当存在公开状态时，对这条规则做一个轻微修改就得到同一目标的最优解。换句话说，经典机制的对称化形式在参与者视角的风险上恰好是最优的——这是一个此前未被发现的性质，也解释了为什么对称化在直觉上总是更受欢迎。"
+        },
+        {
+          "t": "h",
+          "v": "但效用稳不等于转移稳"
+        },
+        {
+          "t": "p",
+          "v": "真正有意思的是下面这个反转：对称化的保证效用机制并不最小化转移风险。如果把优化目标换成转移额本身的波动，最优解会变成另一条与之相近的对称化转移规则。这个区别有实际含义——参与者的效用波动与机制跑出来的账目波动是两个不同的量，对机制的运营方来说，后者往往才是他要兜底的东西。选哪条规则，取决于你站在谁的立场上定义风险。"
+        },
+        {
+          "t": "p",
+          "v": "唯一性方面，作者证明了两类问题中使诚实总转移达到最小的规则，都在每个参与者各加一个常数且这些常数之和为零、以及零概率事件的范围内唯一。这个差一个常数的余地，正是预算平衡类机制里常见的自由度，也被精确地刻画了边界，不会让人误以为最优解是完全刚性的。"
+        },
+        {
+          "t": "quote",
+          "v": "同一个效率目标下有一整族机制，而哪一个更好取决于你把风险记在谁的账上——效用方差与转移方差的最优解不同，这条结论本身就是对机制设计实践的一句提醒。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 预印本（编号 2610.10456，2026 年 10 月 7 日提交，主分类为经济理论，兼计算机博弈论、组合数学与概率论），两位作者，未经同行评议，与保证效用均衡这条研究线一脉相承。论文是纯理论的，没有实验或数据部分，篇幅不长，读之前最好先熟悉保证效用机制与保证效用均衡的原始定义，否则最优性结论的分量不易体会。另外文中方差最优是在诚实报告路径上讨论的，并不意味着该机制在偏离行为下也最稳健。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发有两条。第一，在最优解集合里再优化一个二阶目标是一个高产的研究动作——很多领域的第一层问题已经解决，剩下的是在同一效率水平下按方差、流动性或可解释性去挑。第二，定义指标时要明确风险归属于谁：参与者的效用波动和系统的转移波动可以同时存在且最优解不同，写机制的时候必须先把这个立场摆明。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "10.5281/zenodo.23249488",
+      "doi": "10.5281/zenodo.23249488",
+      "title": "当人群开始互相触碰：给平均场博弈换一条非线性前向方程会发生什么",
+      "title_en": "What Does a Nonlinear Fokker–Planck Equation Buy a Mean Field Game?",
+      "authors": [
+        "T. Zamrik"
+      ],
+      "published": "2026-10-08",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.23249488",
+      "summary": "Mean field games almost always pair the agents' Hamilton-Jacobi-Bellman equation with a Fokker-Planck equation that is linear in the density: the agents' noises are independent and they interact only through their costs, so they never touch. This discussion paper asks what a game gains when the forward equation is nonlinear in the density, case by case. In a stationary game the crowd is an explicit statistics of the value function. The linear equation forces Boltzmann statistics, and with no crowd cost the game decouples. Density-dependent noise gives Tsallis statistics with an edge and an empty gap, or, when noise falls with the density, a crowd that abandons its preferred places for one cluster; a cost of motion that diverges at capacity gives Fermi-Dirac statistics with a plateau; congestion gives the same family as noise with a different value function, and its planner's optimum is reached by a fee set by the crowd's local flow. A gradient physical pull toward the crowd buys nothing in a stationary game: it is a crowd cost in disguise, and a pull theta herds exactly as a conformity cost theta squared. Equilibria computed on one double-well baseline, each checked against an independent calculation, show every signature, and the open questions are where the computation sees what the theory cannot yet prove. Disclaimer. Research and education, not advice: see zamrik.com/disclaimer.",
+      "summary_short": "Mean field games almost always pair the agents' Hamilton-Jacobi-Bellman equation with a Fokker-Planck equation that is linear in the density: the agents' noises are independent and they interact only through their costs, so they never touch.",
+      "is_new": true,
+      "sources": [
+        "主题·博弈理论"
+      ],
+      "abs_url": "https://doi.org/10.5281/zenodo.23249488",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "平均场博弈",
+        "Fokker-Planck",
+        "Boltzmann",
+        "Tsallis",
+        "Fermi-Dirac",
+        "容量与拥挤",
+        "从众"
+      ],
+      "glance": "逐类清点非线性前向方程能为平均场博弈买到什么——噪声、容量、拥挤各自对应一种人群统计，唯独朝人群方向的物理拉力被证明只是伪装的从众成本",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "平均场博弈有一个几乎成了默认约定的结构：每个智能体的哈密顿–雅可比–贝尔曼方程，配上一条对密度线性的前向方程。线性意味着什么？意味着所有智能体的噪声彼此独立，他们唯一的联系只存在于成本函数里——换句话说，这群人从不真正触碰，只是各自对人群的平均分布做出反应。一旦有人多走一步、或者某个地点挤到容量上限，这个线性假设就失效了。这篇讨论稿要问的正是：把前向方程改成非线性，平均场博弈到底多得到了什么？"
+        },
+        {
+          "t": "h",
+          "v": "一维稳态下，人群是价值函数的一个显式统计"
+        },
+        {
+          "t": "p",
+          "v": "论文的切入点是稳态一维情形。在这个设定里，人群分布可以写成价值函数的一个显式统计量，于是用哪条前向方程就直接等价于人群服从哪种统计。这条对应关系是整个讨论的骨架：线性方程强制给出玻尔兹曼统计，而且在没有拥挤成本的情形下，博弈直接解耦——前向与后向各走各的，人群分布退化成一个与策略无关的吉布斯测度。这解释了为什么大多数平均场应用里那个平均场其实只是个背景场，真正的博弈结构全在成本里。"
+        },
+        {
+          "t": "p",
+          "v": "从这个基准出发，作者逐类清点非线性会带来什么。噪声随密度增长时，人群服从 Tsallis 统计，分布出现明确的边缘；指数超过 1.146 之后，中间会出现一段空的间隙，人群干脆放弃了中间地带。反过来，噪声随密度下降时，人群会抛弃自己原本偏好的位置、聚集成单一团簇，直到分支在 0.219 处折叠。两个方向的差别很有画面感：前者是越挤越散、挤出空档，后者是越挤越聚、聚到崩塌。"
+        },
+        {
+          "t": "h",
+          "v": "容量给出费米–狄拉克平台，拥挤给出同一族却换了价值函数"
+        },
+        {
+          "t": "p",
+          "v": "容量约束是第三类。当运动成本在容量处发散时，人群服从费米–狄拉克统计，出现一个平台——线性人群本会溢出上限约 1.7 倍，而非线性把它压成了一个平顶。这个 1.7 的临界倍数是可以直接拿来当设计门槛的数字：如果你的系统里人群峰值预计会超过容量 1.7 倍，那么线性模型给出的预测就已经失真了，继续用线性前向方程会系统性地高估拥挤处的密度。"
+        },
+        {
+          "t": "p",
+          "v": "拥挤是第四类，它给出的是与噪声相同的分布族，但对应的是另一个博弈的价值函数。更有意思的是规划者的最优解：它对线性基准的改善只有百分之零点五到百分之三，而实现这个改善需要对人群的局部流量收费。也就是说，拥挤带来的非线性在效率上只值几个百分点，但它改变了最优政策的形式——从撒手不管变成按局部流量定价。对做机制设计的人来说，这个形式上的改变比那几个百分点更有价值。"
+        },
+        {
+          "t": "h",
+          "v": "一个反直觉的否定结果"
+        },
+        {
+          "t": "p",
+          "v": "最值得记住的是关于朝人群方向的梯度拉力的结论：它什么也没买到。作者证明，这个看起来像是新的物理相互作用的东西，在稳态博弈中只是一个伪装起来的拥挤成本——强度为 θ 的拉力，其聚群效果恰好等价于强度为 θ 平方的从众成本。这条否定结果的实用性很强：建模时如果你在犹豫要不要加一个朝人群吸引的项，答案是可以不加，把它折进成本函数即可，省掉的是一整套非线性工具。"
+        },
+        {
+          "t": "p",
+          "v": "数值方面，所有均衡都在同一个双阱势基线上计算，并且每一个都用独立方法交叉校验过。论文的诚实之处在于结尾直接承认：计算看到了一些理论还证明不了的现象，这些开放问题被明确列了出来。对一篇自印的工作稿来说，这种把边界写清楚的态度，比堆结论更可信，也让读者知道哪些数字可以拿去用、哪些只能当作线索。"
+        },
+        {
+          "t": "quote",
+          "v": "拉力 θ 的聚群效果，等价于从众成本 θ 的平方——一个看起来全新的物理相互作用，被证明只是旧成本换了个写法。这类买不到东西的清点，往往比新机制更有指导价值。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是一篇单作者的工作讨论稿（Zenodo，DOI 10.5281/zenodo.23249488，2026 年 10 月 8 日，十八页），由独立研究者自印发布，并非同行评议论文，作者自述为研究与教育用途、不构成建议。需要明确三点：全文只在一个双阱势基线上做了数值验证，结论的普适性未被证明；文中 1.146、0.219、1.7 等临界值均来自该基线下的计算，换一组参数未必成立；附带的代码仓库已在网上公开，可用来复现。读它最好当作一份有数值支撑的分类清单，而不是已确立的结论。"
+        },
+        {
+          "t": "close",
+          "v": "两条可迁移的东西。第一，逐类清点某个建模选择到底买了什么这种写法本身值得学，尤其是其中那些买不到的条目，能直接省掉别人的试错。第二，遇到非线性前向方程时，先判断它属于噪声、容量还是拥挤中的哪一类，因为答案决定了人群会呈现边缘、平台还是团簇崩塌，而这三类对应的政策含义完全不同。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今日 6 篇新增全部为预印本（4 篇 arXiv、2 篇 Zenodo），无顶刊与 CCF-A 命中；按惯例剔除 2 篇不合格自印本——灾害管理那篇只有框架构想、无任何实验或量化结果，本体论那篇为单笔名作者、术语堆叠且无验证，本期最终精读 4 篇。",
+    "约束与风险正在取代效率成为首要目标：6G 资源分配把服务质量硬约束从奖励函数里前置处理，动态社会选择在已实现效率的一族机制里转而最小化方差，两者都是先锁定可行性、再优化二阶目标这同一套思路的不同落地。",
+    "另一条主线是反馈有多弱决定了能学到多好：限价簿下做市商只在未成交时看到估值，遗憾仍被压到根号 T；而一旦价格与估值同时对抗，次线性遗憾被证明不可能——理论工作开始用不可能性结果反过来为建模假设背书。",
+    "平均场方向出现了一次对默认假设的系统性清点：把线性前向方程换成非线性后，人群统计依次变成 Tsallis 边缘、费米–狄拉克平台与团簇崩塌，而朝人群的拉力被证明只是伪装的从众成本；这类买不到什么的负面结论对建模者比新机制更省事。",
+    "值得注意的是把领域知识写进学习流水线重新占了上风：无论是用干扰结构分解动作空间，还是用解析方式先做服务质量保底，都指向同一个判断——在有精确物理模型的场景里，能算得清的那部分不该交给学习去试。"
+  ],
+  "note": "本期精读 4 篇，均来自当日待精读清单（6 篇新增中剔除 2 篇不合格自印本）。检索窗口：arXiv 7 天 / 期刊会议 90 天，截至 2026-10-10，命中去重后入库 60 条。分区分布：博弈求解与理论 2 篇、核心算法创新·MARL 1 篇、机制设计与市场 1 篇。所有精读条目均为预印本，结论未经同行评议，阅读时请以原文为准。",
   "learning": {},
   "radar": [
     {
@@ -2141,5 +2521,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

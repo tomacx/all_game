@@ -22,9 +22,421 @@
     "new_count": 7,
     "seen_before": 803
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.1038/s41467-026-77235-3",
+      "doi": "10.1038/s41467-026-77235-3",
+      "title": "切掉内侧前额叶，二阶推理还在：策略博弈里的一次双分离",
+      "title_en": "Preserved higher-order mentalising during strategic interactions after medial prefrontal cortex damage",
+      "authors": [
+        "Yi-Chen Hsieh",
+        "Arkady Konovalov",
+        "Zhi-Lin Su",
+        "Todd A. Vogel",
+        "Sanjay G. Manohar",
+        "Matthew A. J. Apps",
+        "Masud Husain",
+        "Christian C. Ruff",
+        "Patricia L. Lockwood"
+      ],
+      "published": "2026-10-10",
+      "venue": "Nature Communications",
+      "venue_raw": "Nature Communications",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41467-026-77235-3",
+      "summary": "Abstract Mentalising, the ability to infer the beliefs and intentions of others, is essential for successful social interaction. Previous studies have implicated the medial prefrontal cortex in mentalising, but whether this region is necessary for higher-order mentalising remains unclear. Here we show that people with focal damage to the medial prefrontal cortex retain the ability to engage in higher-order mentalising during a strategic social game. We compare their performance with patients with brain damage in other regions and lesion-free participants. Individuals with medial prefrontal cortex damage achieve similar rewards and use comparable mentalising strategies, but they are slower when making strategic decisions. Computational modelling indicates that this slowing reflects a greater tendency to require evidence before committing to a choice. Voxel-based lesion-symptom mapping identifies medial prefrontal regions linked to altered decision processes rather than mentalising. These findings suggest that the medial prefrontal cortex supports strategic decisions while higher-order mentalising remains intact.",
+      "summary_short": "Abstract Mentalising, the ability to infer the beliefs and intentions of others, is essential for successful social interaction. Previous studies have implicated the medial prefrontal cortex in mentalising, but whether this region is necessary for higher-order mentalising remains unclear.",
+      "is_new": true,
+      "sources": [
+        "ISSN·Nature Communications"
+      ],
+      "abs_url": "https://doi.org/10.1038/s41467-026-77235-3",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "心智化",
+        "递归推理",
+        "决策阈值",
+        "病灶映射"
+      ],
+      "glance": "内侧前额叶局灶损伤的患者在策略博弈中拿到与健康人相当的奖励、使用同等深度的心智化策略，唯一的差别是决策变慢——而计算建模显示，这个慢来自更高的证据门槛，不是推理能力受损",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "过去二十年里，内侧前额叶几乎成了「读心」的代名词：只要让被试推测别人的想法，功能磁共振就会在这块区域点亮。但「会点亮」和「必须有」是两件完全不同的事。要证明一块脑区是某功能的必要条件，靠相关性再多也堆不出来，只能问一个更硬的问题——把它拿掉，功能还在不在？"
+        },
+        {
+          "t": "h",
+          "v": "从「会点亮」到「必须有」，中间隔着病灶证据"
+        },
+        {
+          "t": "p",
+          "v": "影像学研究擅长定位，却无法回答必要性。一块区域在某任务中激活，可能只是因为它参与了注意、记忆或冲突监控等伴生过程，而与真正的推理本身无关。要拆开这种纠缠，标准的做法是转向局灶性脑损伤患者：如果某区域被损毁后，某种能力依然完整地保留，那么这块区域对它就不是必需的。"
+        },
+        {
+          "t": "p",
+          "v": "这项研究正是沿着这条路径走的。它考察的是心智化里最难、也最容易被想当然的那一层——高阶心智化。所谓高阶，指的是「我猜你在猜我在猜什么」这类递归推理。它被认为是博弈、谈判、欺骗与协作的认知基础，也长期被归因于内侧前额叶。"
+        },
+        {
+          "t": "h",
+          "v": "用策略博弈给心智化做一个「读数」"
+        },
+        {
+          "t": "p",
+          "v": "作者让三组人玩同一个策略性社会博弈：一组是内侧前额叶局灶损伤的患者，一组是其他脑区损伤的患者，还有一组是无脑损伤的参与者。设置后两组对照是关键——它能把「脑损伤」带来的一般性影响（比如反应变慢、注意力下降）与「内侧前额叶损伤」的特异性影响区分开。如果损伤组在各方面都变差，那只能说明脑子受伤了；只有当其他脑区损伤组与无损伤组表现相当、唯独内侧前额叶组出现选择性缺损时，必要性才成立。"
+        },
+        {
+          "t": "p",
+          "v": "读数的指标也不止一个：能拿到多少奖励、用了什么深度的心智化策略、以及每次决策花了多久。前两项衡量「做得对不对、想得深不深」，第三项衡量「这个过程有多费力」。"
+        },
+        {
+          "t": "h",
+          "v": "结果是：想得一样深，拿得一样多，只是更慢"
+        },
+        {
+          "t": "p",
+          "v": "结论与直觉相反。内侧前额叶损伤的患者在博弈中获得的奖励与其他两组相当，使用的心智化策略也可比——也就是说，他们依然在做高阶推理，而且做得不比别人差。真正出现差异的只有一项：他们在做策略决策时更慢。"
+        },
+        {
+          "t": "h",
+          "v": "慢在哪里：计算建模给出的答案"
+        },
+        {
+          "t": "p",
+          "v": "如果只是停在这一步，这个「慢」很容易被解释成某种弥散性的认知迟钝，那结论就没什么信息量了。作者用计算建模把反应时拆开，发现这个变慢对应的是一个明确的机制：损伤组在下决定之前倾向于要求更多的证据。换句话说，他们的推理机器还在，只是把决策阈值调高了——要攒够更多证据才肯出手。这与「不会推理」是两种截然不同的故障模式。"
+        },
+        {
+          "t": "quote",
+          "v": "同样深的推理、同样多的收益，只是决策阈值更高——「做不到」与「做起来费劲」被干净地切成了两件事。"
+        },
+        {
+          "t": "h",
+          "v": "病灶映射把两件事彻底分开"
+        },
+        {
+          "t": "p",
+          "v": "最后一块证据来自基于体素的病灶-症状映射。它在内侧前额叶内部定位到的区域，关联的是决策过程的改变，而不是心智化能力本身。这就形成了双分离：同一块脑区上，一个功能没了、另一个还在。这也解释了此前影像学研究为什么反复看到内侧前额叶在心智化任务中激活——它很可能支撑的是「把推断结果变成行动」这一步，而不是推断本身。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源与局限：论文发表于 Nature Communications，2026 年 10 月 10 日在线发表，同行评议、开放获取，作者单位涵盖苏黎世大学、伯明翰大学与牛津大学等。需要注意：这是人类局灶性脑损伤研究，样本量通常远小于影像学实验，个体间差异大；结论的适用范围限定在该类策略博弈与局灶性损伤人群，不宜外推到一般性的「社交能力」。本文基于公开摘要撰写，具体效应量与样本数字以原文为准。"
+        },
+        {
+          "t": "close",
+          "v": "对做多智能体系统的人，这篇的价值在于它给出了一条罕见的因果证据：递归的对手建模，与「把建模结果转化为果断行动」，是可以分离的两件事。这提示我们在评估智能体时，也该把「推断得准不准」和「敢不敢据此行动」拆成两个指标分开测——否则一个决策阈值设得很保守、其实心智模型学得很好的智能体，会被误判成不会推理。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2610.12453",
+      "doi": "",
+      "title": "把「对手心里在想什么」学成一个能复用的决策变量",
+      "title_en": "Mental-Models for Multi-Agent Systems",
+      "authors": [
+        "Hanan Gani",
+        "Lulu Shao",
+        "Manmohan Chandraker"
+      ],
+      "published": "2026-10-08",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.MA",
+      "url": "https://arxiv.org/abs/2610.12453v1",
+      "summary": "Large foundation models have accelerated progress toward general-purpose agents that interact with humans and other agents through language and multimodal signals. However, robust multi-agent decision-making requires reasoning about what other agents know, intend, and are likely to do under partial observability. Current agentic systems often operate through prompt design, memory, or end-to-end behavioral shaping, but typically do not learn an explicit partner-state representation that can be reused as a decision variable across tasks. We introduce \\emph{mental-model-enabled agents}, a framework that equips an agent with a latent mental model of its counterpart, allowing it to infer hidden beliefs, intentions, and likely reactions from the observed history and use these inferences to guide action selection. Our method learns an amortized recursive Theory-of-Mind representation, with first- and second-order mental-state structure, jointly with a belief-conditioned reward model that evaluates candidate actions relative to the inferred partner state. A policy is then learned under this belief-aware signal, yielding an agent that can act independently at inference time while retaining the benefits of explicit partner modeling. We evaluate the same framework on both language-only and multimodal benchmarks. Across these settings, explicit mental-state modeling consistently improves interaction quality and Theory-of-Mind performance over base agentic systems, showing that structured partner modeling is a useful inductive bias for general multi-agent systems. Our code is publicly available at https://github.com/hananshafi/Mental-Models",
+      "summary_short": "Large foundation models have accelerated progress toward general-purpose agents that interact with humans and other agents through language and multimodal signals. However, robust multi-agent decision-making requires reasoning about what other agents know, intend, and are likely to do under partial…",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.12453",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "心智理论",
+        "伙伴建模",
+        "GRPO",
+        "多模态角色扮演"
+      ],
+      "glance": "学一个带一阶与二阶结构的递归心智状态表示，再用它条件化奖励模型去指导策略优化，7B 级开源模型在 SOTOPIA 上超过了更强的闭源基线，且换伙伴模型后增益不消失",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "让一个智能体在部分可观测下跟别人打交道，今天的主流做法是三件套：写 prompt、加记忆、端到端地做行为塑造。这三样都能让智能体「看起来会读心」，但有个共同的缺口——它们都没有真正学出一个关于对手的表征。于是每次换任务、换伙伴，这套东西就得重来一遍，因为它从来没被当成一个可以复用、可以传递、可以显式推理的决策变量。"
+        },
+        {
+          "t": "h",
+          "v": "缺的不是推理能力，是「对手状态」这个变量"
+        },
+        {
+          "t": "p",
+          "v": "不显式建模对手状态，会带来两个具体后果。一是表示不可迁移：prompt 和记忆里混着任务特定的细节，换个场景就失效。二是无法组合：二阶推理需要在一阶信念之上再叠一层，如果一阶信念从来不是一个独立对象，二阶就无从谈起。作者把这点当成出发点，提出给智能体配一个关于对方的潜在心智模型。"
+        },
+        {
+          "t": "h",
+          "v": "心智模型怎么学"
+        },
+        {
+          "t": "p",
+          "v": "方法的核心是学一个摊销式递归心智理论表示。所谓递归，指的是它明确区分一阶心智状态（对手相信什么、想要什么）与二阶心智状态（对手对我的一阶信念有什么信念）；所谓摊销式，指的是推理过程被压进一个前馈网络，不必在推理时反复展开递归计算。这个表示与一个信念条件化的奖励模型联合训练——奖励模型负责评价候选动作相对于推断出的伙伴状态有多合适。"
+        },
+        {
+          "t": "p",
+          "v": "训练分两步走：先训心智状态与奖励模型，再在这个信念感知的奖励信号下优化策略。奖励模型训好后被冻结，作为打分器为策略优化提供奖励。这样做的好处是推理时智能体可以独立行动——伙伴建模的收益已经被蒸馏进策略里，不需要再额外跑一遍心智推理。"
+        },
+        {
+          "t": "h",
+          "v": "实验覆盖面：从开放对话到受控推理"
+        },
+        {
+          "t": "p",
+          "v": "评估横跨语言与多模态两条线。SOTOPIA 上按官方的七维回合级评分协议，在全部与困难两个子集上比较，并分别用 GPT-4o-mini 固定伙伴与自博弈两种设定检验泛化；BigToM 与 ToMi 考察从开放式对话到受控心智理论推理的迁移；MMRole 是多模态角色扮演基准；Craigslist-Bargain 与 FANToM 只做迁移评测，不参与训练。骨干模型是 7B 规模：Qwen2.5-7B-Instruct 为主，另加 LLaMA2-7B-Chat、Mistral-7B-Instruct-v0.3，多模态用 Qwen2.5-VL-Chat，策略优化用 GRPO。"
+        },
+        {
+          "t": "h",
+          "v": "关键结果"
+        },
+        {
+          "t": "p",
+          "v": "三个开源骨干的整体分全部提升：LLaMA 从 3.330 到 3.541，Mistral 从 3.511 到 3.784，Qwen 从 3.290 到 3.856，说明增益不依赖于某个特定模型家族。提升集中在 Knowledge 与 Goal 这类任务导向维度，而 Believability 保持高位且稳定——这一点很重要：它说明显式建模让智能体更会朝目标推进，却没有让它变得不像人。困难子集上结论同样成立。"
+        },
+        {
+          "t": "p",
+          "v": "换伙伴的泛化检验也过关：把 GPT-4o-mini 伙伴与自博弈两种设定的分数平均后，三个模型依然一致提升（LLaMA 6.588 到 7.245、Mistral 7.109 到 7.552、Qwen 7.087 到 7.633）。与只做监督微调或只用 GRPO 的变体相比，心智模型版本仍有增益，说明这是结构先验带来的，而不是数据红利。BigToM 上优势最明显的地方是配对分支指标——它要求同一个场景的真信念与错误信念两个分支同时答对，即同时维持两个反事实心智状态，基线往往能应付较容易的真信念分支，一旦引入错误信念或初始信念变化就失去一致性。"
+        },
+        {
+          "t": "quote",
+          "v": "把伙伴状态变成一个显式的、可复用的接口，而不是让它在 prompt 和记忆里隐式漂移——这是这篇文章真正的贡献。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源与局限：arXiv 预印本，已被 NeurIPS 2026 接收，代码公开。作者自述：受 7B 规模模型训练与闭源接口评测的成本所限，并未对所有主实验给出多次运行的误差棒或置信区间，因此单次种子下的数值差距需要谨慎解读；此外闭源基线的表现可能受访问方式限制。所有数字以原文表格为准。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发有两条。一是评估协议：如果你的任务涉及「理解他人」，优先选那种要求多个反事实分支同时正确的指标，它能有效区分「真的在建模」和「背下了答案模式」。二是接口设计：把对手状态做成独立模块、训完冻结再喂给策略，比端到端一起训更容易调试，也更容易解释——出问题的时候你能直接去查心智模型输出了什么，而不是对着一整个黑箱发愁。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2610.11552",
+      "doi": "",
+      "title": "当工具反馈会隐瞒副作用：给企业智能体一条会自己补课的缰绳",
+      "title_en": "Safe, Persistent, and Evolving Agent Harness for Understanding Partially Observable Worlds",
+      "authors": [
+        "Yisen Gao",
+        "Yue Guo",
+        "Qing Zong",
+        "Yiwen Guo",
+        "Yangqiu Song"
+      ],
+      "published": "2026-10-08",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.11552v1",
+      "summary": "Large language model agents can invoke tools fluently, but enterprise workflows demand more than selecting the right tools: actions must strictly comply with organizational policies, tool feedback often conceals hidden side effects under partial observability, and long-horizon tasks require persistent state tracking across multiple records. To address these challenges, we introduce E-Ledger, a multi-agent harness for safe and persistent execution. E-Ledger employs a code approval layer that checks every proposed action against policy before execution, and maintains a world ledger of verified hidden rules alongside evidence-backed dynamic state. Because hidden rules are typically unknown a priori, we further propose WorldAbduct, an abductive, world-model-driven harness evolution framework. WorldAbduct diagnoses execution trajectories across four complementary views (state consistency, world-observation gap, policy-gate correctness, and goal judgment) to hypothesize latent rules, and verifies them through targeted abductive interactions before integrating them into the ledger. On the enterprise benchmark World of Workflows, E-Ledger with WorldAbduct improves safe task completion across four LLM backbones, outperforming the strongest evolution baseline by 5--15 percentage points. Experiments in ScienceWorld and DiscoveryWorld further show that abductive harness evolution carries over to scientific environments. Our code is available at https://github.com/HKUST-KnowComp/E-LEDGER-WorldAbduct.",
+      "summary_short": "Large language model agents can invoke tools fluently, but enterprise workflows demand more than selecting the right tools: actions must strictly comply with organizational policies, tool feedback often conceals hidden side effects under partial observability, and long-horizon tasks require persiste…",
+      "is_new": true,
+      "sources": [
+        "主题·LLM多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.11552",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "策略合规",
+        "溯因推理",
+        "世界模型",
+        "harness 进化"
+      ],
+      "glance": "把组织策略编译成代码，在每个动作执行前做审批拦截，再用溯因推理诊断轨迹、主动设计试探去验证隐藏副作用规则，四个骨干上安全任务完成率超过最强进化基线 5 到 15 个百分点",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "让大模型调用工具，今天已经不是难事。但把同样的模型放进企业工作流，麻烦才刚开始：动作必须严格符合组织策略；工具返回的结果常常隐瞒了它在后台造成的副作用；一个长程任务要跨越好几条记录，状态还得一直记着。这三件事合在一起，才是「企业智能体」真正卡住的地方——不是不会做，而是不知道自己刚才那一下动了什么。"
+        },
+        {
+          "t": "h",
+          "v": "三道坎：合规、副作用、长程状态"
+        },
+        {
+          "t": "p",
+          "v": "第一道坎是合规性。策略是组织特有的，通用模型既不知道也没有义务遵守。第二道坎最隐蔽：某些动作的影响不会立刻出现在工具返回值里，可能隔了好几步之后，才因为观测或结果与预期不符而暴露。第三道坎是持久性，任务相关信息散落在多条记录中，没有统一的状态账本就没法持续跟踪。"
+        },
+        {
+          "t": "h",
+          "v": "E-Ledger：把控制层和领域知识层拆开"
+        },
+        {
+          "t": "p",
+          "v": "作者的应对是把运行时控制与环境特有知识分离。已知的組織策略被编译成代码，每一个拟议动作在执行前都要过一遍审批层：可以被放行、被要求补充证据或前置审批、或者直接被拦截。关键在于，这个判断发生在动作抵达环境之前，且由代码而非模型自己做出——模型没法通过「想通了」来绕过已知策略。"
+        },
+        {
+          "t": "p",
+          "v": "与之配合的是一本世界账本：静态层记录已验证的隐藏规则与副作用，动态层记录有证据支撑的任务相关实体与目标的当前状态。两层合起来，让约束、学到的动态规律与执行进度在整个工作流里始终可查。"
+        },
+        {
+          "t": "h",
+          "v": "隐藏规则从哪来：WorldAbduct 的溯因循环"
+        },
+        {
+          "t": "p",
+          "v": "静态知识多半事先并不知道，这才是难点。一个动作的隐藏效果可能要过几步才显形，此时智能体必须回头找出触发它的那一步，并判断这是条稳定的规则还是一次孤立事件。归因错了，后面全错——尤其是当好几个动作都能解释同一个结果的时候。"
+        },
+        {
+          "t": "p",
+          "v": "WorldAbduct 用四个互补视角诊断执行轨迹：状态一致性让状态预测与动态账本对齐可观测的工具反馈，把能直接看到的那部分世界拟合好；世界-观测间隙分析则专攻看不见的部分，尝试恢复那些没有出现在工具接口上的隐藏效果；策略门正确性强化已知约束的执行；目标判定帮助区分真正完成与提前终止。四个视角的输出被分成两类——一类直接修改 harness，另一类是待验证的隐藏规则假设。一个专门的溯因智能体接手后者，设计有针对性的交互去验证或修正它们，只有被证成的规则才允许进入静态世界层。"
+        },
+        {
+          "t": "h",
+          "v": "结果：赢在安全性，而不只是完成率"
+        },
+        {
+          "t": "p",
+          "v": "在企业流程基准 WOW 上，四个骨干（DeepSeek-V4-Pro、GLM-5.3-Flash、GPT-5.6-Terra、Kimi-K3）中，WorldAbduct 的安全任务完成率都最高，比最强进化基线 MemoHarness 高出 5 到 15 个百分点。值得看的是差距的来源：在 Kimi 与 DeepSeek 上，MemoHarness 的任务完成率其实略高，但它更频繁地违反策略，而经过验证的隐藏规则让 WorldAbduct 把策略安全率维持在 95%。"
+        },
+        {
+          "t": "p",
+          "v": "这也暴露了不同骨干的性格差异。GPT-5.6-Terra 相对保守：一旦进化出的动作触发策略顾虑，它往往选择停下来，而不是去找一个合规的替代方案。这让它保住了 100% 的策略安全率，却限制了任务完成率的进一步提升。另外，给两个基线多加一轮进化后，它们在 GLM 上的结果没有变化——说明这个差距不是靠轮数堆出来的。步数方面，WorldAbduct 在四个骨干中的三个上比 MemoHarness 更少，测试成本相当。"
+        },
+        {
+          "t": "quote",
+          "v": "防已知的靠代码拦截，补未知的靠主动试探——软性的语义对齐在两端都撑不住。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源与局限：arXiv 预印本，未经同行评议，代码公开。需要注意：结论建立在 WOW 这一企业流程基准上，向其他领域外推要谨慎；文中提到的骨干模型型号与具体分数以原文表格为准；溯因验证环节依赖与环境的目标性交互，在无法自由试探的真实系统里未必适用。"
+        },
+        {
+          "t": "close",
+          "v": "最值得抄走的是那条分工线：已知规则用确定性机制在执行前拦住，未知规则用溯因推理主动去发现并验证。很多团队把这两件事都压给「提示词里写清楚」，结果已知的会被绕、未知的永远发现不了。把它拆成两层之后，每一层都可以单独测——拦截率看已知那层，规则发现率看未知那层，出问题的时候也知道该改哪边。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2610.11434",
+      "doi": "",
+      "title": "无人机之间不必说人话：把状态与意图压成离散令牌的协作",
+      "title_en": "An Embodied Multiagent Framework Based on Token Communications for Cooperative ISAC",
+      "authors": [
+        "Jiahe Guo",
+        "Jun Du",
+        "Chunxiao Jiang",
+        "Jintao Wang"
+      ],
+      "published": "2026-10-08",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "eess.SP",
+      "url": "https://arxiv.org/abs/2610.11434v1",
+      "summary": "The emerging low-altitude economy demands unmanned aerial vehicle (UAV)-enabled integrated sensing and communication (ISAC) for reliable connectivity and environmental awareness. In particular, embodied UAV agents offer a promising means of supporting autonomous operations through a closed loop linking perception, decision-making, and physical actions. However, each UAV has access only to local observations, and effective cooperation requires exchanging local states and intentions. Directly sharing such information can incur substantial signaling overhead and hinder timely coordination in dynamic environments. To deal with this problem, this paper investigates a cooperative ISAC network of embodied UAV agents and formulates a joint token communications (TokCom) and physical control problem to minimize total propulsion energy subject to communication and sensing rate requirements. Then, we propose a state--intent TokCom (SI-TokCom) framework driven by multi-agent embodied policy learning. Specifically, separate pretrained codebooks enable compact exchanges of local states and intentions, while UAV agents jointly learn to select and compose tokens and determine physical actions based on local observations and received tokens. Simulation results show that SI-TokCom achieves 98.9\\% and 99.1\\% of the centralized baseline's communication and sensing rates, respectively. Compared with the local baseline, it improves the corresponding rates by 5.0\\% and 43.6\\%, respectively, with essentially unchanged propulsion energy. These results highlight the potential of TokCom for communication-efficient cooperation among embodied UAV agents in ISAC systems.",
+      "summary_short": "The emerging low-altitude economy demands unmanned aerial vehicle (UAV)-enabled integrated sensing and communication (ISAC) for reliable connectivity and environmental awareness. In particular, embodied UAV agents offer a promising means of supporting autonomous operations through a closed loop link…",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.11434",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "涌现通信",
+        "通感一体化",
+        "码本量化",
+        "能耗优化"
+      ],
+      "glance": "用两套预训练码本把局部状态与意图分别压成离散令牌，智能体联合学习选令牌与飞控动作，通信与感知速率达到集中式基线的 98.9% 与 99.1%，而协调开销只有 96 bit",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "低空经济要跑起来，无人机既得传数据、又得看得见环境，于是通感一体化成了标配。可一旦让一群无人机协同，麻烦立刻出现：每架只看得见自己周围，要配合就得交换各自的局部状态和打算怎么飞；而把这些东西原样传出去，信令开销大得让动态环境下的实时协调根本来不及。想协调就得说话，想说话就没带宽——这就是矛盾。"
+        },
+        {
+          "t": "h",
+          "v": "协作的代价是带宽"
+        },
+        {
+          "t": "p",
+          "v": "传统的多无人机通感一体化优化方法有两个短板：计算复杂度高，且需要大量系统先验知识。而移动性和资源分配的联合优化，本质上要求智能体之间高频交换局部状态与预期动作——因为无人机的移动会同时改变无线信道、感知几何与推进能耗。这些交换能吃掉相当一部分通信资源。"
+        },
+        {
+          "t": "h",
+          "v": "把「说什么」也当成要学的东西"
+        },
+        {
+          "t": "p",
+          "v": "作者把这个难题形式化成一个联合优化问题：同时优化令牌通信与物理控制，目标是在满足通信速率与感知速率要求的前提下，最小化总推进能耗。关键在于，通信内容本身不再是人工设计的消息格式，而是被纳入了学习对象。"
+        },
+        {
+          "t": "p",
+          "v": "具体做法是 SI-TokCom：先用两套独立预训练的码本，分别把局部状态和意图压缩成紧凑的离散令牌——状态令牌与意图令牌分开处理，因为二者要传的信息性质不同。然后各无人机基于自己的局部观测和收到的令牌，联合学习「选哪个令牌、怎么组合令牌、做什么物理动作」。接收端用冻结的解码器把令牌还原成可用的语义。这样协议是涌现出来的，而不是人替它规定的。"
+        },
+        {
+          "t": "h",
+          "v": "仿真里的数字"
+        },
+        {
+          "t": "p",
+          "v": "场景是 600 米见方的区域，4 架无人机、8 个通信用户、3 个感知目标，用户与目标在内部随机采样，且保证每个目标初始时至少被一架无人机看到；用蒙特卡洛方法做多次仿真。基线包括：集中式（策略能看到所有无人机与地面节点的全局信息）、本地式（只用局部观测）、状态令牌消融、意图令牌消融，以及直接交换连续语义表示的语义通信方案。"
+        },
+        {
+          "t": "p",
+          "v": "结果上，SI-TokCom 的通信速率达到集中式基线的 98.9%，感知速率达到 99.1%——也就是说，用极少的通信几乎追平了全局信息的性能。相比本地基线，通信速率提升 5.0%，感知速率提升 43.6%，而推进能耗基本不变。感知速率那一档 43.6% 的跃升尤其说明问题：不交换意图，多机几乎没法凑出有效的感知几何。消融实验里，只给状态令牌或只给意图令牌都只能拿回一部分增益，证明两类令牌各有不可替代的作用。"
+        },
+        {
+          "t": "quote",
+          "v": "当带宽成为硬约束，通信协议就不该由人手写，而应该和动作策略一起被优化出来。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源与局限：arXiv 预印本，已投稿 IEEE TWC，未经同行评议。需要留意：全部结论来自自建仿真，且只测了一种规模配置（4 架无人机、固定区域大小），没有在真实信道与硬件平台上验证；文中 98.9% 与 99.1% 是相对集中式基线的比值，不是绝对性能指标，脱离基线单独引用会失真。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的地方在于那个「码本前置」的思路：先离线把高维状态与意图压成一本共享的离散码本，在线上只传码字索引。只要协作各方共享同一本码本，通信量就能压到几十个比特的量级，而信息损失可控。凡是遇到多智能体之间带宽受限、但又必须交换意图的场景（车路协同、机器人集群、边缘推理协同），这套拆法都值得先试一遍。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今日 7 篇新增中，1 篇为真顶刊（Nature Communications）、6 篇为预印本；按惯例剔除 3 篇——2 篇 Zenodo 自印本（一篇参考文献列表为空的 Agentic AI 框架综述、一篇署名机构只写到「计算机科学系」无法核实的护栏量化报告）与 1 篇离主线较远的工业异常检测多智能体框架，最终精读 4 篇。",
+    "「对手心里在想什么」这条线今天从人脑回到了机器：Nature Communications 用病灶证据表明，内侧前额叶受损后高阶心智化依然完整、受影响的只是决策阈值；而同日 NeurIPS 接收的工作则把一阶与二阶心智状态学成可复用隐变量。一个在证明这种递归推理可以独立存在，一个在证明它可以被显式建模并带来收益。",
+    "显式伙伴状态表示的收益被单独隔离出来了：在同一份心智理论增强数据上，心智模型版本依然稳定地优于只做监督微调或只用 GRPO 的变体，且换掉伙伴模型后增益不消失——这说明涨分来自结构先验，而不是数据红利。",
+    "安全正在从「在提示词里写规矩」转向「执行前确定性拦截 + 主动发现未知规则」：E-Ledger 把组织策略编译成代码做执行前审批，WorldAbduct 用溯因交互去验证隐藏副作用，前者防已知的、后者补未知的，比软性语义对齐可靠得多。",
+    "通信开销被写进了优化目标而不是当作外生约束：SI-TokCom 用预训练码本把状态与意图压成 96 bit 的离散令牌，几乎追平集中式性能——这与近期「把领域知识写进学习流水线」的做法是同一条思路的两面，差别只在于压缩的是信道还是动作空间。"
+  ],
+  "note": "本期精读 4 篇，均来自当日待精读清单（7 篇新增中剔除 3 篇：2 篇 Zenodo 自印本与 1 篇离主线较远的工业异常检测论文）。检索窗口：arXiv 7 天 / 期刊会议 90 天，截至 2026-10-11，命中去重后入库 60 条。分区分布：LLM 多智能体与社会模拟 2 篇、对抗安全与鲁棒 1 篇、核心算法创新·MARL 1 篇。除顶刊一篇外均为预印本，结论未经同行评议，阅读时请以原文为准。",
   "learning": {},
   "radar": [
     {
@@ -2159,5 +2571,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

@@ -22,9 +22,426 @@
     "new_count": 8,
     "seen_before": 837
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.1016/j.artint.2026.104639",
+      "doi": "10.1016/j.artint.2026.104639",
+      "title": "语言模型讲不讲理性：把连贯性规范与信念强度一次说清",
+      "title_en": "Are language models rational? The case of coherence norms and belief revision",
+      "authors": [
+        "Thomas Hofweber",
+        "Peter Hase",
+        "Elias Stengel-Eskin",
+        "Mohit Bansal"
+      ],
+      "published": "2026-10-01",
+      "venue": "Artificial Intelligence",
+      "venue_raw": "Artificial Intelligence",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.artint.2026.104639",
+      "summary": "Do norms of rationality apply to machine learning models, in particular language models? In this paper we investigate this question by focusing on a special subset of rational norms: coherence norms. We consider both logical coherence norms as well as coherence norms tied to the strength of belief. To make sense of the latter, we introduce the Minimal Assent Connection (MAC) and propose a new account of credence, which captures the strength of belief in language models. This proposal uniformly assigns strength of belief simply on the basis of model-internal next token probabilities. We argue that rational norms tied to coherence do apply to some language models but not to others. This issue is significant since rationality is closely tied to predicting and explaining behavior, and thus it is connected to considerations about AI safety and alignment, as well as understanding model behavior more generally.",
+      "summary_short": "Do norms of rationality apply to machine learning models, in particular language models? In this paper we investigate this question by focusing on a special subset of rational norms: coherence norms. We consider both logical coherence norms as well as coherence norms tied to the strength of belief.",
+      "is_new": true,
+      "sources": [
+        "ISSN-L·Artificial Intelligence"
+      ],
+      "abs_url": "https://doi.org/10.1016/j.artint.2026.104639",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "理性规范",
+        "信念度",
+        "信念修正",
+        "连贯性",
+        "AI 安全"
+      ],
+      "glance": "预训练模型根本不在理性规范之下，只有为真实性微调过的模型才受逻辑与概率连贯性约束；作者还给出一条只用模型自身下一词元概率就能算出的信念度定义",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一个模型今天说法国首都是巴黎，换个问法又说不是。我们顺口会说它「自相矛盾」，但这句话其实偷偷预设了一件事：理性规范适用于它。如果它的内部状态根本不是信念，那么说它不理性，就跟说一台烤面包机不理性一样没有内容。发表在 Artificial Intelligence 上的这篇论文，做的就是把这层预设拆开来审一遍。"
+        },
+        {
+          "t": "h",
+          "v": "先把「理性」这个词劈成两半"
+        },
+        {
+          "t": "p",
+          "v": "论文的第一刀是区分两种理性。一种是消解式的：系统只要把该做的事做对，就叫理性，经典文献里讨论智能体理性时用的多半是这个意思。另一种是表征式的：不看外部行为，而看产生行为的内部状态——信念、推理——是否以恰当的方式生成。作者要问的是后一种，理由很实在：如果智能体的智能来自可以接受理性评价的内部状态，我们就能像解释人一样，用信念与欲望去解释和预测它；如果不是，那么它的智能跟我们的智能根本不是同一类东西，安全、对齐、可解释性这些工程都得重新找抓手。"
+        },
+        {
+          "t": "p",
+          "v": "在这个区分之上还有第二刀：不理性，与「根本不在理性规范之下」。烤面包机不是不理性，而是这些规范压根不适用于它；一个同时相信巴黎在法国、又相信巴黎不在法国的人，才是不理性。所以对着语言模型要问两个问题：规范适不适用；适用的话，它做不做得到。论文主攻第一个，把第二个明确留给了后续工作。"
+        },
+        {
+          "t": "h",
+          "v": "连贯性规范：先只管同一时刻"
+        },
+        {
+          "t": "p",
+          "v": "理性规范里最简单的一族叫连贯性规范，它管的是共时而非历时：同一时刻持有的信念能不能彼此相容。作者有意先把更难的问题——贝叶斯式的信念更新——搁在一边。理由是：眼下文献热衷于争论语言模型会不会推理，可推理是跨时间的理性能力，如果连共时的连贯性规范适不适用都没定论，争论推理就是空中楼阁。这个顺序感是这篇论文方法论上最值得学的地方。"
+        },
+        {
+          "t": "h",
+          "v": "结论是分裂的：预训练模型在规范之外"
+        },
+        {
+          "t": "p",
+          "v": "第一半结论很干脆：预训练语言模型通常是「在理性规范之外」的。它们的内部状态只受一种规范约束，就是把训练数据拟合好。训练文本里没有「要为真」这条正确性标准，因此也就谈不上以真为目标的逻辑连贯规范。换句话说，一个只做下一词元预测的模型，其内部状态不是信念的合格候选。"
+        },
+        {
+          "t": "p",
+          "v": "第二半是转折：经过真实性微调的模型不一样。若一个模型被微调成倾向于产出真实文本，并且我们假定它有内部表征状态、这些状态与它产出的文本之间还存在恰当的因果连接，那么「真」就成了信念的正确性标准，而自相矛盾的信念状态直接与这个标准冲突——于是逻辑连贯性规范开始适用。用基于人类反馈的强化学习微调过的模型、或在专门挑选的真实性数据集上微调过的模型，属于这一类。"
+        },
+        {
+          "t": "h",
+          "v": "怎么给模型定义一个信念强度"
+        },
+        {
+          "t": "p",
+          "v": "逻辑连贯只管「全信不信」，管不了「信到什么程度」。要处理后者，必须先把概率赋给命题，也就是给模型一个信念度函数。难点在于：语言模型满手都是概率，可那是下一词元的概率，词元是亚命题的；而信念度要落在命题上。"
+        },
+        {
+          "t": "p",
+          "v": "作者搭的桥叫最小同意连接。最朴素的想法是问模型「是不是这么回事」，然后看它把下一个词元放成肯定答案的概率有多大。这个式子有两个毛病。第一，模型可以用好几种方式表示同意——「是啊」「确实」「我完全同意」——只统计一种会系统性低估信念强度；于是把全部同意序列的概率加总，得到同意概率。第二，模型也可能答非所问，比如回一句「作为人工智能语言模型我无法回答这类问题」，这部分概率质量与信念强度无关；于是再定义一组反对序列，把两者重新归一化。"
+        },
+        {
+          "t": "p",
+          "v": "最终的信念度被定义为同意概率除以「同意概率加反对概率」。分子分母都只来自模型自己对下一词元的分布，对任何命题都以同一套方式计算，因此完全通用：不需要改模型，不需要约束解码，也不需要额外训练一个探针分类器。"
+        },
+        {
+          "t": "quote",
+          "v": "只用模型自身的下一词元概率，就构造出一个可以谈概率连贯性的信念度函数——这是这篇论文最可迁移的一件工具。"
+        },
+        {
+          "t": "h",
+          "v": "最难的一问：规范到底有没有效力"
+        },
+        {
+          "t": "p",
+          "v": "作者坦承这里有一个几乎无解的测量难题。今天的大模型同时受两种规范拉扯：一边是要真实、要自洽，另一边是要拟合预训练语料，而预训练语料本身就是大规模不自洽的。于是当你观测到模型自相矛盾时，无法判断这究竟是理性的失败，还是拟合训练数据的成功。更麻烦的是，检验大规模自然语言文本的逻辑自洽性本身就极难，光是布尔可满足性判定就是 NP 完全的。"
+        },
+        {
+          "t": "p",
+          "v": "出路是控制变量：在自洽性可控的半合成语料上从零预训练一个新模型，再去测概率连贯性。作者在同期实证工作里给出了初步结果——模型的内部概率确实追踪训练数据的不自洽程度，这大致支持「理性规范是有效的」；但在模型更新与信念修正上，现有方法离理想贝叶斯主体还差得很远。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是一篇以概念分析为主、实证为辅的论文，数据可用性声明里直接写着本研究未使用数据。它给出的是规范适用性的判定，不是某个模型的理性分数，因此不要当成评测基准来引用。论文有 2024 年的预印本（arXiv 2406.03442），期刊版收录于 Artificial Intelligence 第 361 卷，两版主张一致，读预印本即可。另一个边界要记住：作者在结论里明确把「模型究竟能在多大程度上符合连贯性规范」留给了未来工作，本文不回答这个问题。"
+        },
+        {
+          "t": "close",
+          "v": "对做博弈与决策的读者，这篇的价值在于它把「智能体是不是可被理性评价的主体」这个前提摆到了台面上。无论你是在设计多智能体协商，还是在给智能体写激励，判断能不能用信念与欲望的框架去预测它，都是建模前的第一道题。而那套只用下一词元概率就能算出的信念度，是一个立刻可以搬走的测量工具：它把「模型对某个命题有多确信」从自我报告的修辞，变成了可复现的数值。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2610.13267",
+      "doi": "",
+      "title": "让智能体自己忘掉坏记忆：用扰动探针做免训练的内存修复",
+      "title_en": "Forgetting is Not Always Bad: A Neuro-Inspired Memory Repair Mechanism for Poisoned LLM Agents",
+      "authors": [
+        "Lei Liu",
+        "Yunji Liang",
+        "Xiaowen Zhang",
+        "Jingqi Liu",
+        "Qi Li",
+        "Bin Guo",
+        "Zhiwen Yu"
+      ],
+      "published": "2026-10-09",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.13267v1",
+      "summary": "Large language model (LLM) agents are highly vulnerable to memory-poisoning attacks. Existing defenses primarily rely on external modules for either static memory isolation or continuous online auditing, resulting in low memory efficiency and high computational overhead. To address these limitations, inspired by neuroscientific mechanisms that weak reactivation can destabilize memories and induce decay in the absence of reinforcement, we propose an agent-intrinsic training-free memory repair framework, DREAM (Dynamic Reactivation for Engram Attenuation in Memory), that enables selective functional forgetting of poisoned memories. Specifically, DREAM implements a three-stage pipeline: perturbation-induced implicit reactivation to reveal the structural fragility of malicious memories, adaptive anomaly diagnosis based on multi-dimensional activation patterns to detect topological anomalies, and a dynamic memory repair module that selectively suppresses harmful memories while reinforcing benign ones. Extensive experiments across diverse attackers and real-world tasks demonstrate that DREAM reduces attack success rates by over 95\\% against backdoor poisoning while preserving strong benign utility. DREAM also achieves competitive robustness against injection attacks. In terms of runtime and token consumption, DREAM achieves up to a 2.13$\\times$ speedup and a 37.7\\% reduction in token consumption compared with A-MemGuard. Furthermore, DREAM also achieves a task success rate of 92.96\\% on poisoned multi-agent systems.",
+      "summary_short": "Large language model (LLM) agents are highly vulnerable to memory-poisoning attacks. Existing defenses primarily rely on external modules for either static memory isolation or continuous online auditing, resulting in low memory efficiency and high computational overhead.",
+      "is_new": true,
+      "sources": [
+        "主题·LLM多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.13267",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "内存投毒",
+        "后门攻击",
+        "智能体安全",
+        "类脑遗忘",
+        "检索增强"
+      ],
+      "glance": "不去审计、不去隔离，而是给每条记忆挂一个会随探针反馈衰减的权重：后门攻击成功率压到个位数，良性准确率反而上升，开销还比现有防御低一半",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "智能体的长期记忆是一块谁都能往里写东西的白板。攻击者的手法并不复杂：往记忆库里塞一条精心构造的记录，让它在检索时被排到前面，模型就会在上下文里读到它，然后照着执行删库这类动作。现有防御要么持续在线审计，开销高得吓人；要么把可疑记忆隔离到另一个库，于是记忆连续性被切断、推理出现空洞。这篇论文换了个思路——既然生物系统靠「弱激活会让记忆痕迹变得不稳定、进而衰减」来清理侵入性记忆，那就让智能体自己也忘一次。"
+        },
+        {
+          "t": "h",
+          "v": "把威胁写成两阶段优化"
+        },
+        {
+          "t": "p",
+          "v": "论文先把已有的内存投毒攻击统一成一个两阶段框架。第一阶段是投毒记忆检索：攻击者往记忆库插入一条记录，并在对抗查询分布上最大化该记录与查询的嵌入相似度，约束是模型读到它之后会输出攻击者想要的动作。后门攻击依赖优化出来的触发器，注入攻击则靠语义伪装，让恶意记录贴合智能体的日常查询分布。第二阶段是上下文劫持：一旦被检索到，恶意示范就借助模型强大的上下文学习能力，绕过原本的安全对齐。"
+        },
+        {
+          "t": "p",
+          "v": "检索打分公式里有一个所有人都默认的设定：每条记忆的权重恒等于一。这篇要改的就是这一项——把它变成随离散时间演化的动态权重。防御目标于是成为一个双目标优化：在对抗查询分布上最小化执行恶意动作的概率，同时在良性查询分布上最大化任务成功率。"
+        },
+        {
+          "t": "h",
+          "v": "三步走：扰动探针、异常诊断、功能性遗忘"
+        },
+        {
+          "t": "p",
+          "v": "第一步叫隐式重激活。防御方并不知道哪条记录是恶意的，所以定向检测无从谈起；论文采取零知识的通用探针——给每条记忆的嵌入向量加上各向同性的弱高斯噪声。直觉是：被优化过的投毒记录在扰动下会表现出异常的脆弱性。这一步不需要任何训练，也不需要知道攻击者的手法。"
+        },
+        {
+          "t": "p",
+          "v": "第二步把「脆弱」量化成三维激活强度。一是扰动前后表征的余弦相似度，刻画局部几何稳定性；二是竞争检索概率，用扰动后向量与自身、与记忆库全局质心的相似度之差过一个 sigmoid，刻画它在整个库里的相对优势；三是语义连贯能量，用一个玻尔兹曼式函数刻画扰动后内部语义结构的完好程度。论文自己在附录里承认：单看第一维，良性与恶意的分布重叠严重，真正拉开差距的是后两维，三者聚合之后分离度才最好。"
+        },
+        {
+          "t": "p",
+          "v": "判定阈值也不是写死的，而是每一轮按经验均值减去若干倍标准差自适应给出；同时引入一个双向的嫌疑分数，命中异常就累加、否则按衰减率回落，避免单轮噪声累积成误杀。"
+        },
+        {
+          "t": "p",
+          "v": "第三步把记忆演化建模成离散时间动力系统：可疑记录的权重逐步衰减趋近于零，良性记录则通过再巩固被推回一。这里刻意避开了硬删除——连续取值的衰减比直接删掉稳健得多，误判一条也不至于永久损失知识。"
+        },
+        {
+          "t": "h",
+          "v": "数字：把攻击压下去的同时把准确率抬上来"
+        },
+        {
+          "t": "p",
+          "v": "实验覆盖两类攻击、两个骨干模型和三类任务。对后门攻击，在医疗智能体配重症监护数据集上，攻击成功率下降 97.86%；换成另一套病历数据集时恶意记忆被全部清除，攻击成功率接近零；在知识密集的问答智能体上也降到接近零。更值得注意的是良性侧：另一骨干模型下的医疗智能体，准确率从 45.83% 升到 75.00%，在第二个数据集上从 37.50% 升到 57.14%。作者给的解释是，抑制掉污染上下文之后，检索进来的记忆更干净，推理反而更顺。"
+        },
+        {
+          "t": "p",
+          "v": "对注入攻击，在两个骨干上这篇都拿到最低攻击成功率：医疗智能体从无防御时的 90.71% 与 62.50% 分别降到 1.60% 与 0.00%，同时准确率从 69.52% 升到 77.01%、从 54.17% 升到 62.50%。消融实验显示三个维度缺一不可：去掉语义连贯能量那一项，攻击成功率立刻从 2.14% 反弹到 81.82%。投毒条数从 4 条加到 64 条的扫描中，这篇的方法始终最低，而困惑度过滤与蒸馏分类器在高投毒比例下基本失效。"
+        },
+        {
+          "t": "p",
+          "v": "开销方向的结果也是反直觉的：回答同一批十个查询，这套方法用时 178.42 秒、消耗 46,484 个词元，是所有被比较方法里最低的；相比同类防御提速 2.13 倍、词元省下 37.7%。原因不难理解——它不做在线审计，探针与衰减主要发生在离线阶段。"
+        },
+        {
+          "t": "quote",
+          "v": "防御不一定非得是再加一层安检。把记忆权重从常数改成状态变量，攻防的战场就从内容过滤转移到了动力学。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是一篇尚未经过同行评议的预印本，全部结果来自作者自己的实验设定。基线是困惑度过滤、大模型审计器、蒸馏分类器与一种双库隔离方案四类，没有与更新的防御方法做横向比较。多智能体部分的结论（任务成功率 92.96%）来自单一设置下的一张表，样本细节未展开，不宜当作定论。论文使用的骨干模型名称属于作者自述配置，读者应自行核对其可用性。另外，三维激活强度里各分量的权重是直接相加的，没有做归一化，换成别的嵌入模型时需要重新校准。"
+        },
+        {
+          "t": "close",
+          "v": "最值得搬走的不是那三个激活维度的具体公式，而是那句「把权重恒等于一的假设拿掉」。任何用检索增强记忆搭出来的智能体，都默认所有记忆同等可信；一旦把信任度写成可演化的状态变量，就可以往上接各种反馈信号——任务效用、来源可信度、时间衰减。这篇给出的只是一个离线、零知识的实例，但那条路是通的。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2610.13772",
+      "doi": "",
+      "title": "把「这次实验到底跑的是什么」交给平台管：配置驱动的复现方案",
+      "title_en": "MARGoS: A Configuration-Driven Platform for Reproducible MARL Experiments in ARGoS",
+      "authors": [
+        "Tom Philipp Backert",
+        "Mohammad D. Soorati",
+        "Javad Ghofrani"
+      ],
+      "published": "2026-10-09",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.SE",
+      "url": "https://arxiv.org/abs/2610.13772v1",
+      "summary": "Multi-agent reinforcement learning (MARL) has become a prominent research direction, particularly within collective robotics, where the ARGoS simulator is widely used to study emergent swarm behavior. Yet despite this growth, systematic support for reuse and reproducibility in MARL-based swarm robotics remains limited and insufficiently standardized: a single experiment is assembled from manually aligned simulator files, training scripts, configuration values, paths, seeds, and environment details, so reuse and reproduction stay fragile even within one research group. To address this gap, we introduce MARGoS, a lightweight, configuration-driven platform developed in this project that elevates these experiment-defining inputs to first-class, platform-managed artifacts. MARGoS enables reproducible experimentation through configuration hashing, end-to-end seed propagation, frozen (immutable) configurations, structured logging, environment fingerprinting, and exportable experiment bundles that facilitate sharing, replay, and verification of results across machines and over time. A five-dimension evaluation (architecture, efficiency, reproducibility, usability, and collaboration) supports our claim that managing experiment variation as a platform responsibility makes ARGoS+MARL experiments easier to reuse, reproduce, and hand off. Our code is available at https://github.com/tombackert/margos.",
+      "summary_short": "Multi-agent reinforcement learning (MARL) has become a prominent research direction, particularly within collective robotics, where the ARGoS simulator is widely used to study emergent swarm behavior.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体",
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.13772",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "可复现性",
+        "群体机器人",
+        "配置管理",
+        "实验平台",
+        "种子传播"
+      ],
+      "glance": "不提新算法，只把场景文件、训练脚本、参数、种子、环境指纹这些会漂移的东西收编为平台托管的一等公民：二十次重跑全部逐位复现，交接耗时降六成，代价是首次运行慢百分之七",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "群体机器人里的多智能体强化学习有一个公开的秘密：一次实验其实是一堆手工对齐的东西拼起来的——仿真器场景文件、训练代码、超参数、随机种子、输出路径，还有一堆从没写下来的环境假设。任何一处悄悄漂移，实验的定义就变了，而你很可能三个月后才发现。更尴尬的是，这种漂移在同一个课题组内部都会发生。这篇论文不打算提出新算法，它要解决的就是这件事。"
+        },
+        {
+          "t": "h",
+          "v": "把变体从用户自律变成平台责任"
+        },
+        {
+          "t": "p",
+          "v": "论文的问题界定得很克制：在它调研的相邻平台里，没有一个既是该仿真器原生的、又覆盖了从配置、编排、日志、分析到导出导入的整条流水线。它的做法是把上述会漂移的输入提升为平台托管的一等工件，具体六件事：配置哈希、端到端种子传播、冻结的不可变配置、结构化日志、环境指纹、可导出的实验包。"
+        },
+        {
+          "t": "p",
+          "v": "这六件里最硬的是种子传播。多智能体训练涉及仿真器、学习框架、采样、网络初始化等多处随机源，只固定其中一处根本不足以复现；这套平台让种子从配置一路传到每一次随机调用，并在运行时做配置完整性检查。环境指纹则记录包版本等运行时信息，让「换台机器结果就不一样」变成可诊断的差值，而不是玄学。"
+        },
+        {
+          "t": "h",
+          "v": "五个维度怎么测，测出什么"
+        },
+        {
+          "t": "p",
+          "v": "评价设计是先定指标和阈值再跑，避免事后挑数。效率维度：参考任务上的完成时间从手动条件下的 87.0 秒降到平台条件下的 19.0 秒，减少 78.2%，操作步骤从 6 步降到 2 步，均超过预设的百分之五十门槛。复现性维度：二十次重跑全部与参考运行匹配，最终回报与学习曲线下面积一致，标准差为零。可用性维度：启发式合规率三十五项中三十项，约 85.7%，跨七个任务的加权操作时间减少 56.9%。"
+        },
+        {
+          "t": "p",
+          "v": "有意思的是两个不那么好看的结果。可用性那一维的收益并不均匀：执行、监控、取结果、导出、导入这五类任务减少 58% 到 88%，而编辑配置这类任务是零——因为两种条件下用户用的都是同一个编辑器改同样的参数。作者把这个零如实写成设计边界，而不是当成测量噪声糊过去。"
+        },
+        {
+          "t": "p",
+          "v": "协作维度只拿到部分支持：交接成功率两种条件都是满分，分享步数从 8 步降到 1 步，分享耗时降 65.3%，但复现耗时只降 45.9%，差在预设的百分之五十门槛之外；更关键的是首次运行反而慢了 7.4%。论文把这个代价明确归因于导入阶段的三件事：实验包解包、配置路径重写、环境指纹比对。"
+        },
+        {
+          "t": "quote",
+          "v": "凡是平台拥有任务路径的地方，可用性就改善；凡是用户仍在手改配置的地方，改善就是零。这句边界比那几个百分比更值得抄。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是一次小规模大学研究项目的成果展示，正式版收录在 2026 年一项软件复用会议卫星活动的 Springer 文集中，属于展示性质的十一页短文。作者自己把效度边界写得很清楚：单一开发者即评估者，属于自我评价；可用性那维依赖启发式审计与按键级模型，预测的是专家无误操作时间，不等于新手行为，也不等于真实用户的省时；复现性只在同硬件边界内成立，且承认存在若干包版本差异；所有结论是阈值与效应量判断，不是总体层面的推断。样本量也很小：效率对比每条件仅五次、单个专家评估者。"
+        },
+        {
+          "t": "close",
+          "v": "对做多智能体强化学习的人，这篇的迁移价值在于那套托管变体的分解方式，而不是仿真器本身。配置哈希、种子端到端传播、环境指纹、可导出实验包这四件事，几乎可以原样搬到任何「仿真器加学习框架」的组合上。它同时给了一个诚实的价格标签：可复现基础设施不是免费的，首次运行会慢几个百分点，导入校验要花时间——承认这个代价，比宣称零成本可信得多。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "10.1038/s41598-026-74771-2",
+      "doi": "10.1038/s41598-026-74771-2",
+      "title": "水下声学网络里的路由博弈：让每个中继节点自己学下一跳",
+      "title_en": "A QMIX-driven routing protocol for dynamic Underwater Acoustic Sensor Networks",
+      "authors": [
+        "Adi Surendra Mohanraju M.",
+        "Anjaneyulu Lokam",
+        "Kiran Dasari"
+      ],
+      "published": "2026-10-11",
+      "venue": "Scientific Reports",
+      "venue_raw": "Scientific Reports",
+      "impact": "other",
+      "impact_label": "其他",
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41598-026-74771-2",
+      "summary": "Abstract Reliable and energy-efficient data collection remains a fundamental challenge in Underwater Acoustic Sensor Networks (UASNs) owing to limited battery capacity, high propagation delay, dynamic network topology and unreliable communication links. To address these challenges, we propose a Cooperative Multi-Agent Reinforcement Learning (CMARL)-based data routing framework for dynamic UASNs. The routing problem is modeled as a Decentralized Partially Observable Markov Decision Process (Dec-POMDP), where each relay node acts as an autonomous routing agent using locally available information. The framework adopts a Centralized Training and Decentralized Execution (CTDE) paradigm, in which cooperative routing policies are learned using the QMIX algorithm and executed through trained local Q -networks. Each agent constructs its local observation from residual energy, relative forwarding progress towards the sink, estimated link quality and neighboring node availability, while the action space consists of cooperative next-hop selection. A UASN-oriented reward function that jointly optimizes packet delivery reliability, energy efficiency and network lifetime by encouraging reliable packet forwarding and discouraging inefficient routing decisions. Extensive simulation results show that the proposed framework consistently outperforms representative routing protocols across key metrics - packet delivery rate, end-to-end delay, and network lifetime, providing an effective, scalable and intelligent routing solution for next-generation UASNs.",
+      "summary_short": "Abstract Reliable and energy-efficient data collection remains a fundamental challenge in Underwater Acoustic Sensor Networks (UASNs) owing to limited battery capacity, high propagation delay, dynamic network topology and unreliable communication links.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://doi.org/10.1038/s41598-026-74771-2",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "水下声学传感网",
+        "QMIX",
+        "集中训练分散执行",
+        "路由协议",
+        "能耗与网络寿命"
+      ],
+      "glance": "把路由写成去中心化部分可观马尔可夫决策过程，用值分解集中训练、本地网络分散执行：每个节点只看剩余电量、转发进度、链路质量与邻居可用性，就能选出协作意义上的下一跳",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "水下传感网是路由问题里最不讲道理的一种：电池换不了，声传播延迟以秒计，拓扑随洋流变动，链路说断就断。传统协议靠预设规则挑下一跳，规则一旦与现场条件错配，数据包就沉在海里。这篇的做法是把选下一跳这件事交给每个中继节点自己学——但学习的目标不是各自最快，而是整网的投递率、能耗与寿命。"
+        },
+        {
+          "t": "h",
+          "v": "把路由改写成多智能体问题"
+        },
+        {
+          "t": "p",
+          "v": "形式化上，作者把路由建模成去中心化的部分可观马尔可夫决策过程：每个中继节点是一个自主的路由智能体，只使用本地可得的信息做决策，全局不存在调度者。这个建模恰好对应水下网络的物理约束——你没法指望一个中心节点实时掌握全网状态，因为把状态传上来本身就贵得离谱。"
+        },
+        {
+          "t": "p",
+          "v": "训练走的是集中训练、分散执行的范式，值函数分解用的是经典的单调混合方法：训练时可以利用全局信息学一个联合动作值函数，执行时每个节点只跑自己的本地网络。这个拆分有代价，但换来的是执行阶段几乎不需要额外的节点间通信，对带宽极度紧张的水下信道来说是刚需。"
+        },
+        {
+          "t": "h",
+          "v": "观测、动作与奖励怎么设计"
+        },
+        {
+          "t": "p",
+          "v": "每个智能体的局部观测由四项拼成：自身剩余电量、朝汇聚节点的相对转发进度、估计的链路质量、邻居节点的可用性。动作空间是协作式的下一跳选择。这四项的选择其实透露了设计取向——把「我还能活多久」和「这一跳离目标近了多少」放进同一个向量，等于让节点在自私与利他之间自己找平衡，而不是由协议替它规定。"
+        },
+        {
+          "t": "p",
+          "v": "奖励函数同时压三件事：提高包投递的可靠性、提高能量效率、延长网络寿命，手段是奖励可靠转发、惩罚低效的路由决策。这里要提醒一句：节点之间并没有博弈结构，它们是纯协作的，利益完全一致，奖励是共享的。把它读作博弈其实不准确，更贴切的说法是——把一个分布式约束优化问题交给了多智能体学习。"
+        },
+        {
+          "t": "h",
+          "v": "结果该怎么看"
+        },
+        {
+          "t": "p",
+          "v": "论文报告在包投递率、端到端时延、网络寿命三项指标上一致优于若干代表性路由协议，并强调方案的可扩展性。需要提醒的是，摘要层面没有给出具体数值，也没有说明比较基线到底包含哪些协议——从行文看是传统路由协议，而不是其他多智能体学习方法。这意味着「优于基线」这句话的含金量，取决于基线到底有多强。"
+        },
+        {
+          "t": "p",
+          "v": "另一个边界是全部结论来自仿真，没有真实水域部署。水下信道模型与能耗模型的假设会直接决定结论能不能落地，而这些假设的敏感性分析在公开摘要里看不到。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "论文发表在自然出版集团旗下的开放获取刊物 Scientific Reports，2026 年 10 月 11 日上线，同年 8 月 15 日收稿、9 月 30 日录用，约一个半月的审稿周期；三位作者均标注了学术身份标识，基金与利益冲突声明齐全，来源真实可核。方法结构上它是标准的教科书配方：部分可观建模、单调值分解、四项局部观测、三目标奖励，这一整套可以直接当作同类网络路由问题的模板。但绝对值不宜作为基准引用——基线口径不明、无实测、也没有与同类学习方法的横向比较。"
+        },
+        {
+          "t": "close",
+          "v": "真正可以迁移的是观测向量的构造思路：把自身资源剩余与对全局目标的边际贡献同时放进局部观测，是让分散执行去近似协作最优的低成本做法，通信、计算卸载、边缘缓存这些场景都能照抄。至于值分解方法本身，它在这里的角色是把联合信用分配做对，而不是提供策略多样性；如果你的场景里节点利益并不一致，就得换成能处理非协作结构的那一路方法。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今日新增仅 8 篇，合格并收录 4 篇，是近期偏薄的一期。被剔除的三篇有两篇属于典型误命中：一篇 Zenodo 上的「普罗米修斯计划」通篇是资助申请的愿景陈述，没有方法也没有实验；另一篇 Zenodo 上的氧化物莫尔异质结提案，讲超导中的「cooperative pairing」，被合作类关键词捞了进来。第三篇 Zenodo 的「赌场协议」数学框架，在仓储接口里引用列表与关联标识符皆为零、无代码、无评议记录，按本站对自印本的一贯判据剔除。今日无顶刊命中，最高影响力档为 CCF-A，即 Artificial Intelligence 那篇。",
+    "今天最硬的一条主线是：智能体的内在状态能不能被规范性地度量与干预。一篇在问语言模型有没有可被评价的信念强度，并给出了只用下一词元概率就能算出的信念度；另一篇在问智能体记忆里的每条记录该被信任到什么程度，并把它写成了可演化的权重。两篇看似毫无关系，做的其实是同一件事——把原本只在模型内部、无法言说的量，变成可以测量、进而可以施加约束的对象。这条线往下走，会直接通向「如何给智能体定激励」这个老问题。",
+    "安全侧的注意力正在从加一层外部审计，转向让系统自身具备恢复力。这篇记忆修复工作用扰动探针加权重衰减，替代了在线审计与双库隔离两条老路，而且在时间与词元开销上都更低。值得记录的是它的价值主张换了方向：防御不再只是把攻击成功率压下去，而是同时把良性任务准确率抬上来——「防御会损伤效用」这个默认代价，正在被当作可以打破的假设来处理。",
+    "多智能体强化学习这一侧，注意力出现了明显的后移：从算法本身移到实验基础设施。这篇配置驱动的平台用配置哈希、端到端种子传播与环境指纹，把复现性从用户自律变成平台责任，并诚实报告了首次运行变慢这个代价；同日那篇水下路由则是标准范式的工程化落地，纯协作、无博弈结构、基线口径不明。两者的共同点是都不提供新的算法贡献，一个解决「同一组人能不能复现自己」，一个解决「换个场景能不能套上去」。",
+    "最后一条是关于来源质量的。今天的合格条目里，来源最好的是一本 CCF-A 期刊，最差的是未评议预印本，但内容质量并不严格随来源单调：期刊那篇以概念分析为主、明确不回答经验问题；预印本那篇反倒给出了完整的威胁模型、消融实验与开销对比。这再次说明发表形式与内容质量之间的相关性正在变弱，只能逐篇核实，这也是本站坚持在每篇长文末尾写「怎么读这篇」的原因。"
+  ],
+  "note": "本期精读 4 篇，来自当日待精读清单（8 篇新增中剔除 3 篇，另有 1 篇未收录）。剔除的三篇：Zenodo 上的资助申请式愿景摘要（无方法、无实验）、Zenodo 上的超导异质结提案（合作配对一词误命中）、Zenodo 上引用与关联标识符皆为零的加密电力治理数学框架（无代码、无评议）。未收录的一篇为《Energy Conversion and Management: X》上的数字孪生波浪能阵列多智能体控制，与已收录的水下路由同属纯协作工程应用，且出版方页面不可直接核实全文细节，按同类取一篇代表作处理。分区分布：博弈求解与理论 1 篇、对抗安全与鲁棒 1 篇、核心算法创新 2 篇；今日无机制设计与市场、无 LLM 多智能体与社会模拟的合格条目。今日无顶刊命中，最高影响力档为 CCF-A。检索窗口：arXiv 7 天 / 期刊会议 90 天，截至 2026-10-13，命中 2391 条、去重后 1544 条、入库 60 条。四篇均已在各自的「怎么读这篇」小节交代来源与局限：Artificial Intelligence 一篇以概念分析为主、不回答经验问题；记忆修复一篇为未评议预印本、基线有限、多智能体部分仅单一设置；实验平台一篇为会议展示短文、单一评估者、样本量小；水下路由一篇基线口径不明、纯仿真无实测，绝对值不宜作基准引用。",
   "learning": {},
   "radar": [
     {
@@ -2149,5 +2566,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

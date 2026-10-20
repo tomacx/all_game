@@ -1,6 +1,13 @@
 {
   "days": [
     {
+      "date": "2026-10-20",
+      "radar_count": 60,
+      "highlight_count": 0,
+      "new_count": 12,
+      "total_hits": 2390
+    },
+    {
       "date": "2026-10-19",
       "radar_count": 60,
       "highlight_count": 0,
@@ -211,5 +218,5 @@
       "total_hits": 2347
     }
   ],
-  "updated_at": "2026-10-19T05:58:06Z"
+  "updated_at": "2026-10-20T05:51:30Z"
 }

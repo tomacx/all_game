@@ -22,9 +22,470 @@
     "new_count": 8,
     "seen_before": 1025
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "2610.28141",
+      "doi": "",
+      "title": "相关均衡并不比纳什好算：把不动点推广成不动集合",
+      "title_en": "Fixed Sets and the Hardness of Computing Correlated Equilibria",
+      "authors": [
+        "Ioannis Anagnostides",
+        "Constantinos Daskalakis",
+        "Gabriele Farina",
+        "Noah Golowich",
+        "Tuomas Sandholm",
+        "Brian Hu Zhang"
+      ],
+      "published": "2026-10-20",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2610.28141v1",
+      "summary": "We show that computing an approximate correlated equilibrium of a polytope game is PPAD-complete, and thus polynomial-time equivalent to finding a Nash equilibrium. This challenges the conventional view in game theory that correlated equilibria are more tractable objects than Nash equilibria. From a conceptual standpoint, we connect correlated equilibria to a natural generalization of fixed points, which we call fixed sets. A fixed set of a continuous function $f$ is a nonempty finite set $S$ such that $S \\subseteq \\operatorname{conv} f(S)$. Our main technical contribution is to prove that computing a fixed set is PPAD-hard even at inverse polynomial precision.",
+      "summary_short": "We show that computing an approximate correlated equilibrium of a polytope game is PPAD-complete, and thus polynomial-time equivalent to finding a Nash equilibrium. This challenges the conventional view in game theory that correlated equilibria are more tractable objects than Nash equilibria.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论",
+        "主题·纳什均衡"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.28141",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "相关均衡",
+        "PPAD",
+        "不动点",
+        "多面体博弈",
+        "查询复杂度"
+      ],
+      "glance": "多面体博弈上的近似相关均衡被证明是 PPAD-完备的，与纳什均衡多项式时间等价——相关均衡更好算这条常识被正面推翻",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "博弈论里有一条几乎被写进教科书的常识：纳什均衡难算，相关均衡好算。前者是 PPAD-完备的，后者因为能写成线性规划、存在多项式时间算法，一直被当作放松之后就可解的典范。这篇由 Daskalakis、Sandholm、Farina 等人合作的论文正面推翻了这个说法——在多面体博弈上，近似相关均衡同样是 PPAD-完备的，与找纳什均衡多项式时间等价。"
+        },
+        {
+          "t": "h",
+          "v": "从不动点到不动集合"
+        },
+        {
+          "t": "p",
+          "v": "论文的起点是一个很自然的推广。布劳威尔不动点要求 x 等于 f(x)；如果把这个条件放宽成集合里的每个点都是 f 作用在整个集合上的像的凸组合，也就是 S 包含于 conv f(S)，就得到一个新对象，作者称之为不动集合。当集合只有一个点时它退回普通不动点，当转移矩阵是确定性循环时它给出周期轨道，一般情形下它是介于两者之间的松弛。有意思的是，近似不动集合与凸期望不动点是等价的：用所有凸的一-Lipschitz 检验函数去测，期望意义下 Q(x) 减 Q(f(x)) 不超过给定的精度。这个等价性背后是 Strassen 定理的近似形式。"
+        },
+        {
+          "t": "p",
+          "v": "相关均衡为什么和不动集合扯上关系？靠一个两玩家的模仿博弈：玩家一的效用是负的 x 与 y 距离平方，玩家二的效用是负的 y 与 f(x) 距离平方。玩家一想模仿 y，玩家二想模仿 f(x)。这个博弈的任何近似相关均衡，其 x 边缘分布的支撑集就是 f 的一个不动集合，精度上差一个平方根的关系。于是算相关均衡至少和算不动集合一样难——注意这里是平方关系，要多拿一位不动集合的精度，相关均衡得精细两位。"
+        },
+        {
+          "t": "h",
+          "v": "难在哪里：多尺度加熵论证"
+        },
+        {
+          "t": "p",
+          "v": "主定理说：给定 d 维立方体上一个 Lipschitz 映射 f，即使只要求逆多项式精度、并且允许支撑集大到 d 的多项式次方，算不动集合依然是 PPAD-难的。证明的核心技巧是多尺度提升。作者构造一串按几何级数递减的尺度，把 f 的阻尼版本摞成一个高维映射，并证明：如果同一个转移矩阵在所有尺度上同时给出不动集合，那么当尺度趋于零时所有点会塌到同一个点，而按平稳分布取期望就还原出真正的不动点。要在若干尺度中找出几乎不动的那一层，用的是熵论证——把转移矩阵按几何分布混合，条件熵对混合参数单调不增，于是总能在相邻尺度之间找到熵降足够小的一层。"
+        },
+        {
+          "t": "h",
+          "v": "三条副产品"
+        },
+        {
+          "t": "p",
+          "v": "其一是精度与支撑的权衡。如果不限制支撑集大小，其实是有一个简单的全多项式近似方案的：从零点出发反复迭代 f，取前若干步的点的均匀分布即可，支撑大小与精度成反比。之所以难，恰恰是因为要求支撑集只能到 d 的多项式次方，比这个自然构造给出的支撑更小。这一点常被读漏——难度不来自精度，来自输出必须简洁。"
+        },
+        {
+          "t": "p",
+          "v": "其二是查询复杂度下界。即便允许随机算法、只要求三分之二的成功概率，要算出逆多项式精度、支撑受多项式限制的相关均衡，在最坏情形下仍需要关于维度的指数次效用查询。这已经不只是属于 PPAD 的问题，而是任何黑盒方法都躲不掉的墙。"
+        },
+        {
+          "t": "p",
+          "v": "其三是精度的代价。在多线性多面体博弈里，无条件的难度只在指数级精度下成立；若想把精度降到更自然的逆多项式量级，就要额外假设 PCP-for-PPAD 猜想成立，也就是让广义电路满足足够高比例的门这件事本身就是 PPAD-难的。这是全文唯一带条件的主要结论。"
+        },
+        {
+          "t": "quote",
+          "v": "「相关均衡比纳什均衡更好算」这句话，在一般凹博弈里从来没有被真正证明过；它被默认，是因为大家习惯用线性规划那一套去看它。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是纯理论工作，博弈论与计算复杂性分区，没有实验。结论的适用范围要留意三点：一是难度在支撑集受限的输出表示下成立，允许指数级支撑时存在简单的近似方案；二是无条件版本要求指数级精度，逆多项式精度的版本依赖 PCP-for-PPAD 猜想，这个猜想目前未被证明；三是全部是最坏情形分析，论文没有讨论平滑复杂度或平均情形，因此不能直接推出实践中的相关均衡算法都不行。另外一个容易读漏的推论：由于纳什均衡分布的凸组合本身也是相关均衡，本文结果同时意味着计算纳什均衡分布凸包中的一个点，在相同输出表示下同样是难的。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发有两条。方法层面：把不动点放宽成不动集合，再用多尺度加熵论证逼回原问题，这套手艺对任何近似不动点是否可算的问题都可能复用。判断层面：以后再听到某个均衡概念比纳什好算，先问输出表示是什么、精度按什么度量——很多可解性的直觉其实是输出格式给的，不是问题本身给的。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2610.27292",
+      "doi": "",
+      "title": "稀疏网络也能有平均场极限：让 graphexon 接替 graphon",
+      "title_en": "Graphexon Mean Field Games on Large Network Limits",
+      "authors": [
+        "Peter E. Caines",
+        "Minyi Huang"
+      ],
+      "published": "2026-10-19",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "math.OC",
+      "url": "https://arxiv.org/abs/2610.27292v1",
+      "summary": "This paper analyzes graphexon mean field games (GXMFG) on large network limits. By considering edge distributions of a sequence of finite graphs, we define the empirical graphexon measures and study their subsequential weak limits in a graphexon space consisting of all symmetric probability measures on $[0,1]^{2d}$. This concept of network limits extends graphon theory to general, not necessarily dense, networks. To formulate the game using the graphexon limit, we exploit a useful property that a probability measure on a product space is the product of a probability kernel and a marginal distribution. Based on such graph limits and the probability kernel of the associated graphexon measure, we derive the GXMFG equations, and present a detailed analysis for the linear-quadratic case. For linear-quadratic models with finite populations residing over large networks, we use the GXMFG equations to construct decentralized strategies, for which an $ε$-Nash equilibrium property is established.",
+      "summary_short": "This paper analyzes graphexon mean field games (GXMFG) on large network limits. By considering edge distributions of a sequence of finite graphs, we define the empirical graphexon measures and study their subsequential weak limits in a graphexon space consisting of all symmetric probability measures…",
+      "is_new": true,
+      "sources": [
+        "主题·纳什均衡"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.27292",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "平均场博弈",
+        "图极限",
+        "graphexon",
+        "线性二次",
+        "稀疏网络"
+      ],
+      "glance": "把网络极限从顶点对密度换成边经验测度，平均场耦合由 graphon 的函数值改成概率核，graphon 退化为零的稀疏网络第一次有了非平凡的极限博弈",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "平均场博弈要处理海量智能体，靠的是把谁和谁相连压缩成一个极限对象。过去十来年这个对象一直是 graphon，一个单位正方形上的有界对称函数。但它有个致命前提：网络必须渐近稠密。现实里的社交网络、通信网络、电网大多是稀疏的，边数只是节点数的低阶倍，此时 graphon 极限恒等于零，耦合项直接消失，平均场退化成一堆互不相干的孤立群体。Caines 与 Huang 这篇要解决的就是这个断层。"
+        },
+        {
+          "t": "h",
+          "v": "换个分母：从顶点对到边分布"
+        },
+        {
+          "t": "p",
+          "v": "关键的一步非常朴素。graphon 的经验测度是按顶点数平方归一化的，分母是所有可能的顶点对，当边数远小于顶点数平方时它自然趋零。作者改成按边数归一化：把每条无向边拆成两个有序对，定义经验 graphexon 测度为所有有序对上狄拉克测度的平均，分母是两倍边数。这样无论网络多稀疏，它始终是乘积空间上的一个合法概率测度。因为质量全在紧集里，序列必有弱收敛子列；极限支撑在单位立方体上且镜像对称，所有这类测度构成的集合就是 graphexon 空间。"
+        },
+        {
+          "t": "p",
+          "v": "光有极限测度还不够，博弈需要知道给定一个节点它的邻居怎么分布。作者用了一个测度论事实：乘积空间上的概率测度可以分解成概率核与边际的乘积。这里的核正是节点 α 的邻居分布，边际是按度数加权的顶点分布。对经验测度而言，核就是该节点邻居集上的均匀分布，而节点在边际里的权重正比于它的度数。度数高的节点权重更大，这一点和 graphon 的均匀索引很不一样。"
+        },
+        {
+          "t": "h",
+          "v": "方程长什么样"
+        },
+        {
+          "t": "p",
+          "v": "有了核，整套方程的形状和经典平均场博弈一致，仍是一对耦合的 HJB 与 Fokker-Planck-Kolmogorov 方程，只是耦合项从对 graphon 函数值加权的积分，换成对概率核加权的二重积分。换句话说，把 graphon 的密度换成概率核，就得到一般网络的版本；稠密情形下两者重合。对每个节点，系统给出一对值函数与密度，跨节点的耦合全部经由核完成。"
+        },
+        {
+          "t": "p",
+          "v": "在线性二次情形，这套方程退化成一组常微分方程：状态均值的导数里带着按核加权的邻居均值，伴随量的导数里带着同一个量，终端条件由终端代价矩阵给出。最优反馈控制仍是熟悉的形式，其中黎卡提矩阵由标准方程解出。把这个连续解取值在有限网络的节点上，就得到分散式策略——每个智能体只需要自己的状态和所在节点的伴随量，不需要全网信息。作者证明这套分散式策略构成近似纳什均衡。"
+        },
+        {
+          "t": "h",
+          "v": "稀疏网络到底差在哪"
+        },
+        {
+          "t": "p",
+          "v": "论文给了一个具体例子：若干个节点、边数约为节点数一点五次方量级的稀疏图序列，其经验 graphexon 测度弱收敛到一个联合密度与两点距离平方根成反比的极限，对应的邻居核在两侧分别呈对称的平方根倒数形状。而同一序列的 graphon 极限恒为零。同一个网络，用 graphon 看是一片空白，用 graphexon 看却有清晰的就近相连结构，这就是本文最直观的卖点。"
+        },
+        {
+          "t": "quote",
+          "v": "一个网络是稠密还是稀疏，往往取决于你用什么分母去数它的边。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是纯理论工作，最优化与控制分区，摘要页注明将发表于《系统科学与复杂性学报》，无实验、无仿真。几处需要留意：一是近似纳什均衡中的误差到底按什么速率趋于零，正文给出的是随簇内人口规模与网络逼近误差趋于零的定性陈述，没有提炼成关于节点数的显式阶；二是核的一致收敛是单独列出的假设，仅有经验 graphexon 测度弱收敛并不足以推出条件核收敛，作者在评注里专门点名了这件事；三是本文讨论的是确定性的图序列逼近，不涉及 graphexon 过程与可交换阵列那类随机采样构造。把它当成稀疏网络上的平均场建模框架来读最合适，不要指望拿到可直接落地的算法。"
+        },
+        {
+          "t": "close",
+          "v": "如果手上的问题确实是稀疏图上大规模智能体的协同控制，这篇提供了一条现成的建模路径：先按边分布取极限得到 graphexon，再分解成核与边际，最后把核塞进原本的耦合项。真正的工作量会落在第三步之后的假设检验上——核的一致收敛是否成立，得在具体网络上单独验证。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "10.1016/j.robot.2026.105797",
+      "doi": "10.1016/j.robot.2026.105797",
+      "title": "把状态—动作转移存成一张图：可变拓扑的集群多智能体强化学习",
+      "title_en": "HGRL: A heterogeneous graph-based reinforcement learning framework for robotic swarm applications",
+      "authors": [
+        "Rana Azzam",
+        "Oussama Abdul Hay",
+        "Hazem Elrefaei",
+        "Igor M. Boiko",
+        "Lakmal D. Seneviratne",
+        "Yahya Zweiri"
+      ],
+      "published": "2026-10-10",
+      "venue": "Robotics and Autonomous Systems",
+      "venue_raw": "Robotics and Autonomous Systems",
+      "impact": "other",
+      "impact_label": "其他",
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.robot.2026.105797",
+      "summary": "Graph neural networks provide a structured approach for representing entities and their relationships in multi-agent systems. In this paper, we propose a heterogeneous graph-based multi-agent reinforcement learning framework, termed HGRL, to support decision-making in robotic swarms. HGRL represents the interactions among agents and environmental entities using heterogeneous graphs. Unlike graph-based MARL methods that retain conventional transition tuples, HGRL encodes state–action transitions as variable-size heterogeneous graph objects and preserves this representation during experience replay and actor-critic optimization. This graph-based formulation allows changes in the numbers and types of agents and environmental entities without restructuring fixed-width experience entries. A graph-based multi-agent soft actor-critic agent is developed to demonstrate HGRL for UAV swarm collaborative navigation, using attention-based graph neural networks to process variable swarm topologies. Under the adopted training setting, the reward and network losses converged within a small number of episodes. Simulation experiments demonstrate successful navigation across different swarm sizes, formations, and planar goal directions. Real-world experiments further demonstrate the transferability of the high-level reference-velocity policy to homogeneous and heterogeneous UAV platforms without fine-tuning. A video of the results is available at https://youtu.be/Ch3ataf1ItQ .",
+      "summary_short": "Graph neural networks provide a structured approach for representing entities and their relationships in multi-agent systems. In this paper, we propose a heterogeneous graph-based multi-agent reinforcement learning framework, termed HGRL, to support decision-making in robotic swarms.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://doi.org/10.1016/j.robot.2026.105797",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "异构图",
+        "经验回放",
+        "集群机器人",
+        "可变拓扑",
+        "SAC"
+      ],
+      "glance": "经验回放里存的不再是定宽元组而是可变大小的异构图，集群规模与实体类型变了也不必重排网络输入或补零",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "多智能体强化学习的代码里有一处几乎没人讨论的工程债：经验回放缓冲的每一行都是定宽的。三个无人机时状态占十五个浮点、动作占十个；换成五个无人机，就得改成二十五个和二十个，网络输入层跟着改，缓冲里多出来的位置用零填。这套写法默认了智能体数量是常量，一旦要处理的集群规模可变，补零与截断就成了误差的来源。这篇的做法是干脆把转移本身存成图。"
+        },
+        {
+          "t": "h",
+          "v": "把一次转移写成一张异构图"
+        },
+        {
+          "t": "p",
+          "v": "作者构造的异构图有两种节点：无人机节点带到目标的相对位置、自身速度、上一步的参考速度；障碍物节点带位置，动态障碍还带速度。三种边各有分工：邻居边连无人机与无人机，传递相对位置与相对速度；碰撞边连无人机与障碍物，传递相对位置；动作边是一条自环，把当前状态的无人机节点与下一状态的同一节点连起来，边上带的正是这一步的参考速度。也就是说，当前状态、动作、下一状态被压进了同一个图结构里，而不是拆成三个平行的向量字段。"
+        },
+        {
+          "t": "p",
+          "v": "于是经验回放里存的不再是元组，而是可变大小的图对象——节点数随集群规模变、随障碍物数量变，从回放到 actor-critic 优化这一路都保持图表示。作者的声明很具体：就其所知，这是第一个在存入经验之前就把状态—动作转移编码为可变大小异构图对象，并在回放采样与优化全程保留该表示的离策略多智能体框架。"
+        },
+        {
+          "t": "h",
+          "v": "注意力聚合与双 critic"
+        },
+        {
+          "t": "p",
+          "v": "底层算法是多智能体 SAC，走集中训练分散执行。策略网络吃的是以自身为中心的局部观测图，只对邻居边特征和障碍物边特征分别做基于注意力的异构聚合，再与自身节点特征拼接，输出两个方向参考速度的均值与标准差。执行时每架无人机各算各的，机间不需要任何通信，图中的消息传递是网络内部的计算，不是无人机在互相发消息。价值网络吃全局图，用两个网络取最小 Q 值抑制过高估计，这是标准做法。"
+        },
+        {
+          "t": "h",
+          "v": "实验与数字"
+        },
+        {
+          "t": "p",
+          "v": "训练配置相当克制：只在三架无人机、二十个回合、每回合最多两百步上训，学习率万分之一，批量二百五十六。结果里最硬的数字是定量导航测试——三架无人机、八个目标方向、五个起止距离共一百二十条轨迹，全部进入半径零点五米的目标区域，成功一百二十分之一百二十；路径效率随距离增大而上升，二十米、二百七十度方向可达零点九九一。加入持续速度扰动（噪声水平取参考速度的百分之零、五、十、二十，时间相关系数零点九）后，四十八条轨迹同样全部到达，但指令变化明显上升：零度方向下无扰动时指令变化零点零零九九，百分之二十噪声时升到零点零二六零。规模泛化方面，四架、六架、二百架的导航，八架的方形编队，九十一架拼出字样队形都跑通了。"
+        },
+        {
+          "t": "p",
+          "v": "局部决策延迟在一台移动版处理器笔记本上实测：策略前向推理十点六零加减二点三三毫秒，局部图构建七点零二加减二点六三毫秒，合计十七点六二加减二点四四毫秒，九十五分位二十二点四七毫秒，远低于一百毫秒的控制周期。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "期刊是《机器人与自主系统》（爱思唯尔，印刷 ISSN 零九二一八八九零，卷二六零），来源可靠。但这是一篇方法框架加演示的文章，不是性能标杆，有几处必须在引用前说清。第一，训练时强制把 y 方向参考速度覆盖为零、目标点只放在正 x 方向，也就是说训练是在一个受约束的二维动作子空间里做的，后面八十七架无人机做四象限方向泛化时是去掉约束后直接测，属于零样本迁移而非训练内验证。第二，训练时障碍物没有放在通往目标的路径上，策略并没有学会避障，避障是靠外接的互易速度障碍安全层完成的，五十个碰撞风险场景里零次碰撞这个数字归属于框架加安全层的组合，不是框架单独的成绩。第三，实验的超参数规模很小：三架无人机训二十个回合，消融只在随机型 SAC、确定型 SAC、DDPG 共六个配置内比较，没有与主流图多智能体方法做数值对照，方法对比表只是属性层面的罗列。第四，实机部分用的是两类不同尺寸与推进配置的无人机平台，同一策略不做微调直接部署，结论是成功到达目标，没有给出可与仿真对照的定量表格。最后，所有百分百成功率都出现在名义配置下，属于方法可行性证据，不宜当作基准数值引用。"
+        },
+        {
+          "t": "close",
+          "v": "真正值得抄走的是那个数据结构决定：把转移存成图对象而不是定宽元组。凡是智能体数量会变、实体类型混杂的场景——仓储机器人加货架、车路协同里车与信号灯混编、编队中途有节点掉线——这个决定都能省掉整层补零与重排输入的工程债。代价是要接受图构建本身的时间开销，本文里这部分占到了总决策延迟的四成左右。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2610.27293",
+      "doi": "",
+      "title": "攻击安全多智能体强化学习：抬高安全成本，同时保住任务奖励",
+      "title_en": "Vulnerability Analysis for Safe Multi-Agent Reinforcement",
+      "authors": [
+        "Taozheng Zhu",
+        "Shixiong Jiang",
+        "Fanxin Kong"
+      ],
+      "published": "2026-10-19",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.27293v1",
+      "summary": "Safe Multi-Agent Reinforcement Learning (SMARL) aims to learn cooperative control policies under prescribed safety constraints. Al- though existing SMARL methods focus on enforcing safety during policy optimization, their vulnerability remains largely unexplored. This paper investigates inference-time observation attacks against SMARL, where an adversary perturbs the observations of a subset of agents, thereby altering the actions produced by their policies. We propose MinMax Attack, an attack framework that jointly selects adversarial target actions for compromised agents while accounting for the Cooperative Resistance of benign agents. We further derive a bound on the induced safety cost and characterize its relation- ship with the Compromised-Agent Budget and the Perturbation Budget. Experiments across multiple safety-critical multi-agent benchmarks and representative state-of-the-art SMARL algorithms show that MinMax Attack induces substantially higher safety costs than existing attack baselines while preserving task reward, thereby reducing its detectability and achieving both attack effectiveness and stealthiness.",
+      "summary_short": "Safe Multi-Agent Reinforcement Learning (SMARL) aims to learn cooperative control policies under prescribed safety constraints. Al- though existing SMARL methods focus on enforcing safety during policy optimization, their vulnerability remains largely unexplored.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.27293",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "安全MARL",
+        "观测攻击",
+        "极小极大",
+        "隐蔽性",
+        "安全成本界"
+      ],
+      "glance": "只扰动少数智能体的观测，就能在任务奖励不降反升的前提下把安全成本推高近一倍到三倍——只看奖励的监控会系统性漏检",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "安全多智能体强化学习这几年把力气都花在训练时怎么把约束压住上：拉格朗日乘子、约束策略优化、分布式安全 critic，一条条安全预算看着都守住了。可有个问题几乎没人问——如果部署之后，有人悄悄改掉其中几个智能体的观测，这些约束还守得住吗。这篇的答案是守不住，而且攻击者可以做得非常隐蔽。"
+        },
+        {
+          "t": "h",
+          "v": "攻击者要什么：抬高成本，保住奖励"
+        },
+        {
+          "t": "p",
+          "v": "威胁模型是推理期观测攻击。攻击者不改动模型参数和奖励，只在策略执行前拦截被攻陷智能体的局部观测，加上一个无穷范数不超过给定预算的扰动。被攻陷的智能体是随机挑的，免得靠挑受害者来放大效果，良性智能体的观测保持不动。攻击者的目标写成带约束的优化：最大化团队安全成本，同时要求任务奖励不低于干净策略的奖励减去容忍量，实验里容忍量直接取零。这条约束是全文最关键的设计——它意味着一次成功的攻击，在只看奖励的监控面板上应当完全不可见。"
+        },
+        {
+          "t": "h",
+          "v": "先选目标动作，再反推扰动"
+        },
+        {
+          "t": "p",
+          "v": "方法分成两阶段。第一阶段不直接做扰动，而是先问应该让被攻陷的智能体做出什么动作。这里的关键概念是作者定义的合作抵抗：剩下的良性智能体不是木头，它们会本能地调整动作去抵消安全成本的上升，这个联合响应被约束在各自动作标准差的某个倍数之内。于是目标动作由一次极小极大给出——外层最大化被攻陷智能体的联合动作，内层最小化也就是找最强的良性抵抗。用成本 critic 时是一个变体，用奖励 critic 时是另一个变体。作者指出，多个被攻陷智能体同时动作会产生超出单体效应之和的安全影响，即不可分安全耦合，所以必须联合优化而不能逐个贪心。求解用交替投影梯度，两个变体在关闭联合优化、抵抗系数取零时分别退化为已有的最大成本与最大奖励攻击。"
+        },
+        {
+          "t": "p",
+          "v": "第二阶段才落到扰动上：给定目标动作，最小化策略输出与目标动作的距离，投影到扰动预算球内迭代。整个过程是白盒的，攻击者能看到全局状态、策略与 critic，这是刻意为之，用来刻画最坏情况下的安全边界。"
+        },
+        {
+          "t": "h",
+          "v": "数字：奖励不降，成本翻倍"
+        },
+        {
+          "t": "p",
+          "v": "在安全多智能体 Isaac Gym 的机械手重定向任务、安全多智能体 MuJoCo 的猎豹 locomotion、以及 Highway-env 的十字路口三个环境上，对四种代表性受害者算法做测试。以扰动预算零点零六、攻陷三个智能体为例，相对干净基线的累积安全成本：约束策略优化类从六十六点一升到一百二十九点八，约提升百分之九十六；分布式安全 critic 类从七点二升到二十六点三，约提升百分之二百六十五；异构智能体拉格朗日类从二十六点九升到五十点一，约提升百分之八十六。拉格朗日版本的干净成本是零，被推到二十一点四，比第二好的最大成本攻击（十八点六）还高约百分之十五。与此同时任务奖励不但没降，反而常有小幅上升——一种算法下六百二十六点六对干净六百一十八点七，另一种下五百八十六点四对五百四十二点七。反观随机扰动与最大动作差异这类基线，经常直接把奖励打崩，一眼就能被看出来。"
+        },
+        {
+          "t": "p",
+          "v": "论文还给了一个有用的结构结论：单步安全成本偏差的上界与被攻陷智能体数的平方、与扰动预算的一次方成正比；回合版本在累积项里还多出一个三次方与平方的项。也就是说攻陷更多的智能体比单纯加大扰动幅度更划算，防御应该更在意有多少个节点可能被同时拿下，而不只是每个节点的传感器有多准。实验也印证了这一点：扰动预算增大并不总是单调提升攻击效果，攻陷两三个时最强攻击出现在零点零六附近。"
+        },
+        {
+          "t": "quote",
+          "v": "一次真正危险的攻击，是在任务指标上完全看不出来的那一次。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是二十来页的预印本，未经同行评议，实验全部在仿真里完成，三种环境、四种受害者算法，规模都不大。威胁模型是白盒，攻击者掌握全局状态与 critic 参数，这个假设在真实系统里未必成立，作者的定位也是刻画安全上界而非描述现实攻击。几个数字要按口径读：约束策略优化与分布式安全 critic 那两个百分比是相对各自干净成本的提升，而干净成本本身一高一低，跨算法横向比较倍率意义有限；拉格朗日版本干净成本为零，只能与攻击基线比，不能算倍率。另外扰动预算的效果非单调，说明这些数字是特定预算下的取值，不宜外推。"
+        },
+        {
+          "t": "close",
+          "v": "两条可以立刻用上的启发。第一，做安全强化学习的系统，监控面板不能只盯任务奖励——本文证明奖励正常甚至更好而安全成本悄悄翻倍是完全可能的，至少要加一条预测安全成本与实际观测成本的比对。第二，攻击者的建模方式值得反过来用在鲁棒训练上：把良性智能体的最优抵抗显式写进内层的极小极大，比随机加噪声的对抗训练更贴近真实的最坏情形。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 5,
+      "id": "2610.28397",
+      "doi": "",
+      "title": "给多智能体系统装护栏：从单个智能体的事件到系统级控制平面",
+      "title_en": "MAS-Guard: Unified Guardrails from Individual Agents to Multi-Agent LLM Systems",
+      "authors": [
+        "Mohammad Kachuee",
+        "Phu Mon Htut",
+        "Sheng Li",
+        "Nikolaos Pappas",
+        "Miguel Ballesteros Martinez",
+        "Yassine Benajiba",
+        "Sujith Ravi",
+        "Dan Roth"
+      ],
+      "published": "2026-10-20",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.CR",
+      "url": "https://arxiv.org/abs/2610.28397v1",
+      "summary": "Agentic AI extends large language models (LLMs) from generating responses to planning and executing complex workflows, substantially expanding their utility while exposing applications to unsafe actions, information leakage, and adversarial manipulation. Multi-agent systems further expand these capabilities through specialization and collaboration, but distributed authority, heterogeneous roles, and opaque or potentially compromised participants make safeguarding even more challenging. Existing defenses address important individual threats but provide fragmented coverage across local execution, system-level interactions, and enforcement mechanisms. We introduce MAS-Guard, a unified framework that closes this gap for safeguarding single- and multi-agent AI applications containing both instrumentable and opaque agents. Within instrumentable agents, the proposed local Agent Guardrail (A-Guard) layer applies task-specific experts to assess agentic events. At the system level, developer-owned Agent Charters and a Control Plane combine deterministic structural checks of routes, agent capabilities, and message formats with semantic assessments of roles and message content. These complementary layers enable enforcement through a shared set of interventions: allow, reflection, confirmation, and block. Evaluated across six benchmarks covering diverse single- and multi-agent scenarios with three agent LLMs from different providers, MAS-Guard reduces the overall attack success rate by 71.5-86.3% relative to unguarded agents, while meeting the utility reference criterion on benign tasks.",
+      "summary_short": "Agentic AI extends large language models (LLMs) from generating responses to planning and executing complex workflows, substantially expanding their utility while exposing applications to unsafe actions, information leakage, and adversarial manipulation.",
+      "is_new": true,
+      "sources": [
+        "主题·LLM多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.28397",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "护栏",
+        "智能体安全",
+        "控制平面",
+        "攻击成功率",
+        "多智能体"
+      ],
+      "glance": "局部护栏加系统级宪章与控制平面两层叠加，跨六个基准把攻击成功率相对无防护降低百分之七十一点五到八十六点三，且保住良性任务效用",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "给单个大模型加护栏，业界已经有一套做法：输入侧分类器、输出侧审核、工具调用白名单。但把场景换成多智能体系统，这套东西立刻不够用——权限分散在好几个智能体手上，角色各不相同，有的智能体还是第三方提供的黑盒，消息在它们之间传来传去，谁也没法单独判断一条消息最终会把系统带向哪里。这篇要补的就是这个缺口。"
+        },
+        {
+          "t": "h",
+          "v": "两层：局部护栏加系统级控制平面"
+        },
+        {
+          "t": "p",
+          "v": "框架分成两层。下层是局部的智能体护栏，挂在可插桩的智能体内部，用一组任务相关的专家模块去评估智能体事件——一次工具调用、一条发出的消息、一次状态变更，各自打分。上层是系统级的智能体宪章与控制平面：开发者写一份宪章声明每个智能体应该做什么、能调用什么、消息该是什么格式，控制平面据此做两类检查，一类是确定性的结构检查（路由是否合规、能力是否越权、消息格式对不对），另一类是对角色与消息内容的语义评估。两层的输出汇聚到同一组干预动作上：放行、反思、确认、阻断。这个设计的好处是，无论问题在局部执行链还是系统交互层被发现，处置口径是一致的。"
+        },
+        {
+          "t": "p",
+          "v": "值得注意的是它明确处理了不透明智能体——框架假设系统里既有可以插桩的智能体，也有拿不到内部事件流的黑盒，后者只能靠系统层控制平面来看住。这一点比多数只谈单智能体护栏的方案更贴近现实部署。"
+        },
+        {
+          "t": "h",
+          "v": "六个基准，三个模型，一个口径"
+        },
+        {
+          "t": "p",
+          "v": "评测覆盖六个基准，横跨单智能体与多智能体场景，用三家不同厂商的智能体大模型跑。主结果是：相对无防护的智能体，框架把总体攻击成功率降低百分之七十一点五到八十六点三，同时在良性任务上满足效用参考标准，也就是防护没有把正常功能一起掐死。这两个数字要一起看：只降攻击成功率不难，难的是不误伤。"
+        },
+        {
+          "t": "quote",
+          "v": "护栏的及格线不是拦住了多少攻击，而是拦住攻击的同时还剩多少功能。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是预印本，安全与密码学为主分类，未经同行评议，作者团队来自业界。几点需要在引用前说明：一是这个降幅是相对无防护基线的下降幅度，不是绝对攻击成功率，两者差别很大，不要转述成攻击成功率只剩一成多；二是满足效用参考标准这个说法在摘要里没有给出具体阈值与测量方式，良性任务上的开销与延迟代价也未量化；三是六个基准的具体构成、局部层与系统层各自的贡献拆解，都需要看正文的消融部分才能判断哪一层在起主要作用；四是方案依赖开发者手写宪章，这份声明的完备性本身就是新的攻击面，宪章没覆盖到的路径，结构检查就查不出来。"
+        },
+        {
+          "t": "close",
+          "v": "可以迁移的部分是那个两层汇聚到同一组干预动作的结构。做多智能体系统的人容易陷入一个困境：局部检测发现的问题不知道该在系统层怎么处置，系统层的规则又落不到单次调用上。把两层映射到同一组处置动作上，这个中间层的设计比任何单个检测器都值得抄。另一个提醒是：多智能体安全的难点不在某个智能体说错话，而在权限分散之后没人知道整体在做什么，所以系统层的结构检查（路由、能力、格式）可能比继续堆语义分类器更划算。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "「相关均衡比纳什均衡好算」这条默认假设今天被正面推翻：多面体博弈上的近似相关均衡是 PPAD-完备的，与纳什均衡多项式时间等价。更值得记住的是难度来自哪里——它不来自精度，而来自输出支撑集必须简洁这一表示约束；一旦放松支撑限制，反复迭代取平均就给出一个简单的近似方案。",
+    "网络极限的建模对象正在换代。graphexon 用边经验测度取代 graphon 的顶点对密度，把平均场耦合从图极限函数值改成概率核，于是那些 graphon 极限恒为零的稀疏网络第一次有了非平凡的平均场博弈。这条线和多智能体系统的现实需求是同向的：真实的交互网络大多稀疏。",
+    "安全研究的重心从训练期移到部署期。一边是只扰动少数智能体观测就能抬高安全成本的推理期攻击，一边是覆盖单个智能体到多智能体的护栏框架，两条线针对的都是模型已经上线之后的阶段，而不是训练时怎么把约束压住。",
+    "攻击者的效用函数变了：目标不再是把系统搞瘫，而是让安全成本上升的同时任务奖励不降。这意味着任何只看任务指标的监控都会系统性漏检，防御侧对应的做法是把预测安全成本与实际观测成本放在一起比对。另一个结构结论是攻陷更多节点比加大单点扰动更划算，安全预算该花在节点数量上而不是传感器精度上。",
+    "表示层的工程债开始被正面处理。把状态—动作转移存成可变大小的异构图对象，集群规模与实体类型变化就不再需要重排网络输入或补零，代价是图构建要占掉单步决策延迟的四成左右。同一天的另一面是理论端走到了 PPAD-完备性——从最抽象的复杂度分类到最具体的无人机实机部署，今天这批条目把这条光谱的两端都占上了。"
+  ],
+  "note": "本期精读 5 篇，来自当日待精读清单（8 篇新增中精选 5 篇，其余 3 篇未收录）。分区分布：博弈求解与理论 2 篇、核心算法创新 1 篇、对抗安全与鲁棒 1 篇、LLM 多智能体与社会模拟 1 篇；今日无顶刊、无 CCF-A 命中。收录条目中 4 篇为 arXiv 预印本（2610.28141 / 2610.27292 / 2610.27293 / 2610.28397），1 篇为爱思唯尔《机器人与自主系统》卷 260 的期刊文章（DOI 10.1016/j.robot.2026.105797，印刷 ISSN 0921-8890）。未收录的 3 篇：M-Plan（2610.27032，单智能体长期规划与记忆编排，无策略互动结构）、MAMath-Bench（2610.26943，多智能体数学推理基准，主线是评测集构建而非博弈结构）、干扰图辅助的低轨卫星波束跳变 MARL（2610.28248，通信类工程应用、策略互动薄弱）。五篇均已在各自的「怎么读这篇」小节交代来源与局限：相关均衡一篇为纯理论、逆多项式精度版本依赖 PCP-for-PPAD 猜想、仅做最坏情形分析；graphexon 一篇为纯理论、近似纳什均衡未给出显式收敛阶、核的一致收敛是单独假设；集群图框架一篇虽为期刊文章，但训练仅在 3 架无人机、20 个回合上进行且受轴向动作约束，避障依赖外接的互易速度障碍安全层，无同类方法的数值对照，宜作架构样例而非性能标杆引用；观测攻击一篇为预印本、白盒威胁模型、全部仿真；护栏框架一篇为预印本、降幅口径是相对基线而非绝对成功率，且效用阈值未量化。检索窗口：arXiv 7 天 / 期刊会议 90 天，截至 2026-10-21，命中 2387 条、去重后 1583 条、入库 60 条。",
   "learning": {},
   "radar": [
     {
@@ -2170,5 +2631,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

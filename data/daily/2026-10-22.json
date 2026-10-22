@@ -22,9 +22,463 @@
     "new_count": 9,
     "seen_before": 1043
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.1038/s41467-026-78717-0",
+      "doi": "10.1038/s41467-026-78717-0",
+      "title": "编队的拓扑与角色一起优化：把组合问题写成谱函数",
+      "title_en": "Tensor-space joint optimisation of topology-role configuration in multi-agent systems",
+      "authors": [
+        "Changping Yu",
+        "Jiaming Zhang",
+        "Yang Liu",
+        "Yingmin Jia"
+      ],
+      "published": "2026-10-21",
+      "venue": "Nature Communications",
+      "venue_raw": "Nature Communications",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41467-026-78717-0",
+      "summary": "",
+      "summary_short": "",
+      "is_new": true,
+      "sources": [
+        "ISSN·Nature Communications"
+      ],
+      "abs_url": "https://doi.org/10.1038/s41467-026-78717-0",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "编队控制",
+        "拓扑-角色耦合",
+        "张量收缩",
+        "拉普拉斯谱",
+        "多智能体协调"
+      ],
+      "glance": "把图结构、信道状态与角色分配编成三个张量做一次收缩，耦合度量恰好等于非平凡拉普拉斯特征值的均值——最优领导者从张量代数里自己长出来，不需要任何启发式规则",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "编队控制里有个绕不开的组合爆炸：谁跟谁连（拓扑）和谁当头（角色）是耦合在一起的。先定拓扑再挑 leader，会丢掉大部分可行解；两个一起搜，又是阶乘级的规模。北航这支团队给的办法不是把搜索加速，而是换掉搜索本身——把两个离散选择变成可求导的对象。"
+        },
+        {
+          "t": "h",
+          "v": "三个张量，一次收缩"
+        },
+        {
+          "t": "p",
+          "v": "框架用三个张量分别编码三件事：图的邻接结构、随时间变化的信道状态、以及角色分配。三者的收缩给出一个耦合度量，而这个度量恰好等于该图上非平凡拉普拉斯特征值的均值。这一点是整篇文章的支点：一个原本要枚举组合才能评估的量，被改写成了可以直接求梯度的谱函数。"
+        },
+        {
+          "t": "p",
+          "v": "于是联合优化就落到了连续目标上。作者的做法是把谱梯度流限制在一个 Tucker 压缩的子空间里，配合增量更新，并从上一次的解热启动。在温和假设下，Tucker 压缩保证多项式复杂度，梯度流的收敛性也被证明了。仿真显示，随着智能体数量增长，它的扩展性显著优于穷举组合搜索。"
+        },
+        {
+          "t": "h",
+          "v": "领导者不是被指定的，是算出来的"
+        },
+        {
+          "t": "p",
+          "v": "最耐读的一点是领导者的产生方式。传统做法要么靠启发式规则（度数最高、离目标最近、编号最小），要么由外部直接指定；在这篇里，最优 leader 直接从张量代数的结果里涌现。换句话说，角色不再是一个需要另设一套算法去挑的离散变量，而是同一个优化问题的副产品——这正是「联合」二字的实际含义。"
+        },
+        {
+          "t": "p",
+          "v": "代价也要说清楚：这是合作式编队控制的设定，全篇没有对手、没有信息不对称下的策略性欺骗，读它不要指望看到博弈结构。它的价值在别处——它示范了怎么把一个组合设计问题降级成连续优化问题。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源与可核性：Nature Communications，2026 年 10 月 21 日上线，开放获取，作者来自北京航空航天大学自动化科学与电气工程学院及杭州创新研究院等，收稿 2026-04-15、录用 2026-09-30，约五个半月的审稿周期，ORCID、基金号与利益冲突声明齐全。本次抓取到的内容以摘要与页面元数据为准，正文图表未能取得；文中关于扩展性的表述来自摘要的定性结论（随智能体数量增长显著优于穷举组合搜索），没有具体曲线数值，引用时宜按定性处理。"
+        },
+        {
+          "t": "p",
+          "v": "局限：全部结果在仿真中验证；Tucker 压缩所依赖的「温和假设」与梯度流收敛证明的具体条件要看正文才知道边界在哪里；也没有与学习型方法（例如多智能体强化学习）做数值对照——它走的是解析优化路线，不是学习路线。把它当性能标杆引用是不合适的，可复用的是建模思路。"
+        },
+        {
+          "t": "quote",
+          "v": "「把离散的组合选择变成可微的谱函数」——这是整篇最值得整段抄走的动作。"
+        },
+        {
+          "t": "close",
+          "v": "迁移价值有两条。建模层：遇到「结构加分工」这类耦合的组合设计问题，先问目标能不能写成谱函数——特征值均值、代数连通度、有效电阻都是候选，写成了就从组合优化降级成连续优化。工程层：热启动配增量更新这套写法是给在线重配置准备的，编队中途加人、减人、链路变差时不必从头解一遍。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "10.1016/j.engappai.2026.116525",
+      "doi": "10.1016/j.engappai.2026.116525",
+      "title": "雷达与干扰机的非均衡博弈：在线自博弈学互动，离线扩散修分布",
+      "title_en": "Diffusion-enhanced multi-agent reinforcement learning for adaptive interference control in bilateral cognitive radar games",
+      "authors": [
+        "Yubo Jia",
+        "Zesi Pan",
+        "Jiahao Qin",
+        "Ding Haichuan",
+        "Yan Li"
+      ],
+      "published": "2026-10-20",
+      "venue": "Engineering Applications of Artificial Intelligence",
+      "venue_raw": "Engineering Applications of Artificial Intelligence",
+      "impact": "other",
+      "impact_label": "其他",
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.engappai.2026.116525",
+      "summary": "In complex electromagnetic environments, adaptive signal-emitting systems operate under partial observability, asymmetric information, and dynamically evolving spectrum interactions, posing significant challenges to interference-aware decision-making. To address these challenges, this paper formulates the signal interaction process as a partially observable stochastic game and proposes a Bilateral Intelligent Game Policy Optimization Architecture (BIGPOA). Within this framework, a two-stage Diffusion-Enhanced Multi-Agent Proximal Policy Optimization (Diff-MAPPO) algorithm is developed. In the online stage, Multi-Agent Proximal Policy Optimization (MAPPO) with self-play training is employed to learn interactive behaviors between sensing and interference agents. In the offline stage, a diffusion model refines the learned policies through trajectory-level distribution regularization, while Double Deep Q-Network (DDQN)-guided optimization promotes high-value decision generation. Experimental results demonstrate that Diff-MAPPO achieves faster convergence, higher interference effectiveness, and improved energy efficiency compared with representative reinforcement learning baselines, while maintaining robust performance under dynamic and uncertain signal environments.",
+      "summary_short": "In complex electromagnetic environments, adaptive signal-emitting systems operate under partial observability, asymmetric information, and dynamically evolving spectrum interactions, posing significant challenges to interference-aware decision-making.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://doi.org/10.1016/j.engappai.2026.116525",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "认知雷达",
+        "智能干扰",
+        "非均衡博弈",
+        "自博弈",
+        "扩散模型"
+      ],
+      "glance": "明说这不是均衡问题：在线用自博弈 MAPPO 让双方共同演化，离线用扩散模型对轨迹分布做正则——扩散模型在这里是策略平滑器，不是世界模型",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "电磁对抗里最常见的失败模式不是策略不够聪明，而是策略不稳定：对手一直在变，奖励信号跟着漂，MAPPO 训出来的策略在震荡里来回摆。把 MAPPO 直接搬进雷达—干扰机这类场景，两个具体问题会同时冒出来——部分可观测让你推断不出对手行为，非平稳的奖励动态让策略震荡、收敛不稳。这篇给的解法很特别：它不追求均衡解，干脆承认这是非均衡问题，然后把「学互动」和「稳策略」拆成两个阶段。"
+        },
+        {
+          "t": "h",
+          "v": "先承认它不是均衡问题"
+        },
+        {
+          "t": "p",
+          "v": "作者把自适应感知系统与智能干扰源之间的信号交互建模为部分可观测随机博弈，并命名为「双边智能博弈」：双方信息不对称、都只看得到部分观测、训练期间都拿不到对手策略，两边的策略通过对抗持续共同演化。以雷达与干扰的交互为代表性例子，双方都被当作具有不对称信息的智能决策者。作者的取舍说得很直白——这套框架强调非均衡条件下的策略共同演化，而不是静态均衡解。这个表态值得单独记一笔：很多真实对抗场景里，均衡本来就不存在，或者算不出来。"
+        },
+        {
+          "t": "p",
+          "v": "相应的架构叫 BIGPOA，建模粒度落在信号参数级，而不是抽象的战术级：双方调的是什么信号参数、这些参数如何互相压制，都被写进了博弈的形式化里。框架还显式地把能量效率纳入优化目标。"
+        },
+        {
+          "t": "h",
+          "v": "在线学互动，离线修分布"
+        },
+        {
+          "t": "p",
+          "v": "第一阶段是在线的：用 MAPPO 配自博弈训练，学习感知方与干扰方之间的交互行为。第二阶段是离线的：用扩散模型对学到的策略做轨迹级分布正则，也就是把在线阶段学到的轨迹分布再做一次提纯与平滑；同时用 DDQN 引导的优化去推动高价值决策的生成。分工很清楚——在线负责探索与适应，离线负责稳定与样本效率。"
+        },
+        {
+          "t": "p",
+          "v": "论文列的四条贡献与此一一对应：非均衡的感知—干扰博弈框架、信号参数级的双边智能优化架构、扩散增强的多智能体学习算法（Diff-MAPPO）、以及在高度动态的雷达测试床上的验证。作者还单独做了计算复杂度分析来说明可扩展性。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源与可核性：爱思唯尔旗下 Engineering Applications of Artificial Intelligence，DOI 10.1016/j.engappai.2026.116525，雷达记录的可用日期为 2026-10-20。出版方页面上可核实摘要、四条亮点、关键词、引言与结论，以及作者贡献声明与利益冲突声明（无已知竞争性财务利益）。"
+        },
+        {
+          "t": "p",
+          "v": "局限要说在前：本次只取到摘要、亮点与分节文本，收敛速度、干扰效能与能量效率的具体数值、基线清单、随机种子设置都没能取得，因此这里的判断只覆盖方法结构，不覆盖数字。实验全部在一个仿真化的雷达—干扰机交互场景里完成，没有硬件在环或实测数据。文章自己把「异质感知智能与部分可观测」列为最能体现优势的条件，反过来讲，在对称性更强、观测更完整的场景里优势可能收窄。把它的绝对数值当基准引用是不合适的，可复用的是两阶段这个拆分。"
+        },
+        {
+          "t": "quote",
+          "v": "「强调动态适应而非静态均衡解」——这句话是这类对抗问题最该先想清楚的前提。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发是两阶段结构本身。凡是对抗训练出现策略震荡、样本效率塌方的场合，都可以试一试「在线自博弈学行为、离线生成模型做分布正则」。更具体一点：扩散模型在这里不是用来生成训练数据的，而是当成策略分布的平滑器在用——这个用法比把它当世界模型更省，也更容易接进已有的 MAPPO 流水线。如果你的对抗环境里对手也在学，先别急着找均衡，想想能不能把「适应」和「稳定」拆成两个目标分别优化。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2610.28787",
+      "doi": "",
+      "title": "卡特尔真的在执行吗：用反事实市场审计 LLM 定价智能体",
+      "title_en": "Is Anyone Enforcing the Cartel? What Reinforcement Learning Teaches LLM Agents in Markets",
+      "authors": [
+        "Hieu Tran",
+        "Hong Yu"
+      ],
+      "published": "2026-10-20",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.CL",
+      "url": "https://arxiv.org/abs/2610.28787v1",
+      "summary": "Evaluations of large language model (LLM) agents report that pricing agents collude at others' expense. Yet collusion is defined by enforcement: a cartel, in which competitors share monopoly profits, holds only if a member who cheats is punished. We introduce an audit that tests enforcement by forcing a member to cheat in counterfactual copies of a market, and use it to study what reinforcement learning (RL) teaches agents in pricing and trading. Small LLMs trained by RL learn what their training rivals reward, but only what they readily try. In self-play, they learn fixed rules ignoring their rivals; against a punishing rival, to be deterred; against a cheating rival, to match its cuts, never the costly price war that would deter it, which they rarely try. A war forced into training is learned, but mostly only where it was forced. Against their own copies, deterred and matching agents can earn the same cartel profits, but only matching ones can enforce them, and then thinly: as a by-product and only against large cuts. Q-learners enforce collusion only in pricing. Prompted LLMs reach cartel-like outcomes mostly through rules that ignore the market. Outcome measures cannot tell these cases apart; the audit can.",
+      "summary_short": "Evaluations of large language model (LLM) agents report that pricing agents collude at others' expense. Yet collusion is defined by enforcement: a cartel, in which competitors share monopoly profits, holds only if a member who cheats is punished.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.28787",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "隐性合谋",
+        "审计方法",
+        "反事实检验",
+        "GRPO",
+        "定价博弈"
+      ],
+      "glance": "高价格不等于卡特尔：作者克隆整个市场、强迫一名成员偏离一期，看对手是否惩罚——结果指标分不清的情形，这套审计能分清",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一批评测报告说 LLM 定价智能体会把价格抬到竞争水平之上，于是「LLM 会合谋」成了 headlines。但这篇论文指出一个被跳过的前提：卡特尔之所以是卡特尔，不在于大家都卖高价，而在于有人作弊时会被惩罚。没有执行机制的高价，只是各自碰巧采用的定价规则而已。作者给出的，是一套能把这两者区分开的审计。"
+        },
+        {
+          "t": "h",
+          "v": "把偏离实验做成配对检验"
+        },
+        {
+          "t": "p",
+          "v": "审计的核心操作是克隆。从某个保存下来的市场状态出发，复制整个市场与所有智能体——每个智能体的历史与笔记、以及接下来所有的随机抽取都一并复制；在克隆体里强迫一名成员偏离一期（定价场景是降价百分之十，交易场景是打出单期最优反应），然后两个副本继续跑下去。因为模型调用带有按会话、智能体、期设定的采样种子，两个副本在偏离改变它们所见之前会给出完全相同的回答。作者把这一步的渊源说得很清楚：这等于把 Calvano 等人 2020 年那套 Q 学习偏离实验，改造成对随机 LLM 智能体可用的配对比较，也就是共同随机数。"
+        },
+        {
+          "t": "p",
+          "v": "可复现性的诚实程度值得单独表扬：在没有偏离的 A/A 检验里，走 vLLM 服务的副本有百分之九十四到九十八的调用给出一致答案，走 OpenAI 接口的只有百分之二十三到四十五（因为那里的种子是 best-effort）。作者明确写了这会带来噪声但不会带来偏差——这种把工具链缺陷摆到台面上的写法，比只报漂亮数字可信得多。"
+        },
+        {
+          "t": "h",
+          "v": "学的是对手奖励什么，但只学它会去试的"
+        },
+        {
+          "t": "p",
+          "v": "结论分几层。用 GRPO 训练的小模型（Qwen3-0.6B）学到的东西，受限于它们本来会去尝试什么。自博弈下它们学成固定规则、完全无视对手；对上一个以牙还牙、复制它上期价格的对手，学成被威慑——价格高、不回应、偏离有利可图；对上一个作弊的对手，学成跟随降价，却从不学那个能真正威慑对方的高代价价格战，因为它们几乎不会去试。把价格战强行塞进训练是能学会的，但基本只在被强塞的那些状态里学会。"
+        },
+        {
+          "t": "p",
+          "v": "最关键的一条：把训练后的智能体和自己的副本配对，被威慑型与跟随型能赚到同样的卡特尔利润，但只有跟随型（学到了以牙还牙）能真正执行它，而且执行得很薄——它是副产品，且只对大幅降价有效：百分之十的降价在九个种子里只有四个让偏离者吃亏，换成约百分之十六的最优反应降价才升到七个。"
+        },
+        {
+          "t": "h",
+          "v": "对照表里的另外几条"
+        },
+        {
+          "t": "p",
+          "v": "表格 Q 学习者在定价博弈里的对手反应是 1.30 加减 0.11，显著高于不惩罚的基线，是可靠的惩罚者；但在交易场景里是 0.00 加减 0.00，完全不惩罚——合谋的执行只出现在定价，不出现在交易。未经训练的 LLM 达到类卡特尔结果，主要靠的是无视市场的固定规则：Qwen3-8B 的定价指数随货币单位从 13.12 变到 5.08，这是锚定而不是策略。GPT-5.2 在 Fish 等人协议下的两次类卡特尔会话经重新检验，对手反应 1.01 加减 0.11，确实在惩罚——但那两次会话是事后从八次里挑出来的，这一条要打折扣看。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源：arXiv 2610.28787，马萨诸塞大学阿默斯特分校与洛厄尔分校，45 页正文、13 幅图、20 张表，是预印本、未经同行评议。数字全部取自正文表格，可信度高，但样本规模要看清：GRPO 定价结果以种子 0 为主并标注了种子一致性（如九分之四），交易场景的智能体数量在一到五之间、市场深度在 0.25 到 4 之间扫描。作者自己列了四类安慰剂（单独交易者、只算当期的短视目标、训练时把折扣因子设为零、同一提示有对手与无对手）与两类正对照（被指示使用触发策略的模型、定价博弈里的 Q 学习者）。"
+        },
+        {
+          "t": "p",
+          "v": "另一个边界要摆明：审计能证伪但不能穷尽证明。它只能说「在这些偏离下，对手的反应显著高于不惩罚的基线」，无法排除存在别的偏离路径。作者也明说这套审计是给评测用的，不是给监管定案用的，并单列了一节讨论双重用途。此外，审计在交易场景里判出的 pruning bias（删单偏差）提示了另一种伪装：看似有反应，其实是订单被剪掉造成的假象。"
+        },
+        {
+          "t": "quote",
+          "v": "「结果指标分不清这些情形，审计能。」这是全文最锋利的一句。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发有三条。第一，评估多智能体的经济行为时不要只看结果指标，要做反事实偏离检验——而且一定要配共同随机数，否则 LLM 的采样噪声会淹没信号。第二，「学会什么」被「会去尝试什么」死死限制住：强化学习只能在策略已经探索到的区域里放大，想让智能体学到某种行为，先确认它在探索中真的出现过。第三，也是最有政策含义的一条：高价格与可执行的高价格是两件事，反垄断真正该盯的是后者。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2610.29310",
+      "doi": "",
+      "title": "广告主少或展示位少时，GSP 自动竞价均衡可以精确算出来",
+      "title_en": "GSP Autobidding Equilibria with Few Advertisers or Slots",
+      "authors": [
+        "Yiyang Huang",
+        "Zhengyang Liu",
+        "Yonglei Yan",
+        "Zihe Wang"
+      ],
+      "published": "2026-10-21",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2610.29310v1",
+      "summary": "In sponsored-shopping auctions, one advertiser may win several positions, and a product that is never displayed may determine the prices of several winners. Under generalized second-price (GSP) pricing without self-pricing, these interactions couple allocation and payment through a single global ranking. We prove that exact autobidding equilibria under budget and return-on-investment (ROI) constraints can be computed in polynomial time whenever either the number $n$ of advertisers or the number $K$ of display slots is fixed. Our algorithms rely on two structural reductions. With few advertisers, the payment polytopes of tied bid layers combine by a Minkowski sum, giving a fixed-dimensional representation of exponentially many rankings. With few slots, budget equilibria admit threshold recovery and an exact submodular description of attainable payments at the display boundary. For ROI, we prove that every group-consecutive equilibrium has a representative with at most $K+2$ nonunit multipliers, preserving the item and price in every displayed slot. In each case, the reduction leads to polynomially many systems of polynomial equations and inequalities in bounded dimension. The algorithms compute exact multipliers and explicit distributions over valid group-consecutive rankings, with support at most $n+1$; for ROI with few slots, this improves to $\\min\\{n+1,K+3\\}$.",
+      "summary_short": "In sponsored-shopping auctions, one advertiser may win several positions, and a product that is never displayed may determine the prices of several winners. Under generalized second-price (GSP) pricing without self-pricing, these interactions couple allocation and payment through a single global ran…",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.29310",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "广义第二价格",
+        "自动竞价",
+        "预算约束",
+        "投资回报约束",
+        "固定参数可解"
+      ],
+      "glance": "赞助购物拍卖的精确均衡计算被证明在固定广告主数 n 或固定展示位 K 时是多项式时间的——指数级的一族排序被两条结构性归约压成了多项式级的一族代表结果",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "赞助购物拍卖有个反直觉的结构：一个从来没有被展示的商品，可能决定了好几个展示位的价格。在广义第二价格且排除自我定价的规则下，展示中的商品支付的是「另一个广告主」的最高次位出价，而这个出价可能远远落在最后一个展示位之外。于是分配与支付被同一条全局排序绑死——这正是均衡算不出来的根源。既有结果已经把精确计算放进 FIXP、把近似计算证明成 PPAD-难，这篇问的是另一个问题：如果市场在结构上很小呢？"
+        },
+        {
+          "t": "h",
+          "v": "原则一：逐层凸化"
+        },
+        {
+          "t": "p",
+          "v": "固定广告主数 n 时，每个并列出价层里至多包含 n 个价值组。不同层之间的顺序组合起来是指数级的完整排序，但每一层贡献的支付矩阵只由它自己的顺序决定。于是所有可达的总支付矩阵构成一族局部多胞体的闵可夫斯基和；在固定维度下可以枚举它的顶点，并为每个顶点配上一个合法排序。预算情形下压缩期望支付向量，投资回报率情形下则把价值也放进局部表示并压缩期望剩余。指数级的一族排序就此塌缩成多项式级的一族代表结果。"
+        },
+        {
+          "t": "h",
+          "v": "原则二：展示边界"
+        },
+        {
+          "t": "p",
+          "v": "固定展示位 K 时会撞上另一个麻烦：阈值处可能有任意多个广告主并列，排序的选择数与支付的坐标数都不再有界。作者的做法是抓住展示与未展示的边界。对预算情形，第 K 高的出价能恢复出除至多 K 减一个阈值以上广告主之外的全部乘子；任意大的阈值并列所对应的可达支付，被刻画成一个子模基多胞体，再把这个多胞体与剩余的预算区间求交，从而消掉它的支付坐标。"
+        },
+        {
+          "t": "p",
+          "v": "对投资回报率情形则给出另一个结构性结果：任意组连续均衡都可以变换成一个至多只有 K 加 2 个非单位乘子的均衡，并且保持每个展示位上的商品与价格完全不变——两个阈值以下的定价见证，或者一个通用阈值见证，就足以保住相关的尾部信息。这种稀疏性把乘子搜索压到了有界维度。"
+        },
+        {
+          "t": "h",
+          "v": "复杂度账本"
+        },
+        {
+          "t": "p",
+          "v": "四条结果的时间复杂度与均衡分布的支撑大小分别是：固定 n 的预算与投资回报率情形都是 M 的 n 立方加 n 平方量级次方、支撑 n 加 1；固定 K 的预算情形是 M 的 K 立方量级次方、支撑 n 加 1；固定 K 的投资回报率情形是 M 的 K 平方量级次方、支撑 n 加 1 与 K 加 3 中的较小者。每个归约最终都归结为多项式多个、变量数有界、次数至多为二的系统，剩下的交给标准的精确多项式可行性判定。要注意「多项式」在这里的确切含义：指数长在 n 或 K 上，多项式是对商品总数 M 而言。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源：arXiv 2610.29310，预印本、未经同行评议，领域为计算机科学与博弈论。它引用的前置结果是一条可靠的坐标系：Dütting 等人给出了赞助购物模型下投资回报率均衡的存在性与为二的无政府价格紧界；Hansen、Li、Nie 证明了预算均衡与投资回报率均衡的存在性、多项式大小的均衡支撑、精确计算的 FIXP 成员资格，以及近似计算的 PPAD-难。这篇是在这条线上的结构性刻画，全篇不含实验。"
+        },
+        {
+          "t": "p",
+          "v": "局限：结果属于「固定参数可解」这一类，n 或 K 一大就失效，而真实的广告市场里这两个数往往都不小；论文给出的是精确的代数乘子与显式的排序分布，数值实现与工程可用性没有讨论。另外它针对的是「无自我定价」的广义第二价格规则，规则一变，支付耦合的结构就跟着变了。"
+        },
+        {
+          "t": "quote",
+          "v": "「一个从未被展示的商品，可能决定好几个赢家的价格」——这句是理解整篇文章难度的钥匙。"
+        },
+        {
+          "t": "close",
+          "v": "迁移价值在方法论。面对「组合爆炸来自排序、而排序又决定支付」这类问题，先问哪一层的局部结构允许凸化（闵可夫斯基和、子模基多胞体），再问边界上哪些坐标可以被消掉；这两步做完，剩下的常常就是一个低维可行性问题。做拍卖或匹配市场的人可以直接把「固定参数是否可解」当成一条默认追问：全量 PPAD-难不等于所有规模都难，把 n 或 K 固定下来往往能换出一整套精确算法。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 5,
+      "id": "2610.28981",
+      "doi": "",
+      "title": "同一个人设换一种写法，合作率差七十五个百分点",
+      "title_en": "The Butterfly Effect in LLM Social Simulations: From Architecture Sensitivity to Robustness Audits",
+      "authors": [
+        "Jinyi Ye",
+        "Lei Cao",
+        "Ding Chen",
+        "Emilio Ferrara"
+      ],
+      "published": "2026-10-20",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.MA",
+      "url": "https://arxiv.org/abs/2610.28981v1",
+      "summary": "A butterfly effect occurs when a local perturbation propagates through a system and produces divergence in its collective outcome. In LLM social simulations, this creates a particular challenge for scientific inference: sensitivity to implementation choices can enter agent interactions and alter the collective outcomes on which scientific claims are based. We study this problem through a repeated Prisoner's Dilemma and a social-media echo chamber, spanning representation- and design-level perturbations across four LLM families. We find that controlled perturbations can substantially alter collective outcomes, with sensitivity varying across both perturbations and models. In the Prisoner's Dilemma, changing only the representation of a matched persona shifts two-agent cooperation by 75.2 percentage points for GPT-5.2, while game framing and memory representation produce smaller or less consistent effects. Multi-agent interaction further reshapes representation sensitivity, producing amplification or attenuation depending on the model and perturbation. In the echo-chamber simulation, persona representation changes interaction targeting and is accompanied by divergence in collective interaction structure, extending representation sensitivity from agent behavior to network-level outcomes. These results show that robustness cannot be inferred from a single simulation configuration and that local sensitivity can change as it propagates through interaction. We introduce TRAILS (Taxonomy for Robustness Audits In LLM Simulations) and the Social Simulation Audit Card as a framework for systematically auditing these dependencies and calibrating the scope of scientific claims to the robustness evidence that supports them.",
+      "summary_short": "A butterfly effect occurs when a local perturbation propagates through a system and produces divergence in its collective outcome. In LLM social simulations, this creates a particular challenge for scientific inference: sensitivity to implementation choices can enter agent interactions and alter the…",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.28981",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "社会模拟",
+        "鲁棒性审计",
+        "囚徒困境",
+        "回声室",
+        "实现敏感性"
+      ],
+      "glance": "只把人设从 Plain 改成 Descriptive，十轮囚徒困境的合作率就从百分之九十八点二掉到百分之二十三；而多智能体交互会把这种局部敏感放大或衰减，方向取决于模型",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "用大语言模型做社会模拟的人越来越多，结论也下得越来越敢：不只是「可能发生什么」，而是「为什么发生、什么时候发生、下一步该怎么办」。这篇论文给这个趋势踩了一脚刹车。它只改动了同一个人设的书写方式，其余全部保持不变，十轮重复囚徒困境里的合作率就从百分之九十八点二掉到百分之二十三。七十五点二个百分点的落差不是换模型、换博弈、换参数造成的，只是把人设从 Plain 写成了 Descriptive。"
+        },
+        {
+          "t": "h",
+          "v": "敏感性的来源不是世界观，是写法"
+        },
+        {
+          "t": "p",
+          "v": "作者在两类受控模拟范式上做实验：重复囚徒困境（区分固定对手与互惠式的模型对模型交互）与社交媒体回声室，覆盖四个模型族，扰动横跨表示层与设计层。第一层结果是：人设格式在四个模型族上都产生了显著的合作率变化，但幅度差得离谱——维度内最大对比从 deepseek 的七点七个百分点，到 claude-haiku-4-5 的七十七点七个百分点。博弈框架只在一部分模型上显著，记忆表示则只有 gpt-5.2 出现了显著的最大合作率差异，六点二个百分点。也就是说，敏感性既随扰动变，也随模型变，无法从单一配置外推。"
+        },
+        {
+          "t": "p",
+          "v": "第二层更值得注意：多智能体交互会重塑这种敏感性。互惠式的模型对模型交互，在三个模型族上放大了同一个人设扰动，在第四个上却衰减了它。局部差异传到集体层面时不是简单累加——它可能被放大，也可能被吃掉。"
+        },
+        {
+          "t": "h",
+          "v": "从个体行为一路传到网络结构"
+        },
+        {
+          "t": "p",
+          "v": "回声室模拟把这条链路接到了网络级结果上：一百个智能体、十五轮、立场固定。以 gpt-5.2 为例，动作一致率高达百分之九十九点七，但选择交互对象的一致率只有百分之五十五点一——动作看起来没变，跟谁说话全变了。Prose 写法使跨群组指向增加五点一五个百分点（百分之九十五置信区间四点二二到六点零七），到第 15 轮累积的立场同配性低了零点一九四。人设表示就这样从个体行为一路传到了集体的交互结构上面。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源：arXiv 2610.28981，南加州大学，Emilio Ferrara 组，代码与数据在 GitHub 公开，是预印本、未经同行评议。统计口径交代得比较规范：三十个配对种子、百分之九十五置信区间、Holm 校正的配对 Wilcoxon 检验。四个模型族为 GPT-5.2、Claude Haiku 4.5、Gemini 2.5 Flash、DeepSeek V4 Flash。"
+        },
+        {
+          "t": "p",
+          "v": "局限要摆明：这是单一实验室、单一代码库下的结果。扰动清单虽然系统——作者把扰动分成表示层与设计层两张表，覆盖格式、分隔符、输出模式、指令顺序、角色与消息位置、命名措辞、记忆表示、上下文窗口、消息元数据、交互协议、干预设计、环境结构、种群与规模等——但不可能穷尽所有实现选择，模型族也只测了四家。另外，显著的敏感性说明的是「结论依赖于实现」，不等于「结论错了」；它给出的是证据强度的上界，不是证伪。"
+        },
+        {
+          "t": "quote",
+          "v": "「鲁棒性无法从单一模拟配置推断出来」——这句话应该印在每一篇大语言模型社会模拟论文的方法章节前面。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发是：把它提出的分层扰动清单当检查表用。它把扰动分成表示层与设计层，并按微观（模型基底、智能体设定、内部状态与时间性）、中观（交互协议、干预设计）、宏观（环境结构、种群与规模）分层。做模拟的人可以按这张表逐项跑敏感性扫描，再按作者给的社会模拟审计卡把「结论的适用范围」明写出来：哪些扰动下结论站得住（与目标情境相关的扰动只应当限定结论的表述），哪些扰动下结论塌了（与目标情境无关的扰动一旦显著，就是实现敏感的铁证）。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今天这批条目有一个共同的方法论转向：从「把结果算出来」转向「问这个结果站不站得住」。三篇各自给出了一种证伪工具——卡特尔审计用反事实克隆市场检验高价是否真的被执行，社会模拟用分层扰动清单检验结论是否只属于某一种实现，拍卖理论则用固定参数归约说明「全量难」不等于「所有规模都难」。",
+    "「看起来一样」与「真的一样」之间的裂缝正在被系统性量化。定价智能体的高价格可能是锚定规则，也可能是可执行的卡特尔，结果指标分不清而审计能分清；同一个人设的两种写法下动作一致率高达百分之九十九点七，却掩盖了交互对象一致率只有百分之五十五点一。共同结论是：只看聚合指标会系统性地误判机制。",
+    "结构上的「小」正在被当作可解性资源，而不是无奈的退让。赞助购物拍卖在广告主数或展示位固定时，精确均衡能对商品总数多项式时间算出；两条归约——逐层凸化的闵可夫斯基和、展示边界上的子模基多胞体——都是把指数级的排序族压成多项式级的代表结果。这与「一旦 PPAD-难就放弃」的默认反应形成了直接对照。",
+    "对抗场景正在主动放弃均衡假设。雷达与干扰机的交互被明确写成非均衡的部分可观测随机博弈，双方在训练中都拿不到对手策略、策略持续共同演化，优化目标从「求均衡」换成「求自适应」；配套的是在线自博弈学互动、离线扩散模型做轨迹分布正则的两阶段拆分，用生成模型当策略平滑器而非世界模型。",
+    "组合式的多智能体设计问题在换掉搜索本身。编队的拓扑与角色是一对联立的离散选择，穷举是阶乘级；把图结构、信道状态、角色分配编成三个张量并做一次收缩，耦合度量恰好等于非平凡拉普拉斯特征值的均值，最优领导者从代数里涌现而不是由启发式指定。同一天的另一面是理论端走到了固定参数可解——从最抽象的复杂度刻画到最具体的谱优化目标，今天这批条目把这条光谱的两端都占上了。"
+  ],
+  "note": "本期精读 5 篇，来自当日待精读清单（9 篇新增中精选 5 篇，其余 4 篇未收录）。分区分布：核心算法创新 1 篇、对抗安全与鲁棒 1 篇、LLM 多智能体与社会模拟 2 篇、机制设计与市场 1 篇；今日唯一顶刊命中经核实为真（Nature Communications，DOI 10.1038/s41467-026-78717-0，2026-10-21 上线、开放获取、北航团队、收稿 2026-04-15 录用 2026-09-30），无 CCF-A 命中。收录条目中 1 篇顶刊、1 篇期刊（Engineering Applications of Artificial Intelligence，DOI 10.1016/j.engappai.2026.116525）、3 篇 arXiv 预印本（2610.28787 / 2610.29310 / 2610.28981）。未收录的 4 篇：任务特性视角的 MARL 综述（10.6919/icje.202609_12(9).0024，International Core Journal of Engineering，综述类且无新方法）、JaxMARL-BC（2610.28907，宏观经济 MARL 的 JAX 加速模拟器，主线是工程加速而非策略互动）、抗干扰与导航拒止下的 UAV 集群保护模式切换（10.70286/eoss-19.10.2026.004.132-135，来源为会议文集、博弈结构薄弱）、CATS 对比式归因拓扑搜索（2610.29292，与本期已收录的多智能体条目主题重叠、规模较小）。五篇均已在各自的「怎么读这篇」小节交代来源与局限：顶刊一篇本次只取到摘要与页面元数据，扩展性为定性表述，且属合作式编队控制、不含博弈结构；期刊一篇仅取到摘要、亮点与分节文本，未取得具体数值，且全部实验在仿真测试床上完成；卡特尔审计一篇为预印本，GRPO 定价以种子 0 为主并标注九分之四的种子一致性，经 OpenAI 接口的 A/A 复现率仅百分之二十三到四十五；拍卖均衡一篇为纯理论，固定参数可解而 n 与 K 一大即失效；社会模拟一篇为预印本，单一实验室、四个模型族、三十个配对种子。检索窗口：arXiv 7 天 / 期刊会议 90 天，截至 2026-10-22，命中 2393 条、去重后 1578 条、入库 60 条。",
   "learning": {},
   "radar": [
     {
@@ -2149,5 +2603,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

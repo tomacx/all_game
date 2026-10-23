@@ -22,9 +22,453 @@
     "new_count": 15,
     "seen_before": 1066
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.1016/j.est.2026.125199",
+      "doi": "10.1016/j.est.2026.125199",
+      "title": "把网络安全缝进电价：微电网里的信任感知多智能体定价",
+      "title_en": "Secure and trust-aware pricing mechanisms for flexible energy markets in electric vehicle charging station integrated microgrids: A multi-agent reinforcement learning approach",
+      "authors": [
+        "Ali Rashid Ramul",
+        "Atefeh Salimi Shahraki",
+        "Nasseer K. Bachache",
+        "Ramtin Sadeghi"
+      ],
+      "published": "2026-10-21",
+      "venue": "Journal of Energy Storage",
+      "venue_raw": "Journal of Energy Storage",
+      "impact": "journal",
+      "impact_label": "期刊",
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.est.2026.125199",
+      "summary": "This paper introduces a novel cyber-resilient and trust-aware multi-agent learning framework designed for secure pricing and flexible energy market operation, particularly in microgrid environments with high penetration of electric vehicles (EVs) and charging stations (EVCSs). The proposed approach seamlessly integrates multiple essential components, cyberattack detection, trust evaluation, and market control, into a unified learning architecture, enabling real-time secure and efficient energy exchange despite the presence of adversarial conditions. The framework is built upon a hierarchical multi-agent reinforcement learning (MARL) structure, where decentralized EV and EVCS agents make local decisions based on partial observations, while a centralized critic coordinates network-wide interactions through graph-based aggregation. This structure ensures that agents make informed decisions about energy pricing, charging, and vehicle-to-grid interactions, while remaining resilient to cyber disturbances. The framework's performance is validated on three increasingly complex power systems, demonstrating robust resilience against common cyber threats such as false data injection, denial-of-service, and latency-based attacks. The simulation results reveal significant improvements in market stability, trust retention, and pricing efficiency, including price-volatility reductions of up to approximately 78% relative to the rule-based pricing baseline under challenging attack scenarios. This work provides a scalable and adaptable solution for the secure operation of future flexible energy markets.",
+      "summary_short": "This paper introduces a novel cyber-resilient and trust-aware multi-agent learning framework designed for secure pricing and flexible energy market operation, particularly in microgrid environments with high penetration of electric vehicles (EVs) and charging stations (EVCSs).",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://doi.org/10.1016/j.est.2026.125199",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "MARL",
+        "网络安全",
+        "能源市场",
+        "信任机制",
+        "微电网"
+      ],
+      "glance": "攻击检测与信任评分不再是市场外面的过滤器，而是直接改写奖励，价格波动最多降 78%",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一个充电桩密布的园区微电网，电价本来只该由供需决定。可一旦有人往计量数据里注入假值，或者把通信链路拖慢几秒，价格信号会先于物理系统失控。更麻烦的是传统做法把安全当成外挂：检测归检测、定价归定价，等检测器报警的时候价格早已跑飞。这篇发表在《Journal of Energy Storage》上的工作，选择把两件事缝进同一套学习架构。"
+        },
+        {
+          "t": "h",
+          "v": "四层结构：从监测到定价共用一套学习回路"
+        },
+        {
+          "t": "p",
+          "v": "作者搭的是分层多智能体强化学习框架。最底层是分布式控制，电动车与充电站各自作为智能体，只能看到局部、且可能被污染的观测，自行决定充放电、投标与车网互动；往上一层是安全定价；再往上是信任与风险评估；最顶层是网络监测。关键在于，攻击检测与信任评估不是挂在市场外面的过滤器，而是直接参与塑造奖励与市场参与规则：价格会随对手方当前的信任水平动态调整。"
+        },
+        {
+          "t": "p",
+          "v": "全局协调由一个集中式评论家完成，它通过图聚合把全网交互压进一个全局表征，网络拥塞、扰动的空间相关性、通信延迟都在其中。底层则保持各自为战的局部决策。这套集中协调加分分散执行的接法，是为了让系统在电动车数量上升时不至于塌掉，而不是只在一个固定规模上好看。"
+        },
+        {
+          "t": "h",
+          "v": "信任是怎么变成价格的"
+        },
+        {
+          "t": "p",
+          "v": "信任水平由异常分数与历史行为共同演化，并且反过来改写两样东西：市场参与规则，以及学习智能体的奖励结构。被攻陷的节点会被逐步隔离，而不是一刀切断，合法参与者的激励因此保持稳定，不会因为一次误报就直接出局。作者称这让系统在持续攻击下依然维持有界的电压偏差、平滑的价格演化和稳定的电量轨迹。"
+        },
+        {
+          "t": "p",
+          "v": "威胁模型写得比较全：虚假数据注入、拒绝服务、延迟攻击，以及这几类的组合式协同攻击。测试的三个电网复杂度递增，从 IEEE 69 节点、IEEE 123 节点，一直到带真实负荷数据的加拉加斯 141 节点配电网，最后这个是用来检验可扩展性的，而不是又一个玩具算例。"
+        },
+        {
+          "t": "h",
+          "v": "数字，以及怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "相对基于规则的定价基线，在较严苛的攻击场景下价格波动最多降低约 78%；检测延迟在数秒量级，恢复到正常状态约需数十秒。在 141 节点系统上，作者称经济效率、网络弹性与稳定裕度都优于若干学习型基线。"
+        },
+        {
+          "t": "quote",
+          "v": "把攻击检测写进奖励，而不是写进前置过滤——这是这篇最值得整段抄走的结构。"
+        },
+        {
+          "t": "p",
+          "v": "需要提醒几处口径。摘要与可获取的正文部分没有给出所用算法的正式缩写，只说是分层多智能体强化学习加集中式评论家与图聚合，相关工作里出现的 MADDPG 是被引文献而非本文方法；三个测试系统各自的电动车与充电站数量、渗透率等配置未列出；作为对比的所谓先进学习型基线也未具名。期刊确为爱思唯尔旗下《Journal of Energy Storage》（第 183 卷 A 部分，文章号 125199），但页面可见的是 2027 年 1 月的卷期日期，属在线优先。因此这篇适合当作架构样例来读，那个 78% 不宜直接拿来当基准引用。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发有两条。其一，凡是市场机制跑在不可信通信上的系统，都值得把信任做成状态变量参与策略更新，而不是做成准入开关。其二，逐步隔离而非硬性剔除，是兼顾安全与激励连续性的设计取向，对任何需要维持参与率的共享资源市场都成立。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2610.30443",
+      "doi": "",
+      "title": "用时序逻辑给多智能体分工：SpecMAGIC 的零样本任务泛化",
+      "title_en": "SpecMAGIC: Specification-Guided Multi-Task Generalization in Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Zijian Guo",
+        "İlker Işık",
+        "H. M. Sabbir Ahmad",
+        "Wenchao Li"
+      ],
+      "published": "2026-10-21",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.30443v1",
+      "summary": "Multi-task generalization is an important yet underexplored problem in multi-agent reinforcement learning (MARL). Many real-world applications require multi-agent systems to generalize across complex, temporally extended tasks with diverse inter-agent coordination requirements. We introduce a specification language that combines temporal-logic task specifications with operators for expressing such requirements. We propose SpecMAGIC, a hierarchical framework that leverages the automaton structure of task specifications for subtask decomposition. A centralized high-level planner identifies and allocates compatible subtask sequences across agents, while decentralized low-level policies execute individual subtasks. This enables zero-shot generalization to new tasks by composing reusable subtask policies according to new specifications, without retraining. We establish soundness and probabilistic completeness of the high-level planner. Experiments on multi-agent navigation tasks show that SpecMAGIC substantially outperforms existing approaches on unseen task specifications and maintains strong performance as the number of agents increases.",
+      "summary_short": "Multi-task generalization is an important yet underexplored problem in multi-agent reinforcement learning (MARL). Many real-world applications require multi-agent systems to generalize across complex, temporally extended tasks with diverse inter-agent coordination requirements.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.30443",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "MARL",
+        "时序逻辑",
+        "任务分解",
+        "零样本泛化",
+        "分层规划"
+      ],
+      "glance": "不去构造指数级膨胀的全局自动机，改为在 reach-avoid 子任务序列上采样规划",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "仓库机器人学会了送货，可用户下一次要求的顺序变了：甲必须在乙之前送到，丙需要两台机器人一起搬。任务本身没变，组合方式变了，模型却要重训。多智能体强化学习在多任务泛化上一直有个尴尬——单智能体那边已经能用时序逻辑把任务拆成子任务再重组，多智能体这边却卡在组合爆炸上。"
+        },
+        {
+          "t": "h",
+          "v": "难点：全局自动机会指数膨胀"
+        },
+        {
+          "t": "p",
+          "v": "把每个智能体的个体任务和智能体之间的协作要求拼成一份全局规格，再照单智能体的老办法做自动机分解，理论上是可行的。问题是那份全局自动机的状态数会随规格规模指数增长，再把各智能体的专属要求组合进去，联合状态空间又会再炸一次。显式构造与规划在智能体数量和规格复杂度上去之后就不可行了，这是这条路的死穴。"
+        },
+        {
+          "t": "h",
+          "v": "绕开它：直接在子任务空间里采样"
+        },
+        {
+          "t": "p",
+          "v": "SpecMAGIC 的做法是先把规格拆成 reach-avoid 子任务序列，然后直接在子任务空间上规划。作者引入了一组规格算子来表达两类协作约束，即依赖约束与计数约束，并把它们翻译成标准线性时序逻辑公式，于是个体任务与协作要求被统一进同一套规格语言。一个集中式的、基于采样的高层规划器负责识别、分配并排序各智能体彼此兼容的子任务，底层的去中心化子任务条件策略负责执行。"
+        },
+        {
+          "t": "p",
+          "v": "这个分层结构带来一个直接好处：训练时学到的子任务策略可以在测试时按新规格重新组合，不需要重训。作者证明了高层规划器的可靠性与概率完备性，方法同时覆盖有限视界与无限视界两类规格，这一点比只支持有限视界的前作进了一步。"
+        },
+        {
+          "t": "h",
+          "v": "实验上看到了什么"
+        },
+        {
+          "t": "p",
+          "v": "在多智能体导航环境里，作者用与基线 ACC-MARL 完全相同的分布内与分布外规格集合做评测。结果显示成功率高、违规率低、满足规格所需步数更少，且优势在所有被测规格上保持一致。这里要说明一处口径差异：基线只支持个体任务规格，并假设能拿到各智能体的真实状态，而本文的智能体只能通过激光雷达拿到部分观测，难度并不对等。"
+        },
+        {
+          "t": "p",
+          "v": "规模性方面，规格复杂度用全局规格对应自动机的状态数来衡量，而这个自动机只作参照，规划器本身并不需要它。智能体数取 3、5、10 时，自动机规模迅速膨胀，到 10 个智能体已经无法构造，而采样规划器探索出的树规模与采样轮次只是温和上升。用 3 个智能体训练的策略拿到 10 个智能体上评估且不重训时，性能会明显下滑，原因是环境更拥挤、观测分布漂移、安全约束更难满足；固定评估规模时，用更多智能体训练出来的策略反而更好。"
+        },
+        {
+          "t": "quote",
+          "v": "先证明全局自动机不可行，再改成在子任务空间采样——这条路径可以平移到任何多智能体加复杂任务约束的场景。"
+        },
+        {
+          "t": "p",
+          "v": "这篇是预印本，代码已在作者实验室的公开仓库里放出。实验域是导航环境而不是真实机器人平台；无限视界那部分因为基线不支持，只报了自身结果放在附录，属于留待将来比较的参考值，不是与基线的对照结论。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的一点很具体：当你手上的多智能体任务带有顺序、先后、数量这类结构化约束时，先别急着加网络容量或扩大训练分布，先看看约束能不能写成规格语言。把组合泛化交给规划器、把执行交给策略，往往比让端到端网络自己悟出组合规律更划算。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2610.31002",
+      "doi": "",
+      "title": "任务该派给谁：多智能体契约设计的简洁刻画",
+      "title_en": "Matching Tasks to Agents: Mechanism Design for Multi-Agent Contracts",
+      "authors": [
+        "Matteo Bollini",
+        "Matteo Castiglioni",
+        "Alberto Marchesi"
+      ],
+      "published": "2026-10-22",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2610.31002v1",
+      "summary": "We study task assignment under adverse selection and moral hazard. In the single-task setting, agents privately know their types, which determine their success probabilities and effort costs. Based on the agents' reported types, the principal selects an agent to perform the task and offers a success-contingent payment. Although optimal Bayesian contract design is generally computationally intractable and Myerson's characterization does not directly extend to settings with hidden actions and multidimensional private information, we show that the single-task problem admits a simple Myerson-style characterization. Our key insight is that incentive constraints depend only on the ratio between effort cost and success probability. We characterize an optimal mechanism and show that it can be computed in polynomial time. We also establish a tight $Θ(1/(NK))$ worst-case bound on the ratio between the optimal profit and the full-information benchmark, where $N$ is the number of agents and $K$ is the number of types per agent. We then extend our analysis to multiple tasks, showing that an optimal mechanism may not exist. Nevertheless, for a constant number of agents, we provide a polynomial-time approximation scheme for the supremum profit.",
+      "summary_short": "We study task assignment under adverse selection and moral hazard. In the single-task setting, agents privately know their types, which determine their success probabilities and effort costs.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.31002",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "机制设计",
+        "契约理论",
+        "逆向选择",
+        "道德风险",
+        "近似算法"
+      ],
+      "glance": "成本与成功率的比值把二维私有信息压成一维，单任务契约因此重获单调性刻画",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一家公司要把项目外包，来竞标的承包商各有各的本事和成本，而且这两样只有他们自己知道；中标之后出不出力，公司又看不见。这就是契约理论里最经典的两难，逆向选择与道德风险同时存在。再多添一层——有好几件事要分派，每个人最多接一件——分配与激励就耦合在一起，问题陡然变难。"
+        },
+        {
+          "t": "h",
+          "v": "一个比值消掉一维私有信息"
+        },
+        {
+          "t": "p",
+          "v": "作者的入口观察很干净。单个任务下，每个智能体的类型同时决定成功概率与努力成本，是二维私有信息，通常难办。但从激励的角度看，这两者可以被一个量概括：成本与成功概率的比值，作者称之为临界值，也就是让努力刚好满足个体理性的那笔成功报酬。把激励相容约束改写成临界值的语言之后，问题露出了与采购拍卖相近的结构。"
+        },
+        {
+          "t": "h",
+          "v": "从单调性到铁化的虚拟效用"
+        },
+        {
+          "t": "p",
+          "v": "顺着这条线索，作者证明了任何激励相容机制的事中分配概率都关于临界值单调不增，反过来单调性也足以支撑一个激励相容的支付规则。这里的难点在于智能体拿到契约之后才决定是否努力，给激励相容约束引入了非线性。作者证明在不损失利润的前提下，付给中标者的成功报酬可以只依赖他自己的报告，约束因此被大幅简化。"
+        },
+        {
+          "t": "p",
+          "v": "委托人的目标却还得单独依赖成功概率。于是作者把概率吸收进虚拟效用，把期望利润写成期望虚拟剩余，再沿用迈尔森的铁化方法，得到一个确定性的最优分配规则：把任务交给铁化虚拟效用最大的那个智能体，按固定规则打破平局，若没有正值者就不分配。整个机制可以在不枚举联合类型组合的前提下多项式时间算出。有意思的是，同一套分配还能用占优策略激励相容的方式实现且期望利润相同，也就是说在单任务设定里，随机分配和较弱的贝叶斯报告要求都没有带来额外利润。"
+        },
+        {
+          "t": "h",
+          "v": "两个边界：损失多少，以及多任务为何做不动"
+        },
+        {
+          "t": "p",
+          "v": "除了设计最优机制，作者还问信息私有到底损失多少。以看得见类型但仍需激励努力的全知基准作为对照，N 个智能体、每人 K 种类型时，最优激励相容利润与该基准之比有 Θ(1/(NK)) 的紧界，而且这个最坏情形保证是最优的。值得注意的是，达到这个保证的机制极其简单：事先选定一个智能体和一笔成功报酬，只要该智能体报告的临界值不超过这笔报酬就把任务派给他。"
+        },
+        {
+          "t": "p",
+          "v": "多任务情形急转直下。每个类型现在对应一组任务专属的临界值，不同任务会给出不同的排序，单任务那一套标量排序不再成立。作者先给出一个反例：两个智能体、两个任务、每人两种类型的实例上，利润最大化的机制根本不存在。机制可以通过让某些分配越来越罕见、同时抬高其对应报酬来不断逼近一个上确界，而这个上确界没有任何可行机制能够达到。"
+        },
+        {
+          "t": "quote",
+          "v": "先证明最优解不存在，再转而去逼近上确界——这是面对病态机制设计问题时的一条诚实退路。"
+        },
+        {
+          "t": "p",
+          "v": "退而求其次，作者在智能体数为常数的前提下给出线性规划方法：对任意给定的 ε，都能在多项式时间内算出一个贝叶斯激励相容且个体理性的机制，利润至少是上确界的 (1-ε) 倍，复杂度对输入规模与 log(1/ε) 都是多项式的。这里的主要技术障碍，是要先给所用报酬建立一个上界，因为报酬通常会随着 ε 变小而发散。"
+        },
+        {
+          "t": "close",
+          "v": "这篇给做多智能体任务分派的人留了一条实操线索：当私有信息看起来维度很高时，先检查它是否只通过某个比值进入激励约束。一旦能压成一维，迈尔森那一整套工具就能重新启用，不必退回一般性的黑箱优化。而多任务那半边的最优机制不存在，则提醒我们别默认所有机制设计问题都有干净解。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2610.30999",
+      "doi": "",
+      "title": "少展示几次，换来真话：生成式答案里的广告稀释机制",
+      "title_en": "Truthful by Omission: Click Thinning for LLM-Native Advertising",
+      "authors": [
+        "Junhua Liu",
+        "Zhicheng Liang",
+        "Zejun Zhang",
+        "Langzhou He",
+        "Feng Qian"
+      ],
+      "published": "2026-10-22",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2610.30999v1",
+      "summary": "Generative AI assistants are becoming an advertising medium, embedding sponsored content in their answers. This setting departs from classical position auctions in two ways: an ad's click-through rate depends on the passage that hosts it, and because users stop at their first click, earlier ads take clicks from later ones. This competition for clicks makes truthfulness delicate: a higher bid can reshape the allocation and put a competitor ahead of the bidder, reducing the bidder's clicks. Existing mechanisms either attain a constant fraction of the optimal welfare (advertisers' total click value) but are not known to be truthful, or are truthful but their welfare guarantee degrades as the number of passages grows. We achieve both even when the answer and its editorial order are fixed before bidding. Assuming each ad's click-through rate when reached is known and unaffected by omitting other ads, we give a computationally efficient mechanism that is truthful in expectation and attains at least half the optimal welfare under free reordering. Our key idea, click thinning, omits ads at random, showing earlier ads less often so that each ad's overall click probability no longer depends on the order of the ads. Welfare maximization then reduces to a tractable matching problem, and solving it exactly with VCG-style payments makes truthful bidding optimal in expectation. Characterizing the click probabilities that omission can achieve sharpens the approximation factor from $2$ to $2-(1-δ)^{K-1}$ when at most $K$ ads are shown and each click-through rate is at most $δ$. This factor is the best possible for any order-preserving rule, even one that ignores incentives and computation, so truthfulness and computational efficiency incur no additional worst-case loss.",
+      "summary_short": "Generative AI assistants are becoming an advertising medium, embedding sponsored content in their answers. This setting departs from classical position auctions in two ways: an ad's click-through rate depends on the passage that hosts it, and because users stop at their first click, earlier ads take…",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.30999",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "拍卖机制",
+        "生成式广告",
+        "真实机制",
+        "级联模型",
+        "匹配"
+      ],
+      "glance": "随机省略曝光让点击概率与排序解耦，福利最大化随之退化为可解的匹配问题",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "你问助手比较几双跑鞋，回答里有一段产品对比、一段配送说明，每段都能插广告。跑鞋品牌的广告放在对比段显然更合适，于是平台要决定谁出现在哪一段。更要命的是读者从上往下扫、点第一个就停，排在前面的广告会把后面所有广告的点击都吃掉。这个结构让诚实报价突然变得很难。"
+        },
+        {
+          "t": "h",
+          "v": "为什么排序会毁掉真实性"
+        },
+        {
+          "t": "p",
+          "v": "在经典位置拍卖里，出价更高不会让广告位往下掉，单调性天然成立。可在这里，点击率还依赖承载它的段落，而且一条广告的总体点击概率取决于排在它前面的有哪些广告。提高出价可能重塑整个匹配，把一个竞争对手推到自己前面，反而减少自己的点击。也就是说，真实性要求的是点击服务量上的单调性，而不只是被展示概率上的单调性。既有方案要么能拿到最优福利的常数倍但不知是否真实，要么真实但福利保证随段落数增长而退化。"
+        },
+        {
+          "t": "h",
+          "v": "核心手法：随机省略"
+        },
+        {
+          "t": "p",
+          "v": "作者的招数叫点击稀释：以一定概率随机省略已入选的广告，越靠前的越常被省略，直到每条广告的总体点击概率不再依赖它在答案中的顺序。顺序一旦被消掉，福利最大化就退化成一个可处理的匹配问题，再用类 VCG 的支付精确求解，真实报价在期望意义上就成为最优策略。整套机制计算高效，而且允许答案正文与编辑顺序在竞价之前就固定下来，这一点对生成式产品很关键。"
+        },
+        {
+          "t": "p",
+          "v": "进一步刻画省略能够实现哪些点击概率，可以把近似因子从 2 收紧到 2-(1-δ)^{K-1}，其中最多展示 K 条广告、每条被触达时的点击率不超过 δ。作者证明这个因子对任何保序规则都是最优的，哪怕那个规则完全不考虑激励与计算约束。换句话说，真实性与计算效率在这里没有付出额外的最大损失。"
+        },
+        {
+          "t": "h",
+          "v": "合成实验的三组对照"
+        },
+        {
+          "t": "p",
+          "v": "实验枚举了 144 个四广告主、四上下文的实例，覆盖可分离、完全上下文与瓶颈三种结构，广告位上限取 1、2、4，点击率上限取 0.1 与 0.8，每种组合重复八次。以自由排序最优为基准，固定顺序最优与它的比值在 0.970 到 0.992 之间，而本文机制与固定顺序最优的比值在 0.908 到 0.970 之间。也就是说样本里的平均损失主要来自机制自身的取值范围限制，而不是来自编辑顺序。单个实例最差时，机制只拿到自由排序最优的约 0.64。机制在两种点击率水平下平均分别省略掉 3.8% 与 12.8% 的已选广告。"
+        },
+        {
+          "t": "p",
+          "v": "与既有单调分桶分配的对比更能看出取舍。在点击率上限 0.1 时，已发表的分桶方案平均福利只有自由排序最优的 0.247，剔除空桶后升到 0.988，本文机制为 0.931；点击率上限 0.8 时三者分别为 0.403、0.441 与 0.916。分桶方案允许重排而本文机制保序，却在高点击率区间是前两者的两倍以上。计算开销上，12 个上下文、上限 4 时，精确动态规划的中位分配与支付耗时是 747 与 2831 毫秒，本文机制是 24 与 112 毫秒。"
+        },
+        {
+          "t": "quote",
+          "v": "用随机性换单调性——当外部性来自顺序时，主动打散顺序本身就是一种机制设计工具。"
+        },
+        {
+          "t": "p",
+          "v": "这篇是预印本，评测全部在合成实例上完成，没有真实广告日志。机制依赖一条明确假设：广告被触达时的点击率已知，且不因省略其他广告而改变，附录里给了对标定误差的稳健性检查。文中也坦承，未稀释的原始匹配平均福利更高，但它的实际点击服务量未必对出价单调，这正是宁可牺牲一点福利也要稀释的原因。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发是：当外部性来自位置而不是内容时，别急着优化排序，先问一句能不能用随机化把位置效应抹平。抹平之后，很多看似无从下手的分配问题会退化为标准匹配或指派问题，真实性也跟着回到可证明的轨道上。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 5,
+      "id": "2610.30769",
+      "doi": "",
+      "title": "大模型也会踩踏：复刻 Music Lab 看多智能体级联",
+      "title_en": "LLM Multi-Agent Systems Are Vulnerable to Herding and Runaway Cascades",
+      "authors": [
+        "Farnoosh Hashemi",
+        "Shiyu Ji",
+        "Joice Chen",
+        "Michael W. Macy"
+      ],
+      "published": "2026-10-22",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.30769v1",
+      "summary": "Large language models (LLMs) increasingly operate in multi-agent systems where they collaborate by responding to others' choices, creating endogenous feedback loops with vulnerability to social influence, herding behavior and runaway cascades. Following the design of the classic Music Lab experiment, we tested this vulnerability in large populations of LLM agents that recommended unfamiliar songs, with or without exposure to cumulative recommendation counts. Exposure led to runaway cascades that generated extreme and unpredictable collective recommendations increasingly divergent from a song's intrinsic appeal. Compared to humans, LLM populations were generally far more susceptible to herding behavior, and unlike humans, LLM cascades were less able to self-correct. This vulnerability has implications for multi-agent collaboration in recommender systems, automated evaluation, complex problem-solving, and unauthorized conspiracies.",
+      "summary_short": "Large language models (LLMs) increasingly operate in multi-agent systems where they collaborate by responding to others' choices, creating endogenous feedback loops with vulnerability to social influence, herding behavior and runaway cascades.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体",
+        "主题·LLM多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.30769",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "LLM 多智能体",
+        "信息级联",
+        "社会模拟",
+        "羊群效应",
+        "自纠正"
+      ],
+      "glance": "13 个模型、16.8 万个智能体重做 Music Lab，模型的级联比人类更猛且几乎不会自纠",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "2006 年的 Music Lab 实验是信息级联研究的分水岭：同样的 48 首陌生歌曲，在给别人看下载量的世界里，最初的偶然领先会被自我强化，把一首先天并不出众的歌推成文化赢家。二十年过去，一个模型的输出成为另一个模型的输入，这种反馈结构正被大规模搬进大模型多智能体系统。这篇论文把当年的实验原样搬进模型群体，问的是同一件事：它们会不会踩踏，能不能自纠。"
+        },
+        {
+          "t": "h",
+          "v": "实验设计：平行世界"
+        },
+        {
+          "t": "p",
+          "v": "作者用音乐生成工具新做了 48 首歌，只给标题和歌词、不给音频，这样训练曝光和既有流行度就无法把外部信号带进实验。每个智能体被赋予一个由人口属性与偏好曲风组合出的人格，先选四首来评估，读完歌词后逐首决定推荐与否。每个模型造了 17 个世界：1 个独立世界含 1440 个智能体，弱影响与强影响各 8 个世界、各含 720 个智能体，合计每模型 12960 个，13 个模型共 168480 个智能体。"
+        },
+        {
+          "t": "p",
+          "v": "独立世界里既不给计数也不给排序；弱影响世界显示累计推荐数但标题顺序随机；强影响世界显示计数并按推荐数降序排列。所有世界都从零计数起步，互不知情，也不互发消息，早期选择只能通过累计计数、以及在强影响下额外通过排序传递。这样得到的社交信号是内生的，而不是外部注入的多数派意见，这一点把这篇和常见的从众实验区分开来。"
+        },
+        {
+          "t": "h",
+          "v": "三个层次的结论"
+        },
+        {
+          "t": "p",
+          "v": "第一层是偏离幅度。以相对熵衡量影响世界相对独立世界的分布偏移，弱影响下模型群体的平均偏离约为人类基准的九倍，强影响下约为四倍；非推理模型的偏离分别是推理模型的 2.4 倍与 3.2 倍。除一个例外，强影响让平均偏离上升约 65%，13 个模型里有 12 个上升。"
+        },
+        {
+          "t": "p",
+          "v": "第二层是分化与不可预测。以基尼系数看市场份额集中度，独立条件下模型群体平均为 0.446，弱影响与强影响下升到 0.706 与 0.794，增量分别是 0.260 与 0.348；人类基准的对应增量是 0.153 与 0.311。平行世界之间的不可预测度在独立条件下对每个模型都接近零，一旦引入社交影响就全面上升。模型越聪明越抗揍：以综合智能指数衡量，相对熵的斯皮尔曼相关系数在强、弱影响下分别是 -0.851 与 -0.551，相对不可预测度是 -0.733 与 -0.719。"
+        },
+        {
+          "t": "p",
+          "v": "第三层也是最扎眼的一层：人类的级联会自纠，模型的级联不太会。沿用对原始 Music Lab 数据的同一诊断，也就是比较实验前后半段流行度与内在吸引力的斯皮尔曼相关，人类在 16 个影响世界里有 15 个出现回升，弱影响下从 0.633 升到 0.773，强影响下从 0.575 升到 0.660。而模型群体的变化方向在模型与世界之间摇摆，强影响下的平均值接近零。"
+        },
+        {
+          "t": "quote",
+          "v": "人类级联会向内在价值回归，模型级联在观测窗口内没有表现出可靠的回归——这是把模型群体当社会模拟器用时最该记住的一条。"
+        },
+        {
+          "t": "p",
+          "v": "口径上要提醒几点。刺激是歌词而非音频，任务是推荐而非原实验的下载，选择预算固定为四首，呈现方式是列表而非网格，这些都与原始实验不同，因此人类结果只是定性参照而非严格对照。作者也明确说，结果并不能证明在更长的序列上永远不会发生纠正。"
+        },
+        {
+          "t": "close",
+          "v": "对做多智能体系统的人来说，这篇的警示很直接：只要系统里存在别人的输出成为你的输入这样的闭环，就必须单独测集体动力学，而不能只测单个模型的准确率。可行的缓解方向也写在结论里，要么提高个体模型能力，要么在反馈链路上做干预，否则推荐系统、自动评审、群体求解都可能被早期噪声锁定。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今天 15 篇新增里没有顶刊、也没有 CCF-A 合格命中，唯一站得住的期刊档来自爱思唯尔的《Journal of Energy Storage》，它把攻击检测与信任评分直接写进奖励，让安全不再是市场外面的外挂过滤器。",
+    "机制设计是今天最厚的一条线，当日新增里它占了三席——契约理论、生成式广告拍卖、组合拍卖——共同主题是把最优性换成可计算性：单任务契约靠一个临界值比值重获单调性刻画，多任务则坦承最优机制不存在、转而逼近上确界。",
+    "大模型多智能体的研究重心正从能不能协作转向协作会不会失控，复刻 Music Lab 的这篇用相对熵、基尼系数、自纠正三个指标把级联变成可测量对象，结论是模型的级联比人类更猛且几乎不会回归内在价值。",
+    "MARL 侧的主线是用结构化先验替代端到端硬训：时序逻辑规格被拆成子任务序列后交给采样规划器，组合泛化由规划器负责、执行交给策略，从而绕开全局自动机的指数膨胀。",
+    "安全与机制正在合流。微电网定价那一篇把信任做成随异常分数演化的状态变量，直接改写参与规则与奖励；广告拍卖那一篇则用随机省略把外部性抹平。两者都是把原本外生的约束内生化到机制里。"
+  ],
+  "note": "本期从 2026-10-23 的 15 篇新增中精读 5 篇。检索窗口：arXiv 7 天 / 期刊会议 90 天（截至 2026-10-23）。当日无顶刊与 CCF-A 合格命中。剔除情况：3 篇 Zenodo 同模板稿件（接口返回的引用与关联标识均为 0，且共用同一套方差结构参数，属批量自印本）；2 篇期刊档（第 1 卷第 4 期的单作者综述、7 页课程项目式稿件）；2 篇综述（无新方法）；2 篇工程应用（博弈结构薄弱）。",
   "learning": {},
   "radar": [
     {
@@ -2160,5 +2604,6 @@
         "Crossref:Applied and Computational Engineering"
       ]
     }
-  ]
+  ],
+  "curated": true
 }

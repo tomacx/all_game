@@ -2,27 +2,6 @@
   "runs": [
     {
       "date": "2026-09-21",
-      "at": "2026-09-21T06:18:31Z",
-      "ok": true,
-      "total_raw": 2145,
-      "unique": 1242,
-      "kept": 60,
-      "new_count": 48,
-      "by_source": {
-        "arXiv": 124,
-        "OpenAlex": 534,
-        "Crossref": 711
-      },
-      "by_impact": {
-        "顶刊": 18,
-        "期刊": 9,
-        "CCF-A": 2,
-        "其他": 15,
-        "预印本": 16
-      }
-    },
-    {
-      "date": "2026-09-21",
       "at": "2026-09-21T06:21:19Z",
       "ok": true,
       "total_raw": 2347,
@@ -840,6 +819,27 @@
         "arXiv": 178,
         "OpenAlex": 781,
         "Crossref": 712
+      },
+      "by_impact": {
+        "顶刊": 13,
+        "期刊": 9,
+        "CCF-A": 15,
+        "预印本": 15,
+        "其他": 8
+      }
+    },
+    {
+      "date": "2026-10-24",
+      "at": "2026-10-24T05:37:56Z",
+      "ok": true,
+      "total_raw": 2397,
+      "unique": 1554,
+      "kept": 60,
+      "new_count": 1,
+      "by_source": {
+        "arXiv": 140,
+        "OpenAlex": 782,
+        "Crossref": 715
       },
       "by_impact": {
         "顶刊": 13,

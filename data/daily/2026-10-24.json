@@ -1,0 +1,2162 @@
+{
+  "date": "2026-10-24",
+  "generated_at": "2026-10-24T05:37:10Z",
+  "source": {
+    "window": "arXiv 2026-10-17 ~ 2026-10-24 ／ 期刊会议 2026-07-26 ~ 2026-10-24",
+    "arxiv_days": 7,
+    "venue_days": 90,
+    "total_raw": 2397,
+    "unique": 1554,
+    "by_source": {
+      "arXiv": 140,
+      "OpenAlex": 782,
+      "Crossref": 715
+    },
+    "by_impact": {
+      "顶刊": 13,
+      "期刊": 9,
+      "CCF-A": 15,
+      "预印本": 15,
+      "其他": 8
+    },
+    "new_count": 1,
+    "seen_before": 1105
+  },
+  "highlights": [],
+  "trends": [],
+  "note": "",
+  "learning": {},
+  "radar": [
+    {
+      "id": "10.1126/science.aeg6779",
+      "doi": "10.1126/science.aeg6779",
+      "is_new": false,
+      "title": "The Virtual Biotech: A multi-agent AI framework for therapeutic discovery and development",
+      "authors": [
+        "Harrison G. Zhang",
+        "Peter Eckmann",
+        "Jiacheng Miao",
+        "Andrew B. Mahon",
+        "James Zou"
+      ],
+      "published": "2026-10-22",
+      "venue": "Science",
+      "venue_raw": "Science",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 130,
+      "primary_category": "",
+      "url": "https://doi.org/10.1126/science.aeg6779",
+      "summary": "Drug development requires evidence integration across biological scales and modalities, but relevant tools are fragmented. We introduce the Virtual Biotech, an organization of artificial intelligence (AI) agents modeled on a drug-development company, with agentic divisions spanning target discovery, safety assessment, modality selection, and clinical development. We demonstrate its utility at three drug-development decision points. First, more than 37,000 agents annotated outcomes from 55,984 trials and found that drugs targeting cell type–specific genes were 48% more likely to reach market with 32% fewer adverse events. Second, it integrated multimodal evidence to propose a therapeutic strategy in lung cancer. Third, it analyzed a terminated ulcerative colitis trial and inferred potential mechanisms of failure. These results demonstrate that human-guided multi-agent systems can conduct transparent, multiscale analyses to inform therapeutic-development decisions.",
+      "summary_short": "Drug development requires evidence integration across biological scales and modalities, but relevant tools are fragmented. We introduce the Virtual Biotech, an organization of artificial intelligence (AI) agents modeled on a drug-development company, with agentic divisions spanning target discovery,…",
+      "tags": [
+        "LLM-Agent",
+        "AI安全"
+      ],
+      "section": "LLM 多智能体与社会模拟",
+      "score": 12,
+      "rank": 220,
+      "sources": [
+        "ISSN·Science"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1038/s41467-026-78717-0",
+      "doi": "10.1038/s41467-026-78717-0",
+      "is_new": false,
+      "title": "Tensor-space joint optimisation of topology-role configuration in multi-agent systems",
+      "authors": [
+        "Changping Yu",
+        "Jiaming Zhang",
+        "Yang Liu",
+        "Yingmin Jia"
+      ],
+      "published": "2026-10-21",
+      "venue": "Nature Communications",
+      "venue_raw": "Nature Communications",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 115,
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41467-026-78717-0",
+      "summary": "",
+      "summary_short": "",
+      "tags": [
+        "LLM-Agent"
+      ],
+      "section": "LLM 多智能体与社会模拟",
+      "score": 10,
+      "rank": 202,
+      "sources": [
+        "ISSN·Nature Communications"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1038/s42256-026-01311-y",
+      "doi": "10.1038/s42256-026-01311-y",
+      "is_new": false,
+      "title": "Reusability report: multi-sample omics network inference operates in distinct robustness regimes defined by prior knowledge and data availability",
+      "authors": [
+        "Xabier Martínez-de-Morentin",
+        "Sumeer A. Khan",
+        "Itziar Cenzano",
+        "Robert Lehmann",
+        "Alberto Maillo",
+        "Vincenzo Lagani",
+        "Jesper Tegner",
+        "David Gomez-Cabrero"
+      ],
+      "published": "2026-10-19",
+      "venue": "Nature Machine Intelligence",
+      "venue_raw": "Nature Machine Intelligence",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 120,
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s42256-026-01311-y",
+      "summary": "Abstract Knowledge-constrained network inference enables the reconstruction of regulatory programmes from high-dimensional biological data, yet the conditions under which shared and context-specific structures can be reliably identified remain poorly understood. Pablo Rodriguez-Mier et al. recently introduced CORNETO, a framework for multi-sample constrained inference. Here we reproduce, evaluate and extend CORNETO in terms of robustness, identifiability and bias–variance trade-offs. Using dynamic haematopoiesis and stable cortical datasets, we systematically assess four network reconstruction paradigms while preserving the original method-specific evaluation procedures and benchmark definitions. We show that multi-sample inference generally improves robustness and reproducibility, although gains in predictive performance depend on biological context and the completeness of the prior network. To enhance stability, we introduce bootstrap aggregation and selective re-expansion strategies that improve consensus robustness and recovery while preserving context-specific signals without modifying the underlying optimization scheme or sacrificing generality. Across datasets and methods, our results reveal distinct inference regimes governed by sample availability, prior knowledge and regularization. Together, these findings position network reconstruction as a regime-dependent learning problem and provide practical principles for robust multi-sample biological network inference.",
+      "summary_short": "Abstract Knowledge-constrained network inference enables the reconstruction of regulatory programmes from high-dimensional biological data, yet the conditions under which shared and context-specific structures can be reliably identified remain poorly understood. Pablo Rodriguez-Mier et al.",
+      "tags": [
+        "对抗安全"
+      ],
+      "section": "对抗、安全与鲁棒",
+      "score": 6,
+      "rank": 181,
+      "sources": [
+        "ISSN·Nature Machine Intelligence"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1126/science.ael7880",
+      "doi": "10.1126/science.ael7880",
+      "is_new": false,
+      "title": "Shifting the equilibrium on lupin alkaloids",
+      "authors": [
+        "Zhouqian Jiang",
+        "Benjamin R. Lichman"
+      ],
+      "published": "2026-10-08",
+      "venue": "Science",
+      "venue_raw": "Science",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 130,
+      "primary_category": "",
+      "url": "https://doi.org/10.1126/science.ael7880",
+      "summary": "A biosynthesis breakthrough promises applications in food and chemistry",
+      "summary_short": "A biosynthesis breakthrough promises applications in food and chemistry",
+      "tags": [],
+      "section": "其他交叉方向",
+      "score": 0,
+      "rank": 174,
+      "sources": [
+        "ISSN·Science"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.68104/ijasit.v1.i4.44",
+      "doi": "10.68104/ijasit.v1.i4.44",
+      "is_new": false,
+      "title": "Cyber Defence, Agentic AI, and the Sociotechnical Paradigm: A Survey of AI-Driven Cybersecurity",
+      "authors": [
+        "Rupsingh Puransingh Mathwale"
+      ],
+      "published": "2026-10-22",
+      "venue": "International Journal of Applied Smart Interdisciplinary Technologies",
+      "venue_raw": "International Journal of Applied Smart Interdisciplinary Technologies",
+      "provider": "OpenAlex",
+      "kind": "期刊",
+      "impact": "journal",
+      "impact_label": "期刊",
+      "impact_weight": 55,
+      "primary_category": "",
+      "url": "https://doi.org/10.68104/ijasit.v1.i4.44",
+      "summary": "Artificial Intelligence (AI) and Large Language Models (LLMs) are reshaping cybersecurity, moving it from signature-based reactive security to agentic, self-evolving, and proactive operations. However, the fast deployment of autonomous agents entails significant security issues, physical-layer attacks in cyber-physical systems, alignment problems, and advanced social engineering risks jeopardizing the stability of the modern sociotechnical infrastructures. This survey paper, which summarizes and analyses the literature, examines the duality of AI in cybersecurity, exploring its implications for strengthening digital defences and increasing the threat landscape for adversaries. We perform a thorough review of 36 cutting-edge research articles, which are organized into six important areas: self-evolving defensive paradigms, LLM-based intelligent agents, reinforcement learning for autonomous decision-making, security of cyber-physical systems, human-machine co-teaming, and agent alignment. Our synthesis shows that multi-agent collaborations greatly shorten incident response times and automate discovery of vulnerabilities but are also highly vulnerable to prompt injection, training data poisoning, and physical-layer spoofing. Moreover, we identify a shift from model patches to model alignment and constitutional safety at runtime as a prerequisite for securing these systems. We believe that resilient digital defence must also be considered a sociotechnical problem, as there must be agents, autonomous systems, that are governed by other agents, aligned and constitutionally bound, and are able to collaborate, rather than operate completely separately, with human operators.",
+      "summary_short": "Artificial Intelligence (AI) and Large Language Models (LLMs) are reshaping cybersecurity, moving it from signature-based reactive security to agentic, self-evolving, and proactive operations.",
+      "tags": [
+        "对抗安全",
+        "LLM-Agent",
+        "AI安全",
+        "安全博弈"
+      ],
+      "section": "LLM 多智能体与社会模拟",
+      "score": 41,
+      "rank": 174,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": [
+        "OpenAlex:International Journal of Applied Smart Interdisciplinary Technologies"
+      ]
+    },
+    {
+      "id": "10.1038/s41467-026-78725-0",
+      "doi": "10.1038/s41467-026-78725-0",
+      "is_new": false,
+      "title": "dITP shifts the assembly equilibrium of Kongming to activate NAD+ hydrolysis",
+      "authors": [
+        "Chen Wang",
+        "Jewel E. Voyer",
+        "Chengzhi Yu",
+        "Kenneth C. Sajbel",
+        "Kechen Lu",
+        "Lee Wang",
+        "Miao Shi",
+        "Jiaxi Yang",
+        "Jing Li",
+        "Shiyu Xia",
+        "Tian-Min Fu"
+      ],
+      "published": "2026-10-19",
+      "venue": "Nature Communications",
+      "venue_raw": "Nature Communications",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 115,
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41467-026-78725-0",
+      "summary": "Abstract The Kongming (Kom) system, consisting of KomA, KomB, and KomC, protects bacteria from phage infection. KomA collaborates with a phage enzyme to generate deoxyinosine 5′-triphosphate (dITP), which activates the KomBC complex to hydrolyze NAD⁺ and trigger cell death. Recent studies propose that dITP activates KomBC through a simple conformational change. Our findings instead reveal a more dynamic mechanism. Without dITP, KomBC complexes exist in equilibrium between tightly packed oligomers and loosely packed filaments, both inactive. Tight packing accumulates unfavorable electrostatic interactions without positioning catalytic residues for NAD⁺ hydrolysis, whereas loose packing relieves these interactions but leaves catalytic residues misaligned. dITP binding at KomB stabilizes tightly packed KomC cores in the filament while aligning catalytic residues. Therefore, a small-molecule signal activates signaling by shifting the assembly equilibrium of higher-order protein complexes toward a catalytically competent state.",
+      "summary_short": "Abstract The Kongming (Kom) system, consisting of KomA, KomB, and KomC, protects bacteria from phage infection. KomA collaborates with a phage enzyme to generate deoxyinosine 5′-triphosphate (dITP), which activates the KomBC complex to hydrolyze NAD⁺ and trigger cell death.",
+      "tags": [],
+      "section": "其他交叉方向",
+      "score": 0,
+      "rank": 170,
+      "sources": [
+        "ISSN·Nature Communications"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1016/j.est.2026.125199",
+      "doi": "10.1016/j.est.2026.125199",
+      "is_new": false,
+      "title": "Secure and trust-aware pricing mechanisms for flexible energy markets in electric vehicle charging station integrated microgrids: A multi-agent reinforcement learning approach",
+      "authors": [
+        "Ali Rashid Ramul",
+        "Atefeh Salimi Shahraki",
+        "Nasseer K. Bachache",
+        "Ramtin Sadeghi"
+      ],
+      "published": "2026-10-21",
+      "venue": "Journal of Energy Storage",
+      "venue_raw": "Journal of Energy Storage",
+      "provider": "OpenAlex",
+      "kind": "期刊",
+      "impact": "journal",
+      "impact_label": "期刊",
+      "impact_weight": 55,
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.est.2026.125199",
+      "summary": "This paper introduces a novel cyber-resilient and trust-aware multi-agent learning framework designed for secure pricing and flexible energy market operation, particularly in microgrid environments with high penetration of electric vehicles (EVs) and charging stations (EVCSs). The proposed approach seamlessly integrates multiple essential components, cyberattack detection, trust evaluation, and market control, into a unified learning architecture, enabling real-time secure and efficient energy exchange despite the presence of adversarial conditions. The framework is built upon a hierarchical multi-agent reinforcement learning (MARL) structure, where decentralized EV and EVCS agents make local decisions based on partial observations, while a centralized critic coordinates network-wide interactions through graph-based aggregation. This structure ensures that agents make informed decisions about energy pricing, charging, and vehicle-to-grid interactions, while remaining resilient to cyber disturbances. The framework's performance is validated on three increasingly complex power systems, demonstrating robust resilience against common cyber threats such as false data injection, denial-of-service, and latency-based attacks. The simulation results reveal significant improvements in market stability, trust retention, and pricing efficiency, including price-volatility reductions of up to approximately 78% relative to the rule-based pricing baseline under challenging attack scenarios. This work provides a scalable and adaptable solution for the secure operation of future flexible energy markets.",
+      "summary_short": "This paper introduces a novel cyber-resilient and trust-aware multi-agent learning framework designed for secure pricing and flexible energy market operation, particularly in microgrid environments with high penetration of electric vehicles (EVs) and charging stations (EVCSs).",
+      "tags": [
+        "MARL",
+        "对抗安全"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 37,
+      "rank": 169,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1287/moor.2024.0740",
+      "doi": "10.1287/moor.2024.0740",
+      "is_new": false,
+      "title": "Multiagent Assortment Optimization in Sequential Matching Markets",
+      "authors": [
+        "Alfredo Torrico",
+        "Margarida Carvalho",
+        "Andrea Lodi"
+      ],
+      "published": "2026-10-15",
+      "venue": "Mathematics of Operations Research",
+      "venue_raw": "Mathematics of Operations Research",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 92,
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/moor.2024.0740",
+      "summary": "Motivated by the challenges faced by choice-based matching platforms, in this work, we study a generalization of the two-sided assortment optimization model. Specifically, this model consists of two sides (e.g., customers and suppliers) who have preferences over the opposite side in the form of discrete choice models. A matching is realized through a two-step process where the platform’s decision is to initially present to each agent on one side an assortment of users of the opposite side. The ultimate goal of the platform is to maximize the total expected revenue collected from the matching. Because of the computational complexity of this problem, we focus on the design of approximation algorithms with constant-factor guarantees for the constrained version of the problem under general choice preferences. First, to the best of our knowledge, we are the first to draw connections with the literature of submodular optimization and show that one-sided choice-oblivious approaches perform arbitrarily badly. Second, we show that, for the general setting, there exists a two-sided choice-aware randomized algorithm that achieves a [Formula: see text]-approximation factor, which is the best possible. Third, we design an algorithm that is asymptotically optimal when one side follows the well-known multinomial logit (MNL) choice model under the small probability regime. Fourth, we provide a simple and effective algorithm with a [Formula: see text]-approximation guarantee for the unconstrained setting, with both sides following MNL models. Finally, we assess the performance of our proposed methods with a detailed computational study and discuss several extensions. Funding: M. Carvalho thanks the support of the Institut de valorisation des données (IVADO) and Fonds de recherche du Québec (FRQ) through the FRQ-IVADO Research Chair and of the Natural Sciences and Engineering Research Council of Canada (NSERC) [Grant 2019-04557]. Supplemental Material: The online appendix is available at https://doi.org/10.1287/moor.2024.0740 .",
+      "summary_short": "Motivated by the challenges faced by choice-based matching platforms, in this work, we study a generalization of the two-sided assortment optimization model. Specifically, this model consists of two sides (e.g., customers and suppliers) who have preferences over the opposite side in the form of disc…",
+      "tags": [
+        "MARL",
+        "机制设计"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 24,
+      "rank": 167,
+      "sources": [
+        "ISSN-L·Mathematics of Operations Research"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1073/pnas.2537780123",
+      "doi": "10.1073/pnas.2537780123",
+      "is_new": false,
+      "title": "Multi-AI agent framework reveals the “oxide gatekeeper” in aluminum nanoparticle oxidation",
+      "authors": [
+        "Yiming Lu",
+        "Tingyu Lu",
+        "Di Zhang",
+        "Lili Ye",
+        "Hao Li"
+      ],
+      "published": "2026-10-15",
+      "venue": "PNAS",
+      "venue_raw": "Proceedings of the National Academy of Sciences",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 105,
+      "primary_category": "",
+      "url": "https://doi.org/10.1073/pnas.2537780123",
+      "summary": "Aluminum nanoparticles (ANPs) are among the most energy-dense solid fuels, yet the atomic mechanisms governing their transition from passivated particles to highly reactive states remain elusive. This stems from a fundamental computational bottleneck: Ab initio methods offer quantum-level fidelity but are restricted to small spatiotemporal scales (&lt;500 atoms, picoseconds), while empirical force fields lack the reactive fidelity required for complex combustion environments. Here, we bridge this gap by employing a human-audited, multiagent framework to make the development and validation of a task-specific machine learning potential (MLP) more traceable and auditable. The workflow coordinates active learning, model evaluation, validation evidence, and human expert review, while leaving scientific interpretation and model-use decisions under researcher control. This collaborative cycle ensures quantum mechanical accuracy while exhibiting near-linear scalability. Strikingly, our simulations reveal a temperature-regulated dual-mode oxidation mechanism: At moderate temperatures, the oxide shell acts as a dynamic “gatekeeper,” regulating oxidation through a “breathing mode” of transient nanochannels; above a critical threshold, a “rupture mode” leads to shell failure and rapid combustion. Importantly, we resolve a decades-old controversy by demonstrating that aluminum cation outward diffusion, rather than oxygen transport, dominates mass transfer in studied regimes, with diffusion coefficients consistently exceeding those of oxygen by 2 to 3 orders of magnitude. These results provide an atomistic framework for interpreting ANP reactivity and illustrate how human-audited agentic workflows can make domain-specific reactive MLP development and deployment more reproducible.",
+      "summary_short": "Aluminum nanoparticles (ANPs) are among the most energy-dense solid fuels, yet the atomic mechanisms governing their transition from passivated particles to highly reactive states remain elusive.",
+      "tags": [
+        "MARL",
+        "LLM-Agent"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 11,
+      "rank": 167,
+      "sources": [
+        "ISSN·PNAS"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1038/s41467-026-77744-1",
+      "doi": "10.1038/s41467-026-77744-1",
+      "is_new": false,
+      "title": "Reframing decentralized diagnostics with a programmable multi-dimensional microfluidic system",
+      "authors": [
+        "Tao Xu",
+        "Ying Zhang",
+        "Xin Tang",
+        "Hongguo Wei",
+        "Lingyan Kang",
+        "Qize Zhou",
+        "Shunji Li",
+        "Xudong Zhao",
+        "Jiashuo Li",
+        "Zimeng Zhang",
+        "Chao Wan",
+        "Yufei Zhang"
+      ],
+      "published": "2026-10-05",
+      "venue": "Nature Communications",
+      "venue_raw": "Nature Communications",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 115,
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41467-026-77744-1",
+      "summary": "",
+      "summary_short": "",
+      "tags": [
+        "MARL"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 10,
+      "rank": 166,
+      "sources": [
+        "ISSN·Nature Communications"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.22214/ijraset.2026.84965",
+      "doi": "10.22214/ijraset.2026.84965",
+      "is_new": false,
+      "title": "AI Digital Twin for Cloud Cyber Security",
+      "authors": [
+        "Umesh Samarth",
+        "Himanshu Dipak Khade",
+        "Aniruddha Baban Shendre",
+        "Mayur Vijay Sawarbandhe",
+        "Aniket Mahadev Bendarkar"
+      ],
+      "published": "2026-10-22",
+      "venue": "International Journal for Research in Applied Science and Engineering Technology",
+      "venue_raw": "International Journal for Research in Applied Science and Engineering Technology",
+      "provider": "OpenAlex",
+      "kind": "期刊",
+      "impact": "journal",
+      "impact_label": "期刊",
+      "impact_weight": 55,
+      "primary_category": "",
+      "url": "https://doi.org/10.22214/ijraset.2026.84965",
+      "summary": "The key advantage of cloud computing is scalability and flexibility of infrastructure, however, the growing complexity of cloud environments has led to numerous security issues. Current security systems are largely reactive, which means that any detected attacks have already taken place. This paper suggests the use of the AI-based Digital Twin technology for cybersecurity in cloud environments, providing the possibility of creating a virtual copy of the cloud environment that can be used for continuous monitoring, attack simulation, and security testing. The proposed framework uses AI/ML algorithms for anomaly detection, attacks' classification, and risk assessment in conjunction with Multi-Agent Reinforcement Learning (MARL) in order to achieve collaboration and adaptability of security response. The system includes cloud resource monitoring, attacks simulation, security logging, alert generation, access control by roles, and security analysis dashboard. The development of the system takes place using MERN stack architecture with Digital Twin synchronization of virtual cloud resources and their metrics. With the combination of Digital Twin technology, AI-based threat detection and multi-agent decision making, the proposed framework can provide enhanced proactivity,adaptiveness, and real-time performance of cybersecurity in cloud environments.",
+      "summary_short": "The key advantage of cloud computing is scalability and flexibility of infrastructure, however, the growing complexity of cloud environments has led to numerous security issues. Current security systems are largely reactive, which means that any detected attacks have already taken place.",
+      "tags": [
+        "MARL",
+        "安全博弈"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 33,
+      "rank": 166,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1007/s10462-026-11711-6",
+      "doi": "10.1007/s10462-026-11711-6",
+      "is_new": false,
+      "title": "Toward unified intelligence in renewable-dominant power systems: a survey of hybrid forecasting, explainable AI, and multi-agent optimization",
+      "authors": [
+        "Tariq Ali",
+        "Muzna Sarwar",
+        "Husam S. Samkari",
+        "Farrukh Jamal",
+        "Mohammad Hijji",
+        "Muhammad Ayaz",
+        "Mohammed F. Allehyani",
+        "Muhammad Irfan",
+        "El-Hadi M. Aggoune"
+      ],
+      "published": "2026-10-21",
+      "venue": "Artificial Intelligence Review",
+      "venue_raw": "Artificial Intelligence Review",
+      "provider": "OpenAlex",
+      "kind": "期刊",
+      "impact": "journal",
+      "impact_label": "期刊",
+      "impact_weight": 55,
+      "primary_category": "",
+      "url": "https://doi.org/10.1007/s10462-026-11711-6",
+      "summary": "The transition toward renewable-dominant power systems has introduced significant operational challenges due to increased uncertainty, reduced system inertia, and the proliferation of distributed energy resources. While artificial intelligence (AI) techniques have been widely adopted for renewable energy forecasting and grid optimization, existing studies primarily address these components in isolation, leading to fragmented system-level intelligence. This paper presents a comprehensive survey that systematically integrates three critical dimensions of modern intelligent energy systems: hybrid forecasting, explainable artificial intelligence (XAI), and multi-agent optimization. First, we review advanced hybrid learning architectures, including decomposition-based models, ensemble frameworks, and deep learning-metaheuristic hybrids, highlighting their effectiveness in capturing nonlinear and stochastic renewable dynamics. Second, we examine XAI techniques that enhance transparency, interpretability, and trust in AI-driven energy systems. Third, we analyze the evolution from centralized optimization to distributed collective intelligence using multi-agent reinforcement learning (MARL), swarm intelligence, and federated learning paradigms. Unlike conventional surveys, this work provides a unified system-level perspective by explicitly linking predictive uncertainty with decentralized decision-making and explainability mechanisms. A conceptual integration framework is presented to demonstrate how probabilistic forecasting, risk-aware MARL policies, and interpretable models can jointly enable robust and scalable grid operation. Furthermore, we identify key research challenges related to scalability, computational efficiency, uncertainty propagation, and real-time deployment. This survey offers a structured reference for researchers and practitioners and outlines future directions toward trustworthy, adaptive, and cooperative AI-driven energy systems.",
+      "summary_short": "The transition toward renewable-dominant power systems has introduced significant operational challenges due to increased uncertainty, reduced system inertia, and the proliferation of distributed energy resources.",
+      "tags": [
+        "MARL",
+        "群体智能"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 31,
+      "rank": 163,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1038/s41467-026-77235-3",
+      "doi": "10.1038/s41467-026-77235-3",
+      "is_new": false,
+      "title": "Preserved higher-order mentalising during strategic interactions after medial prefrontal cortex damage",
+      "authors": [
+        "Yi-Chen Hsieh",
+        "Arkady Konovalov",
+        "Zhi-Lin Su",
+        "Todd A. Vogel",
+        "Sanjay G. Manohar",
+        "Matthew A. J. Apps",
+        "Masud Husain",
+        "Christian C. Ruff",
+        "Patricia L. Lockwood"
+      ],
+      "published": "2026-10-10",
+      "venue": "Nature Communications",
+      "venue_raw": "Nature Communications",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 115,
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41467-026-77235-3",
+      "summary": "Abstract Mentalising, the ability to infer the beliefs and intentions of others, is essential for successful social interaction. Previous studies have implicated the medial prefrontal cortex in mentalising, but whether this region is necessary for higher-order mentalising remains unclear. Here we show that people with focal damage to the medial prefrontal cortex retain the ability to engage in higher-order mentalising during a strategic social game. We compare their performance with patients with brain damage in other regions and lesion-free participants. Individuals with medial prefrontal cortex damage achieve similar rewards and use comparable mentalising strategies, but they are slower when making strategic decisions. Computational modelling indicates that this slowing reflects a greater tendency to require evidence before committing to a choice. Voxel-based lesion-symptom mapping identifies medial prefrontal regions linked to altered decision processes rather than mentalising. These findings suggest that the medial prefrontal cortex supports strategic decisions while higher-order mentalising remains intact.",
+      "summary_short": "Abstract Mentalising, the ability to infer the beliefs and intentions of others, is essential for successful social interaction. Previous studies have implicated the medial prefrontal cortex in mentalising, but whether this region is necessary for higher-order mentalising remains unclear.",
+      "tags": [],
+      "section": "其他交叉方向",
+      "score": 0,
+      "rank": 161,
+      "sources": [
+        "ISSN·Nature Communications"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1038/s41467-026-78213-5",
+      "doi": "10.1038/s41467-026-78213-5",
+      "is_new": false,
+      "title": "Game theory driven multi-agent framework mitigates language model hallucination",
+      "authors": [
+        "Runzhe Liu",
+        "Biquan Bie",
+        "Zihao Wang",
+        "Yuchao Ma",
+        "Yexin Liu",
+        "Xinghai Li",
+        "Harry Yang",
+        "Wenbo Yang",
+        "Jinzhe Cao",
+        "Shengyang Tao"
+      ],
+      "published": "2026-10-07",
+      "venue": "Nature Communications",
+      "venue_raw": "Nature Communications",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 115,
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41467-026-78213-5",
+      "summary": "",
+      "summary_short": "",
+      "tags": [],
+      "section": "其他交叉方向",
+      "score": 0,
+      "rank": 158,
+      "sources": [
+        "ISSN·Nature Communications"
+      ],
+      "alt": [
+        "Crossref:Nature Communications"
+      ]
+    },
+    {
+      "id": "10.5281/zenodo.23553538",
+      "doi": "10.5281/zenodo.23553538",
+      "is_new": false,
+      "title": "Autonomous AI-Driven Security Operations Centers (Autonomous SOC): Agentic Orchestration, Real-Time Incident Response, and Multi-Agent Defensive Playbooks",
+      "authors": [
+        "Rohit Choudhary",
+        "Sunil Kaswa",
+        "Vishal Shrivastava",
+        "Akhil Pandey",
+        "Er. Santosh Kumar"
+      ],
+      "published": "2026-10-22",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "provider": "OpenAlex",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.23553538",
+      "summary": "Abstract—Contemporary enterprise Security Operations Centers (SOCs) are on the brink of systemic collapse driven by three converging factors: exponential alert fatigue (>25,000 uninvestigated alerts daily per enterprise), acute global cybersecurity workforce shortages, and the emergence of automated, machine-speed cyber threats executing multi-stage Advanced Persistent Threats (APTs) in sub-minute time horizons. Traditional Security Orchestration, Automation, and Response (SOAR) platforms rely on brittle, rigid, hard-coded linear playbooks that fail when adversaries deviate slightly from known MITRE ATT&CK patterns. The paradigm of the Autonomous AI-Driven SOC (Autonomous SOC) establishes a transformative architecture that replaces rigid rule engines with specialized collaborative Multi-Agent Systems (MAS) powered by fine-tuned Large Language Models (LLMs) and Graph Neural Networks (GNNs). In an Autonomous SOC, decentralized cognitive agents autonomously triage alerts, execute deep forensic graph correlation, synthesize non-linear incident playbooks, isolate compromised endpoints via zero-trust API invocations, and conduct automated counter-adversarial negotiations. However, deploying autonomous agentic execution in mission-critical defensive infrastructure exposes severe risks: catastrophic hallucination loops during remediation, prompt injection propagation across defensive pipelines, decision deadlock, and unauthorized disruption of legitimate enterprise operations. This paper presents an exhaustive, mathematically formal technical investigation and empirical benchmark of Autonomous SOC architectures. We formalize incident response as a decentralized Partially Observable Markov Decision Process (Dec-POMDP) under dynamic threat uncertainty, model consensus verification over cryptographic remediation DAGs, and establish a dual-tier human-on-the-loop (HOTL) safety gating mechanism. Furthermore, we construct an enterprise SOC evaluation testbed spanning 10,000 multi-stage attack scenarios across real-world enterprise topologies. Our empirical findings demonstrate that our multi-agent autonomous framework slashes Mean Time to Detect (MTTD) from 18.4 minutes to 4.2 seconds and Mean Time to Remediate (MTTR) from 42.6 minutes to 18.2 seconds (a 99.3% reduction) while preserving a 99.6% remediation accuracy against MITRE ATT&CK kill chains. Finally, we formulate open challenges in adversarial prompt-injection resilience, continuous defensive co-evolution, and liability attribution under international cyber law.",
+      "summary_short": "Abstract—Contemporary enterprise Security Operations Centers (SOCs) are on the brink of systemic collapse driven by three converging factors: exponential alert fatigue (>25,000 uninvestigated alerts daily per enterprise), acute global cybersecurity workforce shortages, and the emergence of automated…",
+      "tags": [
+        "LLM-Agent",
+        "MARL",
+        "对抗安全",
+        "安全博弈"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 48,
+      "rank": 156,
+      "sources": [
+        "主题·LLM多智能体"
+      ],
+      "alt": [
+        "OpenAlex:Zenodo (CERN European Organization for Nuclear Research)"
+      ]
+    },
+    {
+      "id": "10.5281/zenodo.23543930",
+      "doi": "10.5281/zenodo.23543930",
+      "is_new": false,
+      "title": "Multi-Agent Reinforcement Learning for Computer Agriculture Shared-Irrigation Scheduling Under Groundwater Rights Uncertainty: A Nash-Regret Evaluation",
+      "authors": [
+        "Nabirye Nakimuli Kirabo",
+        "Tumusiime Rukundo"
+      ],
+      "published": "2026-10-21",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "provider": "OpenAlex",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.23543930",
+      "summary": "Shared irrigation schemes allocate a common aquifer among competing plots whose groundwater rights are incompletely specified, so that each irrigator's feasible extraction depends on others' choices and on a legal entitlement that may be revised. the present analysis formalises shared-irrigation scheduling as a stochastic game in which agents hold private beliefs over their rights and evaluates multi-agent reinforcement learning (MARL) against a Nash-regret criterion rather than against average reward. Because no field deployment is available, the study is a design-and-operating-characteristics analysis: a before-after-control-impact (BACI) evaluation design is characterised under a declared variance structure with between-cluster SD = 6.0, residual SD = 4.5 and intraclass correlation = 0.64, using 2000 replications per design cell across cluster counts of 8, 16, 24 and 32 and effect sizes of 3, 5 and 8 percentage points. The analysis derives a regret decomposition that separates entitlement uncertainty from strategic uncertainty, states conditions under which independent learners converge to a Nash equilibrium of the induced scheduling game, and reports the power and minimum detectable effect of the BACI design that would be used to evaluate such a scheduler. The contribution is a formal bridge between MARL convergence guarantees and the inferential limits of the agricultural evaluation designs that would test them.",
+      "summary_short": "Shared irrigation schemes allocate a common aquifer among competing plots whose groundwater rights are incompletely specified, so that each irrigator's feasible extraction depends on others' choices and on a legal entitlement that may be revised.",
+      "tags": [
+        "MARL",
+        "博弈理论"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 48,
+      "rank": 155,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": [
+        "OpenAlex:Zenodo (CERN European Organization for Nuclear Research)"
+      ]
+    },
+    {
+      "id": "10.1287/moor.2024.0707",
+      "doi": "10.1287/moor.2024.0707",
+      "is_new": false,
+      "title": "Simple and Effective: A Deterministic Auction with Support Information",
+      "authors": [
+        "Rishikesh Parma",
+        "Çağıl Koçyiğit",
+        "Benny Mantin"
+      ],
+      "published": "2026-10-07",
+      "venue": "Mathematics of Operations Research",
+      "venue_raw": "Mathematics of Operations Research",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 92,
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/moor.2024.0707",
+      "summary": "We study an auction design problem where a seller aims to sell a single item to multiple bidders with independent private values. The seller knows only an upper bound on these values and does not know their distribution. The objective is to devise a deterministic auction mechanism effective across a broad set of distributions. We propose a second price auction with a reserve price set at half of the upper bound. Even though no deterministic mechanism can achieve a positive fraction of the maximum achievable expected revenue across all distributions, we show that our mechanism achieves at least [Formula: see text] ([Formula: see text] under independent and identically distributed (i.i.d.) values) of the maximum expected revenue for a broad range of distributions of practical importance, where [Formula: see text] depends on the number of bidders and takes values in [Formula: see text]. Numerical experiments under randomly generated distributions demonstrate the superior performance of our mechanism in the vast majority of the generated instances compared to benchmark mechanisms from the literature. We also account for errors in the upper bound estimate. History: This paper has been accepted for the Mathematics of Operations Research Special Issue on Market Design.",
+      "summary_short": "We study an auction design problem where a seller aims to sell a single item to multiple bidders with independent private values. The seller knows only an upper bound on these values and does not know their distribution.",
+      "tags": [
+        "拍卖机制"
+      ],
+      "section": "机制设计与市场",
+      "score": 16,
+      "rank": 151,
+      "sources": [
+        "ISSN-L·Mathematics of Operations Research"
+      ],
+      "alt": [
+        "Crossref:Mathematics of Operations Research"
+      ]
+    },
+    {
+      "id": "10.5302/j.icros.2026.26.0120",
+      "doi": "10.5302/j.icros.2026.26.0120",
+      "is_new": false,
+      "title": "Multi-agent Reinforcement Learning for Cooperative Control of Multiple Unmanned Surface Vehicle in Neutralizing Threat Vessels",
+      "authors": [
+        "Youngjun Yun",
+        "Hyuntae Bang",
+        "Jiwoong Ha",
+        "Youra Jun",
+        "Dukhwan Kim",
+        "Hunyong Shin",
+        "Wonkeun Youn"
+      ],
+      "published": "2026-10-14",
+      "venue": "Journal of Institute of Control Robotics and Systems",
+      "venue_raw": "Journal of Institute of Control Robotics and Systems",
+      "provider": "OpenAlex",
+      "kind": "期刊",
+      "impact": "journal",
+      "impact_label": "期刊",
+      "impact_weight": 55,
+      "primary_category": "",
+      "url": "https://doi.org/10.5302/j.icros.2026.26.0120",
+      "summary": "This study proposes a cooperative capture system in which two allied unmanned surface vehicles (USVs) jointly deploy a capture net to intercept noncooperative vessels in naval environments. To overcome the limitations of traditional rule-based methods subjected to environmental uncertainties, a multi-agent reinforcement learning (MARL) framework is developed within a high-fidelity, unity-based simulation environment incorporating the Gerstner wave and wind disturbance models. Each agent utilizes an egocentric polar coordinate observation space; distance values are normalized via a nonlinear rational function to prioritize close-range sensitivity, while angular discontinuities are resolved through trigonometric transformations. The Multi-Agent POsthumous Credit Assignment algorithm is adopted within a Centralized Training with Decentralized Execution architecture, enabling robust strategy learning through posthumous credit assignment even when agents exit the environment. The reward structure is designed hierarchically, combining sparse event rewards for capture success with dense continuous rewards based on formation maintenance, target approach, and heading alignment. Quantitative experimental results demonstrate that the proposed MARL-based approach significantly outperforms the modified Line-of-Sight guidance law, achieving a 65% capture success rate and a three-fold reduction in formation collapse under dynamic sea conditions. This study confirms that the proposed framework effectively enables autonomous USVs to learn complex, coordinated maneuvers for physical maritime interdiction, providing a robust solution for securing maritime security.",
+      "summary_short": "This study proposes a cooperative capture system in which two allied unmanned surface vehicles (USVs) jointly deploy a capture net to intercept noncooperative vessels in naval environments.",
+      "tags": [
+        "MARL",
+        "AI安全"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 45,
+      "rank": 150,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1287/opre.2024.1415",
+      "doi": "10.1287/opre.2024.1415",
+      "is_new": false,
+      "title": "Community-Oriented Market Design for Nonprofit Resource Exchange",
+      "authors": [
+        "Weixiao Huang",
+        "Carlos Morel Figueroa",
+        "Arjun Venat",
+        "Sarah Eliza Stanlick",
+        "Yunus Doğan Telliel",
+        "Alexander Teytelboym",
+        "Jennifer A. Pazour",
+        "Andrew Christopher Trapp"
+      ],
+      "published": "2026-10-13",
+      "venue": "Operations Research",
+      "venue_raw": "Operations Research",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 92,
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/opre.2024.1415",
+      "summary": "Unlocking Value Through Nonprofit Resource Sharing Nonprofit organizations often operate under tight budgets while idle equipment, unused space, and shareable skills and expertise are frequently underutilized, with existing resource exchanges in the nonprofit sector limited to bilateral barter or relatively homogeneous resources. In “Community-Oriented Market Design for Nonprofit Resource Exchange,” Huang et al. propose Sharing With a Purpose (SWAP), a resource-sharing system that enables nonprofits to exchange heterogeneous resources without monetary payments. SWAP combines an auction-based process, SWAPcredit valuation, and integer optimization to facilitate multilateral exchanges, allowing nonprofits to obtain needed resources by contributing resources of their own. The authors implement this market design through the SWAP Hub, a digital platform deployed with nonprofit communities in multiple regions. Through repeated exchange episodes, participating organizations have shared not only physical assets but also a wide range of skills, services, and expertise, including marketing, management, event planning, and organizational development. The study demonstrates how innovative market design can unlock latent value in community resources, alleviate resource constraints, and encourage new connections and collaboration among nonprofit organizations.",
+      "summary_short": "Unlocking Value Through Nonprofit Resource Sharing Nonprofit organizations often operate under tight budgets while idle equipment, unused space, and shareable skills and expertise are frequently underutilized, with existing resource exchanges in the nonprofit sector limited to bilateral barter or re…",
+      "tags": [
+        "拍卖机制"
+      ],
+      "section": "机制设计与市场",
+      "score": 8,
+      "rank": 149,
+      "sources": [
+        "ISSN-L·Operations Research"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.6919/icje.202609_12(9).0024",
+      "doi": "10.6919/icje.202609_12(9).0024",
+      "is_new": false,
+      "title": "A Survey of Multi-Agent Reinforcement Learning from the Perspective of Task Characteristics",
+      "authors": [
+        "Yongli Li",
+        "Shuochen Ji",
+        "宫铭遥",
+        "Yiping Zhu",
+        "Xu Zhao",
+        "Lirong Zhou"
+      ],
+      "published": "2026-10-15",
+      "venue": "International Core Journal of Engineering",
+      "venue_raw": "International Core Journal of Engineering",
+      "provider": "OpenAlex",
+      "kind": "期刊",
+      "impact": "journal",
+      "impact_label": "期刊",
+      "impact_weight": 55,
+      "primary_category": "",
+      "url": "https://icj-e.org/index.php/ojs/article/view/461",
+      "summary": "Multi-agent reinforcement learning (MARL), the relationship between agents' rewards determines part of the learning problem. Shared rewards give rise to credit assignment and coordinated action selection; opposed rewards require responses to an adapting opponent. Both relationships occur in mixed tasks. This survey takes these task differences as the starting point for reviewing MARL, complementing classifications based on algorithms, training frameworks, or application domains. The analysis follows task characteristics, interaction types, and algorithmic mechanisms across cooperative, competitive, and mixed cooperative-competitive settings. It covers the basic formulations and training and execution paradigms, then compares representative methods in terms of their mechanisms, applicability, and limitations. Path planning, task allocation, pursuit-evasion and adversarial engagement, autonomous driving, and resource allocation illustrate how information access and operational constraints affect method selection. The concluding discussion concerns non-stationarity, scaling, safety, and the evidence needed for deployment. The comparisons support method selection under stated task conditions, without treating applicability as independent of the task being addressed.",
+      "summary_short": "Multi-agent reinforcement learning (MARL), the relationship between agents' rewards determines part of the learning problem. Shared rewards give rise to credit assignment and coordinated action selection; opposed rewards require responses to an adapting opponent.",
+      "tags": [
+        "MARL",
+        "对抗安全",
+        "自动驾驶",
+        "AI安全"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 42,
+      "rank": 148,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "2610.31054",
+      "doi": "",
+      "is_new": false,
+      "title": "Cross-Region Cooperation of UAV Swarms Towards Air-Ground ISAC via Hierarchical Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Linghui Miao",
+        "Nhan Thanh Nguyen",
+        "Shijian Gao"
+      ],
+      "published": "2026-10-22",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "provider": "arXiv",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "eess.SY",
+      "url": "https://arxiv.org/abs/2610.31054v1",
+      "summary": "The limited communication resources and sensing perspectives of a single uncrewed aerial vehicle (UAV) motivate UAV swarms for integrated sensing and communication (ISAC) in air-ground networks. However, in multi-region scenarios, regional UAV allocations may not match vehicle demand, while local observations may lack sufficient diversity for accurate sensing. To address these issues, this paper proposes a cross-region cooperation framework for UAV swarms. For communication, cross-region UAV reallocation reduces service disparities by matching resources to vehicle demand. For sensing, combining UAV observations from different regions increases observation diversity, while adaptive handshaking guided by marginal Cramér--Rao bound (CRB) utilities balances phase synchronization gains against handshaking energy consumption. Joint optimization of UAV positions and transmit power within each region then further improves communication service and sensing performance. These coupled decisions are coordinated by a hierarchical multi-agent reinforcement learning (H-MARL) approach through slow-timescale inter-region UAV reallocation and fast-timescale intra-region UAV control. Under the considered simulation settings, reallocation can improve quality of service (QoS) by over 20 percentage points compared with retaining the initial allocation under severe resource-demand mismatches. Cooperative sensing with adaptive handshaking incurs only about a 5.0% increase in mean CRB relative to perfect synchronization.",
+      "summary_short": "The limited communication resources and sensing perspectives of a single uncrewed aerial vehicle (UAV) motivate UAV swarms for integrated sensing and communication (ISAC) in air-ground networks.",
+      "tags": [
+        "MARL",
+        "群体智能"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 40,
+      "rank": 148,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1016/j.eswa.2026.134535",
+      "doi": "10.1016/j.eswa.2026.134535",
+      "is_new": false,
+      "title": "Emergent collaborative scheduling in satellite swarms: A distributed multi-agent reinforcement learning approach with adaptive experience evolution",
+      "authors": [
+        "Qing Yang",
+        "Guohua Wu",
+        "Weiyi Yang",
+        "Yingguo Chen",
+        "Jian Wu",
+        "Lining Xing",
+        "Zhi Yang"
+      ],
+      "published": "2026-10-12",
+      "venue": "Expert Systems with Applications",
+      "venue_raw": "Expert Systems with Applications",
+      "provider": "OpenAlex",
+      "kind": "会议/其他",
+      "impact": "other",
+      "impact_label": "其他",
+      "impact_weight": 45,
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.eswa.2026.134535",
+      "summary": "Autonomous collaboration among multiple Earth observation satellites is essential for improving the performance of satellite swarms. However, this task is challenging because of limited onboard computing resources and unstable inter-satellite links, particularly when global coordination is required under communication constraints. Traditional centralized optimization methods often adapt poorly to dynamic observation requests, whereas existing multi-agent approaches may incur communication overhead that hinders practical deployment. To address this issue, we propose a distributed scheduling framework that enables emergent global coordination through local agent interactions and formulates the problem as a Decentralized Partially Observable Markov Decision Process (Dec-POMDP). Specifically, we develop L-QTRAN, a multi-agent reinforcement learning algorithm that enables satellites to coordinate based on local observations with limited communication. To alleviate the non-stationarity inherent in dynamic swarm environments, we introduce an Adaptive Experience Evolution (AEE) mechanism. This mechanism follows the survival-of-the-fittest principle by selectively retaining elite transition experiences, thereby accelerating the development of cooperative strategies. Furthermore, a Random Segment Sampling (RSS) technique is introduced to improve training stability and convergence in high-dimensional solution spaces. Extensive experiments demonstrate that the proposed approach outperforms the baseline methods under weak-communication conditions and achieves sub-second response times, highlighting its potential for autonomous satellite swarms operating in dynamic environments.",
+      "summary_short": "Autonomous collaboration among multiple Earth observation satellites is essential for improving the performance of satellite swarms. However, this task is challenging because of limited onboard computing resources and unstable inter-satellite links, particularly when global coordination is required…",
+      "tags": [
+        "MARL",
+        "涌现行为",
+        "群体智能"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 54,
+      "rank": 147,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1016/j.geb.2026.104048",
+      "doi": "10.1016/j.geb.2026.104048",
+      "is_new": false,
+      "title": "Single and multi-winner auctions with performance obligation",
+      "authors": [
+        "Marin Coerts",
+        "Florian Heine",
+        "Frank J. van Ommeren",
+        "Arjen C. van Witteloostuijn"
+      ],
+      "published": "2026-09-29",
+      "venue": "Games and Economic Behavior",
+      "venue_raw": "Games and Economic Behavior",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 95,
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.geb.2026.104048",
+      "summary": "",
+      "summary_short": "",
+      "tags": [
+        "拍卖机制"
+      ],
+      "section": "机制设计与市场",
+      "score": 16,
+      "rank": 146,
+      "sources": [
+        "ISSN-L·Games and Economic Behavior"
+      ],
+      "alt": []
+    },
+    {
+      "id": "2610.30443",
+      "doi": "",
+      "is_new": false,
+      "title": "SpecMAGIC: Specification-Guided Multi-Task Generalization in Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Zijian Guo",
+        "İlker Işık",
+        "H. M. Sabbir Ahmad",
+        "Wenchao Li"
+      ],
+      "published": "2026-10-21",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "provider": "arXiv",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.30443v1",
+      "summary": "Multi-task generalization is an important yet underexplored problem in multi-agent reinforcement learning (MARL). Many real-world applications require multi-agent systems to generalize across complex, temporally extended tasks with diverse inter-agent coordination requirements. We introduce a specification language that combines temporal-logic task specifications with operators for expressing such requirements. We propose SpecMAGIC, a hierarchical framework that leverages the automaton structure of task specifications for subtask decomposition. A centralized high-level planner identifies and allocates compatible subtask sequences across agents, while decentralized low-level policies execute individual subtasks. This enables zero-shot generalization to new tasks by composing reusable subtask policies according to new specifications, without retraining. We establish soundness and probabilistic completeness of the high-level planner. Experiments on multi-agent navigation tasks show that SpecMAGIC substantially outperforms existing approaches on unseen task specifications and maintains strong performance as the number of agents increases.",
+      "summary_short": "Multi-task generalization is an important yet underexplored problem in multi-agent reinforcement learning (MARL). Many real-world applications require multi-agent systems to generalize across complex, temporally extended tasks with diverse inter-agent coordination requirements.",
+      "tags": [
+        "MARL",
+        "LLM-Agent"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 38,
+      "rank": 145,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.5281/zenodo.23544187",
+      "doi": "10.5281/zenodo.23544187",
+      "is_new": false,
+      "title": "Multi-Agent Reinforcement Learning for Artificial Intelligence Agriculture Groundwater Irrigation Quotas Under Aquifer Boundary Uncertainty: A Computer Welfare-Regret Evaluation",
+      "authors": [
+        "Abebech Desta Woldeyes",
+        "Getachew Desta Mekonnen",
+        "Tewodros Kebede Asfaw"
+      ],
+      "published": "2026-10-21",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "provider": "OpenAlex",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.23544187",
+      "summary": "Groundwater irrigation quotas in agricultural multi-agent settings are typically computed against a known aquifer boundary, yet the boundary itself is an estimate whose uncertainty propagates into every quota decision. The framework separates two regret components: a boundary-regret term arising from mis-specified aquifer extent, and a coordination-regret term arising from the gap between the MARL equilibrium and the social optimum. A BACI design is then analysed under a declared variance structure with between-cluster standard deviation 6.0, residual standard deviation 4.5 and intraclass correlation 0.64, across cluster counts of 8, 16, 24 and 32 and effect sizes of 3, 5 and 8 percentage points, with 2000 replications per design cell. The design analysis indicates that 54 clusters are required to detect a 5 percentage-point effect at 80% power under this variance structure. The contribution is a formal bridge between MARL quota theory and the evaluation designs that would be needed to test it, together with an explicit statement of the boundary conditions under which welfare-regret bounds remain informative.",
+      "summary_short": "Groundwater irrigation quotas in agricultural multi-agent settings are typically computed against a known aquifer boundary, yet the boundary itself is an estimate whose uncertainty propagates into every quota decision.",
+      "tags": [
+        "MARL",
+        "博弈理论"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 38,
+      "rank": 145,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.56979/1201/2026/1552",
+      "doi": "10.56979/1201/2026/1552",
+      "is_new": false,
+      "title": "A Deep Learning Framework for Evaluating and Mitigating Prompt Injection in LLM Agents",
+      "authors": [
+        "Najda Malik",
+        "Muhammad Hassan Ghulam Muhammad",
+        "Tahir Alyas",
+        "Wajahat Mahmood Qazi",
+        "Nadia Tabassum",
+        "Adeela Hayat"
+      ],
+      "published": "2026-10-08",
+      "venue": "Journal of Computing & Biomedical Informatics",
+      "venue_raw": "Journal of Computing & Biomedical Informatics",
+      "provider": "OpenAlex",
+      "kind": "期刊",
+      "impact": "journal",
+      "impact_label": "期刊",
+      "impact_weight": 55,
+      "primary_category": "",
+      "url": "https://doi.org/10.56979/1201/2026/1552",
+      "summary": "In the world of large language models (LLMs), prompt injection attacks are a severe security risk that can circumvent the instructions given to AI agents and potentially cause damage. In agentic architectures, the vulnerabilities are magnified because of the increased attack surfaces which are present in the use of tools, APIs and chains of reasoning. The vulnerabilities are compounded in agentic architectures as the tools used, APIs called, and chains of reasoning become a larger attack surface, resulting in an increased sense of unreliability. Paraphrased, adaptive, and context-aware attacks are not thwarted by rule-based and static prompt engineering defenses. This paper introduces a deep learning-based approach to detecting and thwarting prompt injection attacks in LLM agent systems. Uses a hybrid model of known and customer-generated adversarial prompts to combine transformer-based classification, semantic risk-scoring and adaptive mitigation procedures. Stratified data splits are used in the experiments, as are synthetic attack generation and rule-based, BERT and zero-shot LLM classifiers. In terms of precision, recall, F1 score and AUC, the proposed framework is found to be better than all the baselines. Attack of instruction override, data extraction and tool misuse are greatly enhanced and resistant to adversarial scenarios that are not seen and adaptable. The mitigation module achieves high task utility; low false positive rates and the high success rate of the attacks is significantly reduced. Overall, the framework demonstrates that it is possible to integrate detection, risk estimation, and mitigation in a single pipeline, resulting in a great improvement in the security of LLM agents, while not burdening them with significant computing costs. It further highlights the importance of security layers before deploying LLM agents to the real world as the input they receive can be adversarial and continuously change, requiring a mixture of machine learning and structured control to ensure they remain safe and reliable across different application areas. Scalable AI systems deployment safety improvements involve multi-agent security, real-time learning, and multimodal prompt injection detection in the future.",
+      "summary_short": "In the world of large language models (LLMs), prompt injection attacks are a severe security risk that can circumvent the instructions given to AI agents and potentially cause damage.",
+      "tags": [
+        "LLM-Agent",
+        "对抗安全",
+        "AI安全"
+      ],
+      "section": "LLM 多智能体与社会模拟",
+      "score": 43,
+      "rank": 142,
+      "sources": [
+        "主题·LLM多智能体"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.5281/zenodo.23544566",
+      "doi": "10.5281/zenodo.23544566",
+      "is_new": false,
+      "title": "Evaluation of Constrained Multi-Agent Reinforcement Learning for Computer Agriculture Groundwater Allocation Under Aquifer Drawdown: An Artificial Intelligence Regret Bound for Political Legitimacy of Abstraction Permits",
+      "authors": [
+        "Amina Youssouf Waberi",
+        "Abdillahi Dirie Guedi",
+        "Mohamed Kadar Abdi"
+      ],
+      "published": "2026-10-21",
+      "venue": "预印本",
+      "venue_raw": "Zenodo (CERN European Organization for Nuclear Research)",
+      "provider": "OpenAlex",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "",
+      "url": "https://doi.org/10.5281/zenodo.23544566",
+      "summary": "Groundwater abstraction permits in computer agriculture allocate a shared aquifer among competing irrigators, yet the political legitimacy of any allocation rule depends on whether the rule can be shown to converge to a defensible distribution of abstraction rights under drawdown. The framework treats each abstraction permit as a constrained policy in a cooperative Markov game with a shared aquifer state, and characterises legitimacy as the regret of the permit regime relative to a counterfactual social planner who internalises drawdown externalities. The analysis is theoretical: no observational data are used or claimed. The principal result is a regret bound of order O(√(T log N)) for N agents over T allocation rounds under a constrained policy gradient, with an explicit dependence on the aquifer drawdown rate and the permit enforcement capacity of the regulator. The bound implies that legitimacy is not a property of the allocation rule alone but of the rate at which the rule's regret grows relative to the physical depletion of the aquifer.",
+      "summary_short": "Groundwater abstraction permits in computer agriculture allocate a shared aquifer among competing irrigators, yet the political legitimacy of any allocation rule depends on whether the rule can be shown to converge to a defensible distribution of abstraction rights under drawdown.",
+      "tags": [
+        "MARL",
+        "博弈理论"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 34,
+      "rank": 141,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1126/science.adz4351",
+      "doi": "10.1126/science.adz4351",
+      "is_new": false,
+      "title": "Autonomous biomedical research with an artificial intelligence agent",
+      "authors": [
+        "Kexin Huang",
+        "Serena Zhang",
+        "Hanchen Wang",
+        "Yuanhao Qu",
+        "Yingzhou Lu",
+        "Ryan Li",
+        "Yusuf Roohani",
+        "Lin Qiu",
+        "Shiyi Cao",
+        "Gavin Li",
+        "Junze Zhang",
+        "Di Yin"
+      ],
+      "published": "2026-08-20",
+      "venue": "Science",
+      "venue_raw": "Science",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 130,
+      "primary_category": "",
+      "url": "https://doi.org/10.1126/science.adz4351",
+      "summary": "Biomedical research is increasingly constrained by repetitive, fragmented workflows that slow discovery. We introduce Biomni, a general-purpose biomedical artificial intelligence agent that autonomously executes diverse research tasks. To map the biomedical action space, Biomni’s action-discovery agent mines tools, databases, and protocols from thousands of publications across 25 domains, building a unified agentic environment. Its general-purpose architecture integrates large language model reasoning with retrieval-augmented planning and code-based execution, dynamically composing workflows without predefined templates. Systematic benchmarking shows strong generalization across heterogeneous tasks—causal gene prioritization, drug repurposing, rare-disease diagnosis, microbiome analysis, and molecular cloning—without task-specific tuning. Real-world case studies demonstrate Biomni interpreting multimodal datasets, optimizing protein stability, orchestrating wet-lab instruments, and generating experimentally testable protocols. Biomni envisions artificial intelligence augmenting human scientists and accelerating discovery.",
+      "summary_short": "Biomedical research is increasingly constrained by repetitive, fragmented workflows that slow discovery. We introduce Biomni, a general-purpose biomedical artificial intelligence agent that autonomously executes diverse research tasks.",
+      "tags": [
+        "LLM-Agent"
+      ],
+      "section": "LLM 多智能体与社会模拟",
+      "score": 9,
+      "rank": 139,
+      "sources": [
+        "ISSN·Science"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1142/s0218194026500932",
+      "doi": "10.1142/s0218194026500932",
+      "is_new": false,
+      "title": "Context-Aware Cooperative Gating for Knowledge-Controlled Value Factorization in Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Seungwoo Jang",
+        "Ji Hyun Nam"
+      ],
+      "published": "2026-10-15",
+      "venue": "International Journal of Software Engineering and Knowledge Engineering",
+      "venue_raw": "International Journal of Software Engineering and Knowledge Engineering",
+      "provider": "OpenAlex",
+      "kind": "期刊",
+      "impact": "journal",
+      "impact_label": "期刊",
+      "impact_weight": 55,
+      "primary_category": "",
+      "url": "https://doi.org/10.1142/s0218194026500932",
+      "summary": "Cooperative multi-agent reinforcement learning under partial observability requires decentralized agents to act from incomplete local information. Value-decomposition methods such as VDN and QMIX do not control when teammate-related knowledge may influence an agent’s local utility, and an uncontrolled teammate-conditioned term can distort decisions at timesteps where no ally is observable. We propose CA-QMIX, a context-aware value factorization method that uses ally visibility as a knowledge signal for decentralized agent control. Each agent combines an individual decision branch with an attention-based cooperative knowledge branch through a visibility-conditioned gate that scales the cooperative contribution and is hard-masked to zero when no ally is observable. The gated utilities are combined by a QMIX-style monotonic mixer, which we prove preserves Individual-Global-Max consistency, and a mixer-level Δ-Q regularizer discourages cooperative corrections that lower the greedy value of the base branch. Experiments on seven SMAC v1 and SMAC v2 scenarios against six value-decomposition baselines show that CA-QMIX attains the highest mean final win rate and the best mean rank over the seven scenarios and improves on QMIX in all three randomized SMAC v2 scenarios. Ablations show that most of the gain comes from the cooperative branch, that its visibility conditioning helps when correctly aligned (misaligned visibility degrades performance under randomized placement), and that the form of the gate is not critical: a binary gate suffices and the hard no-ally mask has no measurable cost.",
+      "summary_short": "Cooperative multi-agent reinforcement learning under partial observability requires decentralized agents to act from incomplete local information. Value-decomposition methods such as VDN and QMIX do not control when teammate-related knowledge may influence an agent’s local utility, and an uncontroll…",
+      "tags": [
+        "MARL"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 33,
+      "rank": 139,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1038/s41586-026-10986-7",
+      "doi": "10.1038/s41586-026-10986-7",
+      "is_new": false,
+      "title": "Probing far-from-equilibrium dynamics of electrical double layers",
+      "authors": [
+        "Xiao-Yu Li",
+        "Yu-Chen Cai",
+        "Zhao-Dong Meng",
+        "Ze-Tong Jia",
+        "Yu-Chen Sun",
+        "Jin-Yu Ye",
+        "Na Tian",
+        "Zhi-You Zhou",
+        "Jun Huang",
+        "Junxiang Chen",
+        "Shi-Gang Sun",
+        "Tao Wang"
+      ],
+      "published": "2026-09-02",
+      "venue": "Nature",
+      "venue_raw": "Nature",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 130,
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41586-026-10986-7",
+      "summary": "",
+      "summary_short": "",
+      "tags": [],
+      "section": "其他交叉方向",
+      "score": 0,
+      "rank": 138,
+      "sources": [
+        "ISSN·Nature"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1287/opre.2022.0630",
+      "doi": "10.1287/opre.2022.0630",
+      "is_new": false,
+      "title": "In Which Matching Markets Do Costly Compatibility Inspections Lead to a Deadlock?",
+      "authors": [
+        "Nicole Immorlica",
+        "Yash Kanoria",
+        "Jiaqi Lu"
+      ],
+      "published": "2026-09-28",
+      "venue": "Operations Research",
+      "venue_raw": "Operations Research",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 92,
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/opre.2022.0630",
+      "summary": "When Learning About a Match Stalls the Market In many matching markets, participants must investigate whether a match is feasible. When inspection is costly, participants may delay investigating a potential match until both sides have effectively committed. Such caution can cause each side to wait for others to act, creating an “information deadlock.” In their article, “In Which Matching Markets Do Costly Compatibility Inspections Lead to a Deadlock?” Immorlica, Kanoria, and Lu study this problem in random two-sided markets. They characterize how deadlock depends on the market balance, market connectivity, and the chance that inspections succeed. Using statistical physics tools, their analysis identifies phase transitions between deadlock-free and deadlocked markets. The findings offer design guidance: More choice is not always better; match rates are highest at the deadlock phase boundary; and parallel inspections and clearer participant differentiation can reduce the extent to which waiting chains stall the market.",
+      "summary_short": "When Learning About a Match Stalls the Market In many matching markets, participants must investigate whether a match is feasible. When inspection is costly, participants may delay investigating a potential match until both sides have effectively committed.",
+      "tags": [
+        "机制设计"
+      ],
+      "section": "机制设计与市场",
+      "score": 12,
+      "rank": 138,
+      "sources": [
+        "ISSN-L·Operations Research"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1287/mnsc.2024.04789",
+      "doi": "10.1287/mnsc.2024.04789",
+      "is_new": false,
+      "title": "Trading Off Business and Family Investments: Evidence from U.S. Entrepreneurial Households",
+      "authors": [
+        "Olivia Kim"
+      ],
+      "published": "2026-10-06",
+      "venue": "Management Science",
+      "venue_raw": "Management Science",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 88,
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/mnsc.2024.04789",
+      "summary": "Investing in children’s human capital reduces business investments for U.S. entrepreneurial households. Using financial account data of 90,000 small businesses linked to their owners and a regression discontinuity design that compares the business performance of households with college-aged dependents (18–22) to those with near-college-aged dependents (14–17), I show that business revenues and expenses decline sharply when owners’ children reach age 18. Despite the declines, profitability and productivity remain largely unaffected, suggesting a general downsizing rather than a loss in efficiency. Heterogeneity analysis shows that downsizing is concentrated among highly indebted owner households and businesses with volatile cash flows. For each dollar increase in household spending associated with a child turning 18, business expenses decline by $2.26. These findings are consistent with entrepreneurial parents reallocating capital from business investments toward their children’s human capital, as both compete for the same pool of internal family financial resources. This paper was accepted by Camelia Kuhnen, finance. Supplemental Material: The data files are available at https://doi.org/10.1287/mnsc.2024.04789 .",
+      "summary_short": "Investing in children’s human capital reduces business investments for U.S. entrepreneurial households. Using financial account data of 90,000 small businesses linked to their owners and a regression discontinuity design that compares the business performance of households with college-aged dependen…",
+      "tags": [
+        "金融博弈"
+      ],
+      "section": "应用与交叉",
+      "score": 8,
+      "rank": 138,
+      "sources": [
+        "ISSN-L·Management Science"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1016/j.artint.2026.104640",
+      "doi": "10.1016/j.artint.2026.104640",
+      "is_new": false,
+      "title": "Adaptive large language model reasoning for autonomous driving decision-making",
+      "authors": [
+        "Haicheng Liao",
+        "Chengyue Wang",
+        "Hanlin Kong",
+        "Zhenning Li",
+        "Zhengbing He",
+        "Zhiyong Cui",
+        "Guohui Zhang",
+        "Chengzhong Xu"
+      ],
+      "published": "2026-10-07",
+      "venue": "Artificial Intelligence",
+      "venue_raw": "Artificial Intelligence",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 78,
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.artint.2026.104640",
+      "summary": "",
+      "summary_short": "",
+      "tags": [
+        "LLM-Agent",
+        "自动驾驶"
+      ],
+      "section": "LLM 多智能体与社会模拟",
+      "score": 16,
+      "rank": 137,
+      "sources": [
+        "ISSN-L·Artificial Intelligence"
+      ],
+      "alt": []
+    },
+    {
+      "id": "2610.31002",
+      "doi": "",
+      "is_new": false,
+      "title": "Matching Tasks to Agents: Mechanism Design for Multi-Agent Contracts",
+      "authors": [
+        "Matteo Bollini",
+        "Matteo Castiglioni",
+        "Alberto Marchesi"
+      ],
+      "published": "2026-10-22",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "provider": "arXiv",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2610.31002v1",
+      "summary": "We study task assignment under adverse selection and moral hazard. In the single-task setting, agents privately know their types, which determine their success probabilities and effort costs. Based on the agents' reported types, the principal selects an agent to perform the task and offers a success-contingent payment. Although optimal Bayesian contract design is generally computationally intractable and Myerson's characterization does not directly extend to settings with hidden actions and multidimensional private information, we show that the single-task problem admits a simple Myerson-style characterization. Our key insight is that incentive constraints depend only on the ratio between effort cost and success probability. We characterize an optimal mechanism and show that it can be computed in polynomial time. We also establish a tight $Θ(1/(NK))$ worst-case bound on the ratio between the optimal profit and the full-information benchmark, where $N$ is the number of agents and $K$ is the number of types per agent. We then extend our analysis to multiple tasks, showing that an optimal mechanism may not exist. Nevertheless, for a constant number of agents, we provide a polynomial-time approximation scheme for the supremum profit.",
+      "summary_short": "We study task assignment under adverse selection and moral hazard. In the single-task setting, agents privately know their types, which determine their success probabilities and effort costs.",
+      "tags": [
+        "机制设计"
+      ],
+      "section": "机制设计与市场",
+      "score": 28,
+      "rank": 136,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1287/mnsc.2023.01668",
+      "doi": "10.1287/mnsc.2023.01668",
+      "is_new": false,
+      "title": "Constant Regret Primal-Dual Policy for Multiway Dynamic Matching",
+      "authors": [
+        "Yehua Wei",
+        "Jiaming Xu",
+        "Sophie H. Yu"
+      ],
+      "published": "2026-09-30",
+      "venue": "Management Science",
+      "venue_raw": "Management Science",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 88,
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/mnsc.2023.01668",
+      "summary": "We study a discrete-time dynamic multiway matching model. There are finitely many agent types that arrive stochastically and wait to be matched. State-of-the-art dynamic matching policies in the literature require the knowledge of all system parameters to determine an optimal basis of the fluid relaxation, and focus on controlling the number of waiting agents using only matches within the optimal basis. In this paper, we propose a primal-dual policy that schedules matches for future arrivals based on an estimator for the dual solution. Our policy does not require the knowledge of the arrival rates and operates with greater flexibility as it does not restrict matches to only the match types within an optimal basis. We show that our policy is the first to achieve constant regret at all times under unknown arrival rates, and when the arrival rates are known, it achieves the optimal scaling. Furthermore, when the arrival rates are known, the primal-dual policy significantly outperforms alternative dynamic matching policies in several numerical simulations. This paper was accepted by Baris Ata, stochastic models and simulation. Funding: J. Xu is supported in part by the National Science Foundation [Grant CCF-1856424 and NSF CAREER award CCF-2144593]. S. H. Yu is supported in part by the National Science Foundation [Grant CCF-1856424]. Supplemental Material: The online appendix and data files are available at https://doi.org/10.1287/mnsc.2023.01668 .",
+      "summary_short": "We study a discrete-time dynamic multiway matching model. There are finitely many agent types that arrive stochastically and wait to be matched. State-of-the-art dynamic matching policies in the literature require the knowledge of all system parameters to determine an optimal basis of the fluid rela…",
+      "tags": [
+        "博弈理论"
+      ],
+      "section": "博弈求解与理论",
+      "score": 10,
+      "rank": 134,
+      "sources": [
+        "ISSN-L·Management Science"
+      ],
+      "alt": []
+    },
+    {
+      "id": "2610.30999",
+      "doi": "",
+      "is_new": false,
+      "title": "Truthful by Omission: Click Thinning for LLM-Native Advertising",
+      "authors": [
+        "Junhua Liu",
+        "Zhicheng Liang",
+        "Zejun Zhang",
+        "Langzhou He",
+        "Feng Qian"
+      ],
+      "published": "2026-10-22",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "provider": "arXiv",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2610.30999v1",
+      "summary": "Generative AI assistants are becoming an advertising medium, embedding sponsored content in their answers. This setting departs from classical position auctions in two ways: an ad's click-through rate depends on the passage that hosts it, and because users stop at their first click, earlier ads take clicks from later ones. This competition for clicks makes truthfulness delicate: a higher bid can reshape the allocation and put a competitor ahead of the bidder, reducing the bidder's clicks. Existing mechanisms either attain a constant fraction of the optimal welfare (advertisers' total click value) but are not known to be truthful, or are truthful but their welfare guarantee degrades as the number of passages grows. We achieve both even when the answer and its editorial order are fixed before bidding. Assuming each ad's click-through rate when reached is known and unaffected by omitting other ads, we give a computationally efficient mechanism that is truthful in expectation and attains at least half the optimal welfare under free reordering. Our key idea, click thinning, omits ads at random, showing earlier ads less often so that each ad's overall click probability no longer depends on the order of the ads. Welfare maximization then reduces to a tractable matching problem, and solving it exactly with VCG-style payments makes truthful bidding optimal in expectation. Characterizing the click probabilities that omission can achieve sharpens the approximation factor from $2$ to $2-(1-δ)^{K-1}$ when at most $K$ ads are shown and each click-through rate is at most $δ$. This factor is the best possible for any order-preserving rule, even one that ignores incentives and computation, so truthfulness and computational efficiency incur no additional worst-case loss.",
+      "summary_short": "Generative AI assistants are becoming an advertising medium, embedding sponsored content in their answers. This setting departs from classical position auctions in two ways: an ad's click-through rate depends on the passage that hosts it, and because users stop at their first click, earlier ads take…",
+      "tags": [
+        "拍卖机制",
+        "机制设计"
+      ],
+      "section": "机制设计与市场",
+      "score": 26,
+      "rank": 134,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1287/opre.2024.0944",
+      "doi": "10.1287/opre.2024.0944",
+      "is_new": false,
+      "title": "Dynamic Contract Design with Learning",
+      "authors": [
+        "Shiyuan Wang",
+        "Yong H. Liang",
+        "Peng Sun"
+      ],
+      "published": "2026-09-21",
+      "venue": "Operations Research",
+      "venue_raw": "Operations Research",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 92,
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/opre.2024.0944",
+      "summary": "Incentivizing Effort While Learning the Market Condition When a firm hires an agent to generate customers in a new market, neither party initially knows whether the market is favorable. In “Dynamic Contract Design with Learning,” Wang, Liang, and Sun study the interaction between learning and moral hazard: effort is costly and unobservable, so a missing arrival may reflect an unfavorable market, bad luck, or shirking. The firm’s goal is to design a dynamic contract governing arrival-based payments and termination, thereby motivating effort while learning whether to continue. Yet shirking can make the principal more pessimistic than the agent and create scope to manipulate future payments. The authors prove that an optimal contract inducing full effort until termination exists, but computing it appears prohibitively complex. They develop two simple online contracts with payments and termination thresholds fixed in advance. Both induce full effort and achieve O(ln T) regret over T periods against a first-best, full-information benchmark. A matching Ω(ln T) lower bound proves rate optimality. The results extend to continuous time and differing prior beliefs.",
+      "summary_short": "Incentivizing Effort While Learning the Market Condition When a firm hires an agent to generate customers in a new market, neither party initially knows whether the market is favorable.",
+      "tags": [
+        "博弈理论",
+        "机制设计"
+      ],
+      "section": "博弈求解与理论",
+      "score": 13,
+      "rank": 132,
+      "sources": [
+        "ISSN-L·Operations Research"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1287/mnsc.2025.02137",
+      "doi": "10.1287/mnsc.2025.02137",
+      "is_new": false,
+      "title": "Who Directs the Control Tower? Customer vs. Supplier-Managed Inventory in Supply Chains",
+      "authors": [
+        "Shi Chen",
+        "Morris A. Cohen",
+        "Hau L. Lee"
+      ],
+      "published": "2026-09-28",
+      "venue": "Management Science",
+      "venue_raw": "Management Science",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 88,
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/mnsc.2025.02137",
+      "summary": "Information distortion and incentive misalignment often undermine supply chain performance. In response, many firms adopt a “control tower” approach, whereby one party assumes responsibility for replenishment decisions across the supply chain. Industry examples showed that this role may be assigned to the customer, Customer-Managed Inventory (CMI), or to the supplier, Supplier-Managed Inventory (SMI). This paper investigates when one governance structure is preferable. We study a two-echelon, one-to-many supply chain consisting of a single supplier and a customer operating multiple warehouses. We characterize optimal base-stock policies and equilibrium holding-cost-sharing parameters under CMI and SMI and benchmark them against decentralized operations and a fully centralized system. Two primary forces shape the choice between CMI and SMI: the relative shortage penalty costs of the two parties and the structure of the customer’s distribution network. Specifically, CMI is preferred when the customer faces relatively higher shortage penalties and operates in a more asymmetric environment—for example, when demand is concentrated in a subset of its warehouses or when replenishment lead times vary substantially across these locations. In contrast, SMI is favored under opposite conditions. We further examine how intertemporal and interspatial demand correlations affect this comparison. A key finding is that, although neither CMI nor SMI achieves the first-best outcome, their efficiency loss relative to full centralization is typically small. Calibrated numerical studies based on four industry cases disentangle the incremental value of information sharing, decision-right transfer, and cost sharing, showing that most performance gains stem from decision-right transfer supported by appropriate holding-cost sharing. This paper was accepted by Jayashankar Swaminathan, operations management. Supplemental Material: The online appendix and data files are available at https://doi.org/10.1287/mnsc.2025.02137 .",
+      "summary_short": "Information distortion and incentive misalignment often undermine supply chain performance. In response, many firms adopt a “control tower” approach, whereby one party assumes responsibility for replenishment decisions across the supply chain.",
+      "tags": [
+        "MARL",
+        "AI安全"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 9,
+      "rank": 131,
+      "sources": [
+        "ISSN-L·Management Science"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1038/s41598-026-76140-5",
+      "doi": "10.1038/s41598-026-76140-5",
+      "is_new": false,
+      "title": "Globally guided multi-agent reinforcement learning with decoupled critics for cooperative UAV path planning",
+      "authors": [
+        "Xu Wang",
+        "Qi Liu",
+        "Haotian Li"
+      ],
+      "published": "2026-10-16",
+      "venue": "Scientific Reports",
+      "venue_raw": "Scientific Reports",
+      "provider": "OpenAlex",
+      "kind": "会议/其他",
+      "impact": "other",
+      "impact_label": "其他",
+      "impact_weight": 45,
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41598-026-76140-5",
+      "summary": "Abstract Cooperative path planning for multiple unmanned aerial vehicles (UAVs) requires the simultaneous achievement of target navigation, collision avoidance, and formation coordination in complex obstacle environments. Existing multi-agent reinforcement learning methods often suffer from sparse rewards, local deadlocks, and conflicts between formation maintenance and obstacle avoidance, which can destabilize policy learning. To address these issues, this paper proposes a Globally Guided Decoupled-Critic Multi-Agent Soft Actor-Critic algorithm (GDC-MASAC). RRT $$^*$$ -based global guidance provides reference waypoints for the leader UAV, reducing inefficient exploration and local deadlocks. Three decoupled Critic branches separately evaluate target navigation, formation maintenance, and safety objectives, while an environment-aware formation reward adjustment relaxes formation tracking near obstacles according to the distance to obstacle boundaries. Experiments under different obstacle densities and swarm sizes show that GDC-MASAC improves mission completion, collision avoidance, and formation coordination. In a scenario with 12 obstacles and 3 UAVs, GDC-MASAC achieves a mission success rate of 86%, whereas the baseline methods achieve success rates below 50%. These results demonstrate the effectiveness of GDC-MASAC for cooperative multi-UAV path planning in cluttered environments.",
+      "summary_short": "Abstract Cooperative path planning for multiple unmanned aerial vehicles (UAVs) requires the simultaneous achievement of target navigation, collision avoidance, and formation coordination in complex obstacle environments.",
+      "tags": [
+        "MARL",
+        "群体智能",
+        "AI安全"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 34,
+      "rank": 131,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": [
+        "Crossref:Scientific Reports"
+      ]
+    },
+    {
+      "id": "10.1016/j.engappai.2026.116525",
+      "doi": "10.1016/j.engappai.2026.116525",
+      "is_new": false,
+      "title": "Diffusion-enhanced multi-agent reinforcement learning for adaptive interference control in bilateral cognitive radar games",
+      "authors": [
+        "Yubo Jia",
+        "Zesi Pan",
+        "Jiahao Qin",
+        "Ding Haichuan",
+        "Yan Li"
+      ],
+      "published": "2026-10-20",
+      "venue": "Engineering Applications of Artificial Intelligence",
+      "venue_raw": "Engineering Applications of Artificial Intelligence",
+      "provider": "OpenAlex",
+      "kind": "会议/其他",
+      "impact": "other",
+      "impact_label": "其他",
+      "impact_weight": 45,
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.engappai.2026.116525",
+      "summary": "In complex electromagnetic environments, adaptive signal-emitting systems operate under partial observability, asymmetric information, and dynamically evolving spectrum interactions, posing significant challenges to interference-aware decision-making. To address these challenges, this paper formulates the signal interaction process as a partially observable stochastic game and proposes a Bilateral Intelligent Game Policy Optimization Architecture (BIGPOA). Within this framework, a two-stage Diffusion-Enhanced Multi-Agent Proximal Policy Optimization (Diff-MAPPO) algorithm is developed. In the online stage, Multi-Agent Proximal Policy Optimization (MAPPO) with self-play training is employed to learn interactive behaviors between sensing and interference agents. In the offline stage, a diffusion model refines the learned policies through trajectory-level distribution regularization, while Double Deep Q-Network (DDQN)-guided optimization promotes high-value decision generation. Experimental results demonstrate that Diff-MAPPO achieves faster convergence, higher interference effectiveness, and improved energy efficiency compared with representative reinforcement learning baselines, while maintaining robust performance under dynamic and uncertain signal environments.",
+      "summary_short": "In complex electromagnetic environments, adaptive signal-emitting systems operate under partial observability, asymmetric information, and dynamically evolving spectrum interactions, posing significant challenges to interference-aware decision-making.",
+      "tags": [
+        "MARL",
+        "自博弈",
+        "资源博弈"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 30,
+      "rank": 131,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "2610.30718",
+      "doi": "",
+      "is_new": false,
+      "title": "Incentive Mechanisms for Welfare Maximization Under Individual Rationality in Noncooperative Dynamical Systems",
+      "authors": [
+        "Yuyue Yan",
+        "Maojiao Ye",
+        "Hideaki Ishii",
+        "Tomohisa Hayakawa"
+      ],
+      "published": "2026-10-22",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "provider": "arXiv",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "eess.SY",
+      "url": "https://arxiv.org/abs/2610.30718v1",
+      "summary": "Human societies are shaped by strategic interactions among self-interested decision-makers, where conflicts between individual and social interests naturally arise. This paper investigates the design of incentive mechanism for multi-agent game systems to reconcile social welfare maximization with individual benefits under economic constraints. We develop a linear-quadratic incentive framework to reshape Nash equilibria while reconciling the constraints of Pareto efficiency, individual rationality, and budget balance. The optimal target state is identified as the solution of a constrained optimization problem associated with the social welfare and aggregated payoff functions. Our theoretical analysis characterizes the conditions of incentive functions that steer self-interested agents towards the optimal target state as a Pareto-efficient Nash equilibrium for achieving the maximum attainable social welfare. We further characterize how the choice of social welfare function constrains achievable individual outcomes, revealing a structural paradox associated with priority weighting under individual rationality. Several numerical examples are presented to demonstrate the efficacy of our results.",
+      "summary_short": "Human societies are shaped by strategic interactions among self-interested decision-makers, where conflicts between individual and social interests naturally arise. This paper investigates the design of incentive mechanism for multi-agent game systems to reconcile social welfare maximization with in…",
+      "tags": [
+        "博弈理论",
+        "机制设计",
+        "MARL"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 23,
+      "rank": 131,
+      "sources": [
+        "主题·纳什均衡"
+      ],
+      "alt": []
+    },
+    {
+      "id": "2610.31562",
+      "doi": "",
+      "is_new": false,
+      "title": "Decentralized Bi-Level Optimization for Cooperative Orbital Transportation of a Rigid Payload",
+      "authors": [
+        "Sidhdharth D. Sikka",
+        "Revathy Ravuri",
+        "Hei Yin Jowett Chan",
+        "Tim Echtermeyer",
+        "Shaoshuai Mou"
+      ],
+      "published": "2026-10-22",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "provider": "arXiv",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "eess.SY",
+      "url": "https://arxiv.org/abs/2610.31562v1",
+      "summary": "The rapid growth of the space economy, alongside increasing orbital congestion and debris, is driving demand for reliable on-orbit transportation of large and non-cooperative objects. Performing such transportation with a swarm of small spacecraft distributes risk and removes the single point of failure inherent to monolithic architectures, but requires solving a non-convex trajectory optimization coupling every agent's cone-constrained thrust to the payload's rotational dynamics. Existing approaches span decentralized control laws with asymptotic guarantees but limited constraint enforcement, and centralized and partially centralized planners that reintroduce a single point of failure. In this work, we present a decentralized bi-level framework driven by exact gradients: the problem is split into an inner convex thrust allocation and an outer search over payload torque trajectories. This decomposition yields fuel-efficient solutions quickly, without requiring full NLP convergence, and at short timescales its performance scales with the number of agents. Theoretical convergence guarantees are established, and the method is validated through extensive Monte Carlo simulation, including closed-loop recovery from in-flight faults. These properties make the framework well suited to spacecraft swarm applications.",
+      "summary_short": "The rapid growth of the space economy, alongside increasing orbital congestion and debris, is driving demand for reliable on-orbit transportation of large and non-cooperative objects.",
+      "tags": [
+        "MARL",
+        "群体智能"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 22,
+      "rank": 130,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "alt": []
+    },
+    {
+      "id": "2610.30769",
+      "doi": "",
+      "is_new": false,
+      "title": "LLM Multi-Agent Systems Are Vulnerable to Herding and Runaway Cascades",
+      "authors": [
+        "Farnoosh Hashemi",
+        "Shiyu Ji",
+        "Joice Chen",
+        "Michael W. Macy"
+      ],
+      "published": "2026-10-22",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "provider": "arXiv",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.30769v1",
+      "summary": "Large language models (LLMs) increasingly operate in multi-agent systems where they collaborate by responding to others' choices, creating endogenous feedback loops with vulnerability to social influence, herding behavior and runaway cascades. Following the design of the classic Music Lab experiment, we tested this vulnerability in large populations of LLM agents that recommended unfamiliar songs, with or without exposure to cumulative recommendation counts. Exposure led to runaway cascades that generated extreme and unpredictable collective recommendations increasingly divergent from a song's intrinsic appeal. Compared to humans, LLM populations were generally far more susceptible to herding behavior, and unlike humans, LLM cascades were less able to self-correct. This vulnerability has implications for multi-agent collaboration in recommender systems, automated evaluation, complex problem-solving, and unauthorized conspiracies.",
+      "summary_short": "Large language models (LLMs) increasingly operate in multi-agent systems where they collaborate by responding to others' choices, creating endogenous feedback loops with vulnerability to social influence, herding behavior and runaway cascades.",
+      "tags": [
+        "LLM-Agent"
+      ],
+      "section": "LLM 多智能体与社会模拟",
+      "score": 22,
+      "rank": 130,
+      "sources": [
+        "分类·多智能体",
+        "主题·LLM多智能体"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.4108/eetsis.14737",
+      "doi": "10.4108/eetsis.14737",
+      "is_new": false,
+      "title": "Supply Chain Resilience Optimization Integrating Transformers and Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Zhaocheng Wang"
+      ],
+      "published": "2026-10-05",
+      "venue": "ICST Transactions on Scalable Information Systems",
+      "venue_raw": "ICST Transactions on Scalable Information Systems",
+      "provider": "Crossref",
+      "kind": "期刊",
+      "impact": "journal",
+      "impact_label": "期刊",
+      "impact_weight": 55,
+      "primary_category": "",
+      "url": "https://doi.org/10.4108/eetsis.14737",
+      "summary": "INTRODUCTION: Manufacturing supply chains face increasing vulnerabilities from delayed risk identification, conflicting node-level decisions, and escalating recovery costs, particularly under complex disruption scenarios. Existing approaches often lack proactive, coordinated responses across autonomous supply chain nodes, limiting their ability to anticipate disruptions and synchronize mitigation actions effectively. To address these gaps, this paper proposes an integrated resilience optimization framework that combines predictive analytics with multi-agent coordination. OBJECTIVES: The primary objective is to develop a supply chain resilience framework, termed T-MARL, that enables autonomous suppliers, manufacturers, warehousing nodes, and distributors to: (1) predict future disruption probabilities using temporal risk precursor data, and (2) execute coordinated, proactive replenishment, production, and distribution decisions under inventory and capacity constraints. The framework aims to improve resilience index, reduce total operating costs, and shorten recovery time compared to baseline strategies, while also examining the sensitivity of performance gains to prediction noise and communication latency. METHODS: The T-MARL framework models each supply chain node as an independent agent. A lightweight Transformer captures temporal features from 6-dimensional risk precursor sequences over 12 consecutive periods to forecast disruption probabilities. These predictions feed into a value-decomposition multi-agent reinforcement learning mechanism with centralized training–decentralized execution, where a value-decomposition network orchestrates cross-node actions. Risk-constrained action gating ensures that proactive responses adhere to inventory and capacity limits. A digital twin simulation environment was built with fixed random seeds, covering three scenarios—single-source supply disruption, demand surge, and compound disruption. Five strategies were tested, with 30 runs per unit using common random number pairing. RESULTS: On the trajectory-held-out test set, the Transformer achieved an AUC of 0.722 and an F1-score of 0.586, while Random Forest achieved a slightly higher AUC of 0.724. Under the compound disruption scenario, T-MARL attained a resilience index of 0.849—a 1.63 percentage-point gain over VDN-MARL -reduced total cost by 14.7%, and shortened average recovery time from 1.67 periods to zero. T-MARL also achieved lower operating costs while maintaining service levels comparable to rule-based strategies. However, the paper also found that prediction noise and communication latency diminish these performance gains. CONCLUSION: This research contributes a reproducible digital twin analysis framework for disruption prediction, cross-node collaborative response, and rapid recovery in manufacturing supply chains. While T-MARL demonstrates significant improvements in resilience and cost-efficiency under ideal conditions, practical deployment must account for real-world imperfections such as noisy forecasts and delayed communications. The framework provides a scalable foundation for future work on adaptive, data-driven supply chain resilience.",
+      "summary_short": "INTRODUCTION: Manufacturing supply chains face increasing vulnerabilities from delayed risk identification, conflicting node-level decisions, and escalating recovery costs, particularly under complex disruption scenarios.",
+      "tags": [
+        "MARL"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 33,
+      "rank": 129,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1007/s44163-026-02468-6",
+      "doi": "10.1007/s44163-026-02468-6",
+      "is_new": false,
+      "title": "Large language model multiagent systems for industrial problem discovery and prioritization",
+      "authors": [
+        "Mohammed Amin Adoul",
+        "Abdelhamid Ghoul"
+      ],
+      "published": "2026-10-13",
+      "venue": "Discover Artificial Intelligence",
+      "venue_raw": "Discover Artificial Intelligence",
+      "provider": "OpenAlex",
+      "kind": "会议/其他",
+      "impact": "other",
+      "impact_label": "其他",
+      "impact_weight": 45,
+      "primary_category": "",
+      "url": "https://doi.org/10.1007/s44163-026-02468-6",
+      "summary": "Abstract A persistent gap separates academic research priorities from the operational challenges faced by manufacturing firms. Established identification methods, among them Failure Mode and Effects Analysis (FMEA) workshops, Lean audits and consultant engagements, are episodic, bounded by participant expertise and organised along departmental lines, which makes cross-departmental issues hard to surface. Multi-agent systems built on large language models (LLMs) have meanwhile shown collaborative problem-solving ability in software engineering and, more recently, in shopfloor scheduling and supply chain coordination. This article is a Perspective. It develops a framework and a research agenda; implementation and empirical evaluation fall outside its scope and are set out as its first research priorities. Three contributions are offered. The first is a synthesis of literature from industrial problem identification, LLM-based autonomous agents and manufacturing AI, which positions the proposal against existing industrial LLM agent work. The second is a framework in which six domain-specialised agents (production, quality, maintenance, supply chain, safety, energy) would collaborate through a five-phase protocol: worker-driven discovery, cross-departmental analysis, candidate-relationship detection, consensus-based financial assessment and debate-driven prioritisation. The prioritisation procedure is fully specified, including the normalisation of financial estimates, a measure of estimate dispersion, the derivation of criteria weights, a non-compensatory gate for safety-critical items and a mandatory human verification step. The third is a worked calculation on a hypothetical steel manufacturing vignette, included so that the procedure can be reproduced and scrutinised rather than as evidence of effectiveness. A preliminary qualitative readiness assessment and a three-horizon agenda of fourteen research questions complete the paper. The benefits identified are presented as hypotheses for that agenda to test rather than as demonstrated outcomes.",
+      "summary_short": "Abstract A persistent gap separates academic research priorities from the operational challenges faced by manufacturing firms. Established identification methods, among them Failure Mode and Effects Analysis (FMEA) workshops, Lean audits and consultant engagements, are episodic, bounded by participa…",
+      "tags": [
+        "LLM-Agent",
+        "MARL",
+        "AI安全"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 35,
+      "rank": 129,
+      "sources": [
+        "主题·LLM多智能体"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1016/j.engappai.2026.116478",
+      "doi": "10.1016/j.engappai.2026.116478",
+      "is_new": false,
+      "title": "Evolutionary-assisted multi-agent reinforcement learning for waste electrical and electronic equipment inventory optimization under uncertainty",
+      "authors": [
+        "Jinlong Wang",
+        "Yuhui Liu",
+        "Xiaoqi Zhao",
+        "Xiaojie Yu",
+        "Zhao Haoran",
+        "Xiaoyun Xiong",
+        "Gai-Ge Wang"
+      ],
+      "published": "2026-10-15",
+      "venue": "Engineering Applications of Artificial Intelligence",
+      "venue_raw": "Engineering Applications of Artificial Intelligence",
+      "provider": "OpenAlex",
+      "kind": "会议/其他",
+      "impact": "other",
+      "impact_label": "其他",
+      "impact_weight": 45,
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.engappai.2026.116478",
+      "summary": "Waste electrical and electronic equipment (WEEE) inventory optimization has attracted increasing attention with the growing emphasis on circular economy and sustainable development concepts. Effective uncertainty management is crucial for inventory optimization because recycling quantities fluctuate and custom order demands can arise unexpectedly. Although single-agent reinforcement learning methods can learn control policies for sequential decision-making tasks, they neglect collaboration and information sharing among multiple entities, making the resulting solutions unreliable in practical applications. In this paper, an evolutionary-assisted multi-agent reinforcement learning (EAMARL) method is proposed to achieve multi-period, multi-echelon WEEE supply chain inventory optimization. Specifically, a control model is proposed for WEEE inventory optimization under uncertain recycling quantities and custom order demands. The model integrates make-to-order (MTO) and make-to-stock (MTS) production modes, and the resulting optimization problem is formulated as a decentralized Markov decision process. A multi-agent reinforcement learning (MARL) algorithm interacts with the WEEE supply chain environment to train control policies that maximize total profit. To address unstable convergence and limited exploration in MARL approaches, EAMARL integrates a population-based evolutionary algorithm that provides diverse exploratory experiences to support the training of MARL agents. Experiments in open-loop and closed-loop WEEE supply chain networks show that EAMARL improves average profit over the best-performing baseline by 12.09% and 14.39%, respectively. The normalized area under the learning curve of EAMARL indicates high learning efficiency and favorable convergence performance, while boxplot analysis demonstrates greater performance stability. Holm-adjusted Wilcoxon signed-rank tests and paired 95% confidence intervals further provide statistical support for the performance improvements.",
+      "summary_short": "Waste electrical and electronic equipment (WEEE) inventory optimization has attracted increasing attention with the growing emphasis on circular economy and sustainable development concepts.",
+      "tags": [
+        "MARL"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 33,
+      "rank": 129,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1038/s42256-026-01287-9",
+      "doi": "10.1038/s42256-026-01287-9",
+      "is_new": false,
+      "title": "Multi-resolution enhancement for full-spectrum neural representations",
+      "authors": [
+        "Yuan Ni",
+        "Zhantao Chen",
+        "Shizhou Xu",
+        "Cheng Peng",
+        "Rajan Plumley",
+        "Chun Hong Yoon",
+        "Jana B. Thayer",
+        "Joshua J. Turner"
+      ],
+      "published": "2026-08-24",
+      "venue": "Nature Machine Intelligence",
+      "venue_raw": "Nature Machine Intelligence",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 120,
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s42256-026-01287-9",
+      "summary": "",
+      "summary_short": "",
+      "tags": [
+        "资源博弈"
+      ],
+      "section": "机制设计与市场",
+      "score": 8,
+      "rank": 128,
+      "sources": [
+        "ISSN·Nature Machine Intelligence"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.3390/su182010574",
+      "doi": "10.3390/su182010574",
+      "is_new": false,
+      "title": "Sustainable Smart Grid Resilience and Renewable Integration Using Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Seyed Mahmoud Sajjadi Mohammadabadi",
+        "Sayed Mohammad Sajjadi"
+      ],
+      "published": "2026-10-17",
+      "venue": "Sustainability",
+      "venue_raw": "Sustainability",
+      "provider": "OpenAlex",
+      "kind": "会议/其他",
+      "impact": "other",
+      "impact_label": "其他",
+      "impact_weight": 45,
+      "primary_category": "",
+      "url": "https://doi.org/10.3390/su182010574",
+      "summary": "Sustainable energy systems must accommodate renewable generation to ensure dependable service during severe disruptions. This paper presents a decentralized multi-agent system that integrates feeder reconfiguration, Q-learning-based restoration, coordinated battery dispatch, and communication-efficient training. AC power flow validates restoration and voltage-control decisions on the IEEE 33-bus feeder and the synthetic 179-bus Oberrhein benchmark network. For single faults, decentralized restoration achieves the same result as exhaustive centralized search. For double faults across all 496 possible line-fault pairs, it restores 55.1% of isolated load, against 56.6% for centralized search, with 72.7% fewer feasibility evaluations. The learned single-switch policy reaches 95.2% of the oracle reward within its six-action set. Workload balancing reduces the time to target performance by a factor of 1.46. In a localized islanding case, coordinated storage raises fully served critical-load hours from 0% to 4.2%. Autonomous local Volt–VAr droop control increases photovoltaic (PV) hosting capacity by 51% over unity power factor without active power curtailment. Restoration performance degrades gradually under communication loss. An illustrative calculation gives 158–945 kg of avoided CO2 per storm event. All results come from simulation on benchmark networks.",
+      "summary_short": "Sustainable energy systems must accommodate renewable generation to ensure dependable service during severe disruptions. This paper presents a decentralized multi-agent system that integrates feeder reconfiguration, Q-learning-based restoration, coordinated battery dispatch, and communication-effici…",
+      "tags": [
+        "MARL",
+        "LLM-Agent"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 30,
+      "rank": 128,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": [
+        "Crossref:Sustainability"
+      ]
+    },
+    {
+      "id": "2610.30667",
+      "doi": "",
+      "is_new": false,
+      "title": "Fast Iterative Combinatorial Auctions via Deep Reinforcement Learning",
+      "authors": [
+        "Luis F. Paul Tosta",
+        "Quinn Arnold",
+        "Gianluca Brero"
+      ],
+      "published": "2026-10-22",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "provider": "arXiv",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2610.30667v1",
+      "summary": "Iterative combinatorial auctions are used in spectrum allocation, transportation, and industrial procurement, but rounds are costly. We introduce FastCombo, a deep reinforcement learning approach to sequential price discovery. Bayesian pricing has sharply reduced auction rounds even against subgradient benchmarks tuned with hindsight for each instance, but relies on a one-step objective and repeated online inference and optimization. We prove that greedily maximizing immediate clearing probability can require arbitrarily more rounds in expectation than an informative policy, even with the true valuation distribution known. FastCombo learns price policies offline, assigning credit to queries for the future decisions they enable and producing each online price update with a single neural-network forward pass. We formulate the objective of minimizing expected rounds to clearing in single-minded auctions as a partially observable Markov decision process and train a recurrent bidder-item graph policy over complete auction trajectories. In a one-item experiment, all five trained policies learn an informative opening, reducing expected rounds from 1.85 to 1.65 relative to the tested Bayesian one-step rule. Across four domains from the Combinatorial Auction Test Suite, FastCombo achieves competitive clearing while reducing measured online price-selection time per auction by a factor of roughly 300-900 relative to the standard Bayesian baseline. These results demonstrate the value of learning sequential price policies for both information acquisition and online computational efficiency.",
+      "summary_short": "Iterative combinatorial auctions are used in spectrum allocation, transportation, and industrial procurement, but rounds are costly. We introduce FastCombo, a deep reinforcement learning approach to sequential price discovery.",
+      "tags": [
+        "拍卖机制",
+        "资源博弈"
+      ],
+      "section": "机制设计与市场",
+      "score": 20,
+      "rank": 128,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1073/pnas.2531697123",
+      "doi": "10.1073/pnas.2531697123",
+      "is_new": false,
+      "title": "Group size effects and collective misalignment in LLM multi-agent systems",
+      "authors": [
+        "Ariel Flint",
+        "Luca Maria Aiello",
+        "Romualdo Pastor-Satorras",
+        "Andrea Baronchelli"
+      ],
+      "published": "2026-08-18",
+      "venue": "PNAS",
+      "venue_raw": "Proceedings of the National Academy of Sciences",
+      "provider": "Crossref",
+      "kind": "顶刊",
+      "impact": "top",
+      "impact_label": "顶刊",
+      "impact_weight": 105,
+      "primary_category": "",
+      "url": "https://doi.org/10.1073/pnas.2531697123",
+      "summary": "Multi-agent systems of large language models (LLMs) are rapidly expanding across domains, introducing dynamics not captured by single-agent evaluations. Yet, existing work has mostly contrasted the behavior of a single agent with that of a collective of fixed size, leaving open a central question: How does group size shape dynamics? Here, we move beyond this dichotomy and systematically explore outcomes across the full range of group sizes. We focus on multi-agent misalignment, building on recent evidence that interacting LLMs playing a simple coordination game can generate collective biases absent in individual models. First, we show that collective bias is a deeper phenomenon than previously assessed: Interaction can amplify individual biases, introduce new ones, or override model-level preferences. Second, we demonstrate that group size affects the dynamics in a nonlinear way, revealing model-dependent dynamical regimes. Finally, we develop a mean-field analytical approach and show that, above a critical population size, simulations converge to deterministic predictions that expose the basins of attraction of competing equilibria. These findings establish group size as a key driver of multi-agent dynamics and highlight the need to consider population-level effects when deploying LLM-based systems at scale.",
+      "summary_short": "Multi-agent systems of large language models (LLMs) are rapidly expanding across domains, introducing dynamics not captured by single-agent evaluations. Yet, existing work has mostly contrasted the behavior of a single agent with that of a collective of fixed size, leaving open a central question: H…",
+      "tags": [
+        "LLM-Agent",
+        "AI安全"
+      ],
+      "section": "LLM 多智能体与社会模拟",
+      "score": 22,
+      "rank": 127,
+      "sources": [
+        "ISSN·PNAS"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1287/moor.2025.0898",
+      "doi": "10.1287/moor.2025.0898",
+      "is_new": false,
+      "title": "Infrequent Resolving Algorithm for Online Linear Programming",
+      "authors": [
+        "Guokai Li",
+        "Zizhuo Wang",
+        "Jingwei Zhang"
+      ],
+      "published": "2026-09-16",
+      "venue": "Mathematics of Operations Research",
+      "venue_raw": "Mathematics of Operations Research",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 92,
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/moor.2025.0898",
+      "summary": "Online linear programming (OLP) has gained significant attention from both researchers and practitioners because of its extensive applications such as online auctions, network revenue management, order fulfillment, and advertising. Existing OLP algorithms fall into two categories: LP-based algorithms and LP-free algorithms. The former typically guarantees better performance but requires solving a large number of LPs, which could be computationally expensive. In contrast, LP-free algorithms only require first-order computations but induce a worse performance. In this work, we bridge the gap between these two extremes by proposing a well-performing algorithm that solves LPs at a few selected time points and conducts first-order computations at other time points. Specifically, for the case where the inputs are drawn from an unknown finite-support distribution, the proposed algorithm achieves a constant regret (even for the hard “degenerate” case) while solving LPs only [Formula: see text] times over the time horizon T. Moreover, when we are allowed to solve LPs only M times, we design the corresponding schedule such that the proposed algorithm can guarantee a nearly [Formula: see text] regret. Our work highlights the value of resolving both at the beginning and the end of the selling horizon, and provides a novel framework to prove the performance guarantee of the proposed policy under different infrequent resolving schedules. Numerical experiments are conducted to demonstrate the efficiency of the proposed algorithms. Funding: G. Li’s research is partially supported by the Social Sciences and Humanities Research Council of Canada and the Natural Sciences and Engineering Research Council of Canada [Grant DG RGPIN-2021-02973]. Z. Wang’s research is partially supported by the National Natural Science Foundation of China [Grants 72394361 and 72425013], the Guangdong Provincial Key Laboratory of Mathematical Foundations for Artificial Intelligence [Grant 2023B1212010001], and the 1 + 1 + 1 CUHK-CUHK(SZ)-GDSTC Joint Collaboration Fund [Grant 2025A0505000079]. J. Zhang is partially supported by the National Natural Science Foundation of China [Grant 72394361] and the Guangdong Provincial Key Laboratory of Mathematical Foundations for Artificial Intelligence [Grant 2023B1212010001]. Supplemental Material: The online appendix is available at https://doi.org/10.1287/moor.2025.0898 .",
+      "summary_short": "Online linear programming (OLP) has gained significant attention from both researchers and practitioners because of its extensive applications such as online auctions, network revenue management, order fulfillment, and advertising.",
+      "tags": [
+        "拍卖机制",
+        "博弈理论"
+      ],
+      "section": "博弈求解与理论",
+      "score": 13,
+      "rank": 127,
+      "sources": [
+        "ISSN-L·Mathematics of Operations Research"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1287/opre.2025.2272",
+      "doi": "10.1287/opre.2025.2272",
+      "is_new": false,
+      "title": "Near-Optimal Mechanisms for Resource Allocation Without Monetary Transfers",
+      "authors": [
+        "Moïse Blanchard",
+        "Patrick Jaillet"
+      ],
+      "published": "2026-09-23",
+      "venue": "Operations Research",
+      "venue_raw": "Operations Research",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 92,
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/opre.2025.2272",
+      "summary": "Aligning Incentives Without Opening the Wallet Many organizations must repeatedly allocate scarce resources—computing capacity, scientific equipment, school seats, or food-bank supplies—when monetary payments are impractical or undesirable. Blanchard and Jaillet show how future allocations can serve as rewards and penalties, inducing strategic agents to report their values truthfully while keeping welfare close to the full-information ideal. Their mechanisms use the promised utility framework and apply to general utility distributions in both finite-horizon and discounted infinite-horizon settings. The key insight is geometric; performance depends on the shape of the attainable-utility frontier. When agents often have similar values for the resource, the planner can shift allocations at little welfare cost and align incentives more effectively. The paper establishes universal convergence guarantees, faster rates for smooth utility distributions, and even exponentially small welfare losses in some discounted settings with frequent ties. The results provide a unified, quantitative framework for deciding when nonmonetary allocation can nearly match mechanisms that use payments.",
+      "summary_short": "Aligning Incentives Without Opening the Wallet Many organizations must repeatedly allocate scarce resources—computing capacity, scientific equipment, school seats, or food-bank supplies—when monetary payments are impractical or undesirable.",
+      "tags": [
+        "机制设计"
+      ],
+      "section": "机制设计与市场",
+      "score": 6,
+      "rank": 127,
+      "sources": [
+        "ISSN-L·Operations Research"
+      ],
+      "alt": []
+    },
+    {
+      "id": "2610.29310",
+      "doi": "",
+      "is_new": false,
+      "title": "GSP Autobidding Equilibria with Few Advertisers or Slots",
+      "authors": [
+        "Yiyang Huang",
+        "Zhengyang Liu",
+        "Yonglei Yan",
+        "Zihe Wang"
+      ],
+      "published": "2026-10-21",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "provider": "arXiv",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2610.29310v1",
+      "summary": "In sponsored-shopping auctions, one advertiser may win several positions, and a product that is never displayed may determine the prices of several winners. Under generalized second-price (GSP) pricing without self-pricing, these interactions couple allocation and payment through a single global ranking. We prove that exact autobidding equilibria under budget and return-on-investment (ROI) constraints can be computed in polynomial time whenever either the number $n$ of advertisers or the number $K$ of display slots is fixed. Our algorithms rely on two structural reductions. With few advertisers, the payment polytopes of tied bid layers combine by a Minkowski sum, giving a fixed-dimensional representation of exponentially many rankings. With few slots, budget equilibria admit threshold recovery and an exact submodular description of attainable payments at the display boundary. For ROI, we prove that every group-consecutive equilibrium has a representative with at most $K+2$ nonunit multipliers, preserving the item and price in every displayed slot. In each case, the reduction leads to polynomially many systems of polynomial equations and inequalities in bounded dimension. The algorithms compute exact multipliers and explicit distributions over valid group-consecutive rankings, with support at most $n+1$; for ROI with few slots, this improves to $\\min\\{n+1,K+3\\}$.",
+      "summary_short": "In sponsored-shopping auctions, one advertiser may win several positions, and a product that is never displayed may determine the prices of several winners. Under generalized second-price (GSP) pricing without self-pricing, these interactions couple allocation and payment through a single global ran…",
+      "tags": [
+        "拍卖机制"
+      ],
+      "section": "机制设计与市场",
+      "score": 20,
+      "rank": 127,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1145/3789259",
+      "doi": "10.1145/3789259",
+      "is_new": false,
+      "title": "Discrete Single-Parameter Optimal Auction Design",
+      "authors": [
+        "Yiannis Giannakopoulos",
+        "Johannes Hahn"
+      ],
+      "published": "2026-09-09",
+      "venue": "ACM EC",
+      "venue_raw": "ACM Transactions on Economics and Computation",
+      "provider": "Crossref",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 90,
+      "primary_category": "",
+      "url": "https://doi.org/10.1145/3789259",
+      "summary": "We study the classic single-item auction setting of Myerson, but under the assumption that the buyers’ values for the item are distributed over finite supports. Using strong LP duality and polyhedral theory, we rederive various key results regarding the revenue-maximizing auction, including the characterization through virtual welfare maximization and the optimality of deterministic mechanisms, as well as a novel, generic equivalence between dominant-strategy and Bayesian incentive compatibility. Inspired by this, we abstract our approach to handle more general auction settings, where the feasibility space can be given by arbitrary convex constraints, and the objective is a linear combination of revenue and social welfare. We characterize the optimal auctions of such systems as generalized virtual welfare maximizers, by making use of their KKT conditions, and we present an analogue of Myerson’s payment formula for general discrete single-parameter auction settings. Additionally, we prove that integrality of the feasibility space is a sufficient condition to guarantee the optimality of auctions with integral allocation rules. Finally, we demonstrate this KKT approach by applying it to a setting where bidders are interested in buying feasible flows on trees with capacity constraints, and provide a combinatorial description of the (randomized, in general) optimal auction.",
+      "summary_short": "We study the classic single-item auction setting of Myerson, but under the assumption that the buyers’ values for the item are distributed over finite supports. Using strong LP duality and polyhedral theory, we rederive various key results regarding the revenue-maximizing auction, including the char…",
+      "tags": [
+        "拍卖机制",
+        "机制设计"
+      ],
+      "section": "机制设计与市场",
+      "score": 21,
+      "rank": 126,
+      "sources": [
+        "主题·拍卖"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1016/j.geb.2026.104041",
+      "doi": "10.1016/j.geb.2026.104041",
+      "is_new": false,
+      "title": "Multi-agent contract design with a budget",
+      "authors": [
+        "Sumit Goel",
+        "Wade Hann-Caruthers"
+      ],
+      "published": "2026-09-17",
+      "venue": "Games and Economic Behavior",
+      "venue_raw": "Games and Economic Behavior",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 95,
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.geb.2026.104041",
+      "summary": "",
+      "summary_short": "",
+      "tags": [
+        "机制设计"
+      ],
+      "section": "机制设计与市场",
+      "score": 8,
+      "rank": 126,
+      "sources": [
+        "ISSN-L·Games and Economic Behavior"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1016/j.artint.2026.104639",
+      "doi": "10.1016/j.artint.2026.104639",
+      "is_new": false,
+      "title": "Are language models rational? The case of coherence norms and belief revision",
+      "authors": [
+        "Thomas Hofweber",
+        "Peter Hase",
+        "Elias Stengel-Eskin",
+        "Mohit Bansal"
+      ],
+      "published": "2026-10-06",
+      "venue": "Artificial Intelligence",
+      "venue_raw": "Artificial Intelligence",
+      "provider": "OpenAlex",
+      "kind": "CCF-A",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "impact_weight": 78,
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.artint.2026.104639",
+      "summary": "Do norms of rationality apply to machine learning models, in particular language models? In this paper we investigate this question by focusing on a special subset of rational norms: coherence norms. We consider both logical coherence norms as well as coherence norms tied to the strength of belief. To make sense of the latter, we introduce the Minimal Assent Connection (MAC) and propose a new account of credence, which captures the strength of belief in language models. This proposal uniformly assigns strength of belief simply on the basis of model-internal next token probabilities. We argue that rational norms tied to coherence do apply to some language models but not to others. This issue is significant since rationality is closely tied to predicting and explaining behavior, and thus it is connected to considerations about AI safety and alignment, as well as understanding model behavior more generally.",
+      "summary_short": "Do norms of rationality apply to machine learning models, in particular language models? In this paper we investigate this question by focusing on a special subset of rational norms: coherence norms. We consider both logical coherence norms as well as coherence norms tied to the strength of belief.",
+      "tags": [
+        "AI安全"
+      ],
+      "section": "对抗、安全与鲁棒",
+      "score": 6,
+      "rank": 126,
+      "sources": [
+        "ISSN-L·Artificial Intelligence"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.1038/s41598-026-74771-2",
+      "doi": "10.1038/s41598-026-74771-2",
+      "is_new": false,
+      "title": "A QMIX-driven routing protocol for dynamic Underwater Acoustic Sensor Networks",
+      "authors": [
+        "Adi Surendra Mohanraju M.",
+        "Anjaneyulu Lokam",
+        "Kiran Dasari"
+      ],
+      "published": "2026-10-11",
+      "venue": "Scientific Reports",
+      "venue_raw": "Scientific Reports",
+      "provider": "OpenAlex",
+      "kind": "会议/其他",
+      "impact": "other",
+      "impact_label": "其他",
+      "impact_weight": 45,
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41598-026-74771-2",
+      "summary": "Abstract Reliable and energy-efficient data collection remains a fundamental challenge in Underwater Acoustic Sensor Networks (UASNs) owing to limited battery capacity, high propagation delay, dynamic network topology and unreliable communication links. To address these challenges, we propose a Cooperative Multi-Agent Reinforcement Learning (CMARL)-based data routing framework for dynamic UASNs. The routing problem is modeled as a Decentralized Partially Observable Markov Decision Process (Dec-POMDP), where each relay node acts as an autonomous routing agent using locally available information. The framework adopts a Centralized Training and Decentralized Execution (CTDE) paradigm, in which cooperative routing policies are learned using the QMIX algorithm and executed through trained local Q -networks. Each agent constructs its local observation from residual energy, relative forwarding progress towards the sink, estimated link quality and neighboring node availability, while the action space consists of cooperative next-hop selection. A UASN-oriented reward function that jointly optimizes packet delivery reliability, energy efficiency and network lifetime by encouraging reliable packet forwarding and discouraging inefficient routing decisions. Extensive simulation results show that the proposed framework consistently outperforms representative routing protocols across key metrics - packet delivery rate, end-to-end delay, and network lifetime, providing an effective, scalable and intelligent routing solution for next-generation UASNs.",
+      "summary_short": "Abstract Reliable and energy-efficient data collection remains a fundamental challenge in Underwater Acoustic Sensor Networks (UASNs) owing to limited battery capacity, high propagation delay, dynamic network topology and unreliable communication links.",
+      "tags": [
+        "MARL"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 34,
+      "rank": 126,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": []
+    },
+    {
+      "id": "10.54254/2755-2721/2026.ba37690",
+      "doi": "10.54254/2755-2721/2026.ba37690",
+      "is_new": false,
+      "title": "Multi-agent Reinforcement Learning for Coordinated Emergency Building Sweeps",
+      "authors": [
+        "Lechen Ding",
+        "张云生",
+        "Jiamei Du",
+        "Yuanhang Sun"
+      ],
+      "published": "2026-10-13",
+      "venue": "Applied and Computational Engineering",
+      "venue_raw": "Applied and Computational Engineering",
+      "provider": "OpenAlex",
+      "kind": "会议/其他",
+      "impact": "other",
+      "impact_label": "其他",
+      "impact_weight": 45,
+      "primary_category": "",
+      "url": "https://doi.org/10.54254/2755-2721/2026.ba37690",
+      "summary": "We develop a Multi-Agent Deep Deterministic Policy Gradient (MADDPG) framework for coordinating emergency responders during building sweeps. The problem is formulated as a Decentralized Partially Observable Markov Decision Process (Dec-POMDP) that captures building topology, occupant vulnerability, dynamic hazards, and partial observability. In the six-room office baseline, MADDPG reaches a 134-second sweep time after 5,000 episodes, within 6.3% of the 126-second theoretical optimum and outperforming PPO and DQN. Extensions to a two-story school and a U-shaped warehouse achieve 120 seconds with five responders and 105 seconds with four responders, respectively, with diminishing returns beyond these staffing levels. Under communication failure, coverage remains about 98% while sweep time rises 15–20%; reduced staffing triggers workload redistribution, and dynamic hazards cause threatened areas to be prioritized. Occupancy sensing, mesh networks, and environmental sensing are projected to reduce sweep time by 35–50%. Sensitivity analysis confirms robust performance across realistic parameter ranges.",
+      "summary_short": "We develop a Multi-Agent Deep Deterministic Policy Gradient (MADDPG) framework for coordinating emergency responders during building sweeps. The problem is formulated as a Decentralized Partially Observable Markov Decision Process (Dec-POMDP) that captures building topology, occupant vulnerability,…",
+      "tags": [
+        "MARL"
+      ],
+      "section": "核心算法创新 · MARL",
+      "score": 32,
+      "rank": 126,
+      "sources": [
+        "主题·MARL"
+      ],
+      "alt": [
+        "Crossref:Applied and Computational Engineering"
+      ]
+    },
+    {
+      "id": "2610.30221",
+      "doi": "",
+      "is_new": true,
+      "title": "Agentic Architecture of Information Systems. The AAM/5C Model: A Reference Model for Distributed Autonomy",
+      "authors": [
+        "Laurent Goujon"
+      ],
+      "published": "2026-10-21",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "provider": "arXiv",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "cs.SE",
+      "url": "https://arxiv.org/abs/2610.30221v1",
+      "summary": "Large organizations increasingly face what this book calls the cognitive complexity wall: at the scale of hundreds of interacting components, maintaining the dependency map and reacting at the pace of incidents exceeds what a human team can deliver. This conceptual volume proposes AAM/5C, in which five capabilities (Capture, Comprehend, Choose, Coordinate, Control) are instantiated across seven logical layers, L1 to L7. A single authorization rule, R-AUT, separates who proposes, who decides and who executes: a probabilistic planner (L4) proposes; a governance layer (L6) decides under signed policies and records its verdict in a signed evaluation proof; a security layer (L5) issues a short-lived act token bound to that proof; a policy enforcement point verifies both before the target layer materializes the act. Under an explicit guarantee contract, two analytical statements (H7a, H8a) hold by construction. The other statements of its ten hypotheses (H1 to H10), including log completeness (H7b) and non-bypass of the enforcement point (H8b), are refutable, and the protocol that could refute them is fixed before any measurement. The contribution of the book is a prescriptive reference model that articulates, under this single authorization rule, known mechanisms and adds three constructs, all to be validated: the Validation step of the Distributed Autonomy Loop, the ephemeral authority surface and the cognitive dependency plane. The book positions them against autonomic computing, multi-agent systems, enterprise architecture and agent protocols (MCP, A2A), gives an authorization policy in Rego and a partial TLA+ specification of peer consensus, and sets out a validation program with quantified milestones. It reports no empirical results. This English edition is a translation of the French original, produced with the assistance of AI tools and validated by the author.",
+      "summary_short": "Large organizations increasingly face what this book calls the cognitive complexity wall: at the scale of hundreds of interacting components, maintaining the dependency map and reacting at the pace of incidents exceeds what a human team can deliver.",
+      "tags": [
+        "LLM-Agent",
+        "机制设计"
+      ],
+      "section": "机制设计与市场",
+      "score": 19,
+      "rank": 126,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "alt": []
+    },
+    {
+      "id": "2610.29292",
+      "doi": "",
+      "is_new": false,
+      "title": "Credit Where Credit Is Due: Contrastive Attribution Topology Search for Multi-Agent Systems",
+      "authors": [
+        "Fabian Tritthart",
+        "Tom Zehle"
+      ],
+      "published": "2026-10-21",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "provider": "arXiv",
+      "kind": "预印本",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "impact_weight": 30,
+      "primary_category": "cs.CL",
+      "url": "https://arxiv.org/abs/2610.29292v1",
+      "summary": "An LLM multi-agent system (MAS) is only as good as the agents it chooses to trust: its accuracy and cost hinge on its topology, meaning which agents are included and how they communicate. A single task score, however, does not reveal which agents help or hinder performance. We propose Contrastive Attribution Topology Search (CATS), which searches for compact teams within a fixed supergraph of specialized agents. An LLM attributer compares execution traces across candidate topologies and assigns credit to individual agents. CATS uses these credits to update supergraph edges while progressively pruning weak edges and agents, yielding a small team for deployment. With small open-weight models and matched candidate evaluations, CATS improves mean accuracy on BigCodeBench by 5.3 percentage points over score-only heuristic search while using 54$\\%$ fewer deployment tokens. On MBPP, CATS matches the strongest baselines with fewer tokens than the other searches. In a HotpotQA prompt-poisoning stress test, CATS excludes all adversarially prompted agents in all three runs, whereas random search retains some at comparable accuracy. Per-agent credit thus supports both team optimization and the pruning of potentially harmful agents.",
+      "summary_short": "An LLM multi-agent system (MAS) is only as good as the agents it chooses to trust: its accuracy and cost hinge on its topology, meaning which agents are included and how they communicate. A single task score, however, does not reveal which agents help or hinder performance.",
+      "tags": [
+        "对抗安全",
+        "LLM-Agent"
+      ],
+      "section": "LLM 多智能体与社会模拟",
+      "score": 19,
+      "rank": 126,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "alt": []
+    }
+  ]
+}

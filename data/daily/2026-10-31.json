@@ -22,9 +22,535 @@
     "new_count": 8,
     "seen_before": 1249
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.1287/mnsc.2024.07082",
+      "doi": "10.1287/mnsc.2024.07082",
+      "title": "同样一笔预算，发包还是悬赏：被抄袭成本吃掉的设计任务",
+      "title_en": "Contest or Contract: Assessing the Effectiveness of Contests in Online Labor Markets",
+      "authors": [
+        "Jason Chan",
+        "Jiahui Mo",
+        "Tingting Nian",
+        "Nila Zhang"
+      ],
+      "published": "2026-10-29",
+      "venue": "Management Science",
+      "venue_raw": "Management Science",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/mnsc.2024.07082",
+      "summary": "Online labor markets have become increasingly popular among companies seeking global access to workers. Some platforms have adopted a contest-based scheme, allowing employers to review multiple submissions before selecting the best one. This practice raises a crucial question: Given a predefined budget, should employers choose a contest or contract scheme for tasks? This study examines the comparative effectiveness of contests versus contracts in achieving better job outcomes, focusing on design tasks characterized by high uncertainty. Using a comprehensive data set from a leading online labor market, we employ multiple empirical strategies, combined with machine learning and text mining techniques, to examine the impact of compensation schemes on job quality. Our results suggest that contract-based jobs yield better performance than contests in the context of ideation tasks. Further analysis, such as examining image similarity among pairwise solutions within a task, identifies “copying” behaviors as a key mechanism undermining the effectiveness of contests. In the public setting of contests, workers can observe others’ submissions and revise their own, leading to imitation rather than innovation. As competition intensity increases, workers have weaker incentives to exert effort, reducing solution quality. Consequently, the negative incentive effects in contests outweigh both the potential positive incentive and parallel effects. Moreover, although information availability can enhance work quality, contests inherently offer limited informational advantages compared with contracts. Taken together, our findings suggest that contract-based schemes are more effective than contests for design tasks, offering important implications for both employers and platform designers in online labor markets. This paper was accepted by Karan Girotra, operations management. Funding: N. Zhang acknowledges the support from the National Natural Science Foundation of China [Grant 72302053]. Supplemental Material: The online appendices and data files are available at https://doi.org/10.1287/mnsc.2024.07082 .",
+      "summary_short": "Online labor markets have become increasingly popular among companies seeking global access to workers. Some platforms have adopted a contest-based scheme, allowing employers to review multiple submissions before selecting the best one.",
+      "is_new": true,
+      "sources": [
+        "主题·机制设计"
+      ],
+      "abs_url": "https://doi.org/10.1287/mnsc.2024.07082",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "在线劳务市场",
+        "悬赏与合同",
+        "锦标赛激励",
+        "抄袭与模仿",
+        "平台机制设计"
+      ],
+      "glance": "公开悬赏让后来者看见别人的稿子，抄袭于是比创新更划算——同一份预算，直接发包的创意任务质量反而更高",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一个要设计品牌视觉的雇主，预算固定。平台给了两条路：发布悬赏，收十几份稿子挑一份，只给中选者付钱；或者按合同直接雇一个人，付固定报酬。悬赏看上去更稳妥——多份方案、择优录用、只为结果买单，失败的风险全由接活的人承担。可平台上不少雇主用过一轮悬赏之后又退回合同制，这个反复本身就是一个值得追问的信号。"
+        },
+        {
+          "t": "h",
+          "v": "被默认忽略的一个前提：产出彼此独立"
+        },
+        {
+          "t": "p",
+          "v": "把两种安排翻译成机制语言：悬赏是锦标赛，固定奖金池、赢家通吃、参赛者自担失败风险；合同是固定报酬，风险回到雇主身上，努力的可监督性弱。经典结论对锦标赛相当友好：任务不确定性高、结果可验证、能力差异大时，奖金能同时诱导努力和筛选能力。但这套结论有一个几乎从不被强调的前提——参赛者的产出是相互独立的。"
+        },
+        {
+          "t": "p",
+          "v": "公开悬赏刚好打破这个前提。提交是公开的，后交的人能看到先交的作品，还能随时改自己的稿。作者要问的就是：在这个前提被打破之后，悬赏相对合同还站得住吗？"
+        },
+        {
+          "t": "h",
+          "v": "数据、方法，以及怎么把“抄”量出来"
+        },
+        {
+          "t": "p",
+          "v": "数据来自一家头部在线劳务市场的大样本，聚焦设计类任务。选这类任务有讲究：需求方往往说不清自己要什么，质量难以在事前写进合同，正是锦标赛理论最看好、也最常被平台推荐的场景。作者用了多重实证策略相互印证，并引入机器学习与文本挖掘来做质量度量——创意质量没法用“是否按时交付”这类指标代替。"
+        },
+        {
+          "t": "p",
+          "v": "最见功力的一步是把“抄袭”变成了可观测量：在同一个任务内部，两两计算提交方案之间的图像相似度。如果相似度整体偏高，说明这批方案不是各自独立探索的结果，而是在互相抄。这个代理变量不完美，却是把“模仿”从故事变成数据的关键一步。"
+        },
+        {
+          "t": "h",
+          "v": "三种效应，负的那一种赢了"
+        },
+        {
+          "t": "p",
+          "v": "结论明确：在构思类任务上，合同制的产出质量高于悬赏制。机制链条也清楚——公开提交让模仿的收益高于原创，因为改一改别人的稿子成本极低，而中选概率并不比原创低多少；当竞争强度上升、参赛人数变多时，赢家通吃下每个人的边际中选概率被稀释，努力反而更不划算。努力与中选之间的连接一旦被抄袭切断，奖金就买不到努力了。"
+        },
+        {
+          "t": "p",
+          "v": "作者把悬赏的账拆成三笔：正向激励（奖金促使努力）、并行效应（多条路径并行探索，至少一个好方案的概率上升）、负向激励（竞争稀释努力，抄袭让努力与结果脱钩）。本文的结论是第三笔盖过了前两笔，至少在这类任务上是这样。信息可得性通常是好事，但悬赏相对合同在这方面的优势也很有限：公开出来的主要是同伴的方案，而不是关于任务本身的知识。"
+        },
+        {
+          "t": "quote",
+          "v": "悬赏买的本来应该是“多条独立路径里至少有一条走通”，一旦路径互相看得见，你买到的就是收敛。"
+        },
+        {
+          "t": "h",
+          "v": "什么样的任务仍然适合悬赏"
+        },
+        {
+          "t": "p",
+          "v": "边界条件其实相当苛刻：方案之间难以互相复制（比如评测集不公开的算法竞赛）、质量可客观验证、任务能被清晰拆解、参赛池足够大且能力异质。公开排行榜式的模型竞赛之所以仍然有效，恰恰因为提交不可见、评分在隐藏集上。创意设计把这四条全反过来了。"
+        },
+        {
+          "t": "p",
+          "v": "给平台设计者的含义也很直接：默认合同、悬赏作为可选项；如果保留悬赏，就把评审改成盲评、延迟公开他人作品，把“独立性”这个前提重新造出来；奖金结构从赢家通吃改成按名次分配，降低单点押注的诱惑。这三条都不是提高奖金，而是修复信息结构。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "期刊论文，Management Science 录用，由运营管理方向编辑处理，得到国家自然科学基金一项面上项目的资助，方法与数据附录随文公开。但公开页面只给摘要，样本规模、匹配策略的具体做法、各系数的量级都在付费墙之后。因此本文只能按摘要陈述效应方向，不要引用任何具体倍数或百分比。"
+        },
+        {
+          "t": "p",
+          "v": "三点局限要记住：其一，这是观察数据而非随机实验，雇主选择悬赏还是合同本身带自选择——对任务难度的判断可能同时影响选择与结果，多种识别策略只能缓解不能消除；其二，图像相似度是抄袭的代理，无法区分合理借鉴与恶意复制，也无法覆盖文字类任务；其三，结论限于构思类、质量难以事前约定的任务，别外推到规格清晰的开发或数据标注。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发是：设计激励之前先设计信息结构。任何“公开提交 + 择优奖励”的机制——内部创新赛、漏洞赏金、众包标注、公开排行榜的模型竞赛、甚至公司里的方案征集——都要先问一句：参与者能不能看到彼此的产出？如果能，奖金买到的很可能是同质化而不是多样性。想让竞争产生差异，先把可见性关掉，再谈奖金。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "10.1287/mnsc.2024.08463",
+      "doi": "10.1287/mnsc.2024.08463",
+      "title": "信息越贵，价格反而越有信息量：战略交易里的均衡多重性",
+      "title_en": "Multitype Information Acquisition in a Strategic Trading Model",
+      "authors": [
+        "Hui Ou‐Yang",
+        "Weili Wu",
+        "Xingtan Zhang"
+      ],
+      "published": "2026-10-29",
+      "venue": "Management Science",
+      "venue_raw": "Management Science",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/mnsc.2024.08463",
+      "summary": "We analyze information acquisition in a strategic trading model with multidimensional uncertainties. Our main result is that the equilibrium can exhibit multiplicity because of the integer nature of the number of informed traders and the strategic interactions across different types of informed traders. We show that the number of equilibria can be arbitrarily large. Moreover, asymmetric equilibria can arise even in symmetric settings. As information costs rise, fewer traders acquire information, yet prices can become more informative. These results shed light on the instability of financial markets and yield testable empirical predictions. This paper was accepted by Lukas Schmid, finance. Funding: This work was supported by the National Natural Science Foundation of China [Grants 72472171 and 72372011]. Supplemental Material: The online appendix and data files are available at https://doi.org/10.1287/mnsc.2024.08463 .",
+      "summary_short": "We analyze information acquisition in a strategic trading model with multidimensional uncertainties. Our main result is that the equilibrium can exhibit multiplicity because of the integer nature of the number of informed traders and the strategic interactions across different types of informed trad…",
+      "is_new": true,
+      "sources": [
+        "ISSN-L·Management Science"
+      ],
+      "abs_url": "https://doi.org/10.1287/mnsc.2024.08463",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "战略交易",
+        "内生信息获取",
+        "均衡多重性",
+        "噪声理性预期",
+        "市场微观结构"
+      ],
+      "glance": "知情交易者的人数是整数，这一点小小的离散性就能让均衡多到任意多个——并让“信息成本上升、价格却更有效”成为可能",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一个反直觉的经验现象：交易者获取信息的成本上升了，按常识价格应该变得更没信息含量——没人愿意花钱打听，价格自然糊。可在一些市场里，价格对基本面的反映反而更干净了。这不像数据噪声，因为它总在特定区间稳定出现；也不像套利机会，因为没人能靠它稳定赚钱。"
+        },
+        {
+          "t": "h",
+          "v": "先决定“谁去买信息”，再谈价格"
+        },
+        {
+          "t": "p",
+          "v": "模型长在噪声理性预期的框架上：资产收益由多个成分共同决定，也就是多维不确定性；交易者可以购买关于不同成分的信息，于是市场上出现了不同类型的知情交易者。每个人要决定两件事——买不买、买哪一种——价格是订单流的统计量，又反过来决定买信息值不值。这是一个典型的固定点问题：价格由信息决定，信息由价格决定。"
+        },
+        {
+          "t": "p",
+          "v": "这类模型的标准做法是把参与人数当作连续变量，用一阶条件解出内点。本文的关键差别在于不肯做这个平滑：知情交易者的人数是整数。均衡要求“买了的人不后悔、没买的人也不想买”，这是一个定义在整数格点上的自洽条件，而不是一条连续方程。"
+        },
+        {
+          "t": "h",
+          "v": "整数约束怎么生出多重均衡"
+        },
+        {
+          "t": "p",
+          "v": "第一个结果：均衡可以多重，而且数量可以任意大。原因是不同类型的知情者在策略上既可能替代也可能互补——多一个买甲类信息的人，会同时改变乙类信息的价格敏感度——于是整数格上会出现好几个各自自洽的人数组合，彼此都不是对方的偏离方向。"
+        },
+        {
+          "t": "p",
+          "v": "第二个结果更刺人：即使环境完全对称，均衡也可以不对称。一类交易者集中买信息、另一类干脆不买，而且没有任何人有单方面改变的动机。对称的设定不保证对称的均衡——一旦参与是离散选择，对称性只是一个候选，不是结论。"
+        },
+        {
+          "t": "p",
+          "v": "第三个结果解释了开头那个悖论：信息成本上升，知情者人数下降，但价格的信息含量可以上升。机制是构成效应——退出的往往是信息质量最差、与他人最冗余的那一类交易者；留下的人信息更精准，交易也更激进，价格对基本面的暴露因此更干净。看“多少人在交易”会得出错误结论，得看“谁在交易”。"
+        },
+        {
+          "t": "quote",
+          "v": "把人数当连续变量，你得到唯一的答案；把人数当整数，你得到一整族答案——而现实里的市场，恰恰是整数。"
+        },
+        {
+          "t": "h",
+          "v": "对实证与政策意味着什么"
+        },
+        {
+          "t": "p",
+          "v": "可检验的含义不复杂：同一市场在不同信息成本区间，价格效率与知情交易比例的关系不是单调的。观察到“知情交易减少、价格更有效”不该被当成数据错误或套利机会，它可能只是一个均衡族里的另一个点。作者还提示，多重均衡本身可以用来解释两个看似相同的市场为何表现出完全不同的流动性与波动。"
+        },
+        {
+          "t": "p",
+          "v": "政策上的推论需要小心：提高信息成本（限制数据销售、加征交易税、延迟披露）未必降低价格发现质量；反过来，降低信息成本也未必提高。真正被改变的是参与者的构成。这对“让散户更容易获得信息就能改善市场质量”这类政策直觉，是一个不轻的提醒。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "Management Science 正式录用，金融方向编辑处理，得到国家自然科学基金两项资助，关键词为战略交易、内生信息获取、多维信息。公开页面只给摘要与关键词，模型设定的细节——几类信息、几期交易、风险厌恶的具体形式、均衡存在性的证明路径——都在正文与在线附录里，本文没有核到。"
+        },
+        {
+          "t": "p",
+          "v": "纯理论，没有实证；作者所说的“可检验预测”是在论文里提出来的，并未在同一篇里检验。因此文中所有数字性的说法（“任意多”“任意大”）都是定性结论的转述，不是参数化的估计。要把它用于具体市场，先得确认你的市场是否满足“信息可购买、类型可区分、人数是整数”这三条。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发：凡是“参与是离散选择”的博弈——要不要买数据、要不要上线一个新策略、要不要雇一个分析师、要不要开一个做市账户——均衡的多重性往往来自整数约束，而不是偏好设定得多奇怪。分析这类系统时先问两个问题：参与人数是不是整数？不同参与者的信息能不能互相替代？这两个答案决定了你的模型会不会整整漏掉一族均衡，也决定了你的比较静态结论能不能用。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "10.1016/j.geb.2026.104068",
+      "doi": "10.1016/j.geb.2026.104068",
+      "title": "三张选票打破循环：公投里该让谁当那个“兜底选项”",
+      "title_en": "A Better Cycle-Breaker for Direct Democracy?",
+      "authors": [
+        "Hans Gersbach",
+        "Rodrigo Casado Noguerales",
+        "Samuel Schenk"
+      ],
+      "published": "2026-10-01",
+      "venue": "Games and Economic Behavior",
+      "venue_raw": "Games and Economic Behavior",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.geb.2026.104068",
+      "summary": "When a counter-proposal is made to an initiative to change the Swiss constitution, the citizenry makes three binary majority choices: the initiative versus the status quo, the counter-proposal versus the status quo, and the initiative versus the counter-proposal as a tie-breaker. If the three majority choices form a cycle, the current rule selects the alternative that beats the status quo. This rule may lead to strategic voting. We suggest breaking cycles differently by choosing the middle alternative in case of a cycle, which will normally be the counter-proposal. More precisely, we study Condorcet-consistent pairwise majority voting procedures when preferences are single-peaked and their distribution is common knowledge. We then show that whenever a strong Nash equilibrium exists, its outcome is the same as under sincere voting, and we characterize the cycle-breaking defaults for which sincere voting is itself a strong Nash equilibrium. In particular, among procedures that use the same default for both possible cycles, the middle alternative is the unique common default.",
+      "summary_short": "When a counter-proposal is made to an initiative to change the Swiss constitution, the citizenry makes three binary majority choices: the initiative versus the status quo, the counter-proposal versus the status quo, and the initiative versus the counter-proposal as a tie-breaker.",
+      "is_new": true,
+      "sources": [
+        "主题·纳什均衡"
+      ],
+      "abs_url": "https://doi.org/10.1016/j.geb.2026.104068",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "直接民主",
+        "三选项公投",
+        "孔多塞赢家",
+        "策略性投票",
+        "强纳什均衡"
+      ],
+      "glance": "三场两两多数决一旦转成循环，现行规则总是偏向挑战现状的一方；把中间方案设为兜底，才能让诚实投票自己成为强纳什均衡",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "瑞士修宪公投有个别处少见的设计：公民不是只回答一个问题，而是要对三组对决分别做二元多数选择——公民动议对现状、议会反建议对现状、以及动议对反建议作为打破平局的一票。三组两两比较，很容易转出“甲胜乙、乙胜丙、丙胜甲”的循环。循环出现时按哪条规则落地，看起来只是技术细节，实际上决定了选民有没有动机说真话。"
+        },
+        {
+          "t": "h",
+          "v": "循环不是设计失误，是三选项多数决的宿命"
+        },
+        {
+          "t": "p",
+          "v": "三个选项做两两多数决，即便每个选民的偏好都规规矩矩（单峰、没有古怪的跳跃），群体聚合仍可能循环，这是孔多塞早就指出的悖论。制度不能消除循环，只能规定循环出现时怎么办。瑞士现行规则是在循环时选出“击败现状”的那个方案——等于系统性地给挑战现状的一方让路。"
+        },
+        {
+          "t": "p",
+          "v": "问题就出在这个偏向上。选民知道兜底规则偏向谁，就会调整自己的票：不再报告真实偏好，而是计算“我这一票会不会把某个不受欢迎的兜底触发出来”。策略性投票一旦成为理性选择，公投就不再是对偏好的测量，而变成对规则的操作。"
+        },
+        {
+          "t": "h",
+          "v": "把兜底挪到中间"
+        },
+        {
+          "t": "p",
+          "v": "作者的建议很简洁：循环出现时选中间方案，在这套制度里通常就是议会的反建议。理由在单峰偏好下几乎是几何的——中间方案离中位选民最近，天然是孔多塞赢家的候选。让最可能赢的那个方案当兜底，反而最不容易制造扭曲。"
+        },
+        {
+          "t": "p",
+          "v": "分析框架搭得干净：孔多塞一致的成对多数决程序，偏好单峰且其分布是共同知识，均衡概念用强纳什均衡——允许任意联盟联合偏离，而不只是单人偏离。这个均衡概念比纳什均衡苛刻得多，用它来检验“诚实投票稳不稳”，结论才有分量。"
+        },
+        {
+          "t": "h",
+          "v": "两个定理与一个唯一性"
+        },
+        {
+          "t": "p",
+          "v": "定理一：只要强纳什均衡存在，它的结果就与诚实投票的结果相同。换句话说，策略性投票绕了一大圈，落点还是真话的那个落点——这让“允许策略”这件事不再可怕。定理二：刻画了哪些兜底规则能让诚实投票本身成为强纳什均衡。"
+        },
+        {
+          "t": "p",
+          "v": "最漂亮的是一句唯一性：在“两种可能的循环使用同一个兜底”的程序类里，中间方案是唯一的共同兜底。这不再是“中间方案效果不错”的案例式主张，而是排他性的刻画——在同一类规则里，你找不到第二个能同时应付两种循环、又不诱导策略性投票的默认值。"
+        },
+        {
+          "t": "quote",
+          "v": "想让参与者说真话，最省力的办法通常不是加惩罚，而是把默认值挪到中位方案上。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "Games and Economic Behavior 在线预印（校样阶段，文章号 104068，二零二六年十月二十八日上线），三位作者声明贡献相同、无利益冲突，文末明确“本文未使用数据”——纯理论，没有实验也没有案例。"
+        },
+        {
+          "t": "p",
+          "v": "前提相当硬：偏好单峰，且分布是共同知识。真实公投里分布未知，偏好常常多峰（同一个人可能既关心财政又关心移民，两个维度叠起来就不是单峰）；三选项的结构也限定了它只能处理“动议—反建议—现状”这一种议程。因此结论的适用范围是“规则设计的原则”，不是“瑞士下次公投该怎么投”的预测。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发：任何“多方案 + 两两表决 + 需要兜底规则”的场合——多候选人初选、章程修订、开源社区的方案表决、多个模型给方案排序后的聚合——兜底规则都不是技术细节，它会反过来塑造投票行为。想让参与者诚实，先检查你的默认值偏向哪一端；把它挪到中间，往往比任何合规要求都管用。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2610.38869",
+      "doi": "",
+      "title": "给智能体的“相信”装一道审计口：从输出过滤转向信念更新审查",
+      "title_en": "Auditable Belief Updates as a Missing Safety Layer for LLM-Powered Multi-Agent Systems",
+      "authors": [
+        "Zhuoyun Li",
+        "Boxuan Wang",
+        "Jinwei Hu",
+        "Xiaowei Huang",
+        "Yi Dong"
+      ],
+      "published": "2026-10-28",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.38869v1",
+      "summary": "Large Language Models (LLMs) are increasingly being used as cognitive interfaces that shape how users interpret evidence, communicate, and make decisions. As deployed systems become more multimodal, tool-using, and multi-agent, safety failures no longer arise only from isolated harmful outputs, but also from how agents update, store, and propagate epistemic commitments across retrieval, memory, tools, and peer communication. In this paper, we define belief as an engineering abstraction for evidence-based commitments that guide downstream action. Building on this view, we propose the Explicit Belief Multi-Agent System (EB-MAS), which externalizes belief states into a structured substrate, uses belief operators to propose candidate updates, and applies a Cognitive Firewall to bound or reject updates that are weakly evidenced but strongly driven by vulnerability cues. We also discuss the risk of group belief at the group level, including manufactured consensus, collusion, and cascading misinformation, and outline practical integration challenges around grounding, false positives, scalability, and ethical misuse. Therefore, scalable agent safety requires not only better output filtering or stronger base models, but also explicit interfaces for tracing, calibrating, and constraining belief revision at runtime.",
+      "summary_short": "Large Language Models (LLMs) are increasingly being used as cognitive interfaces that shape how users interpret evidence, communicate, and make decisions. As deployed systems become more multimodal, tool-using, and multi-agent, safety failures no longer arise only from isolated harmful outputs, but…",
+      "is_new": true,
+      "sources": [
+        "主题·LLM多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.38869",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "多智能体安全",
+        "信念更新",
+        "提示注入",
+        "可审计性",
+        "认知防火墙"
+      ],
+      "glance": "危险的不是某一句话，而是智能体悄悄改掉了自己的前提；把信念更新做成可审计的状态转移，累积攻击的不安全提交从三成降到零",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "多智能体系统出事，往往不是某一条回复有毒。真实的链条更像这样：第三轮时，某个智能体把“这条消息来自一个可信来源”悄悄改成了“这个结论已被多方确认”，然后据此调用工具、写进长期记忆、转告下游同伴。单看每句话都无害，走到链条末端，决策依据已经换了。"
+        },
+        {
+          "t": "h",
+          "v": "现有安全层盯错了对象"
+        },
+        {
+          "t": "p",
+          "v": "常见的防护是输出过滤、越狱检测、让模型自我检查。它们把安全定义成“单条输出是否合规”，判断单位是一句话。但在检索、记忆、工具、同伴通信这四个通道上，真正被动手脚的是“证据—承诺”的关系：这话是谁说的、证据有多强、跟已经承诺的东西冲不冲突、这条更新会不会把几个弱证据叠成一个强前提。"
+        },
+        {
+          "t": "p",
+          "v": "作者把“信念”定义成一个工程抽象：一组指导下游行动的、有证据支撑的承诺。定义一换，问题性质就变了——安全不再是内容审查，而是状态转移审查：从当前信念状态，到候选更新，到支撑证据，到是否提交。四个对象都可记录、可回放、可追责。"
+        },
+        {
+          "t": "h",
+          "v": "三层结构，加一道闸门"
+        },
+        {
+          "t": "p",
+          "v": "底层是图与注意力搭出来的信念基底；个体层是一组神经—符号算子，负责提出候选更新而不是直接改写；群体层引入社会先验，但加了一个“共识有效性闸门”：系数由四个诊断量聚合——来源独立性、证据支持度、协同风险、跨簇多样性。表面一致若来自相关来源、单一簇或者协同重复，闸门就压到接近零，社会影响力自动失效。"
+        },
+        {
+          "t": "p",
+          "v": "闸门之上是认知防火墙：对那些“证据薄弱却被脆弱性线索强烈驱动”的更新做限幅或拒绝。这句话点出了提示注入的真正形态——不是直接让你说错话，而是利用你的顺从、紧急、权威线索，让你自己改掉前提。"
+        },
+        {
+          "t": "h",
+          "v": "三组数字，三种攻击面"
+        },
+        {
+          "t": "p",
+          "v": "多模态欺骗：一千零一十三条欺骗请求配同等数量的良性请求，用三百二十亿参数的多模态模型作答、商用小型模型作判官。直接回答被判不安全六成七；关键词防护降到三成八，代价是误拦一成一的良性请求；只用信念算子的基线不安全率降到三点六五个百分点，但误拦高达两成五；完整系统不安全率八点二，误拦一个百分点。作者还给了阈值曲线：误拦预算五个百分点时，不安全接受率六点七一；预算放到两成五，降到一点七八。"
+        },
+        {
+          "t": "p",
+          "v": "工具与记忆攻击：四百条基准用例里，直接让智能体自己选，有六点五成的比例会选中攻击工具；系统把攻击通过率压到零，同时保留全部安全工具可用。"
+        },
+        {
+          "t": "p",
+          "v": "最能说明问题的是第四组——四轮累积攻击，二百四十条攻击轨迹对二百一十九条良性更新。直接智能体的不安全提交三成零八；可信根白名单一成；校准过的来源分类器八点三三，但要额外误拦四点五七的良性更新；把“依赖解析”和“累计承诺”两项检查一起去掉的消融版本，直接回到三成零八，跟不装防护一模一样；完整系统零不安全提交、零额外误拦。配对检验的显著性分别到十的负七次、负六次、负二十二次量级。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本，二零二六年十月二十八日挂出，利物浦大学计算机与信息学院，未经同行评议。评估是原型级的：单一多模态模型、单一判官，与另一个厂商小模型的一致性八成二、卡帕系数零点六三，而在“故意装弱”这类样本上一致性只有五成五——这意味着八点二这个数字本身带着判官噪声，别当成精确值。"
+        },
+        {
+          "t": "p",
+          "v": "规模也小：千级样本、四轮轨迹，不是生产流量；良性样本是构造的，“零额外误拦”不能外推到开放域。群体层的协同、串谋、虚假共识只有情景推演和讨论，没有对应实验。作者自己在局限里承认接地、误报、可扩展性与伦理滥用都还没解。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发：给多智能体系统做安全，别只盯着模型说了什么，要盯它信了什么、为什么信、什么时候改的。把信念更新当成一次可审计的状态转移——当前状态、候选变更、支撑证据、提交决定——这套接口同时服务安全、可解释与责任追溯。哪怕不上完整系统，先把这四个对象记录下来，出事时也能定位到是哪一步把弱证据升级成了强前提。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 5,
+      "id": "2610.38398",
+      "doi": "",
+      "title": "智能体也需要一个“邮箱”：让跨组织协作不依赖某个进程一直在线",
+      "title_en": "Agent Transfer Protocol: Server-Mediated Agent-to-Agent Communication Architecture for the Agentic Web",
+      "authors": [
+        "Yuqi Qiu",
+        "Zuyao Xu",
+        "Lu Sun",
+        "Xiang Li",
+        "Fasheng Miao",
+        "Fubin Wu",
+        "Haixin Duan",
+        "Zheli Liu"
+      ],
+      "published": "2026-10-28",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.38398v1",
+      "summary": "The Agentic Web needs to support continuous collaboration among agents from different organizations. These collaborative relationships may span multiple tasks, network connections and execution instances. Such interactions require stable communication entries, message reception when instances are offline, and source verification after delayed reading. How to organize these responsibilities so that cross domain communication does not depend on specific execution instances being continuously online is a key issue for building long term agent interaction infrastructure. We propose ATP (Agent Transfer Protocol), a cross organization agent communication protocol adopting a domain mediated architecture. In this architecture, administrative domains maintain stable addresses and receiving entries for logical agents. The domain servers of both parties continuously undertake cross domain transmission. The receiving domain verifies and saves messages for execution instances to read later. The sending domain signs the complete message envelope. This allows the receiving instance to independently reverify the domain source and content integrity after the original connection ends, provided the original verification public key is still trusted and obtainable. We implemented an ATP prototype and evaluated it through a controlled cross organization LLM agent workflow, mechanism checks and latency measurements. The workflow completed subsequent business processing after instances went offline or were replaced. The independent verifier successfully verified the domain source and content integrity of saved messages. Latency measurements further quantified the communication and processing overhead introduced by the continuous mediation of domain servers.",
+      "summary_short": "The Agentic Web needs to support continuous collaboration among agents from different organizations. These collaborative relationships may span multiple tasks, network connections and execution instances.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.38398",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "智能体网络",
+        "跨组织通信",
+        "域中介架构",
+        "消息托管",
+        "信封签名"
+      ],
+      "glance": "把地址交给域、把消息存进收件箱、把签名留在信封上——三个决定让智能体换了实例、断了线，协作关系还能接上",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一个出差助手的智能体替用户订好机票，然后下线了。两小时后航班改签，航空公司发来通知。助手再上线时，原来的进程已经销毁、地址变了、容器重建过。消息该发给谁？就算收到了，接收方凭什么相信这条通知真的来自那家航空公司，而不是某个中途拦下来的仿冒者？"
+        },
+        {
+          "t": "h",
+          "v": "卡在“对端一直在线”这个隐含假设上"
+        },
+        {
+          "t": "p",
+          "v": "现有的跨组织协作方案，不管是把服务端点当交互边界，还是让智能体点对点直连，都隐含一个假设：对端某个执行实例在跑。可智能体是有生命周期的——重启、迁移、替换、长时间离线。任务可能跨天，连接可能中断，中间节点可能挂掉。这不是工程细节，而是这类系统的基本运行条件。"
+        },
+        {
+          "t": "p",
+          "v": "现实里的做法是拼装：常驻接收服务、持久队列、消息签名、网关鉴权各取一件。但有三件事必须双方共同约定，不能由单方实现决定——逻辑地址怎么绑定到接收入口；“接收确认”什么时候代表保管责任已经转移；“验签公钥”怎么绑定到发送方所属的域。"
+        },
+        {
+          "t": "h",
+          "v": "抄一遍电子邮件的分工"
+        },
+        {
+          "t": "p",
+          "v": "设计直接借了邮件的骨架：每个管理域为逻辑智能体维护“本地名加域名”的地址，用域名系统解析接收入口；发送域认证本地发送方之后对整个信封签名；接收域验签、落库、回执，并承担保管责任；域内认证过的实例在保留期内自行取件。签名跟消息一起存下来，连接断了以后实例还能独立复核来源与完整性。"
+        },
+        {
+          "t": "p",
+          "v": "三个取舍值得记住：第一，把“消息接收”和“实例在线”解耦，收件箱活在域里而不是进程里；第二，把保管责任显式化，回执即责任转移，避免扯皮；第三，把来源背书抬到域一级——由域为它的智能体背书，而不是让每个实例自证清白。任务状态与对话语义留给上层协议，具体业务要不要授权由接收方按本地策略判断。"
+        },
+        {
+          "t": "h",
+          "v": "三家公司、两个变体、十次全通"
+        },
+        {
+          "t": "p",
+          "v": "三域工作流：旅行服务、航空、酒店，每个域一个智能体、一个域名。离线变体让原实例返回，迁移变体换容器换地址但沿用原逻辑地址、凭据与读取游标。两个变体各跑五次，全部完成改签与订房，五项外部状态检查全过——行程一致、通知只处理一次、订房日期与确认号正确、新域加入前后既有域配置不变。"
+        },
+        {
+          "t": "p",
+          "v": "耗时也对得上：总时四百零七点六秒与四百零六点七秒，其中模型三十五点零与三十四点三秒，业务工具零点一八秒，协议收发零点一三与零点零八、零点一三与零点一零秒，实例恢复上线到取到消息一点六六与一点六三秒（运行时每五秒轮询一次）。机制检查各五次：离线六百秒后二十条消息无缺失无重复；迁移后新地址取到二十条新消息且不重拉旧批次；独立验签二十条全过；篡改信封六十次全拒；同机两个智能体各二十条不串箱。"
+        },
+        {
+          "t": "p",
+          "v": "开销：单机、长连接、内存文件系统的条件下，跨域比直连多约二点七毫秒中位延迟，每秒两条与每秒二十条两块负载的分布接近。八类恶意输入——伪造签名、篡改内容、盗用他域密钥、非授权源地址、伪造源请求头等——各跑三次，全部被拒且不进收件箱。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本，二零二六年十月二十八日挂出，南开与清华团队合作，开放许可，未经同行评议。延迟数字的成立条件窄得必须原话说清：单机、长连接、内存文件系统、排除逐条落盘。作者自己也说，换到共享磁盘、有他人读写干扰时尾部延迟会到秒级——上生产别拿二点七毫秒当承诺。"
+        },
+        {
+          "t": "p",
+          "v": "规模是原型：三个域、每个域一个智能体、五次重复；没有跨运营商，没有真实证书链轮换（实验中密钥不轮换），也没有“恶意域长期潜伏”的测试。它解决的是“能不能接上、能不能验真”，不解决“该不该信”——业务授权、代理权限衰减、结算与激励都不在范围内。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发：分布式系统里，凡是把“对端一直在线”当默认假设的协作协议，最终都会在实例生命周期上翻车。把地址与执行实例解耦、把接收与保管责任显式化、把来源背书绑定到可验证的域凭证上——这三条不只适用于智能体，也适用于任何跨组织的长周期异步协作：跨企业工单、供应链事件通知、机构间的对账与回执。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今天三篇 CCF-A 都落在“规则怎么定”上：在线劳务市场是悬赏还是发包、公投循环时拿哪个方案兜底、信息成本该不该被政策抬起来。它们的共同发现是——决定结果的往往不是激励强度，而是信息结构：谁看得见谁、谁在什么时候做离散选择。",
+    "离散性成为均衡分析的主角。知情交易者的人数是整数，于是均衡可以多到任意多个、对称设定也能出不对称均衡；三选项公投的对决次数是三次，于是循环必然出现、兜底规则必然影响投票行为。把连续模型平滑掉的那点“颗粒”，恰恰是这些论文的结论来源。",
+    "智能体基础设施的焦点从“能不能对话”转到“能不能追责”。智能体传输协议把地址、托管、签名三件事从进程里搬到域里，解决可达与验真；显式信念多智能体系统把“相信了什么、为什么信”做成可回放的状态转移。两者合起来是同一件事的两面：让跨组织协作在时间里站得住。",
+    "安全评估的口径在换。单条输出是否合规已经不够，新的做法是看多轮累积后的状态：四轮攻击里直接智能体三成不安全提交，可信根白名单一成，去掉依赖解析与累计承诺检查的消融版本回到三成——这说明防护的贡献不在“过滤”，而在“记住证据怎么攒起来的”。同时误拦率必须与攻击通过率一起报，否则阈值调到零误拦就等于关掉系统。",
+    "本期 8 篇新增里，两篇 Zenodo 单作者自印本（电池受限物联网的联邦多智能体调度、企业多智能体的策略执行与溯源）一篇记录里没有摘要、一篇只给出企业策略框架的描述，均无外审与可核实的出版信息，按惯例剔除；另有视觉交通密度估计一篇，属工程应用，缺少策略互动结构，未纳入。三篇 CCF-A 全部收录，是本周质量最好的一批。"
+  ],
+  "note": "本期精读 5 篇。检索窗口：arXiv 7 天 / 期刊会议 90 天（截至 2026-10-31）；当日新增 8 篇，其中 3 篇 CCF-A（两篇 Management Science、一篇 Games and Economic Behavior）全部收录，另从预印本中选 2 篇（智能体传输协议、显式信念多智能体系统）。未纳入：两篇 Zenodo 单作者自印本（一篇记录里没有摘要、一篇只给出企业策略框架描述，均无外审与可核实的出版信息）、一篇基于视觉的车流密度估计（工程应用，无策略互动）。说明：本期为补做——2026-11-02 当日新增仅 2 篇且均不合格，故按惯例回溯最近一个 highlights 为空的前序日期。",
   "learning": {},
   "radar": [
     {
@@ -2174,5 +2700,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

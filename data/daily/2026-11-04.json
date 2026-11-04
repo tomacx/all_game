@@ -22,9 +22,426 @@
     "new_count": 13,
     "seen_before": 1305
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "2611.03138",
+      "doi": "",
+      "title": "两千五百美元，把对抗性多智能体强化学习搬回物理桌面",
+      "title_en": "KlaskTron: An Open-Source Platform for Physical Adversarial Multi-Agent RL",
+      "authors": [
+        "Aswin Ramachandran",
+        "Jona Schulz",
+        "Maurus Derungs",
+        "Carlo Angelini",
+        "Tobias Meier",
+        "Raffaello D'Andrea"
+      ],
+      "published": "2026-11-02",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.RO",
+      "url": "https://arxiv.org/abs/2611.03138v1",
+      "summary": "Progress in robot learning, particularly physical multi-agent reinforcement learning (MARL), is currently challenged by a limited availability of accessible, standardized benchmarks. While simulation-based MARL has produced remarkable emergent behaviors, from coordinated team play to complex tool use, translating these advances to physical systems remains difficult. A key barrier is infrastructural: physical platforms are often prohibitively expensive, require specialized facilities, or lack open mechanisms and designs for reproducibility. We introduce KlaskTron, an open-source, low-cost (<\\$2500 USD), desktop-scale robotic testbed for adversarial MARL based on the dynamic tabletop game KLASK. The platform features dual CoreXY gantries with high-torque brushless motors, enabling the high-speed, precise manipulation required for competitive play. Crucially, we provide a complete ecosystem: hardware designs (CAD, BOM), a GPU-native digital twin in NVIDIA Isaac Lab for high-fidelity modeling and simulation, and a validated sim-to-real baseline using a learned neural actuator model. We demonstrate that this baseline enables zero-shot policy transfer, with trained agents exhibiting emergent adversarial behaviors. To ensure full reproducibility of our results, all project assets are released publicly: hardware CAD/BOM and assembly documentation at [https://idscethzurich.github.io/klask_hardware], inference software stack at [https://github.com/IDSCETHZurich/klask_software] and the simulation and MARL setup at [https://github.com/IDSCETHZurich/klask_rl].",
+      "summary_short": "Progress in robot learning, particularly physical multi-agent reinforcement learning (MARL), is currently challenged by a limited availability of accessible, standardized benchmarks.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体",
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.03138",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "MARL",
+        "对抗安全",
+        "仿真到现实",
+        "开放硬件"
+      ],
+      "glance": "桌面版 KLASK 对战的机器人平台证明：跨越仿真到现实的关键是把执行器学准，而不是把参数随机够",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "多智能体强化学习在仿真里早已打出名声：协调配合、工具使用、团队战术都能从简单奖励里涌现出来。可一旦要求这些策略驱动真实机器，多数工作就停在了演示视频阶段——物理平台要么贵得离谱，要么设计不公开，别人想复现只能从零造轮子。苏黎世联邦理工动力系统与控制研究所的团队给出了一个反例：一张不到两千五百美元的桌面游戏桌，两套龙门机构，加上一套开源的数字孪生，就够跑物理对抗。"
+        },
+        {
+          "t": "h",
+          "v": "一张桌子、两套龙门、一个数字孪生"
+        },
+        {
+          "t": "p",
+          "v": "平台以丹麦桌游 KLASK 为载体：两名玩家各用磁铁操纵台面下的击球件，抢先把小球打入对方球门，是一种节奏极快、攻防一体的双人对抗。硬件上，两套核心 XY 龙门配大扭矩无刷电机，支撑高速精确的击打动作；软件上，团队在英伟达 Isaac Lab 里建了图形处理器原生的数字孪生，用神经网络学出执行器模型来弥合仿真与实物的差距。图纸、物料清单、装配文档、推理代码、仿真环境全部开源，配套的基准协议把得分率、回合时长、接触频次定为标准报告指标。"
+        },
+        {
+          "t": "h",
+          "v": "迁移的关键不是域随机化，是执行器"
+        },
+        {
+          "t": "p",
+          "v": "最有信息量的实验是负结果：用理想化的比例—微分控制器加域随机化训练的策略，装上真机立刻失败——仿真里的指令响应与实物差距太大，策略发出的控制信号硬件根本执行不了。换成学习型执行器模型后，零样本迁移成功，甚至关掉域随机化也能迁。结论很干脆：在这类高速系统上，精确的系统辨识比宽泛的参数随机更关键。代价也摆得明白：台面下的磁耦在变向时滞后，从峰值速度减速到静止要七十七毫秒、滑行两厘米，反向再加速要一百一十一毫秒、七厘米——人类玩家同样要吃下的这套运动学约束，策略必须学会预判而不是硬扛。"
+        },
+        {
+          "t": "p",
+          "v": "迁移成功的策略展现出分工明确的涌现行为：防守站位与进攻出击的自主切换、对球路和对手动作的实时反应，甚至利用桌沿几何反弹做防守解围。可靠性上，连续三十多局对战没有出现任何硬件级故障（电机失联、视觉掉帧、滤波发散、磁件脱耦、球飞出桌面均计为故障）；两名学生不同日期用发布的训练管线各自复训基线策略，都达到可比的对抗水平——可复现性不是口头承诺，是实测项。"
+        },
+        {
+          "t": "h",
+          "v": "天花板故意留着"
+        },
+        {
+          "t": "p",
+          "v": "对局验证最能说明定位：基线策略对战一名休闲水平的人类玩家，十局拿下一局，胜率百分之十；每局平均出现十二点四次动态接触（防守封堵加进攻击打）。这个数字被作者坦然写进论文——基准的目的不是宣称「机器打败人」，而是证明存在涌现的物理对抗、且离上限还远，进攻端的速度矢量选择常对、击球件却差之毫厘。研究空间就是产品。"
+        },
+        {
+          "t": "quote",
+          "v": "域随机化是仿真到现实的常备药方，这台机器的负结果提醒我们：把执行器学准，比把参数随机够更管用。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本 arXiv 2611.03138v1，2026 年 11 月 2 日提交，机器人方向，作者全部来自苏黎世联邦理工 D'Andrea 组，未经同行评议。人机对局只有十局、对手为休闲玩家，百分之十的胜率是样例而非统计结论；回合时长等具体数字建议以仓库发布的协议与日志为准。三个代码仓库均已公开，可自行验证。"
+        },
+        {
+          "t": "close",
+          "v": "这套工作可迁移的不是游戏，而是三件套结构：低成本开放硬件让更多实验室进得来，高保真数字孪生让策略训得起，学习型执行器模型让迁移落得下。凡是抱怨「物理多智能体没法复现」的方向，都值得照这个模子把基准资产化——顺带学会接受一个教训：先辨识，再随机。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2611.02521",
+      "doi": "",
+      "title": "交替更新为什么更好：遗憾匹配的直觉终于等来了定理",
+      "title_en": "On the Convergence of Alternating Regret Matching Algorithms",
+      "authors": [
+        "Anh Duc Nguyen",
+        "Ioannis Anagnostides",
+        "Brian Hu Zhang",
+        "Tuomas Sandholm"
+      ],
+      "published": "2026-11-02",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2611.02521v1",
+      "summary": "Alternating updates, that is, where each player is updated in turn, tend to typically perform better in regret matching algorithms than simultaneous updates. Alternation within the regret matching family has long been a central ingredient of practical solvers for zero-sum games. Yet our theoretical understanding is lagging behind. In this paper, we address this gap by developing a systematic way of analyzing such algorithms. Our framework centers on an alternating analog of the RVU property that we introduce, which we use to obtain the optimal $T^{-1}$ average-iterate convergence within this family. In particular, we establish this for two simple variants of predictive regret matching$^+$: i) increasing-regret predictive regret matching$^+$ and ii) half-prediction regret matching$^+$. Interestingly, we find that half prediction is the unique prediction multiplier that satisfies our alternating RVU property, giving it a strong theoretical justification. Going beyond average-iterate convergence, we refine our framework to obtain $T^{-1/2}$ best-iterate convergence and further establish convergence of their strategy profiles to a single Nash equilibrium, without assuming equilibrium uniqueness. We go on to establish separations between alternating and simultaneous updates, including a game in which half-prediction regret matching$^+$ converges under alternating updates but fails to converge in terms of the last iterate under simultaneous updates. This provides theoretical support for the empirical observation that alternation can stabilize learning dynamics. Finally, experiments on 15 game benchmarks demonstrate that the strong theoretical properties of the half-prediction mechanism translate to strong practical performance, being on par with state-of-the-art solvers.",
+      "summary_short": "Alternating updates, that is, where each player is updated in turn, tend to typically perform better in regret matching algorithms than simultaneous updates. Alternation within the regret matching family has long been a central ingredient of practical solvers for zero-sum games.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论",
+        "主题·纳什均衡"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.02521",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "博弈理论",
+        "遗憾匹配",
+        "纳什均衡",
+        "自博弈"
+      ],
+      "glance": "给「交替更新优于同时更新」这个求解器界的经验法则补上系统理论：半预测系数被证明是唯一可行的选择",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "零和博弈求解器的工程师们几十年前就发现一个现象：让两个玩家轮流更新策略，通常比双方同时更新收敛得更快更稳。交替更新早已是实用求解器的标准配料，可翻开理论文献，这条路长期没有系统的收敛性分析——实践跑在理论前面太多了。桑德霍姆组的新论文把这页欠账补上了。"
+        },
+        {
+          "t": "h",
+          "v": "交替版本的性能不等式"
+        },
+        {
+          "t": "p",
+          "v": "分析的工具箱核心是一个叫交替 RVU 的性质：把经典的「遗憾随效用变化有界」不等式改造成交替更新的版本，再配一套通用的证明模板。这套框架首先对预测式遗憾匹配加的两个简单变体——递增遗憾版与半预测版——建立了该族内最优的平均迭代收敛率。更有意思的是反向的一步：存在某些遗憾最小化器不满足经典的同时更新 RVU 性质，却仍保有最优平均收敛率——老工具装不下新现象，必须换。"
+        },
+        {
+          "t": "h",
+          "v": "半预测是唯一的"
+        },
+        {
+          "t": "p",
+          "v": "预测式方法里有一个预测强度系数，实践中常被当超参数调。论文证明：在交替 RVU 的要求下，二分之一的半预测是唯一满足性质的系数——一个工程习惯升格为定理。框架继续加码：精炼版性质给出最优迭代收敛率，并进一步证明策略剖面收敛到单个纳什均衡，而且不需要均衡唯一的假设——这在博弈求解的文献里是相当强的结论，因为多数收敛定理只能保证收敛到均衡集。"
+        },
+        {
+          "t": "h",
+          "v": "分离结果与实战校验"
+        },
+        {
+          "t": "p",
+          "v": "理论最漂亮的落点是一个分离构造：存在一个博弈，半预测遗憾匹配加在交替更新下收敛，同时在更新下末迭代发散——「交替能稳定学习动力学」这句经验第一次有了严格例证。实验在十五个扩展式基准博弈上展开，方法按惯例嵌进反事实遗憾最小化框架，与一线折扣类方法同台：半预测机制的表现与最先进的求解器持平，加权平均策略紧密贴合末迭代。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本 arXiv 2611.02521v1，作者来自卡内基梅隆大学桑德霍姆组（含 Anagnostides 与 Brian Hu Zhang），未经同行评议。论文附有专门的人工智能披露一节：第六节命题的反例构造思路来自与 GPT-6 Astra 的对话，数值搜索程序与实验代码优化也有该模型参与——反例与代码可信度需按此背景评估，定理证明的责任仍在作者。十五个基准的迭代预算与全部证明在附录，结论限于两人零和与扩展式框架。"
+        },
+        {
+          "t": "close",
+          "v": "当某个调参习惯被证明是唯一解，它就不再是经验而是结构。读这篇的可迁移之处有二：其一，给长期「只知其然」的工程惯例补理论，往往能顺手挖出唯一性与分离结果这类额外红利；其二，人工智能披露一节展示了大模型深度参与构造性证明时该有的透明度——以后读理论文章，这一节值得先翻。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2611.01981",
+      "doi": "",
+      "title": "给神经拍卖开箱审计：稀疏自编码器当上机制审计员",
+      "title_en": "Opening the Black Box of Neural Auction Mechanisms",
+      "authors": [
+        "Li Kong",
+        "Zilong Liu",
+        "Haoyang Zhou",
+        "Hanbing Liu",
+        "Qi Qi"
+      ],
+      "published": "2026-11-01",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2611.01981v1",
+      "summary": "Neural auction design has emerged as a powerful paradigm within automated mechanism design for modern Web platforms. Because these learned mechanisms directly dictate critical economic outcomes, their lack of internal transparency raises significant auditability and trust concerns. Opening this black box \\textit{post-hoc} is therefore essential, yet presents two distinctive challenges: (1) activation contexts are dense, correlated numerical profiles devoid of explicit semantic structure, and (2) feature interpretations can only be falsifiably audited if they map to measurable auction states or outcomes. In this paper, we propose a post-hoc white-box auditing framework for unpacking trained neural auctions. Using CITransNet as a representative testbed, we first employ sparse autoencoders to decompose hidden representations while faithfully preserving downstream auction behavior. Anchoring feature interpretations to native economic targets, we validate them through activation prediction and causal interventions to isolate verified features from the reconstruction dictionary. Finally, applying this pipeline across varied auction settings, we show that the verified features can serve as analytical instruments to examine how internal representations modulate strategic misreporting incentives, align with Myerson's optimal auction, and support the diagnosis of individual auctions. Our work highlights the potential of white-box mechanism auditing to build the foundational trust necessary for neural auctions to be deployed as widely adopted Web technologies. To enhance research transparency and facilitate independent inspection, we publicly release the experimental results supporting our findings at https://github.com/Li-Beverly-Kong/opening-neural-auctions.git",
+      "summary_short": "Neural auction design has emerged as a powerful paradigm within automated mechanism design for modern Web platforms. Because these learned mechanisms directly dictate critical economic outcomes, their lack of internal transparency raises significant auditability and trust concerns.",
+      "is_new": true,
+      "sources": [
+        "主题·机制设计"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.01981",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "机制设计",
+        "拍卖机制",
+        "可解释性",
+        "稀疏自编码器"
+      ],
+      "glance": "用机制可解释性工具拆解训练出来的神经拍卖：只有通过激活预测与因果干预双重验证的特征，才有资格参与经济分析",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "现代网络平台把广告位与商品位的分配规则交给神经网络去学：收入涨了，可一旦有人问「这套机制为什么这样出价、会不会诱导谎报」，没人答得上来。自动机制设计产出的拍卖是黑箱，而黑箱直接决定真金白银的分配——监管者与平台自己都需要一个开箱工具。这篇论文做的是这件事：不重训、不修改，事后审计一个已经训练好的神经拍卖。"
+        },
+        {
+          "t": "h",
+          "v": "先拆词，再验词"
+        },
+        {
+          "t": "p",
+          "v": "方法分两步。第一步用稀疏自编码器把被审计网络（以 CITransNet 为测试床，审计时参数全程冻结）的隐藏表征分解成稀疏特征字典，且要求重建后的网络行为尽量不失真——审计的是原机制，不是它的近似残骸。第二步是本文的关键约束：特征解释必须锚定在原生经济目标上，比如某个竞标者—商品对的分配概率或支付额。这一步堵死了「解释自由发挥」的口子：解释若映射不到可测的拍卖状态或结果，就无法被证伪，也就不配叫审计。"
+        },
+        {
+          "t": "h",
+          "v": "两条验证关：会预测，还要可干预"
+        },
+        {
+          "t": "p",
+          "v": "候选特征要过两道关。激活预测关检验「特征在何时激活」能否预测其锚定目标的取值，用精确率与召回率量化。因果干预关更进一步：把某特征的激活按剂量缩放、消融或放大，看锚定目标是否随剂量响应地变化——只在独立测试集的活跃拍卖上评估，并与稀疏重建基线对照以剥离重建残差的干扰。两关都过，才升级为「已验证特征」，进入后续分析。"
+        },
+        {
+          "t": "h",
+          "v": "验证过的特征能回答三个问题"
+        },
+        {
+          "t": "p",
+          "v": "第一，谎报激励是怎么被内部表征调制的：用事后遗憾度量单边谎报的收益增量，观察特征激活如何与之关联。第二，机制内部是否长着经典理论的形状：在双竞标者单物品、均匀估值的设定下，对照迈尔森最优拍卖的三个分配区域（流拍、零号中标、一号中标），看特征能否区分这些区域，消融或放大后又能否推动分配向理论预测移动。第三，单场拍卖的诊断：把已实现的具体分配与支付定位到特征上，为个案排查提供抓手。实验代码与结果已开源。"
+        },
+        {
+          "t": "quote",
+          "v": "解释若映射不到可测的拍卖状态，就只是讲故事；能预测、能被干预，才算审计。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本 arXiv 2611.01981v1，未经同行评议。审计对象是单一架构（CITransNet）的固定检查点，结论向其他神经拍卖架构外推需要重新验证；与迈尔森拍卖的对齐实验限于双竞标者单物品这个最简单的设定。各类区分准确率的具体数值在原文图表中呈现，此处未逐一转述，引用前请查原文。这是机制可解释性方向的早期工作，把它当方法示范而非行业规范来读。"
+        },
+        {
+          "t": "close",
+          "v": "这套流水线真正立住的，是「解释的准入门槛」这个观念：预测合格只是必要条件，因果响应才是充分条件。同样的双关验证可以直接搬去审计任何学习型机制——学习型定价、学习型匹配、学习型调度。当监管开始追问学习型机制的责任时，能拿出「已验证特征」清单的一方，才握得住信任。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2611.02310",
+      "doi": "",
+      "title": "电网预测被投毒之后：检测、修复、审计的三层防线",
+      "title_en": "Detect, Repair and Audit: A Hierarchical Multi-Agent Defense Against Adversarial Attacks in Energy Forecasting",
+      "authors": [
+        "Zewei Shi",
+        "Ruoxi Sun",
+        "Minhui Xue",
+        "Feng Liu",
+        "Hua Ma",
+        "Xingliang Yuan",
+        "Surya Nepal"
+      ],
+      "published": "2026-11-02",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.CR",
+      "url": "https://arxiv.org/abs/2611.02310v1",
+      "summary": "Accurate electricity-demand forecasting is essential for the modern energy infrastructure. Recently, Times-Series Large Language Models (TS-LLMs) have emerged as a promising approach to forecasting more accurate demand from historical consumption data in zero- and few-shot settings, helping energy operators effectively plan supply and allocate energy resources. However, these models are vulnerable to compromised sensor inputs that can distort forecasts and lead to erroneous market orders or unnecessary load shedding. Existing defenses focus primarily on end-device forecasting, overlooking the distinct data-drift, latency, and audit requirements across energy infrastructure. To address this gap, we extract from major energy standards and regulatory frameworks a three-layer conceptual model that captures the security postures for each layer. Guided by this model, we develop a Multi-Agent Reinforcement Learning (MARL) detector coupled with signal repair at local control centers, designed to mitigate distributional data drift through complementary feature-based detection and clean-reference-calibrated repair while meeting latency budgets. We further deploy an evidence-grounded LLM auditing agent with human-in-the-loop validation for audit-critical Virtual Power Plants (VPPs). In our evaluation, the best MARL configuration achieves an F1 score above 0.91 across all dataset-attack pairs, while signal repair reduces adversarial-to-clean input Relative Squared Error (RSE) by up to 83%. The few-shot auditor detects 77.78% of attacks in the Sherlock dataset. On the evaluated hardware, detection and repair require 7.95 ms on average, with a worst-observed latency of 14.50 ms, remaining within the local-center latency budget informed by IEEE 1646.",
+      "summary_short": "Accurate electricity-demand forecasting is essential for the modern energy infrastructure. Recently, Times-Series Large Language Models (TS-LLMs) have emerged as a promising approach to forecasting more accurate demand from historical consumption data in zero- and few-shot settings, helping energy o…",
+      "is_new": true,
+      "sources": [
+        "主题·MARL",
+        "主题·LLM多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.02310",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "对抗安全",
+        "MARL",
+        "LLM-Agent",
+        "关键基础设施"
+      ],
+      "glance": "把能源行业标准拆成三层防护模型：多智能体检测加信号修复平均七点九五毫秒完成，大模型审计员在虚拟电厂层收尾",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "时序大模型正在接手电力需求预测：零样本、少样本都能给出不错的曲线，电网运营商拿它排产调度。可这些模型的输入端挂着成千上万个传感器，任何一个被攻破，喂进去的被污染读数就能把整条预测曲线带偏——偏差足够大时，出错的是真实的市场指令与甩负荷动作。攻击面在传感器，伤口在市场。"
+        },
+        {
+          "t": "h",
+          "v": "先把防御拆到三层"
+        },
+        {
+          "t": "p",
+          "v": "作者先做了一件多数防御论文跳过的事：从主要能源标准与监管框架里提炼出一个三层概念模型——末端设备、本地控制中心、虚拟电厂——每层的数据漂移程度、延迟预算、审计要求都不一样。末端设备算力有限防不了的事，本地中心要在毫秒级延迟内兜住；本地中心没法自证的合规问题，交给上层审计。防御不是一层万能盾，是按层级各司其职的三道工序。"
+        },
+        {
+          "t": "h",
+          "v": "检测：合作式多智能体强化学习加逐级复核"
+        },
+        {
+          "t": "p",
+          "v": "本地中心层的检测器用合作式多智能体强化学习调度，输入五类高维异构特征：时间、预测统计量、熵、度量指标与预测模型知识。结构上带一个决策树式的逐级复核机制：第一遍投影增强的预测管线若判为良性就直接放行，可疑则加平滑探针，再可疑就做奇偶再分拆，复核深度记入状态。最好的配置（群体相对策略优化调度加 TimeLLM 预测后端）在全部数据集—攻击对上 F1 不低于零点九一，其中两个数据集对两种攻击家族的 F1 高达零点九九以上。"
+        },
+        {
+          "t": "h",
+          "v": "修复与审计：一个管毫秒，一个管追责"
+        },
+        {
+          "t": "p",
+          "v": "检测只能报警，预测不能停。修复层用离散小波变换做信号修复，以清洁参考校准，把对抗输入到清洁输入的相对平方误差降低百分之三十四点七到百分之八十三点四，对 TimeLLM 的预测空间误差最多降近百分之八十九。虚拟电厂层则部署证据接地的大模型审计代理，生成取证线索并保留人工复核关口——少样本设定下在 Sherlock 数据集上检出百分之七十七点七八的攻击。最硬的约束是时间：检测加修复平均七点九五毫秒、最差十四点五毫秒，卡在 IEEE 1646 为本地中心划定的延迟预算之内。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本 arXiv 2611.02310v1，计算机安全方向，作者来自墨尔本大学与澳大利亚联邦科学与工业研究组织，未经同行评议。攻击只覆盖两个已知家族（直接梯度攻击与生成式注入攻击），对自适应攻击者未做评估；延迟数字来自作者自己的硬件，跨平台引用需重测；大模型审计员的检出率是少样本设定下的单数据集结果。把它读作「把合规约束写进防御设计」的架构样例，而不是性能标杆。"
+        },
+        {
+          "t": "close",
+          "v": "这篇最值得搬走的不是某个算法，而是设计顺序：先从标准与监管文本里把层级、延迟、审计要求拆出来，再往下配技术件。关键基础设施的防御论文里，延迟预算与人工复核关口和检测精度同为一等公民——这个习惯如果能在更多「学习型系统进电网」的工作里普及，安全评审会好做很多。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 5,
+      "id": "2611.03386",
+      "doi": "",
+      "title": "最低价中标的隐藏账单：采购拍卖的无效率可以没有上界",
+      "title_en": "At What Cost? (In)efficiency in First-Price Procurement Auctions",
+      "authors": [
+        "Simone Palazzotto",
+        "Andrés Cristi"
+      ],
+      "published": "2026-11-02",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2611.03386v1",
+      "summary": "We study the efficiency of Bayes-Nash equilibria in first-price procurement auctions. We measure efficiency by the Price of Anarchy (PoA): the ratio between the expected social cost in equilibrium and the minimum expected social cost resulting from a socially optimal allocation. We first show that the standard first-price procurement auction has no bounded PoA guarantee. We construct equilibria in which every bidder is indifferent between all bids in a common interval, so that bids can be arbitrarily large, and the PoA is unbounded. If costs lie in an interval $[\\underline c,\\bar c]$ but bids are not restricted, the PoA equals the trivial ratio $\\bar c/\\underline c$. We hence study ways to restore a finite guarantee, first by characterizing the PoA when bids lie in $[\\underline c,\\bar c]$, which leads to the tight bound $1 + \\frac1{e^2}(\\frac{\\bar c}{\\underline c}-1)$. Alternatively, we introduce the notion of a phantom bidder: the auctioneer accepts the lowest bid only if it does not exceed a phantom bid, drawn independently of the costs, and otherwise buys from an outside option at cost $\\bar c$. We show that a simple fixed phantom bid, i.e., a deterministic cap, gives PoA $=\\frac1e\\sqrt {\\frac{\\bar c}{\\underline c}}+O(1)$. We further show that no phantom mechanism whose construction depends only on the cost interval, under a mild regularity condition, whatever distribution it uses and whatever it reveals about the phantom bid before bidding, can improve on the $\\sqrt{\\frac{\\bar c}{\\underline c}}$ dependence.",
+      "summary_short": "We study the efficiency of Bayes-Nash equilibria in first-price procurement auctions. We measure efficiency by the Price of Anarchy (PoA): the ratio between the expected social cost in equilibrium and the minimum expected social cost resulting from a socially optimal allocation.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.03386",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "拍卖机制",
+        "无政府代价",
+        "贝叶斯均衡",
+        "采购"
+      ],
+      "glance": "首价采购拍卖的无效率比没有界还糟——均衡里可以出现任意天价；一个虚构的幽灵竞标者把最坏损失压回根号级",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "政府采购一条路、一家公司招标一批零件，用的多半是最古老的规则：密封报价，最低价中标。正向的首价拍卖有经典结论——均衡至少保住最优福利的一个固定比例。换成买家在采购、卖家竞争的反向设定，这个结论还能用吗？两位洛桑联邦理工的作者给出了一个让人坐直的答案：不但比例保不住，最坏情形的损失连上界都没有。"
+        },
+        {
+          "t": "h",
+          "v": "无界：均衡里住着天价"
+        },
+        {
+          "t": "p",
+          "v": "病根在于采购方向的报价逻辑反转。作者构造出一类均衡：每个供应商对某个公共区间里的所有报价无差异，于是报价可以任意高还仍是均衡；社会成本跟着报价走，无政府代价——均衡社会成本与计划者最优之比——无界。若只假设成本落在区间内而不限制报价，代价恰好等于成本上下界之比这个平凡比率。也就是说，不加约束的首价采购拍卖，效率保证是零。"
+        },
+        {
+          "t": "h",
+          "v": "两条止血路"
+        },
+        {
+          "t": "p",
+          "v": "第一条路是把报价压回成本区间。作者把带报价上限的采购拍卖归约到首价价值拍卖，借平滑性得到紧界：代价不超过一加上成本比减一除以 e 方——一个有界但随成本比线性增长的保证。第二条路更有想象力：引入幽灵竞标者。拍卖人独立于成本抽一个幻影报价，最低报价只有不超过它才被接受，否则转向成本为上限的外部选项。直觉很干净——天价报价大概率落空，谎报高价的收益被虚构对手吃掉。最优的确定性封顶值约为 e 乘成本比的平方根，对应代价约为平方根比 e；更妙的是下界：任何只依赖成本区间构造的常规幽灵机制，无论用什么分布、无论公开多少幻影信息，都无法在数量级上做得更好。"
+        },
+        {
+          "t": "quote",
+          "v": "一个虚构的竞标者，比一整套复杂的规则更能管住天价。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本 arXiv 2611.03386v1，计算机博弈论方向，作者来自洛桑联邦理工，未经同行评议。纯理论文章，无实验；全部界是对所有成本分布与所有贝叶斯均衡的最坏情况保证，不是平均表现。幽灵出价在经典文献里就是拍卖人用来执行保留价的手段，历来服务于收入目标，本文把同一工具换到效率视角——方法有出处，问题设定是新的。常数 e 出现在两个不同的界里，引用时别混用。"
+        },
+        {
+          "t": "close",
+          "v": "读这篇的可迁移启发在标题之外：当某个机制在最坏情形下毫无保证时，最便宜的修复往往不是重设计规则，而是加一个「虚构参与人」制造竞争压力。封顶、影子报价、外部选项，这些在收入设计里成熟的工具，搬到效率叙事里同样锋利——前提是像作者这样把「为什么够用、为什么不能再好」两条界都证出来。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今日新增 13 篇：唯一顶刊条目是《美国国家科学院院刊》的冷冻电镜玻璃化研究（equilibrium 误命中，剔），另有 1 篇 Zenodo 西语博士论文纲领（单作者自印本，剔），其余 11 篇全为 arXiv 预印本；影响力计数中的顶刊与 CCF-A 均为往期存量，当日无新增命中。",
+    "求解器实践先于理论的一页被补上：交替更新的遗憾匹配拿到系统化收敛框架，「半预测」系数从调参经验升格为唯一性定理，并给出交替收敛、同时发散的分离博弈；作者组的人工智能披露（反例构造有大模型参与）本身也值得注意。",
+    "机制设计与可解释性开始互相借力：稀疏自编码器被用作神经拍卖的事后审计工具，解释必须通过激活预测与因果干预双关；采购拍卖侧则用幽灵竞标者把无界的最坏无效率压回根号级，收入工具换效率用途。",
+    "物理与安全两条防线同日推进：不到两千五百美元的开源对抗机器人基准把多智能体强化学习拉回物理桌面，负迁移结果点明执行器建模优先于域随机化；电网预测的检测—修复—审计三层防御把延迟预算与合规要求写进设计约束。",
+    "未纳入精读但值得留意：Guo 与 Laurière 的离散时间平均场博弈专著（2611.01754）、开放多智能体系统的公理化框架（2611.03301）、LLM 流水线验证资源分配的平均场分析（2611.03192）；桥梁运维多智能体与组织价值对齐两篇离主线较远未收录，「LLM 多智能体与社会模拟」分区本期无精读条目。"
+  ],
+  "note": "本期精读 5 篇，均为 arXiv 预印本（11-02 提交）。检索窗口：arXiv 7 天 / 期刊会议 90 天（截至 2026-11-04）。当日 13 篇新增中剔除 2 篇（顶刊误命中、Zenodo 自印本），另有 6 篇因主线距离或综述性质未纳入，理由见趋势小结。五个分区收录四个，LLM 多智能体与社会模拟分区无合格长文条目。",
   "learning": {},
   "radar": [
     {
@@ -2189,5 +2606,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

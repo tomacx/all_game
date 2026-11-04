@@ -1,0 +1,70 @@
+===== run @ 2026-11-04T01:09:17Z =====
+[01:03:27] 目标日期 2026-11-04 · arXiv 7 天 / 期刊会议 90 天
+[01:03:39] arXiv [分类·多智能体] 返回 150，窗口内保留 65
+[01:04:11] arXiv [分类·博弈论] 返回 150，窗口内保留 37
+[01:06:03] arXiv [主题·MARL] 返回 150，窗口内保留 5
+[01:06:19] arXiv [主题·纳什均衡] 返回 150，窗口内保留 13
+[01:06:52] arXiv [主题·机制设计] 返回 150，窗口内保留 8
+[01:08:00] arXiv [主题·LLM多智能体] 返回 150，窗口内保留 16
+[01:08:04] OpenAlex [主题·MARL] 返回 100，纳入 100
+[01:08:06] OpenAlex [主题·纳什均衡] 返回 100，纳入 100
+[01:08:07] OpenAlex [主题·机制设计] 返回 100，纳入 100
+[01:08:08] OpenAlex [主题·博弈理论] 返回 100，纳入 100
+[01:08:09] OpenAlex [主题·拍卖] 返回 27，纳入 27
+[01:08:11] OpenAlex [主题·LLM多智能体] 返回 100，纳入 100
+[01:08:12] OpenAlex [顶刊 Artificial Intelligence] 返回 34，纳入 34
+[01:08:12] OpenAlex [顶刊 Econometrica] 返回 0，纳入 0
+[01:08:13] OpenAlex [顶刊 Journal of Economic Theory] 返回 28，纳入 28
+[01:08:14] OpenAlex [顶刊 Management Science] 返回 50，纳入 50
+[01:08:15] OpenAlex [顶刊 Operations Research] 返回 50，纳入 50
+[01:08:16] OpenAlex [顶刊 IEEE TPAMI] 返回 50，纳入 50
+[01:08:17] OpenAlex [顶刊 Mathematics of Operations Research] 返回 27，纳入 27
+[01:08:17] OpenAlex [顶刊 Games and Economic Behavior] 返回 29，纳入 29
+[01:08:18] OpenAlex [顶刊 JMLR] 返回 0，纳入 0
+[01:08:19] OpenAlex [顶刊 Theoretical Economics] 返回 0，纳入 0
+[01:08:52] Crossref [主题·MARL] 返回 100，纳入 100
+[01:08:56] Crossref [主题·纳什均衡] 返回 100，纳入 100
+[01:09:01] Crossref [主题·机制设计] 返回 100，纳入 100
+[01:09:07] Crossref [主题·博弈理论] 返回 100，纳入 100
+[01:09:11] Crossref [主题·拍卖] 返回 100，纳入 100
+[01:09:16] Crossref [主题·LLM多智能体] 返回 100，纳入 100
+[01:09:17] 各来源纳入：{"arXiv": 126, "OpenAlex": 795, "Crossref": 710}
+[01:09:17] 去重后 1535 篇，按相关性过滤后 299 篇
+[daily] 目标日期 2026-11-04 · arXiv 7 天 / 期刊会议 90 天
+[daily] arXiv [分类·多智能体] 返回 150，窗口内保留 65
+[daily] arXiv [分类·博弈论] 返回 150，窗口内保留 37
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 429: Unknown Error，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 429: Unknown Error，6s 后重试
+[fetch] 请求失败（第 3 次，UA=curl/8.4.0…）：HTTP Error 429: Too Many Requests，9s 后重试
+[daily] arXiv [主题·MARL] 返回 150，窗口内保留 5
+[daily] arXiv [主题·纳什均衡] 返回 150，窗口内保留 13
+[daily] arXiv [主题·机制设计] 返回 150，窗口内保留 8
+[fetch] 请求失败（第 1 次，UA=all-game-radar/1.0 (Game Int…）：HTTP Error 429: Too Many Requests，3s 后重试
+[fetch] 请求失败（第 2 次，UA=Mozilla/5.0 (X11; Linux x86_…）：HTTP Error 429: Unknown Error，6s 后重试
+[daily] arXiv [主题·LLM多智能体] 返回 150，窗口内保留 16
+[daily] OpenAlex [主题·MARL] 返回 100，纳入 100
+[daily] OpenAlex [主题·纳什均衡] 返回 100，纳入 100
+[daily] OpenAlex [主题·机制设计] 返回 100，纳入 100
+[daily] OpenAlex [主题·博弈理论] 返回 100，纳入 100
+[daily] OpenAlex [主题·拍卖] 返回 27，纳入 27
+[daily] OpenAlex [主题·LLM多智能体] 返回 100，纳入 100
+[daily] OpenAlex [顶刊 Artificial Intelligence] 返回 34，纳入 34
+[daily] OpenAlex [顶刊 Econometrica] 返回 0，纳入 0
+[daily] OpenAlex [顶刊 Journal of Economic Theory] 返回 28，纳入 28
+[daily] OpenAlex [顶刊 Management Science] 返回 50，纳入 50
+[daily] OpenAlex [顶刊 Operations Research] 返回 50，纳入 50
+[daily] OpenAlex [顶刊 IEEE TPAMI] 返回 50，纳入 50
+[daily] OpenAlex [顶刊 Mathematics of Operations Research] 返回 27，纳入 27
+[daily] OpenAlex [顶刊 Games and Economic Behavior] 返回 29，纳入 29
+[daily] OpenAlex [顶刊 JMLR] 返回 0，纳入 0
+[daily] OpenAlex [顶刊 Theoretical Economics] 返回 0，纳入 0
+[daily] Crossref [主题·MARL] 返回 100，纳入 100
+[daily] Crossref [主题·纳什均衡] 返回 100，纳入 100
+[daily] Crossref [主题·机制设计] 返回 100，纳入 100
+[daily] Crossref [主题·博弈理论] 返回 100，纳入 100
+[daily] Crossref [主题·拍卖] 返回 100，纳入 100
+[daily] Crossref [主题·LLM多智能体] 返回 100，纳入 100
+[daily] 各来源纳入：{"arXiv": 126, "OpenAlex": 795, "Crossref": 710}
+[daily] 去重后 1535 篇，按相关性过滤后 299 篇
+[daily] 写入 data/daily/2026-11-04.json（radar 60 条，精读 0 条）
+[daily] 写入 digests/2026-11-04.md、logs/2026-11-04.log、data/runs.json

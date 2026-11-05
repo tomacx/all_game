@@ -22,9 +22,412 @@
     "new_count": 8,
     "seen_before": 1333
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "2611.04072",
+      "doi": "",
+      "title": "多智能体一起学，为什么常常只能停在驻点？——网络型平均奖励强化学习的两道天花板",
+      "title_en": "Finite-Sample Convergence in Networked Average Reward MARL: Decentralization Pitfalls and Entropy Remedies",
+      "authors": [
+        "Yizhou Zhang",
+        "Yashaswini Murthy",
+        "Laixi Shi",
+        "Adam Vierman"
+      ],
+      "published": "2026-11-02",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.LG",
+      "url": "https://arxiv.org/abs/2611.04072v1",
+      "summary": "We study the problem of average reward Multi-Agent Reinforcement Learning (MARL) where agents interact within a network. Each agent in the network conducts local updates with information within its $k$-hop neighborhood and collaboratively maximizes the overall reward of the entire network. We first provide impossibility results in achieving convergence to the global optimal joint policies in our setting. These impossibility results highlight the challenges of decentralized learning with local information in multi-agent systems, namely the issues of multiagency, where each agent independently optimizes its policy, and partial observability, where agents have limited visibility into the global state. Given these challenges which indicate that decentralized policy optimization can generally be certified only up to stationarity, we provide finite-sample convergence guarantees for a decentralized actor-critic algorithm with linear function approximation that converges to an approximate stationary point with small gradient norm. To overcome such impossibility results, we further show that adding fixed-state entropy regularization reshapes the objective landscape which leads to even stronger global convergence guarantees for our proposed actor-critic algorithm.",
+      "summary_short": "We study the problem of average reward Multi-Agent Reinforcement Learning (MARL) where agents interact within a network. Each agent in the network conducts local updates with information within its $k$-hop neighborhood and collaboratively maximizes the overall reward of the entire network.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体",
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.04072",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "MARL",
+        "平均奖励",
+        "策略梯度",
+        "熵正则",
+        "有限样本"
+      ],
+      "glance": "先证明「局部信息 + 乘积策略」下全局最优不可达（连单边最优都保不住），再用强熵正则把「只能收敛到驻点」抬升为全局最优",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "单智能体的策略梯度有一条很好用的性质：只要马尔可夫链遍历，每个驻点都是全局最优。这条性质撑起了无数「策略梯度不会掉进坏局部解」的说法。可一旦把联合策略限制成每个智能体各自一份的乘积形式、把信息限制在几跳邻居之内，这条性质立刻失效——而且失效得很彻底，连「驻点至少是单边最优」都保不住。"
+        },
+        {
+          "t": "h",
+          "v": "两道结构性天花板"
+        },
+        {
+          "t": "p",
+          "v": "第一个反例针对多主体性：在一个完全合作、完全可观测、遍历的马尔可夫决策过程里，把联合策略约束为各智能体局部策略的乘积，仍能构造出驻点不是全局最优的实例。也就是说，单智能体那套「遍历性保证驻点最优」的论证，在乘积策略类上不能照搬。第二个反例针对部分可观测：当每个智能体的策略不能依赖全局状态时，局部策略梯度为零的驻点，其纳什间隙可以严格为正——至少有一个智能体在别人策略固定时能单边改进。于是去中心化策略优化一般只能被证明到「驻点」这一层，不能顺势声称均衡。"
+        },
+        {
+          "t": "h",
+          "v": "把几跳邻居看成线性特征"
+        },
+        {
+          "t": "p",
+          "v": "论文接着给出正面结果。关键观察是：一个几跳的表格型评论家，其实是对全局价值函数的线性近似，其特征就是把「从某个智能体的局部视角看无法区分」的全局状态—动作对归到同一类。这样每个智能体只需在自己邻域上维护一个紧凑的线性评论家，而不必维护指数规模的局部表。由此暴露出一组明确的权衡：邻域越大，定位偏差越小，但固定维度的特征要压缩更多信息，近似误差随之上升。在这个设定下，去中心化演员—评论家被证明收敛到梯度范数很小的近似驻点，误差可分解为有限样本学习项（评论家跟踪、马尔可夫采样、演员—评论家耦合）与两个结构项（特征近似、网络定位）。"
+        },
+        {
+          "t": "h",
+          "v": "强熵正则把驻点变成全局最优"
+        },
+        {
+          "t": "p",
+          "v": "最后一步是补救。加一项固定状态的强熵正则（只补一个解析的局部熵梯度项，奖励侧的评论家不动），在熵占优与均匀探索条件下，目标函数的景观被重塑：证明给出有限时间全局收敛，而且从「最优迭代」加强到「末迭代」；次优性以几何速度收缩，收缩到统计误差、近似误差与定位误差的量级为止。数值上用一类相互影响的维护单元做验证：网格上、加性特征、特征维度十六时，奖励从零跳邻域的 0.058 先升到两跳的 0.499，再到三跳反而回落到 0.314；把特征维度提到三十二，路径上所有正半径都能到 0.676 附近。同样的轨迹预算下，表格型评论家一直停在 0.058 附近（网格）与 0.369（路径）——邻域扩大只有在能被编码时才有用。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本 arXiv 2611.04072v1，加州理工学院、得州大学奥斯汀分校与约翰霍普金斯大学合作，未经同行评议。核心结论依赖网络上的指数衰减性质，也就是每个智能体的状态转移只受直接邻居影响；作者在局限里写明，放松这一局部弱依赖结构是后续方向，强熵正则也只是「补救」而非通用解药——全局收敛需要熵足够强。数值实验是说明性算例，规模到六十四个智能体，不是与一线算法对打。"
+        },
+        {
+          "t": "close",
+          "v": "这篇的价值不在于又给了一个收敛率，而在于把「去中心化学习只能保证到驻点」这句话从经验感慨变成两条可引用的反例，然后指出去路：要么接受驻点、把误差项算清楚；要么改目标，加熵让景观本身变好。做多智能体系统时，若有人拿单智能体「驻点即最优」的结论给分布式方案背书，这两条反例就是最省事的反驳。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2611.04957",
+      "doi": "",
+      "title": "刹得住才算安全：把「全员刹停」写进控制屏障函数",
+      "title_en": "Safeguarding Multi-Agent Reinforcement Learning for Connected and Automated Vehicles with Recursively Feasible Control Barrier Functions",
+      "authors": [
+        "Jianye Xu",
+        "Yousef Sayed",
+        "Bassam Alrifaee"
+      ],
+      "published": "2026-11-03",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.RO",
+      "url": "https://arxiv.org/abs/2611.04957v1",
+      "summary": "Multi-Agent Reinforcement Learning (MARL) shows promise in coordinating connected and automated vehicles but offers no safety guarantee. Although Control Barrier Functions (CBFs) can add this guarantee, their optimization problem can become infeasible in practice due to control bounds. Moreover, they often overapproximate vehicle and road geometry, which makes them conservative. This paper proposes the Backup-Horizon CBF (BH-CBF), which evaluates safety along a horizon until all vehicles stop. BH-CBF is recursively feasible under control bounds, and it considers the exact vehicle and road geometry. Based on BH-CBF, we derive a fully decentralized safety filter that only needs a single broadcast of vehicle states and routes per step and stays real-time in dense traffic. We use BH-CBF to safeguard a MARL policy over its life cycle: as a reward during pre-training, as a run-time filter at deployment, and as a filter in the training loop that keeps fine-tuning on unseen maps collision-free. In simulations on real-world maps of a roundabout and an intersection, BH-CBF avoids all collisions of unsafe MARL policies and keeps its safety guarantee at every step. Existing filters either collide, lose the guarantee, or fall back to full braking far more often. In recorded roundabout traffic with 1264 human-driven vehicles over 115 km, our safeguarded policies shorten the median travel time by 14% compared with the human drivers, without any collision.",
+      "summary_short": "Multi-Agent Reinforcement Learning (MARL) shows promise in coordinating connected and automated vehicles but offers no safety guarantee. Although Control Barrier Functions (CBFs) can add this guarantee, their optimization problem can become infeasible in practice due to control bounds.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.04957",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "MARL",
+        "控制屏障函数",
+        "安全滤波",
+        "自动驾驶",
+        "车路协同"
+      ],
+      "glance": "让每辆车沿「全部刹停」的备份轨迹逐点验算精确几何间距，让控制屏障函数在控制量有界下真正递归可行；1264 辆真实车流里零碰撞，中位通行时间比人类司机短 14%",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "强化学习训出来的车队策略跑得快、扩展性好，却给不出任何安全保证。工程上的常规做法是外挂一层控制屏障函数：把策略提出的动作投影到最近的「安全动作」上。问题是这类滤波器经常在最需要它的时候失效——控制量有界时优化问题无解，或者把车身与车道过度近似成圆和直线，保守到车队干脆停在路口不动。"
+        },
+        {
+          "t": "h",
+          "v": "一步条件为什么不够"
+        },
+        {
+          "t": "p",
+          "v": "经典屏障条件只看下一步：约束安全裕度在下一个采样周期内不许缩得太快。这种短视有两个后果。第一，控制量有界时约束可能不可行，滤波器无解，安全保证当场作废；一个不可行的滤波器拦不住碰撞。第二，把它当奖励用时，只在违规迫在眉睫时才罚，学到的策略依旧会把自己开进死局。既有工作里，有人把前瞻拉长但假设输入恒定，理论没结清；有人用神经网络近似两车分离，几何不精确。"
+        },
+        {
+          "t": "h",
+          "v": "沿「全员刹停」走一遍"
+        },
+        {
+          "t": "p",
+          "v": "这篇的做法是把安全裕度沿一条备份策略展开：假设从现在起每辆车都沿自己的路线刹到停，沿途逐点检查车与车、车与路边界的精确几何间距。这条地平线带来两个好处——在控制量有界下递归可行，于是真正构成屏障函数；也不必把车包成圆、把路拉成直线。基于它导出的是完全去中心化的滤波器：每步只需广播一次车辆状态与路线，各车自己解一个小二次规划，冲突靠角落预算拆分解决。"
+        },
+        {
+          "t": "h",
+          "v": "一条屏障函数管完整个生命周期"
+        },
+        {
+          "t": "p",
+          "v": "作者把它同时用在三个位置：预训练时当奖励、部署时当运行时滤波器、微调时放进训练回路，让纠偏本身成为学习信号。评估在真实地图的环岛与十字路口上做，十份不安全的源策略、六十次运行：不加滤波每公里 1.39 次碰撞、六十次全部离开认证集；只做一步条件的几个变体碰撞率 0.25 至 1.22，同样六十次全部越界；模型预测屏蔽虽然零碰撞，但每千步需要 65.7 次退回全刹，通行效率被吃掉。本文方法零碰撞、零越界、每千步 3.3 次兜底，每步 12.6 毫秒。集中式版本从二十辆车起就超过采样周期（80.6 毫秒），去中心化版本从两辆到五十辆只涨到十几毫秒，95 分位在十八辆车以后饱和——原因是车流变密后车速下降，最受限的车能碰到的邻居稳定在九到十二个。"
+        },
+        {
+          "t": "h",
+          "v": "与人类司机的对照"
+        },
+        {
+          "t": "p",
+          "v": "最后一段最有说服力：在环岛 1264 辆人类驾驶记录、累计 115 公里的场景里，加装滤波的策略零碰撞，中位通行时间比人类司机短 14%。微调实验进一步显示，带滤波器在回路训练后，策略脱离滤波器单独部署时每公里碰撞从原水平降到很低的量级，大部分下降发生在前四十次迭代——纠偏量被转化成了学习信号，而不是被当成外部约束硬压着。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本 arXiv 2611.04957v1，亚琛工业大学与慕尼黑联邦国防军大学合作，未经同行评议，代码与演示视频已公开。所有结果都在仿真里，车辆用运动学自行车模型，人类司机对照来自记录数据而非实车部署，因此「零碰撞」的边界就是这套仿真与这套几何模型。真车上的感知误差、通信丢包与控制延迟都没有进入评估；把 12.6 毫秒当作可上车的证据并不成立。"
+        },
+        {
+          "t": "close",
+          "v": "安全层的设计顺序值得抄：先把「最坏情况下也能停下来」写成显式的地平线，再谈滤波器解不解得出来；先保证递归可行，再谈保守不保守。对任何要用学习策略下场的系统，「认证集有没有被离开」比「碰撞率降了多少」更接近底线——这篇把前者当成主指标，是它最有说服力的地方。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2611.04774",
+      "doi": "",
+      "title": "次模奖励下，多智能体的最优策略要看多久的历史？",
+      "title_en": "Cooperative Multi-Agent Reinforcement Learning with Submodular Trajectory Rewards",
+      "authors": [
+        "Yasaman Zolfimoselo",
+        "Nikolas Geroliminis",
+        "Maryam Kamgarpour"
+      ],
+      "published": "2026-11-03",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.LG",
+      "url": "https://arxiv.org/abs/2611.04774v1",
+      "summary": "We study cooperative multi-agent reinforcement learning with decoupled dynamics and a monotone submodular reward function over joint trajectories. Due to the non-additive reward, an optimal policy may depend on the history of all agents. This dependence makes exact optimization exponential in the horizon and the number of agents. To overcome this challenge while retaining theoretical guarantees, we introduce pre-window curvature $c_m$, which quantifies how states visited more than $m$ steps earlier reduce current marginal gains. Using this curvature to control the error from restricting the policy of each agent to depend only on its last $m+1$ states, we propose a greedy algorithm that exploits the decoupled dynamics to optimize local policies sequentially. For fixed $m$, the algorithm achieves a $\\frac{1-c_m}{2-c_m}$ approximation guarantee up to estimation error, and its computation time is polynomial in the number of agents and the horizon. We recover the known $1/2$-factor approximation for time-additive rewards and obtain an approximation factor no smaller than the known total-curvature bound for a single agent. We formulate multi-agent traffic monitoring as an example of this framework and evaluate our algorithm on it.",
+      "summary_short": "We study cooperative multi-agent reinforcement learning with decoupled dynamics and a monotone submodular reward function over joint trajectories. Due to the non-additive reward, an optimal policy may depend on the history of all agents.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体",
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.04774",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "MARL",
+        "次模优化",
+        "近似保证",
+        "曲率",
+        "无人机调度"
+      ],
+      "glance": "提出「窗口前曲率」，用一个可估的量把「历史要记多长」变成近似保证里的显式因子；固定记忆长度即得多项式时间算法",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "无人机编队巡查路网，重复经过同一路段收益递减——这类目标天然是次模的。次模的好处是边际收益递减能为贪心换来近似比，坏处是：一旦奖励定义在联合轨迹上而不是单步状态上，最优策略就可能依赖所有智能体的完整历史，精确求解的代价随规划长度与智能体数量指数爆炸。"
+        },
+        {
+          "t": "h",
+          "v": "给历史截断定价"
+        },
+        {
+          "t": "p",
+          "v": "论文的办法是引入窗口前曲率：它衡量的是「超过某个步数之前的访问，会让当前的边际收益减少多少」。有了这个量，「把每个智能体的策略限制成只看自己最近若干步状态」这件事的代价就不再是黑箱——截断带来的误差可以被曲率显式下界住。把目标改写成阶段奖励只依赖所有智能体最近若干步的访问，联合最大化这个改写后的目标，得到的策略相对真正的最优历史依赖回报有一个乘性近似比，余下一个可加的估计误差。"
+        },
+        {
+          "t": "h",
+          "v": "顺序贪心与多项式时间"
+        },
+        {
+          "t": "p",
+          "v": "算法叫贪心窗口策略优化：利用动力学解耦，按顺序逐个优化智能体的局部策略，每个智能体用「完整的前序轨迹加上自己的窗口历史」计算边际收益。固定窗口长度时，计算量对智能体数量与规划长度都是多项式的。近似因子由曲率决定：曲率为零、奖励退化为可加时，因子回到经典贪心策略优化的水平；曲率越大，因子越小。文中给出一组具体数字：恢复率 0.1、窗口长度为零时曲率 0.905、因子 0.087；恢复率 0.8、窗口为三步时曲率降到 0.041、因子升到 0.490——路面重要性恢复得越慢，多记几步越值钱。"
+        },
+        {
+          "t": "h",
+          "v": "交通监控上的分层结论"
+        },
+        {
+          "t": "p",
+          "v": "实验把多无人机路网监控写成一个次模多智能体马尔可夫决策过程，对照两类基线：按时间可加目标优化的贪心策略优化，以及用策略梯度优化全局策略的次模策略优化（马尔可夫版与循环网络编码历史版）。结论是分层的：可加奖励上窗口记忆不带来增益，与基线持平；非可加奖励且恢复较慢时，加长记忆稳定超过可加基线；智能体数量少时与策略梯度类方法接近，数量多时反超，但把窗口关掉时，策略梯度类方法在智能体较少的一档上仍能压过窗口方案。记忆不是免费的，代价是计算时间随窗口变长而上涨，这点作者在图里标得很直白。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本 arXiv 2611.04774v1，洛桑联邦理工学院交通与系统两个实验室合作，未经同行评议。近似保证是「至估计误差」的：估计误差靠采样前序轨迹压下去，样本量只对智能体数量与规划长度取对数；曲率是问题属性，实际场景里要先估出来，估不准时因子也就不可信。实验只有自建的一个无人机路网监控算例，智能体规模不大，没有跨环境验证；把近似比直接当成实际回报差距会高估它。"
+        },
+        {
+          "t": "close",
+          "v": "这篇给的是一个可迁移的提问方式：面对「策略要记多久历史」这种工程上靠调参决定的事，先找一个能刻画「忘记的代价」的量，再让这个量出现在近似比里。有了它，记忆长度不再是超参数，而是一个可以按精度要求反解出来的设计参数——同样的套路可以用在任何「局部信息换全局最优」的地方。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2611.04321",
+      "doi": "",
+      "title": "验证者开始做规划的那一刻：多智能体系统的角色漂移与消息准入",
+      "title_en": "ATC: Agent Trajectory Control for Role-Contract Enforcement in Black-Box Multi-Agent Systems",
+      "authors": [
+        "Maisha Maliha",
+        "Vishal Pramanik",
+        "Sumit Kumar Jha"
+      ],
+      "published": "2026-11-03",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2611.04321v1",
+      "summary": "Multi-agent LLM systems assign different responsibilities to different agents: one plans, another retrieves evidence, another verifies, another executes. This division of labor is only meaningful if each agent stays within the functions it is authorized to perform. Over many turns, however, an agent can produce a locally reasonable message that exercises authority belonging to another role: a verifier that begins planning, a retriever that asserts unsupported conclusions, an executor that changes state no one approved. We formalize this as role drift, a turn-level breach of an agent's role contract. We introduce Agent Trajectory Control (ATC), which makes each role's authority explicit as a contract and enforces it at the point where a message would enter the shared conversation. ATC scores a proposed output for out-of-role deviation, leakage into the functions of other roles, impermissible speech acts, and logical contract breaches, then computes a leakage-regularized target that constrains regeneration; the revised message is re-checked before admission. Enforcement acts on the message rather than the generator, so ATC governs agents whose internal representations are unavailable. Across homogeneous and heterogeneous teams, ATC improves task performance and role consistency while lowering role-drift energy relative to strong baselines spanning prompting, memory, workflow control, and activation editing, with the largest gains under explicit role-confusion stress tests and in larger, more diverse teams.",
+      "summary_short": "Multi-agent LLM systems assign different responsibilities to different agents: one plans, another retrieves evidence, another verifies, another executes. This division of labor is only meaningful if each agent stays within the functions it is authorized to perform.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.04321",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "LLM-Agent",
+        "多智能体",
+        "契约执行",
+        "角色一致性"
+      ],
+      "glance": "把每个角色的权限写成可检查的契约，在消息进入共享上下文前拦截并引导重写；角色一致性从 78 提到 93，角色混淆压力下成功率高出 12 个百分点以上",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一个多智能体系统分工明确：一个做规划、一个检索证据、一个核验、一个执行。可跑上十几轮之后，核验者会开始提方案，检索者会下结论，执行者会改动没人批准的状态。每一步单看都合理，合起来职责就乱了。这类漂移不会在单轮评测里暴露，却足以让整条流水线的责任链断掉。"
+        },
+        {
+          "t": "h",
+          "v": "治理问题可以写成契约问题"
+        },
+        {
+          "t": "p",
+          "v": "论文把这种现象形式化为角色漂移：逐轮发生的、对角色契约的越界。每个角色的权限被写成显式契约，执行点放在消息进入共享对话的入口——也就是说，管的是消息而不是生成器。这一点决定了方法对黑盒模型同样可用：不读隐藏激活，也不假设能改权重。作者将其血脉接到三条老传统上：契约式设计、基于角色的访问控制，以及「可执行安全策略」的定义——能被监视器在观察执行轨迹时判定的策略才算可执行。"
+        },
+        {
+          "t": "h",
+          "v": "四个打分项与一次受限重写"
+        },
+        {
+          "t": "p",
+          "v": "判定由四部分组成：角色子空间偏离（行为向量落在被分配角色子空间之外的分量）、跨角色泄漏（落进其他角色子空间的分量，用软惩罚而非硬正交，因为不同角色本来会共享推理、澄清、引用证据这类方向）、言语行为越界、以及符号化的契约违例。越界时算出一个泄漏正则化的最近目标点，用它引导重新生成，改完再过一遍检查才准入。消融显示几何角色表示是主承重墙：去掉它，任务分从 76.4 掉到 68.2，角色一致性从 93.5 掉到 80.1；去掉泄漏惩罚其次（70.4 与 84.3）。纠偏目标里，纯投影 71.3、硬正交 69.8，都明显不如软抑制泄漏的完整目标。"
+        },
+        {
+          "t": "h",
+          "v": "数字与代价明码标价"
+        },
+        {
+          "t": "p",
+          "v": "三个基准（协作任务集、多智能体任务集、软件工程验证集）、同质与异质两种团队配置下都领先。最难的异质十二人配置上，任务分 76.4 对最强基线 66.8，角色一致性 93.5 对 78.2，漂移能量 0.11 对 0.29。三种人为压力测试——要求某智能体越权、把正确结果路由给无权限的智能体、中途改分工——成功率比最强基线高 12 个百分点以上。代价也写清了：每回合 15.2 次模型调用、13.3 万词元、32.4 秒时延，高于固定流程基线（13.6 次、12.6 万词元、28.5 秒）；但「每万词元 换来的角色一致性增益」为 1.97，是最强非本文基线的两倍多。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "收录于 2026 年自然语言处理实证方法会议（EMNLP 2026），作者来自俄克拉何马大学与佛罗里达大学，预印本编号 arXiv 2611.04321v1。需要留意三点：角色子空间依赖行为编码器与每个角色的基向量，基向量怎么来、标注多少条、跨领域是否要重做，主要放在附录；三个基准都是公开集，但角色一致性与漂移能量这两个指标由本文自定评分表、靠自动判定给出（作者自己承认可能带评审偏差），报告值为三次种子的均值；时延在固定硬件上测得，换模型后重写调用的成本会变。角色契约本身仍由人写，权限写漏了，过滤器也就拦不住。"
+        },
+        {
+          "t": "close",
+          "v": "这篇把治理问题落成了机制设计问题：权限不是提示词里的一句话，而是能在执行轨迹上被判定真假的谓词——这正好对应可执行安全策略的老定义。可迁移的做法是：凡是要把职责交给多个模型的地方，先问「越界能不能在消息边界上判定」，能判定就写成准入规则，不能判定就别指望提示词。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 5,
+      "id": "2611.05263",
+      "doi": "",
+      "title": "把规划器和执行器绑在一起训：网页智能体的分工红利",
+      "title_en": "JHiMA-WebRL: A Joint Hierarchical Multi-Agent Reinforcement Learning Framework for Long-Horizon Web Tasks",
+      "authors": [
+        "Shanka Subhra Mondal",
+        "Jiayun Wang"
+      ],
+      "published": "2026-11-03",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2611.05263v1",
+      "summary": "Multimodal web agents have shown promising capabilities for interacting with websites through graphical user interfaces (GUIs), yet realistic web tasks often require long-horizon, multi-step planning that remains challenging for monolithic policies. Such agents must jointly infer high-level plans, navigate through intermediate states, track progress over extended interaction histories, and execute visually grounded actions. Although prior work has explored modular multi-agent systems with a separate planner, the planner is typically not updated jointly with the actor. We investigate whether explicitly separating and jointly training planning and execution provides a stronger inductive bias for long-horizon web navigation. We introduce JHiMA-WebRL, a joint hierarchical multi-agent reinforcement learning framework for web agents that couples a task decomposer with an actor. To train the decomposer, we use a strong teacher model to construct structured subtask supervision from multimodal GUI trajectories, and use these annotations to fine-tune both the decomposer and the subtask-conditioned actor. We then extend Group Relative Policy Optimization (GRPO) to jointly optimize the decomposer and actor in the interactive WebArena environment through hierarchical rollout grouping and role-specific advantages. On WebArena-Lite-v2, JHiMA-WebRL-14B, consisting of a 7B actor and a 7B decomposer, achieves an average success rate of 37.2%, compared with 24% for a ScaleCUA-32B agent that we fine-tune with RL on the same training tasks and evaluate under the same protocol. Ablations show that jointly updating the decomposer during RL outperforms updating the actor alone. These results suggest that jointly learned role factorization with smaller models can be a competitive alternative to scaling monolithic agents for long-horizon web tasks.",
+      "summary_short": "Multimodal web agents have shown promising capabilities for interacting with websites through graphical user interfaces (GUIs), yet realistic web tasks often require long-horizon, multi-step planning that remains challenging for monolithic policies.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.05263",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "LLM-Agent",
+        "分层强化学习",
+        "GRPO",
+        "网页智能体",
+        "多智能体协作"
+      ],
+      "glance": "分解器与执行器共享同一目标、同时更新，14B 模型在网页交互基准上平均 37.2%，比同步数预算下更大型的单体方案高 13.2 个百分点",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "网页智能体的主流画法是给一个多模态大模型配上「规划器加执行器」的模块化结构：先让规划器把任务拆成子目标，再让执行器逐步点击。问题是规划器通常被冻住——拆得对不对，执行器没法反馈回去，两边各学各的，长任务上误差一层层放大。分工带来的好处，被这种单向结构抵掉了大半。"
+        },
+        {
+          "t": "h",
+          "v": "两个模块一起学"
+        },
+        {
+          "t": "p",
+          "v": "这篇把两个模块放进同一个目标联合训练：分解器负责把任务拆成至多五个关键子目标，执行器在子目标条件下做视觉落地的动作。分解器的监督数据来自强教师模型对多模态轨迹的标注，先做监督微调，再与执行器一起进入在线强化学习。算法在分组相对策略优化上做了两处改造：分层采样把「同一任务的多个分解」与「同一分解的多次执行」分开归组，两层的优势各自估计；执行器的基线以分解为条件，把计划好坏的方差从执行器优势里剥掉，于是执行器的更新只在同一份计划内部比较。"
+        },
+        {
+          "t": "h",
+          "v": "红利有多大"
+        },
+        {
+          "t": "p",
+          "v": "在网页交互基准的五个站点上，14B 版本四次运行的平均成功率 37.2%，其中代码托管 47.5%、论坛 60.5%、购物 29.0%、后台管理 44.3%。最干净的对照是同任务、同步数预算训练的单体方案（32B），本文高出 13.2 个百分点而参数更少。消融把红利拆开：只训执行器、分解器冻结，平均分掉到 33.4%，少 3.8 个百分点；不要子目标、纯多轮执行器强化学习，两种采样预算下分别是 34.9% 与 35.2%；干脆全用监督微调、不做强化学习，35.1%。最值得盯的是「执行器单独强化学习（33.4%）反而低于纯监督（35.1%）」这一格：不给计划当脚手架，在线强化学习会把策略带偏，联合训练才把它拉回来。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本 arXiv 2611.05263v1，埃森哲先进人工智能中心，未经同行评审。作者列了五条局限，都值得照抄：训练用的强化学习任务与评测集虽不相交，但共享模板与站点，因此只算同环境泛化；分解监督由专有教师模型生成且未经人工核验，评价也用同一族模型做模糊匹配，存在自评闭环；分解器只在初始观测上规划一次，执行中不能改计划；终局奖励把同一个优势摊给整条轨迹的所有 词元，无法定位是哪一步出错；评测只有一百五十四个任务，而消融差异仅两到三点八个百分点，与运行间波动同量级。地图站点是明显短板（12.5%，低于基线），失败例子里智能体反复点缩放直到步数耗尽。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发有两条。其一，模块化本身不值钱，值钱的是模块之间共享目标并且同时更新——冻结的规划器只是把误差往下游推。其二，分层优势的写法值得借：把某一层的基线条件化在上一层的结果上，等于在优势估计里做了一次方差分解，这在任何「先决策后执行」的系统里都能用。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今日新增 8 篇，无顶刊、无 CCF-A 命中（影响力构成里的顶刊与 CCF-A 计数均为往期存量）。8 篇中 1 篇挂在小众新刊《国际先进人工智能应用杂志》上（单作者、只有架构叙述、无任何量化结果，剔），其余 7 篇为 arXiv 预印本；另有 2 篇（分布式任务分配、实验室组织实验）因实验报告过薄或离主线较远未纳入，精读 5 篇。",
+    "安全保证今天出现了两条同构的线索：控制量的准入与消息的准入。前者把「全部刹停」的备份地平线写进控制屏障函数，让滤波器在控制量有界下递归可行；后者把角色权限写成可在消息边界判定的契约，越界就拦下重写。两者都不再依赖「训练时把安全学会」，而是承认策略不可信，把保证做在外层且要求可判定。",
+    "理论侧给的是两条硬结论，方向相反但方法一致：一条先证「去中心化的乘积策略连驻点都保不住单边最优」，再指出去路是改目标加熵；另一条把「历史要看多长」的截断代价写成曲率，让近似比带上显式因子。共同点是把「能不能保证最优」换成「误差项由什么构成、各占多少」，这是近期多智能体理论最实用的一种写法。",
+    "LLM 多智能体的组织结构开始被当成可学习的对象：网页智能体这一侧证明冻结规划器会把强化学习带偏，联合更新才拿到红利；契约这一侧证明角色分工需要显式准入控制，靠提示词约束不住十几轮后的漂移。同一天两篇都在说同一件事——分工的收益不是白来的，要么联合优化，要么外部强制。",
+    "未纳入精读但值得留意：分布式边际回报算法（2611.04370）把「非冲突投标的边际收益可加」证成了定理，思路漂亮，但全文没有任何百分比指标，全部结论止于「显著优于基线」，暂不作长文；Labtune（2611.03935）把实验室组织与信息共享当作实验变量，选题有趣但为单作者工作稿；递归对抗引擎（挂在上述小众新刊）只有架构图与定性陈述。"
+  ],
+  "note": "本期精读 5 篇：4 篇 arXiv 预印本（11-02 至 11-03 提交）+ 1 篇已被 EMNLP 2026 收录、同时以预印本挂出的稿件。检索窗口：arXiv 7 天 / 期刊会议 90 天（截至 2026-11-05）。当日 8 篇新增中剔除 1 篇小众新刊的单作者架构文（无量化结果），另有 2 篇（分布式任务分配、实验室组织实验）因实验报告过薄或离主线较远未纳入，理由见趋势小结。五个分区各收录一篇，无空缺。",
   "learning": {},
   "radar": [
     {
@@ -2162,5 +2565,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

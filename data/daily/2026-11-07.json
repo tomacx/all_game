@@ -22,9 +22,347 @@
     "new_count": 5,
     "seen_before": 1380
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "2611.06067",
+      "doi": "",
+      "title": "被截断的出价里，卖家还能学到什么保留价",
+      "title_en": "Offline Learning of Reserve Prices from Censored Bids",
+      "authors": [
+        "Lavanya Marla",
+        "Yunzong Xu",
+        "Boxuan Zhou"
+      ],
+      "published": "2026-11-04",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2611.06067v1",
+      "summary": "We study how a seller can learn a reserve price for a second-price auction from censored historical bid data. Because values below past reserves are unobserved, even unlimited data may not reveal which reserve earns the most revenue. Under a monotone hazard rate (MHR) assumption, we characterize exactly when an optimal reserve is identified, even though the value distribution may not be: either revenue has not yet begun to fall at the lowest historical reserve, so the best reserve lies among the observed bids, or the censored fraction is as large as MHR allows, which pins down the entire distribution. When identification fails, we derive the reserve that minimizes worst-case revenue regret over distributions consistent with the data, and prove that this unique minimax reserve and its regret depend on just two observable quantities: the censored fraction and the hazard just above the lowest historical reserve. With $N$ historical bidders, the optimal reserve is learned with expected worst-case regret $O(N^{-1/2})$ when it lies among the observed bids, and $O(N^{-1})$ from the censored count alone when the censored fraction is as large as MHR allows and the optimum lies at or below the lowest reserve. In the nonidentifiable regime, plugging estimates of the two quantities into the minimax reserve gives expected worst-case regret within $O(N^{-2/5})$ of the population minimum under local density smoothness, with a matching minimax lower bound on a smooth class. Beyond MHR, we solve the minimax problem for regular and unrestricted distributions and prove an $O(N^{-2/5})$ learning bound in the regular nonidentifiable regime, given known bounds on the boundary parameters. Experiments on synthetic and eBay data show gains from exploiting MHR and the benefits of the robust rule when parametric models are misspecified.",
+      "summary_short": "We study how a seller can learn a reserve price for a second-price auction from censored historical bid data. Because values below past reserves are unobserved, even unlimited data may not reveal which reserve earns the most revenue.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.06067",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "拍卖机制",
+        "离线学习",
+        "部分识别",
+        "极小极大遗憾",
+        "截断数据"
+      ],
+      "glance": "把“看不见的低价”折算成可计算的极小极大遗憾：识别失败时，最优保留价只由未出价比例与边界风险率两个数决定。",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一个卖家去年把开标价定在一美元，今年想试试八十美分。他手上有一批同款掌上电脑的拍卖记录，看上去数据充足；可那些真正在意八十美分的人，去年根本没有出现在记录里。价格筛掉了他们，也筛掉了答案。"
+        },
+        {
+          "t": "h",
+          "v": "截断把分布切成两半，只留下能看见的那半"
+        },
+        {
+          "t": "p",
+          "v": "把历史最低保留价记作 λ。出价低于 λ 的人不留任何记录，卖家只知道有多少人没出价。于是数据由两部分组成：λ 以上的观测尾部，和 λ 以下完全不可见的隐藏体。前者可以估，后者只剩一个总数。即使数据无限多，两个尾部相同、隐藏体不同的分布也会产生一模一样的截断记录，而它们的最优保留价可以分别是三分之二和二分之一。这不是样本量的问题，是识别的问题。"
+        },
+        {
+          "t": "p",
+          "v": "作者把决策目标定成遗憾：选定保留价的收入，与每个和数据相容的分布各自最优收入之间的差。把最坏情况压到最小，得到总体极小极大遗憾，记作 Δ。它的意义是给学习划了一条地板线——在同样的历史保留价上再多收几倍的出价，也压不到 Δ 以下。想更低，只能改机制，比如在更低的价格上真的开几次拍卖。"
+        },
+        {
+          "t": "h",
+          "v": "在单调风险率下，只有两种情形能真正识别"
+        },
+        {
+          "t": "p",
+          "v": "假设需求的风险率随价格不降，这个条件覆盖所有对数凹密度。第一种情形是尾部最优：收入在 λ 处还没有开始下降，说明隐藏体再怎么变也改变不了最优选择，最佳保留价就落在观测到的出价里。第二种情形是完全识别：未出价的比例恰好等于单调风险率在 λ 处允许的最大值，此时隐藏体被迫具有恒定风险率，整个分布被钉死。两种情形可以重叠，剩下的都归入不可识别区。"
+        },
+        {
+          "t": "h",
+          "v": "不可识别时，答案只由两个数决定"
+        },
+        {
+          "t": "p",
+          "v": "这是全文最漂亮的一步。极小极大保留价与 Δ 不依赖隐藏体的形状，只依赖两个可观察量：未出价的比例，以及 λ 右侧紧邻处的边界风险率。原因是结构性的——在不可识别区，所有相容的最优保留价都落在 λ 以下，于是两个候选保留价的收入差只通过“λ 以上出现了几个值”起作用，而不通过“这些值有多大”。一场至少有两个高于 λ 的出价的拍卖，在两种保留价下都付第二高价。频率由未出价比例给出，风险率的上界由单调风险率给出。"
+        },
+        {
+          "t": "p",
+          "v": "证明还给了一个降维技巧：对任一固定保留价，最坏情形总可以由至多两级常数风险率的隐藏体达到。无穷维的分布搜索因此退化成两维的水平搜索，可以带误差证书地算出来。结论之一反直觉——极小极大保留价严格落在边界风险率的倒数与 λ 之间，也就是说，直接沿用历史保留价在每一个不可识别实例里都严格更差。"
+        },
+        {
+          "t": "h",
+          "v": "从总体到样本，指数是五分之二"
+        },
+        {
+          "t": "p",
+          "v": "尾部最优情形下，经验尾部规则的期望遗憾是根号 N 分之一；完全识别情形下，只用未出价人数的线性补全规则能到 N 分之一，连密度都不用估。识别失败时，把两个估计量代进极小极大保留价的插件规则，期望遗憾是 Δ 加上 N 的五分之二负次方，作者并在光滑类上给出了匹配下界，说明这个指数无法一致改进。"
+        },
+        {
+          "t": "p",
+          "v": "为什么是五分之二而不是二分之一：尾部最优只需估一个分位点附近的行为，这里要估的是风险率，牵涉密度的导数，还带着一个边界；非参数估计的经典速率在这里被边界条件拖慢。作者另外给了自动选择器——先用估出的边界风险率检验是否属于尾部最优，再在尾部规则与插件规则之间选，超额遗憾仍以高概率保持五分之二。"
+        },
+        {
+          "t": "h",
+          "v": "真实拍卖数据上，复用旧保留价的代价很大"
+        },
+        {
+          "t": "p",
+          "v": "实验用 628 场 eBay 拍卖的记录，三件标准化商品：掌上电脑、游戏机、腕表。把卖家开标价当作保留价，取开标价不超过一美元的场次作参考样本，得到 1652 条出价记录、132 场掌上电脑拍卖。游戏机与腕表分别只有 42 场与 40 场，样本更薄。"
+        },
+        {
+          "t": "p",
+          "v": "在掌上电脑的三个全美元边界 155、199、219 上，插件规则的留出遗憾在两个边界处低于所有截断最大似然：1.4% 与 0.6%，对比 2.3%–2.8% 与 1.1%–1.9%。在 199 处反而落后，1.68% 对 1.25%–1.52%，原因是数据驱动带宽在那里选了一个十二美元的窗口。最刺眼的两个数字是：直接把开标价当保留价复用，最多损失 54% 的最优收入；在 219 处，边界规则与“只在观测出价上最大化经验收入”的朴素做法都损失 28%。"
+        },
+        {
+          "t": "quote",
+          "v": "识别最优决策比识别整个分布容易；容易多少，取决于你敢对看不见的那部分加多强的形状约束。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是 2026 年 11 月 4 日的 arXiv 预印本，未见同行评议记录。三位作者同属伊利诺伊大学厄巴纳-香槟分校工业与企业系统工程系，按字母序署名，Boxuan Zhou 为通讯作者与主要贡献者。"
+        },
+        {
+          "t": "p",
+          "v": "数据规模要说清楚：628 场拍卖听上去不少，分到三件商品后每件只有 40 到 132 场；主表只报掌上电脑，游戏机的风险率递减检验在每个带宽下都显著，即单调风险率不成立，腕表只在最窄带宽下成立且任何边界都没有可行的核估计——这两件的结论要看附录，不能只看主表。胜者出价只公开到成交价，每条记录右截断，靠插补处理，插补本身带误差。54% 是“复用开标价”这一做法的损失上界，不是本方法相对真实最优的收益。"
+        },
+        {
+          "t": "p",
+          "v": "还要注意假设的代价：单调风险率排除了收入先降后升的需求曲线，而真实拍卖里这种现象并不罕见。作者自己的稳健性实验也说明，一旦分布族设定错了，截断最大似然的遗憾不随样本增长而消失——这一点比任何一个百分比都重要。"
+        },
+        {
+          "t": "close",
+          "v": "搬走这套方法，最有用的是那个提问顺序：先问“我看到的样本是被哪个机制筛过的”，再问“决策本身是否可识别”，最后才问“要多少样本”。推荐系统只看到被曝光又被点击的物品、定价只看到成交的订单、招聘只看到过了初筛的简历，都是同一个结构。第二个动作是数一数“最坏情况由几个可观测量决定”——这篇的答案是两个，于是无穷维的分布不确定性被压成一次二维搜索，这是把不可识别问题做成可计算问题的通用手法。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "10.17076/mgta_2026_3_105",
+      "doi": "10.17076/mgta_2026_3_105",
+      "title": "抱团的人用更多备选，人均却更吃亏",
+      "title_en": "Selfish and Cooperative Behaviour in Nonatomic Congestion Games",
+      "authors": [
+        "Крылатов Александр Юрьевич",
+        "Alexander Krylatov"
+      ],
+      "published": "2026-10-26",
+      "venue": "Mathematical Game Theory and Applications",
+      "venue_raw": "Mathematical Game Theory and Applications",
+      "impact": "other",
+      "impact_label": "其他",
+      "primary_category": "",
+      "url": "https://doi.org/10.17076/mgta_2026_3_105",
+      "summary": "The paper examines the influence of cooperative behavior on the players' population assignment among alternatives in a non-atomic congestion game with affine cost functions. The formulation of the congestion game is proposed in which the player population consists not only of individualists but also of players acting in the interests of a cooperating group. In this formulation, a Nash equilibrium is explicitly obtained, allowing us to analyze the interdependence and interaction of strategies for assigning players among alternatives in a non-atomic congestion game with groups of cooperating players. It is proven that the number of alternatives sought by cooperating players is always no less than the number sought by individualists. Moreover, when groups of cooperating players compete in a congestion game, a larger number of alternatives can only be sought by a larger group. Finally, it is shown that the average payoff of a cooperating player is never greater than the payoff of an individualist.",
+      "summary_short": "The paper examines the influence of cooperative behavior on the players' population assignment among alternatives in a non-atomic congestion game with affine cost functions. The formulation of the congestion game is proposed in which the player population consists not only of individualists but also…",
+      "is_new": true,
+      "sources": [
+        "主题·纳什均衡"
+      ],
+      "abs_url": "https://doi.org/10.17076/mgta_2026_3_105",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "拥塞博弈",
+        "纳什均衡",
+        "合作行为",
+        "交通分配"
+      ],
+      "glance": "给非原子拥塞博弈加入“抱团出行者”并显式解出均衡：合作者寻求的备选更多，人均收益却不高于自利者。",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "早高峰，几个同事约好一起走同一条路。他们以为抱团能省事，结果每个人分摊到的通行时间比各自出发时还长。这种“合作反而更糟”的直觉，在交通与网络拥塞的模型里一直缺一个干净的表述。"
+        },
+        {
+          "t": "h",
+          "v": "把人群分成自利者与抱团者"
+        },
+        {
+          "t": "p",
+          "v": "模型是非原子的拥塞博弈：参与者无限可分，每人从若干备选（路径、链路、时段）里选一个，成本是仿射函数——一个固定项加一个与流量成正比的拥挤项。经典设定里所有人都是自利者，均衡就是没人能靠单方面改选降低成本的那个流量分布。"
+        },
+        {
+          "t": "p",
+          "v": "这篇把总体拆成两类：一类是个体自利者，各自最小化自己的成本；另一类是合作组，成员按整个组的目标来分配。组与组之间、组与自利者之间仍然是竞争关系，不存在跨组的合约。这样的双层目标在仿射成本下依然可解，作者显式写出了纳什均衡——不是只证存在，而是把均衡的分配写成可以逐项比较的形式。"
+        },
+        {
+          "t": "h",
+          "v": "三条结构性结论"
+        },
+        {
+          "t": "p",
+          "v": "第一，合作者寻求的备选数量不少于自利者。把外部性内部化之后，一个组更愿意把流量摊到更多备选上，因为它承担的是加总成本，而不是自己被挤的那一份。第二，当多个合作组同场竞争时，更大的组才可能寻求更多备选——规模决定分散的意愿。第三，合作者的人均收益不高于自利者。"
+        },
+        {
+          "t": "p",
+          "v": "第三条是整个模型最反直觉的地方。合作让组内的总成本下降，却让成员的平均处境变差。原因不难还原：组把流量摊薄，摊薄的代价由每个成员分摊；而自利者看到的是被组让出来的空间，于是朝更便宜的方向挤过去。均衡里，合作组的规模效应被自利者的最优反应一点点吃掉，剩下的净效应是负的。"
+        },
+        {
+          "t": "quote",
+          "v": "合作改变的是可行集与分配的对象，不是可分配的总量。"
+        },
+        {
+          "t": "h",
+          "v": "它接的是哪条研究线"
+        },
+        {
+          "t": "p",
+          "v": "作者长期做交通分配与拥塞博弈，此前在同一刊物第 17 卷第 3 期研究过带流量约束的拥塞博弈的无政府代价——关心均衡离社会最优有多远。这篇换了问题：不问效率比，而问“合作”这一种参与者类型会如何改变均衡的结构，用几个备选、拿多少收益。对做多智能体的人来说，这个转向值得注意：效率界是给政策制定者看的，结构性比较才是给机制设计者看的。"
+        },
+        {
+          "t": "p",
+          "v": "方法上的关键是可解性。仿射成本让均衡可以写成线性条件，于是“备选数量”这种离散量也能做显式比较；换成一般凸成本，同样的比较多半只能落成不等式。这也是为什么这篇能给出“不少于”“不高于”这类干净结论，而不是一堆数值实验。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源是俄罗斯科学院卡累利阿研究中心主办的《数学博弈论及其应用》，国际标准刊号 2074-9872，第 18 卷第 3 期第 20 至 44 页，2026 年 10 月 26 日上线，元数据经 Crossref 核验。刊物规模不大，但在拥塞博弈与交通均衡这个子领域有稳定的作者群，本文作者即其中之一。"
+        },
+        {
+          "t": "p",
+          "v": "本地的网络环境取不到正文：出版方站点连接超时。所以上面复述的三条结论全部来自 Crossref 登记的完整摘要，证明技巧、算例规模、以及“更大组寻求更多备选”是否要求组内同质、是否要求各组成本函数形式一致，都没有核实。摘要本身没有报告任何数值实验——这类结构性结论通常不需要大数据，但缺算例意味着读者无法判断结论在接近退化（组规模趋同、成本接近线性）时是否还有分辨力。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发有两条。其一，给多智能体系统里的联盟建模时，先把“组内共享目标”与“组间仍竞争”分成两层写清楚；把合作当成默认，会让预测的符号反掉。其二，“合作者的平均收益不高于自利者”是一个能被工程验证的预言：在共享资源池的系统里给某些智能体加上协同约束，然后看它们的人均吞吐是否下降——下降说明约束真的把外部性内部化了，没下降多半是约束没有起作用的环节。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "10.1038/s41598-026-78738-1",
+      "doi": "10.1038/s41598-026-78738-1",
+      "title": "四个智能体抢同一张床：医院流程系统的 5% 冲突率",
+      "title_en": "Agentic AI system for hospital management",
+      "authors": [
+        "Ashis Kumar Pati",
+        "Kaibalya Mohapatra",
+        "Mukesh Kumar Padhi",
+        "Shreya Tripathy"
+      ],
+      "published": "2026-11-05",
+      "venue": "Scientific Reports",
+      "venue_raw": "Scientific Reports",
+      "impact": "other",
+      "impact_label": "其他",
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41598-026-78738-1",
+      "summary": "Abstract In modern-day hospital administration, there are many problems like long waiting time for patients, poor scheduling of physicians, lack of coordination between departments, among others. As such, this research suggests an Agentic AI System for Hospital Administration that utilizes a multi agent architecture and intelligence embedding to automate healthcare processes. This model entails a Patient Interaction Agent, a Care Coordination Agent, a Doctor Interaction Agent, and a Bed Allocation Agent, whose main roles are facilitating patients' entry and sorting out the patients' needs, allocation of doctors to attend to patients, coordination within the hospital, and hospital resource management, respectively.Through reinforcement learning, decision-making based on information processing, and synchronization, the framework becomes more adaptive and scalable. It is expected that due to intelligence distribution and intelligent decision-making, this model will minimize total waiting time, improve physicians' usage, and enhance scheduling of patients. Empirical analysis shows that hospital operations exhibit significant performance superiority of agentic models over the traditional models.Modern hospital administration faces major challenges such as prolonged patient waiting times, inefficient physician scheduling, poor interdepartmental coordination, and suboptimal resource utilization. Traditional hospital management systems often rely on static and centralized approaches that lack adaptability in dynamic healthcare environments. To address these limitations, this paper proposes a cooperative Multi-Agent Reinforcement Learning (MARL)-based intelligent hospital administration framework for workflow optimization and resource management. The proposed system consists of four collaborative agents: a Patient Interaction Agent for patient triage, a Doctor Scheduling Agent for dynamic physician allocation, a Care Coordination Agent for interdepartmental communication, and a Bed Allocation Agent for adaptive resource management. The agents utilize decentralized decision-making and reinforcement learning to optimize hospital operations in real time. The framework is evaluated using a hospital simulation environment and compared with conventional scheduling and management approaches. The results show that the effectiveness of the proposed system model is able to complete the tasks at a rate of 82.50\\% in a period of 5.12 seconds with a success rate in handling queries of 79.15\\%. Furthermore, the system attains a coordination efficiency of 87.50\\%, indicating effective collaboration among agents, while maintaining an agent conflict rate of 5.00\\%, ensuring stable and interference-free operations. The framework records a low communication overhead of 0.88, reflecting efficient inter-agent communication, and achieves a convergence rate of 96.4\\%, demonstrating learning stability and adaptability.This indicates that the model is efficient, scalable, and adaptable in managing intelligent hospitals.",
+      "summary_short": "Abstract In modern-day hospital administration, there are many problems like long waiting time for patients, poor scheduling of physicians, lack of coordination between departments, among others.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://doi.org/10.1038/s41598-026-78738-1",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "多智能体系统",
+        "智能体协作",
+        "医疗调度",
+        "系统评估"
+      ],
+      "glance": "四个协作智能体接管挂号、分诊与床位，合成仿真下完成率 82.5%、冲突率 5%，但缺外部对照，只宜作架构样例。",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "门诊大厅里，挂号、分诊、床位是三件事，分别归三个“智能体”管。病人被推来推去的时候，问题往往不在哪个智能体算错了，而在它们对同一张床给出了互不相容的判断。"
+        },
+        {
+          "t": "h",
+          "v": "四个智能体，一条流程"
+        },
+        {
+          "t": "p",
+          "v": "系统由四个协作智能体组成：患者交互智能体负责登记与需求归类；护理协调智能体负责分诊、动态分配医生与跨科室协调；医生交互智能体负责病历文书；床位分配智能体负责床位这类稀缺资源的调配。框架自称带强化学习能力，用信息处理与同步让整体具备适应性。"
+        },
+        {
+          "t": "p",
+          "v": "结构上是典型的“流程拆分加角色分工”：把院内一串串行手续切开，每段交给一个专责角色，段与段之间靠消息传递衔接。这种设计的好处是每段都能单独替换模型、单独扩缩容；坏处是全局一致性没人负责——床位只有一个，四个角色都可能认为自己有权分配它。"
+        },
+        {
+          "t": "h",
+          "v": "指标清单比结论更值得看"
+        },
+        {
+          "t": "p",
+          "v": "作者给出的验收指标是：任务完成率 82.50%，平均处理时间 5.12 秒，查询处理成功率 79.15%，协调效率 87.50%，智能体冲突率 5.00%，每完成一条工作流平均 0.88 条消息，工作流稳定率 96.4%。"
+        },
+        {
+          "t": "p",
+          "v": "这组数里真正有博弈意味的只有两个：冲突率与消息数。前者度量四个智能体在多大比例上对同一资源提出互斥请求；后者度量为了消解这些冲突付出了多少通信。其余指标度量的是流程是否跑通，与“多智能体”这个设定关系不大——换成一条写死的规则流水线，同样可以报完成率与处理时间。"
+        },
+        {
+          "t": "h",
+          "v": "问题在对照，而不在数字"
+        },
+        {
+          "t": "p",
+          "v": "评估在一个合成的医院仿真环境里完成，摘要把指标定义为工作流执行指标。摘要里没有给出任何基线对比：没有单智能体版本，没有规则调度，没有历史人工排班。也没有交代仿真规模——多少病人、多少科室、多长的班次、冲突如何定义与计数。正文是否补了这些，本次取不到，无法判断。"
+        },
+        {
+          "t": "p",
+          "v": "缺了这些，82.50% 只能说明“这套系统在自己的仿真器里跑通了”，不能说明“比现有做法更好”。5.12 秒尤其不可比：这类平均处理时间通常由仿真器为每个动作设定的延迟决定，换个仿真器就换个数字。"
+        },
+        {
+          "t": "h",
+          "v": "但它标出了一个真问题"
+        },
+        {
+          "t": "p",
+          "v": "把院内流程拆给多个智能体，是 2026 年增长很快的一类工作，共同的弱点是验收标准自建、环境自建、没有外部对照。真正缺的不是再搭一个四智能体系统，而是把床位、医生、检查设备之间的分配写成机制问题：谁有优先级、排队规则怎么定价、冲突用拍卖还是用优先级市场在事前消解。"
+        },
+        {
+          "t": "p",
+          "v": "冲突率 5% 恰好暴露了现状：冲突被留到事后协调，而不是事前用规则消解。在多智能体系统里，事后协调的成本随智能体数量超线性增长；消息数 0.88 看着很低，但那是在四个智能体、单一流程的合成环境里测出来的。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "刊物与流程可核：Scientific Reports，国际标准刊号 2045-2322，2026 年 11 月 5 日上线，2026 年 5 月 29 日收稿、10 月 27 日录用，约五个月审稿周期；四位作者同属印度布巴内斯瓦尔的 Siksha 'O' Anusandhan 大学数据科学中心，标注同等贡献，第一作者为通讯作者；开放获取，声明无利益冲突。这是一篇走完完整评审流程的正刊论文。"
+        },
+        {
+          "t": "p",
+          "v": "但正文在本次网络环境下只能取到摘要与元数据：出版方页面只放摘要，欧洲的开放获取索引尚未收录该文。因此智能体的内部结构、强化学习的奖励设计、仿真的实现细节都没有核实，本文对它的描述全部停在摘要层面。"
+        },
+        {
+          "t": "p",
+          "v": "引用建议：当架构样例用，不要引用其中的百分比。若要拿 82.50% 与别的系统比，先确认对方的仿真器、冲突定义与任务集是否一致——几乎不可能一致。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的经验是给流程型多智能体系统定三层验收：任务是否完成（完成率、成功率），协调付出多少代价（冲突率、消息数、稳定率），以及是否比原有规则更好（必须有外部对照）。前两层可以自建仿真，第三层自建不算数。这篇在前两层做得整齐，第三层缺席——这也是大多数同类工作此刻的位置。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今日新增只有 5 篇，明显少于前几日的两位数增量：1 篇期刊（Scientific Reports）、4 篇预印本。其中 1 篇是 ResearchGate 自印本《Agentic Nash Equilibrium》，落地页拒绝访问、无摘要，内容不可核；1 篇是 arXiv 2611.05953 的图中介大模型系统综述，分类法与评估框架有价值，但无新方法与新实验。合格 3 篇，按惯例不硬凑。",
+    "“只看到通过筛选的样本”成了今天两篇硬稿的共同前提。拍卖那篇把截断后的不可识别部分折算成极小极大遗憾，明确承认有些量的最坏情况无法消掉；医院那篇则干脆不讨论不可观测量，直接报工作流指标。同一天里，一种研究在给“不知道”定价，另一种研究在绕开“不知道”。",
+    "机制设计的学习理论继续从“知道分布”转向“知道多少算多少”。继 11 月 6 日的贴价遗憾与预算博弈之后，今天这篇把识别性与学习速率绑在一起：尾部最优根号 N 分之一、完全识别 N 分之一、识别失败则是极小极大遗憾加上 N 的五分之二负次方，并在光滑类上给出了匹配下界。",
+    "博弈论对“合作”的建模正从赞美转向修正。Krylatov 的结论是合作者用更多备选、人均收益却更低，与 10 月 31 日、11 月 5 日那批联盟与契约类工作形成对照：合作改变的是可行集与分配对象，不是可分配的总量。这条线值得继续跟。",
+    "智能体的验收标准仍是短板。今天的医院系统给出 82.5% 完成率与 5% 冲突率，却既无外部对照也无仿真规模；这与 11 月 6 日社会模拟那批工作对受控实验设计的呼吁正相反——一边在收紧评估，一边还在自建环境自定指标。对抗、安全与鲁棒分区今日无合格条目。"
+  ],
+  "note": "本期精读 3 篇：2 篇预印本（arXiv 拍卖保留价学习）+ 1 篇期刊（Scientific Reports 医院多智能体系统）。检索窗口：arXiv 7 天 / 期刊会议 90 天（截至 2026-11-07）。当日 5 篇新增中剔除 2 篇：ResearchGate 自印本《Agentic Nash Equilibrium》（访问受限、无摘要、内容不可核）；arXiv 2611.05953 图中介大模型系统综述（角色与计算位点分类法及评估框架有价值，但无新方法与新实验，按惯例不单独立目，已在趋势小结中提及）。分区覆盖：机制设计与市场、博弈求解与理论、LLM 多智能体与社会模拟各 1 篇；核心算法创新·MARL 与对抗、安全与鲁棒分区无合格条目。",
   "learning": {},
   "radar": [
     {
@@ -2174,5 +2512,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

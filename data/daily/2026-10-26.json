@@ -22,9 +22,338 @@
     "new_count": 3,
     "seen_before": 1127
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "2610.32244",
+      "doi": "",
+      "title": "比目标慢一档，也能拦住它：把速度劣势提前换成角度",
+      "title_en": "Distributed Attacker Assignment and Interception Control in Multi-Agent Target-Attacker-Defender Games",
+      "authors": [
+        "Pengyang Fan",
+        "Shaoqing Zhang",
+        "Chao Zhai",
+        "Weiguo Xia"
+      ],
+      "published": "2026-10-23",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "math.OC",
+      "url": "https://arxiv.org/abs/2610.32244v1",
+      "summary": "This paper addresses the Target-Attacker-Defender (TAD) game within a planar environment, focusing on the protection of a stationary target against incoming threats. To compensate for potential speed disadvantages of the defenders, we leverage geometric pre-positioning within an annular defense perimeter. The problem is formulated as an area interception problem, for which we propose a distributed multi-agent algorithm consisting of two primary modules: target allocation and interception control. For target allocation, an equitable region partitioning strategy is employed to divide the defense area into annular sectors and assign defenders to attackers. Under specified angular-separation and parameter conditions, the proposed partitioning mechanism ensures that each defender is assigned at most one attacker, thereby reducing the complexity of multi-agent assignment. For the control layer, movement protocols based on zero-sum differential games and coverage optimization are designed, achieving Nash equilibrium strategies while maintaining effective barrier coverage. Numerical simulations show that the proposed method enables slower defenders to intercept faster attackers through proactive deployment and maintains nearly constant local computation time as the swarm size increases.",
+      "summary_short": "This paper addresses the Target-Attacker-Defender (TAD) game within a planar environment, focusing on the protection of a stationary target against incoming threats. To compensate for potential speed disadvantages of the defenders, we leverage geometric pre-positioning within an annular defense peri…",
+      "is_new": true,
+      "sources": [
+        "主题·纳什均衡"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.32244",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "追逃博弈",
+        "区域覆盖",
+        "微分博弈",
+        "分布式分配"
+      ],
+      "glance": "守方最大速度 4 米每秒、攻方 5 米每秒，靠环带上的预部署把速度劣势换成角度优势：9 对 8 全部拦下，攻守比升到 1.75 仍有 68.9%，而单机计算时间始终压在 0.3 到 0.5 毫秒",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "防守方比攻击方慢，在追逃博弈里几乎等于宣判。常规解法是提速度或者加数量，两个都很贵。这篇来自大连理工与地大（武汉）的工作换了个便宜得多的变量：位置。它要回答的是——如果我就是追不上，能不能在对方到达之前，先站到它必经的那条线上。"
+        },
+        {
+          "t": "h",
+          "v": "环形防线上，慢的一方靠什么赢"
+        },
+        {
+          "t": "p",
+          "v": "场景是平面上的定点防护：目标在圆心，防守方守在内外半径之间的环带上，攻击方从更远的探测半径外冲进来。关键设定毫不宽容——守方最大速度 4 米每秒，攻方 5 米每秒。正面追是追不上的，尾追只会看着对方穿透防线。"
+        },
+        {
+          "t": "p",
+          "v": "作者的解法是把「拦截」重写成「区域拦截」：在攻击方进入交战环之前，防守方先按所辖扇区的密度加权重心预部署，把自己挪到攻击方最可能出现的角度上。速度劣势用角度优势换——不必追上，只需在对方抵达保护半径之前与它的轨迹相交。这也解释了为什么全文的核心是分配而不是控制：站错位置，后面怎么追都没用。"
+        },
+        {
+          "t": "h",
+          "v": "先分区，再保证一对一"
+        },
+        {
+          "t": "p",
+          "v": "分配层用等量分区：把环带按射线切成若干扇区，每条分割线的角度由一条动态方程驱动，让各扇区的工作量趋于均衡。工作量用高斯核密度拟合的攻击方角分布来算——这个选择有依据：目标在圆心时，攻击方的最优突防基本不改变相位角，因此相位是充分的统计量。核函数按角度周期性重新设计（用带符号的最短角差），并故意不做样本数归一化，让缩放系数直接反映攻击方的数量。"
+        },
+        {
+          "t": "p",
+          "v": "分布式实现上，每个防守方只测自己扇区内的攻击方，再沿环形通信拓扑做有限轮信息融合，避免中心节点成为单点故障。这个细节看似工程，其实是全文能否落地的分界：集中式广播在大范围防区里既慢又脆。"
+        },
+        {
+          "t": "p",
+          "v": "理论上给出条件：只要攻击方之间的最小角间距满足一个由系统负载比决定的阈值（阈值来自标准正态分位数），分区动力学就能保证每个防守方最多面对一个攻击方。证明用反证法，把「一个扇区里有两个攻击方」翻译成相位差与工作量界的矛盾。作者还专门讨论了相位重叠的退化情形：此时至少有一个邻居是空闲的，可以把压力卸过去。"
+        },
+        {
+          "t": "h",
+          "v": "交战层：零和微分博弈加覆盖优化"
+        },
+        {
+          "t": "p",
+          "v": "已交战的防守方解一个零和微分博弈，纳什策略落在一个黎卡提微分方程上；空闲的防守方按覆盖代价做梯度下降，代价取平方欧氏距离时，最优待命位置恰好是扇区的密度加权重心。于是同一个控制器有两种模式：有人进来就解博弈，没人进来就挪到更可能来人的角度。"
+        },
+        {
+          "t": "p",
+          "v": "这里有一句值得单独拎出来的自我限定：离散时间数值积分会留下残余约束违反，因此实际下发的指令是名义策略的约束化数值实现，而不是精确纳什策略。作者自己写明了这一点——在追逃博弈的论文里，这种坦诚并不常见。"
+        },
+        {
+          "t": "h",
+          "v": "数字"
+        },
+        {
+          "t": "p",
+          "v": "主场景是 9 个防守方对 8 个攻击方：保护半径 20 米、交战半径 50 米、探测半径 100 米、捕获半径 0.5 米，守方 4 米每秒对攻方 5 米每秒。所有攻击方都被拦下。规模测试把防守方从 10 增到 50，单智能体平均计算时间稳定在 0.3 到 0.5 毫秒，几乎不随规模增长——这是分布式分区最想要的性质。"
+        },
+        {
+          "t": "p",
+          "v": "高负载用蒙特卡洛跑，每种攻击方数量 50 次独立试验、每次最多 20 秒：攻守比 1.25 时拦截率 84.2%，1.75 时降到 68.9%。对照组是用匈牙利算法做集中分配的方案——防守方守在保护边界、等分到目标才动。结果在最近接近时刻（9.95 秒）最小间距仍有 2.0 米，超过捕获阈值，随后转入尾追，目标穿透防线。这个对照把「预部署」的价值量化了：同样的速度劣势，差的是一个提前量。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本，未标注投稿状态。优点是条件写得清楚、对照对象选得合理、计算复杂度的说法有实测支撑；局限同样明确：单积分器动力学、无环境障碍、目标固定不动，攻击方被假定沿最优直线突防——而全文的密度拟合恰恰建立在这个假设上。一旦攻击方学会绕行、分阶段佯动或反向利用守方的预部署，相位不变的前提就破了，84.2% 与 68.9% 都不能外推。作者把移动目标与障碍物列为未来工作，等于间接承认了这条边界。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发：当你在某个资源上处于劣势时，先看看能不能把竞争维度从「这个资源」换到「时间或位置」。预警窗口是最容易被忽视的资产——它不改变你的速度，但改变你必须跑的距离。反过来，如果你是被防守的一方，第一件该做的事就是缩短对方的预警窗口，而不是提高突防速度。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2610.32874",
+      "doi": "",
+      "title": "「真」与「假」加起来不等于一：智能体舆情仿真的措辞漏洞",
+      "title_en": "Do \"True\" and \"False\" Add Up to One? Complement Consistency in LLM-Agent Opinion Simulations",
+      "authors": [
+        "Anouar Imel",
+        "Jin Qi"
+      ],
+      "published": "2026-10-23",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2610.32874v1",
+      "summary": "In LLM-agent opinion simulations, each agent reports the probability that a claim is true after seeing its own previous probability and the probabilities reported by its neighbors, and that number becomes its state in the next round. If the number describes the agent's position rather than the sentence it was shown, then rewriting the claim as its complement and replacing every probability p with 1 - p should return the complementary answer, so the two reports should sum to one. We test this with three small open models: Qwen3-4B, Llama-3.2-3B and Gemma-3-4B. On 2,304 agent states taken from a running network simulation, Qwen's paired reports sum to 1.18 on average, and on 48 real fact-checking claims from AVeriTeC they again exceed one. A controlled benchmark of 24 worlds, each with exactly two possible outcomes, shows the same failure in all three models. The discrepancy is two to ten times larger than the change produced by a same-meaning paraphrase, and it persists under repeated sampling and across peer group sizes and report strengths. When the reports are fed back into two populations that start from complementary states, the populations do not remain mirror images: their divergence is positive after five rounds for every model. Averaging each answer with the complement of its paired answer restores consistency by construction and lowers Brier loss averaged over the two wordings, but at the final round it beats the better of the two original wordings for only one of the three models. A schedule-by-targeting experiment on the same model gives a small, stable interaction because such sweeps keep the claim wording fixed. Consistency under rewording therefore needs its own test before simulated probabilities are read as beliefs",
+      "summary_short": "In LLM-agent opinion simulations, each agent reports the probability that a claim is true after seeing its own previous probability and the probabilities reported by its neighbors, and that number becomes its state in the next round.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.32874",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "LLM 智能体仿真",
+        "一致性检验",
+        "措辞敏感",
+        "概率推断"
+      ],
+      "glance": "把命题换成否定、把概率换成补数，两次回答本该相加为一；实测 48 条真实事实核查命题的平均绝对缺口 0.33，而反馈五轮后互补初态的两群智能体不再互为镜像",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "舆情仿真里，每个智能体每轮输出一个概率，这个数字直接成为下一轮的状态，再进入邻居的请求。于是有个看起来幼稚、实际致命的问题：把命题换成它的否定、把看到的每个概率都换成补数，两次回答应该加起来等于一。如果加不到一，那这个数字描述的不是证据，而是措辞。"
+        },
+        {
+          "t": "h",
+          "v": "一个只靠算术就能判的测试"
+        },
+        {
+          "t": "p",
+          "v": "测试设计得很干净：命题与它的穷尽否定，事实证据不变，只是把所有以命题为参照的概率翻过来。若智能体报告的是「给定信息下的信念」，两次报告之和必须为一；偏差多少，就说明措辞本身在参与决策。作者把它叫互补差异，并强调它与「同义改写敏感度」是两件不同的事——后者正确答案不变，前者的正确答案被算术钉死。"
+        },
+        {
+          "t": "p",
+          "v": "这个区分很有用，因为它把「模型对措辞敏感」这句含糊的抱怨，变成了一个可以定量、可以复现、可以拿来当验收指标的检验。"
+        },
+        {
+          "t": "h",
+          "v": "三层证据"
+        },
+        {
+          "t": "p",
+          "v": "第一层来自一个正在运行的网络仿真：2304 个智能体状态，用 Qwen3-4B 复问，配对报告之和平均 1.18。"
+        },
+        {
+          "t": "p",
+          "v": "第二层用 48 条真实事实核查命题（来自 25 家机构，支持与反驳各半），在两种初始立场、五档反对强度、有/无来源证据、原始/否定措辞、私密/公开受众、两种镜像邻居顺序上做全交叉，得到 7680 条记录、1920 个配对。平均有符号差异 0.1867，平均绝对差异 0.3259，中位数 0.25——要恢复一致性，每条报告平均得挪 0.163。"
+        },
+        {
+          "t": "p",
+          "v": "一个容易被均值掩盖的细节：分层之后，支持类命题的有符号差异是 0.3488、绝对差异 0.3647；反驳类是 0.0246 与 0.2872。也就是说，模型对「真」的判断被措辞推高的幅度远大于对「假」的判断，而绝对误差两边其实差不多。这个不对称比总体均值更有信息量，也提示了偏误的方向。"
+        },
+        {
+          "t": "p",
+          "v": "第三层是受控基准：24 个世界，分属六个结构族（互斥颜色、二元开关、整数奇偶、阈值划分、有限集合归属、严格事件序），每个世界恰好两个穷尽结果。三个小模型（Qwen3-4B、Llama-3.2-3B、Gemma-3-4B）全部失败，互补差异是同义改写敏感度的二到十倍。有意思的是证据的作用并不统一：可见证据让 Qwen 与 Llama 的差异变小，却让 Gemma 的变大。有证据并不等于更一致。"
+        },
+        {
+          "t": "h",
+          "v": "反馈会把它放大"
+        },
+        {
+          "t": "p",
+          "v": "最要紧的一步是把报告喂回去：两个群体从互补的初始状态出发，看同样的证据，用同一个模型演化。如果局部更新是一致的，两条轨迹应当互为镜像。实测五个轮次之后，三个模型的轨迹分歧都为正——不是镜像，是分叉。"
+        },
+        {
+          "t": "p",
+          "v": "这条结论的杀伤力在于它波及的是整类实验：换图结构、换更新日程、换随机种子得到的稳健性，可能全都建立在一个已经偏了的局部更新之上。你调整的是宏观设计，坏掉的是微观算术。"
+        },
+        {
+          "t": "h",
+          "v": "修复的边界"
+        },
+        {
+          "t": "p",
+          "v": "最自然的修复是自对称化：把每条报告与它配对报告取补后的值平均。这在构造上保证一致性，也确实降低了两种措辞上的平均布里尔损失。但作者补了一刀：在最后一轮，它只在三个模型中的一个上超过了「两种措辞里更好的那一个」。平均分好看，是因为它把差的措辞拉了上来，而不是因为它更接近真相。"
+        },
+        {
+          "t": "p",
+          "v": "另一个对照更有说服力：同一模型上做「日程与投放目标」的扫描，交互项很小且稳定，因为这类实验把命题措辞固定住了。换句话说，过去那些看起来稳健的结论，很可能只是没碰到措辞这个维度。这是一条方法论上的元结论——稳健性检验的覆盖面，取决于你变了什么、没变什么。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本，两位作者同属一所大学，规模是「三个小模型加受控基准加一次性三万三千余次调用」，不是多模型家族的系统评测。作者自己写明了统计边界：世界、图、模板都是固定的，无法对未见过的世界或人群给区间；重复采样只做了六个世界；部分后续研究是在看到首批结果之后才设计的。修复实验只覆盖三个小模型，这条结论不能外推到大模型。但测试本身几乎零成本：任何做数值型智能体仿真的组，加一对互补请求就能自查——这一点比结论更值钱。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发：凡是把模型的数值输出当作状态往下传的系统，都要问一句「同一个信息换个写法，这个数字会变吗」。会变，说明你在仿真措辞，不在仿真信念；而这类偏差不会被换图、换种子、换日程的稳健性检验发现，只能靠针对更新步本身的算术检验抓出来。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2610.32871",
+      "doi": "",
+      "title": "不传文本，传雅可比：两个大模型之间的隐空间私语",
+      "title_en": "J-Comm: Jacobian-Guided Latent Communication between LLM Agents",
+      "authors": [
+        "Xiangwei Wang",
+        "Wei Wang",
+        "Sachith Seneviratne",
+        "Ken Chen",
+        "Yu Xia",
+        "Peng Wang",
+        "Saman Halgamuge"
+      ],
+      "published": "2026-10-23",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.CL",
+      "url": "https://arxiv.org/abs/2610.32871v1",
+      "summary": "Latent communication requires both an effective continuous reasoning process and an interface through which an external model can leverage its intermediate computation. We present J-Comm, a framework comprising two core components. First, a training-free Geometric Agreement for Latent Reasoning (GEAR) reweights token candidates over existing model embeddings, which monotonically optimizes geometric consensus among candidate tokens in embedding space at each step. Second, we introduce an H+J (Hidden-and-Jacobian) communication interface that gives the Receiver two complementary views of the Sender's reasoning. The H channel supplies continuous inputs derived from feedback distributions, while the J channel conveys intermediate-state cues in vocabulary-indexed Jacobian-lens coordinates. Intuitively, H provides inputs for the Receiver to reason from, while J offers additional guidance within its computation. The Receiver reconstructs these cues using its own dictionary and injects them into intermediate layers during prefill, enabling communication without sharing key-value caches or requiring identical model widths. In Qwen3-8B to Qwen3-4B communication, J-Comm achieves the highest mean score across seven benchmarks, including 94.80% on MATH500, 54.55% on GPQA-Diamond, 73.33% on AIME2024+2025, and 62.93% success on ALFWorld. Compared with TextMAS, it improves performance by 1.29-8.59 percentage points and reduces generated text tokens by 19.2-74.8%.",
+      "summary_short": "Latent communication requires both an effective continuous reasoning process and an interface through which an external model can leverage its intermediate computation. We present J-Comm, a framework comprising two core components.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.32871",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "隐空间通信",
+        "多智能体协作",
+        "雅可比透镜",
+        "免训练"
+      ],
+      "glance": "把消息拆成「给料」与「给方向」两条通道，分别注入接收方不同深度：不用共享缓存、不要求同宽，七个基准平均最高，文本词元少了两成到七成半",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "两个模型协作时，最贵的常常不是算力，而是那句人话。把中间推理压成一段文本、再让另一个模型读回去，信息在压缩里丢了，钱在词元上花了。隐空间通信想绕开文本，却一直卡在一个接口问题上：怎么在不共享缓存、不要求两边同宽的前提下，把「我算到哪儿了」传过去。"
+        },
+        {
+          "t": "h",
+          "v": "两条通道，一条给料，一条给方向"
+        },
+        {
+          "t": "p",
+          "v": "这篇来自墨尔本大学与上海交通大学的工作，把通信拆成两个问题：发送方如何构造连续的推理步，以及接收方该收到这段计算的哪一部分。前者用几何一致性重加权——每个候选词元的概率乘以它在嵌入空间里获得的支持度（按概率加权的相似度之和），归一化后把原嵌入混合成下一步输入。这是个纯乘性的免训练更新，等价于一次对称复制子步，只动冻结模型自带的嵌入表。"
+        },
+        {
+          "t": "p",
+          "v": "与直接把隐状态喂回去、或按概率平均候选嵌入的老做法相比，它多用了「候选之间是否同向」这个几何信息：同样的概率分布，落在同向候选集与散乱候选集上，含义完全不同。这个观察不新，但把它写成一步可证明单调的更新，是这篇的技术贡献之一。"
+        },
+        {
+          "t": "p",
+          "v": "后者是双通道接口。隐通道把发送方的反馈分布按接收方的嵌入表映射成连续输入，接收方从这些输入往下推理；雅可比通道取中间状态在词表坐标下的读数，把「模型此刻倾向说什么」的中间态线索以带符号的标量传过去，接收方用自己的词典重建后，在预填充阶段写进对应层。两条通道指向同一个发送步，但作用深度不同：一条给料，一条给方向。这也是它相对其他隐空间方案的实际优势——不共享键值缓存，不要求模型同宽。"
+        },
+        {
+          "t": "h",
+          "v": "结果"
+        },
+        {
+          "t": "p",
+          "v": "主实验是 Qwen3-8B 对 Qwen3-4B，七个基准的平均分最高：数学 500 题 94.80%，研究生级问答 54.55%，竞赛数学 73.33%，家居文本环境任务成功率 62.93%。相对纯文本多智能体基线，提升 1.29 到 8.59 个百分点，生成文本词元减少 19.2% 到 74.8%。"
+        },
+        {
+          "t": "p",
+          "v": "提升并不均匀：最大的 8.59 个百分点出现在研究生级问答上，最小的 1.29 在小学数学上。这符合直觉——越需要多步推理与隐含约束的任务，丢在文本压缩里的信息越值钱；而小学算术靠文本也能说清。"
+        },
+        {
+          "t": "p",
+          "v": "消融给了两个可操作的结论。通信位置数从 40 加到 400，竞赛数学从 70.56% 升到 73.33%（标准差 1.67 个百分点）——长度不是越多越好，400 是这一档的甜点。只留隐通道或只留雅可比通道，数学 500 题都掉到 89.4% 与 89.0%，双通道才 94.80%：两条通道不是冗余，是互补。"
+        },
+        {
+          "t": "p",
+          "v": "同构对照也做了：两个 4B 互传时数学 500 题 92.00%，高于同尺度的三个对照（83.20%、89.40%、80.40%）；两个 8B 互传 95.20%。跨家族迁移（8B 到 Llama-3.2-3B）在 198 题上答对 75 题，比纯文本的 73 题多两题，比打乱消息的 69 题多六题——提升存在，但幅度已经很薄。"
+        },
+        {
+          "t": "h",
+          "v": "代价与边界"
+        },
+        {
+          "t": "p",
+          "v": "每个模型对都需要一套词表对应关系与校准过的雅可比词典，换模型就得重建。跨家族那条线的收益（198 题里两题）正说明词表与坐标系的对齐仍是瓶颈，而不是注入方式的问题。"
+        },
+        {
+          "t": "p",
+          "v": "更根本的一点：这套方法优化的是「两个模型如何交换中间计算」，而不是「多个智能体如何谈判」。发送方的目标、接收方的目标、以及由谁验证消息有没有被曲解，全都不在框架里。把它当通信层加速器读，比当多智能体协作的解法读更准确。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本，主表只报三次运行的均值；竞赛数学仅 60 题，两三个百分点的差异要谨慎解读。所有实验都是「发送方给计划、接收方执行」的单向协作，没有多轮往返，也没有三方以上的拓扑。作者在局限一节自己指出字典需按对校准，但没给跨家族失败的定量分析。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发：如果你在做多智能体系统，先量一下「文本」这一层到底花了多少词元、又丢了多少信息。这篇的答案是：把消息拆成「给什么料」与「往哪个方向推」两件事，分别在不同深度注入，比把所有东西压成一段自然语言更省也更准——但前提是你能接受一套为每对模型单独校准的接口，以及由此带来的运维成本。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "补做 2026-10-26：当日新增仅 3 篇，全部为 10 月 23 日提交的 arXiv 预印本，无顶刊、无 CCF-A 命中。三篇分别落在对抗安全与 LLM 多智能体两个分区（隐空间通信一篇按内容归入核心算法创新·MARL），共同点是都在追问「系统在什么条件下会失效」——一篇问物理拦截的几何前提，两篇问大模型智能体的表征前提与措辞前提。",
+    "追逃博弈的注意力从「速度」转向「位置」：同期的多智能体追逃工作多在做速度与数量的预算分配，这篇把预部署当成主要变量——9 对 8、守方 4 米每秒对攻方 5 米每秒仍全部拦下，攻守比 1.75 时还有 68.9%，而集中式分配在 9.95 秒的最近接近时刻仍差 2.0 米。真正被量化的是预警窗口的价钱。",
+    "大模型智能体仿真的可信度问题在从「宏观稳健」下沉到「微观算术」：继换图、换日程、换种子的稳健性检验之后，这篇指出更新步本身就有 0.33 的平均绝对缺口，而且五轮反馈之后互补初态的两群智能体不再互为镜像。这等于给整类仿真实验判了一个前提条件——先过算术检验，再谈稳健性。",
+    "隐空间通信开始形成可比基线：与同尺度的三个隐空间方案相比（83.20%、89.40%、80.40%），双通道方案在数学 500 题上是 92.00%；跨家族迁移只多两题，说明瓶颈已经从「怎么注入」转到「词表怎么对齐」。这条线索正在收敛成一个工程问题，而不是科学问题。",
+    "分区分布：对抗、安全与鲁棒 1 篇，LLM 多智能体与社会模拟 1 篇，核心算法创新·MARL 1 篇；博弈求解与理论、机制设计与市场当日无合格条目。原因是当天三篇新增全部集中在「系统失效条件」这条线上，机制设计侧没有新稿。"
+  ],
+  "note": "补做 2026-10-26，精读 3 篇，均为 arXiv 预印本（10 月 23 日提交）。检索窗口：arXiv 7 天 / 期刊会议 90 天（截至 2026-10-26）。当日新增仅 3 篇且全部合格，故未做额外剔除，也未补入往期条目以避免同质化。分区覆盖：对抗安全与鲁棒、LLM 多智能体与社会模拟、核心算法创新·MARL 各 1 篇；博弈求解与理论、机制设计与市场无候选。",
   "learning": {},
   "radar": [
     {
@@ -2152,5 +2481,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

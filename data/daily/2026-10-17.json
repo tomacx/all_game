@@ -23,9 +23,335 @@
     "new_count": 8,
     "seen_before": 944
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.1287/moor.2024.0740",
+      "doi": "10.1287/moor.2024.0740",
+      "title": "当两侧都在挑：双边组合优化拿到 1−1/e 近似比，且不可能更好",
+      "title_en": "Multiagent Assortment Optimization in Sequential Matching Markets",
+      "authors": [
+        "Alfredo Torrico",
+        "Margarida Carvalho",
+        "Andrea Lodi"
+      ],
+      "published": "2026-10-15",
+      "venue": "Mathematics of Operations Research",
+      "venue_raw": "Mathematics of Operations Research",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/moor.2024.0740",
+      "summary": "Motivated by the challenges faced by choice-based matching platforms, in this work, we study a generalization of the two-sided assortment optimization model. Specifically, this model consists of two sides (e.g., customers and suppliers) who have preferences over the opposite side in the form of discrete choice models. A matching is realized through a two-step process where the platform’s decision is to initially present to each agent on one side an assortment of users of the opposite side. The ultimate goal of the platform is to maximize the total expected revenue collected from the matching. Because of the computational complexity of this problem, we focus on the design of approximation algorithms with constant-factor guarantees for the constrained version of the problem under general choice preferences. First, to the best of our knowledge, we are the first to draw connections with the literature of submodular optimization and show that one-sided choice-oblivious approaches perform arbitrarily badly. Second, we show that, for the general setting, there exists a two-sided choice-aware randomized algorithm that achieves a [Formula: see text]-approximation factor, which is the best possible. Third, we design an algorithm that is asymptotically optimal when one side follows the well-known multinomial logit (MNL) choice model under the small probability regime. Fourth, we provide a simple and effective algorithm with a [Formula: see text]-approximation guarantee for the unconstrained setting, with both sides following MNL models. Finally, we assess the performance of our proposed methods with a detailed computational study and discuss several extensions. Funding: M. Carvalho thanks the support of the Institut de valorisation des données (IVADO) and Fonds de recherche du Québec (FRQ) through the FRQ-IVADO Research Chair and of the Natural Sciences and Engineering Research Council of Canada (NSERC) [Grant 2019-04557]. Supplemental Material: The online appendix is available at https://doi.org/10.1287/moor.2024.0740 .",
+      "summary_short": "Motivated by the challenges faced by choice-based matching platforms, in this work, we study a generalization of the two-sided assortment optimization model. Specifically, this model consists of two sides (e.g., customers and suppliers) who have preferences over the opposite side in the form of disc…",
+      "is_new": true,
+      "sources": [
+        "ISSN-L·Mathematics of Operations Research"
+      ],
+      "abs_url": "https://doi.org/10.1287/moor.2024.0740",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "组合优化",
+        "离散选择模型",
+        "近似算法",
+        "匹配市场",
+        "次模优化"
+      ],
+      "glance": "双边离散选择市场的组合优化：双侧选择感知的随机化算法达到 1−1/e 近似比并证明不可改进，只优化一侧曝光的策略可以任意差",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "滑动约会平台给你看一排候选，打车平台给司机推一串订单——平台真正的决策从来不是「撮合谁」，而是「给每个人看谁」。这个看起来温和的产品动作，底下压着一个计算上很难的组合优化问题，而且难就难在：对面那一侧的人，也在挑。"
+        },
+        {
+          "t": "h",
+          "v": "双边组合优化：选择行为双侧都在场"
+        },
+        {
+          "t": "p",
+          "v": "模型设定来自基于选择的匹配平台：两侧（比如客户与供应商）对对面一侧的偏好都用离散选择模型刻画；匹配分两步实现——平台先给一侧的每个智能体展示对面用户的组合（ assortment ），用户按各自的选择模型在组合里挑人，随后匹配形成；平台的目标是最大化匹配带来的总期望收益。作者证明了这一般性设定的计算复杂性后，转向常数因子近似算法的设计。"
+        },
+        {
+          "t": "h",
+          "v": "四个理论结果"
+        },
+        {
+          "t": "p",
+          "v": "第一个结果是建立与次模优化文献的联系，并顺带给出一个坏消息：单侧、无视对面选择行为的策略可以任意差——只优化一侧曝光不是「次优」，是「没有下界」。第二个结果是好消息：一般偏好下存在双侧选择感知的随机化算法，达到 1−1/e 近似比，并且这是最优可能——随机化在此恰好把界顶死。第三个结果针对一侧服从多项逻辑特（MNL）选择模型的小概率情形，给出了渐近最优的算法；第四个结果覆盖双侧均为 MNL 的无约束版本，一个简单有效的算法带 1/4 近似保证。"
+        },
+        {
+          "t": "quote",
+          "v": "一侧无视觉策略任意差、双侧感知恰好 1−1/e——两个结果合在一起，把「平台展示什么」这个产品动作正式钉进了组合优化的版图。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源为 Mathematics of Operations Research（CCF-A 期刊），作者分别来自南加州大学、蒙特利尔大学与康奈尔科技校区，2026 年 10 月 15 日上线，元数据与基金号均可核实。本文依据官方摘要与期刊页面撰写，定理陈述为摘要层面转述，完整证明与计算实验的规模设定需查正文与在线附录；1−1/e 与次模最大化的经典界一致，熟悉那套结果的读者可以快速对上坐标系。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发是：「展示什么」本身就是平台的定价权。任何双边系统里只要两侧都有选择行为，只优化一侧曝光的策略就可能在理论上任意差——把对面的选择模型显式放进目标函数，是这类平台算法的第一性设计原则。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2610.19422",
+      "doi": "10.48550/arxiv.2610.19422",
+      "title": "攻击者也一起训练：大模型智能体安全的共同进化强化学习",
+      "title_en": "AgentSafeEvo: Adversarial Co-Evolution for LLM Agent Safety",
+      "authors": [
+        "Chenxu Wang",
+        "Xiaoyu Wen",
+        "Han Qi",
+        "Ziyuan Zhou",
+        "Cheng Jin",
+        "Chaochao Lu",
+        "Qiaosheng Zhang"
+      ],
+      "published": "2026-10-14",
+      "venue": "预印本",
+      "venue_raw": "arXiv (Cornell University)",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "",
+      "url": "https://doi.org/10.48550/arxiv.2610.19422",
+      "summary": "Large language model (LLM) agents accomplish complex tasks through multi-turn interactions with external tools. However, malicious content embedded in user queries, tool descriptions, or environment observations can manipulate their decisions and induce unsafe actions. Adversarial co-evolution has emerged as an effective approach to strengthening LLM safety, but existing work primarily focuses on language-level safety or indirect prompt injection in web tasks. In this paper, we introduce AgentSafeEvo, a co-evolutionary reinforcement learning framework for agent safety built on an attacker-defender game spanning diverse tasks and attack types. The attacker learns to construct adversarial agent tasks that expose weaknesses in the defender's tool use, while the defender learns to complete tasks safely under these attacks. We further introduce learnability-guided task weighting, which uses within-task defender-reward variability to adjust each task's contribution to attacker and defender updates. Extensive experiments on agent safety and general capability benchmarks demonstrate that our method improves adversarial robustness while maintaining general agent capabilities.",
+      "summary_short": "Large language model (LLM) agents accomplish complex tasks through multi-turn interactions with external tools. However, malicious content embedded in user queries, tool descriptions, or environment observations can manipulate their decisions and induce unsafe actions.",
+      "is_new": true,
+      "sources": [
+        "预印本·主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.19422",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "对抗训练",
+        "大模型智能体",
+        "共同进化",
+        "提示注入",
+        "安全评估"
+      ],
+      "glance": "攻击者与防御者同池强化学习并共享「可学习性」任务权重，安全基准攻击成功率从 49% 压到 17.8%，通用能力不降反升",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "给大模型智能体加安全护栏，最常见的做法是把攻击样本攒成一套静态数据集反复练防御。但攻击手段在演化，静态训练集很快就会过时。这篇论文的回答很直接：别攒样本了，让攻击者也一起训练。"
+        },
+        {
+          "t": "h",
+          "v": "攻击者与防御者同池更新"
+        },
+        {
+          "t": "p",
+          "v": "框架里有三个角色：攻击者与防御者都由 8B 量的开源模型充当——攻击者把种子意图包装成带恶意内容的智能体任务（用户查询、工具定义、环境观测三处皆可藏毒），防御者通过多轮工具交互完成任务；另有一个 27B 的奖励模型分别判定交互轨迹的安全性与实用性。防御者的奖励是安全分加实用分，其中对纯有害请求的安全拒绝也算满分——这一条专门防「训练出只会拒绝的怂包」。攻击者的奖励是任务级零和：让防御者的平均奖励越低，攻击者得分越高。两侧用组相对策略优化（GRPO）在同一批联合交互数据上同时更新。"
+        },
+        {
+          "t": "h",
+          "v": "冷启动与「可学习性」加权"
+        },
+        {
+          "t": "p",
+          "v": "初始攻击者根本不会生成有效对抗任务，作者先用一个闭源模型把约两万个源任务（取自真实工具服务生态的大规模数据集）转换成约一万个对抗样本做监督微调，完成冷启动。联合训练里有个隐蔽的坑：任务级零和奖励不反映任务内的方差——如果一个任务让防御者的所有轨迹同样烂，组内归一化后优势全为零，这个任务就给不出任何学习信号。作者用任务内防御者奖励的标准差当「可学习性」代理，构造共享任务权重同时作用于攻击与防御两侧的更新，让「有分化空间」的任务拿到更大的梯度。"
+        },
+        {
+          "t": "h",
+          "v": "数字：攻击与防御都真的进化了"
+        },
+        {
+          "t": "p",
+          "v": "一百个训练外种子的交叉评估给出双向证据：基础防御者对微调后攻击者的攻击成功率是 55.81%，对进化完毕的攻击者升到 92.59%——攻击方确实在变强；而进化完毕的攻击者对进化完毕的防御者回落到 49.82%——防御方也在跟上。攻击能力的提升还能跨模型迁移：对 70B 量级的开源模型从 43.7% 升到 80.7%，对某闭源旗舰模型从 12.3% 升到 22.5%。安全基准上，智能体安全基准的攻击成功率压到 17.84%（最强静态基线 31.01%），危害分从 30.00 降到 6.53；同时工具使用类通用基准反而上升，其中一个从 30.89% 升到 43.72%、另一个从 39.43% 升到 48.04%。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 预印本 2610.19422，2026 年 10 月 14 日提交，未经同行评议，全部数字为论文自述。攻击面覆盖六大类、十三个子类型（直接与间接提示注入、工具描述注入、虚假信息、有害工具执行、越狱话术），红队数据集一万三千余任务；为防滥用，作者未公开红队数据的合成管线，独立复现攻击侧有难度。消融数据值得记：去掉攻击者更新（退化为静态对抗训练），攻击成功率从 17.84% 回升到 31.01%；去掉可学习性加权回升到 22.91%——两个组件都真实生效。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发是：对抗鲁棒性问题里，「对手也参与训练」远比「攒一套攻击样本」更接近真实威胁模型；而让攻防双方共享同一个任务级加权信号，是共同进化不至于崩塌的关键工程细节。凡是防御方需要跟上演化中攻击方的场景——垃圾邮件、漏洞挖掘、欺诈检测——这套零和强化学习加可学习性加权的骨架都值得先试。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2610.19367",
+      "doi": "10.48550/arxiv.2610.19367",
+      "title": "解释错误比给出正确动作更值钱：用文本批评微调大模型智能体",
+      "title_en": "Beyond Corrected Actions: Training LLM Agents on Textual Critiques",
+      "authors": [
+        "Thomas Zeng",
+        "Zelei Cheng",
+        "Mingyang Zhou",
+        "Sambit Sahu",
+        "William Campbell",
+        "Genta Indra Winata"
+      ],
+      "published": "2026-10-14",
+      "venue": "预印本",
+      "venue_raw": "arXiv (Cornell University)",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "",
+      "url": "https://doi.org/10.48550/arxiv.2610.19367",
+      "summary": "Large language models (LLMs) are increasingly used for multi-turn agentic tasks that require interactions with users and environments over extended sequences of actions. A common approach to improving LLM agents is to use more capable expert models to provide training supervision, either by behavior cloning the expert's trajectories or by using the expert to correct the actions in trajectories generated by the weaker student model. However, expert LLMs can provide richer supervision than actions alone: they can directly generate textual critique that explain why specific actions are incorrect. We study whether training on such feedback benefits LLM agents and propose Critique-Augmented Agentic Fine-Tuning (CAFT), a framework that elicits textual expert feedback on student-generated trajectories. For each incorrect action, the expert yields both a corrected action and a textual critique explaining the student's mistake--which we then use as the training target for fine-tuning. Across four student models from the Nemotron 3 and Gemma 4 families on the agentic domains $τ^2$-Bench Airline+Retail and WebShop, adding critiques to action-level supervision improves performance by 8% on average over action-only distillation. Additionally, CAFT checkpoints can also provide a better warm start for reinforcement learning than expert-trajectory distillation. Our results demonstrate that textual critiques can strengthen supervision for multi-turn LLM agents.",
+      "summary_short": "Large language models (LLMs) are increasingly used for multi-turn agentic tasks that require interactions with users and environments over extended sequences of actions. A common approach to improving LLM agents is to use more capable expert models to provide training supervision, either by behavior…",
+      "is_new": true,
+      "sources": [
+        "预印本·主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2610.19367",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "大模型智能体",
+        "监督微调",
+        "文本批评",
+        "行为克隆",
+        "强化学习热启动"
+      ],
+      "glance": "专家批评加修正动作的联合监督在 8 组设置里 6 组最优、平均比动作蒸馏高 8 个百分点，纯批评甚至胜过纯纠正",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "用更强的专家模型带学生智能体，惯常两条路：把专家的成功轨迹整个克隆下来，或者把学生轨迹里的错误动作替换成专家的修正。但专家能给的远不止动作——它还能说清楚「这一步为什么错了」。这条被闲置的监督通道，恰好是大模型之间现成的共用接口。"
+        },
+        {
+          "t": "h",
+          "v": "把错误留在上下文里，教它解释"
+        },
+        {
+          "t": "p",
+          "v": "方法叫批评增强微调（CAFT）。流程是：学生模型先在自己的任务分布上滚动采样轨迹；一个带特权信息的专家（能看到金标准参考动作、隐藏的用户场景与评估准则）逐轮评判，错误轮额外产出一段自然语言批评和反事实的正确动作。训练样本的构造是关键：错误轮不删掉错误动作，而是在其后插入固定的干预语，训练目标写成「先批评、后修正动作」；正确轮按低权重做普通克隆。推理时专家完全离场，批评只活在训练数据里。"
+        },
+        {
+          "t": "h",
+          "v": "惊人的是：纯批评胜过纯纠正"
+        },
+        {
+          "t": "p",
+          "v": "控制变量的对照实验给出全文最硬的结论：只给修正动作（保留错误动作在上下文中）与只给文本批评（从不训练修正动作）相比，后者在全部 8 个学生×环境设置上平均高出 5 个百分点。完整版（批评加修正动作）在 8 组设置里 6 组最优，平均比只有动作蒸馏高 8 个百分点，其中差距最大的一组整整多出 27 个百分点。作者自己的总结是：训练智能体解释自己的错误，反而提升了它执行正确动作的能力。"
+        },
+        {
+          "t": "h",
+          "v": "专家蒸馏的崩溃与批评微调的稳健"
+        },
+        {
+          "t": "p",
+          "v": "直接克隆专家轨迹在购物类环境上完全崩溃：成功率 15.0% 到 19.1%，反而低于从未微调的学生（24.3% 到 43.1%）——学生学到了专家的探索模式，却没学到停止条件，一路搜索到耗尽轮次。批评微调的监督锚定在学生自己的错误上，天然规避了这个分布漂移。消融还给出一个反直觉发现：把专家的特权信息拿掉，监督质量平均掉 7.5%；而把详细提示换成极简提示，损失几乎为零——监督质量取决于专家是否知道任务的真正要求，跟提示工程的精致程度关系不大。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 预印本 2610.19367，2026 年 10 月 14 日提交，未经同行评议。评估环境两个：双语客服类基准（核对最终数据库状态加自然语言裁判）与购物约束满足环境；学生模型覆盖从 2B 到 31B 的四档规模。训练后的模型做二次迭代还能再提 5.3%；接组相对策略优化做强化学习热启动时，批评微调的初始化也更样本高效，约五分之一步数就达到基线初始化的最佳验证成功率。所有数字为论文自述。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发是：监督信号的形态本身就是个待优化的变量。当专家与学生共享自然语言接口时，「解释为什么错」是几乎零边际成本的额外监督轴；任何「用强模型带弱模型」的管线——代码助手、客服智能体、机器人策略蒸馏——都值得把错误样本从「丢弃或替换」改成「保留加批评」再跑一遍对照。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "10.1038/s41598-026-76140-5",
+      "doi": "10.1038/s41598-026-76140-5",
+      "title": "全局引导加三路评论家：无人机集群协同路径规划的一条工程路线",
+      "title_en": "Globally guided multi-agent reinforcement learning with decoupled critics for cooperative UAV path planning",
+      "authors": [
+        "Xu Wang",
+        "Qi Liu",
+        "Haotian Li"
+      ],
+      "published": "2026-10-16",
+      "venue": "Scientific Reports",
+      "venue_raw": "Scientific Reports",
+      "impact": "other",
+      "impact_label": "其他",
+      "primary_category": "",
+      "url": "https://doi.org/10.1038/s41598-026-76140-5",
+      "summary": "Abstract Cooperative path planning for multiple unmanned aerial vehicles (UAVs) requires the simultaneous achievement of target navigation, collision avoidance, and formation coordination in complex obstacle environments. Existing multi-agent reinforcement learning methods often suffer from sparse rewards, local deadlocks, and conflicts between formation maintenance and obstacle avoidance, which can destabilize policy learning. To address these issues, this paper proposes a Globally Guided Decoupled-Critic Multi-Agent Soft Actor-Critic algorithm (GDC-MASAC). RRT $$^*$$ -based global guidance provides reference waypoints for the leader UAV, reducing inefficient exploration and local deadlocks. Three decoupled Critic branches separately evaluate target navigation, formation maintenance, and safety objectives, while an environment-aware formation reward adjustment relaxes formation tracking near obstacles according to the distance to obstacle boundaries. Experiments under different obstacle densities and swarm sizes show that GDC-MASAC improves mission completion, collision avoidance, and formation coordination. In a scenario with 12 obstacles and 3 UAVs, GDC-MASAC achieves a mission success rate of 86%, whereas the baseline methods achieve success rates below 50%. These results demonstrate the effectiveness of GDC-MASAC for cooperative multi-UAV path planning in cluttered environments.",
+      "summary_short": "Abstract Cooperative path planning for multiple unmanned aerial vehicles (UAVs) requires the simultaneous achievement of target navigation, collision avoidance, and formation coordination in complex obstacle environments.",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://doi.org/10.1038/s41598-026-76140-5",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "多智能体强化学习",
+        "路径规划",
+        "无人机集群",
+        "解耦评论家",
+        "运动规划采样"
+      ],
+      "glance": "采样式全局规划给领航机兜底、三条解耦评论家分管导航/编队/安全，12 障碍 3 机场景任务成功率 86% 而基线均不足一半",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "无人机集群要同时做到三件事：奔向目标、避免相撞、保持队形。这三件事在开阔天空里相安无事，一到障碍区就互相打架——贴着障碍飞最安全的角度，往往正是队形要求散开的方向；编队挤在窄口前互相礼让，就是学不动的局部死锁。"
+        },
+        {
+          "t": "h",
+          "v": "稀疏奖励、局部死锁与目标打架"
+        },
+        {
+          "t": "p",
+          "v": "协同路径规划的多智能体强化学习常见三类失稳：奖励稀疏导致策略学不动，局部死锁让编队卡死在障碍前，队形保持与避障两股梯度直接冲突。作者提出全局引导解耦评论家多智能体软演员-评论家算法（GDC-MASAC），思路是分工而非硬扛。"
+        },
+        {
+          "t": "h",
+          "v": "经典规划兜底，评论家分路"
+        },
+        {
+          "t": "p",
+          "v": "配方有三层。第一层，用渐进最优的采样式运动规划（RRT 星型变体）给领航机生成全局参考航点，压缩低效探索、绕开局部死锁——学习负责局部精细动作，经典规划负责全局别走偏。第二层，把单一评论家拆成三条独立分支，分别评估目标导航、队形保持与安全三个目标，避免一个价值网络里三股信号互相稀释。第三层，环境感知的队形奖励松弛：离障碍边界越近，队形跟踪的权重越松，给避障让路，出障碍区再收紧。"
+        },
+        {
+          "t": "h",
+          "v": "实验结果"
+        },
+        {
+          "t": "p",
+          "v": "在不同障碍密度与集群规模下，任务完成率、避撞性能与队形协同均有改善；在 12 个障碍、3 架无人机的场景里，任务成功率达到 86%，而各基线方法均不足 50%。摘要层面的表述即到此为止，更细的消融与规模曲线需要查正文。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源为 Scientific Reports，2026 年 10 月 16 日出版，开放获取；作者来自吉林建筑大学电气与计算机学院，吉林省科技部门基金资助，出版元数据齐备可核。期刊页面只开放摘要与元数据（正文抓不到），方法细节以摘要为准。仿真规模不大（12 障碍、3 机），86% 是论文自述的自建仿真数字，未见真机验证，也未见到算法类顶会常见的跨环境横向对照——宜当架构样例读，不宜当性能标杆引用。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发是：把「单一评论家硬扛多目标」拆成「按目标分路的评论家加按环境调权的奖励」，再让一个经典规划器负责全局兜底——这个三层分工在任何多目标协同控制任务里（机械臂编队、车队跟驰、清扫机器人分区）都可以直接照搬，先把结构抄对，再谈调参。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "当日新增 8 篇，剔除 4 篇后收录 4 篇：ResearchGate 自印本（无摘要、落地页不可核）、Zenodo 上的扑克博弈研究计划（单作者提案、无量化结果）、量子抗性能源交易协议（密码学主线、无策略互动）、电子废弃物库存优化（进化算法工程应用、离主线较远）；今日无博弈求解与理论分区的合格条目。",
+    "共同进化成为大模型智能体安全训练的新范式：攻击者与防御者同池强化学习，攻击成功率随训练从 55.81% 升至 92.59% 的同时，防御侧把安全基准攻击率压到 17.84%，且通用能力不降反升。",
+    "监督信号形态开始被当作设计变量：文本批评微调证明「解释为什么错」比「给出正确动作」平均多值 5 个百分点，而专家轨迹蒸馏在购物环境上反而崩溃——监督锚定学生自身分布比模仿专家更稳。",
+    "市场设计侧的理论深耕仍在继续：CCF-A 期刊给出双边组合优化的 1−1/e 近似（并证明不可改进）与单侧策略任意差的反例，把「平台展示什么」钉进组合优化版图。",
+    "多智能体强化学习的工程化落地持续涌现：无人机协同路径规划用「经典规划全局兜底加三路解耦评论家」拿到 86% 成功率，属架构样例而非性能标杆。"
+  ],
+  "note": "本期精读 4 篇（当日新增 8 篇，剔除 4 篇，理由见趋势第 1 条）；检索窗口 arXiv 7 天 / 期刊会议 90 天（截至 2026-10-17）。当日 arXiv 计数为 0，新增以期刊回流为主。本日由 2026-11-09 补做。",
   "learning": {},
   "radar": [
     {
@@ -2161,5 +2487,6 @@
         "Crossref:Discover Computing"
       ]
     }
-  ]
+  ],
+  "curated": true
 }

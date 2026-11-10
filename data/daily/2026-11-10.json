@@ -22,9 +22,224 @@
     "new_count": 4,
     "seen_before": 1407
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "2611.09644",
+      "doi": "",
+      "title": "把「派谁去」和「怎么走」拆开：一条运输上界让车队规模不再决定学习难度",
+      "title_en": "A Separation Principle for Cooperative Multi-Agent Reinforcement Learning",
+      "authors": [
+        "Lucia Pezzetti",
+        "Nicolas Lanzetti",
+        "Antonio Terpin",
+        "Florian Dörfler",
+        "Giorgia Ramponi"
+      ],
+      "published": "2026-11-06",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.MA",
+      "url": "https://arxiv.org/abs/2611.09644v1",
+      "summary": "We study cooperative multi-agent reinforcement learning (MARL) problems in which agents evolve under decoupled noisy dynamics but share a population objective. A canonical example is a mobility operator that orchestrates a fleet of vehicles to meet customer demand. The stochastic and time-varying nature of these problems calls for learning approaches, yet existing MARL algorithms do not scale: learning assignment and routing jointly over the full state-action space becomes prohibitive as the number of agents grows. Formulating the problem over the space of probability measures, we prove a separation principle: the population cost-to-go function is upper bounded by an optimal transport problem whose transportation cost is the target-conditioned single-agent cost-to-go function. This simplifies the multi-agent problem to learning a single-agent policy and coordinating the agents via optimal transport. Building on this principle, we introduce SALT (Separation-based Assignment and Learning via optimal Transport), a family of algorithms that learn a target-conditioned single-agent policy using any standard reinforcement learning algorithm, and then coordinate the agents via optimal transport. Since learning occurs at the single-agent level, SALT scales to fleet sizes where MARL baselines become intractable and transfers without retraining to fleet sizes unseen during training. In a vehicle-delivery experiment on the southern Manhattan road network, where MARL baselines are computationally prohibitive, SALT improves travel time by 15-21% over a shortest-path routing heuristic. In stochastic grid worlds, SALT reduces average travel times by 23-61% relative to MARL baselines and scales to population sizes where these methods fail.",
+      "summary_short": "We study cooperative multi-agent reinforcement learning (MARL) problems in which agents evolve under decoupled noisy dynamics but share a population objective. A canonical example is a mobility operator that orchestrates a fleet of vehicles to meet customer demand.",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体",
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.09644",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "合作多智能体强化学习",
+        "最优传输",
+        "分离原理",
+        "车队调度",
+        "可扩展性"
+      ],
+      "glance": "用最优传输把目标分配与单智能体寻路解耦，人口代价被一条运输上界约束住：曼哈顿两千余路口的路网上训练二十辆车，零重训用到一百辆，行程时间比最短路启发式低一成五到两成",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "外卖出餐高峰时，调度台要同时回答两个问题：这一单派给哪辆车，这辆车又该走哪条路。两个问题互相咬合——最好的派单取决于每辆车实际到达各目标要多久，而走哪条路由取决于派给了谁。工程上的常规做法是先用最短路距离算出「谁离得近」，再据此派单、各自寻路；可是红绿灯、拥堵、随机延误会把「看起来近」变成「走起来贵」。真要把两件事放在一起学，联合状态动作空间随车队规模指数膨胀，几十辆车就学不动了。"
+        },
+        {
+          "t": "h",
+          "v": "把一支车队换成一个分布"
+        },
+        {
+          "t": "p",
+          "v": "作者的做法是先把智能体的编号抹掉。车队的当前状态写成一个经验分布——每辆车是一个质点，位置就是支撑点；要达成的目标也是一个分布：一批配送点、一片需要覆盖的区域，或者一张按需求加权的定位图。终端代价用最优传输距离度量两个分布的偏差，于是「谁去哪」自动变成「把质量从哪搬到哪」，与车的数量、编号都无关。噪声按三种耦合程度建模：各车独立抽噪声、同一状态动作的车共享一次抽样、全队共享一次抽样。这个建模看起来只是换了写法，实际上是把「规模」从状态里彻底赶了出去。"
+        },
+        {
+          "t": "h",
+          "v": "分离原理：为什么能拆，代价有多大"
+        },
+        {
+          "t": "p",
+          "v": "核心结论是一条不等式。把「从当前状态到某个目标」的单智能体最优代价当作运输成本，那么人口层面的最优代价不超过以它为成本的最优传输值。也就是说：先解若干个互不干扰的「从我这到那」问题，再用最优传输把车配给目标，得到的策略不会比联合最优差太多。之所以只能是不等式而非等式，是因为两边对未来噪声的处理方式不同——最优传输里的运输成本对未来噪声取平均，而人口层面的贝尔曼递推是在噪声已经实现之后的分布上继续做分配，最小化与期望不能交换顺序。"
+        },
+        {
+          "t": "quote",
+          "v": "要让分离成立，噪声必须被「平均掉」；这一步让子问题回到标准随机最优控制的形状，也正是不等式出现的根源。"
+        },
+        {
+          "t": "p",
+          "v": "作者进一步量化了这个缺口：如果下一时刻的代价关于状态是李普希茨的，缺口就被一段时期的李普希茨常数之和乘以「同一状态动作下两个条件独立后继状态的最坏期望距离」所界定。缺口随噪声离散度线性增长，动力学确定时缺口消失，不等式退化为等式，正好回收已有文献里确定性情形的精确分离。另有一条界处理「弱耦合」：按解耦代理策略执行、实际却跑在耦合系统里，会损失多少最优性也有了刻画。"
+        },
+        {
+          "t": "h",
+          "v": "SALT：学一个带目标的单智能体，再用匈牙利算法配单"
+        },
+        {
+          "t": "p",
+          "v": "有了上界，算法顺着上界写就行：先学一个以目标为条件的单智能体代价函数，它同时充当运输成本；再用最优传输求解分配。当出发分布与目标分布都是等权经验分布时，最优耦合可以取成一个置换（伯克霍夫—冯·诺依曼定理），一般最优传输于是退化成标准的一对一分配问题，匈牙利算法三次方时间精确求解，也可以用熵正则做近似。训练时以一定概率用当前估计做分配、否则随机分配，避免代价函数只在自己偏爱的配对上过拟合；部署时可以每一步重算分配，也可以只在起点算一次、整局固定。上界是逐时隙成立的，所以重算频率属于工程选择，不是理论要求。单智能体那一层完全开放：表格 Q 学习、双深度 Q 网络、近端策略优化、优势演员—评论家都能插进来，作者用后缀区分不同实例。"
+        },
+        {
+          "t": "h",
+          "v": "网格世界：省下的行程时间与样本量"
+        },
+        {
+          "t": "p",
+          "v": "随机网格世界里七辆车、十一行三十列的网格、决策视野一百步，每步以一定概率把意图动作替换成其余四个动作之一。四种单智能体学习器配上分离结构后，平均行程时间相对六个主流多智能体基线（集中训练分散执行、值分解、平均场三族都在内）全面更低，降幅落在百分之二十三到六十一之间；四个变体彼此接近，说明增益来自分离结构本身，而不是某个特定单智能体算法。样本效率的差距更刺眼：用近端策略优化作单智能体学习器时，达到同样到达率门槛所需的环境交互最多少四百八十倍，并且能扩展到一百二十八个智能体；而多智能体基线在八个智能体、二十亿次交互的预算内就没能达标。"
+        },
+        {
+          "t": "h",
+          "v": "曼哈顿：训练二十辆，用到一百辆"
+        },
+        {
+          "t": "p",
+          "v": "更接近现实的一段是曼哈顿南部的有向路网：两千零八十七个路口、四千二百五十五条有向边，行程时间由路长、道路类型、周期九十秒的红绿灯（绿信比随道路而定、相位随机偏移）与随机拥堵共同决定。车辆从三个仓库按随机比例出发，服务全城均匀采样的配送请求。作者只用二十辆车训练，然后不加任何再训练，直接放到一到一百辆的规模上评估；相对「起点按最短路距离一次性分配、之后沿路径直行」的运营惯例，行程时间中位改善从一辆车时的百分之十四点八，升到一百辆车时的百分之二十一点三。规模变大反而不吃亏，原因是分配层与规模无关，单智能体策略也与规模无关。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源是预印本，二〇二六年十一月六日提交，作者来自苏黎世联邦理工、加州理工与苏黎世大学，代码已开源。方法边界作者写得很清楚：分离原理要求动力学解耦、终端代价是最优传输形式，强相互作用、碰撞规避、非传输型目标都不在覆盖范围；上界一般不紧；带目标的单智能体问题本身要在目标空间上泛化，目标维度高或偏离训练分布时会退化。曼哈顿那组数字还有一个隐藏偏差：分布式训练会让策略集中在高概率的起点—终点对上，八十一万个起点—终点对里有至少八十万零九千八百零一个在训练中被分配过，但稀有分配上的精度换来了样本效率，这也是方差不小的原因。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发是：「协调」如果能被写成「一次分配加若干独立子问题」，就不该硬学联合策略。先证一个可算的上界，把分配交给成熟的组合优化，把子问题交给任意现成的学习器，规模与泛化会一起变好。仓库机器人补货、巡检无人机覆盖、急救车预部署、充电桩共享，凡是「一批同质智能体要匹配一批目标」的场景，这副骨架都能直接搬过去。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2611.08615",
+      "doi": "",
+      "title": "不设计组织，让组织自己长出来：语言模型蜂群学会何时独自干活、何时喊话",
+      "title_en": "s$^3$: Simple Scaling of Swarms via Cooperative Multi-agent RL",
+      "authors": [
+        "Kunal Jha",
+        "Gonçalo Faria",
+        "Shuyue Stella Li",
+        "Scott Geng",
+        "Faeze Brahman",
+        "Noah A. Smith",
+        "Yulia Tsvetkov",
+        "Max Kleiman-Weiner",
+        "Natasha Jaques"
+      ],
+      "published": "2026-11-05",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.MA",
+      "url": "https://arxiv.org/abs/2611.08615v1",
+      "summary": "Groups can achieve more than individuals in the same amount of time, but only if their members coordinate: they must decide who works on what and what to share. However, this organization in multi-agent systems today usually comes from arbitrary, static harnesses designed a priori without adapting to agent behaviors or task specifications. We ask whether agents can instead learn to organize themselves. We introduce s$^3$, the first multi-agent reinforcement learning method in which agents decide for themselves how long to work alone and when to share findings or read teammates' messages, with no predefined organization or roles. Our s$^3$ agents learn to take different approaches, read each other's work, exhibit emergent roles that complement each other in the swarm, and generalize to bigger teams. We study both coordination, where agents must combine private information, and parallel exploration, where sharing discoveries can make search more efficient. With matched training and inference budgets, s$^3$, swarms evaluated with twice as many agents as in training solve over 25$\\times$ more coordination problems than the strongest baseline, and in exploration, communicating agents reduce repeated work by nearly 50% and outperform best-of-N by up to 9.4 percentage points. Rather than being designed in advance, s$^3$ enables organization to emerge from a shared goal. This opens the door to capable systems built from many models that learn to work together.",
+      "summary_short": "Groups can achieve more than individuals in the same amount of time, but only if their members coordinate: they must decide who works on what and what to share. However, this organization in multi-agent systems today usually comes from arbitrary, static harnesses designed a priori without adapting t…",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体",
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.08615",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "语言模型智能体",
+        "多智能体强化学习",
+        "涌现分工",
+        "团队奖励",
+        "异步通信"
+      ],
+      "glance": "同构语言模型蜂群在共享团队奖励下自选何时独自干活、何时喊话：信息汇总成功率九成三（对照三成五与一成三），勘探任务重复房间近半、六个智能体时反超独立采样约七个百分点",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "眼下流行的多智能体系统大多是设计出来的：一个中央编排器拆任务，几个角色各管一段，或者固定轮次辩论。问题在于这些结构是先验的猜测——任务一变就露馅：重复劳动、消息洪水、子代理各说各话最后合不起来。人不是这么组织的。分工与信息共享随任务漂移，很多结构是演化出来的，不是规划出来的。于是就有一个很直接的追问：能不能不写组织，让组织在训练里自己长出来？"
+        },
+        {
+          "t": "h",
+          "v": "一个模型复制若干份，没有任何角色"
+        },
+        {
+          "t": "p",
+          "v": "实验设定极简。团队是同一个模型的若干副本，共享一套策略；每个智能体有自己的历史、私有观测、一份独立的任务拷贝，以及一个总 词元 额度——推理、工具调用、消息都算在内。通信只有两个工具：给某个队友或全体发消息，以及读未读消息。没有轮次，没有先后手，谁都可以在任何时候说，也可以一直不说。基础设施把生成切成最多一千零二十四个新 词元 的请求，遇到工具调用或回答结束就提前收尾，于是慢的智能体不会拖住快的，消息能在别人还在干活时插进去。形式上这是一个分散式部分可观测马氏决策过程，动作空间就是生成的文本。"
+        },
+        {
+          "t": "h",
+          "v": "奖励怎么设计，才不奖励「人多」"
+        },
+        {
+          "t": "p",
+          "v": "团队奖励取「至少一个智能体答对」作为成功指示，再减去一个与团队总预算消耗比例成正比的代价，而且这个代价只在成功时扣——扣失败会让失败的团队因为早停而受奖。用最大值而不是求和：求和会让更大的团队天然更值钱，也会让损失按规模加权；用平均又会奖励「各自答对再互相说服」。优势函数是组相对形式：同一个问题采样若干条独立团队尝试，用团队奖励的均值与标准差归一，于是「能区分成功团队与失败团队的行为」被强化，两类团队都有的行为自动抵消，这替代了逐智能体的信用分配。"
+        },
+        {
+          "t": "h",
+          "v": "两个任务，两种协调难度"
+        },
+        {
+          "t": "p",
+          "v": "第一个任务是信息汇总：每个智能体拿到一个一到九十九之间的整数（写成英文单词），团队要按升序交出全部数字，重复值保留。排序不难，难的是把自己的数说出来、读别人的、记住谁报过哪个值以免重复，并且在听齐所有人之后才提交。人数一多，收件箱的状态数从四个智能体时的八种涨到十六个时的三万二千七百六十八种；而「每个信息至少被某个接收者完整收到」的概率，在固定传输成功率下随人数指数衰减——规模一大，交换就必须越来越可靠。第二个任务是分散式勘探：每个智能体在一棵未知的房间里搜索，深度三的树有三百九十一个房间、二十七个终端房间，一次完整的深度优先搜索要走七百八十步，远超八千一百九十二个 词元 的预算。这里任何一个智能体都能独立找到出口，所以对照组「独立采样取最优」本身会随人数变强，通信必须靠分工与共享发现跑赢这条不断抬高的基线。"
+        },
+        {
+          "t": "h",
+          "v": "结果：九成三对三成五"
+        },
+        {
+          "t": "p",
+          "v": "信息汇总上，训练后的蜂群成功率达到百分之九十三；「在线模仿成功团队」的对照只有百分之三十五，「各自按自己的答案给奖励」的对照只有百分之十三，两者用了同样的采样预算。人数加到八个时，它的成功率是对照的二十倍以上；到十二个仍有优势；十六个时所有方法都吃紧。勘探任务上，把消息工具关掉、只保留共享奖励，四个智能体的成功率掉十九个百分点；能通信的智能体重复进入同一房间的比例几乎只有前者的一半，说明它们真的在分工，而不是各自多跑几遍。六个智能体时比独立采样取六次高约七个百分点，摘要里给出的上界是九点四个百分点；四人通信蜂群几乎追平六人独立搜索，六人几乎追平八人。"
+        },
+        {
+          "t": "h",
+          "v": "组织是怎么长出来的"
+        },
+        {
+          "t": "p",
+          "v": "训练轨迹比最终分数更有意思。信息汇总任务从基础模型起步、没有任何示范：早期约一半的团队里存在「从不报数」的智能体，其余多半在用点对点私聊；训练中期集体转向广播，先出现重复广播，到后期约八成团队稳定成「每人只广播一次」。同时，先看收件箱再报数的人比例降到接近零——先分享、后阅读成了主流习惯。反过来的对照更耐看：在只按自己答案给奖励的版本里，智能体越来越倾向于先读别人、迟迟不报，最后很多人彻底沉默。这是一个公共品博弈：所有人都分享时每个人胜率最高，但自己报数只帮队友，于是每个人都想等别人先报；共享奖励恰好把这个困境消掉，因为任何队友答对都算自己赢。勘探任务里则是另一幅图景：房间的门按固定顺序列出，习惯相似的智能体会挤向同一扇门，不通信的组在出口位于第二、第三扇门后时明显吃亏，而训练后的蜂群无论出口藏在哪里成功率都差不多，因为它们会认领分支、报告已经搜完的枝条。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本，二〇二六年十一月五日提交，作者横跨华盛顿大学与艾伦人工智能研究所等机构。作者自己列了三条限制：只有两个任务、模型很小（信息汇总用零点六 B，勘探用一点七 B）、每个条件只跑了一次训练。统计上也要打折扣：四个智能体时，通信蜂群对「独立训练取最优四次」的优势在多重比较校正前显著、校正后不显著；真正稳的是随规模扩大的趋势与消融的落差。所有数字都是同家族内的对照，不能跨系统比较——换个基础模型、换个 词元 预算，绝对值都会变。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发有三条：把组织当学习对象而不是脚手架，前提是把奖励写成团队级的相对优势，否则信用分配会逼出各自为战；通信必须是异步工具而不是固定轮次，否则快的等慢的，发现来不及用；团队奖励要用最大值而非求和或平均，否则人数本身就成了一种套利。三条合起来，才是「让组织自己长出来」的真正门槛。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今日新增仅 4 篇，其中 2 篇为 Zenodo 自印本（印尼沿岸微型企业的「法务—数字孪生」单作者稿、AI 起草并被作者自陈为本体论长文的稿件），按惯例剔除；实际精读 2 篇，均为 arXiv 预印本，当日无顶刊、无 CCF-A 命中（影响力计数 15/20 皆为往期存量）。",
+    "两篇的共性是把「协调」从学习目标降级成结构：SALT 用最优传输把目标分配与单智能体寻路拆开，s³ 用共享奖励加异步消息让组织自己涌现。前者拆的是动作空间，后者拆的是组织先验，思路同源——先找到一个能证明或能验证的分解，再让学习只负责分解后的小块。",
+    "规模泛化成了共同卖点：SALT 训练二十辆车用到一百辆、零重训；s³ 训练四个智能体用到八到十六个。两者都不约而同地把「训练规模」与「部署规模」解耦，这是合作多智能体今年最实在的进展方向。",
+    "奖励与信用分配仍是语言模型蜂群的关键：s³ 明确论证团队奖励必须取最大值而非求和或平均，否则人数本身成为套利；它用团队级相对优势替代逐智能体信用分配的作法，与此前几期多智能体协作工作的结论互相印证。",
+    "空缺：对抗、安全与鲁棒、机制设计与市场两个分区当日无合格新增。当日两篇合格条目分别落在「核心算法创新 · MARL」与「LLM 多智能体与社会模拟」，后者同时是当日唯一涉及语言模型智能体的工作。"
+  ],
+  "note": "本期精读 2 篇：当日新增 4 篇，剔除 2 篇 Zenodo 自印本（印尼沿岸微型企业供应链单作者稿、AI 起草的本体论长文）；检索窗口 arXiv 7 天 / 期刊会议 90 天（截至 2026-11-10）。因当日合格条目不足 3 篇，按惯例补做 2026-10-25 精读 3 篇，另见当日记录。",
   "learning": {},
   "radar": [
     {
@@ -2162,5 +2377,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

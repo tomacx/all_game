@@ -22,9 +22,454 @@
     "new_count": 16,
     "seen_before": 1417
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.1287/moor.2024.0730",
+      "doi": "10.1287/moor.2024.0730",
+      "title": "随机质量分下，广义第一价拍卖的纯策略均衡“复活”了",
+      "title_en": "Pure-Strategy Equilibrium in the Generalized First-Price Auction",
+      "authors": [
+        "Michael Ostrovsky",
+        "Andrzej Skrzypacz"
+      ],
+      "published": "2026-11-10",
+      "venue": "Mathematics of Operations Research",
+      "venue_raw": "Mathematics of Operations Research",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/moor.2024.0730",
+      "summary": "We revisit the classic result on the (non-)existence of pure-strategy Nash equilibria in the generalized first-price auction for sponsored search advertising and show that the conclusion may be reversed when ads are ranked based on the product of stochastic quality scores and bid amounts rather than solely on the bids or on the product of bids and deterministic quality scores. Moreover, the expected revenue in the pure-strategy equilibrium of the generalized first-price auction may substantially exceed that of the generalized second-price auction, although under some conditions, the relation may also be reversed. History: This paper has been accepted for the Mathematics of Operations Research Special Issue on Market Design.",
+      "summary_short": "We revisit the classic result on the (non-)existence of pure-strategy Nash equilibria in the generalized first-price auction for sponsored search advertising and show that the conclusion may be reversed when ads are ranked based on the product of stochastic quality scores and bid amounts rather than…",
+      "is_new": true,
+      "sources": [
+        "主题·拍卖"
+      ],
+      "abs_url": "https://doi.org/10.1287/moor.2024.0730",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "拍卖机制",
+        "赞助搜索",
+        "纯策略均衡",
+        "市场设计",
+        "收入比较"
+      ],
+      "glance": "按「出价×随机质量分」排序时，经典「广义第一价拍卖无纯策略均衡」的结论可能反转，且其均衡收入可反超第二价拍卖",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "赞助搜索广告刚兴起时，平台用的是一个如今看来很“原始”的机制：广告主出价，按出价高低排位，各按自己的出价付钱——广义第一价拍卖（GFP）。2007 年的经典文献给出了著名论断：这种拍卖一般不存在纯策略均衡。出价低一点就能往上爬一位，于是人人揣摩、层层加码，市场永远停不下来。这个“不存在”结果直接推动了按第二价语义收费的广义第二价拍卖（GSP）成为行业标准。将近二十年后，当年那篇经典的第一作者 Ostrovsky 与长期合作者 Skrzypacz 回到原点，问了一个此前没人认真问的问题：如果质量分不是确定的，而是随机的呢？"
+        },
+        {
+          "t": "h",
+          "v": "排序规则的一个细节，改变均衡存在性"
+        },
+        {
+          "t": "p",
+          "v": "经典分析里，广告排序要么只看出价，要么看「出价×确定性质量分」。本文考虑第三种如今反而更贴近现实的设定：排序依据是「出价×随机质量分」的乘积——广告主在出价时并不知道质量分的具体实现值。结论是：经典文献里「纯策略均衡不存在」的论断在这种随机排序下可能被反转，纯策略纳什均衡可以存在。"
+        },
+        {
+          "t": "p",
+          "v": "直觉上，随机性打断了确定性排序里那种「我比他多出一分钱就能精确换到他的位置」的逐点篡位逻辑。排位比较的乘积里含着广告主控制不了的质量抽样，往上爬的收益变得模糊，那种在确定性世界里无限循环的互相揣摩被截断了。"
+        },
+        {
+          "t": "h",
+          "v": "更扎眼的反转在收入侧"
+        },
+        {
+          "t": "p",
+          "v": "如果说均衡存在性是理论洁癖，收入比较就是真金白银。作者证明：当 GFP 的纯策略均衡存在时，其期望收入可能大幅超过 GSP。第一价语义的激励强度（你报的价格就是你的价格，激励天然更“诚实”也更紧张）在均衡存在时兑现为收入优势。不过作者同样给出反例条件——某些设定下 GSP 的收入更高。换言之，「第二价优于第一价」从来不是普适结论，它依赖于质量分的信息结构。"
+        },
+        {
+          "t": "quote",
+          "v": "「广义第一价拍卖纯策略均衡的期望收入可能大幅超过广义第二价拍卖——尽管在某些条件下，这一关系也可能反转。」"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源是《Mathematics of Operations Research》市场设计专刊，2026 年 11 月 10 日在线发表，作者单位为斯坦福大学商学院（Ostrovsky 兼任美国国家经济研究局研究员）。本次精读基于出版方页面的完整摘要与元数据，正文定理的条件细节在付费墙后，长文不复述具体数值与前提参数。值得一提的是，作者 Ostrovsky 正是 2007 年那篇经典的第一作者——由经典结论的提出者亲自修正自己的边界条件，本身就能说明该问题的分量。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发：机制的存在性与收入排序不是机制的抽象属性，而是「信息结构」的函数。对今天做广告平台、推荐位定价的人来说，质量分预测器的噪声水平不再是需要忍受的工程误差，而是一个可以主动设计的设计变量——恰当剂量的随机性既能恢复均衡存在性，还可能顺手提升收入。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2611.11877",
+      "doi": "",
+      "title": "树上的专家不再独立：扩展式博弈在线学习的对数依赖被证明最优",
+      "title_en": "Tropical Gaussian Anticoncentration: Optimal Instance-Dependent Bounds for Online Learning in Extensive-Form Games",
+      "authors": [
+        "Ashkan Soleymani",
+        "Zhiyuan Fan",
+        "Lillian J. Ratliff",
+        "Patrick Jaillet",
+        "Gabriele Farina"
+      ],
+      "published": "2026-11-09",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.LG",
+      "url": "https://arxiv.org/abs/2611.11877v1",
+      "summary": "We study the minimax regret of full-information online decision making in extensive-form games. For prediction with expert advice, the optimal regret is $Θ(\\sqrt{T\\log K})$, where $K$ is the number of experts, or equivalently, the number of normal-form actions. For treeplex strategy spaces, existing efficient algorithms, including KOMWU and online mirror descent with the weight-one dilated entropy regularizer, achieve regret $\\mathcal{O}(\\sqrt{T\\log|\\mathcal{V}|})$, where $\\mathcal{V}$ is the set of reduced normal-form strategies. We prove that this logarithmic dependence is minimax optimal in the worst-case full-information reward model. The main difficulty is that pure plans in a treeplex are not independent experts: their rewards are correlated through the recursive structure of decisions and observations. To capture this correlation, we introduce tropical Gaussian formulae, recursive Gaussian expressions built from maxima and normalized sums which preserve the variance. The index count of such a formula matches the number of reduced normal-form continuation plans in the corresponding subtree. Our main analytic result shows that every log-balanced tropical Gaussian formula with index count $N$ has Gaussian width $Ω(\\sqrt{\\log N})$. While a direct approach struggles to recover this lower bound, our proof uses a spherical entropy profile to measure scale-dependent separation among the Gaussian directions, and then applies Turán's theorem and Sudakov minoration to obtain the width lower bound. Applying this result to treeplexes gives an oblivious hard distribution with valid transition outcome and Rademacher terminal rewards, establishing a regret lower bound of $Ω(\\sqrt{T\\log|\\mathcal{V}|})$. This matches known upper bounds up to universal constants and shows that the DilEnt/KOMWU dependence on the reduced normal-form complexity is unavoidable.",
+      "summary_short": "We study the minimax regret of full-information online decision making in extensive-form games. For prediction with expert advice, the optimal regret is $Θ(\\sqrt{T\\log K})$, where $K$ is the number of experts, or equivalently, the number of normal-form actions.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.11877",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "扩展式博弈",
+        "在线学习",
+        "遗憾界",
+        "最小最大最优",
+        "膨胀熵"
+      ],
+      "glance": "用「热带化高斯公式」证明膨胀熵类算法在树状决策空间上的对数依赖不可改进，关闭了该方向最后一个悬而未决的复杂度问题",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "在线学习有条教科书级结论：面对 K 个专家做全信息选择，最优遗憾是 T 开根号再乘 log K 的量级。可一旦把舞台换成扩展式博弈，K 就变成了天文数字——正则式的纯计划数随博弈树深度指数爆炸。好在这类博弈的策略空间有树结构（treeplex），高效算法（KOMWU、带权重一膨胀熵正则的镜像下降）能达到只依赖「归简约正形策略数」对数的遗憾界。这个对数依赖，到底是算法的巧思，还是问题本身的复杂度？这篇给出终审判决：它是最优的，不可能再降。"
+        },
+        {
+          "t": "h",
+          "v": "难点：树上的专家不是独立专家"
+        },
+        {
+          "t": "p",
+          "v": "标准下界证明把每个专家配一个独立的高斯噪声，而树状决策空间里的纯计划共享前缀决策、经由决策与观测的递归结构相互关联，奖励天然相关——直接照搬专家建议的下界论证直接失效。此前的最好结果（Fan 等人引入 treeplex 范数对、恢复膨胀熵速率证明）仍留着对数或结构性的缺口。本文把缺口补齐。"
+        },
+        {
+          "t": "h",
+          "v": "新工具：热带高斯公式"
+        },
+        {
+          "t": "p",
+          "v": "作者的武器叫「热带高斯公式」：用取最大值与归一化求和两种操作递归构造的高斯随机变量表达式，妙处在于构造全程保持方差不变，而表达式的索引计数恰好对应该子树中归约正则形续延计划的数目。主定理是反集中性质：每个对数平衡的热带高斯公式，只要索引计数为 N，其高斯宽度就有根号 N 乘 log N 级别的下界。"
+        },
+        {
+          "t": "p",
+          "v": "证明路径颇为讲究：直接论证失效后，作者引入「球面熵剖面」来度量高斯方向之间随尺度变化的分离程度，再用图兰定理从剖面中提取一批彼此分离良好的方向，最后交给苏达科夫下界定理把宽度兜住。组合工具用在概率不等式的关键缝上，是这套证明最值得欣赏的部分。"
+        },
+        {
+          "t": "h",
+          "v": "回到博弈：硬分布落地"
+        },
+        {
+          "t": "p",
+          "v": "把该分析应用到 treeplex，作者构造出一个「遗忘型」硬分布——合法的转移结构配上拉德马赫式终端奖励——由此给出遗憾下界，与已知上界在相差通用常数的意义下精确匹配。与此前两项上界工作合并，结论完整闭合：权重一膨胀熵与 KOMWU 在每个 treeplex 上都是最小最大最优的，归约正则形策略数的对数就是该问题内在的复杂度度量。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 2611.11877v1，作者来自麻省理工学院（Soleymani、Fan、Jaillet、Farina）与华盛顿大学（Ratliff），2026 年 11 月 9 日提交。纯理论工作、无实验章节；超星新号，尚未见会议或期刊录用信息。本文细节取自 arXiv 的 HTML 全文，数学公式在网页版有渲染缺失，具体常数与证明的逐行复核请以 PDF 为准。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发有两条。其一，给想证明复杂度下界的人：当「独立专家」假设失效时，可以设计保持方差、但相关性结构与目标问题复杂度精确咬合的组合式随机对象（热带化构造），再借图兰定理与苏达科夫下界这类组合—概率工具收紧。其二，给做博弈求解器的人：对数因子已到理论地板，继续优化常数不如把精力投到自适应或部分信息设定上。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2611.11714",
+      "doi": "",
+      "title": "管不了收益、改不了消息，就只管「谁看得见谁」：用信息网络引导智能体群体",
+      "title_en": "Steering Emergent Behavior in Multi-Agent LLM Systems via Information Networks",
+      "authors": [
+        "Sepehr Ilami",
+        "Babak Heydari"
+      ],
+      "published": "2026-11-09",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.MA",
+      "url": "https://arxiv.org/abs/2611.11714v1",
+      "summary": "Large language model (LLM) agents increasingly operate in groups, each pursuing an individual objective while jointly determining system performance. If an operator controls which agent observes which other agent, but not their payoffs or messages, how should observations be structured to raise collective welfare? We make the information network (who observes whom) a design object, decoupled from the fixed interaction network over which agents act. Ten identical LLM agents play repeated group-decision games; by default each observes only an anonymous summary of the group's previous-round outcome, and a manager with a fixed budget adds directed observation links that reveal peers' past actions. Across 1,080 episodes and six games spanning coordination, anti-coordination, social dilemmas, and discovery, we ask how much information to share and, at a fixed budget, who should observe whom. Disclosure creates behavioral coupling: observation acts as a contagion channel whose welfare effect depends on the alignment between individually attractive behavior and the collective objective. First, the value of information is alignment-contingent: more peer information tends to help or be neutral when individual behavior is aligned with the collective goal, but under free-riding or congestion externalities it amplifies collectively harmful behavior; in a public-goods game the group does best with no information at all. We read this sign separation as a cross-game regularity within one controlled LLM population, not a model-invariant law. Second, at a fixed budget, who observes whom matters primarily when coupling is harmful: a modular \"barbell\" that lets sub-populations entrench harmful behavior is reliably the worst wiring, reversing the network-reciprocity intuition from human evolutionary game theory. These results argue against a default of full transparency for agent collectives.",
+      "summary_short": "Large language model (LLM) agents increasingly operate in groups, each pursuing an individual objective while jointly determining system performance. If an operator controls which agent observes which other agent, but not their payoffs or messages, how should observations be structured to raise coll…",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体",
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.11714",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "LLM-Agent",
+        "信息网络",
+        "涌现行为",
+        "群体决策",
+        "治理"
+      ],
+      "glance": "十个大模型智能体玩六种重复博弈：共享信息的价值取决于「个体行为与集体目标是否对齐」，错位场景下最优配置是一根观察链接都不加",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "想象你运营着一群大模型智能体：既改不了它们的收益函数，也审不了它们的每条消息，平台面板上唯一的开关是——谁能看见谁的历史行为。这个看似寒酸的控制面，恰恰是现实中智能体系统运维者真实拥有的权限。这篇论文把它正儿八经当成设计对象：信息网络（谁观察谁）应该怎么连，群体的集体福利才会更高？"
+        },
+        {
+          "t": "h",
+          "v": "实验设计：十条有向链的预算"
+        },
+        {
+          "t": "p",
+          "v": "十个同型号大模型智能体反复进行群体决策博弈，默认每人只能看到上一轮群体结果的匿名摘要；一个持有固定链接预算的管理员可以添加有向观察链，让某个智能体看见另一个的历史动作。六个游戏覆盖了协调（数字求和、猎鹿）、反协调（埃尔法罗酒吧）、社会困境（公共品与门槛公共品）和发现（探索型赌博机），共一千零八十轮。"
+        },
+        {
+          "t": "h",
+          "v": "机制：披露就是行为耦合，观察就是传染通道"
+        },
+        {
+          "t": "p",
+          "v": "论文提出的组织机制很干净：观察别人的历史行为，会让智能体更强地把当前选择条件化在他人已做之事上——也就是说，披露制造行为耦合，观察链接充当行为传染的通道。顺着这条通道传播的，是群体当下正在流行的做法。于是信息的福利效应只取决于一件事：个体上有吸引力的行为，与集体目标是否对齐。"
+        },
+        {
+          "t": "h",
+          "v": "发现一：信息的价值是「对齐条件性」的"
+        },
+        {
+          "t": "p",
+          "v": "在对齐的游戏里——比如探索型赌博机，一个智能体试用未知选项等于替大家探路——更多同伴信息改善或至少不损害福利。而在公共品博弈这种个体搭便车最优的错位场景里，观察只会把搭便车传染开，最优配置竟然是一根观察链接都不加、让每个人只看匿名摘要。同一群智能体、同一套规则，信息价值随对齐性直接翻符号。"
+        },
+        {
+          "t": "h",
+          "v": "发现二：架构只在有害时重要，且人类直觉在此反转"
+        },
+        {
+          "t": "p",
+          "v": "固定预算下「谁观察谁」的拓扑设计，在对齐游戏里几乎无关紧要，在每一个错位游戏里都显著起效。最反直觉的结果是：模块化瓶颈式拓扑（人群分区、内部密集连接）稳定地最差——人类演化博弈论里「网络互惠」（把合作者聚团以对抗背叛）的经典直觉，在大模型群体中被整段反转。作者还发现链接的加入时序等探索性扩展经不起多重比较校正，诚实地按噪声处理。"
+        },
+        {
+          "t": "quote",
+          "v": "「披露创造行为耦合：智能体更强地把选择条件化在他人已做之事上，于是观察充当传染通道，其福利效应取决于个体上有吸引力的行为与集体目标之间的对齐。」"
+        },
+        {
+          "t": "h",
+          "v": "两步信息工程手册"
+        },
+        {
+          "t": "p",
+          "v": "把两个问题串起来，作者给出两步设计流程：第一步问数量——更大可见性会放大什么行为？若放大的是对齐行为就多给信息，若放大的是搭便车就严控信息。第二步才问架构——仅在耦合有害时优化连线方式，且优先避免模块化瓶颈。信息网络由此成为与收益结构解耦的独立治理层。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 2611.11714v1，美国东北大学机械与工业工程系及网络科学研究所团队（Heydari 组），2026 年 11 月提交的预印本，未经同行评议。样本为单一型号智能体群体、一千零八十轮，作者自己也把结论定位为「跨游戏的经验规律」而非模型不变律；正文数字细节取自 arXiv 的 HTML 全文。"
+        },
+        {
+          "t": "close",
+          "v": "对智能体平台方的迁移价值：通信拓扑是个真实可用的治理杠杆，而且便宜——不改模型、不改提示词、只动可见性矩阵。实务顺序是先判断任务的对齐性再决定信息预算；在个体激励与集体福利冲突的场景里，最有价值的动作往往是限制观察，而不是升级模型。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2611.11266",
+      "doi": "",
+      "title": "没有任何一条消息是恶意的，但装配出来的动作是：给「对齐衰减」立一个基准",
+      "title_en": "ErosionBench: Probing Alignment Decay in Enterprise Multi-Agent Systems",
+      "authors": [
+        "Riya Bharathwaj",
+        "Akshara Prabhakar",
+        "Roshan Ram",
+        "Avni Kothari",
+        "Sarah Tan",
+        "Huan Wang",
+        "Silvio Savarese"
+      ],
+      "published": "2026-11-08",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.CR",
+      "url": "https://arxiv.org/abs/2611.11266v1",
+      "summary": "As enterprises delegate consequential work to multi-agent LLM systems, benign-looking requests can escalate into unsafe actions as they propagate across sessions through poisoned shared state, long-context documents, and trusted peer messages: no single message is malicious, yet the assembled tool action is. Prior benchmarks isolate a single agent under prompt injection or score multi-agent attacks by their final output, leaving cross-session erosion of shared state out of scope. We introduce ErosionBench, an environment-grounded benchmark that executes such attacks and verifies alignment decay at the process level, scoring the realized tool call against authorized intent and provenance with deterministic contracts, not output text. Each scenario is authored as a deterministic state graph before any prose is rendered, so every state change traces to a known cause. It spans four enterprise domains and four decay mechanisms across 1,728 scenarios with matched benign controls, labeled against the OWASP Top-10 for LLM Applications, plus 198 image-based attacks, each paired with a text equivalent, so a defense must survive the same attack in either channel. Perimeter defenses suppress attacks only by over-refusing 54-92% of legitimate work, so a low attack-success rate can conceal severe over-refusal. As a reference defense, we propose a calibrated Meta-Auditor pairing synchronous state checks with asynchronous trajectory monitoring; on a family-disjoint 906-scenario held-out split it reaches 98.5% recall at a 2.9% false-positive rate. Since it monitors trajectory, not surface content, its detection is channel-invariant: the strongest auditor flags image-delivered attacks about as reliably as their text equivalents (recall gap $\\leq$2 points per model). Across GPT, Gemini, and Claude auditors, calibration keeps false positives low while recall tracks model capability, strongest for Claude.",
+      "summary_short": "As enterprises delegate consequential work to multi-agent LLM systems, benign-looking requests can escalate into unsafe actions as they propagate across sessions through poisoned shared state, long-context documents, and trusted peer messages: no single message is malicious, yet the assembled tool a…",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.11266",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "LLM-Agent",
+        "多智能体安全",
+        "基准评测",
+        "过程级验证",
+        "过度拒绝"
+      ],
+      "glance": "跨会话污染共享状态让多智能体系统「渐进跑偏」：一千七百多个企业场景证明边界防御只靠拒绝一半以上合法工作才能压低攻击率",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "企业把要紧事务交给多智能体大模型系统后，最危险的攻击长这样：一条早期会话里植入的「看起来合法」的模型下载链接，被一个同伴智能体当作可信来源引用，又被下游部署智能体当作生产参数传给上线工具——生产环境就此装上了攻击者控制的模型。从头到尾，没有任何一条消息包含可疑字符串，单看每一步都合规，可装配出来的动作越权了。任何单点过滤器都看不见这场行动的全貌。"
+        },
+        {
+          "t": "h",
+          "v": "威胁模型：语义对齐衰减的四种机制"
+        },
+        {
+          "t": "p",
+          "v": "论文给这种失败模式起了名字：语义对齐衰减——用户授权意图与系统实际装配动作之间的渐进偏离。攻击可以经由四条机制蔓延：跨会话条件化（污染共享记忆，让后续智能体信任植入的上下文）、账本篡改（重写持久化记录，让同伴在伪造的事实上行动）、长上下文稀释（把真实目标埋进长文档里冲淡）、分布式合谋（多个智能体同时为同一植入叙事背书）。四条路都绕开「某条消息里有恶意内容」这一传统检测假设。"
+        },
+        {
+          "t": "h",
+          "v": "基准构造：先写状态图，再渲染成自然语言"
+        },
+        {
+          "t": "p",
+          "v": "ErosionBench 最讲究的工程决策是场景生成顺序：每个场景先写成确定性的状态图、再渲染成自然语言，因此每个状态变化都能追溯到已知原因。最终共一千七百二十八个场景（一千二百九十六恶意加四百三十二良性孪生对照），分属四百三十二个互不相交的攻击家族，横跨量化金融、软件供应链、数据工程与客户关系管理四个企业域，每个场景逐一标注 OWASP 大模型应用十大风险类别；另有约两百个以企业文档图像形式投放的攻击，与文本攻击一一配对，逼防御在两个通道上同时成立。盲评显示场景真实感评分高达四点三四（五分制）。"
+        },
+        {
+          "t": "h",
+          "v": "现有防御的尴尬：压低攻击率靠的是砍掉合法工作"
+        },
+        {
+          "t": "p",
+          "v": "实验把防御按可观测程度排成五层：单智能体隔离、无防御网格、文本边界护栏、末端工具调用策略、完整轨迹监控。结果很扎眼：既有边界防御要压低攻击成功率，代价是过度拒绝百分之五十四到九十二的合法工作——一个漂亮的低攻击率数字背后可以藏着灾难性的可用性损失，两个指标必须成对报告。"
+        },
+        {
+          "t": "h",
+          "v": "参考防御：校准的元审计器"
+        },
+        {
+          "t": "p",
+          "v": "作为对照，作者贡献了「元审计器」参考防御：同步状态检查拦截即时违规，异步监控回看完整轨迹，中间地带交给灰区仲裁与校准。在攻击家族互不相交的九百零六个留出场景上，它做到百分之九十八点五的召回与百分之二点九的误报。因为监控的是轨迹而非表面内容，检测天然是通道不变的——同一攻击换成图像投递照样被抓。"
+        },
+        {
+          "t": "quote",
+          "v": "「既有边界防御只有靠过度拒绝百分之五十四到九十二的合法工作才能压低攻击成功率——于是低攻击率可以掩盖严重的过度拒绝。」"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 2611.11266v1，作者团队包含产业界与学界研究者（含加州大学圣克鲁兹分校背景的资深学者），2026 年 11 月提交的预印本，未经同行评议。需要留意的点：参考防御与基准出自同一批作者，元审计器的数字在独立复现前只能当初步证据；场景虽然经盲评验证真实感，但对企业管线的覆盖仍是四个域的样本而非全貌。长文中的数字均取自 arXiv 的 HTML 全文。"
+        },
+        {
+          "t": "close",
+          "v": "三条可直接抄走的经验：评测多智能体安全时必须成对报告攻击成功率与过度拒绝率，单指标全部失真；「先状态图后渲染」的场景构造法让每个中间状态可归因，值得变成企业安全测试的标准工序；防御重心从消息边界移到过程层（谁在什么状态上做了什么），才是对「无害片段装配成有害整体」这一新型威胁的正解。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 5,
+      "id": "2611.12244",
+      "doi": "",
+      "title": "把每个动作的近期后果画进决策图：电动重卡车队调度的视野预览强化学习",
+      "title_en": "Prospective Action-Resource Graph Multi-Agent Reinforcement Learning for Electric HGV Fleets under Shared Charging Infrastructure",
+      "authors": [
+        "Yiming Xu",
+        "Fulong Yao",
+        "Maurizio Albano",
+        "Rigel Gjomemo",
+        "Liana Cipcigan"
+      ],
+      "published": "2026-11-09",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "eess.SY",
+      "url": "https://arxiv.org/abs/2611.12244v1",
+      "summary": "Electric heavy goods vehicle (eHGV) fleet coordination requires each vehicle to choose driving, charging and resting actions whose consequences depend on shared infrastructure. Existing multi-agent reinforcement learning (MARL) methods mainly represent current states, leaving action-specific futures and resource interactions to be learned indirectly. We develop Horizon-Preview and Graph-Coordinated Proximal Policy Optimisation (HGC-PPO), which integrates horizon preview and candidate-resource graph coordination into the PPO decision architecture. Horizon preview represents each legal action through its short-horizon operational consequences. Graph message passing then updates these candidates through station, charger-type and time-slot resources shared across the fleet. On the 794km Folkestone-Glasgow task, HGC-PPO achieved the lowest mean charging cost among five RL methods at £504.32 per vehicle, with a fleet completion time of 24.920h. It also completed the task 1.763h faster and cost £36.51 less per vehicle than a replay-verified finite-budget MILP benchmark. Across six unseen routes and fleet sizes from 5 to 20 vehicles, HGC-PPO delivered the lowest macro-average completion time, charging cost and charging frequency among the RL methods. A 2 by 2 ablation showed that the full preview-graph architecture performed best across all four operational metrics. These results show that prospective action information and fleet-wide resource coordination improve eHGV decisions under charging and driver-hours constraints.",
+      "summary_short": "Electric heavy goods vehicle (eHGV) fleet coordination requires each vehicle to choose driving, charging and resting actions whose consequences depend on shared infrastructure. Existing multi-agent reinforcement learning (MARL) methods mainly represent current states, leaving action-specific futures…",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.12244",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "MARL",
+        "车队调度",
+        "共享资源",
+        "图消息传递",
+        "电动重卡"
+      ],
+      "glance": "视野预览把每个合法动作编码成短期运营后果、候选动作再经充电站资源图做消息传递，单路线充电成本五个强化学习方法中最低",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "电动重型卡车队的调度难题不在单车，而在共享设施：每辆车要决定何时开、何时充、何时歇，而充电桩的时隙是你占我就没了。现有多智能体强化学习方法大多只表征「当前状态」，至于「选了这个动作之后资源会怎么挤」这件事，只能靠价值网络隐式地硬猜。这篇工作的立场是：别猜，把它显式画进决策架构。"
+        },
+        {
+          "t": "h",
+          "v": "两件嵌进近端策略优化的东西"
+        },
+        {
+          "t": "p",
+          "v": "方法叫 HGC-PPO（视野预览加图协同的近端策略优化），改动的正是策略网络的输入侧。其一，视野预览：每个合法动作不再只是一个编号，而是被表示为其短视野内的运营后果——开多久、到哪、还剩多少电。其二，候选-资源图协同：各车的候选动作经由充电站、桩型、时隙三类共享资源节点做图消息传递，互相知道对方可能占掉哪些资源。"
+        },
+        {
+          "t": "h",
+          "v": "战绩：单路线最省，跨规模最稳"
+        },
+        {
+          "t": "p",
+          "v": "在七百九十四公里的英国福克斯通到格拉斯哥任务上，HGC-PPO 在五个强化学习方法中拿到最低平均充电成本（每车五百零四点三二英镑），车队完成时间二十四点九二小时；与一个重放验证过的有限预算整数规划基准相比，还快了一点七六小时、每车省三十六点五英镑。跨六条未见路线、车队规模五到二十辆的宏平均上，完成时间、充电成本与充电频次三项都居强化方法最低。"
+        },
+        {
+          "t": "h",
+          "v": "消融说明两样都要"
+        },
+        {
+          "t": "p",
+          "v": "二乘二消融（有/无视野预览、有/无资源图）显示：完整架构在全部四项运营指标上最优，单拆掉任何一个组件都会退化——说明「动作的近期后果」与「跨车资源耦合」是互补信息，谁也替代不了谁。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 2611.12244v1，卡迪夫大学团队，交叉列在系统控制类目，2026 年 11 月提交的预印本，未经同行评议。基线方面要注意：整数规划基准是「重放验证的有限预算」版本而非全局最优解，领先幅度应谨慎解读；对照组是五个强化学习方法，未覆盖更专门的车队启发式调度器。本文数字取自 arXiv 摘要页（全文 HTML 未生成）。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的配方非常清晰：凡共享基础设施约束下的多智能体调度（泊位、手术台、算力槽位同构），都可以把「每个候选动作的近期后果显式编码」加「按资源建图的消息传递」这两步接到现成的策略优化上，改动量小、可解释性强，值得作为该类问题的默认起手式。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今日新增十六篇，含一篇《Mathematics of Operations Research》市场设计专刊论文（作者为 2007 年广义第一价拍卖经典文献原作者）；顶刊与 CCF-A 的存量计数均未新增命中。同日两篇署名相同、标题超长堆砌合规术语的开放仓储自印本未收录。",
+    "LLM 多智能体的「治理与安全」成为当日最密的主题带：一篇把信息网络（谁观察谁）变成与收益解耦的设计杠杆，一篇给跨会话的「语义对齐衰减」立了过程级评测基准——操作者视角的干预面（可见性矩阵、轨迹监控）正在取代提示词层面的修补。",
+    "安全评测的方法论在成熟：成对报告「攻击成功率+过度拒绝率」、先状态图后渲染的可归因场景构造、五层可观测性分级，这些工序设计比任何单个防御器的数字更有长期价值。",
+    "博弈求解理论侧，扩展式博弈在线学习的对数复杂度依赖被证明最小最大最优——膨胀熵类算法的最后一个理论悬念关闭，后续优化的空间只剩常数与部分信息设定。",
+    "机制设计经典的重审有信号意义：随机质量分让第一价语义的均衡存在性与收入比较双双反转，「确定性与噪声」正在成为拍卖设计里可主动操作的变量。工程侧，视野预览加资源图消息传递成为共享基础设施调度问题的标配组件。"
+  ],
+  "note": "本期精读 5 篇，五个分区各一篇。检索窗口 arXiv 7 天 / 期刊会议 90 天（截至 2026-11-11），当日新增 16 篇：1 篇 CCF-A（Mathematics of Operations Research 市场设计专刊，经出版方页面核实摘要与作者单位后收录）。剔除 2 篇同一作者同日投放的开放仓储自印本（标题堆砌合规术语、引用不可核）；另有综述、基准构建、能耗测量类稿件按惯例未单独立目。",
   "learning": {},
   "radar": [
     {
@@ -2167,5 +2612,6 @@
         "Crossref:Sustainability"
       ]
     }
-  ]
+  ],
+  "curated": true
 }

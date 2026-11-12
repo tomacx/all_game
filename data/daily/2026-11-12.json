@@ -22,9 +22,446 @@
     "new_count": 10,
     "seen_before": 1456
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.1287/moor.2024.0839",
+      "doi": "10.1287/moor.2024.0839",
+      "title": "遍历盲随机博弈中的一致值与可判定性",
+      "title_en": "Uniform Value and Decidability in Ergodic Blind Stochastic Games",
+      "authors": [
+        "Krishnendu Chatterjee",
+        "David Lurie",
+        "Raimundo Saona",
+        "Bruno Ziliotto"
+      ],
+      "published": "2026-11-10",
+      "venue": "Mathematics of Operations Research",
+      "venue_raw": "Mathematics of Operations Research",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "primary_category": "",
+      "url": "https://doi.org/10.1287/moor.2024.0839",
+      "summary": "We study a class of two-player zero-sum stochastic games known as blind stochastic games, where players neither observe the state nor receive any information about it during the game. A central concept for analyzing long-duration stochastic games is the uniform value. A game has a uniform value v if for every [Formula: see text], Player 1 (resp., Player 2) has a strategy such that, for all sufficiently large n, his average payoff over n stages is at least [Formula: see text] (resp., at most [Formula: see text]). Prior work has shown that the uniform value may not exist in general blind stochastic games. To address this, we introduce a subclass called ergodic blind stochastic games, defined by imposing an ergodicity condition on the state transitions. For this subclass, we prove the existence of the uniform value and provide an algorithm to approximate it, establishing the decidability of the approximation problem. Notably, this decidability result is novel even in the single-player setting of Partially Observable Markov Decision Processes (POMDPs). Furthermore, we show that no algorithm can compute the uniform value exactly, emphasizing the tightness of our result. Finally, we establish that the uniform value is independent of the initial belief. Funding: This research was supported by the French Association Nationale de la Recherche et de la Technologie (ANRT) under the French CIFRE Ph.D. program [Grant CIFRE 2022/0513], through a collaboration between Paris-Dauphine University-PSL and NyxAir (France), by the French Agence Nationale de la Recherche (ANR) under [Grants ANR-21-CE40-0020 (CONVERGENCE project) and ANR-17-EURE-0010 (Investissements d’Avenir program)], by the European Research Council (ERC) under [Grant ERC CoG 863818 (ForM-SMArt)], and by the Austrian Science Fund (FWF) under [Grant 10.55776/COE12].",
+      "summary_short": "We study a class of two-player zero-sum stochastic games known as blind stochastic games, where players neither observe the state nor receive any information about it during the game. A central concept for analyzing long-duration stochastic games is the uniform value.",
+      "is_new": true,
+      "sources": [
+        "ISSN-L·Mathematics of Operations Research"
+      ],
+      "abs_url": "https://doi.org/10.1287/moor.2024.0839",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "随机博弈",
+        "一致值",
+        "可判定性",
+        "遍历性"
+      ],
+      "glance": "看不见状态的长期博弈：遍历条件下可近似求解，精确值却算不出来",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "想象两个棋手都被蒙上眼睛。他们知道棋盘的形状、知道开局按什么分布摆子，也知道对方每一步落在哪个坐标——唯独不知道棋子现在到底在哪。收益照常结算，只是没人看得见结果。这不是思想实验：概率有限自动机、只看得到输入输出的排队系统、以及所有「内部状态不可观测、只能靠动作序列推断」的控制问题，都是它的实例。"
+        },
+        {
+          "t": "h",
+          "v": "长期平均里最贵的那个词"
+        },
+        {
+          "t": "p",
+          "v": "盲随机博弈的形式很干净：有限状态集、双方有限动作集、一个五元组。每回合双方同时出招，收益由「状态加动作对」决定，但状态不公开、收益也不公开——玩家唯一的公有信息是初始信念和过去的动作序列。N 阶段博弈的期望 Cesàro 均值有值，记为 v_N，这一点 1928 年就有了。"
+        },
+        {
+          "t": "p",
+          "v": "问题出在 N 趋于无穷的时候。「渐近」的看法研究 v_N 的极限，Bewley 与 Kohlberg 证明了它在任何随机博弈里都收敛。但极限值几乎没用：N 阶段的最优策略严重依赖 N，把一列各自最优的策略拼起来，换一个长度就崩。所以需要一个更强的概念——一致值：存在一对策略，使得从某个 N 起，对几乎所有更长的 N 都近似最优。完全观测的随机博弈有 Mertens–Neyman 定理兜底，一定存在一致值；盲博弈没有，Ziliotto 给出了反例。"
+        },
+        {
+          "t": "p",
+          "v": "单玩家的情况更刺眼。盲 MDP 等价于概率有限自动机，Rosenberg 等证明一致值一定存在，Madani 等却证明它连近似都不可判定。也就是说：解存在，但你找不到。这篇要做的事，就是在「存在但不可算」和「存在且可算」之间划一条可检验的界线。"
+        },
+        {
+          "t": "h",
+          "v": "用「遗忘得多快」当门槛"
+        },
+        {
+          "t": "p",
+          "v": "作者的答案是遍历性，但落点很实在：不看博弈本身，看转移矩阵连乘。把一串动作对对应的转移矩阵乘起来得到 T^n，若它各行的差异随 n 趋于零，就说明「很久以前做过什么」对当前状态分布的影响已经消失。这个性质用 Seneta 的遍历系数 τ1 度量，τ1 是可乘的，于是长串的衰减率可以由短串的最大值控制。"
+        },
+        {
+          "t": "p",
+          "v": "关键是这个门槛能有限检验。命题 3.8 给出：盲博弈遍历，当且仅当存在 n0 不超过 (3|K| − 2 的 |K|+1 次方 + 1)/2，使所有长度 n0 的动作对序列都满足 τ1 < 1。这个界来自 Paz 的自动机理论，取值只与状态数有关，可以纯枚举验证，代价是指数空间。一旦遍历成立，把 τ(n0) 取对数再上取整，就得到让 τ1 ≤ ε 所需的长度 n_ε——历史可以被「最近 n_ε 步」替代。"
+        },
+        {
+          "t": "p",
+          "v": "这条推理值得单独记住：它把「信念会不会收敛」这个关于无限轨迹的问题，压成了「有限多条矩阵乘积是否收缩」的有限问题。之所以能这么做，是因为盲博弈里信念的演化是确定性的——b 转置右乘转移矩阵，给定动作对，下一步信念唯一。到了有公共信号的隐藏博弈，信念转移变成随机的，这套「完美耦合」的论证就断了，作者把这一点明写在最后一节。"
+        },
+        {
+          "t": "h",
+          "v": "三个定理与一个贵得离谱的上界"
+        },
+        {
+          "t": "p",
+          "v": "定理 3.5：所有遍历盲随机博弈都有一致值，且近似问题可判定。证明是聚合式的——把相近的信念并成一个「抽象信念」，构造一个有限状态的抽象随机博弈，策略在这两个博弈之间可以互相搬运，N 阶段收益的偏差被 ε 吃掉。抽象博弈的状态数是双指数级的，用实闭域理论可以在 PSPACE 内求解，于是总复杂度落在 2-EXPSPACE。"
+        },
+        {
+          "t": "p",
+          "v": "定理 3.6 反向钉死：精确计算一致值不可判定，而且即使限制到最温顺的子类——每个动作的转移矩阵都有一列全正，也就是所谓 Markov 盲 MDP——依然不可判定。这条把结果卡得很紧：可判定的只是「近似」，越界一步就没有算法。定理 3.7 是意外之喜：遍历盲博弈的一致值与初始信念无关。混得够快的系统，你不需要知道它现在在哪。"
+        },
+        {
+          "t": "quote",
+          "v": "近似可判定、精确不可判定——这条分界线同时把它们与完全观测的随机博弈区分开：后者的精确值是可算的。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是 Mathematics of Operations Research 的正式刊出版（CCF-A），四位作者来自 IST Austria、Paris-Dauphine 与图卢兹经济学院，基金里有 ERC 和法国 ANR，是标准的理论工作。全文可从 arXiv 2405.12583 第二版拿到，与期刊版内容一致。"
+        },
+        {
+          "t": "p",
+          "v": "别把 2-EXPSPACE 当成能跑的算法。它是「存在一个算法」的复杂度陈述，界里的常数 (3|K| − 2 的 |K|+1 次方 + 1)/2 在 |K| 稍大时就是天文数字，枚举在物理上不可能完成。这篇的价值在分类，不在求解器。文中的具体例子只有一个三状态的机器维护问题（好、中、差三档，等、小修、大修三个动作），够说明遍历性怎么验，不足以说明规模。"
+        },
+        {
+          "t": "close",
+          "v": "可迁移的启发有两条。做不可观测或强延迟反馈的多智能体系统时，先问一句「这个系统有没有遗忘性」：若对初始条件的记忆随时间衰减，长期平均指标就能用有限窗口近似，值得投入；若某一组动作能把系统锁进周期，任何有限记忆的近似都会系统性偏错。第二条是研究路线上的：在一个连近似都不可判定的问题域里，先去找能让它变得可近似的结构性假设，比直接造算法划算得多。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "2611.14509",
+      "doi": "",
+      "title": "人工货币与分开售卖：消费者剩余的 3-近似",
+      "title_en": "Artificial Currency and Separate Selling: A 3-Approximation for Consumer Surplus",
+      "authors": [
+        "Yang Cai",
+        "Yingkai Li",
+        "Jinzhao Wu"
+      ],
+      "published": "2026-11-10",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.GT",
+      "url": "https://arxiv.org/abs/2611.14509v1",
+      "summary": "We study the allocation of indivisible items to buyers with additive values drawn from independent distributions. The objective is consumer surplus net of burnt payments. We consider artificial-currency mechanisms: buyers receive personalized budgets of a currency worthless outside the mechanism and use them to bid across items. The better of separate selling and artificial-currency mechanisms provides a 3-approximation to optimal consumer surplus. The guarantee holds at every Bayes--Nash equilibrium, without equilibrium selection. Both branches are necessary: either alone may capture only a vanishing share of the optimum. The proof decomposes benchmark surplus into a stable part captured by artificial currency and a variation covered by separate selling.",
+      "summary_short": "We study the allocation of indivisible items to buyers with additive values drawn from independent distributions. The objective is consumer surplus net of burnt payments. We consider artificial-currency mechanisms: buyers receive personalized budgets of a currency worthless outside the mechanism and…",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论",
+        "主题·纳什均衡"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.14509",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "机制设计",
+        "烧钱",
+        "人工货币",
+        "消费者剩余"
+      ],
+      "glance": "不能收钱的分配里，固定预算管稳定需求、排队烧钱管波动需求，合起来才有常数近似",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "商学院把超额选课名额分给学生，办法是开课前发一笔点数，让学生自己去竞；Feeding America 把捐赠的整车食品分给各地食物银行，办法是发一种只在系统内部有效的「份额」。这些场景有一个共同点：不许收钱——法律不许、公平不许，或者设计者自己的目标函数不许。可价值是私人的、物品是稀缺的、而且往往一次要分很多件异质的东西，价格本来要提供的两件事（谁想要、想要多少）仍然必须有人提供。"
+        },
+        {
+          "t": "h",
+          "v": "两种土办法，漏的方向正好相反"
+        },
+        {
+          "t": "p",
+          "v": "第一种是煎熬：让人排队、填表、等审批，用真实的损耗证明自己真想要。Hartline 与 Roughgarden 把这叫烧钱，并指出它的内在权衡——烧掉的每一块钱都在挖掘信息，同时也在销毁剩余。于是设计者天然的目标不是收益而是消费者剩余：分配带来的价值，减去筛选造成的损耗。经典结果只在单参数环境里刻画了最优烧钱机制，而上面这些应用全是多维偏好。"
+        },
+        {
+          "t": "p",
+          "v": "第二种是印钞：发一笔在外面一文不值的预算，让参与者自己决定怎么花。这里没有任何东西被销毁，因为从来没有真的付过钱。代价在别处——预算在买家知道自己价值之前就已经定死，她可以把钱集中花在最看重的那几件上，但当她的价值异常高时，预算并不会跟着涨。"
+        },
+        {
+          "t": "p",
+          "v": "两种漏法不重叠，这正是全文的支点。独立同分布的指数价值下，分开售卖只能拿到最优剩余里消失的那一份；反过来，单件物品配上稀有高价值时，任何人工货币机制在它允许的均衡里都只拿到消失的一份——因为单件物品下所有正价值对抽签的排序是一样的，预算无法在价值高低之间做区分。"
+        },
+        {
+          "t": "h",
+          "v": "把基准剩余劈成两半"
+        },
+        {
+          "t": "p",
+          "v": "证明的第一步是分解。取任意基准机制，买家 i 的临时效用是 u_i，再独立抽一个她的类型副本，把「临时效用减去它与副本之差的期望的一半」叫稳定部分，剩下的叫波动。这个「一半的期望绝对差」正是基尼平均差的一半，所以稳定部分就是「她的平均效用，减去她在类型间的不均匀程度」。两部分加起来正好是她的期望效用，一个不多一个不少。"
+        },
+        {
+          "t": "p",
+          "v": "第二条引理说人工货币吃掉稳定部分。作者用的是一个很具体的机制：比例信用机制。每位买家预先拿到一笔个性化预算，数额正比于她在基准里的稳定剩余；看完自己的价值后把预算分配到各件物品上；每件物品按各人在这件物品上投入的信用的比例随机分配。种子项是必需的（附录专门解释了为什么）。"
+        },
+        {
+          "t": "p",
+          "v": "把这个机制的均衡读成市场：对手的平均行为给每件物品定出一个用人工货币计价的隐含价格，买家间的独立性保证这个价格与自己的类型无关。于是任何一组目标分配概率，她都能靠出价拿到其中至少某个比例，可行性再反过来约束这些加权价格之和。这是一次偏离就界住全部均衡的平滑性论证，也是为什么结论不需要挑选均衡——它在每一个 Bayes–Nash 均衡上都成立。"
+        },
+        {
+          "t": "p",
+          "v": "第三条引理说烧钱吃掉波动。固定一个买家，把她各个物品上的价值坐标逐个换成独立抽样。激励相容让临时效用凸且逐坐标不减；对单坐标的单调函数而言，两个独立抽样之间的期望绝对差，不超过相对零类型的期望增益。把每件物品的坐标增益跨买家求和，正好是「把基准里其他坐标积掉」得到的那个单件可行机制的消费者剩余。于是波动被分开售卖盖住。注意两条论证用到的独立性不是同一个：前者用买家之间的独立，后者额外用买家内部各物品价值之间的独立。"
+        },
+        {
+          "t": "h",
+          "v": "定理与它的边界"
+        },
+        {
+          "t": "p",
+          "v": "结论是：对有限均值的任意乘积先验，单独售卖与比例信用机制里较好的那个，给出最优消费者剩余的 3-近似，且在每一个均衡上成立，不需要均衡选择。两边都必要，前面两个反例就是证明。"
+        },
+        {
+          "t": "p",
+          "v": "但 3 这个数得看清楚了再用：它是「相对种子质量趋于零」时的极限值，不是任意参数下的统一常数；机制本身需要种子才能保证均衡存在。假设也是硬的——加性价值、买家之间与物品之间都独立、分布只需有限均值（不要求正则、不要求有界支撑），这些已经是相当一般，但仍然把替代品、互补品和相关性挡在外面。作者在结论里把这几条明确列为未解。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是 arXiv 预印本（2611.14509），作者来自耶鲁与新加坡国立，基金是 NSF CAREER 与 NUS 启动经费。有一点必须在读之前知道：致谢里写明本文是在 ChatGPT 辅助下完成的。这类披露在 2026 年已经不稀奇，但它意味着叙述的流畅度不能当作正确性的证据——好在骨架是可核的：稳定与波动的分解、比例信用机制的偏离界、单坐标积分的波动界，三步都能独立验算。"
+        },
+        {
+          "t": "p",
+          "v": "另外注意「3-近似」的比较对象是含烧钱的贝叶斯激励相容机制的上确界，不是社会福利的一阶最优，也不是收益最优。三者差得很远，混着引用会得出完全相反的结论。"
+        },
+        {
+          "t": "close",
+          "v": "如果要在系统里做无货币分配，这篇给的是一条可操作的配方：把需求里「跨类型稳定」的那部分交给固定预算去接（它不销毁任何东西，代价是无法对异常高的需求加价），把「随类型波动」的那部分交给可筛选的通道去接（它精确，但每筛一次都在销毁剩余）。单独用任何一个，失效面都会在某一类实例上放大到零；两个一起用，失效面才互不重叠。这个「两种装置各管一段分布」的思路，可以整体搬到算力分配、内部资源竞标、甚至多智能体之间的任务认领。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2611.14242",
+      "doi": "",
+      "title": "PARLEY：用不对称合作谜题评估大模型协作",
+      "title_en": "PARLEY: Evaluating LLM Collaboration Through Cooperative Asymmetric Puzzles",
+      "authors": [
+        "Javier Hernandez",
+        "Andrew D. Wilson"
+      ],
+      "published": "2026-11-10",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.MA",
+      "url": "https://arxiv.org/abs/2611.14242v1",
+      "summary": "As large language models power autonomous agents, understanding how they collaborate and where they fail becomes critical. We introduce PARLEY, an extensible platform for studying LLM agent collaboration through four asymmetric puzzle tasks grounded in cognitive psychology (referential communication, joint coordination, perspective-taking, and spatial reasoning). GPT-4o agent pairs succeeded in 60.5% of conversations (N=400, 100 per task), with task-level variation (34-80%) reflecting distinct collaborative demands. From these conversations, we derived the data-driven PAC taxonomy: six failure types organized into Perception (visual interpretation and spatial reasoning), Adaptation (progress tracking and feedback integration), and Coordination (verification and grounding). Failure to incorporate external feedback was a critical indicator of unsuccessful collaboration, with agents repeatedly applying unsuccessful strategies. We also show that a taxonomy-guided intervention (N=200) improved average task success to 70.5%. These results demonstrate how PARLEY can be used to derive meaningful, data-driven insights that can in turn lead to improved agentic collaboration.",
+      "summary_short": "As large language models power autonomous agents, understanding how they collaborate and where they fail becomes critical. We introduce PARLEY, an extensible platform for studying LLM agent collaboration through four asymmetric puzzle tasks grounded in cognitive psychology (referential communication…",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.14242",
+      "section": "LLM 多智能体与社会模拟",
+      "klass": "specialist",
+      "tags": [
+        "LLM 智能体",
+        "多智能体协作",
+        "失败分类",
+        "评测平台"
+      ],
+      "glance": "1621 个失败实例聚成六型，最具判别力的不是看不见，而是不听反馈",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "两个大模型智能体被派去解同一道题。一个看得见完整地图，另一个只能听见「往右一格」这样的指令，而且看不见对方手里的工具。它们能说话，能互相纠正，最后有六成不到的概率把题做出来。这不是能力不够：同样的模型单独做这些题，成绩要好得多。崩掉的是协作本身，而协作崩在哪里，此前几乎只有轶事。"
+        },
+        {
+          "t": "h",
+          "v": "造一个必须开口才能过的任务"
+        },
+        {
+          "t": "p",
+          "v": "PARLEY 的设计原则是强制不对称。如果两个智能体看到的东西一样，它们可以假设伙伴的视野与自己相同，任务就退化成通信效率测试，根本测不到视角采择。所以四个任务各自切开一条信息缝：指称沟通（一方描述、一方复现符号序列）、联合协调（共享视野但分工操作）、视角采择（描述另一侧看不到的场景差异）、空间推理（导演型导航，只有一方有地图）。"
+        },
+        {
+          "t": "p",
+          "v": "工具的不对称在接口层强制，不是靠提示词约束：每个智能体只拿到自己那份函数的 schema，想用对方的工具，只能求对方去调。环境是回合制的编排器，智能体通过一个 view_interface 工具请求当前视野的截图，彼此只能走共享文本通道——这一条把「空间与视觉内容必须被说出来」变成了硬约束。全部交互落成结构化 JSON，成功与否由环境自动判定。"
+        },
+        {
+          "t": "h",
+          "v": "把失败拆成 1621 个原子"
+        },
+        {
+          "t": "p",
+          "v": "400 场 GPT-4o 对话，每个任务 100 场。然后让模型当裁判，从每场对话里抽出「原子级的失误」，并且要求用与任务无关的语言描述——比如写「重复了一个已经失败的做法」而不是「反复试同一个网格图案」，否则任务词汇会主导后面的聚类。抽出来 1621 个实例，用文本嵌入加 Ward 层次聚类，先在顶层切成三类，再把每一类二分，得到六型，恰好构成一棵平衡树。"
+        },
+        {
+          "t": "p",
+          "v": "六型落在 PAC 三类里。感知类占 11.6%：视觉解读 5.6%（几乎全部集中在网格协调任务，读错符号位置）、空间推理 6.0%（81.6% 在导航任务，能看清单个物体却拼不出整体布局）。适应类占 36.3%：进度跟踪 15.1%（不记得试过什么，反复走回头路）、反馈整合 21.2%（收到错误信号但不改策略）。协调类最大，占 52.1%：校验 34.7%（提前宣布完成，甚至把工具的报错归因于工具本身）、接地 17.4%（描述含糊，没建立共同的指称）。"
+        },
+        {
+          "t": "h",
+          "v": "最具判别力的不是「看不见」，是「不听」"
+        },
+        {
+          "t": "p",
+          "v": "把六型在成功与失败对话里的出现率摆在一起，次序很有意思。反馈整合在失败对话里出现 78.5%，在成功对话里只有 21.5%，相差 3.7 倍，是六个模式里最锋利的那个；接地是 62.7% 对 42.1%。混合效应模型在控制共现与任务随机截距后，六个模式里五个显著指向失败，只有视觉解读不显著；任务层面的方差很小（组内相关 0.17），说明这些失败模式跨任务成立，不是某个任务的特产。"
+        },
+        {
+          "t": "p",
+          "v": "一个反直觉的细节：校验失败反而在成功对话里更常见（89.3% 对 70.3%），视觉误读也集中在成功对话。合理的解释是暴露效应——成功的对话往往调用了更多工具、更多次复核、更多次重读截图，于是产生了更多「可恢复」的错误实例。这提醒一件事：拿失败实例的计数直接比较方法优劣是危险的，必须先分清「犯了多少」和「犯了之后有没有修」。"
+        },
+        {
+          "t": "p",
+          "v": "长度效应比任何单点指标都刺眼。六轮内结束的对话全部成功；到第 12 轮还没结束的，最终成功率只剩 37%；到第 20 轮剩 19%；撞上 30 轮上限的一场都没成功。也就是说存在一个远早于上限的临界点——前几轮如果没能建立起有效的指称与校验，后面的轮次是在累积错位而不是消解错位。"
+        },
+        {
+          "t": "h",
+          "v": "六条提示词换来十个百分点"
+        },
+        {
+          "t": "p",
+          "v": "从六型各提炼一条修复指令塞进双方的系统提示：先假设自己是错的、用对冲语言表达确定性、一次只改一个变量、收到反馈必须先复述再行动、同一个做法失败两次必须换策略、描述要给出多个区分特征。除此之外不改任何东西——模型、任务、基础设施全部不动。200 场干预对话（每任务 50 场），平均成功率从 60.5% 升到 70.5%，四个任务全部上涨：导航 +13、符号复现 +12、场景比较 +8、网格 +7。成功对话的轮数也降了，网格从 6.0 降到 4.8。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "这是预印本，两个作者，实验只用了 GPT-4o 一个模型。分任务的提升幅度全部不显著（p 在 0.16 到 0.42 之间），只有合并后的 200 场对 400 场显著（p 约 0.019）——所以正确说法是「一致的正向趋势」而不是「每个任务都被证明了」。失败实例由 GPT-4o 自己标注，裁判与被评对象同源，同源偏差无法排除。四个任务都是视觉化谜题，离真实的软件协作、文档协作还有距离。"
+        },
+        {
+          "t": "p",
+          "v": "但有一条结论足够稳，因为它不依赖统计显著性：在不对称协作里，决定成败的主要不是感知或推理能力，而是把反馈转成策略变更的能力。人类协作的经典失效是自我中心偏差——坚持自己的视角；这里观察到的几乎是反面：过度顺从，伙伴一说不对就改，甚至把已经被拒的答案原样再交一次。两种失效的修法完全不同，把人类协作的经验直接搬给智能体，会修错地方。"
+        },
+        {
+          "t": "close",
+          "v": "工程上能直接抄的有两条。第一，把「收到反馈先停一下、把反馈翻译成策略变更、再动手」写成硬规则，比换一个更大的模型便宜得多，而且它修的是失败诊断里权重最高的那一项。第二，别用平均成功率评估多智能体系统，要看它在第几轮开始不可挽回——如果注意力该放在前六轮，那么上下文预算、校验频率、指称约定都该压到前六轮，而不是均匀铺开。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2611.14320",
+      "doi": "",
+      "title": "别轻信你的记忆：证据链接式记忆如何减少记忆导致的退化",
+      "title_en": "Don't Just Trust Your Memory: Evidence-Linked Memory Reduces Memory-Induced Degradation in LLM Agents",
+      "authors": [
+        "Yukyeong Lee",
+        "Yumin Choi",
+        "Jinheon Baek",
+        "Sung Ju Hwang"
+      ],
+      "published": "2026-11-10",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.AI",
+      "url": "https://arxiv.org/abs/2611.14320v1",
+      "summary": "External memory enables LLM agents to improve from experience by distilling trajectories of past tasks into concise lessons for new tasks. However, memory can also lead to memory-induced degradation, where an agent fails on tasks it would solve without memory, often because it follows a lesson that is incorrect, or misapplies or misreads a valid one. This is because lessons are inferred from trajectories labeled only with task success or failure, yet are typically provided without the trajectories they came from, leaving the agent no way to check them. To address this, we introduce WikiTrace, an evidence-linked memory system designed to let agents check each lesson against its original trajectory. Specifically, motivated by the finding that a trajectory often still holds the evidence needed to catch an erroneous lesson, WikiTrace stores each lesson as a concise insight linked to a summary of why its trajectory succeeded or failed and to the raw trajectory itself. Then, on a new task, the agent starts from all insights and, whenever one lacks details needed to act, conflicts with another, or comes from a failed task, descends through its links with terminal tools to fill in missing details or correct the insight before acting. We validate WikiTrace on five agentic benchmarks, showing that it consistently outperforms existing memory approaches and a baseline given the same insights alone, while also reducing memory-induced degradation. Our code is available at https://github.com/yukyeongleee/wikitrace",
+      "summary_short": "External memory enables LLM agents to improve from experience by distilling trajectories of past tasks into concise lessons for new tasks. However, memory can also lead to memory-induced degradation, where an agent fails on tasks it would solve without memory, often because it follows a lesson that…",
+      "is_new": true,
+      "sources": [
+        "分类·多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.14320",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "智能体记忆",
+        "经验复用",
+        "可追溯性",
+        "鲁棒性"
+      ],
+      "glance": "记忆会帮倒忙，52% 的退化可追到一条被照做的错教训；把原始轨迹链回去就能修",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "一个智能体在 ALFWorld 里做过这么一道题：看清台灯下的铅笔。它顺利完成了。于是经验被记了下来，压缩成一条教训——台灯类任务在「物体放到点亮的台灯旁」时就算完成。下一次任务是看清台灯下的花瓶。它把花瓶搬到台灯旁，然后宣布做完了。任务其实要求它去看那个花瓶。一个有记忆的智能体，输给了没有记忆的自己。"
+        },
+        {
+          "t": "h",
+          "v": "记忆会让人变笨，而平均分看不见"
+        },
+        {
+          "t": "p",
+          "v": "这类失效有了名字：记忆导致的退化。它指的是智能体在「没有记忆也能做对」的任务上，因为记忆而失败。麻烦在于平均准确率把两件事混成了一件——记忆把多少失败变成了成功，又把多少成功变成了失败。作者把它们拆开：增益是失败转成功的比例，退化是成功转失败的比例。"
+        },
+        {
+          "t": "p",
+          "v": "拆开之后画面很难看。现有记忆方法的退化率与「不带记忆重跑一遍」相当，有的还更高。也就是说，一部分记忆系统表面上在进步，实际是在用「多解了几道难题」换「多错了几道本来会的题」，而平均分刚好把这两笔账抵掉。"
+        },
+        {
+          "t": "p",
+          "v": "归因做得也干净：在无记忆时三次全对、带记忆却失败的任务里，52% 的失败可以追到它遵循的某一条记忆条目，多数是错的条目。错条目的来源是结构性的——一条轨迹只有一个标签，成功或失败，标签不告诉你这几十步里哪一步导致了结果。任何从这种轨迹里学教训的方法，都必须猜「哪步重要、在什么条件下重要」，猜错一次就产出一条会误导人的教训。而现有方法把教训交出去的时候，不附来源，智能体没有核查的办法。"
+        },
+        {
+          "t": "h",
+          "v": "三层文档，一条可以下潜的链"
+        },
+        {
+          "t": "p",
+          "v": "WikiTrace 的做法是把「教训」和「证据」绑在一起存。记忆分三层：最上面是洞见，一句话说清做什么、什么时候适用、来自哪次运行、那次运行成没成；中间是复盘，读这次运行的关键决策与支撑观察，成功与失败用不同模板，明确写成「对这次运行的解读」而不是「已验证的解释」；最下面是原始轨迹，一字不改地保留任务元信息、每一轮的推理、动作与观察。"
+        },
+        {
+          "t": "p",
+          "v": "每次运行独立编译，最多抽三条洞见，写完就不再更新或删除。这意味着池子里一定有冗余、有互相冲突的条目——作者是故意留着，把「哪条适用于当前任务」这个判断留给现场。代价是现场必须能查证，所以每条洞见都链回它的复盘和原始轨迹，整个记忆以只读文件挂载。"
+        },
+        {
+          "t": "p",
+          "v": "测试时的机制叫下潜。智能体先拿到全部洞见，外加三个与当前任务最相似的过往运行的编号；触发下潜的条件有三个：洞见缺少行动所需的细节、与另一条洞见冲突、或者来自一次失败的运行。它用读文件和 shell 去原始轨迹里找能定案的那个事实——比如某个命令的确切格式——改完再动手。动作失败一次，就要再下潜一次。"
+        },
+        {
+          "t": "h",
+          "v": "八个数集，一条分开的账"
+        },
+        {
+          "t": "p",
+          "v": "五个基准八个数集：三个文本世界（ALFWorld 家务、ScienceWorld 科学实验、PlanCraft 合成），两个工具环境（AppWorld 应用接口、零售客服对话）。平均成绩 90.2，无记忆是 79.5，同样喂洞见但不给来源的对照组是 87.0。八个数集全部第一，而且是唯一一个在每个数集上都不低于无记忆的记忆方法。"
+        },
+        {
+          "t": "p",
+          "v": "更有说服力的是那笔分开的账。退化率 4.5%，对照组 6.5%，重跑无记忆的参考带是 9.7%——它是唯一一个置信区间整个落在参考带以下的记忆方法。增益比参考带高 35 个百分点，对照组是 27，其他记忆方法只有 7 到 14。因为 WikiTrace 与对照组只差「能不能看来源」这一件事，这 3.2 分和 2 个百分点的退化率下降，可以干净地归给证据访问。"
+        },
+        {
+          "t": "p",
+          "v": "难度上的分层很符合直觉：简单任务只有 22% 的运行会下潜，困难任务 44%；下潜带来的领先从简单的 1.8 分涨到困难的 4.1 分。更关键的是，43% 的下潜真的改变了计划（改写洞见 24%、补上遗漏的细节 14%、给出洞见完全没覆盖的事实 4%），这些运行比「只是确认了原计划」的领先多出近一倍。竞争成本也不贵：测试时每任务的开销是 1.17 倍，换 3.2 分。"
+        },
+        {
+          "t": "p",
+          "v": "还有一个反常识的结果，关于失败经验。只用成功运行建记忆，不如成功加失败一起用；但只用失败运行、且不给来源时，退化率是全表最高的——PlanCraft 9.3%、ScienceWorld 9.4%。同一批洞见交给 WikiTrace，降到 7.1% 和 8.9%。所以失败经验不是不能用，而是必须带着证据用：失败运行的教训最含信息，也最容易把人带沟里。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "预印本，KAIST 与 DeepAuto 的合作，代码已开源在 GitHub。主实验用一个模型（deepseek-v4-flash），另用 GLM-5.3-flash 在三个数集上复现，结论方向一致；但两个模型都是单一供应商的相近代次，跨模型族的稳健性还没验证。评测协议是离线的：记忆在测试前一次性构建、之后只读，不允许用额外运行去验证条目——这个设定很干净，但也意味着在线持续学习的场景没有被覆盖。"
+        },
+        {
+          "t": "p",
+          "v": "编译层由模型完成，复盘是「解读」而非「验证」，作者自己也这么写。所以系统给的是可核查的路径，不是真相：如果复盘本身就把失败归错了因，下潜看到的东西会强化这个错误。好在原始轨迹是原样保留的，这给了下游一个兜底——所有结论都能退回到原始动作序列。"
+        },
+        {
+          "t": "close",
+          "v": "两条可以直接搬走的东西。第一条是设计原则：任何「经验复用」的系统，都应该把来源和结论一起存，且来源要能落到原始记录而不是二手摘要。这不只是可解释性的需求，它是唯一能让使用者在「照做」之前发现结论错了的机制。第二条是评估口径：报记忆系统的效果时必须把增益与退化分开，否则平均分会系统性地奖励「用难题换易题」的方法——而这个交换在真实部署里通常是亏的，因为你原本做对的那批任务，往往才是业务的主干。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "这一期理论侧在给「看不见状态」划线：遍历盲随机博弈的一致值存在且可近似判定，精确计算却连最温顺的子类都不可判定。可解与不可解的边界，被压到了「转移矩阵乘积是否收缩」这一条可检验的性质上。",
+    "机制设计把「简单机制的组合」推到了无货币分配。人工货币与分开售卖各自只覆盖基准剩余的一半——前者接住跨类型稳定的部分，后者接住随类型波动的部分，两边都必要，合起来才有常数近似，而且在每一个均衡上都成立。",
+    "LLM 多智能体评测的瓶颈从能力移到了过程。PARLEY 里最具判别力的失败类型不是视觉误读或空间推理，而是「收到反馈却不改策略」；六条针对性的提示词就换来十个百分点的提升。",
+    "记忆系统的评价口径正在分裂成增益与退化两笔账。只看平均分会奖励「用难题换易题」的方法，而 WikiTrace 的 3.2 分优势与两个百分点的退化率下降，恰好只有把账分开才看得见。",
+    "四条线索其实在讲同一件事：给「信息缺失」定价。盲博弈不知道状态，无货币机制不知道价值，智能体不知道伙伴看见了什么，记忆不知道教训从哪来——四种缺失的解法都是把缺的那层用可核查的方式补回来，而不是用一个更强的模型硬猜。"
+  ],
+  "note": "本期精读 4 篇，取自 2026-11-12 抓取的 10 篇当日新增（检索窗口：arXiv 7 天 / 期刊会议 90 天，去重后入库 60 条）。四篇分属四个分区：博弈求解与理论、机制设计与市场、LLM 多智能体与社会模拟、对抗安全与鲁棒。剔除 6 篇：1 篇教育多智能体框架所载期刊无卷期页码、Crossref 参考文献计数为零且自述仅完成试点评估；1 篇 Zenodo 医疗智能体综述为团队署名、通篇定性无量化结果；2 篇纯理论稿（随机退出博弈、量子辅助反事实遗憾）本期让位给已选的 CCF-A 理论篇；1 篇隐私检索属概念性论述；1 篇 BPMN 工作流为工业实践报告。",
   "learning": {},
   "radar": [
     {
@@ -2152,5 +2589,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

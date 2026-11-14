@@ -22,9 +22,411 @@
     "new_count": 17,
     "seen_before": 1497
   },
-  "highlights": [],
-  "trends": [],
-  "note": "",
+  "highlights": [
+    {
+      "idx": 1,
+      "id": "10.1016/j.geb.2026.104083",
+      "doi": "10.1016/j.geb.2026.104083",
+      "title": "全付式质量报价的评分采购拍卖",
+      "title_en": "All-Pay Quality-Bids in Score Procurement Auctions",
+      "authors": [
+        "Dan Kovenock",
+        "Jingfeng Lu"
+      ],
+      "published": "2026-11-01",
+      "venue": "Games and Economic Behavior",
+      "venue_raw": "Games and Economic Behavior",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.geb.2026.104083",
+      "summary": "",
+      "summary_short": "",
+      "is_new": true,
+      "sources": [
+        "ISSN-L·Games and Economic Behavior"
+      ],
+      "abs_url": "https://doi.org/10.1016/j.geb.2026.104083",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "拍卖机制",
+        "采购拍卖",
+        "评分规则"
+      ],
+      "glance": "把「落标也要付质量成本」写进评分采购，闭式解出均衡与采购方最优评分规则",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "国防装备的设计竞标、政府建设项目带设计分、建筑事务所投标的方案竞赛——这些采购有个共同点：中标者只有一个，但所有参与者为准备技术方案花的钱都要不回来。方案做了三个月，落标，成本沉没。经典评分拍卖理论却长期假装这件事不存在：自 1993 年切伊的开创性工作起，模型里质量报价都是「赢家付钱」——只有中标者承担自己报的质量成本。这篇发表在《博弈与经济行为》的论文第一次在不对称信息环境下把「全付式质量报价」完整装进评分采购拍卖。"
+        },
+        {
+          "t": "h",
+          "v": "非可分性：全付成分如何改写均衡"
+        },
+        {
+          "t": "p",
+          "v": "设定很干净：多个风险中性的供应商同时报质量与价格，采购方用差值评分规则（分数等于质量减价格）选最高分者，赢家拿自己报的价钱，但每个供应商——无论输赢——都要承担质量成本中的全付份额。核心困难在作者所称的「非可分性」：在赢家付费的世界里，质量选择与竞争强度是可分的，每个供应商可以独立于获胜概率决定质量档位；而一旦质量成本部分沉没，获胜概率就直接进入质量决策——赢面越小，越要压低质量投入，而且全付份额越大压得越狠。更麻烦的是，偏离报价会同时改变质量和价格两个变量，策略不再具有占优性质，激励相容必须做全局验证。"
+        },
+        {
+          "t": "p",
+          "v": "作者的办法是把质量—价格报价对看成一个激励相容的直接机制：质量报价扮演配置规则，价格报价扮演支付规则，由此钉死价格表对质量表的依赖关系。在差值评分规则下，他们闭式刻画了唯一的对称纯策略均衡——分数随成本类型递减、价格报价有界。"
+        },
+        {
+          "t": "h",
+          "v": "三个反直觉的比较静态"
+        },
+        {
+          "t": "p",
+          "v": "幂函数成本下结论一：全付份额升高，均衡质量、总剩余、供应商收益全部下降——这符合直觉；但采购方收益的影响是模糊的。深层原因是一个「虚拟剩余效应」：固定评分规则下，采购方面临高成本供应商的虚拟贡献可能为负，从他们身上诱导正质量反而亏钱；全付份额升高恰好最狠地压制这些低效类型的质量投入，止损收益可能盖过高效类型的质量缩水。"
+        },
+        {
+          "t": "p",
+          "v": "结论二：报销落标者的全付成本（国防采购里的常见政策），会让质量与供应商收益上升，但总剩余与采购方收益双双下降——报销没有消灭质量的社会成本，只是把它搬到采购方账上，并诱发社会性过度的质量投入。结论三：在最优评分规则下，采购方收益随全付份额严格递减。一旦评分规则自身内化了筛选与质量扭曲的权衡，全付成分就不再是压制低效供应商的有用工具，只剩纯粹的摩擦。"
+        },
+        {
+          "t": "p",
+          "v": "最优评分规则本身也漂亮：它给质量的权重低于采购方真实支付函数里的权重——这与切伊在赢家付费环境里的经典结论遥相呼应；相对那个基准，最优质量表只差一个小于一的全付楔子。当成本类型的反向危险率满足弱凸性时，全付份额越高、供应商数量越多，最优评分的边际质量权重反而越重。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源是《博弈与经济行为》（中国计算机学会 A 类期刊），2026 年 11 月 12 日上线，目前处于录用待刊的预校样阶段，卷期页码尚未分配。作者科维诺克是全付拍卖领域的权威学者，全文为纯理论工作，无实验，参考文献仅十六条——理论密度极高。均衡刻画方法可推广到最低分数约束、多维质量报价与非线性评分规则（文中附了一个比率评分规则的算例），引言与模型节在出版方页面可免费核读，但定理证明在付费墙内，本文长文只复述摘要与引言层面能核实的结论。"
+        },
+        {
+          "t": "close",
+          "v": "对做多智能体拍卖模拟的人，这篇给了一个现成的「摩擦」旋钮：在仿真里给质量成本加一个全付系数，均衡行为、最优评分、采购方收益会沿三个方向同时变化，且存在模糊区——这正是设计实验时最有信息量的区间。政府采购约占全球国内生产总值的百分之十五，这个模型离钱很近。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 2,
+      "id": "10.1016/j.geb.2026.104084",
+      "doi": "10.1016/j.geb.2026.104084",
+      "title": "多物品拍卖的多维机制设计与鲁棒收益最大化",
+      "title_en": "Multidimensional mechanism design and robust revenue maximization in multi-object auctions",
+      "authors": [
+        "Hiroyuki Adachi"
+      ],
+      "published": "2026-11-01",
+      "venue": "Games and Economic Behavior",
+      "venue_raw": "Games and Economic Behavior",
+      "impact": "ccf_a",
+      "impact_label": "CCF-A",
+      "primary_category": "",
+      "url": "https://doi.org/10.1016/j.geb.2026.104084",
+      "summary": "",
+      "summary_short": "",
+      "is_new": true,
+      "sources": [
+        "ISSN-L·Games and Economic Behavior"
+      ],
+      "abs_url": "https://doi.org/10.1016/j.geb.2026.104084",
+      "section": "机制设计与市场",
+      "klass": "supporter",
+      "tags": [
+        "机制设计",
+        "组合拍卖",
+        "最优拍卖",
+        "射线单调性"
+      ],
+      "glance": "把一维最优拍卖理论推进到多维类型：上界、多维正则性、铁削程序与射线单调性等价刻画",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "单物品拍卖的收益最大化有教科书答案：迈尔森的最优拍卖。可现实里买家买的从不是单件物品——频谱打包卖、广告位按组合卖、云计算资源成套卖，买家对一堆东西各有各的估值。类型一旦从一维变成多维，迈尔森理论几乎每一步都断掉：虚拟估值没有自然推广，最优机制的存在性与可实施性都成了悬案。几十年里「多维最优拍卖」是机制设计里出了名的硬骨头。这篇单作者论文在《博弈与经济行为》给出的，是一条相当完整的前进路线。"
+        },
+        {
+          "t": "h",
+          "v": "先立上界，再造机制"
+        },
+        {
+          "t": "p",
+          "v": "作者阿达奇考虑的环境相当宽：买家估值对物品可加、私人估值可以相关联、卖家面对一般性的可行性约束。第一步用收益等价定理算出买家的虚拟估值向量，随即给出一个上界——在所有满足贝叶斯激励相容（允许随机机制）与中期个人理性的机制里，卖家期望收益不可能超过这个界。"
+        },
+        {
+          "t": "p",
+          "v": "第二步是构造。在单物品世界里，迈尔森靠分布的正则性保证虚拟估值单调，从而最优机制就是虚拟剩余最大化的配置。多维世界里作者提出一个多维正则性条件，在此条件下构造出达到上界的占优策略激励相容的随机机制——注意这里是占优策略可实施，比贝叶斯可实施强一档，对买家而言「如实报」不需要信念正确。当多维正则性不满足时，作者开发出一套铁削程序，把不规则分布「熨平」后照常构造机制——这是单维铁削思想的非平凡多维推广。"
+        },
+        {
+          "t": "h",
+          "v": "射线单调性：看似更弱，实则等价"
+        },
+        {
+          "t": "p",
+          "v": "技术上最漂亮的一笔是关于可实施性的刻画。多维机制的单调性条件向来棘手：一个在每条从原点出发的射线上保持单调的性质——射线单调性——表面看比全局单调性弱得多。作者证明，在适当条件下它恰好等价于占优策略可实施性。这意味着检验一个多维分配规则是否可实施，只需沿着射线逐条查单调，不必全局验证——从可实施性的迷宫里给出了一条直路。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "来源为《博弈与经济行为》（中国计算机学会 A 类），2026 年 11 月 13 日上线，同样处于录用待刊的预校样阶段；单作者、纯理论、无实验，摘要与关键词（组合拍卖、最优拍卖、射线单调性、可实施性）经出版方页面核实。需要留意的是预校样阶段尚未披露收稿与录用日期、作者单位与卷期信息，待正式刊出后可补核。相关类型（允许估值分布相关）是本文与多数既有工作的分水岭——独立性假设下的多维最优拍卖已有不少进展，相关类型下的收益上界加可实施刻画此前一直缺。"
+        },
+        {
+          "t": "close",
+          "v": "对算法机制设计而言，这篇的实用价值在于把「多维最优机制」从存在性玄学变成可操作的三个部件：收益上界、正则性检验、铁削流程。哪怕不做理论，把「沿射线查单调性」当作多维分配规则可实施性的快速体检，也是直接可抄的工程手段。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 3,
+      "id": "2611.16388",
+      "doi": "",
+      "title": "策略鲁棒的多智能体控制",
+      "title_en": "Strategically Robust Multi-Agent Control",
+      "authors": [
+        "Boris Velasevic",
+        "Nicolas Lanzetti",
+        "Eric Mazumdar"
+      ],
+      "published": "2026-11-12",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "math.OC",
+      "url": "https://arxiv.org/abs/2611.16388v1",
+      "summary": "A key source of uncertainty in multi-agent systems is the behavior of other agents. Game-theoretic control approaches ignore this uncertainty, while robust control approaches treat others as fully adversarial. In this paper, we introduce strategically robust multi-agent control to populate the spectrum between these two paradigms. Specifically, in dynamic games, we propose that players are strategically robust and seek protection against misspecified control policies of the other players. This formulation induces a novel equilibrium concept, strategically robust dynamic equilibrium, that interpolates between game-theoretic control and robust control. We study this concept across canonical open- and closed-loop settings and show that accounting for strategic robustness also has computational benefits over classic approaches in game-theoretic control. Numerical experiments on vehicle platooning, inventory management, and network control illustrate resilience to misspecification, and also exhibit a \"free-lunch\" phenomenon in which strategic robustness can improve performance or social welfare.",
+      "summary_short": "A key source of uncertainty in multi-agent systems is the behavior of other agents. Game-theoretic control approaches ignore this uncertainty, while robust control approaches treat others as fully adversarial.",
+      "is_new": true,
+      "sources": [
+        "分类·博弈论"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.16388",
+      "section": "博弈求解与理论",
+      "klass": "caster",
+      "tags": [
+        "动态博弈",
+        "鲁棒控制",
+        "均衡概念"
+      ],
+      "glance": "在博弈控制与鲁棒控制之间架一座参数化的桥：偏离罚金从无穷滑向零，均衡从纳什滑向最坏情形",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "编队行驶的车队里，你按纳什均衡策略开车，前提是邻居也理性。可邻居的模型标错了、算力不足、或者干脆出了故障——纳什策略脆得像玻璃，对手稍一偏离你就损失惨重。反过来，把邻居当成最恶意的扰动做鲁棒控制？行为确实稳了，但每个人都把对方往死里防，名义性能碎一地。多智能体控制长期在这两个极端之间没有落脚点：要么全信队友，要么全防队友。加州理工的这篇论文把中间地带整个填上了。"
+        },
+        {
+          "t": "h",
+          "v": "一个罚金，连续调节「你多怕队友」"
+        },
+        {
+          "t": "p",
+          "v": "作者维拉塞维奇、兰泽蒂与马祖姆达提出的「策略鲁棒动态均衡」思路很优雅：每个玩家不再直接与其他玩家的策略博弈，而是与一个虚构对手博弈——这个对手想最大化你的损失，但每偏离其他玩家的策略一步都要付罚金。罚金无穷大时，偏离太贵，对手被迫贴着其他玩家的策略走，问题退化回标准博弈论控制（纳什）；罚金趋零（配合一个显式的扰动罚保持问题适定），就是经典的最坏情形鲁棒控制。两套成熟范式成了一个双参数族的两个端点，中间整条谱系连续可选。"
+        },
+        {
+          "t": "p",
+          "v": "更有意思的是计算性质的反转：标准博弈控制里纳什均衡一般难以高效计算，需要伪梯度单调或线性二次可逆性这类结构性假设；而在这套框架下，玩家足够鲁棒时均衡是唯一的，并且可以高效求解——加鲁棒性反而把问题变好算了。论文在离散时间动态游戏的两类经典设定下展开：有限视界开环（线性动力学、凸成本、凸约束）证明了增广博弈的存在性与单调性分析；闭环线性二次情形则给出耦合的倒向黎卡蒂递推，并向无限视界延伸。"
+        },
+        {
+          "t": "h",
+          "v": "免费午餐：越防队友，社会成本反而越低"
+        },
+        {
+          "t": "p",
+          "v": "数值实验部分藏着全文最反直觉的发现。一维协作控制里，对对手策略加随机偏置做蒙特卡洛检验，鲁棒策略把成本的九十五与七十五分位数分别压低百分之二十四与百分之二十三，中位数降百分之十五。星型网络实验里，中心节点受对抗性叶子节点扰动，鲁棒策略下的终端状态从二点二二拉回四点二一（目标五），实现成本从十九点七降到九点二。"
+        },
+        {
+          "t": "p",
+          "v": "但真正的招牌是「免费午餐」效应：在一部分鲁棒度区间内，社会成本（所有玩家成本之和）随鲁棒水平上升不升反降。机理说穿了很朴素——鲁棒玩家为防队友偷懒而自己多出力，系统反而被推得更近目标。这与单智能体鲁棒优化里「鲁棒性必付名义性能代价」的铁律针锋相对，根源在于另一个玩家会对你的鲁棒化做出策略性响应。作者也提到，这种「经由鲁棒化实现协调」的现象已被用于训练协作型智能体。"
+        },
+        {
+          "t": "p",
+          "v": "开环实验同样有料：车队博弈里，鲁棒跟随者在安全罚金激活时会主动把车距开到期望间距之上且越靠队尾余量越大，而近似纳什的跟随者则贴着下限逼近；容量积累博弈（图洛克竞赛与古诺竞争两种奖励）里，鲁棒度升高会系统性抑制早期投资——玩家预判虚构对手会在末期倾销产能，干脆保守囤钱。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "加州理工计算与数学科学系出品（arXiv 数学优化分类，2026 年 11 月 12 日提交，预印本未经同行评议）。全部实验均为小规模数值算例——标量系统、五节点星型网络、几辆车的一维车队——结论的说服力主体在理论与结构，而非规模。理论上值得核对的点：闭环情形的耦合黎卡蒂递推依赖正定性与联合矩阵可逆性的数值验证，无限视界只有「迈向」而未完全闭合。"
+        },
+        {
+          "t": "close",
+          "v": "把「对队友策略失配的鲁棒度」做成一个可调参数，对多智能体强化学习是直接的礼物：训练时对伙伴策略加一个带偏离罚金的虚拟对手，既不至于像对手建模错误那样脆，也不至于像最坏情形训练那样保守。免费午餐效应更提示：适度的相互提防，可能是比反复协调更便宜的协作捷径。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 4,
+      "id": "2611.16574",
+      "doi": "",
+      "title": "HALight：车道级观测缺失下的异构多智能体交通信号控制",
+      "title_en": "HALight: Heterogeneous Multi-Agent Reinforcement Learning for Traffic Signal Control under Lane-Level Missing Observations",
+      "authors": [
+        "Chenkai Hu",
+        "Yingqian Zhang",
+        "Ming Xie",
+        "Yi Fang",
+        "Chengxiang Jin",
+        "Chao Li"
+      ],
+      "published": "2026-11-12",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.LG",
+      "url": "https://arxiv.org/abs/2611.16574v1",
+      "summary": "Multi-agent reinforcement learning has shown great promise for traffic signal control. However, most existing methods rely on two key assumptions: (i) agents are assumed to be homogeneous with unified observation/action spaces; (ii) full and reliable lane-level traffic observations are available to all agents. In practice, urban road networks exhibit substantial structural heterogeneity (e.g., lane configurations and phase designs), while sensor failures and incomplete detector coverage often result in missing incoming lane measurements. Such issues can severely impair coordination and destabilize learning. To address these challenges, we propose HALight, a communication-enhanced heterogeneous multi-agent reinforcement learning framework for traffic signal control under lane-level missing observations. HALight supports intersection-specific observation and action modeling to accommodate heterogeneous intersections, and incorporates a lightweight one-hop neighborhood communication module to enrich spatial context when lane-level observations are partially unavailable. Moreover, HALight adopts a sequential policy update scheme to improve coordination among heterogeneous agents. Experimental results on two real-world road networks demonstrate that HALight outperforms representative homogeneous and heterogeneous baselines in terms of traffic efficiency and convergence behavior. The code and datasets used in this work are available at https://github.com/Huchenkaii/HALight.",
+      "summary_short": "Multi-agent reinforcement learning has shown great promise for traffic signal control. However, most existing methods rely on two key assumptions: (i) agents are assumed to be homogeneous with unified observation/action spaces; (ii) full and reliable lane-level traffic observations are available to…",
+      "is_new": true,
+      "sources": [
+        "主题·MARL"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.16574",
+      "section": "核心算法创新 · MARL",
+      "klass": "guard",
+      "tags": [
+        "MARL",
+        "交通信号控制",
+        "异构智能体",
+        "部分可观测"
+      ],
+      "glance": "同时松开两个部署假设：路口异构 + 车道级观测缺失，四成缺失下平均旅行时间几乎不退化",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "多智能体强化学习管红绿灯，论文里已经赢了千百次，上真实路网却常常翻车。翻车点很少是算法本身，而是两个被论文默契回避的假设：第一，所有路口长得一样——统一的观测空间、统一的动作空间；第二，每个进口车道的流量都测得到。现实里下沙有十字路口也有丁字路口，车道数、相位设计各不相同；而电子收费路侧单元的天线覆盖本来就随路段漂移，某些车道干脆长期无数据。浙江大学团队的 HALight 把这两个假设同时扔掉了。"
+        },
+        {
+          "t": "h",
+          "v": "异构路口，各管各的观测与动作"
+        },
+        {
+          "t": "p",
+          "v": "HALight 的第一层是路口级的异构建模：每个交叉口的观测向量与动作空间（相位集合）按自身结构单独定义，不再强行共享一套模板。这直接解决了「学出平均策略」的老毛病——同构建模下，网络为迁就丁字路口与五岔路口的差别，只能输出对谁都次优的折中行为。"
+        },
+        {
+          "t": "p",
+          "v": "第二层是通信增强的异构执行者：本地观测编码后，经注意力聚合的一跳邻域表征补全空间上下文——某条进口车道测不到，就靠邻居路口的观测与一个信息生成模块来填。通信刻意只做一跳，轻量且工程可控。第三层是中心化评论家加异构智能体的顺序策略更新：逐个更新路口策略而非全体同步，缓解了异构智能体间梯度干扰导致的训练震荡。"
+        },
+        {
+          "t": "h",
+          "v": "四成车道观测缺失，性能几乎不掉"
+        },
+        {
+          "t": "p",
+          "v": "实验在杭州两个真实路网上做：下沙三乘三网格（七个十字口加两个丁字口）与古荡四乘四网格（十六个结构各异的十字口），车道配置按高德地图的真实条件构造，分中等与高两种需求。关键是缺失率扫描：进口车道观测按百分之零到百分之四十的比例置为不可用。下沙中等需求下，HALight 的平均旅行时间从零缺失的一百八十三秒只涨到四成缺失的一百九十二秒；而基线们塌得干脆——基于循环网络的同构方法在两成缺失就不收敛，多个异构基线在三到四成缺失时直接学崩。高需求下 HALight 从一百八十九涨到二百零八，仍全面领先所有能收敛的基线。"
+        },
+        {
+          "t": "p",
+          "v": "消融与鲁棒性部分同样务实：通信丢包实验显示性能对通信不完美不敏感；通信效率分析给出了一跳设计的开销账。附录还给了全可观测情形下的收敛性分析。代码与数据集开源在代码托管平台上，可复现性有交代。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 预印本（2026 年 11 月 12 日提交，未经同行评议），作者来自浙江大学控制科学与工程学院及合作单位。实验是仿真层面的：两个路网、两种需求、固定种子组，数字的绝对值依赖仿真平台设定，不可跨系统当基准引用；但「缺失率扫描 + 不收敛基线如实标注空缺」的实验协议本身相当诚实。一跳通信的收益边界（多大的路网下一跳不够）论文未系统探讨，这是阅读时应有的保留。"
+        },
+        {
+          "t": "close",
+          "v": "这篇的真正贡献不是某个模块多新，而是把「部署现实假设」摆上台面：异构是结构性的，缺失是常态而非攻击。任何要上真实基础设施的多智能体系统——路口、微电网、仓储机器人——都值得照抄这套「路口专属建模 + 邻域补全 + 顺序更新」的三件套。"
+        }
+      ],
+      "curated": true
+    },
+    {
+      "idx": 5,
+      "id": "2611.16183",
+      "doi": "",
+      "title": "以少为安：可解释特征引导的数据高效大模型安全对齐",
+      "title_en": "Data-Efficient LLM Safety Alignment Guided by Interpretable Features",
+      "authors": [
+        "Hongyu Li",
+        "Zhan Yu",
+        "Zhe Zhao",
+        "Kimmo Yan",
+        "Xiong Kuang",
+        "Renfen Hu"
+      ],
+      "published": "2026-11-12",
+      "venue": "预印本",
+      "venue_raw": "arXiv",
+      "impact": "preprint",
+      "impact_label": "预印本",
+      "primary_category": "cs.CL",
+      "url": "https://arxiv.org/abs/2611.16183v1",
+      "summary": "Existing large language models typically rely on massive fine-tuning datasets for safety alignment, which results in higher costs for safety alignment and often leads to the problem of over-refusal. We propose Less is Safer (LIS), a compact yet highly effective dataset for safety alignment, constructed through interpretable feature-guided selection and adversarial synthesis. Specifically, we leverage Sparse Autoencoder (SAE) activations to efficiently select prompts that cover diverse and interpretable safety features. Then, we employ a multi-agent adversarial synthesis framework to generate harmless prompts that nevertheless elicit unnecessary refusals. LIS contains only 2.4K samples, yet outperforms much larger datasets, e.g., TRIDENT-Core (26K), TRIDENT-Edge (19K) and WildJailbreak (262K), in overall performance on four safety and five over-refusal benchmarks. Through ablation experiments, we demonstrate that neither safety data nor over-refusal data alone can achieve optimal results. We also used safety features from SAE, annotated by an LLM, for data filtering, but the results were inferior to those obtained using the pipeline proposed in this paper.",
+      "summary_short": "Existing large language models typically rely on massive fine-tuning datasets for safety alignment, which results in higher costs for safety alignment and often leads to the problem of over-refusal.",
+      "is_new": true,
+      "sources": [
+        "主题·LLM多智能体"
+      ],
+      "abs_url": "https://arxiv.org/abs/2611.16183",
+      "section": "对抗、安全与鲁棒",
+      "klass": "defender",
+      "tags": [
+        "AI安全",
+        "安全对齐",
+        "稀疏自编码器",
+        "数据选择"
+      ],
+      "glance": "两千四百条样本的安全对齐数据集，整体表现压过二十六万条的大库",
+      "essay": [
+        {
+          "t": "lead",
+          "v": "大模型的安全对齐陷入一个怪圈：数据从两万条堆到三十万条，模型确实学会了拒绝危险请求——顺带也学会了拒绝一切看起来有点可疑的请求。用户问「怎么杀掉后台进程」，模型回答「我不能协助有害行为」。这种过度拒答不是笑话，是产品可用性的直接失血。北京师范大学与腾讯的这篇论文给出一个反直觉的答案：别堆了，两千四百条就够。"
+        },
+        {
+          "t": "h",
+          "v": "用稀疏自编码器找到「该学什么」"
+        },
+        {
+          "t": "p",
+          "v": "方法叫「以少为安」。第一步是特征引导的数据筛选：在开源大模型的第二十四层残差流上挂一个稀疏自编码器（三十二倍过完备），把提示激活的安全相关特征显式抽出来；再对候选池按词平均贪心策略做选择——优先挑能覆盖多样安全特征的提示，而不是随机抓取。这一步的产出是既紧凑又覆盖面完整的安全微调子集。"
+        },
+        {
+          "t": "p",
+          "v": "第二步针对过度拒答：一个多智能体对抗合成框架，由生成者、裁判、应答写作者与守卫四个角色协作，专门制造「完全无害但容易触发误拒」的提示——比如带暴力隐喻的文学创作、涉及刀具的正常烹饪问题。两个子集合起来，就是两千四百条的完整对齐集。"
+        },
+        {
+          "t": "h",
+          "v": "两千四对二十六万：账面与细节"
+        },
+        {
+          "t": "p",
+          "v": "评测覆盖四个安全基准与五个过度拒答基准，以召回率与精确率的调和平均为总指标。在一个开源模型底座上，这套小数据集拿到八十二点三的总分，对比全量的二十六万条竞品数据集七十九点四、一万九千条版本六十七、两万六千条版本六十五；换一个九参数量的另一家族模型，八十七点一对七十九点七，结论稳定。等规模对比（同样两千四百条）下，随机选择、反贪心、均值聚类等策略全面落败，词平均贪心在多个安全子基准上的不安全率都是最低。"
+        },
+        {
+          "t": "p",
+          "v": "两个消融值得单独说。其一，只用安全子集或只用过度拒答子集都到不了最优——安全与可用是一对必须同时喂的矛盾。其二，用大模型给特征打标注再筛选，效果反而不如论文这套自动流水线——可解释特征的信号比语言模型的主观判断更可靠。"
+        },
+        {
+          "t": "h",
+          "v": "怎么读这篇"
+        },
+        {
+          "t": "p",
+          "v": "arXiv 预印本（2026 年 11 月 12 日提交，计算机语言学分类，未经同行评议），产业界合作完成，评测协议沿用既有基准的开源分类器与裁判模型，总指标口径与最大竞品数据集一致，可横向比较。需要保留的部分：对抗合成依赖单一商用模型，合成分布的偏移未深究；实验底座为两个开源模型，闭源大模型上的迁移未验证。"
+        },
+        {
+          "t": "close",
+          "v": "这篇代表的安全对齐新路线值得记住：与其让数据量野蛮生长，不如让每条数据都有明确的特征覆盖任务。稀疏自编码器特征加词平均贪心筛选，是一套即插即用的数据选择器——任何「数据太多、算力太少、还想兼顾两个对立目标」的对齐场景（诚实性对有用性、隐私对有用性）都可以直接迁移这个思路。"
+        }
+      ],
+      "curated": true
+    }
+  ],
+  "trends": [
+    "今日十七篇新增里三条真金全部来自《博弈与经济行为》（均为中国计算机学会 A 类）：全付式质量报价的评分采购、多物品拍卖的多维机制设计、核心选择双边拍卖的强纳什均衡——前两篇已精读，第三篇为短文札记未单独立目。另有一篇顶刊条目经核实为分子内电荷输运研究，「均衡」关键词误命中物理化学，剔除。",
+    "机制设计分区的今日主旋律是「经典机制的非经典环境」：全付成本、多维类型、打包双边拍卖分别把教科书设定拧了一下，结论普遍是经典直觉需要修正——最优评分要压质量权重，多维可实施性退化为沿射线查单调。",
+    "加州理工的策略鲁棒控制给「博弈控制全信队友、鲁棒控制全防队友」的百年对立架了参数化桥梁，且免费午餐效应（适度相互提防反而提升社会效率）对多智能体强化学习的伙伴策略失配问题有直接借鉴。",
+    "部署现实假设成为强化学习上真系统的主战场：异构路口结构加车道级观测缺失的双重打击下，HALight 用路口专属建模加一跳邻域补全守住四成缺失几乎不掉性能，而同构基线两成就崩。",
+    "安全对齐出现「以少胜多」样本：稀疏自编码器特征引导筛选的两千四百条数据集在九项基准上整体压过二十六万条大库，「特征覆盖度优先于数据量」的路线值得关注。语言模型多智能体分区今日有中科院计算所的令牌级信用分配等扎实候选，因五篇上限与 A 类优先未入选，留待后续关注。"
+  ],
+  "note": "本期精读 5 篇：2 篇《博弈与经济行为》A 类期刊（均处录用待刊预校样阶段，摘要经出版方页面核实）加 3 篇 arXiv 预印本（加州理工、浙江大学、北京师范大学与腾讯合作）。检索窗口为 arXiv 七天、期刊会议九十天；十七篇今日新增中剔除四篇开放仓储自印本（治理框架、占位作者署名、术语堆砌与内容不可核各一）与一篇顶刊关键词误命中（分子电荷输运研究）。",
   "learning": {},
   "radar": [
     {
@@ -2147,5 +2549,6 @@
       ],
       "alt": []
     }
-  ]
+  ],
+  "curated": true
 }

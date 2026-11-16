@@ -1,0 +1,65 @@
+===== run @ 2026-11-16T07:51:12Z =====
+[07:50:07] 目标日期 2026-11-16 · arXiv 7 天 / 期刊会议 90 天
+[07:50:08] arXiv [分类·多智能体] 返回 150，窗口内保留 43
+[07:50:11] arXiv [分类·博弈论] 返回 150，窗口内保留 39
+[07:50:15] arXiv [主题·MARL] 返回 150，窗口内保留 7
+[07:50:19] arXiv [主题·纳什均衡] 返回 150，窗口内保留 11
+[07:50:22] arXiv [主题·机制设计] 返回 150，窗口内保留 2
+[07:50:26] arXiv [主题·LLM多智能体] 返回 150，窗口内保留 17
+[07:50:30] OpenAlex [主题·MARL] 返回 100，纳入 100
+[07:50:31] OpenAlex [主题·纳什均衡] 返回 100，纳入 100
+[07:50:32] OpenAlex [主题·机制设计] 返回 100，纳入 100
+[07:50:33] OpenAlex [主题·博弈理论] 返回 100，纳入 100
+[07:50:34] OpenAlex [主题·拍卖] 返回 28，纳入 28
+[07:50:35] OpenAlex [主题·LLM多智能体] 返回 100，纳入 100
+[07:50:36] OpenAlex [顶刊 Artificial Intelligence] 返回 33，纳入 33
+[07:50:37] OpenAlex [顶刊 Econometrica] 返回 0，纳入 0
+[07:50:37] OpenAlex [顶刊 Journal of Economic Theory] 返回 26，纳入 26
+[07:50:38] OpenAlex [顶刊 Management Science] 返回 50，纳入 50
+[07:50:39] OpenAlex [顶刊 Operations Research] 返回 50，纳入 50
+[07:50:39] OpenAlex [顶刊 IEEE TPAMI] 返回 12，纳入 12
+[07:50:40] OpenAlex [顶刊 Mathematics of Operations Research] 返回 26，纳入 26
+[07:50:41] OpenAlex [顶刊 Games and Economic Behavior] 返回 38，纳入 38
+[07:50:41] OpenAlex [顶刊 JMLR] 返回 0，纳入 0
+[07:50:42] OpenAlex [顶刊 Theoretical Economics] 返回 0，纳入 0
+[07:50:58] Crossref [主题·MARL] 返回 100，纳入 100
+[07:51:00] Crossref [主题·纳什均衡] 返回 100，纳入 100
+[07:51:04] Crossref [主题·机制设计] 返回 100，纳入 100
+[07:51:08] Crossref [主题·博弈理论] 返回 100，纳入 100
+[07:51:09] Crossref [主题·拍卖] 返回 100，纳入 100
+[07:51:11] Crossref [主题·LLM多智能体] 返回 100，纳入 100
+[07:51:12] 各来源纳入：{"arXiv": 106, "OpenAlex": 763, "Crossref": 704}
+[07:51:12] 去重后 1480 篇，按相关性过滤后 259 篇
+[daily] 目标日期 2026-11-16 · arXiv 7 天 / 期刊会议 90 天
+[daily] arXiv [分类·多智能体] 返回 150，窗口内保留 43
+[daily] arXiv [分类·博弈论] 返回 150，窗口内保留 39
+[daily] arXiv [主题·MARL] 返回 150，窗口内保留 7
+[daily] arXiv [主题·纳什均衡] 返回 150，窗口内保留 11
+[daily] arXiv [主题·机制设计] 返回 150，窗口内保留 2
+[daily] arXiv [主题·LLM多智能体] 返回 150，窗口内保留 17
+[daily] OpenAlex [主题·MARL] 返回 100，纳入 100
+[daily] OpenAlex [主题·纳什均衡] 返回 100，纳入 100
+[daily] OpenAlex [主题·机制设计] 返回 100，纳入 100
+[daily] OpenAlex [主题·博弈理论] 返回 100，纳入 100
+[daily] OpenAlex [主题·拍卖] 返回 28，纳入 28
+[daily] OpenAlex [主题·LLM多智能体] 返回 100，纳入 100
+[daily] OpenAlex [顶刊 Artificial Intelligence] 返回 33，纳入 33
+[daily] OpenAlex [顶刊 Econometrica] 返回 0，纳入 0
+[daily] OpenAlex [顶刊 Journal of Economic Theory] 返回 26，纳入 26
+[daily] OpenAlex [顶刊 Management Science] 返回 50，纳入 50
+[daily] OpenAlex [顶刊 Operations Research] 返回 50，纳入 50
+[daily] OpenAlex [顶刊 IEEE TPAMI] 返回 12，纳入 12
+[daily] OpenAlex [顶刊 Mathematics of Operations Research] 返回 26，纳入 26
+[daily] OpenAlex [顶刊 Games and Economic Behavior] 返回 38，纳入 38
+[daily] OpenAlex [顶刊 JMLR] 返回 0，纳入 0
+[daily] OpenAlex [顶刊 Theoretical Economics] 返回 0，纳入 0
+[daily] Crossref [主题·MARL] 返回 100，纳入 100
+[daily] Crossref [主题·纳什均衡] 返回 100，纳入 100
+[daily] Crossref [主题·机制设计] 返回 100，纳入 100
+[daily] Crossref [主题·博弈理论] 返回 100，纳入 100
+[daily] Crossref [主题·拍卖] 返回 100，纳入 100
+[daily] Crossref [主题·LLM多智能体] 返回 100，纳入 100
+[daily] 各来源纳入：{"arXiv": 106, "OpenAlex": 763, "Crossref": 704}
+[daily] 去重后 1480 篇，按相关性过滤后 259 篇
+[daily] 写入 data/daily/2026-11-16.json（radar 60 条，精读 0 条）
+[daily] 写入 digests/2026-11-16.md、logs/2026-11-16.log、data/runs.json
